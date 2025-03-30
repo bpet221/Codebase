@@ -1,0 +1,22 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Node/JS project stuff (remove if not applicable)
+node_modules/
+dist/
+build/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Logs
+*.log
+*.zip
+
+# Fonts or binaries
+*.ttf
+*.otf
+*.woff*
