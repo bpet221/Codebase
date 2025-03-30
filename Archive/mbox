@@ -1,0 +1,19 @@
+From blakepetipas@BlakesMP16M3Pro.attlocal.net  Sun May  5 17:30:01 2024
+Return-Path: <blakepetipas@BlakesMP16M3Pro.attlocal.net>
+X-Original-To: blakepetipas
+Delivered-To: blakepetipas@BlakesMP16M3Pro.attlocal.net
+Received: by BlakesMP16M3Pro.attlocal.net (Postfix, from userid 501)
+	id 0FC41121FE3D; Sun,  5 May 2024 17:30:00 -0400 (EDT)
+From: blakepetipas@BlakesMP16M3Pro.attlocal.net (Cron Daemon)
+To: blakepetipas@BlakesMP16M3Pro.attlocal.net
+Subject: Cron <blakepetipas@BlakesMP16M3Pro> /Library/Frameworks/Python.framework/Versions/3.12/bin/python3 /Users/blakepetipas/Documents/Code/GHL\ Agent\ Report\ Scraper/Selenium_GHLagentreport_YESTERDAY.py >> /Users/blakepetipas/Documents/Code/GHL\ Agent\ Report\ Scraper/script_output.log 2>&1
+X-Cron-Env: <SHELL=/bin/sh>
+X-Cron-Env: <PATH=/usr/bin:/bin>
+X-Cron-Env: <LOGNAME=blakepetipas>
+X-Cron-Env: <USER=blakepetipas>
+Message-Id: <20240505213001.0FC41121FE3D@BlakesMP16M3Pro.attlocal.net>
+Date: Sun,  5 May 2024 17:30:00 -0400 (EDT)
+Status: RO
+
+/bin/sh: /Users/blakepetipas/Documents/Code/GHL Agent Report Scraper/script_output.log: No such file or directory
+

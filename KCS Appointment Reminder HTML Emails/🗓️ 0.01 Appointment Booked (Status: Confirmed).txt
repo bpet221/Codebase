@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Reminder</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Avenir', Arial, sans-serif;
+            background-color: #F5F3EB;
+            color: #35312E;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 90%;
+            margin: 30px auto 0;
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #AF5A3C;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-family: 'Cheltenham', serif;
+            font-size: 28px;
+            font-weight: bold;
+            color: #FFFFFF;
+        }
+
+        .content {
+            padding: 10px 24px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .details {
+            background-color: #FCFAF6;
+            padding: 19px;
+            border-top: 1px solid #E0E0E0;
+            text-align: left;
+        }
+
+        .details p {
+            margin: 8px 0;
+            font-size: 14px;
+            color: #35312E;
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            max-width: 400px;
+            margin: 10px auto;
+            padding: 8px 0;
+            text-align: center;
+            background-color: #5C707E;
+            color: #FFFFFF;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 12px;
+        }
+
+        .button:hover {
+            background-color: #465561;
+        }
+
+        .google-calendar-button {
+    margin-top: 35px; /* Adjust the value as needed */
+}
+
+        .footer-text {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            color: #4A4A4A; /* Slightly darker gray */
+            margin: 25px auto 10px;
+        }
+
+        .footer-text a {
+            color: #AF5A3C;
+            text-decoration: none; /* Removes underline */
+        }
+
+        .logo {
+            margin: 30px auto 40px;
+            width: 140px;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Upcoming Appointment</h1>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <p>Hi <strong>{{contact.name}}</strong>,</p>
+            <p>This is a friendly reminder about your upcoming appointment.</p>
+        </div>
+
+        <!-- Appointment Details -->
+        <div class="details">
+            <p><strong>Appointment Title:</strong> {{appointment.title}}</p>
+            <p><strong>Date and Time:</strong> {{appointment.start_time}} ({{appointment.timezone_offset}})</p>
+            <p><strong>Location/Link:</strong> 
+                <a href="{{appointment.meeting_location}}" style="color: #AF5A3C;">
+                    {{appointment.meeting_location}}
+                </a>
+            </p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="content">
+            <a class="button google-calendar-button" href="{{appointment.add_to_google_calendar}}" target="_blank">Add to Google Calendar</a>
+            <a class="button" href="{{appointment.add_to_ical_outlook}}" target="_blank">Add to iCal/Outlook Calendar</a>
+            <a class="button" href="{{appointment.reschedule_link}}" target="_blank">Reschedule Appointment</a>
+            <a class="button" href="{{appointment.cancellation_link}}" target="_blank">Cancel Appointment</a>
+        </div>
+
+        <!-- Logo -->
+        <a href="https://kitchenandcabinetstore.com" target="_blank">
+            <img class="logo" src="https://storage.googleapis.com/msgsndr/4h6wxlihyc1wMCzyVRbH/media/6765b642771611cb32617d6b.png" alt="Kitchen and Cabinet Store Logo">
+        </a>
+    </div>
+
+    <!-- Questions Line Outside Container -->
+    <div class="footer-text">
+        Questions? Drop us a line at <br>
+        <a href="mailto:info@kitchenandcabinetstore.com">info@kitchenandcabinetstore.com</a>
+    </div>
+</body>
+</html>

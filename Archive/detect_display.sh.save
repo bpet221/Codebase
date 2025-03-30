@@ -1,0 +1,113 @@
+#!/bin/zsh
+
+# AppleScript to get the display type of the frontmost window using CGDirectDisplay API
+active_display_type=$(osascript -l JavaScript <<EOF
+ObjC.import('Cocoa');
+
+function getActiveDisplayType() {
+    const workspace = $.NSWorkspace.sharedWorkspace;
+    const frontApp = workspace.frontmostApplication;
+    const frontAppWindows = frontApp.windows;
+    if (frontAppWindows.count > 0) {
+        const frontWindow = frontAppWindows[0];
+        const screen = frontWindow.screen;
+        if (screen) {
+            const description = screen.deviceDescription();
+            const displayType = description.valueForKey("NSDeviceDescriptionName");
+            return displayType;
+        }
+    }
+    return null;
+}
+
+getActiveDisplayType();
+EOF
+)
+
+# Known display types for your setup
+MBP_DISPLAY_TYPE="Built-in Liquid Retina XDR Display"
+STUDIO_DISPLAY_TYPE="Retina LCD"
+
+# Check which display is active
+if [[ "$active_display_type" == *"$STUDIO_DISPLAY_TYPE"* ]]; then
+    echo "Apple Studio Display"
+elif [[ "$active_display_type" == *"$MBP_DISPLAY_TYPE"* ]]; then
+    echo "MBP Display"
+else
+    echo "Unknown Display"
+fi
+#!/bin/zsh
+
+# AppleScript to get the display type of the frontmost window using CGDirectDisplay API
+active_display_type=$(osascript -l JavaScript <<EOF
+ObjC.import('Cocoa');
+
+function getActiveDisplayType() {
+    const workspace = $.NSWorkspace.sharedWorkspace;
+    const frontApp = workspace.frontmostApplication;
+    const frontAppWindows = frontApp.windows;
+    if (frontAppWindows.count > 0) {
+        const frontWindow = frontAppWindows[0];
+        const screen = frontWindow.screen;
+        if (screen) {
+            const description = screen.deviceDescription();
+            const displayType = description.valueForKey("NSDeviceDescriptionName");
+            return displayType;
+        }
+    }
+    return null;
+}
+
+getActiveDisplayType();
+EOF
+)
+
+# Known display types for your setup
+MBP_DISPLAY_TYPE="Built-in Liquid Retina XDR Display"
+STUDIO_DISPLAY_TYPE="Retina LCD"
+
+# Check which display is active
+if [[ "$active_display_type" == *"$STUDIO_DISPLAY_TYPE"* ]]; then
+    echo "Apple Studio Display"
+elif [[ "$active_display_type" == *"$MBP_DISPLAY_TYPE"* ]]; then
+    echo "MBP Display"
+else
+    echo "Unknown Display"
+fi
+#!/bin/zsh
+
+# AppleScript to get the display type of the frontmost window using CGDirectDisplay API
+active_display_type=$(osascript -l JavaScript <<EOF
+ObjC.import('Cocoa');
+
+function getActiveDisplayType() {
+    const workspace = $.NSWorkspace.sharedWorkspace;
+    const frontApp = workspace.frontmostApplication;
+    const frontAppWindows = frontApp.windows;
+    if (frontAppWindows.count > 0) {
+        const frontWindow = frontAppWindows[0];
+        const screen = frontWindow.screen;
+        if (screen) {
+            const description = screen.deviceDescription();
+            const displayType = description.valueForKey("NSDeviceDescriptionName");
+            return displayType;
+        }
+    }
+    return null;
+}
+
+getActiveDisplayType();
+EOF
+)
+
+# Known display types for your setup
+MBP_DISPLAY_TYPE="Built-in Liquid Retina XDR Display"
+STUDIO_DISPLAY_TYPE="Retina LCD"
+
+# Check which display is active
+if [[ "$active_display_type" == *"$STUDIO_DISPLAY_TYPE"* ]]; then
+    echo "Apple Studio Display"
+elif [[ "$active_display_type" == *"$MBP_DISPLAY_TYPE"* ]]; then
+    echo "MBP Display"
+else
+    echo "Unknown Displa
