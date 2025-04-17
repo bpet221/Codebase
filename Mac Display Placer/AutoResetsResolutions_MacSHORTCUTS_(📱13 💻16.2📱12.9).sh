@@ -35,4 +35,4 @@ if echo "$CURRENT_SETTINGS" | grep -q 'id:B66BFCE0-2F0A-4C1D-B986-CEB6DA2A8516 r
 fi
 
 # If neither condition is met, display an alert
-osascript -e 'display alert "iPad Pro 13 M4 not detected at 1032x774 or 1376x1032"'
+osascript -e 'display alert "iPad Pro 13 M4 not detected at 1032x774 or 1376x1032"'# update Thu Apr 17 17:35:29 EDT 2025
