@@ -1,0 +1,39 @@
+Persistent screen id: 83D58C15-1154-451E-AAA4-9D1559E70737
+Contextual screen id: 4
+Serial screen id: s154730679
+Type: 24 inch external screen
+Resolution: 1204x903
+Hertz: 60
+Color Depth: 4
+Scaling: on
+Origin: (-1204,0)
+Rotation: 0
+Enabled: true
+Resolutions for rotation 0:
+  mode 0: res:800x600 hz:60 color_depth:4 scaling:on
+  mode 1: res:800x600 hz:60 color_depth:4
+  mode 2: res:1024x768 hz:60 color_depth:4
+  mode 3: res:1032x774 hz:60 color_depth:4 scaling:on
+  mode 4: res:1032x774 hz:60 color_depth:4
+  mode 5: res:1204x903 hz:60 color_depth:4 scaling:on <-- current mode
+  mode 6: res:1204x903 hz:60 color_depth:4
+  mode 7: res:1280x960 hz:60 color_depth:4
+  mode 8: res:1344x1008 hz:60 color_depth:4
+  mode 9: res:1376x1032 hz:60 color_depth:4 scaling:on
+  mode 10: res:1376x1032 hz:60 color_depth:4
+  mode 11: res:1600x1200 hz:60 color_depth:4
+  mode 12: res:2060x1545 hz:60 color_depth:4
+  mode 13: res:2064x1548 hz:60 color_depth:4
+  mode 14: res:2408x1806 hz:60 color_depth:4
+  mode 15: res:2752x2064 hz:60 color_depth:4
+  mode 16: res:400x300 hz:60 color_depth:4 scaling:on
+  mode 17: res:512x384 hz:60 color_depth:4 scaling:on
+  mode 18: res:516x387 hz:60 color_depth:4 scaling:on
+  mode 19: res:602x452 hz:60 color_depth:4 scaling:on
+  mode 20: res:640x480 hz:60 color_depth:4 scaling:on
+  mode 21: res:640x480 hz:60 color_depth:4
+  mode 22: res:672x504 hz:60 color_depth:4 scaling:on
+  mode 23: res:688x516 hz:60 color_depth:4 scaling:on
+  mode 24: res:688x516 hz:60 color_depth:4 scaling:on
+  mode 25: res:1030x773 hz:60 color_depth:4 scaling:on
+  mode 26: res:1376x1032 hz:60 color_depth:4

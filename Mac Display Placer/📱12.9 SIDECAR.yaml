@@ -1,0 +1,144 @@
+📱12.9 SIDECAR (wireless)
+iPad Scaling: Normal
+
+Persistent screen id: 9D5AEDAF-9A97-4123-9A80-F6EC1542C8DD
+Contextual screen id: 5
+Serial screen id: s4006640998
+Type: 13 inch external screen (yes )
+Resolution: 1366x1024
+Hertz: 60
+Color Depth: 4
+Scaling: on
+Origin: (1728,0)
+Rotation: 0
+Enabled: true
+Resolutions for rotation 0:
+  mode 0: res:800x600 hz:60 color_depth:4 scaling:on
+  mode 1: res:800x600 hz:60 color_depth:4
+  mode 2: res:1024x768 hz:60 color_depth:4
+  mode 3: res:1280x960 hz:60 color_depth:4
+  mode 4: res:1344x1008 hz:60 color_depth:4
+  mode 5: res:1366x1024 hz:60 color_depth:4 scaling:on <-- current mode
+  mode 6: res:1366x1024 hz:60 color_depth:4
+  mode 7: res:1600x1200 hz:60 color_depth:4
+  mode 8: res:2732x2048 hz:60 color_depth:4
+  mode 9: res:400x300 hz:60 color_depth:4 scaling:on
+  mode 10: res:512x384 hz:60 color_depth:4 scaling:on
+  mode 11: res:640x480 hz:60 color_depth:4 scaling:on
+  mode 12: res:640x480 hz:60 color_depth:4
+  mode 13: res:672x504 hz:60 color_depth:4 scaling:on
+  mode 14: res:683x512 hz:60 color_depth:4 scaling:on
+  mode 15: res:683x512 hz:60 color_depth:4 scaling:on
+  mode 16: res:1366x1024 hz:60 color_depth:4
+
+
+📱12.9 SIDECAR (wireless)
+iPad Scaling: Large Text
+
+Persistent screen id: 9D5AEDAF-9A97-4123-9A80-F6EC1542C8DD
+Contextual screen id: 12
+Serial screen id: s4006640998
+Type: 10 inch external screen
+Resolution: 1024x768
+Hertz: 60
+Color Depth: 4
+Scaling: on
+Origin: (1728,0)
+Rotation: 0
+Enabled: true
+Resolutions for rotation 0:
+  mode 0: res:800x600 hz:60 color_depth:4 scaling:on
+  mode 1: res:800x600 hz:60 color_depth:4
+  mode 2: res:1024x768 hz:60 color_depth:4 scaling:on <-- current mode
+  mode 3: res:1024x768 hz:60 color_depth:4
+  mode 4: res:1280x960 hz:60 color_depth:4
+  mode 5: res:1344x1008 hz:60 color_depth:4
+  mode 6: res:1600x1200 hz:60 color_depth:4
+  mode 7: res:2048x1536 hz:60 color_depth:4
+  mode 8: res:400x300 hz:60 color_depth:4 scaling:on
+  mode 9: res:512x384 hz:60 color_depth:4 scaling:on
+  mode 10: res:512x384 hz:60 color_depth:4 scaling:on
+  mode 11: res:640x480 hz:60 color_depth:4 scaling:on
+  mode 12: res:640x480 hz:60 color_depth:4
+  mode 13: res:672x504 hz:60 color_depth:4 scaling:on
+  mode 14: res:1024x768 hz:60 color_depth:4
+
+
+📱12.9 SIDECAR (wired)
+iPad Scaling: Normal
+
+Persistent screen id: 9D5AEDAF-9A97-4123-9A80-F6EC1542C8DD
+Contextual screen id: 8
+Serial screen id: s4006640998
+Type: 13 inch external screen
+Resolution: 1366x1024
+Hertz: 60
+Color Depth: 4
+Scaling: on
+Origin: (1728,0)
+Rotation: 0
+Enabled: true
+Resolutions for rotation 0:
+  mode 0: res:800x600 hz:60 color_depth:4 scaling:on
+  mode 1: res:800x600 hz:60 color_depth:4
+  mode 2: res:1024x768 hz:60 color_depth:4
+  mode 3: res:1280x960 hz:60 color_depth:4
+  mode 4: res:1344x1008 hz:60 color_depth:4
+  mode 5: res:1366x1024 hz:60 color_depth:4 scaling:on <-- current mode
+  mode 6: res:1366x1024 hz:60 color_depth:4
+  mode 7: res:1600x1200 hz:60 color_depth:4
+  mode 8: res:2732x2048 hz:60 color_depth:4
+  mode 9: res:400x300 hz:60 color_depth:4 scaling:on
+  mode 10: res:512x384 hz:60 color_depth:4 scaling:on
+  mode 11: res:640x480 hz:60 color_depth:4 scaling:on
+  mode 12: res:640x480 hz:60 color_depth:4
+  mode 13: res:672x504 hz:60 color_depth:4 scaling:on
+  mode 14: res:683x512 hz:60 color_depth:4 scaling:on
+  mode 15: res:683x512 hz:60 color_depth:4 scaling:on
+  mode 16: res:1366x1024 hz:60 color_depth:4
+
+
+
+
+📱12.9 DUET
+iPad Scaling: Normal
+
+Persistent screen id: 366D0BEC-80B8-461B-964C-F8E3D3133C6E
+Contextual screen id: 7
+Serial screen id: s2468225331
+Type: 23 inch external screen
+Resolution: 1192x893
+Hertz: 60
+Color Depth: 4
+Scaling: on
+Origin: (1728,0)
+Rotation: 0
+Enabled: true
+Resolutions for rotation 0:
+  mode 0: res:800x600 hz:60 color_depth:4 scaling:on
+  mode 1: res:800x600 hz:60 color_depth:4
+  mode 2: res:1020x766 hz:60 color_depth:4 scaling:on
+  mode 3: res:1020x766 hz:60 color_depth:4
+  mode 4: res:1024x768 hz:60 color_depth:4
+  mode 5: res:1192x893 hz:60 color_depth:4 scaling:on <-- current mode
+  mode 6: res:1192x893 hz:60 color_depth:4
+  mode 7: res:1280x960 hz:60 color_depth:4
+  mode 8: res:1344x1008 hz:60 color_depth:4
+  mode 9: res:1366x1024 hz:60 color_depth:4 scaling:on
+  mode 10: res:1366x1024 hz:60 color_depth:4
+  mode 11: res:1600x1200 hz:60 color_depth:4
+  mode 12: res:2040x1529 hz:60 color_depth:4
+  mode 13: res:2040x1532 hz:60 color_depth:4
+  mode 14: res:2384x1786 hz:60 color_depth:4
+  mode 15: res:2732x2048 hz:60 color_depth:4
+  mode 16: res:400x300 hz:60 color_depth:4 scaling:on
+  mode 17: res:510x383 hz:60 color_depth:4 scaling:on
+  mode 18: res:512x384 hz:60 color_depth:4 scaling:on
+  mode 19: res:596x447 hz:60 color_depth:4 scaling:on
+  mode 20: res:640x480 hz:60 color_depth:4 scaling:on
+  mode 21: res:640x480 hz:60 color_depth:4
+  mode 22: res:672x504 hz:60 color_depth:4 scaling:on
+  mode 23: res:683x512 hz:60 color_depth:4 scaling:on
+  mode 24: res:683x512 hz:60 color_depth:4 scaling:on
+  mode 25: res:1020x765 hz:60 color_depth:4 scaling:on
+  mode 26: res:1366x1024 hz:60 color_depth:4
