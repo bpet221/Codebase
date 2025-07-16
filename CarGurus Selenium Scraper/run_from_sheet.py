@@ -1,44 +1,68 @@
 import gspread
 import subprocess
+from datetime import datetime
 from oauth2client.service_account import ServiceAccountCredentials
 
 # === CONFIG ===
-SHEET_ID = "1xObRuNidGZgvENb2LOVuNP0Rg6x19QAFYwpNWnETmWU"
-SHEET_NAME = "Data"
-CELL_INPUT = "M2"
-CELL_OUTPUT = "L2"
+SHEET_ID     = "1xObRuNidGZgvENb2LOVuNP0Rg6x19QAFYwpNWnETmWU"
+PRICE_SHEET  = "Live Prices"
+LOG_SHEET    = "Price Log"
+INPUT_COL    = "A"
+OUTPUT_COL   = "B"
+START_ROW    = 2
 
 # === AUTH ===
-scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+scope = [
+    "https://spreadsheets.google.com/feeds",
+    "https://www.googleapis.com/auth/drive"
+]
 creds = ServiceAccountCredentials.from_json_keyfile_name("creds.json", scope)
 client = gspread.authorize(creds)
+price_sheet = client.open_by_key(SHEET_ID).worksheet(PRICE_SHEET)
+log_sheet   = client.open_by_key(SHEET_ID).worksheet(LOG_SHEET)
 
-# === FETCH URL ===
-sheet = client.open_by_key(SHEET_ID).worksheet(SHEET_NAME)
-url = sheet.acell(CELL_INPUT).value.strip()
-print(f"🔗 URL from sheet: {url}")
+# === LOOP THROUGH PRICE SHEET ===
+row = START_ROW
+while True:
+    input_cell = f"{INPUT_COL}{row}"
+    output_cell = f"{OUTPUT_COL}{row}"
+    url = price_sheet.acell(input_cell).value
 
-# === Run Selenium script ===
-try:
-    result = subprocess.run(
-        ["python3", "cargurus_scraper.py", url],
-        capture_output=True,
-        text=True,
-        check=True
-    )
+    if not url or not url.strip():
+        print(f"🛑 {input_cell} empty—stopping.")
+        break
 
-    # Extract price
-    lines = result.stdout.strip().splitlines()
-    raw_price = next((line for line in lines if line.strip().startswith("$")), None)
+    url = url.strip()
+    print(f"▶️  Row {row}: {url}")
 
-    if raw_price:
-        numeric_price = int(raw_price.replace("$", "").replace(",", ""))
-        print("✅ Final price (numeric):", numeric_price)
-        sheet.update(CELL_OUTPUT, [[numeric_price]])
-    else:
-        print("❌ Price not found in output.")
-        sheet.update(CELL_OUTPUT, [["ERROR: Price not found"]])
+    try:
+        proc = subprocess.run(
+            ["python3", "cargurus_scraper.py", url],
+            capture_output=True, text=True, check=True
+        )
+        lines = proc.stdout.strip().splitlines()
+        raw_price = next((l for l in lines if l.startswith("$")), None)
 
-except subprocess.CalledProcessError as e:
-    print("❌ Scraper error:", e.stdout or e.stderr)
-    sheet.update(CELL_OUTPUT, [[f"ERROR: {e.stdout or e.stderr}"]])
+        if raw_price:
+            price = int(raw_price.replace("$", "").replace(",", ""))
+            print(f"✅ Row {row} → {price}")
+            price_sheet.update(values=[[price]], range_name=output_cell)
+
+            # Append to Price Log with formatted timestamp
+            log_url_col = log_sheet.col_values(1)
+            next_log_row = len(log_url_col) + 1
+            timestamp = datetime.now().strftime("%Y-%m-%d %H:%M")
+            log_sheet.update_cell(next_log_row, 1, url)
+            log_sheet.update_cell(next_log_row, 2, price)
+            log_sheet.update_cell(next_log_row, 3, timestamp)
+
+        else:
+            print(f"❌ Row {row}: no price found.")
+            price_sheet.update(values=[["ERROR: No price"]], range_name=output_cell)
+
+    except subprocess.CalledProcessError as e:
+        err = (e.stdout or e.stderr).strip()
+        print(f"❌ Row {row} error: {err}")
+        price_sheet.update(values=[[f"ERROR: {err}"]], range_name=output_cell)
+
+    row += 1

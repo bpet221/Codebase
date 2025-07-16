@@ -1,0 +1,360 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "first_slideshow_ewRCKK": {
+      "type": "First-slideshow",
+      "blocks": {
+        "slide_M8kwKg": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/KCS_Hero.jpg",
+            "heading": "BUY YOUR CABINETS ONLINE & SAVE THOUSANDS.",
+            "heading_size": "h2",
+            "subheading": "",
+            "text": "We design and ship complete kitchens with premium cabinets, pro design help, and transparent pricing — all online.",
+            "button_label": "SHOP",
+            "link": "shopify://collections/all",
+            "button_style_secondary": false,
+            "box_align": "middle-left",
+            "show_text_box": false,
+            "text_alignment": "left",
+            "image_overlay_opacity": 30,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": ["slide_M8kwKg"],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "usp_section_LtcHzV": {
+      "type": "USP-Section",
+      "settings": {
+        "usp_heading": "",
+        "usp_1_icon": "shopify://shop_images/Quote.png",
+        "usp_1_title": "Get A Quote",
+        "usp_1_text": "Contact us today for free a quote!",
+        "usp_2_icon": "shopify://shop_images/Catalog.png",
+        "usp_2_title": "Free Designs",
+        "usp_2_text": "See exactly what your kitchen will look like.",
+        "usp_3_icon": "shopify://shop_images/Call.png",
+        "usp_3_title": "Fast Delivery",
+        "usp_3_text": "To your door in as little as 7 days.",
+        "usp_4_icon": "shopify://shop_images/Store.png",
+        "usp_4_title": "Free Shipping",
+        "usp_4_text": "Or orders $2500."
+      }
+    },
+    "collection_list_M8YBGA": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_LQt3X4": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "light-wood-cabinets"
+          }
+        },
+        "featured_collection_FydK3Y": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "white-cabinets"
+          }
+        },
+        "featured_collection_RbKGw4": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "blue-cabinets"
+          }
+        },
+        "featured_collection_zFpYw6": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "green-cabinets"
+          }
+        },
+        "featured_collection_VKXi34": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "gray-cabinets"
+          }
+        },
+        "featured_collection_Tybejn": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "dark-wood-cabinets"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_LQt3X4",
+        "featured_collection_FydK3Y",
+        "featured_collection_RbKGw4",
+        "featured_collection_zFpYw6",
+        "featured_collection_VKXi34",
+        "featured_collection_Tybejn"
+      ],
+      "settings": {
+        "title": "Browse By Color",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "color_scheme": "inverse",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": "Browse-by-category-collection"
+      }
+    },
+    "slider_text_section_zbpbCF": {
+      "type": "Slider-text-section",
+      "blocks": {
+        "text_KkWkpk": {
+          "type": "text",
+          "settings": {
+            "line_text": "SHIPPING PRICE MATCH"
+          }
+        },
+        "text_AgAaJK": {
+          "type": "text",
+          "settings": {
+            "line_text": "CUSTOM SIZES"
+          }
+        },
+        "text_ikdVtR": {
+          "type": "text",
+          "settings": {
+            "line_text": "5YR WARRANTY"
+          }
+        },
+        "text_Ly6WKD": {
+          "type": "text",
+          "settings": {
+            "line_text": "RTA + RTI CABINETS"
+          }
+        },
+        "text_w3fcLm": {
+          "type": "text",
+          "settings": {
+            "line_text": "HARDWARE"
+          }
+        },
+        "text_teUWL7": {
+          "type": "text",
+          "settings": {
+            "line_text": "CUSTOM INSERTS"
+          }
+        },
+        "text_ee4ab3": {
+          "type": "text",
+          "settings": {
+            "line_text": "CUSTOM PAINT OPTIONS"
+          }
+        },
+        "text_tNYyVg": {
+          "type": "text",
+          "settings": {
+            "line_text": "CUSTOM SIZES"
+          }
+        },
+        "text_WVJxcx": {
+          "type": "text",
+          "settings": {
+            "line_text": "FREE SHIPPING $2500+"
+          }
+        }
+      },
+      "block_order": [
+        "text_KkWkpk",
+        "text_AgAaJK",
+        "text_ikdVtR",
+        "text_Ly6WKD",
+        "text_w3fcLm",
+        "text_teUWL7",
+        "text_ee4ab3",
+        "text_tNYyVg",
+        "text_WVJxcx"
+      ],
+      "settings": {}
+    },
+    "image_with_text_cF3xCM": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_tTpHtX": {
+          "type": "heading",
+          "settings": {
+            "heading": "Be Part of Something New — And Save Big",
+            "heading_size": "h2"
+          }
+        },
+        "text_Ezd3WJ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We’re Blake and Keith Petipas — a father & son team with 20+ years in the kitchen space.<br/><br/>After two decades serving Cape Cod, we’re expanding <strong>nationwide to bring premium cabinets to homeowners across the U.S.</strong><br/><br/>You get personal service, done-with-you  designs, and top-tier cabinets — without showroom or builder markup.<br/><br/>As a thank you for backing a new business, we’re giving 30% off to our first 30 customers. No fluff. Just a better deal for helping us grow.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": ["heading_tTpHtX", "text_Ezd3WJ"],
+      "custom_css": [
+        "h2 {font-size: 30px; margin-left: -22px; margin-right: -24px; padding-left: 0px; padding-right: 0px;}",
+        "p {font-size: 20px; line-height: 25px; font-weight: 200; margin-left: -20px; margin-right: -20px; padding-left: 0px; padding-right: 0px;}",
+        "p strong,p b {font-weight: 600;}"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Untitled_design_1.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_KqwbzV": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "EXPLORE OUR BEST SELLING PRODUCTS",
+        "heading_size": "h1",
+        "title_align": "left",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "frontpage",
+        "show_badge_category": false,
+        "products_to_show": 12,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "desktop_slider_page_width": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "card_color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "custom_class": "Home-featured-collection",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collage_section_JxpgzN": {
+      "type": "collage-section",
+      "disabled": true,
+      "settings": {
+        "section_title": "SHOP THE MOST POPULAE CATEGORY",
+        "image_1": "shopify://shop_images/Cabinets_2.png",
+        "title_1": "Cabinets",
+        "description_1": "Our curated collection of custom stock cabinets is available in a variety of colors and door styles.",
+        "button_link_1": "shopify://collections/all",
+        "button_text_1": "Shop Now",
+        "image_2": "shopify://shop_images/Closets.png",
+        "title_2": "Closets",
+        "description_2": "Our curated collection of closet modules makes customization and organization simple.",
+        "button_link_2": "shopify://collections/all",
+        "button_text_2": "Shop Now",
+        "image_3": "shopify://shop_images/Flooring_2.png",
+        "title_3": "Flooring",
+        "description_3": "The best selection of beautiful, durable flooring, Choose the right high-quality flooring for any room in your home",
+        "button_link_3": "shopify://collections/all",
+        "button_text_3": "Shop Now",
+        "image_4": "shopify://shop_images/Countertops.png",
+        "title_4": "Countertops",
+        "description_4": "Corsica, Northstar and ProntoTop countertops, available exclusively at Cabinets To Go.",
+        "button_link_4": "shopify://collections/all",
+        "button_text_4": "Shop Now"
+      }
+    },
+    "image_banner_ziCb6K": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_gaMA86": {
+          "type": "heading",
+          "settings": {
+            "heading": "Not Sure Where to Start? Let’s Fix That.",
+            "heading_size": "h1"
+          }
+        },
+        "text_yJ6c7L": {
+          "type": "text",
+          "settings": {
+            "text": "Text Blake at 774-413-7820 now to kick off your kitchen project. No forms. No fluff. Just real answers — fast.",
+            "text_style": "body"
+          }
+        },
+        "buttons_DKjqfq": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Text 774-413-7820",
+            "button_link_1": "{{ metaobjects.sms_link[\"text-774-413-7820\"].text_link.value }}",
+            "button_style_secondary_1": false,
+            "button_badge_1": "",
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false,
+            "button_badge_2": ""
+          }
+        }
+      },
+      "block_order": ["heading_gaMA86", "text_yJ6c7L", "buttons_DKjqfq"],
+      "settings": {
+        "image": "shopify://shop_images/KCS_BB2.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "bottom-right",
+        "show_text_box": true,
+        "desktop_content_alignment": "left",
+        "image_position": "background",
+        "show_ratings": true,
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true,
+        "custom_class": "Homepage-Banner-Last"
+      }
+    }
+  },
+  "order": [
+    "first_slideshow_ewRCKK",
+    "usp_section_LtcHzV",
+    "collection_list_M8YBGA",
+    "slider_text_section_zbpbCF",
+    "image_with_text_cF3xCM",
+    "featured_collection_KqwbzV",
+    "collage_section_JxpgzN",
+    "image_banner_ziCb6K"
+  ]
+}

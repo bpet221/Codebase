@@ -1,0 +1,688 @@
+/* ==========================================================================
+   📏 Sitewide Max Width Override
+   ========================================================================== */
+@media screen and (min-width: 750px) {
+  .page-width {
+    max-width: 1600px; /* ← adjust as needed */
+  }
+}
+
+/* ==========================================================================
+   Header Bar
+   ========================================================================== */
+
+/* Instagram Icon Menu Color Overide */
+.icon-instagram path:first-of-type {
+  fill: #35312E !important;
+}
+
+/* ==========================================================================
+   🧭 Header Adjustments (1381px–1615px)
+   ========================================================================== */
+@media screen and (min-width: 1381px) and (max-width: 1615px) {
+  .header-wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+/* ==========================================================================
+   🦶 Footer Adjustments (1381px–1615px)
+   ========================================================================== */
+@media screen and (min-width: 1381px) and (max-width: 1615px) {
+  footer.footer {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+
+/* ==========================================================================
+   🏠 Home Page Hero
+   ========================================================================== */
+.Shopify-section__First-slideshow .banner .banner__box .banner__subheading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 49px;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.Shopify-section__First-slideshow .banner .banner__heading {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 75px;
+    line-height: 78px;
+    text-transform: normal;
+    color: #FFFFFF;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.Shopify-section__First-slideshow .banner .banner__box .banner__text.rte,
+.Shopify-section__First-slideshow .banner .banner__box .banner__text.rte p {
+    font-family: "ITC Cheltenham", serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 39px;
+    color: #FFFFFF;
+    margin-top: 0px;
+}
+
+/* === Hero Section Max Height Constraint === */
+/* 2025-06-24 by Blake */
+.Shopify-section__First-slideshow .banner {
+    max-height: 775px;
+    overflow: hidden;
+}
+
+/* === Responsive Mobile Fixes for Hero Section === */
+/* 2025-06-14 updated 2025-06-24 by Blake */
+@media (max-width: 749px) {
+    .Shopify-section__First-slideshow .banner .banner__box {
+        text-align: left;
+        padding-top: 2rem;
+        padding-right: 0px;
+        padding-bottom: 2rem;
+        padding-left: 0px;
+        margin: 0;
+    }
+
+    .Shopify-section__First-slideshow .banner .banner__box .banner__subheading {
+        font-size: 21px;
+        line-height: 1.3;
+        margin: 0 0 8px 0;
+        text-align: left;
+    }
+
+    .Shopify-section__First-slideshow .banner .banner__heading {
+        font-size: 40px;
+        font-weight: 300;
+        line-height: 1.3;
+        margin: 30px 0 12px 0;
+        text-align: left;
+    }
+
+    .Shopify-section__First-slideshow .banner .banner__box .banner__text.rte,
+    .Shopify-section__First-slideshow .banner .banner__box .banner__text.rte p {
+        font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+        font-size: 17px !important;
+        font-weight: 300 !important;
+        line-height: 1.4 !important;
+        margin: 0 0 16px 0 !important;
+        text-align: left !important;
+    }
+
+    .Shopify-section__First-slideshow .banner .banner__buttons .button {
+        font-size: 14px;
+        padding: 12px 24px;
+        display: inline-block;
+        margin: 0;
+    }
+
+    .Shopify-section__First-slideshow .slideshow__text-mobile--center {
+        text-align: left !important;
+    }
+}
+
+/* ==========================================================================
+   HOME Page Slider Text Bar
+   ========================================================================== */
+.Slider-text-section .sliders .slide {
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.044em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   Main Offer Pop-up
+   ========================================================================== */
+/* === Free Kitchen Giveaway Popup === */
+.kitchen-popup {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 4vh 2rem;
+}
+
+.kitchen-popup .popup-inner {
+  background: #fff;
+  padding: 2rem 1.5rem 1.25rem;
+  max-width: 440px;
+  width: 100%;
+  max-height: 90vh;
+  border-radius: 14px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.kitchen-popup h1 {
+  margin: 0;
+  font-size: 35px;
+  color: #35312E;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.kitchen-popup h2 {
+  margin: 0.2rem 0 0.75rem;
+  font-size: 18px;
+  color: #35312E;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.kitchen-popup h3 {
+  margin: 0.2rem 0 0.75rem;
+  font-size: 17px;
+  color: #35312E;
+  font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.027em;
+  line-height: 1.1;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+}
+
+.kitchen-popup p {
+  font-size: 17px;
+  color: #333;
+}
+
+.kitchen-popup p.popup-subhead {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 0.25rem;
+  margin-bottom: 1.25rem;
+  color: #AF5A3C;
+}
+
+.kitchen-popup ul {
+  font-size: 17px;
+  text-align: left;
+  padding-left: 5.5rem;
+  margin-top: 1rem;
+  color: #444;
+  font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.027em;
+}
+
+.kitchen-popup .popup-close {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #35312E;
+}
+
+/* === GHL Form Style Overrides === */
+.ghl-form-wrapper {
+  margin-top: 0rem;
+  margin-bottom: -160px; /* collapse bottom white space */
+}
+.ghl-form-wrapper iframe {
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* === Mobile Responsive === */
+@media screen and (max-width: 749px) {
+  .kitchen-popup .popup-inner {
+    width: 90vw;
+    max-height: 95vh;
+    padding: 2rem 1rem 1rem;
+  }
+
+  .kitchen-popup h1 {
+    font-size: 26px;
+    padding-bottom: 5px;
+  }
+
+  .kitchen-popup h2 {
+    font-size: 14px;
+  }
+
+  .kitchen-popup h3 {
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: -0.027em;
+    font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .kitchen-popup p.popup-subhead {
+    font-size: 14px;
+  }
+
+  .kitchen-popup ul {
+    font-size: 15px;
+    padding-left: 3.5rem;
+    font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.027em;
+  }
+}
+
+/* ==========================================================================
+   📢 Announcement Bar (Utility Bar) Styling
+   ========================================================================== */
+.utility-bar .announcement-bar__message span {
+  font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.026em;
+}
+
+.utility-bar .announcement-bar__message span strong {
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   📝 HOME PAGE Image With Text Body Copy Styling
+   ========================================================================== */
+.section-template--17913386598478__image_with_text_cF3xCM-padding 
+  .image-with-text__text.rte.body {
+  font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 22px !important;
+  font-weight: 100 !important;
+  letter-spacing: -0.026em !important;
+  color: #35312E !important;
+  line-height: 1.6 !important;
+}
+
+/* === Custom Background for Section: Keith & Blake Intro === */
+.section-template--17913386598478__image_with_text_cF3xCM-padding {
+  background-color: #FCFAF6;
+}
+
+/* === Center image horizontally in Image With Text section === */
+.section-template--17913386598478__image_with_text_cF3xCM-padding .image-with-text__media img {
+  object-position: center top !important;
+}
+/* MOBILE RESPONSIVE Settings */
+
+@media screen and (max-width: 749px) {
+  /* Enforce 5:3 aspect ratio */
+  .section-template--17913386598478__image_with_text_cF3xCM-padding .image-with-text__media {
+    position: relative;
+    padding-bottom: 60%; /* 5:3 aspect ratio */
+    height: 0;
+    overflow: hidden;
+  }
+
+  /* Anchor image to top and fill */
+  .section-template--17913386598478__image_with_text_cF3xCM-padding .image-with-text__media img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top !important;
+  }
+
+  /* Mobile-specific font overrides */
+  .section-template--17913386598478__image_with_text_cF3xCM-padding 
+  .image-with-text__text.rte.body {
+    font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 18px !important;
+    font-weight: 200 !important;
+    letter-spacing: -0.015em !important;
+    line-height: 1.5 !important;
+    color: #35312E !important;
+  }
+}
+
+/* ==========================================================================
+   📦 Collection Page Layout
+   ========================================================================== */
+.category-desription-separator,
+.separator {
+    margin: unset;
+}
+
+.collection-breadcrumbs-container {
+    width: 80%;
+    margin: auto;
+}
+
+.main-content-container-productlist {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-around;
+}
+
+.left-content-container-layerednav {
+    width: 30%;
+}
+
+.right-content-container-productlist {
+    width: 66%;
+}
+
+.color-variant-ul {
+    padding: unset;
+}
+
+.color-variant-ul li {
+    display: inline-block;
+}
+
+.product-price-conatiner span {
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 55px;
+    float: right;
+    clear: right;
+}
+
+.main-content-product-container {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.individual-product-container {
+    width: 240px;
+    padding: 5px;
+}
+
+.load-more_wrap {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.load-more_wrap img {
+    max-width: 25px;
+}
+
+.product-count-and-sorting-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.collection-filter-container hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.collection-filter-form li::marker {
+    content: '';
+}
+
+.collection-filter-form ul {
+    padding: unset;
+}
+
+.collection-product-display-image {
+    width: 100%;
+}
+
+
+/* ==========================================================================
+   🧪 Progress Bar Styling
+   ========================================================================== */
+progress[value] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    width: 100%;
+    height: 1.25rem;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.5);
+    position: relative;
+    margin: 0 0 1.5em;
+}
+
+progress[value]::-webkit-progress-bar {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+progress[value]::-webkit-progress-value {
+    position: relative;
+    border-radius: 10px;
+    background-color: #068c7b;
+}
+
+progress[value]::-moz-progress-bar {
+    background-color: #068c7b;
+    border-radius: 10px;
+}
+
+
+/* ==========================================================================
+   📣 Reserve Counter Banner
+   ========================================================================== */
+.item_reserve_text {
+    background: #068c7b;
+    color: #fff;
+    text-align: center;
+}
+
+span#reserve_counter {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+
+
+/* ==========================================================================
+   🧭 Breadcrumbs (Updated 01/01/2025)
+   ========================================================================== */
+.breadcrumbs .breadcrumbs__item:last-child {
+    color: #AF5A3C;
+}
+
+
+/* ==========================================================================
+   ✍️ Typography Override
+   ========================================================================== */
+.banner__text p {
+    font-family: "ITC Cheltenham", serif !important;
+}
+
+
+/* ==========================================================================
+   🎨 Filter CSS
+   ========================================================================== */
+
+
+/* 1. Facet Checkbox Label Styles */
+.facets__label.facet-checkbox {
+    padding-right: 1rem;
+}
+
+.facets__label.facet-checkbox .icon-checkmark {
+    left: inherit;
+    top: inherit;
+    color: rgba(var(--color-button), 1);
+}
+
+
+
+
+/* 2. Facets Disclosure (Desktop) */
+
+.facets-vertical .facets__form-vertical#FacetFiltersForm .facets__disclosure-vertical {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 8px 12px 4px 12px;
+    font-size: 15px;
+    border: 1px solid #5c707e24;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.31);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.31);
+    background-color: #F5F3EB; /* ✅ Add this line */
+}
+
+.facets-vertical .facets__form-vertical#FacetFiltersForm summary.facets__summary.caption-large.focus-offset {
+    padding: 4px 0 10px 34px;
+}
+
+/* 3. Filter Group Header Styling (Icon + Font) */
+.facets-vertical .facets__form-vertical#FacetFiltersForm summary.facets__summary {
+  background: none;
+  font-size: 18px;
+  font-family: "ITC Cheltenham", serif;
+  line-height: 20px;
+}
+
+/* 4. Icons for Specific Filter Groups */
+.facets-vertical .facets__form-vertical#FacetFiltersForm summary.facets__summary.categories {
+  background: url(https://cdn.shopify.com/s/files/1/0628/5167/8286/files/elements-1-png.png?v=1736514633) no-repeat -338px -108px / 512px 512px;
+}
+
+.facets-vertical .facets__form-vertical#FacetFiltersForm summary.facets__summary.color {
+  background: url(https://cdn.shopify.com/s/files/1/0628/5167/8286/files/elements-1-png.png?v=1736514633) no-repeat 0 -283px / 512px 512px;
+}
+
+.facets-vertical .facets__form-vertical#FacetFiltersForm summary.facets__summary.door-style {
+  background: url(https://cdn.shopify.com/s/files/1/0628/5167/8286/files/elements-1-png.png?v=1736514633) no-repeat -338px -208px / 512px 512px;
+}
+
+.facets-vertical .facets__form-vertical#FacetFiltersForm summary.facets__summary.dimension {
+  background: url(https://cdn.shopify.com/s/files/1/0628/5167/8286/files/elements-1-png.png?v=1736514633) no-repeat 0 -352px / 512px 512px;
+}
+
+.facets-vertical .facets__form-vertical#FacetFiltersForm summary.facets__summary.availability,
+.facets-vertical .facets__form-vertical#FacetFiltersForm summary.facets__summary.features {
+  background: url(https://cdn.shopify.com/s/files/1/0628/5167/8286/files/elements-1-png.png?v=1736514633) no-repeat -338px -284px / 512px 512px;
+}
+
+.facets-vertical .facets__form-vertical#FacetFiltersForm summary.facets__summary.finishes {
+  background: url(https://cdn.shopify.com/s/files/1/0628/5167/8286/files/icons8-paint-brush-50.png?v=1736589675) no-repeat 0 center / 25px 25px;
+}
+
+.facets-vertical .facets__form-vertical#FacetFiltersForm summary.facets__summary.shade\/tone {
+  background: url(https://cdn.shopify.com/s/files/1/0628/5167/8286/files/icons8-contrast-25.png?v=1736590322) no-repeat -2px center / 25px 25px;
+}
+
+.facets-vertical .facets__form-vertical#FacetFiltersForm summary.facets__summary.cabinet-style {
+  background: url(https://cdn.shopify.com/s/files/1/0628/5167/8286/files/elements-1-png.png?v=1736514633) no-repeat 0 -212px / 512px 512px;
+}
+
+.facets-vertical .facets__form-vertical#FacetFiltersForm summary.facets__summary.construction-type {
+  background: url(https://cdn.shopify.com/s/files/1/0628/5167/8286/files/elements-1-png.png?v=1736514633) no-repeat 0 -352px / 512px 512px;
+}
+
+.facets-vertical .facets__form-vertical#FacetFiltersForm summary.facets__summary.best-seller {
+  background: url(https://cdn.shopify.com/s/files/1/0628/5167/8286/files/elements-1-png.png?v=1736514633) no-repeat -338px -284px / 512px 512px;
+}
+
+
+
+/* 5. Color Facet Orange Highlight Ring */
+.facets__visual-display-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: visible;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.facets__visual-display-wrapper .visual-display__image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center center !important;
+}
+
+.facets__label.visual-display-parent.active .facets__visual-display-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100% - 16px);   /* Tighter */
+  height: calc(100% - 16px);
+  transform: translate(-50%, -50%);
+  border: 4px solid #AF5A3C;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+/* 6. 🔴/🟢 Toggle Filter Group Visibility 🖥️📱 (BLOCK=show & NONE=hide) */
+
+
+/* BLOCK = Show 'Color' on 🖥️📱 */
+  .facets__disclosure-vertical:has(summary.facets__summary.color),
+    [id^="Details-Mobile-1-"][id$="__product-grid"] {
+    display: block; /* ← none/block toggle */
+  }
+
+  /* BLOCK = Show 'Cabinet Style' 🖥️📱 */  
+  .facets__disclosure-vertical:has(summary.facets__summary.cabinet-style),
+    [id^="Details-Mobile-2-"][id$="__product-grid"] {
+    display: none; /* ← none/block toggle */
+  }
+  
+  /* BLOCK = Show 'Construction Type' on 🖥️📱 */
+  .facets__disclosure-vertical:has(summary.facets__summary.construction-type),
+    [id^="Details-Mobile-3-"][id$="__product-grid"] {
+    display: none; /* ← none/block toggle */
+  }
+
+  /* BLOCK = Show 'Finishes' 🖥️📱 */
+  .facets__disclosure-vertical:has(summary.facets__summary.finishes),
+    [id^="Details-Mobile-4-"][id$="__product-grid"] {
+    display: none; /* left */
+  }
+
+  /* BLOCK = Show 'Features' 🖥️📱 */  
+  .facets__disclosure-vertical:has(summary.facets__summary.features),
+    [id^="Details-Mobile-5-"][id$="__product-grid"] {
+    display: none; /* ← none/block toggle */
+  }
+
+  /* BLOCK = Show 'Best Seller' 🖥️📱 */  
+  .facets__disclosure-vertical:has(summary.facets__summary.best-seller),
+    [id^="Details-Mobile-6-"][id$="__product-grid"] {
+    display: none; /* ← none/block toggle */
+  }
+
+/* ==========================================================================
+   🛠️ PRODUCT PAGE Default Accordion: Materials & Specifications – No Wrapping Fix
+   ========================================================================== */
+/* === Accordion: Prevent Wrapping in Materials & Specifications === */
+/* 2025-06-26 — Only affects the Materials & Specifications accordion block */
+#ProductAccordion-template--17925013930062__main .metafield-multi_line_text_field {
+  white-space: pre-wrap;
+  display: block;
+  overflow-wrap: normal;
+  word-break: normal;
+  overflow-x: auto;
+  font-family: inherit;
+}

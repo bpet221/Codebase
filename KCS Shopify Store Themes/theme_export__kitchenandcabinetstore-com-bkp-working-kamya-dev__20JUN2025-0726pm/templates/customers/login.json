@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-login",
+      "blocks": {
+        "text_qQMg4M": {
+          "type": "text",
+          "settings": {
+            "text": "<p>You can ask to a representative to Join to our Jockey Loyalty Customer Program and upgrade your account to enjoy discounted prices on many of our products.<\/p><p>If you've purchased from us before, please login with your email address and password.<\/p><p>Enjoy your shopping!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_qQMg4M"
+      ],
+      "settings": {
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

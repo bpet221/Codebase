@@ -1,0 +1,64 @@
+{%- style -%}
+  .product-tabs__section li{
+    display: none;
+  }
+main#MainContent:has(.shopify-section.product-description) .product-tabs__section li#product-description-btn{display: block;}
+main#MainContent:has(.shopify-section.product-specifications) .product-tabs__section li#product-specifications-btn{display: block;}  
+main#MainContent:has(.shopify-section #AirReviews-BlockWrapper) .product-tabs__section li#product-AirReviews-btn{display: block;}  
+{%- endstyle -%}  
+ <div class="product-tabs__section  color-{{ section.settings.color_scheme }} gradient">
+   <div class="page-width">
+     <ul class="product-tabs--items">
+        <li class="product-tabs--list product-tabs--active" id="product-description-btn"><a href="#section_product-description-block"><span class="product_desc">Product Description</span></a></li>
+        <li class="product-tabs--list" id="product-specifications-btn"><a href="#section_product-specifications"><span class="product_specification">Specification</span></a></li>
+        <li class="product-tabs--list" id="product-AirReviews-btn"><a href="#AirReviews-BlockWrapper"><span class="product_reviews">Reviews</span><span class="product_reviews--count">54</span></a></li>
+     </ul>     
+     <div class="product_short_details">
+       <div class="product--img">
+         <img src="{{ product.featured_image | img_url: '200x200' }}" alt="{{product.featured_image.alt}}" />
+       </div>
+       <div class="product--content">
+        <h4>{{ product.title }}</h4>
+        {% render 'price' %}
+       </div>
+     </div>
+     <div class="button-group">
+      <form action="/cart" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="productID" class="order--product-ID" value="{{ product.variants.first.id }}">
+        <button type="submit" class="button button--primary order--product">
+          <svg aria-hidden="true" focusable="false" class="button-icon">
+           <use href="#cart-icon"></use>
+          </svg>
+          Order Now 
+          <svg aria-hidden="true" focusable="false" class="icon icon-cart-arrow">
+            <use href="#cart-link-arrow-icon"></use>
+          </svg>
+       </button>
+      </form>
+     </div>
+   </div>
+  </div>
+
+ 
+
+{% schema %}
+  {
+    "name": "PDP Sticky Menu",
+    "class": "sticky_pdp_menu",
+    "settings": [
+     {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "t:sections.all.colors.label",
+        "default": "background-1"
+      }
+    ],
+    "presets": [ {
+      "name": "PDP Sticky Menu"
+    }
+    ],
+    "enabled_on": {
+      "templates": ["product"]
+    }
+  }
+{% endschema %}

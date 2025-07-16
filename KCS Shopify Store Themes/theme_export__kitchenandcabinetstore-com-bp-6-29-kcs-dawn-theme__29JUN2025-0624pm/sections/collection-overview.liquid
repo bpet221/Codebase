@@ -1,0 +1,133 @@
+<!-- /sections/collection-overview.liquid -->
+{{ 'collection-overview.css' | asset_url | stylesheet_tag }}
+
+<section class="collection-overview page-width">
+  <div class="collection-overview__content">
+
+    {%- comment -%} === Title === {%- endcomment -%}
+    <h1 class="collection-overview__title h1">
+      {{ collection.title }}
+    </h1>
+
+    {%- comment -%} === Color Label === {%- endcomment -%}
+    {% if collection.metafields.custom.color %}
+      <p class="collection-overview__color">
+        <strong>Color:</strong> {{ collection.metafields.custom.color.title }}
+      </p>
+    {% endif %}
+
+    {%- comment -%} === Description === {%- endcomment -%}
+    {% if collection.metafields.custom.description %}
+      <div class="collection-overview__desc rte">
+        {{ collection.metafields.custom.description | metafield_tag }}
+      </div>
+    {% endif %}
+
+    {%- comment -%} === Price Section === {%- endcomment -%}
+    {% if collection.metafields.custom.sale_price %}
+      <p class="collection-overview__price">
+        {% if collection.metafields.custom.original_price %}
+          <s>{{ collection.metafields.custom.original_price | money }}</s>
+        {% endif %}
+        <span class="on-sale">{{ collection.metafields.custom.sale_price | money }}</span>
+      </p>
+    {% endif %}
+
+    {%- comment -%} === Sale Badge === {%- endcomment -%}
+    {% if collection.metafields.custom.sale_badge %}
+      <span class="badge">{{ collection.metafields.custom.sale_badge }}</span>
+    {% endif %}
+
+    {%- comment -%} === Sample Door Block === {%- endcomment -%}
+    {% if collection.metafields.custom.sample_image %}
+      <div class="sample-door">
+        <img 
+          src="{{ collection.metafields.custom.sample_image | image_url: width: 300 }}"
+          alt="{{ collection.metafields.custom.sample_image_alt | default: collection.title | append: ' Sample Door' }}" />
+        <h3>{{ collection.title }} Sample Door</h3>
+        {% if collection.metafields.custom.sample_price %}
+          <p>{{ collection.metafields.custom.sample_price | money }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+  </div>
+
+  {%- comment -%} === CABINET DETAILS & SPECS ACCORDION === {%- endcomment -%}
+  <div class="accordion specs-accordion">
+    <details>
+      <summary><h3>CABINET DETAILS &amp; SPECS</h3></summary>
+      <div class="specs-table">
+        <table>
+          <tbody>
+            {% assign specs = 
+              "cabinet_line,face_frame,box_construction,shelves,doors,drawer_fronts,drawer_glides,drawer_boxes,door_hinges,interior,exterior_sides,corner_brackets,assembly" | split: "," %}
+            
+            {% for key in specs %}
+              {% assign label = key 
+                | replace: "_", " " 
+                | replace: "cabinet line", "Cabinet Line"
+                | replace: "face frame", "Face Frame"
+                | replace: "box construction", "Box Construction"
+                | replace: "shelves", "Shelves"
+                | replace: "doors", "Doors"
+                | replace: "drawer fronts", "Drawer Fronts"
+                | replace: "drawer glides", "Drawer Glides"
+                | replace: "drawer boxes", "Drawer Boxes"
+                | replace: "door hinges", "Door Hinges"
+                | replace: "interior", "Interior"
+                | replace: "exterior sides", "Exterior Sides"
+                | replace: "corner brackets", "Corner Brackets"
+                | replace: "assembly", "Assembly" %}
+              
+              {% assign metafield_key = "specs_" | append: key %}
+              {% assign value = collection.metafields.custom[metafield_key] %}
+              {% if value %}
+                <tr>
+                  <td><strong>{{ label }}</strong></td>
+                  <td>{{ value | metafield_tag }}</td>
+                </tr>
+              {% endif %}
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </div>
+
+  {%- comment -%} === SHIPPING ACCORDION === {%- endcomment -%}
+  {% if collection.metafields.custom.shipping_lead_time_info %}
+    <div class="accordion shipping-accordion">
+      <details>
+        <summary><h3>SHIPPING</h3></summary>
+        <div class="shipping-content rte">
+          {{ collection.metafields.custom.shipping_lead_time_info | metafield_tag }}
+          <p style="margin-top: 1rem;">
+            <a href="/pages/faq#ShippingReturns">See full shipping & return policies</a>
+          </p>
+        </div>
+      </details>
+    </div>
+  {% endif %}
+
+  {%- comment -%} === HOW TO MEASURE VIDEO BLOCK === {%- endcomment -%}
+  {% if collection.metafields.custom.how_to_measure_for_a_kitchen_video_url %}
+    <div class="how-to-measure-block">
+      <h3>
+        <img src="{{ 'play-icon.svg' | asset_url }}" alt="play icon" width="20" height="20" style="vertical-align: middle; margin-right: 8px;">
+        HOW TO MEASURE YOUR KITCHEN
+      </h3>
+      <div class="how-to-measure-video">
+        <video
+          width="100%"
+          height="auto"
+          controls
+          preload="metadata"
+          style="max-width: 720px; border-radius: 4px;">
+          <source src="{{ collection.metafields.custom.how_to_measure_for_a_kitchen_video_url }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  {% endif %}
+</section>

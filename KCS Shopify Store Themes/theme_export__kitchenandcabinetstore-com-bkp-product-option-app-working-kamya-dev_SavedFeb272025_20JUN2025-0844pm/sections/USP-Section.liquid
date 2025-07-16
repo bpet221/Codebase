@@ -1,0 +1,141 @@
+<div class="usp-section">
+  <div class="page-width">
+    <h2>{{ section.settings.usp_heading }}</h2>
+    <div class="usp-container">
+      <div class="usp-item">
+        {% if section.settings.usp_1_icon %}
+          <img src="{{ section.settings.usp_1_icon | img_url: '100x100' }}" alt="{{ section.settings.usp_1_title }}" class="usp-icon">
+        {% endif %}
+        <div class="usp-content">
+          <h3>{{ section.settings.usp_1_title }}</h3>
+          <p>{{ section.settings.usp_1_text }}</p>
+        </div>
+      </div>
+      <div class="usp-item">
+        {% if section.settings.usp_2_icon %}
+          <img src="{{ section.settings.usp_2_icon | img_url: '100x100' }}" alt="{{ section.settings.usp_2_title }}" class="usp-icon">
+        {% endif %}
+        <div class="usp-content">
+          <h3>{{ section.settings.usp_2_title }}</h3>
+          <p>{{ section.settings.usp_2_text }}</p>
+        </div>
+      </div>
+      <div class="usp-item">
+        {% if section.settings.usp_3_icon %}
+          <img src="{{ section.settings.usp_3_icon | img_url: '100x100' }}" alt="{{ section.settings.usp_3_title }}" class="usp-icon">
+        {% endif %}
+        <div class="usp-content">
+          <h3>{{ section.settings.usp_3_title }}</h3>
+          <p>{{ section.settings.usp_3_text }}</p>
+        </div>
+      </div>
+      <div class="usp-item">
+        {% if section.settings.usp_4_icon %}
+          <img src="{{ section.settings.usp_4_icon | img_url: '100x100' }}" alt="{{ section.settings.usp_4_title }}" class="usp-icon">
+        {% endif %}
+        <div class="usp-content">
+          <h3>{{ section.settings.usp_4_title }}</h3>
+          <p>{{ section.settings.usp_4_text }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "USP Section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Unique Selling Propositions"
+    },
+    {
+      "type": "text",
+      "id": "usp_heading",
+      "label": "Heading",
+      "default": "Why Choose Us"
+    },
+    {
+      "type": "paragraph",
+      "content": "Add your unique selling propositions below."
+    },
+    {
+      "type": "image_picker",
+      "id": "usp_1_icon",
+      "label": "USP 1 Icon"
+    },
+    {
+      "type": "text",
+      "id": "usp_1_title",
+      "label": "USP 1 Title",
+      "default": "Free Shipping"
+    },
+    {
+      "type": "textarea",
+      "id": "usp_1_text",
+      "label": "USP 1 Text",
+      "default": "Enjoy free shipping on all orders."
+    },
+    {
+      "type": "image_picker",
+      "id": "usp_2_icon",
+      "label": "USP 2 Icon"
+    },
+    {
+      "type": "text",
+      "id": "usp_2_title",
+      "label": "USP 2 Title",
+      "default": "Secure Payment"
+    },
+    {
+      "type": "textarea",
+      "id": "usp_2_text",
+      "label": "USP 2 Text",
+      "default": "Your payments are secure with us."
+    },
+    {
+      "type": "image_picker",
+      "id": "usp_3_icon",
+      "label": "USP 3 Icon"
+    },
+    {
+      "type": "text",
+      "id": "usp_3_title",
+      "label": "USP 3 Title",
+      "default": "Quality Assurance"
+    },
+    {
+      "type": "textarea",
+      "id": "usp_3_text",
+      "label": "USP 3 Text",
+      "default": "We provide the best quality products."
+    },
+    {
+      "type": "image_picker",
+      "id": "usp_4_icon",
+      "label": "USP 4 Icon"
+    },
+    {
+      "type": "text",
+      "id": "usp_4_title",
+      "label": "USP 4 Title",
+      "default": "24/7 Support"
+    },
+    {
+      "type": "textarea",
+      "id": "usp_4_text",
+      "label": "USP 4 Text",
+      "default": "We offer round-the-clock support."
+    }
+  ],
+  "presets": [
+    {
+      "name": "USP Section",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}
+

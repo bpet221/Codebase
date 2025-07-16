@@ -1,0 +1,159 @@
+  <div class="product-description-block" id="section_product-specifications">
+    <div class="page-width">
+      {% for block in section.blocks %}
+        <div class="block__item">
+          {% if block.settings.desc_image %}
+             <div class="block__item--img">
+              <img src="{{ block.settings.desc_image | img_url: '500x500' }}" alt="Product Image">
+            </div>
+          {% endif %}
+          <div class="block__item--content">
+            <h2>{{ block.settings.block_title }}</h2>
+            <div class="content-discription">
+              <p>{{ block.settings.block_desc }}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+</div>
+
+{% if settings.show_discount_popup %}
+  
+  {% comment %}
+    {% capture collection_handles %}
+      {% for collection in product.collections %}
+        {{ collection.handle }}{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    {% endcapture %}
+  {% endcomment %}
+
+  
+  {% comment %}
+{% assign disocuntedProduct = settings.discounted_product %}
+  {% if disocuntedProduct and disocuntedProduct != product.handle %}   
+    <div id="modal-discount" class="custom-modal  show">
+      <div class="custom-modal__inner">
+        <div class="custom-modal__header">
+          <span class="custom-modal__close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" class="icon icon-close" viewBox="0 0 34 34" fill="none">
+              <path d="M10.3623 10.3638L23.0902 23.0917" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+              <path d="M10.3623 23.0918L23.0902 10.3639" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+            </svg>
+          </span>
+          <div class="modal-product__info">
+             {% if disocuntedProduct.featured_media %}
+                <div class="modal-product__info--image">         
+                  <img src="{{ disocuntedProduct.featured_media | image_url}}" alt="{{ disocuntedProduct.title }}" width="{{ disocuntedProduct.width }}" height="{{ disocuntedProduct.height }}"/>
+                </div>
+               {% endif %}
+            <h5>{{ disocuntedProduct.title }}</h5>
+          </div>
+        </div>
+        <div class="custom-modal__body">
+          <div class="given-discound">
+            <h3>{{ settings.product_prepend_text }} "<strong>{{ disocuntedProduct.title }}</strong>", {{ settings.product_append_text }}</h3>
+            {% if settings.discount_title %}
+              <h2>{{ settings.discount_title }}</h2>
+              {% endif %}
+              {% if settings.discount_button %}
+                  <div class="button-group">
+                    <a href="{{ disocuntedProduct.url }}"><button class="button button--primary button--full-width">{{ settings.discount_button }}</button></a>
+                  </div>
+              {% endif %}
+            <p>{{ settings.discount_text }}</p>
+          </div>
+        </div>
+      {% if settings.show_timer %}
+        <div class="custom-modal__footer">
+          <div class="hurry-up">
+            {% if settings.purchase_timer_text %}
+            <h4>{{ settings.purchase_timer_text }}</h4>
+              {% endif %}
+            <div class="timer-counter">
+              <span id="timer-counter">{{ settings.purchase_timer }}: <span>59</span></span>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+      {% endif %}
+  
+  {% endcomment %}
+{% endif %}
+{% schema %}
+  {
+  "name": "Product Description Block",
+  "settings": [],
+  "class": "section product-description",
+  "blocks": [
+    {
+      "type": "product_description_block",
+      "name": "Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "block_title",
+          "label": "Block Title",
+          "default": "Create a clear and concise headline that summarizes one of the product's benefits"
+        },
+        {
+          "type": "image_picker",
+          "id": "desc_image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "image_width",
+          "label": "Image Width",
+          "min": 0,
+          "max": 500,
+          "step": 10,
+          "default": 300,
+          "unit": "px"
+       },
+       {
+          "type": "range",
+          "id": "image_border_radius",
+          "label": "Image Border Radius",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "default": 0,
+          "unit": "px"    
+      },
+      {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+      },
+      {
+         "type" : "textarea",
+         "id" : "block_desc",
+         "label" : "Description",
+         "default" : "Follow it with a compelling subtext that provide additional details and hightlights the product's uniquie features."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Description Block"
+    }
+  ]
+}
+{% endschema %}
+
+<script>
+  // let reserveCounter_popup = '{{ settings.timer }}';
+  // console.log(reserveCounter_popup);
+  // countdown( "timer-counter", reserveCounter_popup, 0 );
+
+  setTimeout(function() {
+      if(document.getElementById('timer-counter')){
+          let reserveCounter_popup = '{{ settings.timer }}';
+          countdown( "timer-counter", reserveCounter_popup, 0 );
+        }
+      }, 500);
+</script>

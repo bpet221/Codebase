@@ -1,0 +1,198 @@
+<div class="product-comparison-table">
+  <div class="page-width">
+    <h2 class="title inline-richtext h1 scroll-trigger animate--slide-in" style="margin-top: 0px;">{{ section.settings.section_title }}</h2>
+  
+    <div class="comparison-container">
+      {% assign product1 = section.settings.product_1 %}
+      {% assign product2 = section.settings.product_2 %}
+      {% assign product3 = section.settings.product_3 %}
+  
+      <div class="comparison-column">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>
+                <img src="{{ product1.featured_image | img_url: 'master' }}" alt="{{ product1.title }}" class="product-image">
+                <p class="product-title">{{ product1.title }}</p>
+              </th>
+              <th style="background: #E7E2CE; border-top: 1px dashed #35312e">
+                <img src="{{ product2.featured_image | img_url: 'master' }}" alt="{{ product2.title }}" class="product-image">
+                <p class="product-title">{{ product2.title }}</p>
+              </th>
+              <th>
+                <img src="{{ product3.featured_image | img_url: 'master' }}" alt="{{ product3.title }}" class="product-image">
+                <p class="product-title">{{ product3.title }}</p>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for block in section.blocks %}
+              <tr>
+                <td>{{ block.settings.title }}</td>
+                <td>{{ block.settings.product1_detail }}</td>
+                <td style="background: #E7E2CE; border-bottom: 1px dashed #35312e">{{ block.settings.product2_detail }}</td>
+                <td>{{ block.settings.product3_detail }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .product-comparison-table {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    background-color: #f6f3eb;
+  }
+  .product-comparison-table .comparison-column {
+      width: 70%;
+      margin: auto;
+  }
+  .product-comparison-table table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      border: 0;
+      box-shadow: none;
+  }
+  .product-comparison-table table th {
+      padding: 15px;
+      text-align: center;
+      border: 0;
+      border-right: 1px dashed #35312e;
+      border-bottom: 1px dashed #35312e;
+  }
+  .product-comparison-table table td {
+      padding: 15px;
+      text-align: center;
+      border: 0;
+      border-right: 1px dashed #35312e;
+      border-top: 1px dashed #35312e;
+  }
+  .product-comparison-table table th {
+    font-weight: bold;
+  }
+  .product-comparison-table table td {
+    font-size: 16px;
+    color: #35312e;
+    padding: 16px;
+    line-height: 19px;
+  }
+  /* .product-comparison-table table td img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 8px;
+  } */
+  .product-comparison-table .comparison-container img.product-image {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    object-position: bottom;
+  }
+  .product-comparison-table .comparison-container .product-title {
+    text-transform: capitalize;
+    font-family: ITC Cheltenham, serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 22px;
+    color: #35312e;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+  @media (max-width: 1100px) {
+    .product-comparison-table .comparison-column {
+        width: 90%;
+    }
+  }
+  @media (max-width: 500px) {
+    .product-comparison-table .comparison-column {
+        width: 95%;
+    }
+    .product-comparison-table table td {
+        padding: 16px 10px;
+    }
+    .product-comparison-table .comparison-container {
+        overflow: auto;
+    }
+    .product-comparison-table .comparison-column {
+        width: auto;
+        max-width: none;
+        white-space: nowrap;
+    }
+    .product-comparison-table table {
+        width: auto;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Product Comparison Table",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Section Title",
+      "id": "section_title",
+      "default": "Compare Our Products"
+    },
+    {
+      "type": "product",
+      "label": "Select Product 1",
+      "id": "product_1"
+    },
+    {
+      "type": "product",
+      "label": "Select Product 2",
+      "id": "product_2"
+    },
+    {
+      "type": "product",
+      "label": "Select Product 3",
+      "id": "product_3"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "comparison_row",
+      "name": "Comparison Row",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Row Title",
+          "id": "title",
+          "default": "Specification"
+        },
+        {
+          "type": "textarea",
+          "label": "Product 1 Detail",
+          "id": "product1_detail",
+          "default": "Product 1 Specification"
+        },
+        {
+          "type": "textarea",
+          "label": "Product 2 Detail",
+          "id": "product2_detail",
+          "default": "Product 2 Specification"
+        },
+        {
+          "type": "textarea",
+          "label": "Product 3 Detail",
+          "id": "product3_detail",
+          "default": "Product 3 Specification"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Comparison Table"
+    }
+  ]
+}
+{% endschema %}

@@ -13,15 +13,21 @@ url = sys.argv[1]
 
 # === Chrome Setup ===
 options = Options()
+options.add_argument("--headless=new")                                # ← run headless!
 options.add_argument("--disable-blink-features=AutomationControlled")
 options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option("useAutomationExtension", False)
 options.add_argument("--window-size=1920,1080")
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
-options.add_argument("user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36")
+options.add_argument(
+    "user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 13_4) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+)
+# give each run its own temp profile to avoid “in use” errors
 options.add_argument(f"--user-data-dir={tempfile.mkdtemp()}")
 
+# launch & stealth‑patch
 driver = webdriver.Chrome(options=options)
 driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
     "source": """
@@ -40,7 +46,10 @@ try:
         print("❌ Less than 4 listings found.")
         sys.exit(1)
 
-    price = tiles[3].find_element(By.CSS_SELECTOR, '[data-testid="srp-tile-price"]').text.strip()
+    price = tiles[3].find_element(
+        By.CSS_SELECTOR,
+        '[data-testid="srp-tile-price"]'
+    ).text.strip()
     print(price)
 
 except Exception as e:

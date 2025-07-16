@@ -1,0 +1,96 @@
+{% comment %}
+  Renders product variant options
+
+  Accepts:
+  - product: {Object} product object.
+  - option: {Object} current product_option object.
+  - block: {Object} block object.
+
+
+  Usage:
+  {% render 'product-variant-options',
+    product: product,
+    option: option,
+    block: block
+  %}
+{% endcomment %}
+{%- liquid
+  assign variants_available_arr = product.variants | map: 'available'
+  assign variants_option1_arr = product.variants | map: 'option1'
+  assign variants_option2_arr = product.variants | map: 'option2'
+  assign variants_option3_arr = product.variants | map: 'option3'
+
+  assign product_form_id = 'product-form-' | append: section.id
+-%}
+
+{%- for value in option.values -%}
+  {%- liquid
+    assign option_disabled = true
+
+    for option1_name in variants_option1_arr
+      case option.position
+        when 1
+          if variants_option1_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+            assign option_disabled = false
+          endif
+        when 2
+          if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+            assign option_disabled = false
+          endif
+        when 3
+          if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == product.selected_or_first_available_variant.option2 and variants_option3_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+            assign option_disabled = false
+          endif
+      endcase
+    endfor
+  -%}
+
+  {%- if block.settings.picker_type == 'button' -%}
+    <input
+      type="radio"
+      id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+      name="{{ option.name }}"
+      value="{{ value | escape }}"
+      form="{{ product_form_id }}"
+      data-value="{{ value | replace: ' ', '-' | replace: '(', '' | replace: ')', '' }}"
+      {% if option.selected_value == value %}
+        checked
+      {% endif %}
+      {% if option_disabled %}
+        class="disabled"
+      {% endif %}
+    >
+    <label class="{{- value -}}" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+      {% comment %}<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <rect x="0.5" y="0.5" width="19" height="19" rx="3.5" fill="white" stroke="currentColor"></rect>
+      </svg>      
+      <svg class="icon icon-checkmark" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <rect x="0.5" y="0.5" width="19" height="19" rx="3.5" fill="currentColor" stroke="currentColor"></rect>
+        <path d="M6 10L8.66667 13L14 7" stroke="white" stroke-width="1.5" stroke-linecap="round"></path>
+      </svg>{% endcomment %}
+      {% if option.name == 'Color' %}
+      {% elsif option.name == 'color' %}
+      {% elsif option.name contains 'color' %}
+      {% elsif option.name contains 'Color' %}
+      {% elsif option.name contains 'colour' %}
+      {% elsif option.name contains 'Colour' %}
+      {% else %}
+        {{- value -}}
+      {% endif %}
+      <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
+    </label>
+  {%- elsif block.settings.picker_type == 'dropdown' -%}
+    <option
+      value="{{ value | escape }}"
+      {% if option.selected_value == value %}
+        selected="selected"
+      {% endif %}
+    >
+      {% if option_disabled -%}
+        {{- 'products.product.value_unavailable' | t: option_value: value -}}
+      {%- else -%}
+        {{- value -}}
+      {%- endif %}
+    </option>
+  {%- endif -%}
+{%- endfor -%}

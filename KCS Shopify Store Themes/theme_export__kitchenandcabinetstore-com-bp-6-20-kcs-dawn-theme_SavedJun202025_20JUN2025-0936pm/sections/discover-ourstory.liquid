@@ -1,0 +1,275 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    {% if section.settings.padding_top > 100 %}
+      padding-top: {{ section.settings.padding_top | divided_by: 2 | round: 0 }}px;      
+    {% else %}
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    {% endif %}
+    {% if section.settings.padding_bottom > 100 %}
+      padding-bottom: {{ section.settings.padding_bottom | divided_by: 2 | round: 0 }}px;      
+    {% else %}
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    {% endif %}
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}">
+  <div class="page-width">
+      <div class="section__title title_align-left">
+          {% if section.settings.subheading != blank or section.settings.heading != blank %}
+          <div class="title-wrapper">
+              {% if section.settings.heading != blank %}
+                <h3 class="section__heading h1">{{ section.settings.heading }}</h3>
+              {% endif %}
+              {% if section.settings.subheading != blank %}
+              <div class="rte">
+                  {{- section.settings.subheading -}}
+              </div>
+              {% endif %}
+          </div>
+          {% endif %}
+          {% if section.settings.button_link != blank and section.settings.button_label != blank %}
+          <a href="{{ section.settings.button_link }}" class="button button--primary">{{ section.settings.button_label }}</a>
+          {% endif %}
+      </div>
+  </div>
+  {% if section.blocks.size > 0 %}
+  <div class="grid-wrapper">
+      <div class="page-width">
+        
+          <div class="grid">
+            {%- for block in section.blocks -%}
+              {% if block.type == 'counter' %}
+                <div class="grid__item grid__item_counter" {{ block.shopify_attributes }}>
+                    <div class="count-wrap">
+                      {% if block.settings.heading_01 != blank or block.settings.value_01 != blank %}
+                        <div class="count-item">
+                          {% if block.settings.heading_01 != blank %}
+                            <h4>{{ block.settings.heading_01 }}</h4>
+                          {% endif %}
+                          {% if block.settings.value_01 != blank %}
+                            <h6>{{ block.settings.value_01 }}</h6>
+                          {% endif %}
+                        </div>
+                      {% endif %}
+                      {% if block.settings.heading_02 != blank or block.settings.value_02 != blank %}
+                        <div class="count-item">
+                          {% if block.settings.heading_02 != blank %}
+                            <h4>{{ block.settings.heading_02 }}</h4>
+                          {% endif %}
+                          {% if block.settings.value_02 != blank %}
+                            <h6>{{ block.settings.value_02 }}</h6>
+                          {% endif %}
+                        </div>
+                      {% endif %}
+                      {% if block.settings.heading_03 != blank or block.settings.value_03 != blank %}
+                        <div class="count-item">
+                          {% if block.settings.heading_03 != blank %}
+                            <h4>{{ block.settings.heading_03 }}</h4>
+                          {% endif %}
+                          {% if block.settings.value_03 != blank %}
+                            <h6>{{ block.settings.value_03 }}</h6>
+                          {% endif %}
+                        </div>
+                      {% endif %}
+  
+                    </div>
+                </div>
+              {% else %}
+                <div class="grid__item imgswrap" {{ block.shopify_attributes }}>
+                    <div
+                      class="image-with-text__media image-with-text__media--{{ section.settings.height }} {% if block.settings.image != blank %} media{% else %} image-with-text__media--placeholder placeholder{% endif %}"
+                      {% if section.settings.height == 'adapt' and block.settings.image != blank %}
+                        style="padding-bottom: {{ 1 | divided_by: block.settings.image.aspect_ratio | times: 100 }}%;"
+                      {% endif %}
+                    >
+                      {%- if block.settings.image != blank -%}
+                          {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+                          {%- capture sizes -%}
+                        (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+                        (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+                      {%- endcapture -%}
+                        {{
+                          block.settings.image
+                          | image_url: width: 1500
+                          | image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority
+                        }}
+                      {%- else -%}
+                        {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                      {%- endif -%}
+                    </div>
+                </div>
+              {% endif %}
+            {% endfor %}            
+          </div>
+      </div>
+  </div>
+  {% endif %}
+</div>
+
+
+
+
+
+{% schema %}
+{
+  "name": "Discover Our Story",
+  "tag": "section",
+  "class": "section section-discover-ourstory",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Heading",
+      "id": "heading",
+      "default": "Discover Our Story"
+    },
+    {
+      "type": "richtext",
+      "label": "Subheading",
+      "id": "subheading"
+    },
+    {
+      "type": "url",
+      "label": "Button Link",
+      "id": "button_link"
+    },
+    {
+      "type": "text",
+      "label": "Button label",
+      "id": "button_label"
+    },
+    {
+      "type": "select",
+      "id": "height",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.image-with-text.settings.height.options__1.label"
+        },
+        {
+          "value": "small",
+          "label": "t:sections.image-with-text.settings.height.options__2.label"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.image-with-text.settings.height.options__3.label"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.image-with-text.settings.height.options__4.label"
+        }
+      ],
+      "default": "adapt",
+      "label": "t:sections.image-with-text.settings.height.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "section_color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "counter",
+      "name": "Counter",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Counter 1"
+        },
+        {
+          "type": "text",
+          "label": "Heading",
+          "id": "heading_01"
+        },
+        {
+          "type": "text",
+          "label": "Value",
+          "id": "value_01"
+        },
+        {
+          "type": "header",
+          "content": "Counter 2"
+        },
+        {
+          "type": "text",
+          "label": "Heading",
+          "id": "heading_02"
+        },
+        {
+          "type": "text",
+          "label": "Value",
+          "id": "value_02"
+        },
+        {
+          "type": "header",
+          "content": "Counter 3"
+        },
+        {
+          "type": "text",
+          "label": "Heading",
+          "id": "heading_03"
+        },
+        {
+          "type": "text",
+          "label": "Value",
+          "id": "value_03"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Image",
+          "id": "image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Discover Our Story"
+    }
+  ]
+}
+{% endschema %}
+
+{% javascript %}
+{% endjavascript %}

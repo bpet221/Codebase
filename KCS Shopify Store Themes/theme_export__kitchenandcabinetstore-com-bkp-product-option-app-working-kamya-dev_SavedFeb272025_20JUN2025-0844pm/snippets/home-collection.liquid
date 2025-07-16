@@ -1,0 +1,157 @@
+{% comment %}
+  Renders a collection card
+
+  Accepts:
+  - card_collection: {Object} Collection Liquid object
+  - media_aspect_ratio: {String} Size of the product image card. Values are "square" and "portrait". Default is "square" (optional)
+  - columns: {Number}
+  - extend_height: {Boolean} Card height extends to available container space. Default: false (optional)
+  - wrapper_class: {String} Wrapper class for card (optional)
+  - placeholder_image: {String} Placeholder image when collection is empty (optional)
+
+  Usage:
+  {% render 'card-collection' %}
+{% endcomment %}
+
+{%- liquid
+  assign ratio = 1
+  if custome_img != blank
+    assign collectionFeaturedImage = custome_img
+  else
+    assign collectionFeaturedImage = card_collection.featured_image
+  endif
+
+  if collectionFeaturedImage and media_aspect_ratio == 'portrait'
+    assign ratio = 0.8
+  elsif collectionFeaturedImage and media_aspect_ratio == 'adapt'
+    assign ratio = collectionFeaturedImage.aspect_ratio
+  endif
+  if ratio == 0 or ratio == null
+    assign ratio = 1
+  endif
+  assign card_style = settings.card_style
+  if wrapper_class == null or wrapper_class == 'none'  and card_color_scheme == blank
+    assign card_color_scheme = settings.collection_card_color_scheme
+    assign card_style = settings.collection_card_style
+  endif
+  if cardcolor_scheme
+    assign card_color_scheme = cardcolor_scheme
+  endif
+-%}
+
+<div class="home-collection {{ contentPosition }} layout-{{ section.settings.column_layout }} card-wrapper animate-arrow {% if wrapper_class and wrapper_class != 'none' %}{{ wrapper_class }}{% else %}collection-card-wrapper{% endif %}">
+  <div
+    class="
+      card
+      {% if collectionFeaturedImage %} card--media{% else %} card--text{% endif %}
+      {% if card_style == 'card' %} color-{{ card_color_scheme }} gradient{% endif %}
+      {% if extend_height %} card--extend-height{% endif %}
+      {% if collectionFeaturedImage == nil and card_style == 'card' %} ratio{% endif %}
+    "
+    style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+  >
+    <div
+      class="card__inner {% if card_style == 'standard' %}color-{{ card_color_scheme }} gradient{% endif %}{% if collectionFeaturedImage or card_style == 'standard' %} ratio{% endif %}"
+      style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+    >
+      {%- if card_collection == blank -%}
+        <div class="card__media">
+          {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+      {%- else -%}
+        {%- if collectionFeaturedImage -%}
+          <div class="card__media">
+            <div class="media media--transparent media--hover-effect">
+              <img
+                srcset="
+                  {%- if collectionFeaturedImage.width >= 165 -%}{{ collectionFeaturedImage | image_url: width: 165 }} 165w,{%- endif -%}
+                  {%- if collectionFeaturedImage.width >= 330 -%}{{ collectionFeaturedImage | image_url: width: 330 }} 330w,{%- endif -%}
+                  {%- if collectionFeaturedImage.width >= 535 -%}{{ collectionFeaturedImage | image_url: width: 535 }} 535w,{%- endif -%}
+                  {%- if collectionFeaturedImage.width >= 750 -%}{{ collectionFeaturedImage | image_url: width: 750 }} 750w,{%- endif -%}
+                  {%- if collectionFeaturedImage.width >= 1000 -%}{{ collectionFeaturedImage | image_url: width: 1000 }} 1000w,{%- endif -%}
+                  {%- if collectionFeaturedImage.width >= 1500 -%}{{ collectionFeaturedImage | image_url: width: 1500 }} 1500w,{%- endif -%}
+                  {%- if collectionFeaturedImage.width >= 3000 -%}{{ collectionFeaturedImage | image_url: width: 3000 }} 3000w,{%- endif -%}
+                  {{ collectionFeaturedImage | image_url }} {{ collectionFeaturedImage.width }}w
+                "
+                src="{{ collectionFeaturedImage | image_url: width: 1500 }}"
+                sizes="
+                  (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: columns }}px,
+                  (min-width: 750px) {% if columns > 1 %}calc((100vw - 10rem) / 2){% else %}calc(100vw - 10rem){% endif %},
+                  calc(100vw - 3rem)
+                "
+                alt=""
+                height="{{ collectionFeaturedImage.height }}"
+                width="{{ collectionFeaturedImage.width }}"
+                loading="lazy"
+                class="motion-reduce"
+              >
+            </div>
+          </div>
+        {% else %}
+          <div class="card__media">
+            {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {%- endif -%}
+      {% endif %}
+      {%- if card_collection == blank -%}
+        <div class="card__content">
+          <div class="card__information">
+            <h3 class="card__heading card__heading--placeholder {{ section.settings.subheading_size }}">
+              <a role="link" aria-disabled="true" class="full-unstyled-link">
+                {{ 'onboarding.collection_title' | t }}
+              </a>
+            </h3>
+          </div>
+        </div>
+      {% else %}
+        <div class="card__content">
+          <div class="card__information">
+            {% if index == 1 %}
+              {% if section.settings.category_sales_badge != blank %}
+                <span class="badge badge-discount">{{ section.settings.category_sales_badge }}</span>
+              {% endif %}
+            {% endif %}
+            <h3 class="card__heading {{ section.settings.subheading_size }}">
+              <a
+                {% if card_collection == blank %}
+                  role="link" aria-disabled="true"
+                {% else %}
+                  href="{{ card_collection.url }}"
+                {% endif %}
+                class="full-unstyled-link"
+              >
+                {%- if custome_title != blank -%}
+                  {{- custome_title | escape -}}
+                {%- elsif card_collection.title != blank -%}
+                  {{- card_collection.title | escape -}}
+                {%- else -%}
+                  {{ 'onboarding.collection_title' | t }}
+                {%- endif -%}
+              </a>
+            </h3>
+
+            {%- if custome_description != blank -%}
+              <p class="card__caption">
+                {{- custome_description -}}
+              </p>
+            {%- elsif card_collection.description != blank and block.settings.show_description -%}
+              <p class="card__caption">
+                {{- card_collection.description | strip_html | truncatewords: 10 -}}
+              </p>
+            {%- endif -%}
+
+            {% if index == 1 %}
+              {% if section.settings.show_button %}
+                <a
+                  href="{{ card_collection.url }}"
+                  style="background:{{ section.settings.button_color }}"
+                  class="button button--primary"
+                  >{% if card_collection.handle == 'all' %}Shop Now{% else %}Shop<span>&nbsp;{{ card_collection.title }}</span>&nbsp;Now{% endif %}</a>
+              {% endif %}
+            {% endif %}
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>

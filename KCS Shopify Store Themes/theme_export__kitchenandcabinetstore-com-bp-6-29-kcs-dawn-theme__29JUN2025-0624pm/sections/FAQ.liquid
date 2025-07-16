@@ -1,0 +1,86 @@
+<section class="shopify-section faq-block">
+  <div class="page-width">
+    <div class="content">
+      <div class="faq-content">
+        <div class="faq-nav">
+          <h4>{{ section.settings.faq_title }}</h4>
+          <div class="faq-nav__links">
+            {% assign categories = section.blocks | where: "type", "faq_category" %}
+            {% for cat in categories %}
+              <a href="#{{ cat.settings.category_title | handleize }}" class="faq-link {% if forloop.first %}active{% endif %}">
+                {{ cat.settings.category_title }}
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="faq-items">
+          <div class="faq-list">
+            {%- for block in section.blocks -%}              
+              {%- if block.type == 'faq_category' -%}
+                <h2 id="{{ block.settings.category_title | handleize }}">{{ block.settings.category_title }}</h2>
+              {%- else %}
+                {% if block.settings.category_id == block.settings.category_id %}
+                  <div class="faq-item">
+                    <h4>{{ block.settings.question }}</h4>
+                    <div class="faq-item-box">
+                      {{ block.settings.answer }}
+                    </div>
+                  </div>
+                {% endif %}
+              {%- endif -%}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "faq_title",
+      "label": "FAQ Title",
+      "default": "FAQ"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_category",
+      "name": "FAQ Category",
+      "settings": [
+        {
+          "type": "text",
+          "id": "category_title",
+          "label": "Category Title"
+        }
+      ]
+    },
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

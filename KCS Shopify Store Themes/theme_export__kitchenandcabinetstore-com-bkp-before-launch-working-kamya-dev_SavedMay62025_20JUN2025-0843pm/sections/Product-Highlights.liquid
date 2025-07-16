@@ -1,0 +1,146 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    {% if section.settings.padding_top > 100 %}
+      padding-top: {{ section.settings.padding_top | divided_by: 2 | round: 0 }}px;      
+    {% else %}
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    {% endif %}
+    {% if section.settings.padding_bottom > 100 %}
+      padding-bottom: {{ section.settings.padding_bottom | divided_by: 2 | round: 0 }}px;      
+    {% else %}
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    {% endif %}
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% if product.metafields.custom.cabinet_product_list.value != blank %}
+<div id="section-{{ section.id }}" class="shopify-section section-product-highlights section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div data-variant-bundle="true" class="flex justify-center bg-bone-100">
+      <h2 class="title inline-richtext h1 scroll-trigger animate--slide-in">{{ section.settings.heading }}</h2>
+    </div>
+     {% for related_product in product.metafields.custom.cabinet_product_list.value limit: section.settings.products_to_show %}
+        <div class="product__accordion accordion quick-add-hidden">
+          <details id="Details-template--17220086267982__main">
+            <summary role="button" aria-expanded="false" aria-controls="ProductAccordion-template--17220086267982__main">
+              <img alt="product image" src="{{ related_product.featured_media | img_url: 'master' }}" loading="lazy"> 
+              <div class="summary__title">
+                <h2 class="h4 accordion__title inline-richtext">{{ related_product.title }}</h2>
+                {% if related_product.selected_or_first_available_variant.sku != blank %}
+                  <p class="product__sku">
+                    {{ related_product.selected_or_first_available_variant.sku }}
+                  </p>
+                {% endif %}
+                {% render 'price', product: related_product, price_class: '', show_compare_at_price: true %}
+                <!-- <p>{{ related_product.acc_text }}</p> -->
+              </div>
+              <svg width="20" height="20" viewBox="0 0 20 20" class="acc_plus_icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_10200_2484)">
+                  <path d="M10 18.3334C14.6024 18.3334 18.3334 14.6025 18.3334 10.0001C18.3334 5.39771 14.6024 1.66675 10 1.66675C5.39765 1.66675 1.66669 5.39771 1.66669 10.0001C1.66669 14.6025 5.39765 18.3334 10 18.3334Z" stroke="#02021D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M10 6.66675V13.3334" stroke="#02021D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M6.66669 10H13.3334" stroke="#02021D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_10200_2484">
+                    <rect width="20" height="20" fill="white"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+              <svg width="20" height="20" viewBox="0 0 20 20" class="acc_minus_icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_10200_2484)">
+                  <path d="M10 18.3334C14.6024 18.3334 18.3334 14.6025 18.3334 10.0001C18.3334 5.39771 14.6024 1.66675 10 1.66675C5.39765 1.66675 1.66669 5.39771 1.66669 10.0001C1.66669 14.6025 5.39765 18.3334 10 18.3334Z" stroke="#02021D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M6.66669 10H13.3334" stroke="#02021D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_10200_2484">
+                    <rect width="20" height="20" fill="white"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+            </summary>
+            {% if related_product.description != blank or related_product.metafields.custom.product_specification != blank or related_product.metafields.custom.product_benefits.value != blank %}
+            <div class="accordion__content rte" id="ProductAccordion-template--17220086267982__main">
+              <div class="flex flex-col gap-6 mg:flex-row">
+                {% if related_product.description != blank %}
+                <div class="flex-1">
+                  <p class="uppercase">Product Details</p>
+                  <div class="accordion-content-details">{{ related_product.description }}</div>
+                </div>
+                {% endif %}
+                {% if related_product.metafields.custom.product_specification != blank %}
+                <div class="flex-1">
+                  <p class="uppercase">Specs</p>
+                  <div class="accordion-content-details">{{ related_product.metafields.custom.product_specification | metafield_tag }}</div>
+                </div>
+                {% endif %}
+                {% if related_product.metafields.custom.product_benefits.value != blank %}
+                <div class="flex-1">
+                  <!-- <p class="uppercase">Benefits</p> -->
+                  <ul class="list-unstyled">
+                   {% for item in related_product.metafields.custom.product_benefits.value -%}
+                      <li class="flex items-center gap-x-3">
+                        {{ item.icon | image_url: width: 40 | image_tag: class:'test'  }}
+                        <div class="icon-details">
+                          <h5>{{ item.title | metafield_text }}</h5>
+                          <p>{{ item.details | metafield_text }}</p>
+                        </div>
+                      </li>
+                    {%- endfor %}
+                  </ul>
+                </div>
+                {% endif %}
+              </div>
+            </div>
+            {% endif %}
+          </details>
+        </div>
+      {% endfor %}
+  </div>
+</div>
+  {% endif %}
+
+{% schema %}
+{
+  "name": "Product Highlights",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What's Included"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Highlights" 
+    }
+  ]
+}
+{% endschema %}

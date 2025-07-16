@@ -1,0 +1,61 @@
+{% if settings.show_benefits %}
+<div class="delivery-content">
+  <ul class="delivery-icon">
+    {% if settings.benefits_title != blank %}
+        <li>
+          {% if settings.show_icon %}
+            <span>
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.9999 12.8333H11.9166C12.9249 12.8333 13.7499 12.0083 13.7499 10.9999V1.83325H5.49994C4.12494 1.83325 2.92411 2.59407 2.30078 3.71241" stroke="#FF6C22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M1.83301 15.5833C1.83301 17.1049 3.06134 18.3333 4.58301 18.3333H5.49967C5.49967 17.3249 6.32467 16.4999 7.33301 16.4999C8.34134 16.4999 9.16634 17.3249 9.16634 18.3333H12.833C12.833 17.3249 13.658 16.4999 14.6663 16.4999C15.6747 16.4999 16.4997 17.3249 16.4997 18.3333H17.4163C18.938 18.3333 20.1663 17.1049 20.1663 15.5833V12.8333H17.4163C16.9122 12.8333 16.4997 12.4208 16.4997 11.9166V9.16659C16.4997 8.66242 16.9122 8.24992 17.4163 8.24992H18.5988L17.0314 5.50909C16.7014 4.94076 16.0964 4.58325 15.4364 4.58325H13.7497V10.9999C13.7497 12.0083 12.9247 12.8333 11.9163 12.8333H10.9997" stroke="#FF6C22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7.33333 20.1667C8.34586 20.1667 9.16667 19.3459 9.16667 18.3333C9.16667 17.3208 8.34586 16.5 7.33333 16.5C6.32081 16.5 5.5 17.3208 5.5 18.3333C5.5 19.3459 6.32081 20.1667 7.33333 20.1667Z" stroke="#FF6C22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M14.6663 20.1667C15.6789 20.1667 16.4997 19.3459 16.4997 18.3333C16.4997 17.3208 15.6789 16.5 14.6663 16.5C13.6538 16.5 12.833 17.3208 12.833 18.3333C12.833 19.3459 13.6538 20.1667 14.6663 20.1667Z" stroke="#FF6C22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M20.1667 11V12.8333H17.4167C16.9125 12.8333 16.5 12.4208 16.5 11.9167V9.16667C16.5 8.6625 16.9125 8.25 17.4167 8.25H18.5991L20.1667 11Z" stroke="#FF6C22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M1.83301 7.33325H7.33301" stroke="#FF6C22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M1.83301 10.0833H5.49967" stroke="#FF6C22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M1.83301 12.8333H3.66634" stroke="#FF6C22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+          </span>
+          {% endif %}
+         <p>{{ settings.benefits_title }}</p> 
+        </li>
+      {% endif %}
+      {% if settings.benefit_1 != blank %}  
+      <li><p>{{ settings.benefit_1 }}</p> </li>
+      {% endif %}
+     {% if settings.benefit_2 != blank %}  
+      <li><p>{{ settings.benefit_2 }}</p> </li>
+      {% endif %}
+        {% if settings.benefit_3 != blank %}  
+      <li><p>{{ settings.benefit_3 }}</p> </li>
+      {% endif %}
+        {% if settings.benefit_4 != blank %}  
+      <li><p>{{ settings.benefit_4 }}</p> </li>
+      {% endif %}
+    
+  </ul>  
+</div>
+{% endif %}
+
+{% if settings.payment_image != blank %}
+  <div class="footer__payment">
+    {{ settings.payment_image | image_url: width: 404, height: 34 | image_tag }}
+  </div>
+{% endif %}
+  
+{% if settings.money_back_title or settings.money_back_content %}
+  <div class="money-back-gurantee" style="background-color: {{ settings.money_back_bg }}">
+  {% if settings.money_back_image != blank %}
+    <div class="money-back-icon"><img src="{{ settings.money_back_image | img_url: '66x66' }}" alt="money back guarantee" width="{{ settings.money_back_image.width }}" height="{{ settings.money_back_image.height }}"> </div>
+    {% endif %}
+    <div class="money-back-content">
+      {% if settings.money_back_title %}
+        <div class="mb-title">{{ settings.money_back_title }}</div>
+      {% endif %}
+      {% if settings.money_back_content %}
+        <div class="mb-content">{{ settings.money_back_content }}</div>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
+  

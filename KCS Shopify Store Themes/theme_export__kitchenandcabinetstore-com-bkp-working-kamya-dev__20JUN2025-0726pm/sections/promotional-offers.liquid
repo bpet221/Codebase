@@ -1,0 +1,177 @@
+<div class="promotional__offers color-{{ section.settings.color_scheme }}" id="{{ section.settings.offer_layout }}">   
+  <div class="page-width">
+    <div class="slider promotional-items">
+      {% for block in section.blocks %}
+        <div {{ block.shopify_attributes }}>
+          <div class="promotional__item">
+            {% assign offer_img = block.settings.offer_icon | image_url %}
+            {% if offer_img %}
+              <div class="promotional__item--icon"><img src="{{ block.settings.offer_icon | image_url}}" alt="{{ block.settings.offer_title }}"></div>
+            {% endif %}
+            <div class="promotional__item--content">
+            {% if block.settings.offer_title %}
+              <h3 class="promotional-offer--heading {{ section.settings.offer_heading_size }}">
+                {{ block.settings.offer_title }}
+                {% if section.settings.enable_progress_bar and forloop.first %}
+                  {% assign goal = section.settings.free_shipping_price |  times:100 %}
+                  {% assign percentage = cart.total_price |  divided_by:100 %}    
+                  <div class="progress-bar">
+                    <progress max="{{ goal }}" value="{{ cart.total_price }}">{{ percentage }}</progress>
+                  </div>
+                {% endif %} 
+                
+              </h3>
+            {% endif %}
+            {% if block.settings.offer_content %}
+              <p>{{ block.settings.offer_content }}</p>
+            {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>  
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "t:sections.promotional-offers.name",
+    "class": "promotional-offers",
+    "settings": [
+     {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "t:sections.all.colors.label",
+        "default": "background-1"
+      },
+      {
+      "type": "select",
+      "id": "offer_heading_size",
+      "options": [
+        {
+          "value": "h4",
+          "label": "t:sections.promotional-offers.settings.offer_heading_size.options__1.label"
+        },
+        {
+          "value": "h3",
+          "label": "t:sections.promotional-offers.settings.offer_heading_size.options__2.label"
+        },
+        {
+          "value": "h2",
+          "label": "t:sections.promotional-offers.settings.offer_heading_size.options__3.label"
+        }
+      ],
+      "default": "h3",
+      "label": "t:sections.promotional-offers.settings.offer_heading_size.label"
+    },
+     {
+            "type": "select",
+            "id": "offer_to_show",
+             "options": [
+              {
+                "value": "2",
+                "label": "t:sections.promotional-offers.settings.offer_to_show.options__1.label"
+              },
+              {
+                "value": "3",
+                "label": "t:sections.promotional-offers.settings.offer_to_show.options__2.label"
+              },
+              {
+                "value": "4",
+                "label": "t:sections.promotional-offers.settings.offer_to_show.options__3.label"
+              }
+            ],
+            "default": "3",
+            "label": "t:sections.promotional-offers.settings.offer_to_show.label"
+          },
+          {
+            "type": "select",
+            "id": "offer_layout",
+              "options": [
+              {
+                "value": "offer_layout1",
+                "label": "t:sections.promotional-offers.settings.offer_layout.options__1.label"
+              },
+              {
+                "value": "offer_layout2",
+                "label": "t:sections.promotional-offers.settings.offer_layout.options__2.label"
+              }
+            ],
+            "label": "t:sections.promotional-offers.settings.offer_layout.label",
+            "default": "offer_layout1"
+          },
+          {
+            "type":"checkbox",
+            "id": "enable_progress_bar",
+            "label": "Show Progress Bar",
+            "default": false
+          },
+          {
+            "type":"number",
+            "id": "free_shipping_price",
+            "label": "Enter price to show progress bar",
+            "default": 69
+          }
+    ],
+     "blocks": [
+      {
+          "type": "promotion_offers",
+          "name": "t:sections.promotional-offers.blocks.promotion_offers.name",
+          "settings": [
+            {
+              "type": "text",
+              "id": "offer_title",
+              "label": "t:sections.promotional-offers.blocks.promotion_offers.settings.offer_title.label"
+            },
+             {
+              "type": "text",
+              "id": "offer_content",
+              "label": "t:sections.promotional-offers.blocks.promotion_offers.settings.offer_content.label"
+            },
+             {
+              "type": "image_picker",
+              "id": "offer_icon",
+              "label": "t:sections.promotional-offers.blocks.promotion_offers.settings.offer_icon.label"
+            }            
+          ]
+        }
+    ],
+      "presets": [
+        {
+          "name": "t:sections.promotional-offers.presets.name"
+        }
+      ],
+     	"enabled_on": {
+    "templates": ["index", "product", "page", "collection"],
+    "groups": ["footer"]
+  }
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+  jQuery('.promotional-items').slick({
+      infinite: true,
+      arrows: false,
+      dots: false,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1
+          }
+        }
+      ]
+    });
+{% endjavascript %}

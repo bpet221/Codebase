@@ -1,0 +1,34 @@
+{% if settings.free_shipping_amount %}
+    {% assign goal = settings.free_shipping_amount |  times:100 %}
+{% endif %}
+
+<div class="order-shipping {{ cartTime }}">
+  <p style="text-align:center">
+    {% if cart.items.size != 0 %}
+        {% if cart.total_price >= goal %} Congratulations! You are eligible for "Free Shipping"
+        {% elsif cart.total_price < goal %}Free Delivery on all orders over {{ goal | minus: cart.total_price | money }}.
+        {% endif %}
+    {% endif %}
+  </p>
+  
+{% comment %} 
+{% if settings.shipping_timeline_message %}
+  <p>{{ settings.shipping_timeline_message }}
+        {% if settings.shipping_reserved_time %}
+           <span id="shipping-countdown">{{ settings.shipping_reserved_time }}:00 </span>
+         {% endif %}
+
+        {% if settings.shipping_timeline_message_end %}
+           <span>minutes</span>, {{ settings.shipping_timeline_message_end }}
+        {% endif %}
+  </p>
+{% endif %}
+{% endcomment %}
+  
+</div>
+{% if settings.free_shipping_amount %}
+    {% assign percentage = cart.total_price |  divided_by:100 %}    
+    <div class="progress-bar">
+      <progress max="{{ goal }}" value="{{ cart.total_price }}">{{ percentage }}</progress>
+    </div>
+{% endif %}

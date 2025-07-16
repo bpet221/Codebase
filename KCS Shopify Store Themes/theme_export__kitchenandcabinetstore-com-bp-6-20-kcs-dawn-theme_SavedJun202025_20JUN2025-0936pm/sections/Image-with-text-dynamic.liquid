@@ -1,0 +1,204 @@
+<section class="Image-with-text-dynamic">
+  <div class="page-width">
+    <div class="image-text-section">
+      <div class="image-column">
+        {% if section.settings.image %}
+          <img src="{{ section.settings.image | img_url: 'large' }}" alt="Image">
+        {% endif %}
+        {% comment %}
+          <div class="Changebutton image-button">
+            <button class="slider-btn active" onclick="changeDescription(1)">1</button>
+            <button class="slider-btn" onclick="changeDescription(2)">2</button>
+            <button class="slider-btn" onclick="changeDescription(3)">3</button>
+            <button class="slider-btn" onclick="changeDescription(4)">4</button>
+            <button class="slider-btn" onclick="changeDescription(5)">5</button>
+          </div>
+      {% endcomment %}
+      </div>
+      <div class="text-column">
+        <h2>{{ section.settings.title }}</h2>
+        <div class="description-slider">
+          <h3 id="desc-title">{{ section.settings.desc_title_1 }}</h3>
+          <div id="description">{{ section.settings.description_1 }}</div>
+        </div>
+        <div class="Changebutton">
+          <button class="slider-btn active" onclick="changeDescription(1)">1</button>
+          <button class="slider-btn" onclick="changeDescription(2)">2</button>
+          <button class="slider-btn" onclick="changeDescription(3)">3</button>
+          <button class="slider-btn" onclick="changeDescription(4)">4</button>
+          <button class="slider-btn" onclick="changeDescription(5)">5</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function changeDescription(index) {
+  const titles = [
+    `{{ section.settings.desc_title_1 }}`,
+    `{{ section.settings.desc_title_2 }}`,
+    `{{ section.settings.desc_title_3 }}`,
+    `{{ section.settings.desc_title_4 }}`,
+    `{{ section.settings.desc_title_5 }}`
+  ];
+  const descriptions = [
+    `{{ section.settings.description_1 }}`,
+    `{{ section.settings.description_2 }}`,
+    `{{ section.settings.description_3 }}`,
+    `{{ section.settings.description_4 }}`,
+    `{{ section.settings.description_5 }}`
+  ];
+
+  document.getElementById('desc-title').innerText = titles[index - 1];
+  document.getElementById('description').innerText = descriptions[index - 1];
+
+  // Remove active class from all buttons
+  document.querySelectorAll('.slider-btn').forEach(button => {
+    button.classList.remove('active');
+  });
+
+  // Add active class to clicked button
+  event.target.classList.add('active');
+  }
+</script>
+
+<style>
+  .image-text-section {
+    display: flex;
+    align-items: center;
+  }
+  .image-text-section .image-column {
+    width: 40%;
+    position: relative;
+  }
+  .image-text-section .image-column img {
+    width: 100%;
+    height: auto;
+  }
+  .image-text-section .text-column {
+    width: 60%;
+    padding: 20px;
+    position: relative;
+  }
+  .image-text-section .text-column h2 {
+    max-width: 95%;
+  }
+  .image-text-section .text-column .description-slider {
+    max-width: 95%;
+  }
+  .image-text-section .description-slider button {
+    margin: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  .image-text-section .Changebutton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: fit-content;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .image-text-section .Changebutton button.slider-btn {
+    color: #af5a3c;
+    background: transparent;
+    border: 1px solid #af5a3c;
+    border-radius: 100%;
+    width: 32px;
+    height: 32px;
+  }
+  .image-text-section .Changebutton button.slider-btn.active {
+    color: #fff;
+    background: #af5a3c;
+  }
+</style>
+
+
+
+{% schema %}
+{
+  "name": "Image with Text Slider",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Your Title Here"
+    },
+    {
+      "type": "text",
+      "id": "desc_title_1",
+      "label": "Description Title 1",
+      "default": "Title 1"
+    },
+    {
+      "type": "textarea",
+      "id": "description_1",
+      "label": "Description 1",
+      "default": "First description here."
+    },
+    {
+      "type": "text",
+      "id": "desc_title_2",
+      "label": "Description Title 2",
+      "default": "Title 2"
+    },
+    {
+      "type": "textarea",
+      "id": "description_2",
+      "label": "Description 2",
+      "default": "Second description here."
+    },
+    {
+      "type": "text",
+      "id": "desc_title_3",
+      "label": "Description Title 3",
+      "default": "Title 3"
+    },
+    {
+      "type": "textarea",
+      "id": "description_3",
+      "label": "Description 3",
+      "default": "Third description here."
+    },
+    {
+      "type": "text",
+      "id": "desc_title_4",
+      "label": "Description Title 4",
+      "default": "Title 4"
+    },
+    {
+      "type": "textarea",
+      "id": "description_4",
+      "label": "Description 4",
+      "default": "Forth description here."
+    },
+    {
+      "type": "text",
+      "id": "desc_title_5",
+      "label": "Description Title 5",
+      "default": "Title 5"
+    },
+    {
+      "type": "textarea",
+      "id": "description_5",
+      "label": "Description 5",
+      "default": "Fifth description here."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with Text Slider"
+    }
+  ]
+}
+{% endschema %}

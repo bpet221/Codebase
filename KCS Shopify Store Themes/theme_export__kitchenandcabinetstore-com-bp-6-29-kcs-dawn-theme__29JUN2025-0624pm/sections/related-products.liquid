@@ -1,0 +1,49 @@
+<div class="recently-viewed-products">
+  <h2>Recently Viewed Products</h2>
+  <div class="product-grid" id="recently-viewed-grid">
+    <!-- Products will be rendered here dynamically via JavaScript -->
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Retrieve recently viewed products from local storage
+    const recentlyViewedProducts = JSON.parse(localStorage.getItem('recentlyViewed')) || [];
+
+    console.log('test',recentlyViewedProducts);
+
+    const productGrid = document.getElementById('recently-viewed-grid');
+
+    // Render recently viewed products
+    recentlyViewedProducts.forEach(product => {
+      const productElement = `
+        <div class="product">
+          <a href="${product.url}">
+            <img src="${product.image}" alt="${product.title}" />
+            <h3>${product.title}</h3>
+          </a>
+        </div>
+      `;
+      productGrid.insertAdjacentHTML('beforeend', productElement);
+    });
+  });
+</script>
+
+{% schema %}
+	{
+		"name": "Recently viewed products",
+		"settings": [			
+			{
+    	      "type": "text",
+    	      "id": "heading",
+    	      "label": "Heading",
+    	      "default": "Recently viewed products"
+    	    }			
+		],
+    "presets": [
+      {
+        "name": "Recently viewed products"
+      }
+    ]
+	}
+{% endschema %}

@@ -1,0 +1,456 @@
+{
+  "sections": {
+    "image_banner_PwVWHr": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_zR7dq4": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ page.title }}",
+            "heading_size": "h0"
+          }
+        },
+        "text_jA9yMn": {
+          "type": "text",
+          "settings": {
+            "text": "Find quick answers to your questions below...",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_zR7dq4",
+        "text_jA9yMn"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/a-cowgirl-and-her-horse.jpg",
+        "image_overlay_opacity": 65,
+        "image_height": "small",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "image_position": "background",
+        "show_ratings": true,
+        "color_scheme": "scheme-c7a74d54-2b0d-44b3-ab13-318c5d1de1be",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "page__width": "page-width",
+        "heading_alignment": "center",
+        "text_alignment": "left",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "collapsible_content_LEYd6x": {
+      "type": "collapsible-content",
+      "blocks": {
+        "heading_H8XhTL": {
+          "type": "heading",
+          "settings": {
+            "heading": "Order Status",
+            "heading_size": "h2"
+          }
+        },
+        "collapsible_row_6c7nCb": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Has my order shipped?",
+            "icon": "none",
+            "row_content": "<p>Click the \"<a href=\"\/account\">My Account \/ Order Status<\/a>\" link at the top right hand side of our site to check your orders status.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_fa8jQc": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I change quantities or cancel an item in my order?",
+            "icon": "none",
+            "row_content": "<p>Click the \"<a href=\"\/account\">My Account \/ Order Status<\/a>\" link at the top right hand side of our site to view orders you have placed. Then click the \"<a href=\"https:\/\/www.ridertack.com\/orders.asp\">Change quantities \/ cancel orders<\/a>\" link to find and edit your order. Please note that once an order has begun processing or has shipped, the order is no longer editable.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_DVg67K": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I track my order?",
+            "icon": "none",
+            "row_content": "<p>Click the \"<a href=\"\/account\">My Account \/ Order Status<\/a>\" link at the top right hand side of our site to track your order.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_Ndh7C7": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "My order never arrived.",
+            "icon": "none",
+            "row_content": "<p>Click the \"<a href=\"\/account\">My Account \/ Order Status<\/a>\" link at the top right hand side of our site to track your order status. Be sure that all of the items in your order have shipped already. If you order displays your Package Tracking Numbers, check with the shipper to confirm that your packages were delivered. If your packages each show a status of \"delivered\", please contact customer service for assistance.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_KYajeD": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "An item is missing from my shipment.",
+            "icon": "none",
+            "row_content": "<p>Click the \"<a href=\"\/account\">My Account \/ Order Status<\/a>\" link at the top right hand side of our site to track your order status. Be sure that all of the items in your order have shipped already. If you order displays your Package Tracking Numbers, check with the shipper to confirm that your packages were delivered. If your packages each show a status of \"delivered\", please contact customer service for assistance.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_rtjimg": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "My product is missing parts.",
+            "icon": "none",
+            "row_content": "<p>Click the \"<a href=\"\/account\">My Account \/ Order Status<\/a>\" link at the top right hand side of our site to track your order status. Be sure that all of the items in your order have shipped already. If you order displays your Package Tracking Numbers, check with the shipper to confirm that your packages were delivered. If your packages each show a status of \"delivered\", please contact customer service for assistance.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_Uxjbig": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "When will my backorder arrive?",
+            "icon": "none",
+            "row_content": "<p>Backordered items are those which our suppliers are unable to predict when they will have more in stock, but as soon as they do, we will be able to ship the item to you.<\/p>",
+            "page": ""
+          }
+        },
+        "heading_VTRgR3": {
+          "type": "heading",
+          "settings": {
+            "heading": "My Account",
+            "heading_size": "h2"
+          }
+        },
+        "collapsible_row_mBGaEr": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I create an account?",
+            "icon": "none",
+            "row_content": "<p><strong>1) <\/strong>Click the \"<a href=\"\/account\" title=\"\/account\">My Account \/ Order Status<\/a>\" link at the top right side of our site.<br\/><strong>2) <\/strong>Enter your email address.<br\/><strong>3) <\/strong>Select \"I am a new customer\".<br\/><br\/>Then simply follow the prompts to complete setting up your account. Your information is NEVER sold to any other company and is kept completely private. Please view our <a href=\"https:\/\/www.ridertack.com\/terms_privacy.asp\">Privacy Policy <\/a>for more information.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_M4bPhy": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I edit my account information?",
+            "icon": "none",
+            "row_content": "<p>Click the \"<a href=\"\/account\">My Account \/ Order Status<\/a>\" link at the top right hand side of our site to edit your account information.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_nCthxA": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How much is my shipping?",
+            "icon": "none",
+            "row_content": "<p>Shipping is automatically calculated prior to submitting your payment information.  Simply add items to your cart and proceed to the Checkout page where you will be offered Shipping Method choices and their prices.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_cGr7xM": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "I forgot my password.",
+            "icon": "none",
+            "row_content": "<p>Click the \"<a href=\"\/account\" title=\"\/account\">My Account \/ Order Status<\/a>\" link at the top right hand side of our site. Under the login box you'll see a link that says \"Forgot your password? Click here\". That link will send an email to you with your password.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_4KMYaM": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I return my product?",
+            "icon": "none",
+            "row_content": "<p>Please <a href=\"\/account\" title=\"\/account\">click here for more information on returning an item<\/a>.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_dKRHqx": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "I received the wrong product.",
+            "icon": "none",
+            "row_content": "<p>If you feel that you have received the wrong product, please contact customer service within 72 hours of receiving the product.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_zzR4RX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is your return policy?",
+            "icon": "none",
+            "row_content": "<p>Please see our <a href=\"\/policies\/terms-of-service\" title=\"Terms of Service\">Terms & Conditions<\/a> for complete details regarding our <a href=\"\/policies\/refund-policy\" title=\"Refund Policy\">return policy<\/a>.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_9R8FKt": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "When will my order ship?",
+            "icon": "none",
+            "row_content": "<p>Please see each individual item page for more information on the availability of each item. Also, after placing your order, you may click the \"<a href=\"\/account\" title=\"\/account\">My Account \/ Order Status<\/a>\" link at the top right hand side of our site to track the status of your order. You will receive a shipment confirmation when your order has shipped and tracking information within 24-48 hours of shipment.<\/p>",
+            "page": ""
+          }
+        },
+        "heading_Npx3mP": {
+          "type": "heading",
+          "settings": {
+            "heading": "International Shipping",
+            "heading_size": "h2"
+          }
+        },
+        "collapsible_row_tNQTAP": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you ship to my country?",
+            "icon": "none",
+            "row_content": "<p>Please create an account by clicking the \"<a href=\"\/account\" title=\"\/account\">My Account \/ Order Status<\/a>\" link at the top right hand side of our site. During signup we'll ask for your shipping address details including country. If your country is not in the dropdown menu of available countries, unfortunately we cannot ship to your country at this time.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_C4PDtn": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What are my payment choices?",
+            "icon": "none",
+            "row_content": "<p>During the checkout process you may choose any of our current payment options and continue to place your order. Please note that we will not ship your order until we receive payment from you.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_hCtkWg": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "When will my order ship and what are my shipping charges?",
+            "icon": "none",
+            "row_content": "<p>Shipping is automatically calculated prior to submitting your payment information.  Simply add items to your cart and proceed to the Checkout page where you will be offered Shipping Method choices and their prices. We will ship your order shortly after we receive payment from you.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_67jbbL": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is the return policy?",
+            "icon": "none",
+            "row_content": "<p>Please see our <a href=\"\/account\" title=\"\/account\">Terms & Conditions<\/a> for complete details regarding our return policy.<br\/><\/p>",
+            "page": ""
+          }
+        },
+        "heading_Ma7RxN": {
+          "type": "heading",
+          "settings": {
+            "heading": "Guarantees",
+            "heading_size": "h2"
+          }
+        },
+        "collapsible_row_YdmTrn": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Low Price Guarantee",
+            "icon": "none",
+            "row_content": "<p>It is our commitment to provide you with the best value, at the best price. We value your business and strive to keep our prices low, and SAVE you money!<br\/><\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_7ww6TW": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Privacy Policy",
+            "icon": "none",
+            "row_content": "<p>We value your privacy. Please view our <a href=\"\/policies\/privacy-policy\" title=\"Privacy Policy\">Privacy Policy<\/a> for complete details on how we use the information we collect.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_byiCBB": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Security",
+            "icon": "none",
+            "row_content": "<p>This website is protected with SSL (secure socket layer) encryption, the highest standard in Internet security.<\/p>",
+            "page": ""
+          }
+        },
+        "heading_X9LiTE": {
+          "type": "heading",
+          "settings": {
+            "heading": "Pricing and Billing",
+            "heading_size": "h2"
+          }
+        },
+        "collapsible_row_N9FaNy": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do I have to pay sales tax?",
+            "icon": "none",
+            "row_content": "<p>You only have to pay sales tax if you are located in the same state as our warehouse.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_KdnLB9": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "I have a question on my charges.",
+            "icon": "none",
+            "row_content": "<p>Click the \"<a href=\"\/account\" title=\"\/account\">My Account \/ Order Status<\/a>\" link at the top right hand side of our site to review your orders. You may compare your order history on our website, with your financial records. If you have further questions or concerns, please contact customer service for further assistance.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_7GgFpk": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "I need a copy of my receipt\/invoice.",
+            "icon": "none",
+            "row_content": "<p>Click the \"<a href=\"\/account\" title=\"\/account\">My Account \/ Order Status<\/a>\" link at the top right hand side of our site to print invoices.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_pR6Vg3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "When will my credit appear on my account?",
+            "icon": "none",
+            "row_content": "<p>Credits usually take 7-10 business days from the time we receive your item(s).<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_hz3LgE": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "When will my credit card be charged?",
+            "icon": "none",
+            "row_content": "<p>Your credit card will be charged within 24 hours prior to shipment of your item(s).<\/p>",
+            "page": ""
+          }
+        },
+        "heading_e7b7QB": {
+          "type": "heading",
+          "settings": {
+            "heading": "Buyer's Guide",
+            "heading_size": "h2"
+          }
+        },
+        "collapsible_row_QJx6hh": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I buy\/redeem a gift certificate?",
+            "icon": "none",
+            "row_content": "<p>To purchase a gift certificate for someone, <a href=\"https:\/\/www.ridertack.com\/GiftCert_default.asp\">click here<\/a>. If you are the recipient of a gift certificate and would like to redeem your gift certificate, <a href=\"https:\/\/www.ridertack.com\/redeem\/\">click here<\/a>.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_d4AibQ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I find my product?",
+            "icon": "none",
+            "row_content": "<p>To find the product(s) you're looking for, you may (1) use the navigation menus on the top, left & bottom of our website. (2) type a keyword into the SEARCH box. If you have any trouble locating a product, feel free to contact customer service for assistance.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_eyfP4j": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I navigate the site?",
+            "icon": "none",
+            "row_content": "<p>To navigate this website, simply click on a category you might be interested in. Categories are located on the top, left & bottom of our website. QUICK TIP: Place your mouse cursor over anything you think could be a clickable link. You'll notice that anytime you scroll over something that is a link, your mouse cursor will become a \"hand\". Whereas scrolling over anything that is NOT a link will leave your cursor as an \"arrow\". You may also type a keyword into the SEARCH box to quickly find a specific product. If you have any trouble locating a product, feel free to contact customer service for assistance.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_686Gcf": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I use a coupon?",
+            "icon": "none",
+            "row_content": "<p>After adding items to your cart, click the \"<a href=\"\/cart\" title=\"\/cart\">View Cart<\/a>\" link at the top of this site to view your cart. At the bottom of the shopping cart you'll see a box where you may enter your coupon code.<\/p>",
+            "page": ""
+          }
+        },
+        "heading_EJbPDr": {
+          "type": "heading",
+          "settings": {
+            "heading": "Additional Support",
+            "heading_size": "h2"
+          }
+        },
+        "collapsible_row_8x3rCP": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I contact you",
+            "icon": "none",
+            "row_content": "<p>Please <a href=\"\/pages\/contact-us\" title=\"Contact Us\">click here <\/a>for our company contact information.<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_H8XhTL",
+        "collapsible_row_6c7nCb",
+        "collapsible_row_fa8jQc",
+        "collapsible_row_DVg67K",
+        "collapsible_row_Ndh7C7",
+        "collapsible_row_KYajeD",
+        "collapsible_row_rtjimg",
+        "collapsible_row_Uxjbig",
+        "heading_VTRgR3",
+        "collapsible_row_mBGaEr",
+        "collapsible_row_M4bPhy",
+        "collapsible_row_nCthxA",
+        "collapsible_row_cGr7xM",
+        "collapsible_row_4KMYaM",
+        "collapsible_row_dKRHqx",
+        "collapsible_row_zzR4RX",
+        "collapsible_row_9R8FKt",
+        "heading_Npx3mP",
+        "collapsible_row_tNQTAP",
+        "collapsible_row_C4PDtn",
+        "collapsible_row_hCtkWg",
+        "collapsible_row_67jbbL",
+        "heading_Ma7RxN",
+        "collapsible_row_YdmTrn",
+        "collapsible_row_7ww6TW",
+        "collapsible_row_byiCBB",
+        "heading_X9LiTE",
+        "collapsible_row_N9FaNy",
+        "collapsible_row_KdnLB9",
+        "collapsible_row_7GgFpk",
+        "collapsible_row_pR6Vg3",
+        "collapsible_row_hz3LgE",
+        "heading_e7b7QB",
+        "collapsible_row_QJx6hh",
+        "collapsible_row_d4AibQ",
+        "collapsible_row_eyfP4j",
+        "collapsible_row_686Gcf",
+        "heading_EJbPDr",
+        "collapsible_row_8x3rCP"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "color_scheme": "background-1",
+        "container_color_scheme": "scheme-f35b486b-38fc-4964-8a9c-ae8d7eeba32f",
+        "open_first_collapsible_row": true,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 20,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "image_banner_PwVWHr",
+    "main",
+    "collapsible_content_LEYd6x"
+  ]
+}

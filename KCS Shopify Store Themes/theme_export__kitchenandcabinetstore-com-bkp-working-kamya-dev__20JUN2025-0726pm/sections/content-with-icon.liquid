@@ -1,0 +1,122 @@
+<div class="feature_section">test</div>
+
+{% schema %}
+{
+  "name": "Feature Content with Icon",
+  "settings": [
+     {
+      "type": "select",
+      "id": "layout_type",
+      "options": [
+        {
+          "value": "type_one",
+          "label": "Type 1"
+        },
+        {
+          "value": "type_two",
+          "label": "Type 2"
+        },
+        {
+          "value": "type_three",
+          "label": "Type 3"
+        },
+        {
+          "value": "type_four",
+          "label": "Type 4"
+        },
+        {
+          "value": "type_five",
+          "label": "Type 5"
+        }
+      ],
+      "default": "type_one",
+      "label": "Layout Type"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left",
+      "label": "Content Alignment"
+    },
+    {
+      "type": "select",
+      "id": "content_columns",
+      "options": [
+        {
+          "value": "two",
+          "label": "Two"
+        },
+        {
+          "value": "three",
+          "label": "Three"
+        },
+        {
+          "value": "four",
+          "label": "Four"
+        }
+      ],
+      "default": "three",
+      "label": "Content Columns"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_icons_right",
+      "default": false,
+      "label": "Show Icons Right"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "content_with_icon",
+      "name": "Feature Content",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "content_icon",
+          "label": "Content Icon"
+        },
+        {
+          "type": "text",
+          "id": "content_title",
+          "label": "Content Title"
+        },
+        {
+          "type": "text",
+          "id": "content_subtitle",
+          "label": "Content Subtitle"
+        },
+       {
+        "type": "text",
+        "id": "content_button",
+        "label": "Button"
+      },
+        {
+        "type": "url",
+        "id": "content_button_link",
+        "label": "Button Link"
+      }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Feature Content with Icon"
+    }
+  ]
+}
+{% endschema %}

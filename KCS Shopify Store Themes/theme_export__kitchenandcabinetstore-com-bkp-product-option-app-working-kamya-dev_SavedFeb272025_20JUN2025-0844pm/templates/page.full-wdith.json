@@ -1,0 +1,49 @@
+{
+  "sections": {
+    "image_banner_PwVWHr": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_zR7dq4": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ page.title }}",
+            "heading_size": "h0"
+          }
+        }
+      },
+      "block_order": [
+        "heading_zR7dq4"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/a-cowgirl-and-her-horse.jpg",
+        "image_overlay_opacity": 65,
+        "image_height": "small",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "image_position": "background",
+        "show_ratings": true,
+        "color_scheme": "scheme-c7a74d54-2b0d-44b3-ab13-318c5d1de1be",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_heading": false,
+        "page__width": "page-width",
+        "heading_alignment": "center",
+        "text_alignment": "left",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    }
+  },
+  "order": [
+    "image_banner_PwVWHr",
+    "main"
+  ]
+}

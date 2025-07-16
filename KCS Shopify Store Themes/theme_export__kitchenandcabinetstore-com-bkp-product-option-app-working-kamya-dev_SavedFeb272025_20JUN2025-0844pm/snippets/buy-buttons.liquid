@@ -1,0 +1,167 @@
+<div class="product__package-choose" {{ block.shopify_attributes }}>
+  {%- if product != blank -%}
+    {%- liquid
+      assign gift_card_recipient_feature_active = false
+      if block.settings.show_gift_card_recipient and product.gift_card?
+        assign gift_card_recipient_feature_active = true
+      endif
+
+      assign show_dynamic_checkout = false
+      if block.settings.show_dynamic_checkout and gift_card_recipient_feature_active == false
+        assign show_dynamic_checkout = true
+      endif
+    -%}
+       {% assign all_variants_out_of_stock = true %}
+    {% for variant in product.variants %}
+      {% if variant.available %}
+        {% assign all_variants_out_of_stock = false %}
+      {% endif %}
+    {% endfor %}
+    
+    <product-form
+      class="product-form"
+      data-hide-errors="{{ gift_card_recipient_feature_active }}"
+      data-section-id="{{ section.id }}"
+    >
+      <div class="product-form__error-message-wrapper" role="alert" hidden>
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          class="icon icon-error"
+          viewBox="0 0 13 13"
+        >
+          <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"/>
+          <circle cx="6.5" cy="6.5" r="5.5" fill="#EB001B" stroke="#EB001B" stroke-width="0.7"/>
+          <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="white"/>
+          <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="white" stroke="#EB001B" stroke-width="0.7">
+        </svg>
+        <span class="product-form__error-message"></span>
+      </div>
+
+      {%- form 'product',
+        product,
+        id: product_form_id,
+        class: 'form',
+        novalidate: 'novalidate',
+        data-type: 'add-to-cart-form'
+      -%}
+        <input
+          type="hidden"
+          name="id"
+          value="{{ product.selected_or_first_available_variant.id }}"
+          {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+            disabled
+          {% endif %}
+          class="product-variant-id"
+        >
+
+        {%- if gift_card_recipient_feature_active -%}
+          {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
+        {%- endif -%}
+
+        <div class="product-form__buttons_new">
+
+             {% if product.available or all_variants_out_of_stock == false %}
+                <div class="in-stock">
+                 <span class="Store-stock">In stock.</span>
+               <span class="urgency-trigger" id="countdown-container">
+                   Order in the next <span class="countdown"></span> and the product will be with you on <span class="daycount"></span>
+               </span>
+                </div>
+              {% else %}
+                <div class="out-of-stock">
+                 Out of Stock.
+               </div>
+              {% endif %}
+
+          
+          {%- liquid
+            assign check_against_inventory = true
+            if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
+              assign check_against_inventory = false
+            endif
+            if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
+              assign quantity_rule_soldout = true
+            endif
+          -%}
+          <button
+            id="ProductSubmitButton-{{ section_id }}"
+            type="submit"
+            name="add"
+            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+              disabled
+            {% endif %}
+          >
+            <span>
+              {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+                {{ 'products.product.sold_out' | t }}
+              {%- else -%}
+                <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12.6875 16.875C13.4124 16.875 14 16.2874 14 15.5625C14 14.8376 13.4124 14.25 12.6875 14.25C11.9626 14.25 11.375 14.8376 11.375 15.5625C11.375 16.2874 11.9626 16.875 12.6875 16.875Z" fill="white"/>
+                  <path d="M6.6875 16.875C7.41237 16.875 8 16.2874 8 15.5625C8 14.8376 7.41237 14.25 6.6875 14.25C5.96263 14.25 5.375 14.8376 5.375 15.5625C5.375 16.2874 5.96263 16.875 6.6875 16.875Z" fill="white"/>
+                  <path d="M4.13 2.955L3.98 4.7925C3.95 5.145 4.2275 5.4375 4.58 5.4375H16.0625C16.3775 5.4375 16.64 5.1975 16.6625 4.8825C16.76 3.555 15.7475 2.475 14.42 2.475H5.2025C5.1275 2.145 4.9775 1.83 4.745 1.5675C4.37 1.17 3.845 0.9375 3.305 0.9375H2C1.6925 0.9375 1.4375 1.1925 1.4375 1.5C1.4375 1.8075 1.6925 2.0625 2 2.0625H3.305C3.5375 2.0625 3.755 2.16 3.9125 2.325C4.07 2.4975 4.145 2.7225 4.13 2.955Z" fill="white"/>
+                  <path d="M15.8825 6.5625H4.37754C4.06254 6.5625 3.80754 6.8025 3.77754 7.11L3.50754 10.3725C3.40254 11.655 4.40754 12.75 5.69004 12.75H14.03C15.155 12.75 16.145 11.8275 16.2275 10.7025L16.475 7.2C16.505 6.855 16.235 6.5625 15.8825 6.5625Z" fill="white"/>
+                </svg>
+                {{ 'products.product.add_to_cart' | t }}
+                <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.1825 14.9401L12.0725 10.0501C12.65 9.47256 12.65 8.52756 12.0725 7.95006L7.1825 3.06006" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              {%- endif -%}
+            </span>
+            {%- render 'loading-spinner' -%}
+          </button>
+          {%- if show_dynamic_checkout -%}
+            {{ form | payment_button }}
+          {%- endif -%}
+        </div>
+      {%- endform -%}
+    </product-form>
+  {%- else -%}
+    <div class="product-form">
+      <div class="product-form__buttons form">
+        <button
+          type="submit"
+          name="add"
+          class="product-form__submit button button--full-width button--primary"
+          disabled
+        >
+          {{ 'products.product.sold_out' | t }}
+        </button>
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- if show_pickup_availability -%}
+    {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
+
+    {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities
+      | where: 'pick_up_enabled', true
+    -%}
+
+    <pickup-availability
+      class="product__pickup-availabilities no-js-hidden quick-add-hidden"
+      {% if product.selected_or_first_available_variant.available and pick_up_availabilities.size > 0 %}
+        available
+      {% endif %}
+      data-root-url="{{ routes.root_url }}"
+      data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+      data-has-only-default-variant="{{ product.has_only_default_variant }}"
+      data-product-page-color-scheme="gradient color-{{ section.settings.color_scheme }}"
+    >
+      <template>
+        <pickup-availability-preview class="pickup-availability-preview">
+          {% render 'icon-unavailable' %}
+          <div class="pickup-availability-info">
+            <p class="caption-large">{{ 'products.product.pickup_availability.unavailable' | t }}</p>
+            <button class="pickup-availability-button link link--text underlined-link">
+              {{ 'products.product.pickup_availability.refresh' | t }}
+            </button>
+          </div>
+        </pickup-availability-preview>
+      </template>
+    </pickup-availability>
+
+    <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
+  {%- endif -%}
+</div>

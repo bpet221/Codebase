@@ -1,0 +1,229 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    {% if section.settings.padding_top > 100 %}
+      padding-top: {{ section.settings.padding_top | divided_by: 2 | round: 0 }}px;      
+    {% else %}
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    {% endif %}
+    {% if section.settings.padding_bottom > 100 %}
+      padding-bottom: {{ section.settings.padding_bottom | divided_by: 2 | round: 0 }}px;      
+    {% else %}
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    {% endif %}
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="home-category__slider section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="section--slider">
+    {% if section.settings.browse_category_heading %}
+      {% if section.settings.text != blank or section.settings.browse_category_heading != blank %}
+        <div class="section-heading left">
+          <h3 class="section__heading {{ section.settings.heading_size }}"> {{ section.settings.browse_category_heading }}</h3>
+          {% if section.settings.text != blank %}
+            <div class="rte">{{- section.settings.text -}}</div>
+          {% endif %}
+        </div>
+      {% endif %}
+      <div class="slider__nav"></div>
+    {% endif %}
+  
+   {% if section.blocks %}
+      <div class="slider responsive"> 
+          {%- for block in section.blocks -%}
+            {% assign collectionIcon = "" %}
+            {%- assign placeholder_image_index = forloop.index0 | modulo: 4 | plus: 1 -%}
+            {%- assign placeholder_image = 'collection-apparel-' | append: placeholder_image_index -%}
+            <div>
+              <div class="category-item">
+                <a href="{{ block.settings.collection.url }}" class="category-item--link">
+                  {% assign collectionIcon =  block.settings.collection_icon | image_url %}           
+                  <span class="category-item__image {% if  block.settings.bg_type == "image" %} img_bg {% endif %}">
+                    {% if collectionIcon != '' %}  
+                      <img class="category-item__image--default" src="{{collectionIcon}}" alt="{{ block.settings.collection.title }}" width="{{ block.settings.collection_icon.width }}" height="{{ block.settings.collection_icon.height }}">
+                      {% assign collectionhoverIcon =  block.settings.collection_hover_icon | image_url %}           
+                      {% if  block.settings.collection_hover_icon %}                    
+                        <img class="category-item__image--hover  {% if  block.settings.bg_type == "image" %} img_bg--hover {% endif %}" src="{{ collectionhoverIcon }}" alt="{{ block.settings.collection.title }}">
+                      {% endif %}
+                    {% else %}                    
+                      <img class="category-item__image--default" src="{{ 'category-icon.svg' | asset_url }}" alt="{{ block.settings.collection.title }}" >
+                      <img class="category-item__image--hover" src="{{ 'category-icon-hover.png' | asset_url }}" alt="{{ block.settings.collection.title }}">
+                    {% endif %}
+                  </span>
+                  <p class="category-item--name">{{ block.settings.collection.title | default : 'Category Name'}}</p>
+                </a>
+              </div>
+            </div>
+          {% endfor %}
+      </div>
+    {% endif %}
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Browse Category",
+    "settings": [
+      {
+        "type":"text",
+        "id":"browse_category_heading",
+        "label":"Section Heading"
+      },
+       {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 160,
+        "step": 2,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 160,
+        "step": 2,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }
+    ],
+    "blocks": [
+      {
+          "type": "collection",
+          "name": "t:sections.collage.blocks.collection.name",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "collection",
+              "label": "t:sections.collage.blocks.collection.settings.collection.label"
+            },
+              {
+              "type": "select",
+              "id": "bg_type",
+              "options": [
+                {
+                  "value": "icon",
+                  "label": "Icon"
+                },
+                {
+                  "value": "image",
+                  "label": "Image"
+                }
+              ],
+              "default": "icon",
+              "label": "Image/Icon Type"
+            },
+            {
+              "type": "image_picker",
+              "id": "collection_icon",
+              "label": "Collection Icon/Image"
+            },
+             {
+              "type": "image_picker",
+              "id": "collection_hover_icon",
+              "label": "Collection Icon/Image (on hover)"
+            }
+            
+          ]
+        }
+    ],
+    "presets": [
+    {
+      "name": "Browse Category",
+      "blocks": [
+        {
+          "type": "collection"
+        }
+      ]
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+  function sectionSliderInit() {
+    jQuery('.section--slider').each(function() {
+      var appendarrow = jQuery(this).find('.slider__nav');
+      jQuery('.responsive').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 6,
+        prevArrow: '<span class="slider__nav--prev slick-prev"><svg class="" aria-hidden="true" focusable="false"><use xlink:href="#prev-icon"></svg></span>',
+        nextArrow: '<span class="slider__nav--next slick-next"><svg class="" aria-hidden="true" focusable="false"><use xlink:href="#next-icon"></svg></span>',
+        appendArrows: appendarrow,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 1200,
+            settings: {
+              slidesToShow: 4
+            }
+          },
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2
+            }
+          }
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ]
+      });
+    });
+  }
+  sectionSliderInit();
+  document.addEventListener('shopify:section:select', function (event) {
+      console.log('shopify:section:select');
+      sectionSliderInit();
+  });
+{% endjavascript %}

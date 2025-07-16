@@ -1,0 +1,10 @@
+{% if settings.item_reserved_message %}
+  <div class="item_reserve_text {{ cartTime }}">
+    <p>{{ settings.item_reserved_message }} 
+        {% if settings.item_reserved_time %}
+            <span id="reserve_counter">{{  settings.item_reserved_time }}:00</span>
+            {{ settings.reserved_duration }} 
+          {% endif %}
+    </p>
+  </div>
+{% endif %}

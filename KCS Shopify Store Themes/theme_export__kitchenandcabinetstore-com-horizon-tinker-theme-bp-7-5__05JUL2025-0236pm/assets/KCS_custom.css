@@ -1,0 +1,30 @@
+/* 
+🟢 HOME PAGE > HERO
+Styles for KCS_hero-overlay.liquid
+Date: 2025-06-29
+*/
+
+.kcs-hero-container {
+  background-size: cover;
+  background-position: center;
+  padding: 6rem 2rem;
+  color: white;
+  text-align: center;
+}
+
+.kcs-hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.kcs-hero-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #af5a3c;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+/* 🛑 HOME PAGE > HERO */

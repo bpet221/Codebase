@@ -1,0 +1,261 @@
+{% if section.blocks %}
+  {%- style -%}
+    .section-{{ section.id }}-padding {
+      {% if section.settings.padding_top > 100 %}
+        padding-top: {{ section.settings.padding_top | divided_by: 2 | round: 0 }}px;
+      {% else %}
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      {% endif %}
+      {% if section.settings.padding_bottom > 100 %}
+        padding-bottom: {{ section.settings.padding_bottom | divided_by: 2 | round: 0 }}px;
+      {% else %}
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+      {% endif %}
+    }
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+  {%- endstyle -%}
+
+  <div
+    class="brand-section color-{{ section.settings.color_scheme }} gradient {% if section.settings.section_bgImg != blank %} section_bgimg{% endif %}"
+    {% if section.settings.section_bgImg != blank %}
+      style="--background-image:url('{{ section.settings.section_bgImg | image_url }}');"
+    {% endif %}
+  >
+    <div class="section-{{ section.id }}-padding">
+      {% if section.settings.heading != blank or section.settings.short_content != blank %}
+        <div class="section-heading {{ section.settings.text_align }}">
+          {% if section.settings.heading %}
+            <h3 class="brand--heading {{ section.settings.heading_size }}">
+              {{ section.settings.heading }}
+            </h3>
+          {% endif %}
+
+          {% if section.settings.short_content %}
+            <div class="rte">
+              <p>{{ section.settings.short_content }}</p>
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      <div class="slider brand-slider">
+        {% for block in section.blocks %}
+          <div class="brand-item">
+            {% if block.settings.brand_link %}
+              <a class="brand-item--link" href="{{ block.settings.brand_link }}">
+            {% endif %}
+            {% assign brandIcon = block.settings.brand_image | image_url %}
+            <div class="brand-item__image">
+              {% if brandIcon %}
+                <img
+                  class="brand-item__image--default"
+                  src="{{brandIcon}}"
+                  alt="{{ block.settings.brand_name}}"
+                  height=""
+                  width=""
+                >
+              {% else %}
+                <img
+                  class="brand-item__image--default"
+                  src="{{ 'brand-logo-default.png' | asset_url }}"
+                  alt="{{ block.settings.brand_name}}"
+                  height=""
+                  width=""
+                >
+              {% endif %}
+            </div>
+            {% if block.settings.brand_name %}
+              <h4 class="brand--subheading {{ block.settings.brand_heading_size }}">{{ block.settings.brand_name }}</h4>
+            {% endif %}
+            {% if block.settings.brand_link %}
+              </a>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+{% schema %}
+{
+  "name": "Brand Slider",
+  "settings": [
+    {
+        "type": "text",
+        "id": "heading",
+        "label": "Section Heading"
+    },
+    {
+        "type": "text",
+        "id": "short_content",
+        "label": "Section Content"
+    },
+    {
+    "type": "select",
+    "id": "heading_size",
+    "options": [
+      {
+        "value": "h3",
+        "label": "Small"
+      },
+      {
+        "value": "h2",
+        "label": "Medium"
+      },
+      {
+        "value": "h1",
+        "label": "Large"
+      }
+      ],
+    "default": "h1",
+    "label": "Heading Size"
+  },
+     {
+    "type": "select",
+    "id": "text_align",
+    "options": [
+      {
+        "value": "left",
+        "label": "Left"
+      },
+      {
+        "value": "center",
+        "label": "Center"
+      },
+      {
+        "value": "right",
+        "label": "Right"
+      }
+      ],
+    "default": "center",
+    "label": "Heading Position"
+  },
+  {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "t:sections.all.colors.label",
+    "info": "t:sections.all.colors.has_cards_info",
+    "default": "background-1"
+  },
+  {
+    "type": "image_picker",
+    "id": "section_bgImg",
+    "label": "Section background image"
+  },
+  {
+    "type": "header",
+    "content": "t:sections.all.padding.section_padding_heading"
+  },
+  {
+    "type": "range",
+    "id": "padding_top",
+    "min": 0,
+    "max": 180,
+    "step": 4,
+    "unit": "px",
+    "label": "t:sections.all.padding.padding_top",
+    "default": 36
+  },
+  {
+    "type": "range",
+    "id": "padding_bottom",
+    "min": 0,
+    "max": 180,
+    "step": 4,
+    "unit": "px",
+    "label": "t:sections.all.padding.padding_bottom",
+    "default": 36
+  }
+
+  ],
+  "blocks":[
+    {
+    "type":"brand",
+    "name": "List Brand",
+    "settings": [
+       {
+        "type": "text",
+        "id": "brand_name",
+        "label": "Brand Name"
+      },
+      {
+        "type": "url",
+        "id": "brand_link",
+        "label": "brand_link"
+      },
+      {
+        "type": "image_picker",
+        "id": "brand_image",
+        "label": "brand_image"
+      },
+       {
+    "type": "select",
+    "id": "brand_heading_size",
+    "options": [
+      {
+        "value": "h4",
+        "label": "Small"
+      },
+      {
+        "value": "h3",
+        "label": "Medium"
+      },
+      {
+        "value": "h2",
+        "label": "Large"
+      }
+      ],
+    "default": "h4",
+    "label": "Brand Heading Size"
+  }
+      ]
+    }
+  ],
+    "presets": [
+      {
+        "name": "Brand Slider"
+      }
+    ]
+}
+{% endschema %}
+
+{% javascript %}
+    $('.brand-slider').slick({
+    dots: false,
+    arrows: false,
+    infinite: true,
+    centerMode: true,
+    centerPadding: '8%',
+    speed: 300,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 4
+        }
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2
+        }
+      }
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ]
+  });
+{% endjavascript %}

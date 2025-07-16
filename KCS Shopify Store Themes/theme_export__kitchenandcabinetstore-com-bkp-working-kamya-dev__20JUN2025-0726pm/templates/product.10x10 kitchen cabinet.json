@@ -1,0 +1,245 @@
+{
+    "sections": {
+        "main": {
+            "type": "main-product-10x10-kitchen-cabinet",
+            "blocks": {
+                "title": {
+                    "type": "title",
+                    "settings": {}
+                },
+                "judge_me_reviews_preview_badge_6Q3THb": {
+                    "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+                    "settings": {}
+                },
+                "quickship_assembled_8Rq4Mb": {
+                    "type": "quickship-assembled",
+                    "settings": {}
+                },
+                "description": {
+                    "type": "description",
+                    "settings": {}
+                },
+                "variant_picker": {
+                    "type": "variant_picker",
+                    "settings": {
+                        "picker_type": "button"
+                    }
+                },
+                "price": {
+                    "type": "price",
+                    "settings": {}
+                },
+                "buy_buttons": {
+                    "type": "buy_buttons",
+                    "settings": {
+                        "show_dynamic_checkout": false,
+                        "show_gift_card_recipient": false
+                    }
+                },
+                "judge_me_reviews_all_reviews_text_Pe9hR4": {
+                    "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/all_reviews_text\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+                    "settings": {}
+                }
+            },
+            "block_order": [
+                "title",
+                "judge_me_reviews_preview_badge_6Q3THb",
+                "quickship_assembled_8Rq4Mb",
+                "description",
+                "variant_picker",
+                "price",
+                "buy_buttons",
+                "judge_me_reviews_all_reviews_text_Pe9hR4"
+            ],
+            "settings": {
+                "enable_sticky_info": false,
+                "enable_breadcrumb": true,
+                "color_scheme": "background-1",
+                "media_size": "medium",
+                "constrain_to_viewport": false,
+                "media_fit": "contain",
+                "gallery_layout": "stacked",
+                "media_position": "left",
+                "image_zoom": "none",
+                "mobile_thumbnails": "hide",
+                "hide_variants": false,
+                "enable_video_looping": false,
+                "padding_top": 36,
+                "padding_bottom": 12,
+                "stock_alert": false,
+                "stock_alert_color": "#000000",
+                "faq_heading": "FREQUENTLY ASKED QUESTION",
+                "heading": "Key features and benefits",
+                "content": "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.<\/p>",
+                "heading2": "Comfort and fit",
+                "content2": "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.<\/p>",
+                "heading3": "Materials and card",
+                "content3": "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.<\/p>",
+                "heading4": "Free shipping & returns",
+                "content4": "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.<\/p>"
+            }
+        },
+        "product_highlights_VUt8mV": {
+            "type": "Product-Highlights",
+            "settings": {
+                "heading": "What's Included",
+                "padding_top": 36,
+                "padding_bottom": 36
+            }
+        },
+        "cabinet_product_grid_KQTYRM": {
+            "type": "Cabinet-product-grid",
+            "settings": {
+                "title": "{{ product.title }}<strong> Collection<\/strong>",
+                "heading_size": "h1",
+                "title_align": "center",
+                "description": "",
+                "show_description": false,
+                "description_style": "body",
+                "collection": "",
+                "show_badge_category": false,
+                "products_to_show": 36,
+                "columns_desktop": 4,
+                "full_width": false,
+                "show_view_all": true,
+                "view_all_style": "solid",
+                "enable_desktop_slider": false,
+                "desktop_slider_page_width": false,
+                "color_scheme": "",
+                "image_ratio": "adapt",
+                "image_shape": "default",
+                "show_secondary_image": false,
+                "show_vendor": false,
+                "show_rating": false,
+                "enable_quick_add": true,
+                "card_color_scheme": "scheme-a1464062-cb78-49e7-9281-21d13319c68d",
+                "columns_mobile": "2",
+                "swipe_on_mobile": false,
+                "custom_class": "Cabinet-product-list",
+                "padding_top": 120,
+                "padding_bottom": 120
+            }
+        },
+        "image_with_text_dynamic_9XDYt6": {
+            "type": "Image-with-text-dynamic",
+            "disabled": true,
+            "settings": {
+                "image": "shopify:\/\/shop_images\/Closet-Piece_e7147190-be8f-4031-84cc-8487fbbe75b4.png",
+                "title": "Designed for Everything and Always",
+                "desc_title_1": "Put a Lid on It",
+                "description_1": "Our iconic domed-shaped, modular lid is designed to lock in steam when you need it or release it when you don’t.",
+                "desc_title_2": "Accessories: Included",
+                "description_2": "The integrated nesting Beechwood Spatula is meticulously designed to eliminate your need for a spoon rest and minimize mess.",
+                "desc_title_3": "NoCo® Nonstick",
+                "description_3": "A first-of-its-kind nonstick technology developed entirely without coatings. It’s made without PFAs, also known as forever chemicals.",
+                "desc_title_4": "Fully-Clad Tri-Ply Construction",
+                "description_4": "No detail was spared in the making of the Always Pan® Pro. From its fully-clad construction to the smooth rivet-free design, it’s got everything you want.",
+                "desc_title_5": "That’s So Deep",
+                "description_5": "At 1.5 inches deeper than your average fry pan, the pan’s depth makes it that much more versatile."
+            }
+        },
+        "product_comparison_table_rrm4U3": {
+            "type": "Product-Comparison-Table",
+            "blocks": {
+                "comparison_row_4zjPkn": {
+                    "type": "comparison_row",
+                    "settings": {
+                        "title": "Specification",
+                        "product1_detail": "Product 1 Specification",
+                        "product2_detail": "Product 2 Specification",
+                        "product3_detail": "Product 3 Specification"
+                    }
+                },
+                "comparison_row_MjrwJi": {
+                    "type": "comparison_row",
+                    "settings": {
+                        "title": "Material",
+                        "product1_detail": "Product 1 Material",
+                        "product2_detail": "Product 2 Material",
+                        "product3_detail": "Product 3 Material"
+                    }
+                },
+                "comparison_row_t34ceV": {
+                    "type": "comparison_row",
+                    "settings": {
+                        "title": "Care",
+                        "product1_detail": "Product 1 Care",
+                        "product2_detail": "Product 2 Care",
+                        "product3_detail": "Product 3 Specification"
+                    }
+                }
+            },
+            "block_order": [
+                "comparison_row_4zjPkn",
+                "comparison_row_MjrwJi",
+                "comparison_row_t34ceV"
+            ],
+            "settings": {
+                "section_title": "How It Compares",
+                "product_1": "glass-door-wall-cabinet",
+                "product_2": "stowe-white-shaker-cabinet",
+                "product_3": "cabinet-sample-malibu-white"
+            }
+        },
+        "17380578697765a102": {
+            "type": "apps",
+            "blocks": {
+                "judge_me_reviews_review_widget_hL9LBt": {
+                    "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+                    "settings": {}
+                }
+            },
+            "block_order": [
+                "judge_me_reviews_review_widget_hL9LBt"
+            ],
+            "settings": {
+                "include_margins": true,
+                "section_color_scheme": "",
+                "padding_top": 36,
+                "padding_bottom": 36
+            }
+        },
+        "you_may_also_like_88Hr4T": {
+            "type": "You-may-also-like",
+            "settings": {
+                "title": "You may also like",
+                "heading_size": "h1",
+                "title_align": "left",
+                "description": "",
+                "show_description": false,
+                "description_style": "body",
+                "collection": "",
+                "show_badge_category": false,
+                "products_to_show": 12,
+                "columns_desktop": 4,
+                "full_width": false,
+                "show_view_all": true,
+                "view_all_style": "solid",
+                "enable_desktop_slider": true,
+                "desktop_slider_page_width": false,
+                "color_scheme": "",
+                "image_ratio": "adapt",
+                "image_shape": "default",
+                "show_secondary_image": true,
+                "show_vendor": false,
+                "show_rating": false,
+                "enable_quick_add": false,
+                "card_color_scheme": "",
+                "columns_mobile": "2",
+                "swipe_on_mobile": true,
+                "custom_class": "Home-featured-collection",
+                "padding_top": 120,
+                "padding_bottom": 120
+            }
+        }
+    },
+    "order": [
+        "main",
+        "product_highlights_VUt8mV",
+        "cabinet_product_grid_KQTYRM",
+        "image_with_text_dynamic_9XDYt6",
+        "product_comparison_table_rrm4U3",
+        "17380578697765a102",
+        "you_may_also_like_88Hr4T"
+    ]
+}

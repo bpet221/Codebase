@@ -1,0 +1,86 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    {% if section.settings.padding_top > 100 %}
+      padding-top: {{ section.settings.padding_top | divided_by: 2 | round: 0 }}px;      
+    {% else %}
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    {% endif %}
+    {% if section.settings.padding_bottom > 100 %}
+      padding-bottom: {{ section.settings.padding_bottom | divided_by: 2 | round: 0 }}px;      
+    {% else %}
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    {% endif %}
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }} {% if request.design_mode == false and section.blocks.size == 0 %}hidden{% endif %}">
+  <div class="{% if section.settings.include_margins %}page-width{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    {%- for block in section.blocks -%}
+      {% render block %}
+    {%- endfor -%}
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "t:sections.apps.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "include_margins",
+      "default": true,
+      "label": "t:sections.apps.settings.include_margins.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "section_color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.apps.presets.name"
+    }
+  ]
+}
+{% endschema %}

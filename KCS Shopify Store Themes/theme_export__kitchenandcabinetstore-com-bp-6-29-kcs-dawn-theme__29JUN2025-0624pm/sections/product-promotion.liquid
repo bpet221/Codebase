@@ -1,0 +1,180 @@
+<style>
+  .cart-offfer-icon{ height:20px;width:20px;}
+  .jdgm-rev-widg__body .jdgm-rev-widg__reviews .jdgm-rev {background-color:{{ section.settings.bg_color }}}
+</style>
+<div class="product-promotional-offers" style="background-color:{{ section.settings.bg_color }}">
+  <div class="page-width">
+    <div class="product-promotional__inner">
+      {% if section.settings.layoyt_type == "simple" %}
+        {% if section.settings.block_title %}
+          <h2 class="section__heading {{ section.settings.heading_size }}"> {{ section.settings.block_title }}</h2>
+        {% endif %}
+        {% if section.settings.button_title %}
+          
+          <a href="#" class="button button--primary" style="background-color:{{ section.settings.button_bg_color }}; color: {{ section.settings.bg_color }}">
+            <svg aria-hidden="true" focusable="false" class="button-icon">
+             <use href="#cart-icon"></use>
+            </svg>
+            {{  section.settings.button_title }}
+            <svg aria-hidden="true" focusable="false" class="icon icon-cart-arrow">
+              <use href="#cart-link-arrow-icon"></use>
+            </svg>
+          </a>
+        {% endif %}
+          {% if section.settings.sales_text_bold %}
+            <p class="sold-units">
+              <strong>
+                <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.6009 9.84678L4.26803 17.7215C4.04928 17.9066 3.77472 18 3.50019 18C3.25978 18 3.01941 17.9291 2.81433 17.7852C2.37344 17.4765 2.21281 16.9146 2.42813 16.4318L5.23093 10.1253H1.16696C0.680463 10.1253 0.245297 9.83472 0.0743802 9.39583C-0.0964999 8.95747 0.0333646 8.46257 0.399078 8.15386L9.73197 0.27915C10.1421 -0.0685802 10.7459 -0.0932951 11.1857 0.215412C11.6266 0.524119 11.7872 1.08606 11.5719 1.56889L8.76907 7.87536H12.833C13.3195 7.87536 13.7547 8.16596 13.9256 8.60481C14.0965 9.04318 13.9666 9.53807 13.6009 9.84678Z" fill="currentColor"/>
+                </svg>
+  
+                {{ section.settings.sales_text_bold }}
+              </strong>
+              {% if section.settings.sales_text %}
+                  {{ section.settings.sales_text }}
+              {% endif %}
+            </p>
+          {% endif %}
+        {% else %}
+        {% if section.blocks %}
+            <ul class="solumn-list">
+              {% for block in section.blocks %}
+                  <li>
+                    {% if block.settings.column_title %}
+                        <h2 class="section__heading {{ block.settings.column_heading_size }}"> {{ block.settings.column_title }}</h2>
+                      {% endif %}
+                    {% if block.settings.column_content %}
+                      <p>{{ block.settings.column_content }}</p>
+                      {% endif %}
+                  </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endif %}
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+  "name": "Product Promotions",
+  "settings": [
+    {
+      "type": "select",
+      "id": "layoyt_type",
+      "options": [
+        {
+          "value": "simple",
+          "label": "Simple"
+        },
+        {
+          "value": "column",
+          "label": "Column"
+        }
+      ],
+      "default": "simple",
+      "label": "Layout"
+    },
+     {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color",
+        "default": "#4000af"
+    },
+   {
+      "type": "text",
+      "id": "block_title",
+      "label": "Heading",
+      "default": "Take advantage of the discounted offer and order your product today!"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+     {
+          "type": "text",
+          "id": "button_title",
+          "label": "Button Name",
+          "default": "Order yours now"
+    },
+     {
+          "type": "color",
+          "id": "button_bg_color",
+          "label": "Button Background Color",
+          "default": "#ffffff"
+    },
+    {
+          "type": "text",
+          "id": "sales_text_bold",
+          "label": "Sales Highlight"
+    },
+    {
+          "type": "text",
+          "id": "sales_text",
+          "label": "Sales Text"
+    }
+  ],
+    "blocks":[
+       {
+          "type": "columns",
+          "name": "Column Info",
+          "settings": [
+            {
+              "type": "text",
+              "id": "column_title",
+              "label": "Column Title"
+            },
+            {
+              "type": "text",
+              "id": "column_content",
+              "label": "Column Content"
+            },
+            {
+              "type": "select",
+              "id": "column_heading_size",
+              "options": [
+                {
+                  "value": "h2",
+                  "label": "t:sections.all.heading_size.options__1.label"
+                },
+                {
+                  "value": "h1",
+                  "label": "t:sections.all.heading_size.options__2.label"
+                },
+                {
+                  "value": "h0",
+                  "label": "t:sections.all.heading_size.options__3.label"
+                }
+              ],
+              "default": "h1",
+              "label": "t:sections.all.heading_size.label"
+            }
+            
+          ]
+        }
+    ],
+  "enabled_on": {
+        "templates": ["product","page"]
+   },
+  "presets": [
+    {
+      "name": "Product Promotions"
+    }
+  ]
+}
+{% endschema %}

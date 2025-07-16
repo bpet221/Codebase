@@ -1,0 +1,522 @@
+{% doc %}
+  @prompt
+    generate me a section that uses badges.
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-badge-showcase-{{ ai_gen_id }} {
+    padding: {{ block.settings.section_padding }}px 20px;
+    background-color: {{ block.settings.background_color }};
+    text-align: center;}
+
+  .ai-badge-showcase__container-{{ ai_gen_id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ai-badge-showcase__heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 {{ block.settings.spacing }}px;}
+
+  .ai-badge-showcase__subtext-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtext_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 {{ block.settings.spacing }}px;
+    opacity: 0.8;
+  }
+
+  .ai-badge-showcase__grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: {{ block.settings.grid_gap }}px;
+    margin-top: {{ block.settings.spacing }}px;
+  }
+
+  .ai-badge-showcase__item-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: {{ block.settings.item_padding }}px;
+    background-color: {{ block.settings.item_background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    border: {{ block.settings.border_width }}px solid {{ block.settings.border_color }};
+  }
+
+  .ai-badge-showcase__badge-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: {{ block.settings.badge_size }}px;
+    height: {{ block.settings.badge_size }}px;
+    background-color: {{ block.settings.badge_color }};
+    color: {{ block.settings.badge_text_color }};
+    border-radius: {{ block.settings.badge_border_radius }}px;
+    font-size: {{ block.settings.badge_font_size }}px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .ai-badge-showcase__badge-icon-{{ ai_gen_id }} {
+    width: calc({{ block.settings.badge_size }}px * 0.5);
+    height: calc({{ block.settings.badge_size }}px * 0.5);
+  }
+
+  .ai-badge-showcase__item-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.item_title_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 8px;font-weight: 600;
+  }
+
+  .ai-badge-showcase__item-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.item_description_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0;
+    opacity: 0.8;line-height: 1.5;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-badge-showcase__grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;gap: {{ block.settings.grid_gap | times: 0.75 }}px;
+    }
+
+    .ai-badge-showcase__badge-{{ ai_gen_id }} {
+      width: {{ block.settings.badge_size | times: 0.8 }}px;
+      height: {{ block.settings.badge_size | times: 0.8 }}px;
+      font-size: {{ block.settings.badge_font_size | times: 0.9 }}px;
+    }
+
+    .ai-badge-showcase__badge-icon-{{ ai_gen_id }} {
+      width: calc({{ block.settings.badge_size | times: 0.8 }}px * 0.5);
+      height: calc({{ block.settings.badge_size | times: 0.8 }}px * 0.5);
+    }
+  }
+{% endstyle %}
+
+<div class="ai-badge-showcase-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-badge-showcase__container-{{ ai_gen_id }}">
+    {% if block.settings.heading != blank %}
+      <h2 class="ai-badge-showcase__heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+    {% endif %}
+
+    {% if block.settings.subtext != blank %}
+      <div class="ai-badge-showcase__subtext-{{ ai_gen_id }}">{{ block.settings.subtext }}</div>
+    {% endif %}<div class="ai-badge-showcase__grid-{{ ai_gen_id }}">
+      {% for i in (1..4) %}
+        {% liquid
+          assign badge_text_key = 'badge_' | append: i | append: '_text'
+          assign title_key = 'item_' | append: i | append: '_title'
+          assign description_key = 'item_' | append: i | append: '_description'
+          assign icon_key = 'badge_' | append: i | append: '_icon'
+
+          assign badge_text = block.settings[badge_text_key]
+          assign title = block.settings[title_key]
+          assign description = block.settings[description_key]
+          assign icon = block.settings[icon_key]
+        %}
+
+        {% if title != blank %}
+          <div class="ai-badge-showcase__item-{{ ai_gen_id }}">
+            <div class="ai-badge-showcase__badge-{{ ai_gen_id }}">
+              {% if icon =='star' %}
+                <svg class="ai-badge-showcase__badge-icon-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              {% elsif icon == 'shield' %}
+                <svg class="ai-badge-showcase__badge-icon-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                </svg>
+              {% elsif icon == 'heart' %}
+                <svg class="ai-badge-showcase__badge-icon-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              {% elsif icon == 'check' %}
+                <svg class="ai-badge-showcase__badge-icon-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20,6 9,17 4,12"/>
+                </svg>
+              {% elsif icon == 'award' %}
+                <svg class="ai-badge-showcase__badge-icon-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="12" cy="8" r="7"/>
+                  <polyline points="8.21,13.89 7,2312,2017,23 15.79,13.88"/>
+                </svg>
+              {% elsif icon == 'thumbs-up' %}
+                <svg class="ai-badge-showcase__badge-icon-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M149V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
+                </svg>
+              {% else %}
+                {% if badge_text != blank %}
+                  {{ badge_text }}
+                {% endif %}
+              {% endif %}
+            </div>
+
+            <h3 class="ai-badge-showcase__item-title-{{ ai_gen_id }}">{{ title }}</h3>
+
+            {% if description != blank %}
+              <p class="ai-badge-showcase__item-description-{{ ai_gen_id }}">{{ description }}</p>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Badge Showcase",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Why Choose Us"
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Discover what makes us stand out from the competition"
+    },
+    {
+      "type": "header",
+      "content": "Badge1"
+    },
+    {
+      "type": "text",
+      "id": "item_1_title",
+      "label": "Title",
+      "default": "Premium Quality"
+    },
+    {
+      "type": "textarea",
+      "id": "item_1_description",
+      "label": "Description",
+      "default": "Crafted with the finest materials and attention to detail"
+    },
+    {
+      "type": "select",
+      "id": "badge_1_icon",
+      "label": "Badge icon",
+      "options": [
+        {"value": "star", "label": "Star"},
+        {"value": "shield", "label": "Shield"},
+        {"value": "heart", "label": "Heart"},
+        {"value": "check", "label": "Check"},
+        {"value": "award", "label": "Award"},
+        {"value": "thumbs-up", "label": "Thumbs Up"},
+        {"value": "text", "label": "Custom Text"}
+      ],
+      "default": "star"
+    },
+    {
+      "type": "text",
+      "id": "badge_1_text",
+      "label": "Badge text"
+    },
+    {
+      "type": "header",
+      "content": "Badge 2"
+    },
+    {
+      "type": "text",
+      "id": "item_2_title",
+      "label": "Title",
+      "default": "Fast Shipping"
+    },
+    {
+      "type": "textarea",
+      "id": "item_2_description",
+      "label": "Description",
+      "default": "Quick and reliable delivery to your doorstep"
+    },
+    {
+      "type": "select",
+      "id": "badge_2_icon",
+      "label": "Badge icon",
+      "options": [
+        {"value": "star", "label": "Star"},
+        {"value": "shield", "label": "Shield"},
+        {"value": "heart", "label": "Heart"},
+        {"value": "check", "label": "Check"},
+        {"value": "award", "label": "Award"},
+        {"value": "thumbs-up", "label": "Thumbs Up"},
+        {"value": "text", "label": "Custom Text"}
+      ],
+      "default": "shield"
+    },
+    {
+      "type": "text",
+      "id": "badge_2_text",
+      "label": "Badge text"
+    },
+    {
+      "type": "header",
+      "content": "Badge 3"
+    },
+    {
+      "type": "text",
+      "id": "item_3_title",
+      "label": "Title",
+      "default": "Customer Love"
+    },
+    {
+      "type": "textarea",
+      "id": "item_3_description",
+      "label": "Description",
+      "default": "Thousands of satisfied customers worldwide"
+    },
+    {
+      "type": "select",
+      "id": "badge_3_icon",
+      "label": "Badge icon",
+      "options": [
+        {"value": "star", "label": "Star"},
+        {"value": "shield", "label": "Shield"},
+        {"value": "heart", "label": "Heart"},
+        {"value": "check", "label": "Check"},
+        {"value": "award", "label": "Award"},
+        {"value": "thumbs-up", "label": "Thumbs Up"},
+        {"value": "text", "label": "Custom Text"}
+      ],
+      "default": "heart"
+    },
+    {
+      "type": "text",
+      "id": "badge_3_text",
+      "label": "Badge text"
+    },
+    {
+      "type": "header",
+      "content": "Badge 4"
+    },
+    {
+      "type": "text",
+      "id": "item_4_title",
+      "label": "Title",
+      "default": "Money Back Guarantee"
+    },
+    {
+      "type": "textarea",
+      "id": "item_4_description",
+      "label": "Description",
+      "default": "30-day hassle-free return policy"
+    },
+    {
+      "type": "select",
+      "id": "badge_4_icon",
+      "label": "Badge icon",
+      "options": [
+        {"value": "star", "label": "Star"},
+        {"value": "shield", "label": "Shield"},
+        {"value": "heart", "label": "Heart"},
+        {"value": "check", "label": "Check"},
+        {"value": "award", "label": "Award"},
+        {"value": "thumbs-up", "label": "Thumbs Up"},
+        {"value": "text", "label": "Custom Text"}
+      ],
+      "default": "check"
+    },
+    {
+      "type": "text",
+      "id": "badge_4_text",
+      "label": "Badge text"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "item_background_color",
+      "label": "Item background color",
+      "default": "#f8f8f8"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#e6e6e6"
+    },
+    {
+      "type": "color",
+      "id": "badge_color",
+      "label": "Badge color",
+      "default": "#000f9f"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Badge text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Section padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "spacing",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Element spacing",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Grid gap",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "item_padding",
+      "min": 15,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Item padding",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Badge Style"
+    },
+    {
+      "type": "range",
+      "id": "badge_size",
+      "min": 40,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Badge size",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "badge_border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Badge border radius",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "badge_font_size",
+      "min": 10,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Badge font size",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "subtext_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtext size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "item_title_size",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Item title size",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "item_description_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Item description size",
+      "default": 14
+    }
+  ],
+  "presets": [
+    {
+      "name": "Badge Showcase"
+    }
+  ],
+  "tag": null
+}
+{% endschema %}

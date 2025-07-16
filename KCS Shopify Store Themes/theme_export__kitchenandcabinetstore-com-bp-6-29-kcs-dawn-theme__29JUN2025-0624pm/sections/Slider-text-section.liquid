@@ -1,0 +1,90 @@
+<div class="Slider-text-section">
+  <div class="slider-container">
+    <div class="sliders">
+      {% for block in section.blocks %}
+        <div class="slide">{{ block.settings.line_text }}</div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+/* Slider container */
+.Slider-text-section .slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+/* Slider wrapper */
+.Slider-text-section .sliders {
+  display: flex;
+  width: max-content;
+  animation: slide-animation 15s linear infinite;
+  padding: 30px 60px;
+  gap: 60px;
+  background: #6D684E;
+}
+/* Individual slides */
+.Slider-text-section .slide {
+  flex: 0 0 auto;
+  width: fit-content;
+  font-style: normal;
+  font-family: "ITC Cheltenham", serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+/* Animation */
+@keyframes slide-animation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 5.2));
+  }
+}
+</style>
+
+<script>
+  const sliders = document.querySelector(".sliders");
+
+  // Clone slides for seamless repeat
+  const slides = Array.from(sliders.children);
+  slides.forEach(slide => {
+    const clone = slide.cloneNode(true);
+    sliders.appendChild(clone);
+  });
+
+  // Adjust animation duration dynamically if needed
+  const totalSlides = slides.length;
+  const sliderDuration = totalSlides * 3; // Adjust timing based on number of slides
+  sliders.style.animationDuration = `${sliderDuration}s`;
+</script>
+
+{% schema %}
+  {
+    "name": "Slider-text",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "text",
+        "name": "Slider Line",
+        "settings": [
+          {
+            "type": "text",
+            "id": "line_text",
+            "label": "Line Text",
+            "default": "This is a slider line"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Slider Text",
+        "category": "Custom Sections"
+      }
+    ]
+  }
+{% endschema %}

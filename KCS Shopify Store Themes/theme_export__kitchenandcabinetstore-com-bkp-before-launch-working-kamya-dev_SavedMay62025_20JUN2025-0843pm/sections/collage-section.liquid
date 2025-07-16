@@ -1,0 +1,337 @@
+<div class="collage-section">
+  <div class="page-width">
+    <!-- Section Title -->
+    {% if section.settings.section_title != blank %}
+      <h2 class="section-title">{{ section.settings.section_title }}</h2>
+    {% endif %}
+    
+    <div class="collage-container">
+      <!-- First Column -->
+      <div class="collage-column large-column">
+        <div class="collage-item large-item" style="background-image: url('{{ section.settings.image_1 | img_url: 'master' }}');">
+          <div class="collage-text">
+            <h2>{{ section.settings.title_1 }}</h2>
+            <p>{{ section.settings.description_1 }}</p>
+            {% if section.settings.button_link_1 != blank %}
+              <a href="{{ section.settings.button_link_1 }}" class="collage-button">{{ section.settings.button_text_1 }}</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+  
+      <!-- Second Column -->
+      <div class="collage-column">
+        <!-- First Row -->
+        <div class="collage-item medium-item" style="background-image: url('{{ section.settings.image_2 | img_url: 'master' }}');">
+          <div class="collage-text">
+            <h2>{{ section.settings.title_2 }}</h2>
+            <p>{{ section.settings.description_2 }}</p>
+            {% if section.settings.button_link_2 != blank %}
+              <a href="{{ section.settings.button_link_2 }}" class="collage-button">{{ section.settings.button_text_2 }}</a>
+            {% endif %}
+          </div>
+        </div>
+  
+        <!-- Second Row -->
+        <div class="collage-row">
+          <div class="collage-item small-item" style="background-image: url('{{ section.settings.image_3 | img_url: 'master' }}');">
+            <div class="collage-text">
+              <h2>{{ section.settings.title_3 }}</h2>
+              <p>{{ section.settings.description_3 }}</p>
+              {% if section.settings.button_link_3 != blank %}
+                <a href="{{ section.settings.button_link_3 }}" class="collage-button">{{ section.settings.button_text_3 }}</a>
+              {% endif %}
+            </div>
+          </div>
+          <div class="collage-item small-item" style="background-image: url('{{ section.settings.image_4 | img_url: 'master' }}');">
+            <div class="collage-text">
+              <h2>{{ section.settings.title_4 }}</h2>
+              <p>{{ section.settings.description_4 }}</p>
+              {% if section.settings.button_link_4 != blank %}
+                <a href="{{ section.settings.button_link_4 }}" class="collage-button">{{ section.settings.button_text_4 }}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<style>
+  .collage-section {
+      padding: 120px 0;
+      background: #F5F3EB;
+  }
+  .collage-section .collage-container {
+      display: flex;
+      align-items: center;
+      gap: 30px; 
+  }
+  .collage-section .collage-column {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      flex: 1;
+  }
+  .collage-section .section-title {
+      font-family: ITC Cheltenham, serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 49px;
+      text-align: center;
+      color: #35312E;
+      margin-top: 0;
+      margin-bottom: 30px;
+  }
+  .collage-section .collage-item {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      border-radius: 15px;
+      overflow: hidden;
+  }
+  .collage-section .large-item {
+      aspect-ratio: 1 / 1;
+  }
+  .collage-section .medium-item {
+      aspect-ratio: 2 / 1;
+  }
+  .collage-section .collage-row {
+      display: flex;
+      gap: 30px;
+      flex: 1;
+      flex-direction: row;
+  }
+  .collage-section .small-item {
+      aspect-ratio: 1 / 1;
+      flex: 1; 
+  }
+  .collage-section .collage-item .collage-text {
+      padding: 0;
+      left: 30px;
+      bottom: 30px;
+      max-width: 250px;
+      position: absolute;
+      color: white;
+  }
+  .collage-section .collage-item .collage-text h2 {
+      font-family: ITC Cheltenham, serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 29px;
+      margin-bottom: 16px;
+      color: #FFFFFF;
+  }
+  .collage-section .collage-item .collage-text p {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      margin-top: 0px;
+      margin-bottom: 16px;
+  }
+  .collage-section .collage-item .collage-text .collage-button {
+      font-family: ITC Cheltenham, serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+      color: #FFFFFF;
+      text-decoration: underline;
+  }
+  @media (max-width: 1300px) {
+    .collage-section .collage-container, .collage-section .collage-column, .collage-section .collage-row {
+        gap: 20px;
+    }
+    .collage-section {
+        padding: 80px 0;
+    }
+  }
+  @media (max-width: 1100px) {
+    .collage-section .section-title {
+        font-size: 35px;
+        line-height: 40px;
+    }
+    .collage-section .collage-item .collage-text {
+        left: 15px;
+        bottom: 15px;
+        max-width: 200px;
+    }
+    .collage-section .collage-item .collage-text h2 {
+        font-size: 20px;
+        line-height: 25px;
+        margin-bottom: 10px;
+        margin-top: 5px;
+    }
+    .collage-section .collage-item .collage-text p {
+        font-size: 12px;
+        line-height: 15px;
+        margin-bottom: 10px;
+    }
+    .collage-section .collage-item .collage-text .collage-button {
+        font-size: 14px;
+        line-height: 15px;
+    }
+    .collage-section {
+        padding: 50px 0;
+    }
+  }
+  @media (max-width: 990px) {
+    .collage-section .section-title {
+        font-size: 30px;
+        line-height: 35px;
+    }
+    .collage-section .collage-item .collage-text {
+        bottom: 10px;
+    }
+  }
+  @media (max-width: 750px) {
+    .collage-section .collage-container {
+        display: block;
+    }
+    .collage-section .collage-column {
+        margin-bottom: 20px;
+    }
+    
+  }
+  @media (max-width: 480px) {
+    .collage-section .section-title {
+        font-size: 25px;
+        line-height: 30px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Collage Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Our Collections"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image for First Large Collection"
+    },
+    {
+      "type": "text",
+      "id": "title_1",
+      "label": "Title for First Large Collection",
+      "default": "Large Collection Title"
+    },
+    {
+      "type": "textarea",
+      "id": "description_1",
+      "label": "Description for First Large Collection"
+    },
+    {
+      "type": "url",
+      "id": "button_link_1",
+      "label": "Button Link for First Large Collection"
+    },
+    {
+      "type": "text",
+      "id": "button_text_1",
+      "label": "Button Text for First Large Collection",
+      "default": "Shop Now"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image for Second Medium Collection"
+    },
+    {
+      "type": "text",
+      "id": "title_2",
+      "label": "Title for Second Medium Collection",
+      "default": "Medium Collection Title"
+    },
+    {
+      "type": "textarea",
+      "id": "description_2",
+      "label": "Description for Second Medium Collection"
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "Button Link for Second Medium Collection"
+    },
+    {
+      "type": "text",
+      "id": "button_text_2",
+      "label": "Button Text for Second Medium Collection",
+      "default": "Shop Now"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Image for Third Small Collection"
+    },
+    {
+      "type": "text",
+      "id": "title_3",
+      "label": "Title for Third Small Collection",
+      "default": "Small Collection Title"
+    },
+    {
+      "type": "textarea",
+      "id": "description_3",
+      "label": "Description for Third Medium Collection"
+    },
+    {
+      "type": "url",
+      "id": "button_link_3",
+      "label": "Button Link for Third Small Collection"
+    },
+    {
+      "type": "text",
+      "id": "button_text_3",
+      "label": "Button Text for Third Small Collection",
+      "default": "Shop Now"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_4",
+      "label": "Image for Fourth Small Collection"
+    },
+    {
+      "type": "text",
+      "id": "title_4",
+      "label": "Title for Fourth Small Collection",
+      "default": "Small Collection Title"
+    },
+    {
+      "type": "textarea",
+      "id": "description_4",
+      "label": "Description for Fourth Medium Collection"
+    },
+    {
+      "type": "url",
+      "id": "button_link_4",
+      "label": "Button Link for Fourth Small Collection"
+    },
+    {
+      "type": "text",
+      "id": "button_text_4",
+      "label": "Button Text for Fourth Small Collection",
+      "default": "Shop Now"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collage",
+      "category": "Collage"
+    }
+  ]
+}
+{% endschema %}
+

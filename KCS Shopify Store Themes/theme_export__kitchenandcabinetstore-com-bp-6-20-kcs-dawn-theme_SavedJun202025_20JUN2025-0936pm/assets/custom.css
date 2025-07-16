@@ -1,0 +1,462 @@
+/* ==========================================================================
+   🏠 Home Page Hero
+   ========================================================================== */
+.Shopify-section__First-slideshow .banner .banner__box .banner__subheading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 49px;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.Shopify-section__First-slideshow .banner .banner__heading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 63.5px;
+    line-height: 78px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.Shopify-section__First-slideshow .banner .banner__box .banner__text.rte,
+.Shopify-section__First-slideshow .banner .banner__box .banner__text.rte p {
+    font-family: "ITC Cheltenham", serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    color: #FFFFFF;
+    margin-top: 0px;
+}
+
+/* === Responsive Mobile Fixes for Hero Section === */
+/* 2025-06-14 by Blake */
+@media (max-width: 749px) {
+    .Shopify-section__First-slideshow .banner .banner__box {
+        text-align: center;
+        padding-top: 2rem;
+        padding-right: 0px;
+        padding-bottom: 2rem;
+        padding-left: 0px;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+    }
+
+    .Shopify-section__First-slideshow .banner .banner__box .banner__subheading {
+        font-size: 21px;
+        line-height: 1.3;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 8px;
+        margin-left: 0px;
+    }
+
+    .Shopify-section__First-slideshow .banner .banner__heading {
+        font-size: 30px;
+        line-height: 1.3;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 12px;
+        margin-left: 0px;
+    }
+
+    .Shopify-section__First-slideshow .banner .banner__box .banner__text.rte,
+    .Shopify-section__First-slideshow .banner .banner__box .banner__text.rte p {
+        font-size: 19px;
+        line-height: 1.4;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 16px;
+        margin-left: 0px;
+    }
+
+    .Shopify-section__First-slideshow .banner .banner__buttons .button {
+        font-size: 14px;
+        padding-top: 12px;
+        padding-right: 24px;
+        padding-bottom: 12px;
+        padding-left: 24px;
+        display: inline-block;
+        margin-top: 0px;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-left: auto;
+    }
+}
+
+/* ==========================================================================
+   📦 Collection Page Layout
+   ========================================================================== */
+.category-desription-separator,
+.separator {
+    margin: unset;
+}
+
+.collection-breadcrumbs-container {
+    width: 80%;
+    margin: auto;
+}
+
+.main-content-container-productlist {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-around;
+}
+
+.left-content-container-layerednav {
+    width: 30%;
+}
+
+.right-content-container-productlist {
+    width: 66%;
+}
+
+.color-variant-ul {
+    padding: unset;
+}
+
+.color-variant-ul li {
+    display: inline-block;
+}
+
+.product-price-conatiner span {
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 55px;
+    float: right;
+    clear: right;
+}
+
+.main-content-product-container {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.individual-product-container {
+    width: 240px;
+    padding: 5px;
+}
+
+.load-more_wrap {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.load-more_wrap img {
+    max-width: 25px;
+}
+
+.product-count-and-sorting-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.collection-filter-container hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.collection-filter-form li::marker {
+    content: '';
+}
+
+.collection-filter-form ul {
+    padding: unset;
+}
+
+.collection-product-display-image {
+    width: 100%;
+}
+
+
+/* ==========================================================================
+   🧪 Progress Bar Styling
+   ========================================================================== */
+progress[value] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    width: 100%;
+    height: 1.25rem;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.5);
+    position: relative;
+    margin: 0 0 1.5em;
+}
+
+progress[value]::-webkit-progress-bar {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+progress[value]::-webkit-progress-value {
+    position: relative;
+    border-radius: 10px;
+    background-color: #068c7b;
+}
+
+progress[value]::-moz-progress-bar {
+    background-color: #068c7b;
+    border-radius: 10px;
+}
+
+
+/* ==========================================================================
+   📣 Reserve Counter Banner
+   ========================================================================== */
+.item_reserve_text {
+    background: #068c7b;
+    color: #fff;
+    text-align: center;
+}
+
+span#reserve_counter {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+
+/* ==========================================================================
+   🌟 AirReviews Integration
+   ========================================================================== */
+.AirReviews-Blocks .AirReviews-Blocks__Summary {
+    margin: 0 var(--air-spacing-6);
+    background: #fff;
+}
+
+.AirReviews-Select__Input,
+.AirReviews-Blocks__pagination .AirReviews-Pagination .AirReviews-Pagination__button,
+.AirReviews-Select {
+    background: #fff;
+}
+
+
+/* ==========================================================================
+   🧭 Breadcrumbs (Updated 01/01/2025)
+   ========================================================================== */
+.breadcrumbs .breadcrumbs__item:last-child {
+    color: #AF5A3C;
+}
+
+
+/* ==========================================================================
+   ✍️ Typography Override
+   ========================================================================== */
+.banner__text p {
+    font-family: "ITC Cheltenham", serif !important;
+}
+
+
+/* ==========================================================================
+   🛒 Cart Page (WIP Placeholder)
+   ========================================================================== */
+
+/* ==========================================================================
+   🎨 Filter CSS
+   ========================================================================== */
+
+
+/* 1. Facet Checkbox Label Styles */
+.facets__label.facet-checkbox {
+    padding-right: 1rem;
+}
+
+.facets__label.facet-checkbox .icon-checkmark {
+    left: inherit;
+    top: inherit;
+    color: rgba(var(--color-button), 1);
+}
+
+
+
+
+/* 2. Facets Disclosure (Desktop) */
+
+.facets-vertical .facets__form-vertical#FacetFiltersForm .facets__disclosure-vertical {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 8px 12px 4px 12px;
+    font-size: 15px;
+    border: 1px solid #5c707e24;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.31);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.31);
+    background-color: #F5F3EB; /* ✅ Add this line */
+}
+
+.facets-vertical .facets__form-vertical#FacetFiltersForm summary.facets__summary.caption-large.focus-offset {
+    padding: 4px 0 10px 34px;
+}
+
+/* 3. Filter Group Header Styling (Icon + Font) */
+.facets-vertical .facets__form-vertical#FacetFiltersForm summary.facets__summary {
+  background: none;
+  font-size: 18px;
+  font-family: "ITC Cheltenham", serif;
+  line-height: 20px;
+}
+
+/* 4. Icons for Specific Filter Groups */
+.facets-vertical .facets__form-vertical#FacetFiltersForm summary.facets__summary.categories {
+  background: url(https://cdn.shopify.com/s/files/1/0628/5167/8286/files/elements-1-png.png?v=1736514633) no-repeat -338px -108px / 512px 512px;
+}
+
+.facets-vertical .facets__form-vertical#FacetFiltersForm summary.facets__summary.color {
+  background: url(https://cdn.shopify.com/s/files/1/0628/5167/8286/files/elements-1-png.png?v=1736514633) no-repeat 0 -283px / 512px 512px;
+}
+
+.facets-vertical .facets__form-vertical#FacetFiltersForm summary.facets__summary.door-style {
+  background: url(https://cdn.shopify.com/s/files/1/0628/5167/8286/files/elements-1-png.png?v=1736514633) no-repeat -338px -208px / 512px 512px;
+}
+
+.facets-vertical .facets__form-vertical#FacetFiltersForm summary.facets__summary.dimension {
+  background: url(https://cdn.shopify.com/s/files/1/0628/5167/8286/files/elements-1-png.png?v=1736514633) no-repeat 0 -352px / 512px 512px;
+}
+
+.facets-vertical .facets__form-vertical#FacetFiltersForm summary.facets__summary.availability,
+.facets-vertical .facets__form-vertical#FacetFiltersForm summary.facets__summary.features {
+  background: url(https://cdn.shopify.com/s/files/1/0628/5167/8286/files/elements-1-png.png?v=1736514633) no-repeat -338px -284px / 512px 512px;
+}
+
+.facets-vertical .facets__form-vertical#FacetFiltersForm summary.facets__summary.finishes {
+  background: url(https://cdn.shopify.com/s/files/1/0628/5167/8286/files/icons8-paint-brush-50.png?v=1736589675) no-repeat 0 center / 25px 25px;
+}
+
+.facets-vertical .facets__form-vertical#FacetFiltersForm summary.facets__summary.shade\/tone {
+  background: url(https://cdn.shopify.com/s/files/1/0628/5167/8286/files/icons8-contrast-25.png?v=1736590322) no-repeat -2px center / 25px 25px;
+}
+
+.facets-vertical .facets__form-vertical#FacetFiltersForm summary.facets__summary.cabinet-style {
+  background: url(https://cdn.shopify.com/s/files/1/0628/5167/8286/files/elements-1-png.png?v=1736514633) no-repeat 0 -212px / 512px 512px;
+}
+
+.facets-vertical .facets__form-vertical#FacetFiltersForm summary.facets__summary.construction-type {
+  background: url(https://cdn.shopify.com/s/files/1/0628/5167/8286/files/elements-1-png.png?v=1736514633) no-repeat 0 -352px / 512px 512px;
+}
+
+.facets-vertical .facets__form-vertical#FacetFiltersForm summary.facets__summary.best-seller {
+  background: url(https://cdn.shopify.com/s/files/1/0628/5167/8286/files/elements-1-png.png?v=1736514633) no-repeat -338px -284px / 512px 512px;
+}
+
+
+
+/* 5. Color Facet Orange Highlight Ring */
+.facets__visual-display-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: visible;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.facets__visual-display-wrapper .visual-display__image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center center !important;
+}
+
+.facets__label.visual-display-parent.active .facets__visual-display-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100% - 16px);   /* Tighter */
+  height: calc(100% - 16px);
+  transform: translate(-50%, -50%);
+  border: 4px solid #AF5A3C;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+
+
+/* 6. 🔴/🟢 DESKTOP Toggle Filter Group Visibility - BLOCK<>NONE */
+
+/* BLOCK = Show 'Color' */
+.facets__disclosure-vertical:has(summary.facets__summary.color) {
+  display: block;
+}
+
+/* BLOCK = Show 'Cabinet Style' */
+.facets__disclosure-vertical:has(summary.facets__summary.cabinet-style) {
+  display: none;
+}
+
+/* BLOCK = Show 'Construction Type' */
+.facets__disclosure-vertical:has(summary.facets__summary.construction-type) {
+  display: none;
+}
+
+/* BLOCK = Show 'Finishes' */
+.facets__disclosure-vertical:has(summary.facets__summary.finishes) {
+  display: none;
+}
+
+/* BLOCK = Show 'Features' */
+.facets__disclosure-vertical:has(summary.facets__summary.features) {
+  display: block;
+}
+
+/* BLOCK = Show 'Best Seller' */
+.facets__disclosure-vertical:has(summary.facets__summary.best-seller) {
+  display: block;
+}
+
+@media screen and (max-width: 749px) {
+  /* Hide Cabinet Style only */
+  summary.mobile-facets__summary:has(span:contains("Cabinet Style")) {
+    display: none;
+  }
+}
+
+/* 7. 🔴/🟢 MOBILE Toggle Filter Group Visibility - BLOCK<>NONE */
+
+
+  /* BLOCK = Show 'Color' */
+  #Details-Mobile-1-template--17892279910478__product-grid {
+    display: block !important;
+  }
+  
+  /* BLOCK = Show 'Cabinet Style' */  
+  #Details-Mobile-2-template--17892279910478__product-grid {
+    display: none !important;
+  }
+  
+  /* BLOCK = Show 'Construction Type' */
+  #Details-Mobile-3-template--17892279910478__product-grid {
+    display: none !important;
+  }
+  
+  /* BLOCK = Show 'Finishes' */
+  #Details-Mobile-4-template--17892279910478__product-grid {
+    display: none !important;
+  }
+
+  /* BLOCK = Show 'Features' */  
+  #Details-Mobile-5-template--17892279910478__product-grid {
+    display: block !important;
+  }
+
+  /* BLOCK = Show 'Best Seller' */  
+  #Details-Mobile-6-template--17892279910478__product-grid {
+    display: block !important;
+  }
+
+

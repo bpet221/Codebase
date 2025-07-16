@@ -1,0 +1,134 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+  {% if section.settings.padding_top > 100 %}
+    padding-top: {{ section.settings.padding_top | divided_by: 2 | round: 0 }}px;      
+  {% else %}
+  padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+  {% endif %}
+  {% if section.settings.padding_bottom > 100 %}
+    padding-bottom: {{ section.settings.padding_bottom | divided_by: 2 | round: 0 }}px;      
+  {% else %}
+  padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  {% endif %}
+}
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="{{ section.settings.page__width }} section-{{ section.id }}-padding {{ section.settings.text_alignment }}">
+  {% if section.settings.show_heading %}
+  <h1 class="main-page-title page-title h0 {{ section.settings.heading_alignment }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+    {{ page.title | escape }}
+  </h1>
+  {% endif %}
+  <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    {{ page.content }}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-page.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show heading",
+      "default": true   
+    },
+    {
+      "type": "select",
+      "id": "page__width",
+      "label": "t:sections.all.section-width.label",
+      "default": "page-width",
+      "options": [
+        {
+          "label": "t:sections.all.section-width.full-width.label",
+          "value": "full-width"
+        },
+        {
+          "label": "t:sections.all.section-width.page-width.label",
+          "value": "page-width"
+        },
+        {
+          "label": "t:sections.all.section-width.narrow-width.label",
+          "value": "page-width page-width--narrow"
+        }
+      ]
+    },
+     {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "t:sections.all.heading_alignment.label",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.all.heading_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.all.heading_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.all.heading_alignment.options__3.label"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.slideshow.blocks.slide.settings.text_alignment.option_1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.slideshow.blocks.slide.settings.text_alignment.option_2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.slideshow.blocks.slide.settings.text_alignment.option_3.label"
+        }
+      ],
+      "default": "left",
+      "label": "t:sections.slideshow.blocks.slide.settings.text_alignment.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 180,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 180,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}
