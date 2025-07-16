@@ -15,5 +15,5 @@ Message-Id: <20240505213001.0FC41121FE3D@BlakesMP16M3Pro.attlocal.net>
 Date: Sun,  5 May 2024 17:30:00 -0400 (EDT)
 Status: RO
 
-/bin/sh: /Users/blakepetipas/Documents/Code/GHL Agent Report Scraper/script_output.log: No such file or directory
+/bin/sh: /Users/blakepetipas/Documents/Code/GHL Agent Report Scraper/script_output.log: No such file or directory 1
 
