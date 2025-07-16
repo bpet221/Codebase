@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		429AA2542DCD410B009C8B0D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 429AA23D2DCD410A009C8B0D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 429AA2442DCD410A009C8B0D;
+			remoteInfo = "Mountie Markers";
+		};
+		429AA25E2DCD410B009C8B0D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 429AA23D2DCD410A009C8B0D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 429AA2442DCD410A009C8B0D;
+			remoteInfo = "Mountie Markers";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		429AA2452DCD410A009C8B0D /* Mountie Markers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mountie Markers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		429AA2532DCD410B009C8B0D /* Mountie MarkersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mountie MarkersTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		429AA25D2DCD410B009C8B0D /* Mountie MarkersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mountie MarkersUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		429AA2472DCD410A009C8B0D /* Mountie Markers */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Mountie Markers";
+			sourceTree = "<group>";
+		};
+		429AA2562DCD410B009C8B0D /* Mountie MarkersTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Mountie MarkersTests";
+			sourceTree = "<group>";
+		};
+		429AA2602DCD410B009C8B0D /* Mountie MarkersUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Mountie MarkersUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		429AA2422DCD410A009C8B0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		429AA2502DCD410B009C8B0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		429AA25A2DCD410B009C8B0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		429AA23C2DCD410A009C8B0D = {
+			isa = PBXGroup;
+			children = (
+				429AA2472DCD410A009C8B0D /* Mountie Markers */,
+				429AA2562DCD410B009C8B0D /* Mountie MarkersTests */,
+				429AA2602DCD410B009C8B0D /* Mountie MarkersUITests */,
+				429AA2462DCD410A009C8B0D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		429AA2462DCD410A009C8B0D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				429AA2452DCD410A009C8B0D /* Mountie Markers.app */,
+				429AA2532DCD410B009C8B0D /* Mountie MarkersTests.xctest */,
+				429AA25D2DCD410B009C8B0D /* Mountie MarkersUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		429AA2442DCD410A009C8B0D /* Mountie Markers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 429AA2672DCD410B009C8B0D /* Build configuration list for PBXNativeTarget "Mountie Markers" */;
+			buildPhases = (
+				429AA2412DCD410A009C8B0D /* Sources */,
+				429AA2422DCD410A009C8B0D /* Frameworks */,
+				429AA2432DCD410A009C8B0D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				429AA2472DCD410A009C8B0D /* Mountie Markers */,
+			);
+			name = "Mountie Markers";
+			packageProductDependencies = (
+			);
+			productName = "Mountie Markers";
+			productReference = 429AA2452DCD410A009C8B0D /* Mountie Markers.app */;
+			productType = "com.apple.product-type.application";
+		};
+		429AA2522DCD410B009C8B0D /* Mountie MarkersTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 429AA26A2DCD410B009C8B0D /* Build configuration list for PBXNativeTarget "Mountie MarkersTests" */;
+			buildPhases = (
+				429AA24F2DCD410B009C8B0D /* Sources */,
+				429AA2502DCD410B009C8B0D /* Frameworks */,
+				429AA2512DCD410B009C8B0D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				429AA2552DCD410B009C8B0D /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				429AA2562DCD410B009C8B0D /* Mountie MarkersTests */,
+			);
+			name = "Mountie MarkersTests";
+			packageProductDependencies = (
+			);
+			productName = "Mountie MarkersTests";
+			productReference = 429AA2532DCD410B009C8B0D /* Mountie MarkersTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		429AA25C2DCD410B009C8B0D /* Mountie MarkersUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 429AA26D2DCD410B009C8B0D /* Build configuration list for PBXNativeTarget "Mountie MarkersUITests" */;
+			buildPhases = (
+				429AA2592DCD410B009C8B0D /* Sources */,
+				429AA25A2DCD410B009C8B0D /* Frameworks */,
+				429AA25B2DCD410B009C8B0D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				429AA25F2DCD410B009C8B0D /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				429AA2602DCD410B009C8B0D /* Mountie MarkersUITests */,
+			);
+			name = "Mountie MarkersUITests";
+			packageProductDependencies = (
+			);
+			productName = "Mountie MarkersUITests";
+			productReference = 429AA25D2DCD410B009C8B0D /* Mountie MarkersUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		429AA23D2DCD410A009C8B0D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					429AA2442DCD410A009C8B0D = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					429AA2522DCD410B009C8B0D = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 429AA2442DCD410A009C8B0D;
+					};
+					429AA25C2DCD410B009C8B0D = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 429AA2442DCD410A009C8B0D;
+					};
+				};
+			};
+			buildConfigurationList = 429AA2402DCD410A009C8B0D /* Build configuration list for PBXProject "Mountie Markers" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 429AA23C2DCD410A009C8B0D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 429AA2462DCD410A009C8B0D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				429AA2442DCD410A009C8B0D /* Mountie Markers */,
+				429AA2522DCD410B009C8B0D /* Mountie MarkersTests */,
+				429AA25C2DCD410B009C8B0D /* Mountie MarkersUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		429AA2432DCD410A009C8B0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		429AA2512DCD410B009C8B0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		429AA25B2DCD410B009C8B0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		429AA2412DCD410A009C8B0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		429AA24F2DCD410B009C8B0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		429AA2592DCD410B009C8B0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		429AA2552DCD410B009C8B0D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 429AA2442DCD410A009C8B0D /* Mountie Markers */;
+			targetProxy = 429AA2542DCD410B009C8B0D /* PBXContainerItemProxy */;
+		};
+		429AA25F2DCD410B009C8B0D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 429AA2442DCD410A009C8B0D /* Mountie Markers */;
+			targetProxy = 429AA25E2DCD410B009C8B0D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		429AA2652DCD410B009C8B0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		429AA2662DCD410B009C8B0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		429AA2682DCD410B009C8B0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Mountie Markers/Mountie_Markers.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Mountie-Markers-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blake.MountieMarkers.Mountie-Markers";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		429AA2692DCD410B009C8B0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Mountie Markers/Mountie_Markers.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Mountie-Markers-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blake.MountieMarkers.Mountie-Markers";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		429AA26B2DCD410B009C8B0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blake.MountieMarkers.Mountie-MarkersTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mountie Markers.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Mountie Markers";
+			};
+			name = Debug;
+		};
+		429AA26C2DCD410B009C8B0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blake.MountieMarkers.Mountie-MarkersTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mountie Markers.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Mountie Markers";
+			};
+			name = Release;
+		};
+		429AA26E2DCD410B009C8B0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blake.MountieMarkers.Mountie-MarkersUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Mountie Markers";
+			};
+			name = Debug;
+		};
+		429AA26F2DCD410B009C8B0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blake.MountieMarkers.Mountie-MarkersUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Mountie Markers";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		429AA2402DCD410A009C8B0D /* Build configuration list for PBXProject "Mountie Markers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				429AA2652DCD410B009C8B0D /* Debug */,
+				429AA2662DCD410B009C8B0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		429AA2672DCD410B009C8B0D /* Build configuration list for PBXNativeTarget "Mountie Markers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				429AA2682DCD410B009C8B0D /* Debug */,
+				429AA2692DCD410B009C8B0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		429AA26A2DCD410B009C8B0D /* Build configuration list for PBXNativeTarget "Mountie MarkersTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				429AA26B2DCD410B009C8B0D /* Debug */,
+				429AA26C2DCD410B009C8B0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		429AA26D2DCD410B009C8B0D /* Build configuration list for PBXNativeTarget "Mountie MarkersUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				429AA26E2DCD410B009C8B0D /* Debug */,
+				429AA26F2DCD410B009C8B0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 429AA23D2DCD410A009C8B0D /* Project object */;
+}
