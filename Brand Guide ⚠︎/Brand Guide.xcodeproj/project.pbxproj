@@ -6,68 +6,63 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		42D318E32E2873C700DA5D64 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D318E22E2873C700DA5D64 /* File.swift */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXContainerItemProxy section */
-		429AA2542DCD410B009C8B0D /* PBXContainerItemProxy */ = {
+		42D319302E2877F500DA5D64 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 429AA23D2DCD410A009C8B0D /* Project object */;
+			containerPortal = 42D319192E2877F400DA5D64 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 429AA2442DCD410A009C8B0D;
-			remoteInfo = "Mountie Markers";
+			remoteGlobalIDString = 42D319202E2877F400DA5D64;
+			remoteInfo = "Brand Guide";
 		};
-		429AA25E2DCD410B009C8B0D /* PBXContainerItemProxy */ = {
+		42D3193A2E2877F500DA5D64 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 429AA23D2DCD410A009C8B0D /* Project object */;
+			containerPortal = 42D319192E2877F400DA5D64 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 429AA2442DCD410A009C8B0D;
-			remoteInfo = "Mountie Markers";
+			remoteGlobalIDString = 42D319202E2877F400DA5D64;
+			remoteInfo = "Brand Guide";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		429AA2452DCD410A009C8B0D /* Mountie Markers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mountie Markers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		429AA2532DCD410B009C8B0D /* Mountie MarkersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mountie MarkersTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		429AA25D2DCD410B009C8B0D /* Mountie MarkersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mountie MarkersUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		42D318E22E2873C700DA5D64 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = File.swift; path = "../Swift Brand Guide Widget/File.swift"; sourceTree = SOURCE_ROOT; };
+		42D319212E2877F400DA5D64 /* Brand Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Brand Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42D3192F2E2877F500DA5D64 /* Brand GuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Brand GuideTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42D319392E2877F500DA5D64 /* Brand GuideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Brand GuideUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		429AA2472DCD410A009C8B0D /* Mountie Markers */ = {
+		42D319232E2877F400DA5D64 /* Brand Guide */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Mountie Markers";
+			path = "Brand Guide";
 			sourceTree = "<group>";
 		};
-		429AA2562DCD410B009C8B0D /* Mountie MarkersTests */ = {
+		42D319322E2877F500DA5D64 /* Brand GuideTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Mountie MarkersTests";
+			path = "Brand GuideTests";
 			sourceTree = "<group>";
 		};
-		429AA2602DCD410B009C8B0D /* Mountie MarkersUITests */ = {
+		42D3193C2E2877F500DA5D64 /* Brand GuideUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Mountie MarkersUITests";
+			path = "Brand GuideUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		429AA2422DCD410A009C8B0D /* Frameworks */ = {
+		42D3191E2E2877F400DA5D64 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		429AA2502DCD410B009C8B0D /* Frameworks */ = {
+		42D3192C2E2877F500DA5D64 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		429AA25A2DCD410B009C8B0D /* Frameworks */ = {
+		42D319362E2877F500DA5D64 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -77,23 +72,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		429AA23C2DCD410A009C8B0D = {
+		42D319182E2877F400DA5D64 = {
 			isa = PBXGroup;
 			children = (
-				42D318E22E2873C700DA5D64 /* File.swift */,
-				429AA2472DCD410A009C8B0D /* Mountie Markers */,
-				429AA2562DCD410B009C8B0D /* Mountie MarkersTests */,
-				429AA2602DCD410B009C8B0D /* Mountie MarkersUITests */,
-				429AA2462DCD410A009C8B0D /* Products */,
+				42D319232E2877F400DA5D64 /* Brand Guide */,
+				42D319322E2877F500DA5D64 /* Brand GuideTests */,
+				42D3193C2E2877F500DA5D64 /* Brand GuideUITests */,
+				42D319222E2877F400DA5D64 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		429AA2462DCD410A009C8B0D /* Products */ = {
+		42D319222E2877F400DA5D64 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				429AA2452DCD410A009C8B0D /* Mountie Markers.app */,
-				429AA2532DCD410B009C8B0D /* Mountie MarkersTests.xctest */,
-				429AA25D2DCD410B009C8B0D /* Mountie MarkersUITests.xctest */,
+				42D319212E2877F400DA5D64 /* Brand Guide.app */,
+				42D3192F2E2877F500DA5D64 /* Brand GuideTests.xctest */,
+				42D319392E2877F500DA5D64 /* Brand GuideUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,134 +95,134 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		429AA2442DCD410A009C8B0D /* Mountie Markers */ = {
+		42D319202E2877F400DA5D64 /* Brand Guide */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 429AA2672DCD410B009C8B0D /* Build configuration list for PBXNativeTarget "Mountie Markers" */;
+			buildConfigurationList = 42D319432E2877F500DA5D64 /* Build configuration list for PBXNativeTarget "Brand Guide" */;
 			buildPhases = (
-				429AA2412DCD410A009C8B0D /* Sources */,
-				429AA2422DCD410A009C8B0D /* Frameworks */,
-				429AA2432DCD410A009C8B0D /* Resources */,
+				42D3191D2E2877F400DA5D64 /* Sources */,
+				42D3191E2E2877F400DA5D64 /* Frameworks */,
+				42D3191F2E2877F400DA5D64 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				429AA2472DCD410A009C8B0D /* Mountie Markers */,
+				42D319232E2877F400DA5D64 /* Brand Guide */,
 			);
-			name = "Mountie Markers";
+			name = "Brand Guide";
 			packageProductDependencies = (
 			);
-			productName = "Mountie Markers";
-			productReference = 429AA2452DCD410A009C8B0D /* Mountie Markers.app */;
+			productName = "Brand Guide";
+			productReference = 42D319212E2877F400DA5D64 /* Brand Guide.app */;
 			productType = "com.apple.product-type.application";
 		};
-		429AA2522DCD410B009C8B0D /* Mountie MarkersTests */ = {
+		42D3192E2E2877F500DA5D64 /* Brand GuideTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 429AA26A2DCD410B009C8B0D /* Build configuration list for PBXNativeTarget "Mountie MarkersTests" */;
+			buildConfigurationList = 42D319462E2877F500DA5D64 /* Build configuration list for PBXNativeTarget "Brand GuideTests" */;
 			buildPhases = (
-				429AA24F2DCD410B009C8B0D /* Sources */,
-				429AA2502DCD410B009C8B0D /* Frameworks */,
-				429AA2512DCD410B009C8B0D /* Resources */,
+				42D3192B2E2877F500DA5D64 /* Sources */,
+				42D3192C2E2877F500DA5D64 /* Frameworks */,
+				42D3192D2E2877F500DA5D64 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				429AA2552DCD410B009C8B0D /* PBXTargetDependency */,
+				42D319312E2877F500DA5D64 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				429AA2562DCD410B009C8B0D /* Mountie MarkersTests */,
+				42D319322E2877F500DA5D64 /* Brand GuideTests */,
 			);
-			name = "Mountie MarkersTests";
+			name = "Brand GuideTests";
 			packageProductDependencies = (
 			);
-			productName = "Mountie MarkersTests";
-			productReference = 429AA2532DCD410B009C8B0D /* Mountie MarkersTests.xctest */;
+			productName = "Brand GuideTests";
+			productReference = 42D3192F2E2877F500DA5D64 /* Brand GuideTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		429AA25C2DCD410B009C8B0D /* Mountie MarkersUITests */ = {
+		42D319382E2877F500DA5D64 /* Brand GuideUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 429AA26D2DCD410B009C8B0D /* Build configuration list for PBXNativeTarget "Mountie MarkersUITests" */;
+			buildConfigurationList = 42D319492E2877F500DA5D64 /* Build configuration list for PBXNativeTarget "Brand GuideUITests" */;
 			buildPhases = (
-				429AA2592DCD410B009C8B0D /* Sources */,
-				429AA25A2DCD410B009C8B0D /* Frameworks */,
-				429AA25B2DCD410B009C8B0D /* Resources */,
+				42D319352E2877F500DA5D64 /* Sources */,
+				42D319362E2877F500DA5D64 /* Frameworks */,
+				42D319372E2877F500DA5D64 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				429AA25F2DCD410B009C8B0D /* PBXTargetDependency */,
+				42D3193B2E2877F500DA5D64 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				429AA2602DCD410B009C8B0D /* Mountie MarkersUITests */,
+				42D3193C2E2877F500DA5D64 /* Brand GuideUITests */,
 			);
-			name = "Mountie MarkersUITests";
+			name = "Brand GuideUITests";
 			packageProductDependencies = (
 			);
-			productName = "Mountie MarkersUITests";
-			productReference = 429AA25D2DCD410B009C8B0D /* Mountie MarkersUITests.xctest */;
+			productName = "Brand GuideUITests";
+			productReference = 42D319392E2877F500DA5D64 /* Brand GuideUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		429AA23D2DCD410A009C8B0D /* Project object */ = {
+		42D319192E2877F400DA5D64 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1630;
+				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1640;
 				TargetAttributes = {
-					429AA2442DCD410A009C8B0D = {
-						CreatedOnToolsVersion = 16.3;
+					42D319202E2877F400DA5D64 = {
+						CreatedOnToolsVersion = 16.4;
 					};
-					429AA2522DCD410B009C8B0D = {
-						CreatedOnToolsVersion = 16.3;
-						TestTargetID = 429AA2442DCD410A009C8B0D;
+					42D3192E2E2877F500DA5D64 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 42D319202E2877F400DA5D64;
 					};
-					429AA25C2DCD410B009C8B0D = {
-						CreatedOnToolsVersion = 16.3;
-						TestTargetID = 429AA2442DCD410A009C8B0D;
+					42D319382E2877F500DA5D64 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 42D319202E2877F400DA5D64;
 					};
 				};
 			};
-			buildConfigurationList = 429AA2402DCD410A009C8B0D /* Build configuration list for PBXProject "Mountie Markers" */;
+			buildConfigurationList = 42D3191C2E2877F400DA5D64 /* Build configuration list for PBXProject "Brand Guide" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 429AA23C2DCD410A009C8B0D;
+			mainGroup = 42D319182E2877F400DA5D64;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 429AA2462DCD410A009C8B0D /* Products */;
+			productRefGroup = 42D319222E2877F400DA5D64 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				429AA2442DCD410A009C8B0D /* Mountie Markers */,
-				429AA2522DCD410B009C8B0D /* Mountie MarkersTests */,
-				429AA25C2DCD410B009C8B0D /* Mountie MarkersUITests */,
+				42D319202E2877F400DA5D64 /* Brand Guide */,
+				42D3192E2E2877F500DA5D64 /* Brand GuideTests */,
+				42D319382E2877F500DA5D64 /* Brand GuideUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		429AA2432DCD410A009C8B0D /* Resources */ = {
+		42D3191F2E2877F400DA5D64 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		429AA2512DCD410B009C8B0D /* Resources */ = {
+		42D3192D2E2877F500DA5D64 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		429AA25B2DCD410B009C8B0D /* Resources */ = {
+		42D319372E2877F500DA5D64 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -238,22 +232,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		429AA2412DCD410A009C8B0D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				42D318E32E2873C700DA5D64 /* File.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		429AA24F2DCD410B009C8B0D /* Sources */ = {
+		42D3191D2E2877F400DA5D64 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		429AA2592DCD410B009C8B0D /* Sources */ = {
+		42D3192B2E2877F500DA5D64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42D319352E2877F500DA5D64 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -263,20 +256,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		429AA2552DCD410B009C8B0D /* PBXTargetDependency */ = {
+		42D319312E2877F500DA5D64 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 429AA2442DCD410A009C8B0D /* Mountie Markers */;
-			targetProxy = 429AA2542DCD410B009C8B0D /* PBXContainerItemProxy */;
+			target = 42D319202E2877F400DA5D64 /* Brand Guide */;
+			targetProxy = 42D319302E2877F500DA5D64 /* PBXContainerItemProxy */;
 		};
-		429AA25F2DCD410B009C8B0D /* PBXTargetDependency */ = {
+		42D3193B2E2877F500DA5D64 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 429AA2442DCD410A009C8B0D /* Mountie Markers */;
-			targetProxy = 429AA25E2DCD410B009C8B0D /* PBXContainerItemProxy */;
+			target = 42D319202E2877F400DA5D64 /* Brand Guide */;
+			targetProxy = 42D3193A2E2877F500DA5D64 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		429AA2652DCD410B009C8B0D /* Debug */ = {
+		42D319412E2877F500DA5D64 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -310,7 +303,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -330,7 +322,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -340,7 +332,7 @@
 			};
 			name = Debug;
 		};
-		429AA2662DCD410B009C8B0D /* Release */ = {
+		42D319422E2877F500DA5D64 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -374,7 +366,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -388,7 +379,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -396,29 +387,24 @@
 			};
 			name = Release;
 		};
-		429AA2682DCD410B009C8B0D /* Debug */ = {
+		42D319442E2877F500DA5D64 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Mountie Markers/Mountie_Markers.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Brand Guide/Brand_Guide.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Mountie-Markers-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "";
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.blake.MountieMarkers.Mountie-Markers";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blake.Brand-Guide.Brand-Guide";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -426,29 +412,24 @@
 			};
 			name = Debug;
 		};
-		429AA2692DCD410B009C8B0D /* Release */ = {
+		42D319452E2877F500DA5D64 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Mountie Markers/Mountie_Markers.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Brand Guide/Brand_Guide.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Mountie-Markers-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "";
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.blake.MountieMarkers.Mountie-Markers";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blake.Brand-Guide.Brand-Guide";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -456,114 +437,110 @@
 			};
 			name = Release;
 		};
-		429AA26B2DCD410B009C8B0D /* Debug */ = {
+		42D319472E2877F500DA5D64 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.blake.MountieMarkers.Mountie-MarkersTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blake.Brand-Guide.Brand-GuideTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mountie Markers.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Mountie Markers";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Brand Guide.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Brand Guide";
 			};
 			name = Debug;
 		};
-		429AA26C2DCD410B009C8B0D /* Release */ = {
+		42D319482E2877F500DA5D64 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.blake.MountieMarkers.Mountie-MarkersTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blake.Brand-Guide.Brand-GuideTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mountie Markers.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Mountie Markers";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Brand Guide.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Brand Guide";
 			};
 			name = Release;
 		};
-		429AA26E2DCD410B009C8B0D /* Debug */ = {
+		42D3194A2E2877F500DA5D64 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.blake.MountieMarkers.Mountie-MarkersUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blake.Brand-Guide.Brand-GuideUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = "Mountie Markers";
+				TEST_TARGET_NAME = "Brand Guide";
 			};
 			name = Debug;
 		};
-		429AA26F2DCD410B009C8B0D /* Release */ = {
+		42D3194B2E2877F500DA5D64 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.blake.MountieMarkers.Mountie-MarkersUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blake.Brand-Guide.Brand-GuideUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = "Mountie Markers";
+				TEST_TARGET_NAME = "Brand Guide";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		429AA2402DCD410A009C8B0D /* Build configuration list for PBXProject "Mountie Markers" */ = {
+		42D3191C2E2877F400DA5D64 /* Build configuration list for PBXProject "Brand Guide" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				429AA2652DCD410B009C8B0D /* Debug */,
-				429AA2662DCD410B009C8B0D /* Release */,
+				42D319412E2877F500DA5D64 /* Debug */,
+				42D319422E2877F500DA5D64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		429AA2672DCD410B009C8B0D /* Build configuration list for PBXNativeTarget "Mountie Markers" */ = {
+		42D319432E2877F500DA5D64 /* Build configuration list for PBXNativeTarget "Brand Guide" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				429AA2682DCD410B009C8B0D /* Debug */,
-				429AA2692DCD410B009C8B0D /* Release */,
+				42D319442E2877F500DA5D64 /* Debug */,
+				42D319452E2877F500DA5D64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		429AA26A2DCD410B009C8B0D /* Build configuration list for PBXNativeTarget "Mountie MarkersTests" */ = {
+		42D319462E2877F500DA5D64 /* Build configuration list for PBXNativeTarget "Brand GuideTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				429AA26B2DCD410B009C8B0D /* Debug */,
-				429AA26C2DCD410B009C8B0D /* Release */,
+				42D319472E2877F500DA5D64 /* Debug */,
+				42D319482E2877F500DA5D64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		429AA26D2DCD410B009C8B0D /* Build configuration list for PBXNativeTarget "Mountie MarkersUITests" */ = {
+		42D319492E2877F500DA5D64 /* Build configuration list for PBXNativeTarget "Brand GuideUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				429AA26E2DCD410B009C8B0D /* Debug */,
-				429AA26F2DCD410B009C8B0D /* Release */,
+				42D3194A2E2877F500DA5D64 /* Debug */,
+				42D3194B2E2877F500DA5D64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 429AA23D2DCD410A009C8B0D /* Project object */;
+	rootObject = 42D319192E2877F400DA5D64 /* Project object */;
 }
