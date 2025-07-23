@@ -1,0 +1,331 @@
+{% doc %}
+  @prompt
+    Create a two-option horizontal toggle button using button elements or blocks. On the left, label the button "ASSEMBLED"; on the right, label it "UN-ASSEMBLED". When one option is selected, apply the following styles:
+    - Font color: #ffffff
+    - Background color behind the text: #6D684E
+    
+    For the non-selected option:
+    - Font color: #6D684E
+    - Background color behind the text: #F8F7F6
+    
+    Use rounded corners, equal width buttons, and add a slight shadow around the active selection. This toggle should look like a switch selector and be mobile-responsive.
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-toggle-container-{{ ai_gen_id }} {
+    display: flex;
+    width: 100%;
+    max-width: {{ block.settings.toggle_width }}px;
+    height: {{ block.settings.toggle_height }}px;
+    position: relative;
+    border-radius: {{ block.settings.border_radius }}px;
+    background-color: {{ block.settings.inactive_background }};
+    padding: {{ block.settings.padding }}px;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+
+  .ai-toggle-option-{{ ai_gen_id }} {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    border: none;
+    background: transparent;
+    font-weight: {{ block.settings.font_weight }};
+    font-size: {{ block.settings.font_size }}px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    padding: 0;
+    color: {{ block.settings.inactive_text }};
+  }
+
+  .ai-toggle-option-{{ ai_gen_id }}.active {
+    color: {{ block.settings.active_text }};
+  }
+
+  .ai-toggle-slider-{{ ai_gen_id }} {
+    position: absolute;
+    top: {{ block.settings.padding }}px;
+    left: {{ block.settings.padding }}px;
+    width: calc(50% - {{ block.settings.padding }}px);
+    height: calc(100% - {{ block.settings.padding | times: 2 }}px);
+    background-color: {{ block.settings.active_background }};
+    border-radius: calc({{ block.settings.border_radius }}px - {{ block.settings.padding }}px);
+    transition: transform 0.3s ease;
+    z-index: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .ai-toggle-slider-{{ ai_gen_id }}.right {
+    transform: translateX(calc(100% + {{ block.settings.padding | times: 2 }}px));
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-toggle-container-{{ ai_gen_id }} {
+      max-width: 100%;
+      height: {{ block.settings.toggle_height_mobile }}px;
+    }
+    
+    .ai-toggle-option-{{ ai_gen_id }} {
+      font-size: {{ block.settings.font_size_mobile }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-toggle-wrapper-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-toggle-container-{{ ai_gen_id }}">
+    <button 
+      type="button" 
+      class="ai-toggle-option-{{ ai_gen_id }} {% if block.settings.default_selection == 'assembled' %}active{% endif %}" 
+      data-option="assembled"
+      aria-pressed="{% if block.settings.default_selection == 'assembled' %}true{% else %}false{% endif %}"
+    >
+      {{ block.settings.assembled_text }}
+    </button>
+    <button 
+      type="button" 
+      class="ai-toggle-option-{{ ai_gen_id }} {% if block.settings.default_selection == 'unassembled' %}active{% endif %}" 
+      data-option="unassembled"
+      aria-pressed="{% if block.settings.default_selection == 'unassembled' %}true{% else %}false{% endif %}"
+    >
+      {{ block.settings.unassembled_text }}
+    </button>
+    <div class="ai-toggle-slider-{{ ai_gen_id }} {% if block.settings.default_selection == 'unassembled' %}right{% endif %}"></div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    class ToggleSwitch extends HTMLElement {
+      constructor() {
+        super();
+        this.container = this.querySelector('.ai-toggle-container-{{ ai_gen_id }}');
+        this.options = this.querySelectorAll('.ai-toggle-option-{{ ai_gen_id }}');
+        this.slider = this.querySelector('.ai-toggle-slider-{{ ai_gen_id }}');
+        this.activeOption = '{{ block.settings.default_selection }}';
+      }
+
+      connectedCallback() {
+        this.options.forEach(option => {
+          option.addEventListener('click', this.handleToggle.bind(this));
+        });
+      }
+
+      handleToggle(event) {
+        const clickedOption = event.currentTarget;
+        const optionValue = clickedOption.dataset.option;
+        
+        if (optionValue === this.activeOption) return;
+        
+        this.activeOption = optionValue;
+        
+        // Update active states
+        this.options.forEach(option => {
+          const isActive = option.dataset.option === optionValue;
+          option.classList.toggle('active', isActive);
+          option.setAttribute('aria-pressed', isActive);
+        });
+        
+        // Move slider
+        this.slider.classList.toggle('right', optionValue === 'unassembled');
+        
+        // Dispatch custom event for other components to listen to
+        this.dispatchEvent(new CustomEvent('toggle-changed', {
+          bubbles: true,
+          detail: { value: optionValue }
+        }));
+      }
+    }
+
+    customElements.define('toggle-switch-{{ ai_gen_id }}', ToggleSwitch);
+    
+    // Initialize all toggle switches
+    document.querySelectorAll('.ai-toggle-wrapper-{{ ai_gen_id }}').forEach(wrapper => {
+      if (!wrapper.matches(':defined')) {
+        Object.setPrototypeOf(wrapper, ToggleSwitch.prototype);
+      }
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Toggle Switch",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Toggle Options"
+    },
+    {
+      "type": "text",
+      "id": "assembled_text",
+      "label": "Left option text",
+      "default": "ASSEMBLED"
+    },
+    {
+      "type": "text",
+      "id": "unassembled_text",
+      "label": "Right option text",
+      "default": "UN-ASSEMBLED"
+    },
+    {
+      "type": "select",
+      "id": "default_selection",
+      "label": "Default selection",
+      "options": [
+        {
+          "value": "assembled",
+          "label": "Assembled (Left)"
+        },
+        {
+          "value": "unassembled",
+          "label": "Un-assembled (Right)"
+        }
+      ],
+      "default": "assembled"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "active_background",
+      "label": "Active background color",
+      "default": "#6D684E"
+    },
+    {
+      "type": "color",
+      "id": "active_text",
+      "label": "Active text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "inactive_background",
+      "label": "Inactive background color",
+      "default": "#F8F7F6"
+    },
+    {
+      "type": "color",
+      "id": "inactive_text",
+      "label": "Inactive text color",
+      "default": "#6D684E"
+    },
+    {
+      "type": "header",
+      "content": "Dimensions"
+    },
+    {
+      "type": "range",
+      "id": "toggle_width",
+      "min": 200,
+      "max": 500,
+      "step": 10,
+      "unit": "px",
+      "label": "Toggle width",
+      "default": 300
+    },
+    {
+      "type": "range",
+      "id": "toggle_height",
+      "min": 30,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Toggle height",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "toggle_height_mobile",
+      "min": 30,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Toggle height (mobile)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Inner padding",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "font_size_mobile",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size (mobile)",
+      "default": 12
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semibold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Toggle Switch"
+    }
+  ]
+}
+{% endschema %}

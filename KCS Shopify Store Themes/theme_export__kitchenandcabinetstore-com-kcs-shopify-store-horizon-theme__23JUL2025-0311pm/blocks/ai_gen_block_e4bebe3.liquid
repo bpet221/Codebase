@@ -1,0 +1,833 @@
+{% doc %}
+  @prompt
+    Create a custom "Door Samples" product block with 3-column layout: Column 1 - editable product image (default 45px x 45px with dimension settings), Column 2 - "Door Samples" title with "REFUNDABLE" and "FREE SHIPPING" badges underneath that never wrap and always stay on same line, Column 3 - crossed-out price and sale price on same line with separate font size controls. Add hover tooltip for REFUNDABLE badge: "All sample costs are refunded with cabinet purchase." Include full-width "ADD SAMPLE TO CART" button below that starts as shopping bag + plus icon and expands on hover to show full text, matching collection page button style. Add settings for: image upload/dimensions, min/max block width (20-250px), individual font size and font weight controls for title/badges/prices/button, badge background color pickers, corner rounding for block/image, background color/rounding. Use inherited theme fonts with proper CSS inheritance. Make mobile responsive with stacked layout. Ensure badges use white-space: nowrap to prevent wrapping., update so max width goes up to 500px., add in settings option to change main font price color.
+    
+    And apply these as default block settings: 
+    
+    Create a product page block for KCS that promotes cabinet door samples. Use the following default settings:
+    
+    Layout:
+    - Left: square image (45x45) with 4px corner radius
+    - Right: title, two badges (“REFUNDABLE”, “FREE SHIPPING”)
+    - Bottom: crossed-out price ($50), sale price ($15), and full-width “ADD SAMPLE TO CART” button
+    - Tooltip shown when hovering/clicking “REFUNDABLE”: “All sample costs are refunded with cabinet purchase.”
+    
+    Block Settings:
+    - Min width: 200
+    - Max width: 500
+    - Background: #FFFFFF
+    - Block corner radius: 8
+    
+    Content:
+    - Title: “Door Samples”
+    - Variant ID: [leave blank if dynamic]
+    
+    Typography & Colors:
+    - Title: 24px, normal weight
+    - Badges: 10px, semibold
+      - REFUNDABLE: bg #AF5A3C, text #FFFFFF
+      - FREE SHIPPING: bg #60605E, text #FFFFFF
+    - Prices:
+      - Original: 10px, normal
+      - Sale: 16px, semibold
+    - Button:
+      - Text: “ADD SAMPLE TO CART”
+      - Font: 12px, semibold
+      - BG: #AF5A3C → hover: #35312E
+      - Text color: #FFFFFF
+      - Corner radius: 4, update so the add to cart button says ADD SAMPLE TO CART by default and when you hover it will animate and change background color to show the plus sign shopping cart icon instead of the text., update it so in the setting i can edit the icon that is used when you hover over add to cart button., update hover icon add to cart setting so i can u
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-door-samples-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: {{ block.settings.min_width }}px;
+    max-width: {{ block.settings.max_width }}px;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.block_border_radius }}px;
+    padding: 16px;
+    box-sizing: border-box;
+    {% if block.settings.border_enabled %}
+      border: {{ block.settings.border_width }}px {{ block.settings.border_style }} {{ block.settings.border_color }};
+    {% endif %}
+  }
+
+  .ai-door-samples-content-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .ai-door-samples-image-container-{{ ai_gen_id }} {
+    width: {{ block.settings.image_width }}px;
+    height: {{ block.settings.image_height }}px;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .ai-door-samples-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-door-samples-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-door-samples-image-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.5;
+  }
+
+  .ai-door-samples-info-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  .ai-door-samples-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_font_size }}px;
+    font-weight: {{ block.settings.title_font_weight }};
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .ai-door-samples-badges-{{ ai_gen_id }} {
+    display: flex;
+    gap: 8px;
+    align-items: center;}
+
+  .ai-door-samples-badge-{{ ai_gen_id }} {
+    font-size: {{ block.settings.badge_font_size }}px;
+    font-weight: {{ block.settings.badge_font_weight }};
+    padding: 2px 6px;
+    border-radius: 3px;
+    white-space: nowrap;
+    line-height: 1;
+  }
+
+  .ai-door-samples-badge-refundable-{{ ai_gen_id }} {
+    background-color: {{ block.settings.refundable_badge_color }};
+    color: {{ block.settings.refundable_badge_text_color }};
+    position: relative;
+    cursor: help;
+  }
+
+  .ai-door-samples-badge-shipping-{{ ai_gen_id }} {
+    background-color: {{ block.settings.shipping_badge_color }};
+    color: {{ block.settings.shipping_badge_text_color }};}
+
+  .ai-door-samples-tooltip-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .ai-door-samples-tooltip-{{ ai_gen_id }}::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid transparent;
+    border-top-color: #333;
+  }
+
+  .ai-door-samples-badge-refundable-{{ ai_gen_id }}:hover .ai-door-samples-tooltip-{{ ai_gen_id }} {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .ai-door-samples-pricing-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+
+  .ai-door-samples-original-price-{{ ai_gen_id }} {
+    font-size: {{ block.settings.original_price_font_size }}px;
+    font-weight: {{ block.settings.original_price_font_weight }};
+    text-decoration: line-through;
+    opacity: 0.7;
+  }
+
+  .ai-door-samples-sale-price-{{ ai_gen_id }} {
+    font-size: {{ block.settings.sale_price_font_size }}px;
+    font-weight: {{ block.settings.sale_price_font_weight }};
+    color: {{ block.settings.price_color }};
+  }
+
+  .ai-door-samples-button-{{ ai_gen_id }} {
+    width: 100%;
+    background-color: {{ block.settings.button_background_color }};
+    color: {{ block.settings.button_text_color }};
+    border: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    padding: 12px;
+    font-size: {{ block.settings.button_font_size }}px;
+    font-weight: {{ block.settings.button_font_weight }};
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-door-samples-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_background_color }};
+    color: {{ block.settings.button_hover_text_color }};
+  }
+
+  .ai-door-samples-button-text-{{ ai_gen_id }} {
+    white-space: nowrap;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  .ai-door-samples-button-icon-{{ ai_gen_id }} {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .ai-door-samples-button-icon-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .ai-door-samples-button-{{ ai_gen_id }}:hover .ai-door-samples-button-text-{{ ai_gen_id }} {
+    opacity: 0;
+  }
+
+  .ai-door-samples-button-{{ ai_gen_id }}:hover .ai-door-samples-button-icon-{{ ai_gen_id }} {
+    opacity: 1;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-door-samples-content-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 8px;
+    }
+
+    .ai-door-samples-image-container-{{ ai_gen_id }} {
+      justify-self: center;
+    }
+
+    .ai-door-samples-pricing-{{ ai_gen_id }} {
+      justify-content: center;
+    }
+
+    .ai-door-samples-badges-{{ ai_gen_id }} {
+      justify-content: center;
+    }
+  }
+{% endstyle %}
+
+<door-samples-{{ ai_gen_id }}
+  class="ai-door-samples-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-door-samples-content-{{ ai_gen_id }}">
+    <div class="ai-door-samples-image-container-{{ ai_gen_id }}">
+      {% if block.settings.product_image %}
+        <img
+          src="{{ block.settings.product_image | image_url: width: 200 }}"
+          alt="{{ block.settings.product_image.alt | escape }}"
+          class="ai-door-samples-image-{{ ai_gen_id }}"
+          loading="lazy"
+          width="{{ block.settings.image_width }}"
+          height="{{ block.settings.image_height }}"
+        >
+      {% else %}
+        <div class="ai-door-samples-image-placeholder-{{ ai_gen_id }}">
+          {{ 'product-1' | placeholder_svg_tag }}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="ai-door-samples-info-{{ ai_gen_id }}">
+      <h3 class="ai-door-samples-title-{{ ai_gen_id }}">{{ block.settings.title }}</h3><div class="ai-door-samples-badges-{{ ai_gen_id }}">
+        <span class="ai-door-samples-badge-{{ ai_gen_id }} ai-door-samples-badge-refundable-{{ ai_gen_id }}">
+          {{ block.settings.refundable_text }}
+          <div class="ai-door-samples-tooltip-{{ ai_gen_id }}">
+            {{ block.settings.tooltip_text }}
+          </div>
+        </span>
+        <span class="ai-door-samples-badge-{{ ai_gen_id }} ai-door-samples-badge-shipping-{{ ai_gen_id }}">
+          {{ block.settings.shipping_text }}
+        </span>
+      </div>
+    </div>
+
+    <div class="ai-door-samples-pricing-{{ ai_gen_id }}">
+      {% if block.settings.original_price != blank %}
+        <span class="ai-door-samples-original-price-{{ ai_gen_id }}">
+          {{ block.settings.original_price }}
+        </span>
+      {% endif %}
+      {% if block.settings.sale_price != blank %}
+        <span class="ai-door-samples-sale-price-{{ ai_gen_id }}">
+          {{ block.settings.sale_price }}
+        </span>
+      {% endif %}
+    </div>
+  </div>
+
+  <button
+    type="button"
+    class="ai-door-samples-button-{{ ai_gen_id }}"
+    data-product-id="{{ block.settings.product_id }}"
+  >
+    <span class="ai-door-samples-button-text-{{ ai_gen_id }}">
+      {{ block.settings.button_text }}
+    </span>
+    
+    <div class="ai-door-samples-button-icon-{{ ai_gen_id }}">
+      {% if block.settings.custom_icon %}
+        <img 
+          src="{{ block.settings.custom_icon | image_url: width: 100 }}"
+          alt="Cart icon"
+          loading="lazy"
+          width="24"
+          height="24"
+        >
+      {% else %}
+        {% case block.settings.button_icon %}
+          {% when 'cart-plus' %}
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="10" y1="10" x2="14" y2="10"></line>
+            </svg>
+          {% when 'shopping-bag' %}
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+          {% when 'arrow-right' %}
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          {% when 'check' %}
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          {% else %}
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="10" y1="10" x2="14" y2="10"></line>
+            </svg>
+        {% endcase %}
+      {% endif %}
+    </div>
+  </button>
+</door-samples-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class DoorSamples{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.button = this.querySelector('.ai-door-samples-button-{{ ai_gen_id }}');
+        this.setupEventListeners();
+      }
+
+      setupEventListeners() {
+        if (this.button) {
+          this.button.addEventListener('click', this.handleAddToCart.bind(this));
+        }
+      }
+
+      handleAddToCart() {
+        const productId = this.button.dataset.productId;
+        if (productId) {
+          const formData = {
+            items: [{
+              id: productId,
+              quantity: 1
+            }]
+          };
+
+          fetch('/cart/add.js', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+          })
+          .then(response => response.json())
+          .then(data => {
+            window.dispatchEvent(new CustomEvent('cart:refresh'));
+          })
+          .catch(error => {
+            console.error('Error adding to cart:', error);
+          });
+        }
+      }
+    }
+
+    customElements.define('door-samples-{{ ai_gen_id }}', DoorSamples{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Door Samples Block",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product image"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "min": 30,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Image width",
+      "default": 45
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "min": 30,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Image height",
+      "default": 45
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Image corner radius",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Block Dimensions"
+    },
+    {
+      "type": "range",
+      "id": "min_width",
+      "min": 20,
+      "max": 500,
+      "step": 10,
+      "unit": "px",
+      "label": "Minimum width",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 20,
+      "max": 500,
+      "step": 10,
+      "unit": "px",
+      "label": "Maximum width",
+      "default": 500
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "block_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Block corner radius",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Block Border"
+    },
+    {
+      "type": "checkbox",
+      "id": "border_enabled",
+      "label": "Enable border",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 1
+    },
+    {
+      "type": "select",
+      "id": "border_style",
+      "label": "Border style",
+      "options": [
+        {"value": "solid", "label": "Solid"},
+        {"value": "dashed", "label": "Dashed"},
+        {"value": "dotted", "label": "Dotted"}
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#E6E6E6"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Door Samples"
+    },
+    {
+      "type": "text",
+      "id": "refundable_text",
+      "label": "Refundable badge text",
+      "default": "REFUNDABLE"
+    },
+    {
+      "type": "text",
+      "id": "shipping_text",
+      "label": "Shipping badge text",
+      "default": "FREE SHIPPING"
+    },
+    {
+      "type": "text",
+      "id": "tooltip_text",
+      "label": "Tooltip text",
+      "default": "All sample costs are refunded with cabinet purchase."
+    },
+    {
+      "type": "text",
+      "id": "original_price",
+      "label": "Original price",
+      "default": "$50.00"
+    },
+    {
+      "type": "text",
+      "id": "sale_price",
+      "label": "Sale price",
+      "default": "$15.00"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "ADD SAMPLE TO CART"
+    },
+    {
+      "type": "text",
+      "id": "product_id",
+      "label": "Product variant ID"
+    },
+    {
+      "type": "header",
+      "content": "Title Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Title font size",
+      "default": 24
+    },
+    {
+      "type": "select",
+      "id": "title_font_weight",
+      "label": "Title font weight",
+      "options": [
+        {"value": "300", "label": "Light"},
+        {"value": "400", "label": "Normal"},
+        {"value": "500", "label": "Medium"},
+        {"value": "600", "label": "Semibold"},
+        {"value": "700", "label": "Bold"}
+      ],
+      "default": "400"
+    },
+    {
+      "type": "header",
+      "content": "Badge Typography"
+    },
+    {
+      "type": "range",
+      "id": "badge_font_size",
+      "min": 8,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Badge font size",
+      "default": 10
+    },
+    {
+      "type": "select",
+      "id": "badge_font_weight",
+      "label": "Badge font weight",
+      "options": [
+        {"value": "300", "label": "Light"},
+        {"value": "400", "label": "Normal"},
+        {"value": "500", "label": "Medium"},
+        {"value": "600", "label": "Semibold"},
+        {"value": "700", "label": "Bold"}
+      ],
+      "default": "600"
+    },
+    {
+      "type": "color",
+      "id": "refundable_badge_color",
+      "label": "Refundable badge background",
+      "default": "#AF5A3CB3"
+    },
+    {
+      "type": "color",
+      "id": "refundable_badge_text_color",
+      "label": "Refundable badge text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "shipping_badge_color",
+      "label": "Shipping badge background",
+      "default": "#1F1C1B73"
+    },
+    {
+      "type": "color",
+      "id": "shipping_badge_text_color",
+      "label": "Shipping badge text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Price Typography"
+    },
+    {
+      "type": "range",
+      "id": "original_price_font_size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Original price font size",
+      "default": 10
+    },
+    {
+      "type": "select",
+      "id": "original_price_font_weight",
+      "label": "Original price font weight",
+      "options": [
+        {"value": "300", "label": "Light"},
+        {"value": "400", "label": "Normal"},
+        {"value": "500", "label": "Medium"},
+        {"value": "600", "label": "Semibold"},
+        {"value": "700", "label": "Bold"}
+      ],
+      "default": "400"
+    },
+    {
+      "type": "range",
+      "id": "sale_price_font_size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Sale price font size",
+      "default": 18
+    },
+    {
+      "type": "select",
+      "id": "sale_price_font_weight",
+      "label": "Sale price font weight",
+      "options": [
+        {"value": "300", "label": "Light"},
+        {"value": "400", "label": "Normal"},
+        {"value": "500", "label": "Medium"},
+        {"value": "600", "label": "Semibold"},
+        {"value": "700", "label": "Bold"}
+      ],
+      "default": "500"
+    },
+    {
+      "type": "color",
+      "id": "price_color",
+      "label": "Price color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Button Style"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Button font size",
+      "default": 12
+    },
+    {
+      "type": "select",
+      "id": "button_font_weight",
+      "label": "Button font weight",
+      "options": [
+        {"value": "300", "label": "Light"},
+        {"value": "400", "label": "Normal"},
+        {"value": "500", "label": "Medium"},
+        {"value": "600", "label": "Semibold"},
+        {"value": "700", "label": "Bold"}
+      ],
+      "default": "600"
+    },
+    {
+      "type": "select",
+      "id": "button_icon",
+      "label": "Button hover icon (default)",
+      "options": [
+        {"value": "cart-plus", "label": "Cart with plus"},
+        {"value": "shopping-bag", "label": "Shopping bag"},
+        {"value": "arrow-right", "label": "Arrow right"},
+        {"value": "check", "label": "Checkmark"}
+      ],
+      "default": "arrow-right"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_icon",
+      "label": "Custom hover icon (overrides default)"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button background",
+      "default": "#AF5A3C"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background_color",
+      "label": "Button hover background",
+      "default": "#35312E"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Button hover text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Button corner radius",
+      "default": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "Door Samples Block"
+    }
+  ]
+}
+{% endschema %}

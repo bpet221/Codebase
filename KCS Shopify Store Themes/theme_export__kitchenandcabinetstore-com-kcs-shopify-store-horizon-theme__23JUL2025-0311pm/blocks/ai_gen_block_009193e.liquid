@@ -1,0 +1,370 @@
+{% doc %}
+  @prompt
+    Create a block that displays 4 square images side by side with even spacing and 7px border-radius. Images will be evenly space and will adjust size to fit all 4 side by side at all times., when the images are clicked you can see them full screen and you can click arrow to scroll through image in the grid.
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .image-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: {{ block.settings.gap }}px;
+    width: 100%;
+  }
+
+  .image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* Creates a square aspect ratio */
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .image-wrapper-{{ ai_gen_id }} img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: {{ block.settings.border_radius }}px;
+    transition: transform 0.3s ease;
+  }
+
+  .image-wrapper-{{ ai_gen_id }}:hover img {
+    transform: scale(1.05);
+  }
+
+  .image-placeholder-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: {{ block.settings.placeholder_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    cursor: default;
+  }
+
+  .image-placeholder-{{ ai_gen_id }} svg {
+    width: 70%;
+    height: 70%;
+  }
+
+  /* Lightbox styles */
+  .lightbox-{{ ai_gen_id }} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .lightbox-{{ ai_gen_id }}.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .lightbox-content-{{ ai_gen_id }} {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+  }
+
+  .lightbox-image-{{ ai_gen_id }} {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+
+  .lightbox-close-{{ ai_gen_id }} {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    background: transparent;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 5px;
+    line-height: 1;
+  }
+
+  .lightbox-nav-{{ ai_gen_id }} {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .lightbox-nav-{{ ai_gen_id }}:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  .lightbox-prev-{{ ai_gen_id }} {
+    left: 20px;
+  }
+
+  .lightbox-next-{{ ai_gen_id }} {
+    right: 20px;
+  }
+
+  .lightbox-counter-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+  }
+{% endstyle %}
+
+<div class="image-grid-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% for i in (1..4) %}
+    {% assign image_setting = 'image_' | append: i %}
+    {% assign image = block.settings[image_setting] %}
+    
+    <div class="image-wrapper-{{ ai_gen_id }}" data-index="{{ forloop.index0 }}">
+      {% if image != blank %}
+        <img 
+          src="{{ image | image_url: width: 500 }}"
+          alt="{{ image.alt | escape }}"
+          width="{{ image.width }}"
+          height="{{ image.height }}"
+          loading="lazy"
+          data-full-src="{{ image | image_url: width: 1800 }}"
+        >
+      {% else %}
+        <div class="image-placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+        </div>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+
+<div class="lightbox-{{ ai_gen_id }}">
+  <div class="lightbox-content-{{ ai_gen_id }}">
+    <button class="lightbox-close-{{ ai_gen_id }}" aria-label="Close lightbox">×</button>
+    <img class="lightbox-image-{{ ai_gen_id }}" src="" alt="" loading="lazy">
+    <button class="lightbox-nav-{{ ai_gen_id }} lightbox-prev-{{ ai_gen_id }}" aria-label="Previous image">&#10094;</button>
+    <button class="lightbox-nav-{{ ai_gen_id }} lightbox-next-{{ ai_gen_id }}" aria-label="Next image">&#10095;</button>
+    <div class="lightbox-counter-{{ ai_gen_id }}">1 / 4</div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    class ImageLightbox extends HTMLElement {
+      constructor() {
+        super();
+        this.currentIndex = 0;
+        this.images = [];
+        this.lightbox = document.querySelector('.lightbox-{{ ai_gen_id }}');
+        this.lightboxImage = document.querySelector('.lightbox-image-{{ ai_gen_id }}');
+        this.lightboxCounter = document.querySelector('.lightbox-counter-{{ ai_gen_id }}');
+        this.closeButton = document.querySelector('.lightbox-close-{{ ai_gen_id }}');
+        this.prevButton = document.querySelector('.lightbox-prev-{{ ai_gen_id }}');
+        this.nextButton = document.querySelector('.lightbox-next-{{ ai_gen_id }}');
+      }
+
+      connectedCallback() {
+        this.collectImages();
+        this.setupEventListeners();
+      }
+
+      collectImages() {
+        const imageWrappers = document.querySelectorAll('.image-wrapper-{{ ai_gen_id }}');
+        imageWrappers.forEach(wrapper => {
+          const img = wrapper.querySelector('img');
+          if (img) {
+            this.images.push({
+              src: img.getAttribute('data-full-src') || img.src,
+              alt: img.alt
+            });
+          }
+        });
+      }
+
+      setupEventListeners() {
+        // Open lightbox when clicking on an image
+        const imageWrappers = document.querySelectorAll('.image-wrapper-{{ ai_gen_id }}');
+        imageWrappers.forEach((wrapper, index) => {
+          if (wrapper.querySelector('img')) {
+            wrapper.addEventListener('click', () => {
+              this.openLightbox(index);
+            });
+          }
+        });
+
+        // Close lightbox
+        this.closeButton.addEventListener('click', () => this.closeLightbox());
+        this.lightbox.addEventListener('click', (e) => {
+          if (e.target === this.lightbox) {
+            this.closeLightbox();
+          }
+        });
+
+        // Navigation
+        this.prevButton.addEventListener('click', () => this.showPrevImage());
+        this.nextButton.addEventListener('click', () => this.showNextImage());
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+          if (!this.lightbox.classList.contains('active')) return;
+          
+          if (e.key === 'Escape') {
+            this.closeLightbox();
+          } else if (e.key === 'ArrowLeft') {
+            this.showPrevImage();
+          } else if (e.key === 'ArrowRight') {
+            this.showNextImage();
+          }
+        });
+      }
+
+      openLightbox(index) {
+        if (this.images.length === 0) return;
+        
+        this.currentIndex = index;
+        this.updateLightboxContent();
+        this.lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+      }
+
+      closeLightbox() {
+        this.lightbox.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+      }
+
+      showPrevImage() {
+        if (this.images.length <= 1) return;
+        
+        this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+        this.updateLightboxContent();
+      }
+
+      showNextImage() {
+        if (this.images.length <= 1) return;
+        
+        this.currentIndex = (this.currentIndex + 1) % this.images.length;
+        this.updateLightboxContent();
+      }
+
+      updateLightboxContent() {
+        const image = this.images[this.currentIndex];
+        this.lightboxImage.src = image.src;
+        this.lightboxImage.alt = image.alt;
+        this.lightboxCounter.textContent = `${this.currentIndex + 1} / ${this.images.length}`;
+        
+        // Show/hide navigation buttons based on number of images
+        if (this.images.length <= 1) {
+          this.prevButton.style.display = 'none';
+          this.nextButton.style.display = 'none';
+        } else {
+          this.prevButton.style.display = 'flex';
+          this.nextButton.style.display = 'flex';
+        }
+      }
+    }
+
+    customElements.define('image-lightbox-{{ ai_gen_id }}', ImageLightbox);
+    
+    // Initialize the component
+    const lightboxComponent = document.createElement('image-lightbox-{{ ai_gen_id }}');
+    document.querySelector('.image-grid-{{ ai_gen_id }}').appendChild(lightboxComponent);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Square Image Grid",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Image 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_4",
+      "label": "Image 4"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "label": "Gap between images",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 7
+    },
+    {
+      "type": "color",
+      "id": "placeholder_color",
+      "label": "Placeholder background color",
+      "default": "#f4f4f4"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Square Image Grid"
+    }
+  ]
+}
+{% endschema %}

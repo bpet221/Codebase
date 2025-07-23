@@ -1,0 +1,1100 @@
+{% doc %}
+  @prompt
+    Create a responsive table block (2 cols, 5 rows default). Include settings to add/remove rows, toggle header row, and customize dividers/borders (vertical interior, horizontal interior, outer) with weight, style, color, transparency. Use Shopify typography schema: select “type_preset” (rte, paragraph, h1–h6, custom); when custom, show settings for “font” (var(--font-body--family), var(--font-subheading--family), var(--font-heading--family), var(--font-accent--family)), “font_size”, “letter_spacing”, “line_height”, “case”, “color”. Inherit theme layout settings (width, max_width, alignment, padding, background).
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+.ai-table-container-{{ ai_gen_id }} {
+  width: 100%;
+  overflow-x: auto;
+  padding: {{ block.settings.padding }}px;
+  background-color: {{ block.settings.background_color }};
+  border-radius: {{ block.settings.border_radius }}px;
+}
+
+.ai-table-{{ ai_gen_id }} {
+  width: 100%;
+  border-collapse: {{ block.settings.border_collapse }};
+  border-spacing: {{ block.settings.border_spacing }}px;
+}
+
+{% if block.settings.outer_border_enabled %}
+  .ai-table-{{ ai_gen_id }} {
+    border: {{ block.settings.outer_border_width }}px {{ block.settings.outer_border_style }} {{ block.settings.outer_border_color }};
+  }
+{% endif %}
+
+{% if block.settings.horizontal_dividers_enabled %}
+  .ai-table-{{ ai_gen_id }} tr:not(:last-child) td,
+  .ai-table-{{ ai_gen_id }} tr:not(:last-child) th {
+    border-bottom: {{ block.settings.horizontal_divider_width }}px {{ block.settings.horizontal_divider_style }} {{ block.settings.horizontal_divider_color }};
+  }
+{% endif %}
+
+{% if block.settings.vertical_dividers_enabled %}
+  .ai-table-{{ ai_gen_id }} td:not(:last-child),
+  .ai-table-{{ ai_gen_id }} th:not(:last-child) {
+    border-right: {{ block.settings.vertical_divider_width }}px {{ block.settings.vertical_divider_style }} {{ block.settings.vertical_divider_color }};
+  }
+{% endif %}
+
+.ai-table-{{ ai_gen_id }} th,
+.ai-table-{{ ai_gen_id }} td {
+  padding: {{ block.settings.cell_padding }}px;
+  text-align: {{ block.settings.text_alignment }};
+}
+
+{% if block.settings.header_enabled %}
+  .ai-table-{{ ai_gen_id }} th {
+    background-color: {{ block.settings.header_background_color }};
+  }
+  
+  {% if block.settings.header_type_preset == 'custom' %}
+    .ai-table-{{ ai_gen_id }} th {
+      font-family: var(--{{ block.settings.header_font }}--family);
+      font-size: {{ block.settings.header_font_size }}px;
+      letter-spacing: {{ block.settings.header_letter_spacing }}px;
+      line-height: {{ block.settings.header_line_height }};
+      text-transform: {{ block.settings.header_case }};
+      color: {{ block.settings.header_text_color }};
+    }
+  {% else %}
+    .ai-table-{{ ai_gen_id }} th {
+      font-family: var(--{{ block.settings.header_type_preset }}--font-family);
+      font-size: var(--{{ block.settings.header_type_preset }}--font-size);
+      letter-spacing: var(--{{ block.settings.header_type_preset }}--letter-spacing);
+      line-height: var(--{{ block.settings.header_type_preset }}--line-height);
+      text-transform: var(--{{ block.settings.header_type_preset }}--text-transform);
+      color: {{ block.settings.header_text_color }};
+    }
+  {% endif %}
+{% endif %}
+
+{% if block.settings.cell_type_preset == 'custom' %}
+  .ai-table-{{ ai_gen_id }} td {
+    font-family: var(--{{ block.settings.cell_font }}--family);
+    font-size: {{ block.settings.cell_font_size }}px;
+    letter-spacing: {{ block.settings.cell_letter_spacing }}px;
+    line-height: {{ block.settings.cell_line_height }};
+    text-transform: {{ block.settings.cell_case }};
+    color: {{ block.settings.cell_text_color }};
+  }
+{% else %}
+  .ai-table-{{ ai_gen_id }} td {
+    font-family: var(--{{ block.settings.cell_type_preset }}--font-family);
+    font-size: var(--{{ block.settings.cell_type_preset }}--font-size);
+    letter-spacing: var(--{{ block.settings.cell_type_preset }}--letter-spacing);
+    line-height: var(--{{ block.settings.cell_type_preset }}--line-height);
+    text-transform: var(--{{ block.settings.cell_type_preset }}--text-transform);
+    color: {{ block.settings.cell_text_color }};
+  }
+{% endif %}
+
+@media screen and (max-width: 749px) {
+  .ai-table-container-{{ ai_gen_id }} {
+    padding: {{ block.settings.padding | divided_by: 2 }}px;
+  }
+  
+  .ai-table-{{ ai_gen_id }} th,
+  .ai-table-{{ ai_gen_id }} td {
+    padding: {{ block.settings.cell_padding | divided_by: 1.5 }}px;
+  }
+}
+{% endstyle %}
+
+<div class="ai-table-container-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <table class="ai-table-{{ ai_gen_id }}">
+    {% if block.settings.header_enabled %}
+      <thead>
+        <tr>
+          {% for i in (1..block.settings.columns) %}
+            {% assign header_key = 'header_col_' | append: i %}
+            <th>{{ block.settings[header_key] }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+    {% endif %}
+    <tbody>
+      {% for row in (1..block.settings.rows) %}
+        <tr>
+          {% for col in (1..block.settings.columns) %}
+            {% assign cell_key = 'row_' | append: row | append: '_col_' | append: col %}
+            <td>{{ block.settings[cell_key] }}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% schema %}
+{
+  "name": "Custom Table",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Table Structure"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "label": "Number of columns",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "rows",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "label": "Number of rows",
+      "default": 5
+    },
+    {
+      "type": "checkbox",
+      "id": "header_enabled",
+      "label": "Enable header row",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Header Content"
+    },
+    {
+      "type": "text",
+      "id": "header_col_1",
+      "label": "Header column 1",
+      "default": "Header 1"
+    },
+    {
+      "type": "text",
+      "id": "header_col_2",
+      "label": "Header column 2",
+      "default": "Header 2"
+    },
+    {
+      "type": "text",
+      "id": "header_col_3",
+      "label": "Header column 3",
+      "default": "Header 3"
+    },
+    {
+      "type": "text",
+      "id": "header_col_4",
+      "label": "Header column 4",
+      "default": "Header 4"
+    },
+    {
+      "type": "text",
+      "id": "header_col_5",
+      "label": "Header column 5",
+      "default": "Header 5"
+    },
+    {
+      "type": "text",
+      "id": "header_col_6",
+      "label": "Header column 6",
+      "default": "Header 6"
+    },
+    {
+      "type": "header",
+      "content": "Row 1 Content"
+    },
+    {
+      "type": "text",
+      "id": "row_1_col_1",
+      "label": "Row 1, Column 1",
+      "default": "Cell 1-1"
+    },
+    {
+      "type": "text",
+      "id": "row_1_col_2",
+      "label": "Row 1, Column 2",
+      "default": "Cell 1-2"
+    },
+    {
+      "type": "text",
+      "id": "row_1_col_3",
+      "label": "Row 1, Column 3",
+      "default": "Cell 1-3"
+    },
+    {
+      "type": "text",
+      "id": "row_1_col_4",
+      "label": "Row 1, Column 4",
+      "default": "Cell 1-4"
+    },
+    {
+      "type": "text",
+      "id": "row_1_col_5",
+      "label": "Row 1, Column 5",
+      "default": "Cell 1-5"
+    },
+    {
+      "type": "text",
+      "id": "row_1_col_6",
+      "label": "Row 1, Column 6",
+      "default": "Cell 1-6"
+    },
+    {
+      "type": "header",
+      "content": "Row 2 Content"
+    },
+    {
+      "type": "text",
+      "id": "row_2_col_1",
+      "label": "Row 2, Column 1",
+      "default": "Cell 2-1"
+    },
+    {
+      "type": "text",
+      "id": "row_2_col_2",
+      "label": "Row 2, Column 2",
+      "default": "Cell 2-2"
+    },
+    {
+      "type": "text",
+      "id": "row_2_col_3",
+      "label": "Row 2, Column 3",
+      "default": "Cell 2-3"
+    },
+    {
+      "type": "text",
+      "id": "row_2_col_4",
+      "label": "Row 2, Column 4",
+      "default": "Cell 2-4"
+    },
+    {
+      "type": "text",
+      "id": "row_2_col_5",
+      "label": "Row 2, Column 5",
+      "default": "Cell 2-5"
+    },
+    {
+      "type": "text",
+      "id": "row_2_col_6",
+      "label": "Row 2, Column 6",
+      "default": "Cell 2-6"
+    },
+    {
+      "type": "header",
+      "content": "Row 3 Content"
+    },
+    {
+      "type": "text",
+      "id": "row_3_col_1",
+      "label": "Row 3, Column 1",
+      "default": "Cell 3-1"
+    },
+    {
+      "type": "text",
+      "id": "row_3_col_2",
+      "label": "Row 3, Column 2",
+      "default": "Cell 3-2"
+    },
+    {
+      "type": "text",
+      "id": "row_3_col_3",
+      "label": "Row 3, Column 3",
+      "default": "Cell 3-3"
+    },
+    {
+      "type": "text",
+      "id": "row_3_col_4",
+      "label": "Row 3, Column 4",
+      "default": "Cell 3-4"
+    },
+    {
+      "type": "text",
+      "id": "row_3_col_5",
+      "label": "Row 3, Column 5",
+      "default": "Cell 3-5"
+    },
+    {
+      "type": "text",
+      "id": "row_3_col_6",
+      "label": "Row 3, Column 6",
+      "default": "Cell 3-6"
+    },
+    {
+      "type": "header",
+      "content": "Row 4 Content"
+    },
+    {
+      "type": "text",
+      "id": "row_4_col_1",
+      "label": "Row 4, Column 1",
+      "default": "Cell 4-1"
+    },
+    {
+      "type": "text",
+      "id": "row_4_col_2",
+      "label": "Row 4, Column 2",
+      "default": "Cell 4-2"
+    },
+    {
+      "type": "text",
+      "id": "row_4_col_3",
+      "label": "Row 4, Column 3",
+      "default": "Cell 4-3"
+    },
+    {
+      "type": "text",
+      "id": "row_4_col_4",
+      "label": "Row 4, Column 4",
+      "default": "Cell 4-4"
+    },
+    {
+      "type": "text",
+      "id": "row_4_col_5",
+      "label": "Row 4, Column 5",
+      "default": "Cell 4-5"
+    },
+    {
+      "type": "text",
+      "id": "row_4_col_6",
+      "label": "Row 4, Column 6",
+      "default": "Cell 4-6"
+    },
+    {
+      "type": "header",
+      "content": "Row 5 Content"
+    },
+    {
+      "type": "text",
+      "id": "row_5_col_1",
+      "label": "Row 5, Column 1",
+      "default": "Cell 5-1"
+    },
+    {
+      "type": "text",
+      "id": "row_5_col_2",
+      "label": "Row 5, Column 2",
+      "default": "Cell 5-2"
+    },
+    {
+      "type": "text",
+      "id": "row_5_col_3",
+      "label": "Row 5, Column 3",
+      "default": "Cell 5-3"
+    },
+    {
+      "type": "text",
+      "id": "row_5_col_4",
+      "label": "Row 5, Column 4",
+      "default": "Cell 5-4"
+    },
+    {
+      "type": "text",
+      "id": "row_5_col_5",
+      "label": "Row 5, Column 5",
+      "default": "Cell 5-5"
+    },
+    {
+      "type": "text",
+      "id": "row_5_col_6",
+      "label": "Row 5, Column 6",
+      "default": "Cell 5-6"
+    },
+    {
+      "type": "header",
+      "content": "Row 6 Content"
+    },
+    {
+      "type": "text",
+      "id": "row_6_col_1",
+      "label": "Row 6, Column 1",
+      "default": "Cell 6-1"
+    },
+    {
+      "type": "text",
+      "id": "row_6_col_2",
+      "label": "Row 6, Column 2",
+      "default": "Cell 6-2"
+    },
+    {
+      "type": "text",
+      "id": "row_6_col_3",
+      "label": "Row 6, Column 3",
+      "default": "Cell 6-3"
+    },
+    {
+      "type": "text",
+      "id": "row_6_col_4",
+      "label": "Row 6, Column 4",
+      "default": "Cell 6-4"
+    },
+    {
+      "type": "text",
+      "id": "row_6_col_5",
+      "label": "Row 6, Column 5",
+      "default": "Cell 6-5"
+    },
+    {
+      "type": "text",
+      "id": "row_6_col_6",
+      "label": "Row 6, Column 6",
+      "default": "Cell 6-6"
+    },
+    {
+      "type": "header",
+      "content": "Row 7 Content"
+    },
+    {
+      "type": "text",
+      "id": "row_7_col_1",
+      "label": "Row 7, Column 1",
+      "default": "Cell 7-1"
+    },
+    {
+      "type": "text",
+      "id": "row_7_col_2",
+      "label": "Row 7, Column 2",
+      "default": "Cell 7-2"
+    },
+    {
+      "type": "text",
+      "id": "row_7_col_3",
+      "label": "Row 7, Column 3",
+      "default": "Cell 7-3"
+    },
+    {
+      "type": "text",
+      "id": "row_7_col_4",
+      "label": "Row 7, Column 4",
+      "default": "Cell 7-4"
+    },
+    {
+      "type": "text",
+      "id": "row_7_col_5",
+      "label": "Row 7, Column 5",
+      "default": "Cell 7-5"
+    },
+    {
+      "type": "text",
+      "id": "row_7_col_6",
+      "label": "Row 7, Column 6",
+      "default": "Cell 7-6"
+    },
+    {
+      "type": "header",
+      "content": "Row 8 Content"
+    },
+    {
+      "type": "text",
+      "id": "row_8_col_1",
+      "label": "Row 8, Column 1",
+      "default": "Cell 8-1"
+    },
+    {
+      "type": "text",
+      "id": "row_8_col_2",
+      "label": "Row 8, Column 2",
+      "default": "Cell 8-2"
+    },
+    {
+      "type": "text",
+      "id": "row_8_col_3",
+      "label": "Row 8, Column 3",
+      "default": "Cell 8-3"
+    },
+    {
+      "type": "text",
+      "id": "row_8_col_4",
+      "label": "Row 8, Column 4",
+      "default": "Cell 8-4"
+    },
+    {
+      "type": "text",
+      "id": "row_8_col_5",
+      "label": "Row 8, Column 5",
+      "default": "Cell 8-5"
+    },
+    {
+      "type": "text",
+      "id": "row_8_col_6",
+      "label": "Row 8, Column 6",
+      "default": "Cell 8-6"
+    },
+    {
+      "type": "header",
+      "content": "Row 9 Content"
+    },
+    {
+      "type": "text",
+      "id": "row_9_col_1",
+      "label": "Row 9, Column 1",
+      "default": "Cell 9-1"
+    },
+    {
+      "type": "text",
+      "id": "row_9_col_2",
+      "label": "Row 9, Column 2",
+      "default": "Cell 9-2"
+    },
+    {
+      "type": "text",
+      "id": "row_9_col_3",
+      "label": "Row 9, Column 3",
+      "default": "Cell 9-3"
+    },
+    {
+      "type": "text",
+      "id": "row_9_col_4",
+      "label": "Row 9, Column 4",
+      "default": "Cell 9-4"
+    },
+    {
+      "type": "text",
+      "id": "row_9_col_5",
+      "label": "Row 9, Column 5",
+      "default": "Cell 9-5"
+    },
+    {
+      "type": "text",
+      "id": "row_9_col_6",
+      "label": "Row 9, Column 6",
+      "default": "Cell 9-6"
+    },
+    {
+      "type": "header",
+      "content": "Row 10 Content"
+    },
+    {
+      "type": "text",
+      "id": "row_10_col_1",
+      "label": "Row 10, Column 1",
+      "default": "Cell 10-1"
+    },
+    {
+      "type": "text",
+      "id": "row_10_col_2",
+      "label": "Row 10, Column 2",
+      "default": "Cell 10-2"
+    },
+    {
+      "type": "text",
+      "id": "row_10_col_3",
+      "label": "Row 10, Column 3",
+      "default": "Cell 10-3"
+    },
+    {
+      "type": "text",
+      "id": "row_10_col_4",
+      "label": "Row 10, Column 4",
+      "default": "Cell 10-4"
+    },
+    {
+      "type": "text",
+      "id": "row_10_col_5",
+      "label": "Row 10, Column 5",
+      "default": "Cell 10-5"
+    },
+    {
+      "type": "text",
+      "id": "row_10_col_6",
+      "label": "Row 10, Column 6",
+      "default": "Cell 10-6"
+    },
+    {
+      "type": "header",
+      "content": "Table Layout"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "border_collapse",
+      "label": "Border collapse",
+      "options": [
+        {
+          "value": "collapse",
+          "label": "Collapse"
+        },
+        {
+          "value": "separate",
+          "label": "Separate"
+        }
+      ],
+      "default": "collapse"
+    },
+    {
+      "type": "range",
+      "id": "border_spacing",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Border spacing",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "cell_padding",
+      "min": 5,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Cell padding",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Outer Border"
+    },
+    {
+      "type": "checkbox",
+      "id": "outer_border_enabled",
+      "label": "Enable outer border",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "outer_border_width",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 1
+    },
+    {
+      "type": "select",
+      "id": "outer_border_style",
+      "label": "Border style",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Solid"
+        },
+        {
+          "value": "dashed",
+          "label": "Dashed"
+        },
+        {
+          "value": "dotted",
+          "label": "Dotted"
+        }
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "color",
+      "id": "outer_border_color",
+      "label": "Border color",
+      "default": "#e6e6e6"
+    },
+    {
+      "type": "header",
+      "content": "Horizontal Dividers"
+    },
+    {
+      "type": "checkbox",
+      "id": "horizontal_dividers_enabled",
+      "label": "Enable horizontal dividers",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "horizontal_divider_width",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Divider width",
+      "default": 1
+    },
+    {
+      "type": "select",
+      "id": "horizontal_divider_style",
+      "label": "Divider style",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Solid"
+        },
+        {
+          "value": "dashed",
+          "label": "Dashed"
+        },
+        {
+          "value": "dotted",
+          "label": "Dotted"
+        }
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "color",
+      "id": "horizontal_divider_color",
+      "label": "Divider color",
+      "default": "#e6e6e6"
+    },
+    {
+      "type": "header",
+      "content": "Vertical Dividers"
+    },
+    {
+      "type": "checkbox",
+      "id": "vertical_dividers_enabled",
+      "label": "Enable vertical dividers",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "vertical_divider_width",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Divider width",
+      "default": 1
+    },
+    {
+      "type": "select",
+      "id": "vertical_divider_style",
+      "label": "Divider style",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Solid"
+        },
+        {
+          "value": "dashed",
+          "label": "Dashed"
+        },
+        {
+          "value": "dotted",
+          "label": "Dotted"
+        }
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "color",
+      "id": "vertical_divider_color",
+      "label": "Divider color",
+      "default": "#e6e6e6"
+    },
+    {
+      "type": "header",
+      "content": "Header Typography"
+    },
+    {
+      "type": "select",
+      "id": "header_type_preset",
+      "label": "Typography preset",
+      "options": [
+        {
+          "value": "custom",
+          "label": "Custom"
+        },
+        {
+          "value": "paragraph",
+          "label": "Paragraph"
+        },
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        }
+      ],
+      "default": "h5"
+    },
+    {
+      "type": "select",
+      "id": "header_font",
+      "label": "Font family",
+      "options": [
+        {
+          "value": "font-body",
+          "label": "Body"
+        },
+        {
+          "value": "font-subheading",
+          "label": "Subheading"
+        },
+        {
+          "value": "font-heading",
+          "label": "Heading"
+        },
+        {
+          "value": "font-accent",
+          "label": "Accent"
+        }
+      ],
+      "default": "font-heading"
+    },
+    {
+      "type": "range",
+      "id": "header_font_size",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "header_letter_spacing",
+      "min": -1,
+      "max": 2,
+      "step": 0.1,
+      "unit": "px",
+      "label": "Letter spacing",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "header_line_height",
+      "min": 0.8,
+      "max": 2,
+      "step": 0.1,
+      "label": "Line height",
+      "default": 1.2
+    },
+    {
+      "type": "select",
+      "id": "header_case",
+      "label": "Text case",
+      "options": [
+        {
+          "value": "none",
+          "label": "Normal"
+        },
+        {
+          "value": "uppercase",
+          "label": "Uppercase"
+        },
+        {
+          "value": "lowercase",
+          "label": "Lowercase"
+        },
+        {
+          "value": "capitalize",
+          "label": "Capitalize"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "color",
+      "id": "header_text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "header_background_color",
+      "label": "Background color",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "header",
+      "content": "Cell Typography"
+    },
+    {
+      "type": "select",
+      "id": "cell_type_preset",
+      "label": "Typography preset",
+      "options": [
+        {
+          "value": "custom",
+          "label": "Custom"
+        },
+        {
+          "value": "paragraph",
+          "label": "Paragraph"
+        },
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        }
+      ],
+      "default": "paragraph"
+    },
+    {
+      "type": "select",
+      "id": "cell_font",
+      "label": "Font family",
+      "options": [
+        {
+          "value": "font-body",
+          "label": "Body"
+        },
+        {
+          "value": "font-subheading",
+          "label": "Subheading"
+        },
+        {
+          "value": "font-heading",
+          "label": "Heading"
+        },
+        {
+          "value": "font-accent",
+          "label": "Accent"
+        }
+      ],
+      "default": "font-body"
+    },
+    {
+      "type": "range",
+      "id": "cell_font_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "cell_letter_spacing",
+      "min": -1,
+      "max": 2,
+      "step": 0.1,
+      "unit": "px",
+      "label": "Letter spacing",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "cell_line_height",
+      "min": 0.8,
+      "max": 2,
+      "step": 0.1,
+      "label": "Line height",
+      "default": 1.5
+    },
+    {
+      "type": "select",
+      "id": "cell_case",
+      "label": "Text case",
+      "options": [
+        {
+          "value": "none",
+          "label": "Normal"
+        },
+        {
+          "value": "uppercase",
+          "label": "Uppercase"
+        },
+        {
+          "value": "lowercase",
+          "label": "Lowercase"
+        },
+        {
+          "value": "capitalize",
+          "label": "Capitalize"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "color",
+      "id": "cell_text_color",
+      "label": "Text color",
+      "default": "#333333"
+    },
+    {
+      "type": "header",
+      "content": "Container"
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Table"
+    }
+  ]
+}
+{% endschema %}

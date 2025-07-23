@@ -1,0 +1,528 @@
+{% doc %}
+  @prompt
+    Create a product page block that appears **below the accordion section**, promoting **cabinet door samples**. The block should include:
+    
+    - A square image area for the sample door (editable).
+    - An editable title.
+    - Two styled button badges: “REFUNDABLE” and “FREE SHIPPING”.
+    - A crossed-out price of **$49.99** and a live price of **$9.99**.
+    - Fine print: “All sample costs are refunded with cabinet purchase.”
+    - An “Add to Cart” button.
+    
+    Use the KCS brand guide styles (fonts/colors). Ensure clean mobile responsiveness., Update the block to support:
+    - Rounded corners for both the image and the overall block (via block settings).
+    - Clickable “REFUNDABLE” badge that toggles visibility of the fine print message.
+    - Fine print should stay hidden unless the badge is hovered or clicked.
+    - Add settings to control min and max width of the image., Update the layout so the image appears to the **left** of the title and badges in a two-column format.
+    
+    Below this row, add a **full-width row** that includes:
+    - The discounted price ($9.99)
+    - Crossed-out price ($49.99)
+    - “Add to Cart” button
+    
+    Ensure layout is responsive and follows the KCS brand style., update it so the Image min width goes as low as 20px and the max width goes as low as 20px too.
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-sample-promo-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 20px;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.block_border_radius }}px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-sample-promo-{{ ai_gen_id }} {
+      padding: 40px;}
+  }
+
+  .ai-sample-promo__top-row-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-sample-promo__top-row-{{ ai_gen_id }} {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 30px;
+    }
+  }
+
+  .ai-sample-promo__image-container-{{ ai_gen_id }} {
+    width: 100%;
+    max-width: {{ block.settings.image_max_width }}px;
+    min-width: {{ block.settings.image_min_width }}px;
+    aspect-ratio: 1/1;
+    flex-shrink: 0;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-sample-promo__image-container-{{ ai_gen_id }} {
+      width: auto;
+    }
+  }
+
+  .ai-sample-promo__image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: {{ block.settings.image_border_radius }}px;
+  }
+
+  .ai-sample-promo__image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f3eb;
+    border-radius: {{ block.settings.image_border_radius }}px;
+  }
+
+  .ai-sample-promo__image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  .ai-sample-promo__content-{{ ai_gen_id }} {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-sample-promo__content-{{ ai_gen_id }} {
+      text-align: left;
+    }
+  }
+
+  .ai-sample-promo__title-{{ ai_gen_id }} {
+    font-family: var(--font-heading-family);
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 1.2;
+    margin: 0;
+    color: #35312e;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-sample-promo__title-{{ ai_gen_id }} {
+      font-size: 32px;
+    }
+  }
+
+  .ai-sample-promo__badges-{{ ai_gen_id }} {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;}
+
+  @media screen and (min-width: 750px) {
+    .ai-sample-promo__badges-{{ ai_gen_id }} {
+      justify-content: flex-start;
+    }
+  }
+
+  .ai-sample-promo__badge-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-family: var(--font-body-family);
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .ai-sample-promo__badge--refundable-{{ ai_gen_id }} {
+    background-color: {{ block.settings.refundable_badge_color }};
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .ai-sample-promo__badge--refundable-{{ ai_gen_id }}:hover {
+    background-color: #35312e;
+  }
+
+  .ai-sample-promo__badge--shipping-{{ ai_gen_id }} {
+    background-color: {{ block.settings.shipping_badge_color }};
+    color: #ffffff;
+  }
+
+  .ai-sample-promo__fine-print-{{ ai_gen_id }} {
+    font-family: var(--font-body-family);
+    font-size: 12px;
+    color: #35312e;
+    opacity: 0.8;
+    margin-top: 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+    opacity: 0;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-sample-promo__fine-print-{{ ai_gen_id }} {
+      text-align: left;
+    }
+  }
+
+  .ai-sample-promo__fine-print-{{ ai_gen_id }}.active {
+    max-height: 100px;
+    opacity: 0.8;
+    margin-top: 10px;
+  }
+
+  .ai-sample-promo__bottom-row-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid #f5f3eb;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-sample-promo__bottom-row-{{ ai_gen_id }} {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .ai-sample-promo__pricing-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .ai-sample-promo__compare-price-{{ ai_gen_id }} {
+    font-family: var(--font-body-family);
+    font-size: 18px;
+    color: #35312e;
+    text-decoration: line-through;
+    opacity: 0.7;
+  }
+
+  .ai-sample-promo__price-{{ ai_gen_id }} {
+    font-family: var(--font-subheading-family);
+    font-size: 28px;
+    font-weight: 400;
+    color: #35312e;}
+
+  .ai-sample-promo__button-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    background-color: {{ block.settings.button_color }};
+    color: #fcfaf6;
+    border: none;
+    border-radius: 5px;
+    font-family: var(--font-body-family);
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    min-width: 140px;
+  }
+
+  .ai-sample-promo__button-{{ ai_gen_id }}:hover {
+    background-color: #35312e;
+  }
+{% endstyle %}
+
+<div class="ai-sample-promo-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-sample-promo__top-row-{{ ai_gen_id }}">
+    <div class="ai-sample-promo__image-container-{{ ai_gen_id }}">
+      {% if block.settings.sample_image %}
+        <img 
+          src="{{ block.settings.sample_image | image_url: width: 600 }}"
+          alt="{{ block.settings.sample_image.alt | escape | default: block.settings.title }}"
+          loading="lazy"
+          class="ai-sample-promo__image-{{ ai_gen_id }}"
+          width="{{ block.settings.sample_image.width }}"
+          height="{{ block.settings.sample_image.height }}"
+        >
+      {% else %}
+        <div class="ai-sample-promo__image-placeholder-{{ ai_gen_id }}">
+          {{ 'product-apparel-1' | placeholder_svg_tag }}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="ai-sample-promo__content-{{ ai_gen_id }}">
+      <h2 class="ai-sample-promo__title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+      
+      <div class="ai-sample-promo__badges-{{ ai_gen_id }}"><span 
+          class="ai-sample-promo__badge-{{ ai_gen_id }} ai-sample-promo__badge--refundable-{{ ai_gen_id }}"
+          id="refundable-badge-{{ ai_gen_id }}"
+          tabindex="0"
+          role="button"
+          aria-expanded="false"
+          aria-controls="fine-print-{{ ai_gen_id }}"
+        >
+          {{ block.settings.refundable_badge_text }}
+        </span>
+        <span class="ai-sample-promo__badge-{{ ai_gen_id }} ai-sample-promo__badge--shipping-{{ ai_gen_id }}">
+          {{ block.settings.shipping_badge_text }}
+        </span>
+      </div>
+      
+      <p 
+        class="ai-sample-promo__fine-print-{{ ai_gen_id }}" 
+        id="fine-print-{{ ai_gen_id }}"
+      >
+        {{ block.settings.fine_print }}
+      </p>
+    </div>
+  </div>
+
+  <div class="ai-sample-promo__bottom-row-{{ ai_gen_id }}">
+    <div class="ai-sample-promo__pricing-{{ ai_gen_id }}">
+      <span class="ai-sample-promo__compare-price-{{ ai_gen_id }}">{{ block.settings.compare_price }}</span>
+      <span class="ai-sample-promo__price-{{ ai_gen_id }}">{{ block.settings.price }}</span>
+    </div>
+    
+    <button 
+      type="button" 
+      class="ai-sample-promo__button-{{ ai_gen_id }}"
+      onclick="addSampleToCart('{{ block.settings.sample_variant_id }}')"
+    >
+      {{ block.settings.button_text }}
+    </button>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const refundableBadge = document.getElementById('refundable-badge-{{ ai_gen_id }}');
+    const finePrint = document.getElementById('fine-print-{{ ai_gen_id }}');
+    if (refundableBadge && finePrint) {
+      // Click functionality
+      refundableBadge.addEventListener('click', function() {
+        finePrint.classList.toggle('active');
+        this.setAttribute('aria-expanded', finePrint.classList.contains('active'));
+      });
+      
+      // Keyboard accessibility
+      refundableBadge.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          finePrint.classList.toggle('active');
+          this.setAttribute('aria-expanded', finePrint.classList.contains('active'));
+        }
+      });
+      
+      // Hover functionality
+      refundableBadge.addEventListener('mouseenter', function() {
+        finePrint.classList.add('active');
+        this.setAttribute('aria-expanded', 'true');
+      });
+      
+      refundableBadge.addEventListener('mouseleave', function() {
+        // Only hide if it wasn't toggled on by clicking
+        if (!finePrint.classList.contains('clicked')) {
+          finePrint.classList.remove('active');
+          this.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  })();
+
+  function addSampleToCart(variantId) {
+    if (!variantId) {
+      console.error('No variant ID provided');
+      return;
+    }
+    
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        items: [{
+          id: variantId,
+          quantity: 1
+        }]
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.items) {
+        window.location.href = '/cart';
+      } else {
+        console.error('Error adding product to cart:', data);
+        alert('Could not add the sample to your cart. Please try again.');
+      }
+    })
+    .catch(error => {
+      console.error('Error adding product to cart:', error);
+      alert('Could not add the sample to your cart. Please try again.');
+    });
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Cabinet Sample Promo",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Order a Cabinet Door Sample"
+    },
+    {
+      "type": "image_picker",
+      "id": "sample_image",
+      "label": "Sample image"
+    },
+    {
+      "type": "text",
+      "id": "refundable_badge_text",
+      "label": "Refundable badge text",
+      "default": "REFUNDABLE"
+    },
+    {
+      "type": "text",
+      "id": "shipping_badge_text",
+      "label": "Shipping badge text",
+      "default": "FREE SHIPPING"
+    },
+    {
+      "type": "text",
+      "id": "compare_price",
+      "label": "Compare at price",
+      "default": "$49.99"
+    },
+    {
+      "type": "text",
+      "id": "price",
+      "label": "Price",
+      "default": "$9.99"
+    },
+    {
+      "type": "text",
+      "id": "fine_print",
+      "label": "Fine print",
+      "default": "All sample costs are refunded with cabinet purchase."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Add to Cart"
+    },
+    {
+      "type": "text",
+      "id": "sample_variant_id",
+      "label": "Sample variant ID",
+      "info": "Enter the variant ID of the sample product"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "block_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Block border radius",
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Image border radius",
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "image_min_width",
+      "min": 20,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "label": "Image minimum width",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "image_max_width",
+      "min": 20,
+      "max": 500,
+      "step": 10,
+      "unit": "px",
+      "label": "Image maximum width",
+      "default": 300
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#fcfaf6"
+    },
+    {
+      "type": "color",
+      "id": "refundable_badge_color",
+      "label": "Refundable badge color",
+      "default": "#af5a3c"
+    },
+    {
+      "type": "color",
+      "id": "shipping_badge_color",
+      "label": "Free shipping badge color",
+      "default": "#b8866e"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button color",
+      "default": "#af5a3c"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cabinet Sample Promo"
+    }
+  ]
+}
+{% endschema %}

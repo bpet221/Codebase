@@ -1,0 +1,246 @@
+{% doc %}
+  @prompt
+    Create a fully interactive two-option horizontal toggle button with working JavaScript functionality and smooth sliding animation. Use button elements with click event handlers. On the left, label the button "ASSEMBLED"; on the right, label it "UN-ASSEMBLED".
+    
+    When one option is selected, apply these styles:
+    
+    Font color: #ffffff
+    Background color: #6D684E
+    For the non-selected option:
+    
+    Font color: #6D684E
+    Background color: #F8F7F6
+    Create a container with #F8F7F6 background color that has 3px padding on top, left, and right sides. The active button should appear to float inside this container with smooth CSS transitions when switching between options. Add a sliding animation that moves the active button smoothly from side to side when toggling.
+    
+    Ensure text never wraps by using white-space: nowrap on button text. Add theme settings to control minimum width for each button individually, allowing customization of the left button width and right button width separately.
+    
+    Include JavaScript code to handle button clicks, toggle active states, smooth transitions, and update aria-pressed attributes for accessibility. Use rounded corners, equal width buttons, and add a slight shadow around the active selection. Make it mobile-responsive with proper touch targets. Ensure the toggle is clickable and functional in both preview and live environments with smooth animations."
+    
+    The key additions are:
+    
+    "text never wraps by using white-space: nowrap"
+    "Add theme settings to control minimum width for each button individually"
+    "allowing customization of the left button width and right button width separately
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-toggle-container-{{ ai_gen_id }} {
+    display: inline-flex;
+    background-color: #F8F7F6;
+    border-radius: {{ block.settings.border_radius }}px;
+    padding: 3px 3px 3px 3px;
+    position: relative;
+    box-sizing: border-box;
+    width: fit-content;
+  }
+
+  .ai-toggle-button-{{ ai_gen_id }} {
+    position: relative;
+    min-width: {{ block.settings.left_button_min_width }}px;
+    padding: 10px 15px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 500;
+    white-space: nowrap;
+    z-index: 2;
+    transition: color 0.3s ease;
+  }
+
+  .ai-toggle-button-{{ ai_gen_id }}:first-child {
+    min-width: {{ block.settings.left_button_min_width }}px;
+  }
+
+  .ai-toggle-button-{{ ai_gen_id }}:last-child {
+    min-width: {{ block.settings.right_button_min_width }}px;
+  }
+
+  .ai-toggle-slider-{{ ai_gen_id }} {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    height: calc(100% - 6px);
+    width: calc(50% - 3px);
+    background-color: #6D684E;
+    border-radius: {{ block.settings.border_radius }}px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+
+  .ai-toggle-container-{{ ai_gen_id }}.right .ai-toggle-slider-{{ ai_gen_id }} {
+    transform: translateX(100%);
+  }
+
+  .ai-toggle-button-{{ ai_gen_id }}.active {
+    color: #FFFFFF;
+  }
+
+  .ai-toggle-button-{{ ai_gen_id }}:not(.active) {
+    color: #6D684E;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-toggle-button-{{ ai_gen_id }} {
+      padding: 10px 12px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-toggle-container-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-toggle-slider-{{ ai_gen_id }}"></div>
+  <button 
+    type="button" 
+    class="ai-toggle-button-{{ ai_gen_id }} active" 
+    data-position="left"
+    aria-pressed="true"
+  >
+    {{ block.settings.left_button_text }}
+  </button>
+  <button 
+    type="button" 
+    class="ai-toggle-button-{{ ai_gen_id }}" 
+    data-position="right"
+    aria-pressed="false"
+  >
+    {{ block.settings.right_button_text }}
+  </button>
+</div>
+
+<script>
+  (function() {
+    class ToggleButton{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.container = this;
+        this.buttons = this.querySelectorAll('.ai-toggle-button-{{ ai_gen_id }}');
+        this.slider = this.querySelector('.ai-toggle-slider-{{ ai_gen_id }}');
+        this.currentPosition = 'left';
+        
+        this.init();
+      }
+
+      init() {
+        this.buttons.forEach(button => {
+          button.addEventListener('click', this.handleToggle.bind(this));
+        });
+        
+        // Initialize slider width based on active button
+        this.updateSliderWidth();
+        
+        // Handle window resize to adjust slider width
+        window.addEventListener('resize', () => {
+          this.updateSliderWidth();
+        });
+      }
+      
+      updateSliderWidth() {
+        const activeButton = this.querySelector('.ai-toggle-button-{{ ai_gen_id }}.active');
+        if (activeButton) {
+          this.slider.style.width = `${activeButton.offsetWidth}px`;
+        }
+      }
+
+      handleToggle(event) {
+        const clickedPosition = event.currentTarget.getAttribute('data-position');
+        
+        if (clickedPosition === this.currentPosition) {
+          return;
+        }
+        
+        this.currentPosition = clickedPosition;
+        
+        // Update container class
+        if (clickedPosition === 'right') {
+          this.container.classList.add('right');
+        } else {
+          this.container.classList.remove('right');
+        }
+        
+        // Update button states
+        this.buttons.forEach(button => {
+          const buttonPosition = button.getAttribute('data-position');
+          if (buttonPosition === clickedPosition) {
+            button.classList.add('active');
+            button.setAttribute('aria-pressed', 'true');
+          } else {
+            button.classList.remove('active');
+            button.setAttribute('aria-pressed', 'false');
+          }
+        });
+        
+        // Update slider width to match the active button
+        this.updateSliderWidth();
+      }
+    }
+
+    customElements.define('toggle-button-{{ ai_gen_id }}', ToggleButton{{ ai_gen_id }});
+    
+    // Initialize all toggle buttons on the page
+    document.querySelectorAll('.ai-toggle-container-{{ ai_gen_id }}').forEach(container => {
+      new ToggleButton{{ ai_gen_id }}();
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Toggle Button",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "left_button_text",
+      "label": "Left button text",
+      "default": "ASSEMBLED"
+    },
+    {
+      "type": "text",
+      "id": "right_button_text",
+      "label": "Right button text",
+      "default": "UN-ASSEMBLED"
+    },
+    {
+      "type": "header",
+      "content": "Button Styling"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "left_button_min_width",
+      "min": 60,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Left button min width",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "right_button_min_width",
+      "min": 60,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Right button min width",
+      "default": 120
+    }
+  ],
+  "presets": [
+    {
+      "name": "Toggle Button"
+    }
+  ]
+}
+{% endschema %}
