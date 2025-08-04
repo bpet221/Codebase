@@ -32,10 +32,3 @@ git add .
 read -p "Commit message: " msg
 git commit -m "$msg"
 git push $remote $branch
-
-if [ "$choice" = "3" ]; then
-  read -p "Also push to Shopify theme? (y/n): " push_shopify
-  if [[ "$push_shopify" =~ ^[Yy]$ ]]; then
-    shopify theme push --theme 140720275534 --path . --store aeb786-12.myshopify.com
-  fi
-fi

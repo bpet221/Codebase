@@ -1,0 +1,54 @@
+{
+  metafieldDefinitions(first: 50, ownerType: PRODUCT, namespace: "custom") {
+    edges {
+      node {
+        id
+        name
+        namespace
+        key
+        description
+        type {
+          name
+          category
+        }
+        constraints {
+          key
+          values(first: 100) {
+            edges {
+              node {
+                value
+              }
+            }
+            pageInfo {
+              hasNextPage
+              endCursor
+            }
+          }
+        }
+        validations {
+          name
+          value
+          type
+        }
+        access {
+          admin
+          storefront
+        }
+        capabilities {
+          smartCollectionCondition {
+            eligible
+            enabled
+          }
+        }
+        validationStatus
+        pinnedPosition
+        metafieldsCount
+        ownerType
+      }
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}

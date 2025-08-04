@@ -1,0 +1,3999 @@
+# Shopify GraphQL Admin API Documentation Processing Report
+
+**Generated:** 2025-08-01 17:23:03
+**API Version:** 2025-07
+**Total URLs:** 1835
+**Successfully Processed:** 1835
+**Failed:** 0
+**Success Rate:** 100.0%
+
+## Folder Structure Created
+
+- **Access > Mutations**: 4 files
+- **Access > Objects**: 4 files
+- **Apps > Mutations**: 8 files
+- **Apps > Objects**: 9 files
+- **Apps > Queries**: 11 files
+- **B2B > Mutations**: 31 files
+- **B2B > Objects**: 10 files
+- **B2B > Queries**: 7 files
+- **Billing > Mutations**: 6 files
+- **Billing > Objects**: 15 files
+- **Billing > Queries**: 1 files
+- **Bulk operations > Mutations**: 3 files
+- **Bulk operations > Objects**: 1 files
+- **Bulk operations > Queries**: 1 files
+- **Cart > Mutations**: 2 files
+- **Cart > Objects**: 1 files
+- **Cart > Queries**: 1 files
+- **Checkout branding > Mutations**: 1 files
+- **Checkout branding > Objects**: 12 files
+- **Checkout branding > Queries**: 1 files
+- **Common objects > Mutations**: 44 files
+- **Common objects > Objects**: 126 files
+- **Common objects > Queries**: 37 files
+- **Customers > Mutations**: 24 files
+- **Customers > Objects**: 36 files
+- **Customers > Queries**: 16 files
+- **Discounts and marketing > Mutations**: 46 files
+- **Discounts and marketing > Objects**: 62 files
+- **Discounts and marketing > Queries**: 25 files
+- **Events > Mutations**: 1 files
+- **Events > Objects**: 8 files
+- **Events > Queries**: 4 files
+- **GraphQL Types > Objects**: 353 files
+- **Inventory > Mutations**: 27 files
+- **Inventory > Objects**: 16 files
+- **Inventory > Queries**: 7 files
+- **Localizations > Mutations**: 7 files
+- **Localizations > Objects**: 9 files
+- **Localizations > Queries**: 8 files
+- **Metafields > Mutations**: 8 files
+- **Metafields > Objects**: 6 files
+- **Metafields > Queries**: 4 files
+- **Metaobjects > Mutations**: 9 files
+- **Metaobjects > Objects**: 15 files
+- **Metaobjects > Queries**: 6 files
+- **Online store > Mutations**: 35 files
+- **Online store > Objects**: 27 files
+- **Online store > Queries**: 25 files
+- **Orders > Mutations**: 89 files
+- **Orders > Objects**: 151 files
+- **Orders > Queries**: 34 files
+- **Overview > General**: 1 files
+- **Privacy > Mutations**: 3 files
+- **Privacy > Objects**: 7 files
+- **Privacy > Queries**: 3 files
+- **Products and collections > Mutations**: 65 files
+- **Products and collections > Objects**: 96 files
+- **Products and collections > Queries**: 31 files
+- **Retail > Objects**: 3 files
+- **Retail > Queries**: 3 files
+- **Shipping and fulfillment > Mutations**: 41 files
+- **Shipping and fulfillment > Objects**: 57 files
+- **Shipping and fulfillment > Queries**: 17 files
+- **Shopify Markets > Mutations**: 12 files
+- **Shopify Markets > Objects**: 12 files
+- **Shopify Markets > Queries**: 7 files
+- **Shopify Payments > Mutations**: 2 files
+- **Shopify Payments > Objects**: 23 files
+- **Shopify Payments > Queries**: 4 files
+- **Store properties > Mutations**: 12 files
+- **Store properties > Objects**: 19 files
+- **Store properties > Queries**: 9 files
+- **Webhooks > Mutations**: 7 files
+- **Webhooks > Objects**: 4 files
+- **Webhooks > Queries**: 3 files
+
+## Files Created
+
+- Overview > General/overview.md
+- Access > Mutations/apprevokeaccessscopes.md
+- Access > Mutations/delegateaccesstokencreate.md
+- Access > Mutations/storefrontaccesstokencreate.md
+- Access > Mutations/storefrontaccesstokendelete.md
+- Access > Objects/accessscope.md
+- Access > Objects/delegateaccesstoken.md
+- Access > Objects/queryroot.md
+- Access > Objects/storefrontaccesstoken.md
+- Apps > Mutations/appuninstall.md
+- Apps > Mutations/mobileplatformapplicationcreate.md
+- Apps > Mutations/mobileplatformapplicationdelete.md
+- Apps > Mutations/mobileplatformapplicationupdate.md
+- Apps > Mutations/publicationcreate.md
+- Apps > Mutations/publicationdelete.md
+- Apps > Mutations/publicationupdate.md
+- Apps > Mutations/shopresourcefeedbackcreate.md
+- Apps > Objects/androidapplication.md
+- Apps > Objects/app.md
+- Apps > Objects/appfeedback.md
+- Apps > Objects/appinstallation.md
+- Apps > Objects/appleapplication.md
+- Apps > Objects/failedrequirement.md
+- Apps > Objects/link.md
+- Apps > Objects/publication.md
+- Apps > Objects/resourcefeedback.md
+- Apps > Queries/app.md
+- Apps > Queries/appbyhandle.md
+- Apps > Queries/appbykey.md
+- Apps > Queries/appinstallation.md
+- Apps > Queries/appinstallations.md
+- Apps > Queries/currentappinstallation.md
+- Apps > Queries/mobileplatformapplication.md
+- Apps > Queries/mobileplatformapplications.md
+- Apps > Queries/publication.md
+- Apps > Queries/publications.md
+- Apps > Queries/publicationscount.md
+- B2B > Mutations/companiesdelete.md
+- B2B > Mutations/companyaddressdelete.md
+- B2B > Mutations/companyassigncustomerascontact.md
+- B2B > Mutations/companyassignmaincontact.md
+- B2B > Mutations/companycontactassignrole.md
+- B2B > Mutations/companycontactassignroles.md
+- B2B > Mutations/companycontactcreate.md
+- B2B > Mutations/companycontactdelete.md
+- B2B > Mutations/companycontactremovefromcompany.md
+- B2B > Mutations/companycontactrevokerole.md
+- B2B > Mutations/companycontactrevokeroles.md
+- B2B > Mutations/companycontactsdelete.md
+- B2B > Mutations/companycontactupdate.md
+- B2B > Mutations/companycreate.md
+- B2B > Mutations/companydelete.md
+- B2B > Mutations/companylocationassignaddress.md
+- B2B > Mutations/companylocationassignroles.md
+- B2B > Mutations/companylocationassignstaffmembers.md
+- B2B > Mutations/companylocationassigntaxexemptions.md
+- B2B > Mutations/companylocationcreate.md
+- B2B > Mutations/companylocationcreatetaxregistration.md
+- B2B > Mutations/companylocationdelete.md
+- B2B > Mutations/companylocationremovestaffmembers.md
+- B2B > Mutations/companylocationrevokeroles.md
+- B2B > Mutations/companylocationrevoketaxexemptions.md
+- B2B > Mutations/companylocationrevoketaxregistration.md
+- B2B > Mutations/companylocationsdelete.md
+- B2B > Mutations/companylocationtaxsettingsupdate.md
+- B2B > Mutations/companylocationupdate.md
+- B2B > Mutations/companyrevokemaincontact.md
+- B2B > Mutations/companyupdate.md
+- B2B > Objects/company.md
+- B2B > Objects/companyaddress.md
+- B2B > Objects/companycontact.md
+- B2B > Objects/companycontactrole.md
+- B2B > Objects/companycontactroleassignment.md
+- B2B > Objects/companylocation.md
+- B2B > Objects/companylocationscondition.md
+- B2B > Objects/companylocationstaffmemberassignment.md
+- B2B > Objects/companylocationtaxsettings.md
+- B2B > Objects/purchasingcompany.md
+- B2B > Queries/companies.md
+- B2B > Queries/companiescount.md
+- B2B > Queries/company.md
+- B2B > Queries/companycontact.md
+- B2B > Queries/companycontactrole.md
+- B2B > Queries/companylocation.md
+- B2B > Queries/companylocations.md
+- Billing > Mutations/apppurchaseonetimecreate.md
+- Billing > Mutations/appsubscriptioncancel.md
+- Billing > Mutations/appsubscriptioncreate.md
+- Billing > Mutations/appsubscriptionlineitemupdate.md
+- Billing > Mutations/appsubscriptiontrialextend.md
+- Billing > Mutations/appusagerecordcreate.md
+- Billing > Objects/appcredit.md
+- Billing > Objects/appplanv2.md
+- Billing > Objects/apppurchaseonetime.md
+- Billing > Objects/apprecurringpricing.md
+- Billing > Objects/apprevenueattributionrecord.md
+- Billing > Objects/appsubscription.md
+- Billing > Objects/appsubscriptiondiscount.md
+- Billing > Objects/appsubscriptiondiscountamount.md
+- Billing > Objects/appsubscriptiondiscountpercentage.md
+- Billing > Objects/appsubscriptionlineitem.md
+- Billing > Objects/appusagepricing.md
+- Billing > Objects/appusagerecord.md
+- Billing > Objects/entitlementstype.md
+- Billing > Objects/marketstype.md
+- Billing > Objects/shopbillingpreferences.md
+- Billing > Queries/shopbillingpreferences.md
+- Bulk operations > Mutations/bulkoperationcancel.md
+- Bulk operations > Mutations/bulkoperationrunmutation.md
+- Bulk operations > Mutations/bulkoperationrunquery.md
+- Bulk operations > Objects/bulkoperation.md
+- Bulk operations > Queries/currentbulkoperation.md
+- Cart > Mutations/carttransformcreate.md
+- Cart > Mutations/carttransformdelete.md
+- Cart > Objects/carttransform.md
+- Cart > Queries/carttransforms.md
+- Checkout branding > Mutations/checkoutbrandingupsert.md
+- Checkout branding > Objects/checkoutbranding.md
+- Checkout branding > Objects/checkoutbrandingcontrol.md
+- Checkout branding > Objects/checkoutbrandingcustomizations.md
+- Checkout branding > Objects/checkoutbrandingdesignsystem.md
+- Checkout branding > Objects/checkoutbrandingfontgroup.md
+- Checkout branding > Objects/checkoutbrandingfontsize.md
+- Checkout branding > Objects/checkoutbrandingheader.md
+- Checkout branding > Objects/checkoutbrandingimage.md
+- Checkout branding > Objects/checkoutbrandinglogo.md
+- Checkout branding > Objects/checkoutbrandingmain.md
+- Checkout branding > Objects/checkoutbrandingordersummary.md
+- Checkout branding > Objects/checkoutbrandingtypography.md
+- Checkout branding > Queries/checkoutbranding.md
+- Common objects > Mutations/bulkproductresourcefeedbackcreate.md
+- Common objects > Mutations/customerpaymentmethodcreditcardcreate.md
+- Common objects > Mutations/customerpaymentmethodcreditcardupdate.md
+- Common objects > Mutations/customerpaymentmethodgetupdateurl.md
+- Common objects > Mutations/customerpaymentmethodpaypalbillingagreementcreate.md
+- Common objects > Mutations/customerpaymentmethodpaypalbillingagreementupdate.md
+- Common objects > Mutations/customerpaymentmethodremotecreate.md
+- Common objects > Mutations/customerpaymentmethodrevoke.md
+- Common objects > Mutations/customerpaymentmethodsendupdateemail.md
+- Common objects > Mutations/fulfillmentconstraintrulecreate.md
+- Common objects > Mutations/fulfillmentconstraintruledelete.md
+- Common objects > Mutations/fulfillmentconstraintruleupdate.md
+- Common objects > Mutations/giftcardcreate.md
+- Common objects > Mutations/giftcardcredit.md
+- Common objects > Mutations/giftcarddeactivate.md
+- Common objects > Mutations/giftcarddebit.md
+- Common objects > Mutations/giftcardsendnotificationtocustomer.md
+- Common objects > Mutations/giftcardsendnotificationtorecipient.md
+- Common objects > Mutations/giftcardupdate.md
+- Common objects > Mutations/marketregionsdelete.md
+- Common objects > Mutations/paymentcustomizationactivation.md
+- Common objects > Mutations/paymentcustomizationcreate.md
+- Common objects > Mutations/paymentcustomizationdelete.md
+- Common objects > Mutations/paymentcustomizationupdate.md
+- Common objects > Mutations/paymentremindersend.md
+- Common objects > Mutations/paymenttermscreate.md
+- Common objects > Mutations/paymenttermsdelete.md
+- Common objects > Mutations/paymenttermsupdate.md
+- Common objects > Mutations/productfeedcreate.md
+- Common objects > Mutations/productfeeddelete.md
+- Common objects > Mutations/productfullsync.md
+- Common objects > Mutations/savedsearchcreate.md
+- Common objects > Mutations/savedsearchdelete.md
+- Common objects > Mutations/savedsearchupdate.md
+- Common objects > Mutations/stageduploadtargetgenerate.md
+- Common objects > Mutations/stageduploadtargetsgenerate.md
+- Common objects > Mutations/storecreditaccountcredit.md
+- Common objects > Mutations/storecreditaccountdebit.md
+- Common objects > Mutations/tagsadd.md
+- Common objects > Mutations/tagsremove.md
+- Common objects > Mutations/validationcreate.md
+- Common objects > Mutations/validationdelete.md
+- Common objects > Mutations/validationupdate.md
+- Common objects > Mutations/webpresencedelete.md
+- Common objects > Objects/abandonedcheckout.md
+- Common objects > Objects/abandonedcheckoutlineitem.md
+- Common objects > Objects/abandonedcheckoutlineitemcomponent.md
+- Common objects > Objects/apiversion.md
+- Common objects > Objects/apprevokeaccessscopesapprevokescopeerror.md
+- Common objects > Objects/appuninstallappuninstallerror.md
+- Common objects > Objects/availablechanneldefinitionsbychannel.md
+- Common objects > Objects/buyerexperienceconfiguration.md
+- Common objects > Objects/channel.md
+- Common objects > Objects/channeldefinition.md
+- Common objects > Objects/channelinformation.md
+- Common objects > Objects/checkoutbrandingbutton.md
+- Common objects > Objects/checkoutbrandingbuttoncolorroles.md
+- Common objects > Objects/checkoutbrandingbuyerjourney.md
+- Common objects > Objects/checkoutbrandingcartlink.md
+- Common objects > Objects/checkoutbrandingcheckbox.md
+- Common objects > Objects/checkoutbrandingchoicelist.md
+- Common objects > Objects/checkoutbrandingchoicelistgroup.md
+- Common objects > Objects/checkoutbrandingcolorglobal.md
+- Common objects > Objects/checkoutbrandingcolorroles.md
+- Common objects > Objects/checkoutbrandingcolors.md
+- Common objects > Objects/checkoutbrandingcolorscheme.md
+- Common objects > Objects/checkoutbrandingcolorschemes.md
+- Common objects > Objects/checkoutbrandingcontainerdivider.md
+- Common objects > Objects/checkoutbrandingcontent.md
+- Common objects > Objects/checkoutbrandingcontrolcolorroles.md
+- Common objects > Objects/checkoutbrandingcornerradiusvariables.md
+- Common objects > Objects/checkoutbrandingcustomfont.md
+- Common objects > Objects/checkoutbrandingdividerstyle.md
+- Common objects > Objects/checkoutbrandingexpresscheckout.md
+- Common objects > Objects/checkoutbrandingexpresscheckoutbutton.md
+- Common objects > Objects/checkoutbrandingfooter.md
+- Common objects > Objects/checkoutbrandingfootercontent.md
+- Common objects > Objects/checkoutbrandingglobal.md
+- Common objects > Objects/checkoutbrandingheadercartlink.md
+- Common objects > Objects/checkoutbrandingheadinglevel.md
+- Common objects > Objects/checkoutbrandingmainsection.md
+- Common objects > Objects/checkoutbrandingmerchandisethumbnail.md
+- Common objects > Objects/checkoutbrandingmerchandisethumbnailbadge.md
+- Common objects > Objects/checkoutbrandingordersummarysection.md
+- Common objects > Objects/checkoutbrandingselect.md
+- Common objects > Objects/checkoutbrandingshopifyfont.md
+- Common objects > Objects/checkoutbrandingtextfield.md
+- Common objects > Objects/checkoutbrandingtypographystyle.md
+- Common objects > Objects/checkoutbrandingtypographystyleglobal.md
+- Common objects > Objects/checkoutprofile.md
+- Common objects > Objects/count.md
+- Common objects > Objects/customercreditcard.md
+- Common objects > Objects/customerpaymentinstrumentbillingaddress.md
+- Common objects > Objects/customerpaymentmethod.md
+- Common objects > Objects/customerpaypalbillingagreement.md
+- Common objects > Objects/customershoppayagreement.md
+- Common objects > Objects/depositpercentage.md
+- Common objects > Objects/distance.md
+- Common objects > Objects/domain.md
+- Common objects > Objects/domainlocalization.md
+- Common objects > Objects/financeappaccesspolicy.md
+- Common objects > Objects/fulfillmentconstraintrule.md
+- Common objects > Objects/functionsappbridge.md
+- Common objects > Objects/functionserrorhistory.md
+- Common objects > Objects/giftcard.md
+- Common objects > Objects/giftcardconfiguration.md
+- Common objects > Objects/giftcardcredittransaction.md
+- Common objects > Objects/giftcarddebittransaction.md
+- Common objects > Objects/giftcardrecipient.md
+- Common objects > Objects/image.md
+- Common objects > Objects/imageuploadparameter.md
+- Common objects > Objects/job.md
+- Common objects > Objects/localizedfield.md
+- Common objects > Objects/mailingaddress.md
+- Common objects > Objects/merchantapprovalsignals.md
+- Common objects > Objects/metafieldaccess.md
+- Common objects > Objects/metafieldcapabilities.md
+- Common objects > Objects/metafieldcapabilityadminfilterable.md
+- Common objects > Objects/metafieldcapabilityuniquevalues.md
+- Common objects > Objects/metafielddefinitionconstraints.md
+- Common objects > Objects/metafielddefinitionconstraintvalue.md
+- Common objects > Objects/metafielddefinitionidentifier.md
+- Common objects > Objects/metafieldidentifier.md
+- Common objects > Objects/metafieldrelation.md
+- Common objects > Objects/metaobjectthumbnail.md
+- Common objects > Objects/moneybag.md
+- Common objects > Objects/moneyv2.md
+- Common objects > Objects/mutationsstageduploadtargetgenerateuploadparameter.md
+- Common objects > Objects/orderpaymentstatus.md
+- Common objects > Objects/pageinfo.md
+- Common objects > Objects/paymentcustomization.md
+- Common objects > Objects/paymentcustomizationerror.md
+- Common objects > Objects/paymentmandate.md
+- Common objects > Objects/paymentschedule.md
+- Common objects > Objects/paymentterms.md
+- Common objects > Objects/paymenttermstemplate.md
+- Common objects > Objects/productfeed.md
+- Common objects > Objects/productresourcefeedback.md
+- Common objects > Objects/queryroot.md
+- Common objects > Objects/savedsearch.md
+- Common objects > Objects/searchfilter.md
+- Common objects > Objects/searchfilteroptions.md
+- Common objects > Objects/searchresult.md
+- Common objects > Objects/shopifyfunction.md
+- Common objects > Objects/shoppaypaymentrequest.md
+- Common objects > Objects/shoppaypaymentrequestcontactfield.md
+- Common objects > Objects/shoppaypaymentrequestdiscount.md
+- Common objects > Objects/shoppaypaymentrequestimage.md
+- Common objects > Objects/shoppaypaymentrequestlineitem.md
+- Common objects > Objects/shoppaypaymentrequestreceipt.md
+- Common objects > Objects/shoppaypaymentrequestreceiptprocessingstatus.md
+- Common objects > Objects/shoppaypaymentrequestshippingline.md
+- Common objects > Objects/shoppaypaymentrequesttotalshippingprice.md
+- Common objects > Objects/staffmember.md
+- Common objects > Objects/staffmemberprivatedata.md
+- Common objects > Objects/stageduploadparameter.md
+- Common objects > Objects/stageduploadtarget.md
+- Common objects > Objects/standardmetaobjectcapabilitytemplate.md
+- Common objects > Objects/standardmetaobjectdefinitionfieldtemplate.md
+- Common objects > Objects/standardmetaobjectdefinitiontemplate.md
+- Common objects > Objects/storecreditaccount.md
+- Common objects > Objects/storecreditaccountcredittransaction.md
+- Common objects > Objects/storecreditaccountdebitreverttransaction.md
+- Common objects > Objects/storecreditaccountdebittransaction.md
+- Common objects > Objects/storecreditaccountexpirationtransaction.md
+- Common objects > Objects/typedattribute.md
+- Common objects > Objects/validation.md
+- Common objects > Objects/vaultcreditcard.md
+- Common objects > Objects/vaultpaypalbillingagreement.md
+- Common objects > Objects/webhooksubscriptionmetafieldidentifier.md
+- Common objects > Queries/abandonedcheckouts.md
+- Common objects > Queries/abandonedcheckoutscount.md
+- Common objects > Queries/abandonmentbyabandonedcheckoutid.md
+- Common objects > Queries/articletags.md
+- Common objects > Queries/channel.md
+- Common objects > Queries/channels.md
+- Common objects > Queries/checkoutprofile.md
+- Common objects > Queries/checkoutprofiles.md
+- Common objects > Queries/currentstaffmember.md
+- Common objects > Queries/customermergejobstatus.md
+- Common objects > Queries/customerpaymentmethod.md
+- Common objects > Queries/domain.md
+- Common objects > Queries/financeappaccesspolicy.md
+- Common objects > Queries/fulfillmentconstraintrules.md
+- Common objects > Queries/giftcard.md
+- Common objects > Queries/giftcardconfiguration.md
+- Common objects > Queries/giftcards.md
+- Common objects > Queries/giftcardscount.md
+- Common objects > Queries/job.md
+- Common objects > Queries/node.md
+- Common objects > Queries/nodes.md
+- Common objects > Queries/orderpaymentstatus.md
+- Common objects > Queries/paymentcustomization.md
+- Common objects > Queries/paymentcustomizations.md
+- Common objects > Queries/paymenttermstemplates.md
+- Common objects > Queries/productfeed.md
+- Common objects > Queries/productfeeds.md
+- Common objects > Queries/publicapiversions.md
+- Common objects > Queries/shopifyfunction.md
+- Common objects > Queries/shopifyfunctions.md
+- Common objects > Queries/shoppaypaymentrequestreceipt.md
+- Common objects > Queries/shoppaypaymentrequestreceipts.md
+- Common objects > Queries/staffmember.md
+- Common objects > Queries/staffmembers.md
+- Common objects > Queries/storecreditaccount.md
+- Common objects > Queries/validation.md
+- Common objects > Queries/validations.md
+- Customers > Mutations/customeraddresscreate.md
+- Customers > Mutations/customeraddressdelete.md
+- Customers > Mutations/customeraddressupdate.md
+- Customers > Mutations/customeraddtaxexemptions.md
+- Customers > Mutations/customercanceldataerasure.md
+- Customers > Mutations/customercreate.md
+- Customers > Mutations/customerdelete.md
+- Customers > Mutations/customeremailmarketingconsentupdate.md
+- Customers > Mutations/customergenerateaccountactivationurl.md
+- Customers > Mutations/customermerge.md
+- Customers > Mutations/customerremovetaxexemptions.md
+- Customers > Mutations/customerreplacetaxexemptions.md
+- Customers > Mutations/customerrequestdataerasure.md
+- Customers > Mutations/customersegmentmembersquerycreate.md
+- Customers > Mutations/customersendaccountinviteemail.md
+- Customers > Mutations/customerset.md
+- Customers > Mutations/customersmsmarketingconsentupdate.md
+- Customers > Mutations/customerupdate.md
+- Customers > Mutations/customerupdatedefaultaddress.md
+- Customers > Mutations/ordercustomerset.md
+- Customers > Mutations/segmentcreate.md
+- Customers > Mutations/segmentdelete.md
+- Customers > Mutations/segmentupdate.md
+- Customers > Mutations/taxappconfigure.md
+- Customers > Objects/customer.md
+- Customers > Objects/customeraccountsv2.md
+- Customers > Objects/customercreditcardbillingaddress.md
+- Customers > Objects/customeremailaddress.md
+- Customers > Objects/customeremailmarketingconsentstate.md
+- Customers > Objects/customermergeable.md
+- Customers > Objects/customermergeerror.md
+- Customers > Objects/customermergepreview.md
+- Customers > Objects/customermergepreviewalternatefields.md
+- Customers > Objects/customermergepreviewblockingfields.md
+- Customers > Objects/customermergepreviewdefaultfields.md
+- Customers > Objects/customermergerequest.md
+- Customers > Objects/customerphonenumber.md
+- Customers > Objects/customersegmentmember.md
+- Customers > Objects/customersegmentmembersquery.md
+- Customers > Objects/customersmsmarketingconsenterror.md
+- Customers > Objects/customersmsmarketingconsentstate.md
+- Customers > Objects/customerstatistics.md
+- Customers > Objects/marketpriceinclusions.md
+- Customers > Objects/segment.md
+- Customers > Objects/segmentassociationfilter.md
+- Customers > Objects/segmentattributestatistics.md
+- Customers > Objects/segmentbooleanfilter.md
+- Customers > Objects/segmentdatefilter.md
+- Customers > Objects/segmentenumfilter.md
+- Customers > Objects/segmenteventfilter.md
+- Customers > Objects/segmenteventfilterparameter.md
+- Customers > Objects/segmentfloatfilter.md
+- Customers > Objects/segmentintegerfilter.md
+- Customers > Objects/segmentmembership.md
+- Customers > Objects/segmentmembershipresponse.md
+- Customers > Objects/segmentmigration.md
+- Customers > Objects/segmentstatistics.md
+- Customers > Objects/segmentstringfilter.md
+- Customers > Objects/segmentvalue.md
+- Customers > Objects/taxappconfiguration.md
+- Customers > Queries/customer.md
+- Customers > Queries/customerbyidentifier.md
+- Customers > Queries/customermergepreview.md
+- Customers > Queries/customers.md
+- Customers > Queries/customersavedsearches.md
+- Customers > Queries/customerscount.md
+- Customers > Queries/customersegmentmembers.md
+- Customers > Queries/customersegmentmembership.md
+- Customers > Queries/customersegmentmembersquery.md
+- Customers > Queries/segment.md
+- Customers > Queries/segmentfilters.md
+- Customers > Queries/segmentfiltersuggestions.md
+- Customers > Queries/segmentmigrations.md
+- Customers > Queries/segments.md
+- Customers > Queries/segmentscount.md
+- Customers > Queries/segmentvaluesuggestions.md
+- Discounts and marketing > Mutations/abandonmentemailstateupdate.md
+- Discounts and marketing > Mutations/abandonmentupdateactivitiesdeliverystatuses.md
+- Discounts and marketing > Mutations/discountautomaticactivate.md
+- Discounts and marketing > Mutations/discountautomaticappcreate.md
+- Discounts and marketing > Mutations/discountautomaticappupdate.md
+- Discounts and marketing > Mutations/discountautomaticbasiccreate.md
+- Discounts and marketing > Mutations/discountautomaticbasicupdate.md
+- Discounts and marketing > Mutations/discountautomaticbulkdelete.md
+- Discounts and marketing > Mutations/discountautomaticbxgycreate.md
+- Discounts and marketing > Mutations/discountautomaticbxgyupdate.md
+- Discounts and marketing > Mutations/discountautomaticdeactivate.md
+- Discounts and marketing > Mutations/discountautomaticdelete.md
+- Discounts and marketing > Mutations/discountautomaticfreeshippingcreate.md
+- Discounts and marketing > Mutations/discountautomaticfreeshippingupdate.md
+- Discounts and marketing > Mutations/discountcodeactivate.md
+- Discounts and marketing > Mutations/discountcodeappcreate.md
+- Discounts and marketing > Mutations/discountcodeappupdate.md
+- Discounts and marketing > Mutations/discountcodebasiccreate.md
+- Discounts and marketing > Mutations/discountcodebasicupdate.md
+- Discounts and marketing > Mutations/discountcodebulkactivate.md
+- Discounts and marketing > Mutations/discountcodebulkdeactivate.md
+- Discounts and marketing > Mutations/discountcodebulkdelete.md
+- Discounts and marketing > Mutations/discountcodebxgycreate.md
+- Discounts and marketing > Mutations/discountcodebxgyupdate.md
+- Discounts and marketing > Mutations/discountcodedeactivate.md
+- Discounts and marketing > Mutations/discountcodedelete.md
+- Discounts and marketing > Mutations/discountcodefreeshippingcreate.md
+- Discounts and marketing > Mutations/discountcodefreeshippingupdate.md
+- Discounts and marketing > Mutations/discountcoderedeemcodebulkdelete.md
+- Discounts and marketing > Mutations/discountredeemcodebulkadd.md
+- Discounts and marketing > Mutations/eventbridgeserverpixelupdate.md
+- Discounts and marketing > Mutations/marketingactivitiesdeleteallexternal.md
+- Discounts and marketing > Mutations/marketingactivitycreate.md
+- Discounts and marketing > Mutations/marketingactivitycreateexternal.md
+- Discounts and marketing > Mutations/marketingactivitydeleteexternal.md
+- Discounts and marketing > Mutations/marketingactivityupdate.md
+- Discounts and marketing > Mutations/marketingactivityupdateexternal.md
+- Discounts and marketing > Mutations/marketingactivityupsertexternal.md
+- Discounts and marketing > Mutations/marketingengagementcreate.md
+- Discounts and marketing > Mutations/marketingengagementsdelete.md
+- Discounts and marketing > Mutations/pubsubserverpixelupdate.md
+- Discounts and marketing > Mutations/serverpixelcreate.md
+- Discounts and marketing > Mutations/serverpixeldelete.md
+- Discounts and marketing > Mutations/webpixelcreate.md
+- Discounts and marketing > Mutations/webpixeldelete.md
+- Discounts and marketing > Mutations/webpixelupdate.md
+- Discounts and marketing > Objects/abandonment.md
+- Discounts and marketing > Objects/alldiscountitems.md
+- Discounts and marketing > Objects/appdiscounttype.md
+- Discounts and marketing > Objects/customerjourney.md
+- Discounts and marketing > Objects/customerjourneysummary.md
+- Discounts and marketing > Objects/customervisit.md
+- Discounts and marketing > Objects/customervisitproductinfo.md
+- Discounts and marketing > Objects/discountamount.md
+- Discounts and marketing > Objects/discountautomaticapp.md
+- Discounts and marketing > Objects/discountautomaticbasic.md
+- Discounts and marketing > Objects/discountautomaticbxgy.md
+- Discounts and marketing > Objects/discountautomaticfreeshipping.md
+- Discounts and marketing > Objects/discountautomaticnode.md
+- Discounts and marketing > Objects/discountcodeapp.md
+- Discounts and marketing > Objects/discountcodebasic.md
+- Discounts and marketing > Objects/discountcodebxgy.md
+- Discounts and marketing > Objects/discountcodefreeshipping.md
+- Discounts and marketing > Objects/discountcodenode.md
+- Discounts and marketing > Objects/discountcollections.md
+- Discounts and marketing > Objects/discountcombineswith.md
+- Discounts and marketing > Objects/discountcountries.md
+- Discounts and marketing > Objects/discountcountryall.md
+- Discounts and marketing > Objects/discountcustomerall.md
+- Discounts and marketing > Objects/discountcustomerbuys.md
+- Discounts and marketing > Objects/discountcustomergets.md
+- Discounts and marketing > Objects/discountcustomers.md
+- Discounts and marketing > Objects/discountcustomersegments.md
+- Discounts and marketing > Objects/discountminimumquantity.md
+- Discounts and marketing > Objects/discountminimumsubtotal.md
+- Discounts and marketing > Objects/discountnode.md
+- Discounts and marketing > Objects/discountonquantity.md
+- Discounts and marketing > Objects/discountpercentage.md
+- Discounts and marketing > Objects/discountproducts.md
+- Discounts and marketing > Objects/discountpurchaseamount.md
+- Discounts and marketing > Objects/discountquantity.md
+- Discounts and marketing > Objects/discountredeemcode.md
+- Discounts and marketing > Objects/discountredeemcodebulkcreation.md
+- Discounts and marketing > Objects/discountredeemcodebulkcreationcode.md
+- Discounts and marketing > Objects/discountshareableurl.md
+- Discounts and marketing > Objects/marketingactivity.md
+- Discounts and marketing > Objects/marketingactivityextensionapperrors.md
+- Discounts and marketing > Objects/marketingbudget.md
+- Discounts and marketing > Objects/marketingengagement.md
+- Discounts and marketing > Objects/marketingevent.md
+- Discounts and marketing > Objects/pricerule.md
+- Discounts and marketing > Objects/pricerulecustomerselection.md
+- Discounts and marketing > Objects/pricerulediscountcode.md
+- Discounts and marketing > Objects/priceruleentitlementtoprerequisitequantityratio.md
+- Discounts and marketing > Objects/pricerulefixedamountvalue.md
+- Discounts and marketing > Objects/priceruleitementitlements.md
+- Discounts and marketing > Objects/pricerulelineitemprerequisites.md
+- Discounts and marketing > Objects/pricerulemoneyrange.md
+- Discounts and marketing > Objects/pricerulepercentvalue.md
+- Discounts and marketing > Objects/priceruleprerequisitetoentitlementquantityratio.md
+- Discounts and marketing > Objects/pricerulequantityrange.md
+- Discounts and marketing > Objects/priceruleshareableurl.md
+- Discounts and marketing > Objects/priceruleshippinglineentitlements.md
+- Discounts and marketing > Objects/pricerulevalidityperiod.md
+- Discounts and marketing > Objects/pricingpercentagevalue.md
+- Discounts and marketing > Objects/serverpixel.md
+- Discounts and marketing > Objects/utmparameters.md
+- Discounts and marketing > Objects/webpixel.md
+- Discounts and marketing > Queries/abandonment.md
+- Discounts and marketing > Queries/appdiscounttype.md
+- Discounts and marketing > Queries/appdiscounttypes.md
+- Discounts and marketing > Queries/appdiscounttypesnodes.md
+- Discounts and marketing > Queries/automaticdiscount.md
+- Discounts and marketing > Queries/automaticdiscountnode.md
+- Discounts and marketing > Queries/automaticdiscountnodes.md
+- Discounts and marketing > Queries/automaticdiscounts.md
+- Discounts and marketing > Queries/automaticdiscountsavedsearches.md
+- Discounts and marketing > Queries/codediscountnode.md
+- Discounts and marketing > Queries/codediscountnodebycode.md
+- Discounts and marketing > Queries/codediscountnodes.md
+- Discounts and marketing > Queries/codediscountsavedsearches.md
+- Discounts and marketing > Queries/discountcodescount.md
+- Discounts and marketing > Queries/discountnode.md
+- Discounts and marketing > Queries/discountnodes.md
+- Discounts and marketing > Queries/discountnodescount.md
+- Discounts and marketing > Queries/discountredeemcodebulkcreation.md
+- Discounts and marketing > Queries/discountredeemcodesavedsearches.md
+- Discounts and marketing > Queries/marketingactivities.md
+- Discounts and marketing > Queries/marketingactivity.md
+- Discounts and marketing > Queries/marketingevent.md
+- Discounts and marketing > Queries/marketingevents.md
+- Discounts and marketing > Queries/serverpixel.md
+- Discounts and marketing > Queries/webpixel.md
+- Events > Mutations/flowtriggerreceive.md
+- Events > Objects/basicevent.md
+- Events > Objects/commentevent.md
+- Events > Objects/commenteventattachment.md
+- Events > Objects/deletionevent.md
+- Events > Objects/resourcealert.md
+- Events > Objects/resourcealertaction.md
+- Events > Objects/shopalert.md
+- Events > Objects/shopalertaction.md
+- Events > Queries/deletionevents.md
+- Events > Queries/event.md
+- Events > Queries/events.md
+- Events > Queries/eventscount.md
+- GraphQL Types > Objects/abandonedcheckoutedge.md
+- GraphQL Types > Objects/abandonedcheckoutlineitemedge.md
+- GraphQL Types > Objects/abandonmentemailstateupdateusererror.md
+- GraphQL Types > Objects/abandonmentupdateactivitiesdeliverystatusesusererror.md
+- GraphQL Types > Objects/appcreditedge.md
+- GraphQL Types > Objects/appdiscounttypeedge.md
+- GraphQL Types > Objects/appedge.md
+- GraphQL Types > Objects/appinstallationedge.md
+- GraphQL Types > Objects/apppurchaseonetimeedge.md
+- GraphQL Types > Objects/apprevenueattributionrecordedge.md
+- GraphQL Types > Objects/appsubscriptionedge.md
+- GraphQL Types > Objects/appsubscriptiontrialextendusererror.md
+- GraphQL Types > Objects/appusagerecordedge.md
+- GraphQL Types > Objects/articleauthoredge.md
+- GraphQL Types > Objects/articlecreateusererror.md
+- GraphQL Types > Objects/articledeleteusererror.md
+- GraphQL Types > Objects/articleedge.md
+- GraphQL Types > Objects/articleupdateusererror.md
+- GraphQL Types > Objects/billingattemptusererror.md
+- GraphQL Types > Objects/blogcreateusererror.md
+- GraphQL Types > Objects/blogdeleteusererror.md
+- GraphQL Types > Objects/blogedge.md
+- GraphQL Types > Objects/blogupdateusererror.md
+- GraphQL Types > Objects/bulkmutationusererror.md
+- GraphQL Types > Objects/bulkoperationusererror.md
+- GraphQL Types > Objects/bulkproductresourcefeedbackcreateusererror.md
+- GraphQL Types > Objects/businesscustomerusererror.md
+- GraphQL Types > Objects/calculateddiscountapplicationedge.md
+- GraphQL Types > Objects/calculatedlineitemedge.md
+- GraphQL Types > Objects/carrierservicecreateusererror.md
+- GraphQL Types > Objects/carrierservicedeleteusererror.md
+- GraphQL Types > Objects/carrierserviceupdateusererror.md
+- GraphQL Types > Objects/carttransformcreateusererror.md
+- GraphQL Types > Objects/carttransformdeleteusererror.md
+- GraphQL Types > Objects/carttransformedge.md
+- GraphQL Types > Objects/cashtrackingadjustmentedge.md
+- GraphQL Types > Objects/cashtrackingsessionedge.md
+- GraphQL Types > Objects/catalogedge.md
+- GraphQL Types > Objects/catalogusererror.md
+- GraphQL Types > Objects/channeledge.md
+- GraphQL Types > Objects/checkoutbrandingupsertusererror.md
+- GraphQL Types > Objects/checkoutprofileedge.md
+- GraphQL Types > Objects/collectionaddproductsv2usererror.md
+- GraphQL Types > Objects/collectionedge.md
+- GraphQL Types > Objects/collectionpublicationedge.md
+- GraphQL Types > Objects/combinedlistingchildedge.md
+- GraphQL Types > Objects/combinedlistingupdateusererror.md
+- GraphQL Types > Objects/commentapproveusererror.md
+- GraphQL Types > Objects/commentdeleteusererror.md
+- GraphQL Types > Objects/commentedge.md
+- GraphQL Types > Objects/commentnotspamusererror.md
+- GraphQL Types > Objects/commentspamusererror.md
+- GraphQL Types > Objects/companycontactedge.md
+- GraphQL Types > Objects/companycontactroleassignmentedge.md
+- GraphQL Types > Objects/companycontactroleedge.md
+- GraphQL Types > Objects/companyedge.md
+- GraphQL Types > Objects/companylocationedge.md
+- GraphQL Types > Objects/companylocationstaffmemberassignmentedge.md
+- GraphQL Types > Objects/countryharmonizedsystemcodeedge.md
+- GraphQL Types > Objects/currencysettingedge.md
+- GraphQL Types > Objects/customeraccountpageedge.md
+- GraphQL Types > Objects/customercanceldataerasureusererror.md
+- GraphQL Types > Objects/customeredge.md
+- GraphQL Types > Objects/customeremailmarketingconsentupdateusererror.md
+- GraphQL Types > Objects/customermergeusererror.md
+- GraphQL Types > Objects/customermomentedge.md
+- GraphQL Types > Objects/customerpaymentmethodcreatefromduplicationdatausererror.md
+- GraphQL Types > Objects/customerpaymentmethodedge.md
+- GraphQL Types > Objects/customerpaymentmethodgetduplicationdatausererror.md
+- GraphQL Types > Objects/customerpaymentmethodgetupdateurlusererror.md
+- GraphQL Types > Objects/customerpaymentmethodremoteusererror.md
+- GraphQL Types > Objects/customerpaymentmethodusererror.md
+- GraphQL Types > Objects/customerrequestdataerasureusererror.md
+- GraphQL Types > Objects/customersegmentmemberedge.md
+- GraphQL Types > Objects/customersegmentmembersqueryusererror.md
+- GraphQL Types > Objects/customersendaccountinviteemailusererror.md
+- GraphQL Types > Objects/customersetusererror.md
+- GraphQL Types > Objects/customervisitproductinfoedge.md
+- GraphQL Types > Objects/datasaleoptoutusererror.md
+- GraphQL Types > Objects/delegateaccesstokencreateusererror.md
+- GraphQL Types > Objects/delegateaccesstokendestroyusererror.md
+- GraphQL Types > Objects/deletioneventedge.md
+- GraphQL Types > Objects/deliverycarrierserviceedge.md
+- GraphQL Types > Objects/deliverycustomizationedge.md
+- GraphQL Types > Objects/deliverylocationgroupzoneedge.md
+- GraphQL Types > Objects/deliverymethoddefinitionedge.md
+- GraphQL Types > Objects/deliveryprofileedge.md
+- GraphQL Types > Objects/deliveryprofileitemedge.md
+- GraphQL Types > Objects/deliverypromiseparticipantedge.md
+- GraphQL Types > Objects/deliverypromiseproviderupsertusererror.md
+- GraphQL Types > Objects/discountallocationedge.md
+- GraphQL Types > Objects/discountapplicationedge.md
+- GraphQL Types > Objects/discountautomaticedge.md
+- GraphQL Types > Objects/discountautomaticnodeedge.md
+- GraphQL Types > Objects/discountcodenodeedge.md
+- GraphQL Types > Objects/discountnodeedge.md
+- GraphQL Types > Objects/discountredeemcodebulkcreationcodeedge.md
+- GraphQL Types > Objects/discountredeemcodeedge.md
+- GraphQL Types > Objects/discountusererror.md
+- GraphQL Types > Objects/disputeevidenceupdateusererror.md
+- GraphQL Types > Objects/draftorderedge.md
+- GraphQL Types > Objects/draftorderlineitemedge.md
+- GraphQL Types > Objects/errorsserverpixelusererror.md
+- GraphQL Types > Objects/errorswebpixelusererror.md
+- GraphQL Types > Objects/eventedge.md
+- GraphQL Types > Objects/exchangelineitemedge.md
+- GraphQL Types > Objects/fileedge.md
+- GraphQL Types > Objects/filesusererror.md
+- GraphQL Types > Objects/fulfillmentconstraintrulecreateusererror.md
+- GraphQL Types > Objects/fulfillmentconstraintruledeleteusererror.md
+- GraphQL Types > Objects/fulfillmentconstraintruleupdateusererror.md
+- GraphQL Types > Objects/fulfillmentedge.md
+- GraphQL Types > Objects/fulfillmenteventedge.md
+- GraphQL Types > Objects/fulfillmentlineitemedge.md
+- GraphQL Types > Objects/fulfillmentorderedge.md
+- GraphQL Types > Objects/fulfillmentorderholdusererror.md
+- GraphQL Types > Objects/fulfillmentorderlineitemedge.md
+- GraphQL Types > Objects/fulfillmentorderlineitemspreparedforpickupusererror.md
+- GraphQL Types > Objects/fulfillmentorderlocationformoveedge.md
+- GraphQL Types > Objects/fulfillmentordermerchantrequestedge.md
+- GraphQL Types > Objects/fulfillmentordermergeusererror.md
+- GraphQL Types > Objects/fulfillmentorderreleaseholdusererror.md
+- GraphQL Types > Objects/fulfillmentorderrescheduleusererror.md
+- GraphQL Types > Objects/fulfillmentordersplitusererror.md
+- GraphQL Types > Objects/fulfillmentorderssetfulfillmentdeadlineusererror.md
+- GraphQL Types > Objects/giftcarddeactivateusererror.md
+- GraphQL Types > Objects/giftcardedge.md
+- GraphQL Types > Objects/giftcardsendnotificationtocustomerusererror.md
+- GraphQL Types > Objects/giftcardsendnotificationtorecipientusererror.md
+- GraphQL Types > Objects/giftcardtransactionedge.md
+- GraphQL Types > Objects/giftcardtransactionusererror.md
+- GraphQL Types > Objects/giftcardusererror.md
+- GraphQL Types > Objects/imageedge.md
+- GraphQL Types > Objects/inventoryadjustquantitiesusererror.md
+- GraphQL Types > Objects/inventorybulktoggleactivationusererror.md
+- GraphQL Types > Objects/inventoryitemedge.md
+- GraphQL Types > Objects/inventoryleveledge.md
+- GraphQL Types > Objects/inventorymovequantitiesusererror.md
+- GraphQL Types > Objects/inventoryscheduledchangeedge.md
+- GraphQL Types > Objects/inventorysetonhandquantitiesusererror.md
+- GraphQL Types > Objects/inventorysetquantitiesusererror.md
+- GraphQL Types > Objects/inventorysetscheduledchangesusererror.md
+- GraphQL Types > Objects/inventoryshipmentadditemsusererror.md
+- GraphQL Types > Objects/inventoryshipmentcreateintransitusererror.md
+- GraphQL Types > Objects/inventoryshipmentcreateusererror.md
+- GraphQL Types > Objects/inventoryshipmentdeleteusererror.md
+- GraphQL Types > Objects/inventoryshipmentedge.md
+- GraphQL Types > Objects/inventoryshipmentlineitemedge.md
+- GraphQL Types > Objects/inventoryshipmentmarkintransitusererror.md
+- GraphQL Types > Objects/inventoryshipmentreceiveusererror.md
+- GraphQL Types > Objects/inventoryshipmentremoveitemsusererror.md
+- GraphQL Types > Objects/inventoryshipmentsettrackingusererror.md
+- GraphQL Types > Objects/inventoryshipmentupdateitemquantitiesusererror.md
+- GraphQL Types > Objects/inventorytransfercancelusererror.md
+- GraphQL Types > Objects/inventorytransfercreateasreadytoshipusererror.md
+- GraphQL Types > Objects/inventorytransfercreateusererror.md
+- GraphQL Types > Objects/inventorytransferdeleteusererror.md
+- GraphQL Types > Objects/inventorytransferduplicateusererror.md
+- GraphQL Types > Objects/inventorytransferedge.md
+- GraphQL Types > Objects/inventorytransfereditusererror.md
+- GraphQL Types > Objects/inventorytransferlineitemedge.md
+- GraphQL Types > Objects/inventorytransfermarkasreadytoshipusererror.md
+- GraphQL Types > Objects/inventorytransferremoveitemsusererror.md
+- GraphQL Types > Objects/inventorytransfersetitemsusererror.md
+- GraphQL Types > Objects/lineitemedge.md
+- GraphQL Types > Objects/localizationextensionedge.md
+- GraphQL Types > Objects/localizedfieldedge.md
+- GraphQL Types > Objects/locationactivateusererror.md
+- GraphQL Types > Objects/locationaddusererror.md
+- GraphQL Types > Objects/locationdeactivateusererror.md
+- GraphQL Types > Objects/locationdeleteusererror.md
+- GraphQL Types > Objects/locationedge.md
+- GraphQL Types > Objects/locationeditusererror.md
+- GraphQL Types > Objects/mailingaddressedge.md
+- GraphQL Types > Objects/marketcatalogedge.md
+- GraphQL Types > Objects/marketcurrencysettingsusererror.md
+- GraphQL Types > Objects/marketedge.md
+- GraphQL Types > Objects/marketingactivityedge.md
+- GraphQL Types > Objects/marketingactivityusererror.md
+- GraphQL Types > Objects/marketingeventedge.md
+- GraphQL Types > Objects/marketlocalizableresourceedge.md
+- GraphQL Types > Objects/marketregionedge.md
+- GraphQL Types > Objects/marketusererror.md
+- GraphQL Types > Objects/marketwebpresenceedge.md
+- GraphQL Types > Objects/mediaedge.md
+- GraphQL Types > Objects/mediausererror.md
+- GraphQL Types > Objects/menucreateusererror.md
+- GraphQL Types > Objects/menudeleteusererror.md
+- GraphQL Types > Objects/menuedge.md
+- GraphQL Types > Objects/menuupdateusererror.md
+- GraphQL Types > Objects/metafielddefinitionconstraintvalueedge.md
+- GraphQL Types > Objects/metafielddefinitioncreateusererror.md
+- GraphQL Types > Objects/metafielddefinitiondeleteusererror.md
+- GraphQL Types > Objects/metafielddefinitionedge.md
+- GraphQL Types > Objects/metafielddefinitionpinusererror.md
+- GraphQL Types > Objects/metafielddefinitionunpinusererror.md
+- GraphQL Types > Objects/metafielddefinitionupdateusererror.md
+- GraphQL Types > Objects/metafieldedge.md
+- GraphQL Types > Objects/metafieldreferenceedge.md
+- GraphQL Types > Objects/metafieldrelationedge.md
+- GraphQL Types > Objects/metafieldssetusererror.md
+- GraphQL Types > Objects/metaobjectdefinitionedge.md
+- GraphQL Types > Objects/metaobjectedge.md
+- GraphQL Types > Objects/metaobjectusererror.md
+- GraphQL Types > Objects/mobileplatformapplicationedge.md
+- GraphQL Types > Objects/mobileplatformapplicationusererror.md
+- GraphQL Types > Objects/onlinestorethemeedge.md
+- GraphQL Types > Objects/onlinestorethemefileedge.md
+- GraphQL Types > Objects/orderadjustmentedge.md
+- GraphQL Types > Objects/ordercancelusererror.md
+- GraphQL Types > Objects/ordercreatemandatepaymentusererror.md
+- GraphQL Types > Objects/ordercreateusererror.md
+- GraphQL Types > Objects/ordercustomerremoveusererror.md
+- GraphQL Types > Objects/ordercustomersetusererror.md
+- GraphQL Types > Objects/orderdeleteusererror.md
+- GraphQL Types > Objects/orderedge.md
+- GraphQL Types > Objects/ordereditaddshippinglineusererror.md
+- GraphQL Types > Objects/ordereditremovediscountusererror.md
+- GraphQL Types > Objects/ordereditremoveshippinglineusererror.md
+- GraphQL Types > Objects/ordereditupdatediscountusererror.md
+- GraphQL Types > Objects/ordereditupdateshippinglineusererror.md
+- GraphQL Types > Objects/orderinvoicesendusererror.md
+- GraphQL Types > Objects/orderriskassessmentcreateusererror.md
+- GraphQL Types > Objects/orderstagedchangeedge.md
+- GraphQL Types > Objects/ordertransactionedge.md
+- GraphQL Types > Objects/pagecreateusererror.md
+- GraphQL Types > Objects/pagedeleteusererror.md
+- GraphQL Types > Objects/pageedge.md
+- GraphQL Types > Objects/pageupdateusererror.md
+- GraphQL Types > Objects/paymentcustomizationedge.md
+- GraphQL Types > Objects/paymentremindersendusererror.md
+- GraphQL Types > Objects/paymentscheduleedge.md
+- GraphQL Types > Objects/paymenttermscreateusererror.md
+- GraphQL Types > Objects/paymenttermsdeleteusererror.md
+- GraphQL Types > Objects/paymenttermsupdateusererror.md
+- GraphQL Types > Objects/pricelistedge.md
+- GraphQL Types > Objects/pricelistfixedpricesbyproductbulkupdateusererror.md
+- GraphQL Types > Objects/pricelistpriceedge.md
+- GraphQL Types > Objects/pricelistpriceusererror.md
+- GraphQL Types > Objects/pricelistusererror.md
+- GraphQL Types > Objects/pricerulediscountcodeedge.md
+- GraphQL Types > Objects/privacyfeaturesdisableusererror.md
+- GraphQL Types > Objects/productbundlecomponentedge.md
+- GraphQL Types > Objects/productbundlemutationusererror.md
+- GraphQL Types > Objects/productchangestatususererror.md
+- GraphQL Types > Objects/productcomponenttypeedge.md
+- GraphQL Types > Objects/productedge.md
+- GraphQL Types > Objects/productfeedcreateusererror.md
+- GraphQL Types > Objects/productfeeddeleteusererror.md
+- GraphQL Types > Objects/productfeededge.md
+- GraphQL Types > Objects/productfullsyncusererror.md
+- GraphQL Types > Objects/productoptionscreateusererror.md
+- GraphQL Types > Objects/productoptionsdeleteusererror.md
+- GraphQL Types > Objects/productoptionsreorderusererror.md
+- GraphQL Types > Objects/productoptionupdateusererror.md
+- GraphQL Types > Objects/productpublicationedge.md
+- GraphQL Types > Objects/productsetusererror.md
+- GraphQL Types > Objects/productvariantcomponentedge.md
+- GraphQL Types > Objects/productvariantedge.md
+- GraphQL Types > Objects/productvariantpricepairedge.md
+- GraphQL Types > Objects/productvariantrelationshipbulkupdateusererror.md
+- GraphQL Types > Objects/productvariantsbulkcreateusererror.md
+- GraphQL Types > Objects/productvariantsbulkdeleteusererror.md
+- GraphQL Types > Objects/productvariantsbulkreorderusererror.md
+- GraphQL Types > Objects/productvariantsbulkupdateusererror.md
+- GraphQL Types > Objects/publicationedge.md
+- GraphQL Types > Objects/publicationusererror.md
+- GraphQL Types > Objects/pubsubwebhooksubscriptioncreateusererror.md
+- GraphQL Types > Objects/pubsubwebhooksubscriptionupdateusererror.md
+- GraphQL Types > Objects/quantitypricebreakedge.md
+- GraphQL Types > Objects/quantitypricingbyvariantusererror.md
+- GraphQL Types > Objects/quantityruleedge.md
+- GraphQL Types > Objects/quantityruleusererror.md
+- GraphQL Types > Objects/refundedge.md
+- GraphQL Types > Objects/refundlineitemedge.md
+- GraphQL Types > Objects/refundshippinglineedge.md
+- GraphQL Types > Objects/resourcepublicationedge.md
+- GraphQL Types > Objects/resourcepublicationv2edge.md
+- GraphQL Types > Objects/returnablefulfillmentedge.md
+- GraphQL Types > Objects/returnablefulfillmentlineitemedge.md
+- GraphQL Types > Objects/returnedge.md
+- GraphQL Types > Objects/returnlineitemtypeedge.md
+- GraphQL Types > Objects/returnusererror.md
+- GraphQL Types > Objects/reversedeliveryedge.md
+- GraphQL Types > Objects/reversedeliverylineitemedge.md
+- GraphQL Types > Objects/reversefulfillmentorderedge.md
+- GraphQL Types > Objects/reversefulfillmentorderlineitemedge.md
+- GraphQL Types > Objects/saleedge.md
+- GraphQL Types > Objects/salesagreementedge.md
+- GraphQL Types > Objects/savedsearchedge.md
+- GraphQL Types > Objects/scripttagedge.md
+- GraphQL Types > Objects/searchresultedge.md
+- GraphQL Types > Objects/segmentedge.md
+- GraphQL Types > Objects/segmentfilteredge.md
+- GraphQL Types > Objects/segmentmigrationedge.md
+- GraphQL Types > Objects/segmentvalueedge.md
+- GraphQL Types > Objects/sellingplanedge.md
+- GraphQL Types > Objects/sellingplangroupedge.md
+- GraphQL Types > Objects/sellingplangroupusererror.md
+- GraphQL Types > Objects/shippinglineedge.md
+- GraphQL Types > Objects/shopifyfunctionedge.md
+- GraphQL Types > Objects/shopifypaymentsbalancetransactionedge.md
+- GraphQL Types > Objects/shopifypaymentsbankaccountedge.md
+- GraphQL Types > Objects/shopifypaymentsdisputeedge.md
+- GraphQL Types > Objects/shopifypaymentspayoutalternatecurrencycreateusererror.md
+- GraphQL Types > Objects/shopifypaymentspayoutedge.md
+- GraphQL Types > Objects/shoppaypaymentrequestreceiptedge.md
+- GraphQL Types > Objects/shoppolicyusererror.md
+- GraphQL Types > Objects/shopresourcefeedbackcreateusererror.md
+- GraphQL Types > Objects/staffmemberedge.md
+- GraphQL Types > Objects/standardmetafielddefinitionenableusererror.md
+- GraphQL Types > Objects/standardmetafielddefinitiontemplateedge.md
+- GraphQL Types > Objects/storecreditaccountcreditusererror.md
+- GraphQL Types > Objects/storecreditaccountdebitusererror.md
+- GraphQL Types > Objects/storecreditaccountedge.md
+- GraphQL Types > Objects/storecreditaccounttransactionedge.md
+- GraphQL Types > Objects/storefrontaccesstokenedge.md
+- GraphQL Types > Objects/stringedge.md
+- GraphQL Types > Objects/subscriptionbillingattemptedge.md
+- GraphQL Types > Objects/subscriptionbillingcyclebulkusererror.md
+- GraphQL Types > Objects/subscriptionbillingcycleedge.md
+- GraphQL Types > Objects/subscriptionbillingcycleskipusererror.md
+- GraphQL Types > Objects/subscriptionbillingcycleunskipusererror.md
+- GraphQL Types > Objects/subscriptionbillingcycleusererror.md
+- GraphQL Types > Objects/subscriptioncontractedge.md
+- GraphQL Types > Objects/subscriptioncontractstatusupdateusererror.md
+- GraphQL Types > Objects/subscriptioncontractusererror.md
+- GraphQL Types > Objects/subscriptiondiscountedge.md
+- GraphQL Types > Objects/subscriptiondraftusererror.md
+- GraphQL Types > Objects/subscriptionlineedge.md
+- GraphQL Types > Objects/subscriptionmanualdiscountedge.md
+- GraphQL Types > Objects/taxappconfigureusererror.md
+- GraphQL Types > Objects/taxonomycategoryattributeedge.md
+- GraphQL Types > Objects/taxonomycategoryedge.md
+- GraphQL Types > Objects/taxonomyvalueedge.md
+- GraphQL Types > Objects/tendertransactionedge.md
+- GraphQL Types > Objects/themecreateusererror.md
+- GraphQL Types > Objects/themedeleteusererror.md
+- GraphQL Types > Objects/themepublishusererror.md
+- GraphQL Types > Objects/themeupdateusererror.md
+- GraphQL Types > Objects/transactionvoidusererror.md
+- GraphQL Types > Objects/translatableresourceedge.md
+- GraphQL Types > Objects/translationusererror.md
+- GraphQL Types > Objects/urlredirectbulkdeletebyidsusererror.md
+- GraphQL Types > Objects/urlredirectbulkdeletebysavedsearchusererror.md
+- GraphQL Types > Objects/urlredirectbulkdeletebysearchusererror.md
+- GraphQL Types > Objects/urlredirectedge.md
+- GraphQL Types > Objects/urlredirectimportusererror.md
+- GraphQL Types > Objects/urlredirectusererror.md
+- GraphQL Types > Objects/usererror.md
+- GraphQL Types > Objects/validationedge.md
+- GraphQL Types > Objects/validationusererror.md
+- GraphQL Types > Objects/webhooksubscriptionedge.md
+- Inventory > Mutations/inventoryactivate.md
+- Inventory > Mutations/inventoryadjustquantities.md
+- Inventory > Mutations/inventorybulktoggleactivation.md
+- Inventory > Mutations/inventorydeactivate.md
+- Inventory > Mutations/inventoryitemupdate.md
+- Inventory > Mutations/inventorymovequantities.md
+- Inventory > Mutations/inventorysetonhandquantities.md
+- Inventory > Mutations/inventorysetquantities.md
+- Inventory > Mutations/inventorysetscheduledchanges.md
+- Inventory > Mutations/inventoryshipmentadditems.md
+- Inventory > Mutations/inventoryshipmentcreate.md
+- Inventory > Mutations/inventoryshipmentcreateintransit.md
+- Inventory > Mutations/inventoryshipmentdelete.md
+- Inventory > Mutations/inventoryshipmentmarkintransit.md
+- Inventory > Mutations/inventoryshipmentreceive.md
+- Inventory > Mutations/inventoryshipmentremoveitems.md
+- Inventory > Mutations/inventoryshipmentsettracking.md
+- Inventory > Mutations/inventoryshipmentupdateitemquantities.md
+- Inventory > Mutations/inventorytransfercancel.md
+- Inventory > Mutations/inventorytransfercreate.md
+- Inventory > Mutations/inventorytransfercreateasreadytoship.md
+- Inventory > Mutations/inventorytransferdelete.md
+- Inventory > Mutations/inventorytransferduplicate.md
+- Inventory > Mutations/inventorytransferedit.md
+- Inventory > Mutations/inventorytransfermarkasreadytoship.md
+- Inventory > Mutations/inventorytransferremoveitems.md
+- Inventory > Mutations/inventorytransfersetitems.md
+- Inventory > Objects/countryharmonizedsystemcode.md
+- Inventory > Objects/inventoryadjustmentgroup.md
+- Inventory > Objects/inventorychange.md
+- Inventory > Objects/inventoryitem.md
+- Inventory > Objects/inventoryitemmeasurement.md
+- Inventory > Objects/inventorylevel.md
+- Inventory > Objects/inventoryproperties.md
+- Inventory > Objects/inventoryquantity.md
+- Inventory > Objects/inventoryquantityname.md
+- Inventory > Objects/inventoryscheduledchange.md
+- Inventory > Objects/inventoryshipment.md
+- Inventory > Objects/inventoryshipmentlineitem.md
+- Inventory > Objects/inventoryshipmenttracking.md
+- Inventory > Objects/inventorytransfer.md
+- Inventory > Objects/inventorytransferlineitem.md
+- Inventory > Objects/inventorytransferlineitemupdate.md
+- Inventory > Queries/inventoryitem.md
+- Inventory > Queries/inventoryitems.md
+- Inventory > Queries/inventorylevel.md
+- Inventory > Queries/inventoryproperties.md
+- Inventory > Queries/inventoryshipment.md
+- Inventory > Queries/inventorytransfer.md
+- Inventory > Queries/inventorytransfers.md
+- Localizations > Mutations/marketlocalizationsregister.md
+- Localizations > Mutations/marketlocalizationsremove.md
+- Localizations > Mutations/shoplocaledisable.md
+- Localizations > Mutations/shoplocaleenable.md
+- Localizations > Mutations/shoplocaleupdate.md
+- Localizations > Mutations/translationsregister.md
+- Localizations > Mutations/translationsremove.md
+- Localizations > Objects/locale.md
+- Localizations > Objects/localizationextension.md
+- Localizations > Objects/marketlocalizablecontent.md
+- Localizations > Objects/marketlocalizableresource.md
+- Localizations > Objects/marketlocalization.md
+- Localizations > Objects/shoplocale.md
+- Localizations > Objects/translatablecontent.md
+- Localizations > Objects/translatableresource.md
+- Localizations > Objects/translation.md
+- Localizations > Queries/availablelocales.md
+- Localizations > Queries/marketlocalizableresource.md
+- Localizations > Queries/marketlocalizableresources.md
+- Localizations > Queries/marketlocalizableresourcesbyids.md
+- Localizations > Queries/shoplocales.md
+- Localizations > Queries/translatableresource.md
+- Localizations > Queries/translatableresources.md
+- Localizations > Queries/translatableresourcesbyids.md
+- Metafields > Mutations/metafielddefinitioncreate.md
+- Metafields > Mutations/metafielddefinitiondelete.md
+- Metafields > Mutations/metafielddefinitionpin.md
+- Metafields > Mutations/metafielddefinitionunpin.md
+- Metafields > Mutations/metafielddefinitionupdate.md
+- Metafields > Mutations/metafieldsdelete.md
+- Metafields > Mutations/metafieldsset.md
+- Metafields > Mutations/standardmetafielddefinitionenable.md
+- Metafields > Objects/metafield.md
+- Metafields > Objects/metafielddefinition.md
+- Metafields > Objects/metafielddefinitionsupportedvalidation.md
+- Metafields > Objects/metafielddefinitiontype.md
+- Metafields > Objects/metafielddefinitionvalidation.md
+- Metafields > Objects/standardmetafielddefinitiontemplate.md
+- Metafields > Queries/metafielddefinition.md
+- Metafields > Queries/metafielddefinitions.md
+- Metafields > Queries/metafielddefinitiontypes.md
+- Metafields > Queries/standardmetafielddefinitiontemplates.md
+- Metaobjects > Mutations/metaobjectbulkdelete.md
+- Metaobjects > Mutations/metaobjectcreate.md
+- Metaobjects > Mutations/metaobjectdefinitioncreate.md
+- Metaobjects > Mutations/metaobjectdefinitiondelete.md
+- Metaobjects > Mutations/metaobjectdefinitionupdate.md
+- Metaobjects > Mutations/metaobjectdelete.md
+- Metaobjects > Mutations/metaobjectupdate.md
+- Metaobjects > Mutations/metaobjectupsert.md
+- Metaobjects > Mutations/standardmetaobjectdefinitionenable.md
+- Metaobjects > Objects/metaobject.md
+- Metaobjects > Objects/metaobjectaccess.md
+- Metaobjects > Objects/metaobjectcapabilities.md
+- Metaobjects > Objects/metaobjectcapabilitiesonlinestore.md
+- Metaobjects > Objects/metaobjectcapabilitiespublishable.md
+- Metaobjects > Objects/metaobjectcapabilitiesrenderable.md
+- Metaobjects > Objects/metaobjectcapabilitiestranslatable.md
+- Metaobjects > Objects/metaobjectcapabilitydata.md
+- Metaobjects > Objects/metaobjectcapabilitydataonlinestore.md
+- Metaobjects > Objects/metaobjectcapabilitydatapublishable.md
+- Metaobjects > Objects/metaobjectcapabilitydefinitiondataonlinestore.md
+- Metaobjects > Objects/metaobjectcapabilitydefinitiondatarenderable.md
+- Metaobjects > Objects/metaobjectdefinition.md
+- Metaobjects > Objects/metaobjectfield.md
+- Metaobjects > Objects/metaobjectfielddefinition.md
+- Metaobjects > Queries/metaobject.md
+- Metaobjects > Queries/metaobjectbyhandle.md
+- Metaobjects > Queries/metaobjectdefinition.md
+- Metaobjects > Queries/metaobjectdefinitionbytype.md
+- Metaobjects > Queries/metaobjectdefinitions.md
+- Metaobjects > Queries/metaobjects.md
+- Online store > Mutations/articlecreate.md
+- Online store > Mutations/articledelete.md
+- Online store > Mutations/articleupdate.md
+- Online store > Mutations/blogcreate.md
+- Online store > Mutations/blogdelete.md
+- Online store > Mutations/blogupdate.md
+- Online store > Mutations/commentapprove.md
+- Online store > Mutations/commentdelete.md
+- Online store > Mutations/commentnotspam.md
+- Online store > Mutations/commentspam.md
+- Online store > Mutations/menucreate.md
+- Online store > Mutations/menudelete.md
+- Online store > Mutations/menuupdate.md
+- Online store > Mutations/pagecreate.md
+- Online store > Mutations/pagedelete.md
+- Online store > Mutations/pageupdate.md
+- Online store > Mutations/scripttagcreate.md
+- Online store > Mutations/scripttagdelete.md
+- Online store > Mutations/scripttagupdate.md
+- Online store > Mutations/themecreate.md
+- Online store > Mutations/themedelete.md
+- Online store > Mutations/themefilescopy.md
+- Online store > Mutations/themefilesdelete.md
+- Online store > Mutations/themefilesupsert.md
+- Online store > Mutations/themepublish.md
+- Online store > Mutations/themeupdate.md
+- Online store > Mutations/urlredirectbulkdeleteall.md
+- Online store > Mutations/urlredirectbulkdeletebyids.md
+- Online store > Mutations/urlredirectbulkdeletebysavedsearch.md
+- Online store > Mutations/urlredirectbulkdeletebysearch.md
+- Online store > Mutations/urlredirectcreate.md
+- Online store > Mutations/urlredirectdelete.md
+- Online store > Mutations/urlredirectimportcreate.md
+- Online store > Mutations/urlredirectimportsubmit.md
+- Online store > Mutations/urlredirectupdate.md
+- Online store > Objects/article.md
+- Online store > Objects/articleauthor.md
+- Online store > Objects/blog.md
+- Online store > Objects/blogfeed.md
+- Online store > Objects/comment.md
+- Online store > Objects/commentauthor.md
+- Online store > Objects/customeraccountappextensionpage.md
+- Online store > Objects/customeraccountnativepage.md
+- Online store > Objects/marketsthemesentitlement.md
+- Online store > Objects/menu.md
+- Online store > Objects/menuitem.md
+- Online store > Objects/onlinestore.md
+- Online store > Objects/onlinestorepasswordprotection.md
+- Online store > Objects/onlinestoretheme.md
+- Online store > Objects/onlinestorethemefile.md
+- Online store > Objects/onlinestorethemefilebodybase64.md
+- Online store > Objects/onlinestorethemefilebodytext.md
+- Online store > Objects/onlinestorethemefilebodyurl.md
+- Online store > Objects/onlinestorethemefileoperationresult.md
+- Online store > Objects/onlinestorethemefilereadresult.md
+- Online store > Objects/onlinestorethemefilesusererrors.md
+- Online store > Objects/page.md
+- Online store > Objects/scripttag.md
+- Online store > Objects/seo.md
+- Online store > Objects/urlredirect.md
+- Online store > Objects/urlredirectimport.md
+- Online store > Objects/urlredirectimportpreview.md
+- Online store > Queries/article.md
+- Online store > Queries/articleauthors.md
+- Online store > Queries/articles.md
+- Online store > Queries/blog.md
+- Online store > Queries/blogs.md
+- Online store > Queries/blogscount.md
+- Online store > Queries/comment.md
+- Online store > Queries/comments.md
+- Online store > Queries/customeraccountpage.md
+- Online store > Queries/customeraccountpages.md
+- Online store > Queries/menu.md
+- Online store > Queries/menus.md
+- Online store > Queries/onlinestore.md
+- Online store > Queries/page.md
+- Online store > Queries/pages.md
+- Online store > Queries/pagescount.md
+- Online store > Queries/scripttag.md
+- Online store > Queries/scripttags.md
+- Online store > Queries/theme.md
+- Online store > Queries/themes.md
+- Online store > Queries/urlredirect.md
+- Online store > Queries/urlredirectimport.md
+- Online store > Queries/urlredirects.md
+- Online store > Queries/urlredirectsavedsearches.md
+- Online store > Queries/urlredirectscount.md
+- Orders > Mutations/delegateaccesstokendestroy.md
+- Orders > Mutations/deliveryprofileremove.md
+- Orders > Mutations/deliveryshippingoriginassign.md
+- Orders > Mutations/draftorderbulkaddtags.md
+- Orders > Mutations/draftorderbulkdelete.md
+- Orders > Mutations/draftorderbulkremovetags.md
+- Orders > Mutations/draftordercalculate.md
+- Orders > Mutations/draftordercomplete.md
+- Orders > Mutations/draftordercreate.md
+- Orders > Mutations/draftordercreatefromorder.md
+- Orders > Mutations/draftorderdelete.md
+- Orders > Mutations/draftorderduplicate.md
+- Orders > Mutations/draftorderinvoicepreview.md
+- Orders > Mutations/draftorderinvoicesend.md
+- Orders > Mutations/draftorderupdate.md
+- Orders > Mutations/ordercancel.md
+- Orders > Mutations/ordercapture.md
+- Orders > Mutations/orderclose.md
+- Orders > Mutations/ordercreate.md
+- Orders > Mutations/ordercreatemandatepayment.md
+- Orders > Mutations/ordercreatemanualpayment.md
+- Orders > Mutations/ordercustomerremove.md
+- Orders > Mutations/orderdelete.md
+- Orders > Mutations/ordereditaddcustomitem.md
+- Orders > Mutations/ordereditaddlineitemdiscount.md
+- Orders > Mutations/ordereditaddshippingline.md
+- Orders > Mutations/ordereditaddvariant.md
+- Orders > Mutations/ordereditbegin.md
+- Orders > Mutations/ordereditcommit.md
+- Orders > Mutations/ordereditremovediscount.md
+- Orders > Mutations/ordereditremovelineitemdiscount.md
+- Orders > Mutations/ordereditremoveshippingline.md
+- Orders > Mutations/ordereditsetquantity.md
+- Orders > Mutations/ordereditupdatediscount.md
+- Orders > Mutations/ordereditupdateshippingline.md
+- Orders > Mutations/orderinvoicesend.md
+- Orders > Mutations/ordermarkaspaid.md
+- Orders > Mutations/orderopen.md
+- Orders > Mutations/orderriskassessmentcreate.md
+- Orders > Mutations/orderupdate.md
+- Orders > Mutations/refundcreate.md
+- Orders > Mutations/removefromreturn.md
+- Orders > Mutations/returnapproverequest.md
+- Orders > Mutations/returncancel.md
+- Orders > Mutations/returnclose.md
+- Orders > Mutations/returncreate.md
+- Orders > Mutations/returndeclinerequest.md
+- Orders > Mutations/returnlineitemremovefromreturn.md
+- Orders > Mutations/returnprocess.md
+- Orders > Mutations/returnrefund.md
+- Orders > Mutations/returnreopen.md
+- Orders > Mutations/returnrequest.md
+- Orders > Mutations/reversedeliverycreatewithshipping.md
+- Orders > Mutations/reversedeliveryshippingupdate.md
+- Orders > Mutations/reversefulfillmentorderdispose.md
+- Orders > Mutations/subscriptionbillingattemptcreate.md
+- Orders > Mutations/subscriptionbillingcyclebulkcharge.md
+- Orders > Mutations/subscriptionbillingcyclebulksearch.md
+- Orders > Mutations/subscriptionbillingcyclecharge.md
+- Orders > Mutations/subscriptionbillingcyclecontractdraftcommit.md
+- Orders > Mutations/subscriptionbillingcyclecontractdraftconcatenate.md
+- Orders > Mutations/subscriptionbillingcyclecontractedit.md
+- Orders > Mutations/subscriptionbillingcycleeditdelete.md
+- Orders > Mutations/subscriptionbillingcycleeditsdelete.md
+- Orders > Mutations/subscriptionbillingcyclescheduleedit.md
+- Orders > Mutations/subscriptionbillingcycleskip.md
+- Orders > Mutations/subscriptionbillingcycleunskip.md
+- Orders > Mutations/subscriptioncontractactivate.md
+- Orders > Mutations/subscriptioncontractatomiccreate.md
+- Orders > Mutations/subscriptioncontractcancel.md
+- Orders > Mutations/subscriptioncontractcreate.md
+- Orders > Mutations/subscriptioncontractexpire.md
+- Orders > Mutations/subscriptioncontractfail.md
+- Orders > Mutations/subscriptioncontractpause.md
+- Orders > Mutations/subscriptioncontractproductchange.md
+- Orders > Mutations/subscriptioncontractsetnextbillingdate.md
+- Orders > Mutations/subscriptioncontractupdate.md
+- Orders > Mutations/subscriptiondraftcommit.md
+- Orders > Mutations/subscriptiondraftdiscountadd.md
+- Orders > Mutations/subscriptiondraftdiscountcodeapply.md
+- Orders > Mutations/subscriptiondraftdiscountremove.md
+- Orders > Mutations/subscriptiondraftdiscountupdate.md
+- Orders > Mutations/subscriptiondraftfreeshippingdiscountadd.md
+- Orders > Mutations/subscriptiondraftfreeshippingdiscountupdate.md
+- Orders > Mutations/subscriptiondraftlineadd.md
+- Orders > Mutations/subscriptiondraftlineremove.md
+- Orders > Mutations/subscriptiondraftlineupdate.md
+- Orders > Mutations/subscriptiondraftupdate.md
+- Orders > Mutations/transactionvoid.md
+- Orders > Objects/additionalfee.md
+- Orders > Objects/additionalfeesale.md
+- Orders > Objects/adjustmentsale.md
+- Orders > Objects/attribute.md
+- Orders > Objects/automaticdiscountapplication.md
+- Orders > Objects/calculatedautomaticdiscountapplication.md
+- Orders > Objects/calculateddiscountallocation.md
+- Orders > Objects/calculateddiscountcodeapplication.md
+- Orders > Objects/calculateddraftorder.md
+- Orders > Objects/calculateddraftorderlineitem.md
+- Orders > Objects/calculatedexchangelineitem.md
+- Orders > Objects/calculatedlineitem.md
+- Orders > Objects/calculatedmanualdiscountapplication.md
+- Orders > Objects/calculatedorder.md
+- Orders > Objects/calculatedrestockingfee.md
+- Orders > Objects/calculatedreturn.md
+- Orders > Objects/calculatedreturnlineitem.md
+- Orders > Objects/calculatedreturnshippingfee.md
+- Orders > Objects/calculatedscriptdiscountapplication.md
+- Orders > Objects/calculatedshippingline.md
+- Orders > Objects/cardpaymentdetails.md
+- Orders > Objects/cashroundingadjustment.md
+- Orders > Objects/currencyexchangeadjustment.md
+- Orders > Objects/currencysetting.md
+- Orders > Objects/discountallocation.md
+- Orders > Objects/discountcodeapplication.md
+- Orders > Objects/draftorder.md
+- Orders > Objects/draftorderapplieddiscount.md
+- Orders > Objects/draftorderavailabledeliveryoptions.md
+- Orders > Objects/draftorderbundleaddedwarning.md
+- Orders > Objects/draftorderdiscountnotappliedwarning.md
+- Orders > Objects/draftorderlineitem.md
+- Orders > Objects/draftordermarketregioncountrycodenotsupportedwarning.md
+- Orders > Objects/draftorderplatformdiscount.md
+- Orders > Objects/draftorderplatformdiscountallocation.md
+- Orders > Objects/draftordershippingrate.md
+- Orders > Objects/draftordertag.md
+- Orders > Objects/duty.md
+- Orders > Objects/dutysale.md
+- Orders > Objects/exchangelineitem.md
+- Orders > Objects/feesale.md
+- Orders > Objects/giftcardsale.md
+- Orders > Objects/invoicereturnoutcome.md
+- Orders > Objects/lineitem.md
+- Orders > Objects/lineitemgroup.md
+- Orders > Objects/lineitemsellingplan.md
+- Orders > Objects/localpaymentmethodspaymentdetails.md
+- Orders > Objects/manualdiscountapplication.md
+- Orders > Objects/order.md
+- Orders > Objects/orderadjustment.md
+- Orders > Objects/orderagreement.md
+- Orders > Objects/orderapp.md
+- Orders > Objects/ordercancellation.md
+- Orders > Objects/ordercreatemanualpaymentordercreatemanualpaymenterror.md
+- Orders > Objects/ordereditagreement.md
+- Orders > Objects/orderpaymentcollectiondetails.md
+- Orders > Objects/orderrisk.md
+- Orders > Objects/orderriskassessment.md
+- Orders > Objects/orderrisksummary.md
+- Orders > Objects/orderstagedchangeaddcustomitem.md
+- Orders > Objects/orderstagedchangeaddlineitemdiscount.md
+- Orders > Objects/orderstagedchangeaddshippingline.md
+- Orders > Objects/orderstagedchangeaddvariant.md
+- Orders > Objects/orderstagedchangedecrementitem.md
+- Orders > Objects/orderstagedchangeincrementitem.md
+- Orders > Objects/orderstagedchangeremoveshippingline.md
+- Orders > Objects/ordertransaction.md
+- Orders > Objects/paymentsettings.md
+- Orders > Objects/paypalwalletpaymentdetails.md
+- Orders > Objects/pickupinstorelocation.md
+- Orders > Objects/productsale.md
+- Orders > Objects/refund.md
+- Orders > Objects/refundagreement.md
+- Orders > Objects/refundduty.md
+- Orders > Objects/refundlineitem.md
+- Orders > Objects/refundreturnoutcome.md
+- Orders > Objects/refundshippingline.md
+- Orders > Objects/restockingfee.md
+- Orders > Objects/return.md
+- Orders > Objects/returnablefulfillment.md
+- Orders > Objects/returnablefulfillmentlineitem.md
+- Orders > Objects/returnagreement.md
+- Orders > Objects/returndecline.md
+- Orders > Objects/returnlineitem.md
+- Orders > Objects/returnshippingfee.md
+- Orders > Objects/reversedelivery.md
+- Orders > Objects/reversedeliverylabelv2.md
+- Orders > Objects/reversedeliverylineitem.md
+- Orders > Objects/reversedeliveryshippingdeliverable.md
+- Orders > Objects/reversedeliverytrackingv2.md
+- Orders > Objects/reversefulfillmentorder.md
+- Orders > Objects/reversefulfillmentorderdisposition.md
+- Orders > Objects/reversefulfillmentorderlineitem.md
+- Orders > Objects/reversefulfillmentorderthirdpartyconfirmation.md
+- Orders > Objects/riskfact.md
+- Orders > Objects/saleadditionalfee.md
+- Orders > Objects/saletax.md
+- Orders > Objects/scriptdiscountapplication.md
+- Orders > Objects/shippingline.md
+- Orders > Objects/shippinglinesale.md
+- Orders > Objects/shippingrefund.md
+- Orders > Objects/shopifypaymentsextendedauthorization.md
+- Orders > Objects/shopifypaymentsrefundset.md
+- Orders > Objects/shopifypaymentstransactionset.md
+- Orders > Objects/shopifyprotectordereligibility.md
+- Orders > Objects/shopifyprotectordersummary.md
+- Orders > Objects/shoppayinstallmentspaymentdetails.md
+- Orders > Objects/subscriptionappliedcodediscount.md
+- Orders > Objects/subscriptionbillingattempt.md
+- Orders > Objects/subscriptionbillingattemptgenericerror.md
+- Orders > Objects/subscriptionbillingattemptinsufficientstockproductvariantserror.md
+- Orders > Objects/subscriptionbillingattemptoutofstockproductvariantserror.md
+- Orders > Objects/subscriptionbillingcycle.md
+- Orders > Objects/subscriptionbillingcycleeditedcontract.md
+- Orders > Objects/subscriptionbillingpolicy.md
+- Orders > Objects/subscriptioncontract.md
+- Orders > Objects/subscriptioncyclepriceadjustment.md
+- Orders > Objects/subscriptiondeliverymethodlocaldelivery.md
+- Orders > Objects/subscriptiondeliverymethodlocaldeliveryoption.md
+- Orders > Objects/subscriptiondeliverymethodpickup.md
+- Orders > Objects/subscriptiondeliverymethodpickupoption.md
+- Orders > Objects/subscriptiondeliverymethodshipping.md
+- Orders > Objects/subscriptiondeliverymethodshippingoption.md
+- Orders > Objects/subscriptiondeliveryoptionresultfailure.md
+- Orders > Objects/subscriptiondeliveryoptionresultsuccess.md
+- Orders > Objects/subscriptiondeliverypolicy.md
+- Orders > Objects/subscriptiondiscountallocation.md
+- Orders > Objects/subscriptiondiscountentitledlines.md
+- Orders > Objects/subscriptiondiscountfixedamountvalue.md
+- Orders > Objects/subscriptiondiscountpercentagevalue.md
+- Orders > Objects/subscriptiondraft.md
+- Orders > Objects/subscriptionline.md
+- Orders > Objects/subscriptionlocaldeliveryoption.md
+- Orders > Objects/subscriptionmanualdiscount.md
+- Orders > Objects/subscriptionpickupoption.md
+- Orders > Objects/subscriptionpricingpolicy.md
+- Orders > Objects/subscriptionshippingoption.md
+- Orders > Objects/subscriptionshippingoptionresultfailure.md
+- Orders > Objects/subscriptionshippingoptionresultsuccess.md
+- Orders > Objects/suggestedordertransaction.md
+- Orders > Objects/suggestedrefund.md
+- Orders > Objects/suggestedreturnfinancialoutcome.md
+- Orders > Objects/suggestedreturnrefund.md
+- Orders > Objects/suggestedstorecreditrefund.md
+- Orders > Objects/taxline.md
+- Orders > Objects/tendertransaction.md
+- Orders > Objects/tendertransactioncreditcarddetails.md
+- Orders > Objects/tipsale.md
+- Orders > Objects/transactionfee.md
+- Orders > Objects/unknownsale.md
+- Orders > Objects/unverifiedreturnlineitem.md
+- Orders > Queries/availablebackupregions.md
+- Orders > Queries/disputes.md
+- Orders > Queries/draftorder.md
+- Orders > Queries/draftorderavailabledeliveryoptions.md
+- Orders > Queries/draftorders.md
+- Orders > Queries/draftordersavedsearches.md
+- Orders > Queries/draftorderscount.md
+- Orders > Queries/draftordertag.md
+- Orders > Queries/order.md
+- Orders > Queries/orderbyidentifier.md
+- Orders > Queries/orders.md
+- Orders > Queries/ordersavedsearches.md
+- Orders > Queries/orderscount.md
+- Orders > Queries/pendingorderscount.md
+- Orders > Queries/producttags.md
+- Orders > Queries/producttypes.md
+- Orders > Queries/productvendors.md
+- Orders > Queries/publishedproductscount.md
+- Orders > Queries/refund.md
+- Orders > Queries/return.md
+- Orders > Queries/returnablefulfillment.md
+- Orders > Queries/returnablefulfillments.md
+- Orders > Queries/returncalculate.md
+- Orders > Queries/reversedelivery.md
+- Orders > Queries/reversefulfillmentorder.md
+- Orders > Queries/subscriptionbillingattempt.md
+- Orders > Queries/subscriptionbillingattempts.md
+- Orders > Queries/subscriptionbillingcycle.md
+- Orders > Queries/subscriptionbillingcyclebulkresults.md
+- Orders > Queries/subscriptionbillingcycles.md
+- Orders > Queries/subscriptioncontract.md
+- Orders > Queries/subscriptioncontracts.md
+- Orders > Queries/subscriptiondraft.md
+- Orders > Queries/tendertransactions.md
+- Privacy > Mutations/consentpolicyupdate.md
+- Privacy > Mutations/datasaleoptout.md
+- Privacy > Mutations/privacyfeaturesdisable.md
+- Privacy > Objects/consentpolicy.md
+- Privacy > Objects/consentpolicyerror.md
+- Privacy > Objects/consentpolicyregion.md
+- Privacy > Objects/cookiebanner.md
+- Privacy > Objects/datasaleoptoutpage.md
+- Privacy > Objects/privacypolicy.md
+- Privacy > Objects/privacysettings.md
+- Privacy > Queries/consentpolicy.md
+- Privacy > Queries/consentpolicyregions.md
+- Privacy > Queries/privacysettings.md
+- Products and collections > Mutations/catalogcontextupdate.md
+- Products and collections > Mutations/catalogcreate.md
+- Products and collections > Mutations/catalogdelete.md
+- Products and collections > Mutations/catalogupdate.md
+- Products and collections > Mutations/collectionaddproducts.md
+- Products and collections > Mutations/collectionaddproductsv2.md
+- Products and collections > Mutations/collectioncreate.md
+- Products and collections > Mutations/collectiondelete.md
+- Products and collections > Mutations/collectionpublish.md
+- Products and collections > Mutations/collectionremoveproducts.md
+- Products and collections > Mutations/collectionreorderproducts.md
+- Products and collections > Mutations/collectionunpublish.md
+- Products and collections > Mutations/collectionupdate.md
+- Products and collections > Mutations/combinedlistingupdate.md
+- Products and collections > Mutations/fileacknowledgeupdatefailed.md
+- Products and collections > Mutations/filecreate.md
+- Products and collections > Mutations/filedelete.md
+- Products and collections > Mutations/fileupdate.md
+- Products and collections > Mutations/pricelistcreate.md
+- Products and collections > Mutations/pricelistdelete.md
+- Products and collections > Mutations/pricelistfixedpricesadd.md
+- Products and collections > Mutations/pricelistfixedpricesbyproductupdate.md
+- Products and collections > Mutations/pricelistfixedpricesdelete.md
+- Products and collections > Mutations/pricelistfixedpricesupdate.md
+- Products and collections > Mutations/pricelistupdate.md
+- Products and collections > Mutations/productbundlecreate.md
+- Products and collections > Mutations/productbundleupdate.md
+- Products and collections > Mutations/productchangestatus.md
+- Products and collections > Mutations/productcreate.md
+- Products and collections > Mutations/productcreatemedia.md
+- Products and collections > Mutations/productdelete.md
+- Products and collections > Mutations/productdeletemedia.md
+- Products and collections > Mutations/productduplicate.md
+- Products and collections > Mutations/productjoinsellingplangroups.md
+- Products and collections > Mutations/productleavesellingplangroups.md
+- Products and collections > Mutations/productoptionscreate.md
+- Products and collections > Mutations/productoptionsdelete.md
+- Products and collections > Mutations/productoptionsreorder.md
+- Products and collections > Mutations/productoptionupdate.md
+- Products and collections > Mutations/productpublish.md
+- Products and collections > Mutations/productreordermedia.md
+- Products and collections > Mutations/productset.md
+- Products and collections > Mutations/productunpublish.md
+- Products and collections > Mutations/productupdate.md
+- Products and collections > Mutations/productupdatemedia.md
+- Products and collections > Mutations/productvariantappendmedia.md
+- Products and collections > Mutations/productvariantdetachmedia.md
+- Products and collections > Mutations/productvariantjoinsellingplangroups.md
+- Products and collections > Mutations/productvariantleavesellingplangroups.md
+- Products and collections > Mutations/productvariantrelationshipbulkupdate.md
+- Products and collections > Mutations/productvariantsbulkcreate.md
+- Products and collections > Mutations/productvariantsbulkdelete.md
+- Products and collections > Mutations/productvariantsbulkreorder.md
+- Products and collections > Mutations/productvariantsbulkupdate.md
+- Products and collections > Mutations/quantitypricingbyvariantupdate.md
+- Products and collections > Mutations/quantityrulesadd.md
+- Products and collections > Mutations/quantityrulesdelete.md
+- Products and collections > Mutations/sellingplangroupaddproducts.md
+- Products and collections > Mutations/sellingplangroupaddproductvariants.md
+- Products and collections > Mutations/sellingplangroupcreate.md
+- Products and collections > Mutations/sellingplangroupdelete.md
+- Products and collections > Mutations/sellingplangroupremoveproducts.md
+- Products and collections > Mutations/sellingplangroupremoveproductvariants.md
+- Products and collections > Mutations/sellingplangroupupdate.md
+- Products and collections > Mutations/stageduploadscreate.md
+- Products and collections > Objects/addallproductsoperation.md
+- Products and collections > Objects/appcatalog.md
+- Products and collections > Objects/bundlesfeature.md
+- Products and collections > Objects/catalogcsvoperation.md
+- Products and collections > Objects/collection.md
+- Products and collections > Objects/collectionpublication.md
+- Products and collections > Objects/collectionrule.md
+- Products and collections > Objects/collectionrulecategorycondition.md
+- Products and collections > Objects/collectionruleconditions.md
+- Products and collections > Objects/collectionrulemetafieldcondition.md
+- Products and collections > Objects/collectionruleproductcategorycondition.md
+- Products and collections > Objects/collectionruleset.md
+- Products and collections > Objects/collectionruletextcondition.md
+- Products and collections > Objects/combinedlisting.md
+- Products and collections > Objects/combinedlistingchild.md
+- Products and collections > Objects/companylocationcatalog.md
+- Products and collections > Objects/externalvideo.md
+- Products and collections > Objects/fileerror.md
+- Products and collections > Objects/genericfile.md
+- Products and collections > Objects/linkedmetafield.md
+- Products and collections > Objects/marketcatalog.md
+- Products and collections > Objects/marketscatalogsentitlement.md
+- Products and collections > Objects/mediaerror.md
+- Products and collections > Objects/mediaimage.md
+- Products and collections > Objects/mediaimageoriginalsource.md
+- Products and collections > Objects/mediapreviewimage.md
+- Products and collections > Objects/mediawarning.md
+- Products and collections > Objects/metafieldcapabilitysmartcollectioncondition.md
+- Products and collections > Objects/model3d.md
+- Products and collections > Objects/model3dboundingbox.md
+- Products and collections > Objects/model3dsource.md
+- Products and collections > Objects/pricelist.md
+- Products and collections > Objects/pricelistadjustment.md
+- Products and collections > Objects/pricelistadjustmentsettings.md
+- Products and collections > Objects/pricelistparent.md
+- Products and collections > Objects/pricelistprice.md
+- Products and collections > Objects/product.md
+- Products and collections > Objects/productbundlecomponent.md
+- Products and collections > Objects/productbundlecomponentoptionselection.md
+- Products and collections > Objects/productbundlecomponentoptionselectionvalue.md
+- Products and collections > Objects/productbundlecomponentquantityoption.md
+- Products and collections > Objects/productbundlecomponentquantityoptionvalue.md
+- Products and collections > Objects/productbundleoperation.md
+- Products and collections > Objects/productcategory.md
+- Products and collections > Objects/productcompareatpricerange.md
+- Products and collections > Objects/productcomponenttype.md
+- Products and collections > Objects/productcontextualpricing.md
+- Products and collections > Objects/productdeleteoperation.md
+- Products and collections > Objects/productduplicatejob.md
+- Products and collections > Objects/productduplicateoperation.md
+- Products and collections > Objects/productoption.md
+- Products and collections > Objects/productoptionvalue.md
+- Products and collections > Objects/productoptionvalueswatch.md
+- Products and collections > Objects/productpricerange.md
+- Products and collections > Objects/productpricerangev2.md
+- Products and collections > Objects/productpublication.md
+- Products and collections > Objects/productsetoperation.md
+- Products and collections > Objects/producttaxonomynode.md
+- Products and collections > Objects/productvariant.md
+- Products and collections > Objects/productvariantcomponent.md
+- Products and collections > Objects/productvariantcontextualpricing.md
+- Products and collections > Objects/productvariantpricepair.md
+- Products and collections > Objects/publicationresourceoperation.md
+- Products and collections > Objects/quantitypricebreak.md
+- Products and collections > Objects/quantityrule.md
+- Products and collections > Objects/resourcepublication.md
+- Products and collections > Objects/resourcepublicationv2.md
+- Products and collections > Objects/restrictedforresource.md
+- Products and collections > Objects/rowcount.md
+- Products and collections > Objects/selectedoption.md
+- Products and collections > Objects/sellingplan.md
+- Products and collections > Objects/sellingplananchor.md
+- Products and collections > Objects/sellingplancheckoutcharge.md
+- Products and collections > Objects/sellingplancheckoutchargepercentagevalue.md
+- Products and collections > Objects/sellingplanfixedbillingpolicy.md
+- Products and collections > Objects/sellingplanfixeddeliverypolicy.md
+- Products and collections > Objects/sellingplanfixedpricingpolicy.md
+- Products and collections > Objects/sellingplangroup.md
+- Products and collections > Objects/sellingplaninventorypolicy.md
+- Products and collections > Objects/sellingplanpricingpolicypercentagevalue.md
+- Products and collections > Objects/sellingplanrecurringbillingpolicy.md
+- Products and collections > Objects/sellingplanrecurringdeliverypolicy.md
+- Products and collections > Objects/sellingplanrecurringpricingpolicy.md
+- Products and collections > Objects/stagedmediauploadtarget.md
+- Products and collections > Objects/standardizedproducttype.md
+- Products and collections > Objects/taxonomy.md
+- Products and collections > Objects/taxonomyattribute.md
+- Products and collections > Objects/taxonomycategory.md
+- Products and collections > Objects/taxonomychoicelistattribute.md
+- Products and collections > Objects/taxonomymeasurementattribute.md
+- Products and collections > Objects/taxonomyvalue.md
+- Products and collections > Objects/unitpricemeasurement.md
+- Products and collections > Objects/vector3.md
+- Products and collections > Objects/video.md
+- Products and collections > Objects/videosource.md
+- Products and collections > Objects/weight.md
+- Products and collections > Queries/catalog.md
+- Products and collections > Queries/catalogoperations.md
+- Products and collections > Queries/catalogs.md
+- Products and collections > Queries/catalogscount.md
+- Products and collections > Queries/collection.md
+- Products and collections > Queries/collectionbyhandle.md
+- Products and collections > Queries/collectionbyidentifier.md
+- Products and collections > Queries/collectionrulesconditions.md
+- Products and collections > Queries/collections.md
+- Products and collections > Queries/collectionsavedsearches.md
+- Products and collections > Queries/collectionscount.md
+- Products and collections > Queries/files.md
+- Products and collections > Queries/filesavedsearches.md
+- Products and collections > Queries/pricelist.md
+- Products and collections > Queries/pricelists.md
+- Products and collections > Queries/product.md
+- Products and collections > Queries/productbyhandle.md
+- Products and collections > Queries/productbyidentifier.md
+- Products and collections > Queries/productduplicatejob.md
+- Products and collections > Queries/productoperation.md
+- Products and collections > Queries/productresourcefeedback.md
+- Products and collections > Queries/products.md
+- Products and collections > Queries/productsavedsearches.md
+- Products and collections > Queries/productscount.md
+- Products and collections > Queries/productvariant.md
+- Products and collections > Queries/productvariantbyidentifier.md
+- Products and collections > Queries/productvariants.md
+- Products and collections > Queries/productvariantscount.md
+- Products and collections > Queries/sellingplangroup.md
+- Products and collections > Queries/sellingplangroups.md
+- Products and collections > Queries/taxonomy.md
+- Retail > Objects/cashtrackingadjustment.md
+- Retail > Objects/cashtrackingsession.md
+- Retail > Objects/pointofsaledevice.md
+- Retail > Queries/cashtrackingsession.md
+- Retail > Queries/cashtrackingsessions.md
+- Retail > Queries/pointofsaledevice.md
+- Shipping and fulfillment > Mutations/carrierservicecreate.md
+- Shipping and fulfillment > Mutations/carrierservicedelete.md
+- Shipping and fulfillment > Mutations/carrierserviceupdate.md
+- Shipping and fulfillment > Mutations/deliverycustomizationactivation.md
+- Shipping and fulfillment > Mutations/deliverycustomizationcreate.md
+- Shipping and fulfillment > Mutations/deliverycustomizationdelete.md
+- Shipping and fulfillment > Mutations/deliverycustomizationupdate.md
+- Shipping and fulfillment > Mutations/deliveryprofilecreate.md
+- Shipping and fulfillment > Mutations/deliveryprofileupdate.md
+- Shipping and fulfillment > Mutations/deliverypromiseparticipantsupdate.md
+- Shipping and fulfillment > Mutations/deliverypromiseproviderupsert.md
+- Shipping and fulfillment > Mutations/deliverysettingupdate.md
+- Shipping and fulfillment > Mutations/fulfillmentcancel.md
+- Shipping and fulfillment > Mutations/fulfillmentcreate.md
+- Shipping and fulfillment > Mutations/fulfillmentcreatev2.md
+- Shipping and fulfillment > Mutations/fulfillmenteventcreate.md
+- Shipping and fulfillment > Mutations/fulfillmentorderacceptcancellationrequest.md
+- Shipping and fulfillment > Mutations/fulfillmentorderacceptfulfillmentrequest.md
+- Shipping and fulfillment > Mutations/fulfillmentordercancel.md
+- Shipping and fulfillment > Mutations/fulfillmentorderclose.md
+- Shipping and fulfillment > Mutations/fulfillmentorderhold.md
+- Shipping and fulfillment > Mutations/fulfillmentorderlineitemspreparedforpickup.md
+- Shipping and fulfillment > Mutations/fulfillmentordermerge.md
+- Shipping and fulfillment > Mutations/fulfillmentordermove.md
+- Shipping and fulfillment > Mutations/fulfillmentorderopen.md
+- Shipping and fulfillment > Mutations/fulfillmentorderrejectcancellationrequest.md
+- Shipping and fulfillment > Mutations/fulfillmentorderrejectfulfillmentrequest.md
+- Shipping and fulfillment > Mutations/fulfillmentorderreleasehold.md
+- Shipping and fulfillment > Mutations/fulfillmentorderreschedule.md
+- Shipping and fulfillment > Mutations/fulfillmentordersplit.md
+- Shipping and fulfillment > Mutations/fulfillmentorderssetfulfillmentdeadline.md
+- Shipping and fulfillment > Mutations/fulfillmentordersubmitcancellationrequest.md
+- Shipping and fulfillment > Mutations/fulfillmentordersubmitfulfillmentrequest.md
+- Shipping and fulfillment > Mutations/fulfillmentservicecreate.md
+- Shipping and fulfillment > Mutations/fulfillmentservicedelete.md
+- Shipping and fulfillment > Mutations/fulfillmentserviceupdate.md
+- Shipping and fulfillment > Mutations/fulfillmenttrackinginfoupdate.md
+- Shipping and fulfillment > Mutations/fulfillmenttrackinginfoupdatev2.md
+- Shipping and fulfillment > Mutations/shippingpackagedelete.md
+- Shipping and fulfillment > Mutations/shippingpackagemakedefault.md
+- Shipping and fulfillment > Mutations/shippingpackageupdate.md
+- Shipping and fulfillment > Objects/countriesinshippingzones.md
+- Shipping and fulfillment > Objects/deliveryavailableservice.md
+- Shipping and fulfillment > Objects/deliverybrandedpromise.md
+- Shipping and fulfillment > Objects/deliverycarrierservice.md
+- Shipping and fulfillment > Objects/deliverycarrierserviceandlocations.md
+- Shipping and fulfillment > Objects/deliverycondition.md
+- Shipping and fulfillment > Objects/deliverycountry.md
+- Shipping and fulfillment > Objects/deliverycountryandzone.md
+- Shipping and fulfillment > Objects/deliverycountrycodeorrestofworld.md
+- Shipping and fulfillment > Objects/deliverycountrycodesorrestofworld.md
+- Shipping and fulfillment > Objects/deliverycustomization.md
+- Shipping and fulfillment > Objects/deliverycustomizationerror.md
+- Shipping and fulfillment > Objects/deliverylegacymodeblocked.md
+- Shipping and fulfillment > Objects/deliverylocalpickupsettings.md
+- Shipping and fulfillment > Objects/deliverylocationgroup.md
+- Shipping and fulfillment > Objects/deliverylocationgroupzone.md
+- Shipping and fulfillment > Objects/deliverylocationlocalpickupsettingserror.md
+- Shipping and fulfillment > Objects/deliverymethod.md
+- Shipping and fulfillment > Objects/deliverymethodadditionalinformation.md
+- Shipping and fulfillment > Objects/deliverymethoddefinition.md
+- Shipping and fulfillment > Objects/deliverymethoddefinitioncounts.md
+- Shipping and fulfillment > Objects/deliveryparticipant.md
+- Shipping and fulfillment > Objects/deliveryparticipantservice.md
+- Shipping and fulfillment > Objects/deliveryproductvariantscount.md
+- Shipping and fulfillment > Objects/deliveryprofile.md
+- Shipping and fulfillment > Objects/deliveryprofileitem.md
+- Shipping and fulfillment > Objects/deliveryprofilelocationgroup.md
+- Shipping and fulfillment > Objects/deliverypromiseparticipant.md
+- Shipping and fulfillment > Objects/deliverypromiseprovider.md
+- Shipping and fulfillment > Objects/deliverypromisesetting.md
+- Shipping and fulfillment > Objects/deliveryprovince.md
+- Shipping and fulfillment > Objects/deliveryratedefinition.md
+- Shipping and fulfillment > Objects/deliverysetting.md
+- Shipping and fulfillment > Objects/deliveryzone.md
+- Shipping and fulfillment > Objects/editableproperty.md
+- Shipping and fulfillment > Objects/financialsummarydiscountallocation.md
+- Shipping and fulfillment > Objects/financialsummarydiscountapplication.md
+- Shipping and fulfillment > Objects/fulfillment.md
+- Shipping and fulfillment > Objects/fulfillmentevent.md
+- Shipping and fulfillment > Objects/fulfillmenthold.md
+- Shipping and fulfillment > Objects/fulfillmentlineitem.md
+- Shipping and fulfillment > Objects/fulfillmentorder.md
+- Shipping and fulfillment > Objects/fulfillmentorderassignedlocation.md
+- Shipping and fulfillment > Objects/fulfillmentorderdestination.md
+- Shipping and fulfillment > Objects/fulfillmentorderinternationalduties.md
+- Shipping and fulfillment > Objects/fulfillmentorderlineitem.md
+- Shipping and fulfillment > Objects/fulfillmentorderlineitemfinancialsummary.md
+- Shipping and fulfillment > Objects/fulfillmentorderlineitemwarning.md
+- Shipping and fulfillment > Objects/fulfillmentorderlocationformove.md
+- Shipping and fulfillment > Objects/fulfillmentordermerchantrequest.md
+- Shipping and fulfillment > Objects/fulfillmentordermergeresult.md
+- Shipping and fulfillment > Objects/fulfillmentordersplitresult.md
+- Shipping and fulfillment > Objects/fulfillmentordersupportedaction.md
+- Shipping and fulfillment > Objects/fulfillmentoriginaddress.md
+- Shipping and fulfillment > Objects/fulfillmentservice.md
+- Shipping and fulfillment > Objects/fulfillmenttrackinginfo.md
+- Shipping and fulfillment > Objects/shippingrate.md
+- Shipping and fulfillment > Queries/assignedfulfillmentorders.md
+- Shipping and fulfillment > Queries/availablecarrierservices.md
+- Shipping and fulfillment > Queries/carrierservice.md
+- Shipping and fulfillment > Queries/carrierservices.md
+- Shipping and fulfillment > Queries/deliverycustomization.md
+- Shipping and fulfillment > Queries/deliverycustomizations.md
+- Shipping and fulfillment > Queries/deliveryprofile.md
+- Shipping and fulfillment > Queries/deliveryprofiles.md
+- Shipping and fulfillment > Queries/deliverypromiseparticipants.md
+- Shipping and fulfillment > Queries/deliverypromiseprovider.md
+- Shipping and fulfillment > Queries/deliverypromisesettings.md
+- Shipping and fulfillment > Queries/deliverysettings.md
+- Shipping and fulfillment > Queries/fulfillment.md
+- Shipping and fulfillment > Queries/fulfillmentorder.md
+- Shipping and fulfillment > Queries/fulfillmentorders.md
+- Shipping and fulfillment > Queries/fulfillmentservice.md
+- Shipping and fulfillment > Queries/manualholdsfulfillmentorders.md
+- Shopify Markets > Mutations/backupregionupdate.md
+- Shopify Markets > Mutations/marketcreate.md
+- Shopify Markets > Mutations/marketcurrencysettingsupdate.md
+- Shopify Markets > Mutations/marketdelete.md
+- Shopify Markets > Mutations/marketregiondelete.md
+- Shopify Markets > Mutations/marketregionscreate.md
+- Shopify Markets > Mutations/marketupdate.md
+- Shopify Markets > Mutations/marketwebpresencecreate.md
+- Shopify Markets > Mutations/marketwebpresencedelete.md
+- Shopify Markets > Mutations/marketwebpresenceupdate.md
+- Shopify Markets > Mutations/webpresencecreate.md
+- Shopify Markets > Mutations/webpresenceupdate.md
+- Shopify Markets > Objects/market.md
+- Shopify Markets > Objects/marketconditions.md
+- Shopify Markets > Objects/marketcurrencysettings.md
+- Shopify Markets > Objects/marketregioncountry.md
+- Shopify Markets > Objects/marketsb2bentitlement.md
+- Shopify Markets > Objects/marketsregionsentitlement.md
+- Shopify Markets > Objects/marketsresolvedvalues.md
+- Shopify Markets > Objects/marketsretailentitlement.md
+- Shopify Markets > Objects/marketwebpresence.md
+- Shopify Markets > Objects/marketwebpresencerooturl.md
+- Shopify Markets > Objects/regionscondition.md
+- Shopify Markets > Objects/resolvedpriceinclusivity.md
+- Shopify Markets > Queries/backupregion.md
+- Shopify Markets > Queries/market.md
+- Shopify Markets > Queries/marketbygeography.md
+- Shopify Markets > Queries/markets.md
+- Shopify Markets > Queries/marketsresolvedvalues.md
+- Shopify Markets > Queries/primarymarket.md
+- Shopify Markets > Queries/webpresences.md
+- Shopify Payments > Mutations/disputeevidenceupdate.md
+- Shopify Payments > Mutations/shopifypaymentspayoutalternatecurrencycreate.md
+- Shopify Payments > Objects/financekycinformation.md
+- Shopify Payments > Objects/financialkycshopowner.md
+- Shopify Payments > Objects/orderdisputesummary.md
+- Shopify Payments > Objects/shopifypaymentsaccount.md
+- Shopify Payments > Objects/shopifypaymentsaddressbasic.md
+- Shopify Payments > Objects/shopifypaymentsadjustmentorder.md
+- Shopify Payments > Objects/shopifypaymentsassociatedorder.md
+- Shopify Payments > Objects/shopifypaymentsbalancetransaction.md
+- Shopify Payments > Objects/shopifypaymentsbalancetransactionassociatedpayout.md
+- Shopify Payments > Objects/shopifypaymentsbankaccount.md
+- Shopify Payments > Objects/shopifypaymentsdefaultchargestatementdescriptor.md
+- Shopify Payments > Objects/shopifypaymentsdispute.md
+- Shopify Payments > Objects/shopifypaymentsdisputeevidence.md
+- Shopify Payments > Objects/shopifypaymentsdisputefileupload.md
+- Shopify Payments > Objects/shopifypaymentsdisputefulfillment.md
+- Shopify Payments > Objects/shopifypaymentsdisputereasondetails.md
+- Shopify Payments > Objects/shopifypaymentsjpchargestatementdescriptor.md
+- Shopify Payments > Objects/shopifypaymentsmerchantcategorycode.md
+- Shopify Payments > Objects/shopifypaymentspayout.md
+- Shopify Payments > Objects/shopifypaymentspayoutschedule.md
+- Shopify Payments > Objects/shopifypaymentspayoutsummary.md
+- Shopify Payments > Objects/shopifypaymentstaxidentification.md
+- Shopify Payments > Objects/shopifypaymentstoolingproviderpayout.md
+- Shopify Payments > Queries/dispute.md
+- Shopify Payments > Queries/disputeevidence.md
+- Shopify Payments > Queries/financekycinformation.md
+- Shopify Payments > Queries/shopifypaymentsaccount.md
+- Store properties > Mutations/locationactivate.md
+- Store properties > Mutations/locationadd.md
+- Store properties > Mutations/locationdeactivate.md
+- Store properties > Mutations/locationdelete.md
+- Store properties > Mutations/locationedit.md
+- Store properties > Mutations/locationlocalpickupdisable.md
+- Store properties > Mutations/locationlocalpickupenable.md
+- Store properties > Mutations/publishablepublish.md
+- Store properties > Mutations/publishablepublishtocurrentchannel.md
+- Store properties > Mutations/publishableunpublish.md
+- Store properties > Mutations/publishableunpublishtocurrentchannel.md
+- Store properties > Mutations/shoppolicyupdate.md
+- Store properties > Objects/businessentity.md
+- Store properties > Objects/businessentityaddress.md
+- Store properties > Objects/carttransformeligibleoperations.md
+- Store properties > Objects/carttransformfeature.md
+- Store properties > Objects/currencyformats.md
+- Store properties > Objects/filteroption.md
+- Store properties > Objects/limitedpendingordercount.md
+- Store properties > Objects/location.md
+- Store properties > Objects/locationaddress.md
+- Store properties > Objects/locationscondition.md
+- Store properties > Objects/locationsnapshot.md
+- Store properties > Objects/locationsuggestedaddress.md
+- Store properties > Objects/navigationitem.md
+- Store properties > Objects/shop.md
+- Store properties > Objects/shopaddress.md
+- Store properties > Objects/shopfeatures.md
+- Store properties > Objects/shopplan.md
+- Store properties > Objects/shoppolicy.md
+- Store properties > Objects/shopresourcelimits.md
+- Store properties > Queries/businessentities.md
+- Store properties > Queries/businessentity.md
+- Store properties > Queries/location.md
+- Store properties > Queries/locationbyidentifier.md
+- Store properties > Queries/locations.md
+- Store properties > Queries/locationsavailablefordeliveryprofiles.md
+- Store properties > Queries/locationsavailablefordeliveryprofilesconnection.md
+- Store properties > Queries/locationscount.md
+- Store properties > Queries/shop.md
+- Webhooks > Mutations/eventbridgewebhooksubscriptioncreate.md
+- Webhooks > Mutations/eventbridgewebhooksubscriptionupdate.md
+- Webhooks > Mutations/pubsubwebhooksubscriptioncreate.md
+- Webhooks > Mutations/pubsubwebhooksubscriptionupdate.md
+- Webhooks > Mutations/webhooksubscriptioncreate.md
+- Webhooks > Mutations/webhooksubscriptiondelete.md
+- Webhooks > Mutations/webhooksubscriptionupdate.md
+- Webhooks > Objects/webhookeventbridgeendpoint.md
+- Webhooks > Objects/webhookhttpendpoint.md
+- Webhooks > Objects/webhookpubsubendpoint.md
+- Webhooks > Objects/webhooksubscription.md
+- Webhooks > Queries/webhooksubscription.md
+- Webhooks > Queries/webhooksubscriptions.md
+- Webhooks > Queries/webhooksubscriptionscount.md
+
+## Index Structure
+
+```markdown
+# Shopify GraphQL API Documentation Structure
+
+**Version: 2025-07**
+
+
+## Overview
+
+### General
+
+- [Overview](https://shopify.dev/docs/api/admin-graphql/latest)
+
+## Access
+
+### Mutations
+
+- [appRevokeAccessScopes](https://shopify.dev/docs/api/admin-graphql/latest/mutations/apprevokeaccessscopes)
+- [delegateAccessTokenCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/delegateaccesstokencreate)
+- [storefrontAccessTokenCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/storefrontaccesstokencreate)
+- [storefrontAccessTokenDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/storefrontaccesstokendelete)
+### Objects
+
+- [AccessScope](https://shopify.dev/docs/api/admin-graphql/latest/objects/accessscope)
+- [DelegateAccessToken](https://shopify.dev/docs/api/admin-graphql/latest/objects/delegateaccesstoken)
+- [QueryRoot](https://shopify.dev/api/admin-graphql/2025-07/objects/queryroot)
+- [StorefrontAccessToken](https://shopify.dev/docs/api/admin-graphql/latest/objects/storefrontaccesstoken)
+
+## Apps
+
+### Mutations
+
+- [appUninstall](https://shopify.dev/docs/api/admin-graphql/latest/mutations/appuninstall)
+- [mobilePlatformApplicationCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/mobileplatformapplicationcreate)
+- [mobilePlatformApplicationDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/mobileplatformapplicationdelete)
+- [mobilePlatformApplicationUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/mobileplatformapplicationupdate)
+- [publicationCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/publicationcreate)
+- [publicationDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/publicationdelete)
+- [publicationUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/publicationupdate)
+- [shopResourceFeedbackCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/shopresourcefeedbackcreate)
+### Objects
+
+- [AndroidApplication](https://shopify.dev/docs/api/admin-graphql/latest/objects/androidapplication)
+- [App](https://shopify.dev/docs/api/admin-graphql/latest/objects/app)
+- [AppFeedback](https://shopify.dev/docs/api/admin-graphql/latest/objects/appfeedback)
+- [AppInstallation](https://shopify.dev/docs/api/admin-graphql/latest/objects/appinstallation)
+- [AppleApplication](https://shopify.dev/docs/api/admin-graphql/latest/objects/appleapplication)
+- [FailedRequirement](https://shopify.dev/docs/api/admin-graphql/latest/objects/failedrequirement)
+- [Link](https://shopify.dev/docs/api/admin-graphql/latest/objects/link)
+- [Publication](https://shopify.dev/docs/api/admin-graphql/latest/objects/publication)
+- [ResourceFeedback](https://shopify.dev/docs/api/admin-graphql/latest/objects/resourcefeedback)
+### Queries
+
+- [app](https://shopify.dev/docs/api/admin-graphql/latest/queries/app)
+- [appByHandle](https://shopify.dev/docs/api/admin-graphql/latest/queries/appbyhandle)
+- [appByKey](https://shopify.dev/docs/api/admin-graphql/latest/queries/appbykey)
+- [appInstallation](https://shopify.dev/docs/api/admin-graphql/latest/queries/appinstallation)
+- [appInstallations](https://shopify.dev/docs/api/admin-graphql/latest/queries/appinstallations)
+- [currentAppInstallation](https://shopify.dev/docs/api/admin-graphql/latest/queries/currentappinstallation)
+- [mobilePlatformApplication](https://shopify.dev/docs/api/admin-graphql/latest/queries/mobileplatformapplication)
+- [mobilePlatformApplications](https://shopify.dev/docs/api/admin-graphql/latest/queries/mobileplatformapplications)
+- [publication](https://shopify.dev/docs/api/admin-graphql/latest/queries/publication)
+- [publications](https://shopify.dev/docs/api/admin-graphql/latest/queries/publications)
+- [publicationsCount](https://shopify.dev/docs/api/admin-graphql/latest/queries/publicationscount)
+
+## B2B
+
+### Mutations
+
+- [companiesDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companiesdelete)
+- [companyAddressDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companyaddressdelete)
+- [companyAssignCustomerAsContact](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companyassigncustomerascontact)
+- [companyAssignMainContact](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companyassignmaincontact)
+- [companyContactAssignRole](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companycontactassignrole)
+- [companyContactAssignRoles](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companycontactassignroles)
+- [companyContactCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companycontactcreate)
+- [companyContactDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companycontactdelete)
+- [companyContactRemoveFromCompany](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companycontactremovefromcompany)
+- [companyContactRevokeRole](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companycontactrevokerole)
+- [companyContactRevokeRoles](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companycontactrevokeroles)
+- [companyContactsDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companycontactsdelete)
+- [companyContactUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companycontactupdate)
+- [companyCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companycreate)
+- [companyDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companydelete)
+- [companyLocationAssignAddress](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companylocationassignaddress)
+- [companyLocationAssignRoles](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companylocationassignroles)
+- [companyLocationAssignStaffMembers](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companylocationassignstaffmembers)
+- [companyLocationAssignTaxExemptions](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companylocationassigntaxexemptions)
+- [companyLocationCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companylocationcreate)
+- [companyLocationCreateTaxRegistration](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companylocationcreatetaxregistration)
+- [companyLocationDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companylocationdelete)
+- [companyLocationRemoveStaffMembers](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companylocationremovestaffmembers)
+- [companyLocationRevokeRoles](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companylocationrevokeroles)
+- [companyLocationRevokeTaxExemptions](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companylocationrevoketaxexemptions)
+- [companyLocationRevokeTaxRegistration](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companylocationrevoketaxregistration)
+- [companyLocationsDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companylocationsdelete)
+- [companyLocationTaxSettingsUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companylocationtaxsettingsupdate)
+- [companyLocationUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companylocationupdate)
+- [companyRevokeMainContact](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companyrevokemaincontact)
+- [companyUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/companyupdate)
+### Objects
+
+- [Company](https://shopify.dev/docs/api/admin-graphql/latest/objects/company)
+- [CompanyAddress](https://shopify.dev/docs/api/admin-graphql/latest/objects/companyaddress)
+- [CompanyContact](https://shopify.dev/docs/api/admin-graphql/latest/objects/companycontact)
+- [CompanyContactRole](https://shopify.dev/docs/api/admin-graphql/latest/objects/companycontactrole)
+- [CompanyContactRoleAssignment](https://shopify.dev/docs/api/admin-graphql/latest/objects/companycontactroleassignment)
+- [CompanyLocation](https://shopify.dev/docs/api/admin-graphql/latest/objects/companylocation)
+- [CompanyLocationsCondition](https://shopify.dev/docs/api/admin-graphql/latest/objects/companylocationscondition)
+- [CompanyLocationStaffMemberAssignment](https://shopify.dev/docs/api/admin-graphql/latest/objects/companylocationstaffmemberassignment)
+- [CompanyLocationTaxSettings](https://shopify.dev/docs/api/admin-graphql/latest/objects/companylocationtaxsettings)
+- [PurchasingCompany](https://shopify.dev/docs/api/admin-graphql/latest/objects/purchasingcompany)
+### Queries
+
+- [companies](https://shopify.dev/docs/api/admin-graphql/latest/queries/companies)
+- [companiesCount](https://shopify.dev/docs/api/admin-graphql/latest/queries/companiescount)
+- [company](https://shopify.dev/docs/api/admin-graphql/latest/queries/company)
+- [companyContact](https://shopify.dev/docs/api/admin-graphql/latest/queries/companycontact)
+- [companyContactRole](https://shopify.dev/docs/api/admin-graphql/latest/queries/companycontactrole)
+- [companyLocation](https://shopify.dev/docs/api/admin-graphql/latest/queries/companylocation)
+- [companyLocations](https://shopify.dev/docs/api/admin-graphql/latest/queries/companylocations)
+
+## Billing
+
+### Mutations
+
+- [appPurchaseOneTimeCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/apppurchaseonetimecreate)
+- [appSubscriptionCancel](https://shopify.dev/docs/api/admin-graphql/latest/mutations/appsubscriptioncancel)
+- [appSubscriptionCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/appsubscriptioncreate)
+- [appSubscriptionLineItemUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/appsubscriptionlineitemupdate)
+- [appSubscriptionTrialExtend](https://shopify.dev/docs/api/admin-graphql/latest/mutations/appsubscriptiontrialextend)
+- [appUsageRecordCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/appusagerecordcreate)
+### Objects
+
+- [AppCredit](https://shopify.dev/docs/api/admin-graphql/latest/objects/appcredit)
+- [AppPlanV2](https://shopify.dev/docs/api/admin-graphql/latest/objects/appplanv2)
+- [AppPurchaseOneTime](https://shopify.dev/docs/api/admin-graphql/latest/objects/apppurchaseonetime)
+- [AppRecurringPricing](https://shopify.dev/docs/api/admin-graphql/latest/objects/apprecurringpricing)
+- [AppRevenueAttributionRecord](https://shopify.dev/docs/api/admin-graphql/latest/objects/apprevenueattributionrecord)
+- [AppSubscription](https://shopify.dev/docs/api/admin-graphql/latest/objects/appsubscription)
+- [AppSubscriptionDiscount](https://shopify.dev/docs/api/admin-graphql/latest/objects/appsubscriptiondiscount)
+- [AppSubscriptionDiscountAmount](https://shopify.dev/docs/api/admin-graphql/latest/objects/appsubscriptiondiscountamount)
+- [AppSubscriptionDiscountPercentage](https://shopify.dev/docs/api/admin-graphql/latest/objects/appsubscriptiondiscountpercentage)
+- [AppSubscriptionLineItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/appsubscriptionlineitem)
+- [AppUsagePricing](https://shopify.dev/docs/api/admin-graphql/latest/objects/appusagepricing)
+- [AppUsageRecord](https://shopify.dev/docs/api/admin-graphql/latest/objects/appusagerecord)
+- [EntitlementsType](https://shopify.dev/docs/api/admin-graphql/latest/objects/entitlementstype)
+- [MarketsType](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketstype)
+- [ShopBillingPreferences](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopbillingpreferences)
+### Queries
+
+- [shopBillingPreferences](https://shopify.dev/docs/api/admin-graphql/latest/queries/shopbillingpreferences)
+
+## Bulk operations
+
+### Mutations
+
+- [bulkOperationCancel](https://shopify.dev/docs/api/admin-graphql/latest/mutations/bulkoperationcancel)
+- [bulkOperationRunMutation](https://shopify.dev/docs/api/admin-graphql/latest/mutations/bulkoperationrunmutation)
+- [bulkOperationRunQuery](https://shopify.dev/docs/api/admin-graphql/latest/mutations/bulkoperationrunquery)
+### Objects
+
+- [BulkOperation](https://shopify.dev/docs/api/admin-graphql/latest/objects/bulkoperation)
+### Queries
+
+- [currentBulkOperation](https://shopify.dev/docs/api/admin-graphql/latest/queries/currentbulkoperation)
+
+## Cart
+
+### Mutations
+
+- [cartTransformCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/carttransformcreate)
+- [cartTransformDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/carttransformdelete)
+### Objects
+
+- [CartTransform](https://shopify.dev/docs/api/admin-graphql/latest/objects/carttransform)
+### Queries
+
+- [cartTransforms](https://shopify.dev/docs/api/admin-graphql/latest/queries/carttransforms)
+
+## Checkout branding
+
+### Mutations
+
+- [checkoutBrandingUpsert](https://shopify.dev/docs/api/admin-graphql/latest/mutations/checkoutbrandingupsert)
+### Objects
+
+- [CheckoutBranding](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbranding)
+- [CheckoutBrandingControl](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingcontrol)
+- [CheckoutBrandingCustomizations](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingcustomizations)
+- [CheckoutBrandingDesignSystem](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingdesignsystem)
+- [CheckoutBrandingFontGroup](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingfontgroup)
+- [CheckoutBrandingFontSize](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingfontsize)
+- [CheckoutBrandingHeader](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingheader)
+- [CheckoutBrandingImage](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingimage)
+- [CheckoutBrandingLogo](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandinglogo)
+- [CheckoutBrandingMain](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingmain)
+- [CheckoutBrandingOrderSummary](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingordersummary)
+- [CheckoutBrandingTypography](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingtypography)
+### Queries
+
+- [checkoutBranding](https://shopify.dev/docs/api/admin-graphql/latest/queries/checkoutbranding)
+
+## Common objects
+
+### Mutations
+
+- [bulkProductResourceFeedbackCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/bulkproductresourcefeedbackcreate)
+- [customerPaymentMethodCreditCardCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customerpaymentmethodcreditcardcreate)
+- [customerPaymentMethodCreditCardUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customerpaymentmethodcreditcardupdate)
+- [customerPaymentMethodGetUpdateUrl](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customerpaymentmethodgetupdateurl)
+- [customerPaymentMethodPaypalBillingAgreementCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customerpaymentmethodpaypalbillingagreementcreate)
+- [customerPaymentMethodPaypalBillingAgreementUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customerpaymentmethodpaypalbillingagreementupdate)
+- [customerPaymentMethodRemoteCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customerpaymentmethodremotecreate)
+- [customerPaymentMethodRevoke](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customerpaymentmethodrevoke)
+- [customerPaymentMethodSendUpdateEmail](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customerpaymentmethodsendupdateemail)
+- [fulfillmentConstraintRuleCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmentconstraintrulecreate)
+- [fulfillmentConstraintRuleDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmentconstraintruledelete)
+- [fulfillmentConstraintRuleUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmentconstraintruleupdate)
+- [giftCardCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/giftcardcreate)
+- [giftCardCredit](https://shopify.dev/docs/api/admin-graphql/latest/mutations/giftcardcredit)
+- [giftCardDeactivate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/giftcarddeactivate)
+- [giftCardDebit](https://shopify.dev/docs/api/admin-graphql/latest/mutations/giftcarddebit)
+- [giftCardSendNotificationToCustomer](https://shopify.dev/docs/api/admin-graphql/latest/mutations/giftcardsendnotificationtocustomer)
+- [giftCardSendNotificationToRecipient](https://shopify.dev/docs/api/admin-graphql/latest/mutations/giftcardsendnotificationtorecipient)
+- [giftCardUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/giftcardupdate)
+- [marketRegionsDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/marketregionsdelete)
+- [paymentCustomizationActivation](https://shopify.dev/docs/api/admin-graphql/latest/mutations/paymentcustomizationactivation)
+- [paymentCustomizationCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/paymentcustomizationcreate)
+- [paymentCustomizationDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/paymentcustomizationdelete)
+- [paymentCustomizationUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/paymentcustomizationupdate)
+- [paymentReminderSend](https://shopify.dev/docs/api/admin-graphql/latest/mutations/paymentremindersend)
+- [paymentTermsCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/paymenttermscreate)
+- [paymentTermsDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/paymenttermsdelete)
+- [paymentTermsUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/paymenttermsupdate)
+- [productFeedCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productfeedcreate)
+- [productFeedDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productfeeddelete)
+- [productFullSync](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productfullsync)
+- [savedSearchCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/savedsearchcreate)
+- [savedSearchDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/savedsearchdelete)
+- [savedSearchUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/savedsearchupdate)
+- [stagedUploadTargetGenerate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/stageduploadtargetgenerate)
+- [stagedUploadTargetsGenerate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/stageduploadtargetsgenerate)
+- [storeCreditAccountCredit](https://shopify.dev/docs/api/admin-graphql/latest/mutations/storecreditaccountcredit)
+- [storeCreditAccountDebit](https://shopify.dev/docs/api/admin-graphql/latest/mutations/storecreditaccountdebit)
+- [tagsAdd](https://shopify.dev/docs/api/admin-graphql/latest/mutations/tagsadd)
+- [tagsRemove](https://shopify.dev/docs/api/admin-graphql/latest/mutations/tagsremove)
+- [validationCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/validationcreate)
+- [validationDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/validationdelete)
+- [validationUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/validationupdate)
+- [webPresenceDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/webpresencedelete)
+### Objects
+
+- [AbandonedCheckout](https://shopify.dev/docs/api/admin-graphql/latest/objects/abandonedcheckout)
+- [AbandonedCheckoutLineItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/abandonedcheckoutlineitem)
+- [AbandonedCheckoutLineItemComponent](https://shopify.dev/docs/api/admin-graphql/latest/objects/abandonedcheckoutlineitemcomponent)
+- [ApiVersion](https://shopify.dev/docs/api/admin-graphql/latest/objects/apiversion)
+- [AppRevokeAccessScopesAppRevokeScopeError](https://shopify.dev/docs/api/admin-graphql/latest/objects/apprevokeaccessscopesapprevokescopeerror)
+- [AppUninstallAppUninstallError](https://shopify.dev/docs/api/admin-graphql/latest/objects/appuninstallappuninstallerror)
+- [AvailableChannelDefinitionsByChannel](https://shopify.dev/docs/api/admin-graphql/latest/objects/availablechanneldefinitionsbychannel)
+- [BuyerExperienceConfiguration](https://shopify.dev/docs/api/admin-graphql/latest/objects/buyerexperienceconfiguration)
+- [Channel](https://shopify.dev/docs/api/admin-graphql/latest/objects/channel)
+- [ChannelDefinition](https://shopify.dev/docs/api/admin-graphql/latest/objects/channeldefinition)
+- [ChannelInformation](https://shopify.dev/docs/api/admin-graphql/latest/objects/channelinformation)
+- [CheckoutBrandingButton](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingbutton)
+- [CheckoutBrandingButtonColorRoles](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingbuttoncolorroles)
+- [CheckoutBrandingBuyerJourney](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingbuyerjourney)
+- [CheckoutBrandingCartLink](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingcartlink)
+- [CheckoutBrandingCheckbox](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingcheckbox)
+- [CheckoutBrandingChoiceList](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingchoicelist)
+- [CheckoutBrandingChoiceListGroup](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingchoicelistgroup)
+- [CheckoutBrandingColorGlobal](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingcolorglobal)
+- [CheckoutBrandingColorRoles](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingcolorroles)
+- [CheckoutBrandingColors](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingcolors)
+- [CheckoutBrandingColorScheme](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingcolorscheme)
+- [CheckoutBrandingColorSchemes](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingcolorschemes)
+- [CheckoutBrandingContainerDivider](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingcontainerdivider)
+- [CheckoutBrandingContent](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingcontent)
+- [CheckoutBrandingControlColorRoles](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingcontrolcolorroles)
+- [CheckoutBrandingCornerRadiusVariables](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingcornerradiusvariables)
+- [CheckoutBrandingCustomFont](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingcustomfont)
+- [CheckoutBrandingDividerStyle](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingdividerstyle)
+- [CheckoutBrandingExpressCheckout](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingexpresscheckout)
+- [CheckoutBrandingExpressCheckoutButton](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingexpresscheckoutbutton)
+- [CheckoutBrandingFooter](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingfooter)
+- [CheckoutBrandingFooterContent](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingfootercontent)
+- [CheckoutBrandingGlobal](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingglobal)
+- [CheckoutBrandingHeaderCartLink](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingheadercartlink)
+- [CheckoutBrandingHeadingLevel](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingheadinglevel)
+- [CheckoutBrandingMainSection](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingmainsection)
+- [CheckoutBrandingMerchandiseThumbnail](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingmerchandisethumbnail)
+- [CheckoutBrandingMerchandiseThumbnailBadge](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingmerchandisethumbnailbadge)
+- [CheckoutBrandingOrderSummarySection](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingordersummarysection)
+- [CheckoutBrandingSelect](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingselect)
+- [CheckoutBrandingShopifyFont](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingshopifyfont)
+- [CheckoutBrandingTextField](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingtextfield)
+- [CheckoutBrandingTypographyStyle](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingtypographystyle)
+- [CheckoutBrandingTypographyStyleGlobal](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingtypographystyleglobal)
+- [CheckoutProfile](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutprofile)
+- [Count](https://shopify.dev/docs/api/admin-graphql/latest/objects/count)
+- [CustomerCreditCard](https://shopify.dev/docs/api/admin-graphql/latest/objects/customercreditcard)
+- [CustomerPaymentInstrumentBillingAddress](https://shopify.dev/docs/api/admin-graphql/latest/objects/customerpaymentinstrumentbillingaddress)
+- [CustomerPaymentMethod](https://shopify.dev/docs/api/admin-graphql/latest/objects/customerpaymentmethod)
+- [CustomerPaypalBillingAgreement](https://shopify.dev/docs/api/admin-graphql/latest/objects/customerpaypalbillingagreement)
+- [CustomerShopPayAgreement](https://shopify.dev/docs/api/admin-graphql/latest/objects/customershoppayagreement)
+- [DepositPercentage](https://shopify.dev/docs/api/admin-graphql/latest/objects/depositpercentage)
+- [Distance](https://shopify.dev/docs/api/admin-graphql/latest/objects/distance)
+- [Domain](https://shopify.dev/docs/api/admin-graphql/latest/objects/domain)
+- [DomainLocalization](https://shopify.dev/docs/api/admin-graphql/latest/objects/domainlocalization)
+- [FinanceAppAccessPolicy](https://shopify.dev/docs/api/admin-graphql/latest/objects/financeappaccesspolicy)
+- [FulfillmentConstraintRule](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentconstraintrule)
+- [FunctionsAppBridge](https://shopify.dev/docs/api/admin-graphql/latest/objects/functionsappbridge)
+- [FunctionsErrorHistory](https://shopify.dev/docs/api/admin-graphql/latest/objects/functionserrorhistory)
+- [GiftCard](https://shopify.dev/docs/api/admin-graphql/latest/objects/giftcard)
+- [GiftCardConfiguration](https://shopify.dev/docs/api/admin-graphql/latest/objects/giftcardconfiguration)
+- [GiftCardCreditTransaction](https://shopify.dev/docs/api/admin-graphql/latest/objects/giftcardcredittransaction)
+- [GiftCardDebitTransaction](https://shopify.dev/docs/api/admin-graphql/latest/objects/giftcarddebittransaction)
+- [GiftCardRecipient](https://shopify.dev/docs/api/admin-graphql/latest/objects/giftcardrecipient)
+- [Image](https://shopify.dev/docs/api/admin-graphql/latest/objects/image)
+- [ImageUploadParameter](https://shopify.dev/docs/api/admin-graphql/latest/objects/imageuploadparameter)
+- [Job](https://shopify.dev/docs/api/admin-graphql/latest/objects/job)
+- [LocalizedField](https://shopify.dev/docs/api/admin-graphql/latest/objects/localizedfield)
+- [MailingAddress](https://shopify.dev/docs/api/admin-graphql/latest/objects/mailingaddress)
+- [MerchantApprovalSignals](https://shopify.dev/docs/api/admin-graphql/latest/objects/merchantapprovalsignals)
+- [MetafieldAccess](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafieldaccess)
+- [MetafieldCapabilities](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafieldcapabilities)
+- [MetafieldCapabilityAdminFilterable](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafieldcapabilityadminfilterable)
+- [MetafieldCapabilityUniqueValues](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafieldcapabilityuniquevalues)
+- [MetafieldDefinitionConstraints](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafielddefinitionconstraints)
+- [MetafieldDefinitionConstraintValue](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafielddefinitionconstraintvalue)
+- [MetafieldDefinitionIdentifier](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafielddefinitionidentifier)
+- [MetafieldIdentifier](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafieldidentifier)
+- [MetafieldRelation](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafieldrelation)
+- [MetaobjectThumbnail](https://shopify.dev/docs/api/admin-graphql/latest/objects/metaobjectthumbnail)
+- [MoneyBag](https://shopify.dev/docs/api/admin-graphql/latest/objects/moneybag)
+- [MoneyV2](https://shopify.dev/docs/api/admin-graphql/latest/objects/moneyv2)
+- [MutationsStagedUploadTargetGenerateUploadParameter](https://shopify.dev/docs/api/admin-graphql/latest/objects/mutationsstageduploadtargetgenerateuploadparameter)
+- [OrderPaymentStatus](https://shopify.dev/docs/api/admin-graphql/latest/objects/orderpaymentstatus)
+- [PageInfo](https://shopify.dev/docs/api/admin-graphql/latest/objects/pageinfo)
+- [PaymentCustomization](https://shopify.dev/docs/api/admin-graphql/latest/objects/paymentcustomization)
+- [PaymentCustomizationError](https://shopify.dev/docs/api/admin-graphql/latest/objects/paymentcustomizationerror)
+- [PaymentMandate](https://shopify.dev/docs/api/admin-graphql/latest/objects/paymentmandate)
+- [PaymentSchedule](https://shopify.dev/docs/api/admin-graphql/latest/objects/paymentschedule)
+- [PaymentTerms](https://shopify.dev/docs/api/admin-graphql/latest/objects/paymentterms)
+- [PaymentTermsTemplate](https://shopify.dev/docs/api/admin-graphql/latest/objects/paymenttermstemplate)
+- [ProductFeed](https://shopify.dev/docs/api/admin-graphql/latest/objects/productfeed)
+- [ProductResourceFeedback](https://shopify.dev/docs/api/admin-graphql/latest/objects/productresourcefeedback)
+- [QueryRoot](https://shopify.dev/docs/api/admin-graphql/latest/objects/queryroot)
+- [SavedSearch](https://shopify.dev/docs/api/admin-graphql/latest/objects/savedsearch)
+- [SearchFilter](https://shopify.dev/docs/api/admin-graphql/latest/objects/searchfilter)
+- [SearchFilterOptions](https://shopify.dev/docs/api/admin-graphql/latest/objects/searchfilteroptions)
+- [SearchResult](https://shopify.dev/docs/api/admin-graphql/latest/objects/searchresult)
+- [ShopifyFunction](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifyfunction)
+- [ShopPayPaymentRequest](https://shopify.dev/docs/api/admin-graphql/latest/objects/shoppaypaymentrequest)
+- [ShopPayPaymentRequestContactField](https://shopify.dev/docs/api/admin-graphql/latest/objects/shoppaypaymentrequestcontactfield)
+- [ShopPayPaymentRequestDiscount](https://shopify.dev/docs/api/admin-graphql/latest/objects/shoppaypaymentrequestdiscount)
+- [ShopPayPaymentRequestImage](https://shopify.dev/docs/api/admin-graphql/latest/objects/shoppaypaymentrequestimage)
+- [ShopPayPaymentRequestLineItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/shoppaypaymentrequestlineitem)
+- [ShopPayPaymentRequestReceipt](https://shopify.dev/docs/api/admin-graphql/latest/objects/shoppaypaymentrequestreceipt)
+- [ShopPayPaymentRequestReceiptProcessingStatus](https://shopify.dev/docs/api/admin-graphql/latest/objects/shoppaypaymentrequestreceiptprocessingstatus)
+- [ShopPayPaymentRequestShippingLine](https://shopify.dev/docs/api/admin-graphql/latest/objects/shoppaypaymentrequestshippingline)
+- [ShopPayPaymentRequestTotalShippingPrice](https://shopify.dev/docs/api/admin-graphql/latest/objects/shoppaypaymentrequesttotalshippingprice)
+- [StaffMember](https://shopify.dev/docs/api/admin-graphql/latest/objects/staffmember)
+- [StaffMemberPrivateData](https://shopify.dev/docs/api/admin-graphql/latest/objects/staffmemberprivatedata)
+- [StagedUploadParameter](https://shopify.dev/docs/api/admin-graphql/latest/objects/stageduploadparameter)
+- [StagedUploadTarget](https://shopify.dev/docs/api/admin-graphql/latest/objects/stageduploadtarget)
+- [StandardMetaobjectCapabilityTemplate](https://shopify.dev/docs/api/admin-graphql/latest/objects/standardmetaobjectcapabilitytemplate)
+- [StandardMetaobjectDefinitionFieldTemplate](https://shopify.dev/docs/api/admin-graphql/latest/objects/standardmetaobjectdefinitionfieldtemplate)
+- [StandardMetaobjectDefinitionTemplate](https://shopify.dev/docs/api/admin-graphql/latest/objects/standardmetaobjectdefinitiontemplate)
+- [StoreCreditAccount](https://shopify.dev/docs/api/admin-graphql/latest/objects/storecreditaccount)
+- [StoreCreditAccountCreditTransaction](https://shopify.dev/docs/api/admin-graphql/latest/objects/storecreditaccountcredittransaction)
+- [StoreCreditAccountDebitRevertTransaction](https://shopify.dev/docs/api/admin-graphql/latest/objects/storecreditaccountdebitreverttransaction)
+- [StoreCreditAccountDebitTransaction](https://shopify.dev/docs/api/admin-graphql/latest/objects/storecreditaccountdebittransaction)
+- [StoreCreditAccountExpirationTransaction](https://shopify.dev/docs/api/admin-graphql/latest/objects/storecreditaccountexpirationtransaction)
+- [TypedAttribute](https://shopify.dev/docs/api/admin-graphql/latest/objects/typedattribute)
+- [Validation](https://shopify.dev/docs/api/admin-graphql/latest/objects/validation)
+- [VaultCreditCard](https://shopify.dev/docs/api/admin-graphql/latest/objects/vaultcreditcard)
+- [VaultPaypalBillingAgreement](https://shopify.dev/docs/api/admin-graphql/latest/objects/vaultpaypalbillingagreement)
+- [WebhookSubscriptionMetafieldIdentifier](https://shopify.dev/docs/api/admin-graphql/latest/objects/webhooksubscriptionmetafieldidentifier)
+### Queries
+
+- [abandonedCheckouts](https://shopify.dev/docs/api/admin-graphql/latest/queries/abandonedcheckouts)
+- [abandonedCheckoutsCount](https://shopify.dev/docs/api/admin-graphql/latest/queries/abandonedcheckoutscount)
+- [abandonmentByAbandonedCheckoutId](https://shopify.dev/docs/api/admin-graphql/latest/queries/abandonmentbyabandonedcheckoutid)
+- [articleTags](https://shopify.dev/docs/api/admin-graphql/latest/queries/articletags)
+- [channel](https://shopify.dev/docs/api/admin-graphql/latest/queries/channel)
+- [channels](https://shopify.dev/docs/api/admin-graphql/latest/queries/channels)
+- [checkoutProfile](https://shopify.dev/docs/api/admin-graphql/latest/queries/checkoutprofile)
+- [checkoutProfiles](https://shopify.dev/docs/api/admin-graphql/latest/queries/checkoutprofiles)
+- [currentStaffMember](https://shopify.dev/docs/api/admin-graphql/latest/queries/currentstaffmember)
+- [customerMergeJobStatus](https://shopify.dev/docs/api/admin-graphql/latest/queries/customermergejobstatus)
+- [customerPaymentMethod](https://shopify.dev/docs/api/admin-graphql/latest/queries/customerpaymentmethod)
+- [domain](https://shopify.dev/docs/api/admin-graphql/latest/queries/domain)
+- [financeAppAccessPolicy](https://shopify.dev/docs/api/admin-graphql/latest/queries/financeappaccesspolicy)
+- [fulfillmentConstraintRules](https://shopify.dev/docs/api/admin-graphql/latest/queries/fulfillmentconstraintrules)
+- [giftCard](https://shopify.dev/docs/api/admin-graphql/latest/queries/giftcard)
+- [giftCardConfiguration](https://shopify.dev/docs/api/admin-graphql/latest/queries/giftcardconfiguration)
+- [giftCards](https://shopify.dev/docs/api/admin-graphql/latest/queries/giftcards)
+- [giftCardsCount](https://shopify.dev/docs/api/admin-graphql/latest/queries/giftcardscount)
+- [job](https://shopify.dev/docs/api/admin-graphql/latest/queries/job)
+- [node](https://shopify.dev/docs/api/admin-graphql/latest/queries/node)
+- [nodes](https://shopify.dev/docs/api/admin-graphql/latest/queries/nodes)
+- [orderPaymentStatus](https://shopify.dev/docs/api/admin-graphql/latest/queries/orderpaymentstatus)
+- [paymentCustomization](https://shopify.dev/docs/api/admin-graphql/latest/queries/paymentcustomization)
+- [paymentCustomizations](https://shopify.dev/docs/api/admin-graphql/latest/queries/paymentcustomizations)
+- [paymentTermsTemplates](https://shopify.dev/docs/api/admin-graphql/latest/queries/paymenttermstemplates)
+- [productFeed](https://shopify.dev/docs/api/admin-graphql/latest/queries/productfeed)
+- [productFeeds](https://shopify.dev/docs/api/admin-graphql/latest/queries/productfeeds)
+- [publicApiVersions](https://shopify.dev/docs/api/admin-graphql/latest/queries/publicapiversions)
+- [shopifyFunction](https://shopify.dev/docs/api/admin-graphql/latest/queries/shopifyfunction)
+- [shopifyFunctions](https://shopify.dev/docs/api/admin-graphql/latest/queries/shopifyfunctions)
+- [shopPayPaymentRequestReceipt](https://shopify.dev/docs/api/admin-graphql/latest/queries/shoppaypaymentrequestreceipt)
+- [shopPayPaymentRequestReceipts](https://shopify.dev/docs/api/admin-graphql/latest/queries/shoppaypaymentrequestreceipts)
+- [staffMember](https://shopify.dev/docs/api/admin-graphql/latest/queries/staffmember)
+- [staffMembers](https://shopify.dev/docs/api/admin-graphql/latest/queries/staffmembers)
+- [storeCreditAccount](https://shopify.dev/docs/api/admin-graphql/latest/queries/storecreditaccount)
+- [validation](https://shopify.dev/docs/api/admin-graphql/latest/queries/validation)
+- [validations](https://shopify.dev/docs/api/admin-graphql/latest/queries/validations)
+
+## Customers
+
+### Mutations
+
+- [customerAddressCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customeraddresscreate)
+- [customerAddressDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customeraddressdelete)
+- [customerAddressUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customeraddressupdate)
+- [customerAddTaxExemptions](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customeraddtaxexemptions)
+- [customerCancelDataErasure](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customercanceldataerasure)
+- [customerCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customercreate)
+- [customerDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customerdelete)
+- [customerEmailMarketingConsentUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customeremailmarketingconsentupdate)
+- [customerGenerateAccountActivationUrl](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customergenerateaccountactivationurl)
+- [customerMerge](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customermerge)
+- [customerRemoveTaxExemptions](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customerremovetaxexemptions)
+- [customerReplaceTaxExemptions](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customerreplacetaxexemptions)
+- [customerRequestDataErasure](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customerrequestdataerasure)
+- [customerSegmentMembersQueryCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customersegmentmembersquerycreate)
+- [customerSendAccountInviteEmail](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customersendaccountinviteemail)
+- [customerSet](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customerset)
+- [customerSmsMarketingConsentUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customersmsmarketingconsentupdate)
+- [customerUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customerupdate)
+- [customerUpdateDefaultAddress](https://shopify.dev/docs/api/admin-graphql/latest/mutations/customerupdatedefaultaddress)
+- [orderCustomerSet](https://shopify.dev/docs/api/admin-graphql/latest/mutations/ordercustomerset)
+- [segmentCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/segmentcreate)
+- [segmentDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/segmentdelete)
+- [segmentUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/segmentupdate)
+- [taxAppConfigure](https://shopify.dev/docs/api/admin-graphql/latest/mutations/taxappconfigure)
+### Objects
+
+- [Customer](https://shopify.dev/docs/api/admin-graphql/latest/objects/customer)
+- [CustomerAccountsV2](https://shopify.dev/docs/api/admin-graphql/latest/objects/customeraccountsv2)
+- [CustomerCreditCardBillingAddress](https://shopify.dev/docs/api/admin-graphql/latest/objects/customercreditcardbillingaddress)
+- [CustomerEmailAddress](https://shopify.dev/docs/api/admin-graphql/latest/objects/customeremailaddress)
+- [CustomerEmailMarketingConsentState](https://shopify.dev/docs/api/admin-graphql/latest/objects/customeremailmarketingconsentstate)
+- [CustomerMergeable](https://shopify.dev/docs/api/admin-graphql/latest/objects/customermergeable)
+- [CustomerMergeError](https://shopify.dev/docs/api/admin-graphql/latest/objects/customermergeerror)
+- [CustomerMergePreview](https://shopify.dev/docs/api/admin-graphql/latest/objects/customermergepreview)
+- [CustomerMergePreviewAlternateFields](https://shopify.dev/docs/api/admin-graphql/latest/objects/customermergepreviewalternatefields)
+- [CustomerMergePreviewBlockingFields](https://shopify.dev/docs/api/admin-graphql/latest/objects/customermergepreviewblockingfields)
+- [CustomerMergePreviewDefaultFields](https://shopify.dev/docs/api/admin-graphql/latest/objects/customermergepreviewdefaultfields)
+- [CustomerMergeRequest](https://shopify.dev/docs/api/admin-graphql/latest/objects/customermergerequest)
+- [CustomerPhoneNumber](https://shopify.dev/docs/api/admin-graphql/latest/objects/customerphonenumber)
+- [CustomerSegmentMember](https://shopify.dev/docs/api/admin-graphql/latest/objects/customersegmentmember)
+- [CustomerSegmentMembersQuery](https://shopify.dev/docs/api/admin-graphql/latest/objects/customersegmentmembersquery)
+- [CustomerSmsMarketingConsentError](https://shopify.dev/docs/api/admin-graphql/latest/objects/customersmsmarketingconsenterror)
+- [CustomerSmsMarketingConsentState](https://shopify.dev/docs/api/admin-graphql/latest/objects/customersmsmarketingconsentstate)
+- [CustomerStatistics](https://shopify.dev/docs/api/admin-graphql/latest/objects/customerstatistics)
+- [MarketPriceInclusions](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketpriceinclusions)
+- [Segment](https://shopify.dev/docs/api/admin-graphql/latest/objects/segment)
+- [SegmentAssociationFilter](https://shopify.dev/docs/api/admin-graphql/latest/objects/segmentassociationfilter)
+- [SegmentAttributeStatistics](https://shopify.dev/docs/api/admin-graphql/latest/objects/segmentattributestatistics)
+- [SegmentBooleanFilter](https://shopify.dev/docs/api/admin-graphql/latest/objects/segmentbooleanfilter)
+- [SegmentDateFilter](https://shopify.dev/docs/api/admin-graphql/latest/objects/segmentdatefilter)
+- [SegmentEnumFilter](https://shopify.dev/docs/api/admin-graphql/latest/objects/segmentenumfilter)
+- [SegmentEventFilter](https://shopify.dev/docs/api/admin-graphql/latest/objects/segmenteventfilter)
+- [SegmentEventFilterParameter](https://shopify.dev/docs/api/admin-graphql/latest/objects/segmenteventfilterparameter)
+- [SegmentFloatFilter](https://shopify.dev/docs/api/admin-graphql/latest/objects/segmentfloatfilter)
+- [SegmentIntegerFilter](https://shopify.dev/docs/api/admin-graphql/latest/objects/segmentintegerfilter)
+- [SegmentMembership](https://shopify.dev/docs/api/admin-graphql/latest/objects/segmentmembership)
+- [SegmentMembershipResponse](https://shopify.dev/docs/api/admin-graphql/latest/objects/segmentmembershipresponse)
+- [SegmentMigration](https://shopify.dev/docs/api/admin-graphql/latest/objects/segmentmigration)
+- [SegmentStatistics](https://shopify.dev/docs/api/admin-graphql/latest/objects/segmentstatistics)
+- [SegmentStringFilter](https://shopify.dev/docs/api/admin-graphql/latest/objects/segmentstringfilter)
+- [SegmentValue](https://shopify.dev/docs/api/admin-graphql/latest/objects/segmentvalue)
+- [TaxAppConfiguration](https://shopify.dev/docs/api/admin-graphql/latest/objects/taxappconfiguration)
+### Queries
+
+- [customer](https://shopify.dev/docs/api/admin-graphql/latest/queries/customer)
+- [customerByIdentifier](https://shopify.dev/docs/api/admin-graphql/latest/queries/customerbyidentifier)
+- [customerMergePreview](https://shopify.dev/docs/api/admin-graphql/latest/queries/customermergepreview)
+- [customers](https://shopify.dev/docs/api/admin-graphql/latest/queries/customers)
+- [customerSavedSearches](https://shopify.dev/docs/api/admin-graphql/latest/queries/customersavedsearches)
+- [customersCount](https://shopify.dev/docs/api/admin-graphql/latest/queries/customerscount)
+- [customerSegmentMembers](https://shopify.dev/docs/api/admin-graphql/latest/queries/customersegmentmembers)
+- [customerSegmentMembership](https://shopify.dev/docs/api/admin-graphql/latest/queries/customersegmentmembership)
+- [customerSegmentMembersQuery](https://shopify.dev/docs/api/admin-graphql/latest/queries/customersegmentmembersquery)
+- [segment](https://shopify.dev/docs/api/admin-graphql/latest/queries/segment)
+- [segmentFilters](https://shopify.dev/docs/api/admin-graphql/latest/queries/segmentfilters)
+- [segmentFilterSuggestions](https://shopify.dev/docs/api/admin-graphql/latest/queries/segmentfiltersuggestions)
+- [segmentMigrations](https://shopify.dev/docs/api/admin-graphql/latest/queries/segmentmigrations)
+- [segments](https://shopify.dev/docs/api/admin-graphql/latest/queries/segments)
+- [segmentsCount](https://shopify.dev/docs/api/admin-graphql/latest/queries/segmentscount)
+- [segmentValueSuggestions](https://shopify.dev/docs/api/admin-graphql/latest/queries/segmentvaluesuggestions)
+
+## Discounts and marketing
+
+### Mutations
+
+- [abandonmentEmailStateUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/abandonmentemailstateupdate)
+- [abandonmentUpdateActivitiesDeliveryStatuses](https://shopify.dev/docs/api/admin-graphql/latest/mutations/abandonmentupdateactivitiesdeliverystatuses)
+- [discountAutomaticActivate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountautomaticactivate)
+- [discountAutomaticAppCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountautomaticappcreate)
+- [discountAutomaticAppUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountautomaticappupdate)
+- [discountAutomaticBasicCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountautomaticbasiccreate)
+- [discountAutomaticBasicUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountautomaticbasicupdate)
+- [discountAutomaticBulkDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountautomaticbulkdelete)
+- [discountAutomaticBxgyCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountautomaticbxgycreate)
+- [discountAutomaticBxgyUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountautomaticbxgyupdate)
+- [discountAutomaticDeactivate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountautomaticdeactivate)
+- [discountAutomaticDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountautomaticdelete)
+- [discountAutomaticFreeShippingCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountautomaticfreeshippingcreate)
+- [discountAutomaticFreeShippingUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountautomaticfreeshippingupdate)
+- [discountCodeActivate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountcodeactivate)
+- [discountCodeAppCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountcodeappcreate)
+- [discountCodeAppUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountcodeappupdate)
+- [discountCodeBasicCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountcodebasiccreate)
+- [discountCodeBasicUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountcodebasicupdate)
+- [discountCodeBulkActivate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountcodebulkactivate)
+- [discountCodeBulkDeactivate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountcodebulkdeactivate)
+- [discountCodeBulkDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountcodebulkdelete)
+- [discountCodeBxgyCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountcodebxgycreate)
+- [discountCodeBxgyUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountcodebxgyupdate)
+- [discountCodeDeactivate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountcodedeactivate)
+- [discountCodeDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountcodedelete)
+- [discountCodeFreeShippingCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountcodefreeshippingcreate)
+- [discountCodeFreeShippingUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountcodefreeshippingupdate)
+- [discountCodeRedeemCodeBulkDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountcoderedeemcodebulkdelete)
+- [discountRedeemCodeBulkAdd](https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountredeemcodebulkadd)
+- [eventBridgeServerPixelUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/eventbridgeserverpixelupdate)
+- [marketingActivitiesDeleteAllExternal](https://shopify.dev/docs/api/admin-graphql/latest/mutations/marketingactivitiesdeleteallexternal)
+- [marketingActivityCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/marketingactivitycreate)
+- [marketingActivityCreateExternal](https://shopify.dev/docs/api/admin-graphql/latest/mutations/marketingactivitycreateexternal)
+- [marketingActivityDeleteExternal](https://shopify.dev/docs/api/admin-graphql/latest/mutations/marketingactivitydeleteexternal)
+- [marketingActivityUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/marketingactivityupdate)
+- [marketingActivityUpdateExternal](https://shopify.dev/docs/api/admin-graphql/latest/mutations/marketingactivityupdateexternal)
+- [marketingActivityUpsertExternal](https://shopify.dev/docs/api/admin-graphql/latest/mutations/marketingactivityupsertexternal)
+- [marketingEngagementCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/marketingengagementcreate)
+- [marketingEngagementsDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/marketingengagementsdelete)
+- [pubSubServerPixelUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/pubsubserverpixelupdate)
+- [serverPixelCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/serverpixelcreate)
+- [serverPixelDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/serverpixeldelete)
+- [webPixelCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/webpixelcreate)
+- [webPixelDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/webpixeldelete)
+- [webPixelUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/webpixelupdate)
+### Objects
+
+- [Abandonment](https://shopify.dev/docs/api/admin-graphql/latest/objects/abandonment)
+- [AllDiscountItems](https://shopify.dev/docs/api/admin-graphql/latest/objects/alldiscountitems)
+- [AppDiscountType](https://shopify.dev/docs/api/admin-graphql/latest/objects/appdiscounttype)
+- [CustomerJourney](https://shopify.dev/docs/api/admin-graphql/latest/objects/customerjourney)
+- [CustomerJourneySummary](https://shopify.dev/docs/api/admin-graphql/latest/objects/customerjourneysummary)
+- [CustomerVisit](https://shopify.dev/docs/api/admin-graphql/latest/objects/customervisit)
+- [CustomerVisitProductInfo](https://shopify.dev/docs/api/admin-graphql/latest/objects/customervisitproductinfo)
+- [DiscountAmount](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountamount)
+- [DiscountAutomaticApp](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountautomaticapp)
+- [DiscountAutomaticBasic](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountautomaticbasic)
+- [DiscountAutomaticBxgy](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountautomaticbxgy)
+- [DiscountAutomaticFreeShipping](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountautomaticfreeshipping)
+- [DiscountAutomaticNode](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountautomaticnode)
+- [DiscountCodeApp](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountcodeapp)
+- [DiscountCodeBasic](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountcodebasic)
+- [DiscountCodeBxgy](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountcodebxgy)
+- [DiscountCodeFreeShipping](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountcodefreeshipping)
+- [DiscountCodeNode](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountcodenode)
+- [DiscountCollections](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountcollections)
+- [DiscountCombinesWith](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountcombineswith)
+- [DiscountCountries](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountcountries)
+- [DiscountCountryAll](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountcountryall)
+- [DiscountCustomerAll](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountcustomerall)
+- [DiscountCustomerBuys](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountcustomerbuys)
+- [DiscountCustomerGets](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountcustomergets)
+- [DiscountCustomers](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountcustomers)
+- [DiscountCustomerSegments](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountcustomersegments)
+- [DiscountMinimumQuantity](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountminimumquantity)
+- [DiscountMinimumSubtotal](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountminimumsubtotal)
+- [DiscountNode](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountnode)
+- [DiscountOnQuantity](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountonquantity)
+- [DiscountPercentage](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountpercentage)
+- [DiscountProducts](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountproducts)
+- [DiscountPurchaseAmount](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountpurchaseamount)
+- [DiscountQuantity](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountquantity)
+- [DiscountRedeemCode](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountredeemcode)
+- [DiscountRedeemCodeBulkCreation](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountredeemcodebulkcreation)
+- [DiscountRedeemCodeBulkCreationCode](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountredeemcodebulkcreationcode)
+- [DiscountShareableUrl](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountshareableurl)
+- [MarketingActivity](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketingactivity)
+- [MarketingActivityExtensionAppErrors](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketingactivityextensionapperrors)
+- [MarketingBudget](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketingbudget)
+- [MarketingEngagement](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketingengagement)
+- [MarketingEvent](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketingevent)
+- [PriceRule](https://shopify.dev/docs/api/admin-graphql/latest/objects/pricerule)
+- [PriceRuleCustomerSelection](https://shopify.dev/docs/api/admin-graphql/latest/objects/pricerulecustomerselection)
+- [PriceRuleDiscountCode](https://shopify.dev/docs/api/admin-graphql/latest/objects/pricerulediscountcode)
+- [PriceRuleEntitlementToPrerequisiteQuantityRatio](https://shopify.dev/docs/api/admin-graphql/latest/objects/priceruleentitlementtoprerequisitequantityratio)
+- [PriceRuleFixedAmountValue](https://shopify.dev/docs/api/admin-graphql/latest/objects/pricerulefixedamountvalue)
+- [PriceRuleItemEntitlements](https://shopify.dev/docs/api/admin-graphql/latest/objects/priceruleitementitlements)
+- [PriceRuleLineItemPrerequisites](https://shopify.dev/docs/api/admin-graphql/latest/objects/pricerulelineitemprerequisites)
+- [PriceRuleMoneyRange](https://shopify.dev/docs/api/admin-graphql/latest/objects/pricerulemoneyrange)
+- [PriceRulePercentValue](https://shopify.dev/docs/api/admin-graphql/latest/objects/pricerulepercentvalue)
+- [PriceRulePrerequisiteToEntitlementQuantityRatio](https://shopify.dev/docs/api/admin-graphql/latest/objects/priceruleprerequisitetoentitlementquantityratio)
+- [PriceRuleQuantityRange](https://shopify.dev/docs/api/admin-graphql/latest/objects/pricerulequantityrange)
+- [PriceRuleShareableUrl](https://shopify.dev/docs/api/admin-graphql/latest/objects/priceruleshareableurl)
+- [PriceRuleShippingLineEntitlements](https://shopify.dev/docs/api/admin-graphql/latest/objects/priceruleshippinglineentitlements)
+- [PriceRuleValidityPeriod](https://shopify.dev/docs/api/admin-graphql/latest/objects/pricerulevalidityperiod)
+- [PricingPercentageValue](https://shopify.dev/docs/api/admin-graphql/latest/objects/pricingpercentagevalue)
+- [ServerPixel](https://shopify.dev/docs/api/admin-graphql/latest/objects/serverpixel)
+- [UTMParameters](https://shopify.dev/docs/api/admin-graphql/latest/objects/utmparameters)
+- [WebPixel](https://shopify.dev/docs/api/admin-graphql/latest/objects/webpixel)
+### Queries
+
+- [abandonment](https://shopify.dev/docs/api/admin-graphql/latest/queries/abandonment)
+- [appDiscountType](https://shopify.dev/docs/api/admin-graphql/latest/queries/appdiscounttype)
+- [appDiscountTypes](https://shopify.dev/docs/api/admin-graphql/latest/queries/appdiscounttypes)
+- [appDiscountTypesNodes](https://shopify.dev/docs/api/admin-graphql/latest/queries/appdiscounttypesnodes)
+- [automaticDiscount](https://shopify.dev/docs/api/admin-graphql/latest/queries/automaticdiscount)
+- [automaticDiscountNode](https://shopify.dev/docs/api/admin-graphql/latest/queries/automaticdiscountnode)
+- [automaticDiscountNodes](https://shopify.dev/docs/api/admin-graphql/latest/queries/automaticdiscountnodes)
+- [automaticDiscounts](https://shopify.dev/docs/api/admin-graphql/latest/queries/automaticdiscounts)
+- [automaticDiscountSavedSearches](https://shopify.dev/docs/api/admin-graphql/latest/queries/automaticdiscountsavedsearches)
+- [codeDiscountNode](https://shopify.dev/docs/api/admin-graphql/latest/queries/codediscountnode)
+- [codeDiscountNodeByCode](https://shopify.dev/docs/api/admin-graphql/latest/queries/codediscountnodebycode)
+- [codeDiscountNodes](https://shopify.dev/docs/api/admin-graphql/latest/queries/codediscountnodes)
+- [codeDiscountSavedSearches](https://shopify.dev/docs/api/admin-graphql/latest/queries/codediscountsavedsearches)
+- [discountCodesCount](https://shopify.dev/docs/api/admin-graphql/latest/queries/discountcodescount)
+- [discountNode](https://shopify.dev/docs/api/admin-graphql/latest/queries/discountnode)
+- [discountNodes](https://shopify.dev/docs/api/admin-graphql/latest/queries/discountnodes)
+- [discountNodesCount](https://shopify.dev/docs/api/admin-graphql/latest/queries/discountnodescount)
+- [discountRedeemCodeBulkCreation](https://shopify.dev/docs/api/admin-graphql/latest/queries/discountredeemcodebulkcreation)
+- [discountRedeemCodeSavedSearches](https://shopify.dev/docs/api/admin-graphql/latest/queries/discountredeemcodesavedsearches)
+- [marketingActivities](https://shopify.dev/docs/api/admin-graphql/latest/queries/marketingactivities)
+- [marketingActivity](https://shopify.dev/docs/api/admin-graphql/latest/queries/marketingactivity)
+- [marketingEvent](https://shopify.dev/docs/api/admin-graphql/latest/queries/marketingevent)
+- [marketingEvents](https://shopify.dev/docs/api/admin-graphql/latest/queries/marketingevents)
+- [serverPixel](https://shopify.dev/docs/api/admin-graphql/latest/queries/serverpixel)
+- [webPixel](https://shopify.dev/docs/api/admin-graphql/latest/queries/webpixel)
+
+## Events
+
+### Mutations
+
+- [flowTriggerReceive](https://shopify.dev/docs/api/admin-graphql/latest/mutations/flowtriggerreceive)
+### Objects
+
+- [BasicEvent](https://shopify.dev/docs/api/admin-graphql/latest/objects/basicevent)
+- [CommentEvent](https://shopify.dev/docs/api/admin-graphql/latest/objects/commentevent)
+- [CommentEventAttachment](https://shopify.dev/docs/api/admin-graphql/latest/objects/commenteventattachment)
+- [DeletionEvent](https://shopify.dev/docs/api/admin-graphql/latest/objects/deletionevent)
+- [ResourceAlert](https://shopify.dev/docs/api/admin-graphql/latest/objects/resourcealert)
+- [ResourceAlertAction](https://shopify.dev/docs/api/admin-graphql/latest/objects/resourcealertaction)
+- [ShopAlert](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopalert)
+- [ShopAlertAction](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopalertaction)
+### Queries
+
+- [deletionEvents](https://shopify.dev/docs/api/admin-graphql/latest/queries/deletionevents)
+- [event](https://shopify.dev/docs/api/admin-graphql/latest/queries/event)
+- [events](https://shopify.dev/docs/api/admin-graphql/latest/queries/events)
+- [eventsCount](https://shopify.dev/docs/api/admin-graphql/latest/queries/eventscount)
+
+## GraphQL Types
+
+### Objects
+
+- [AbandonedCheckoutEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/abandonedcheckoutedge)
+- [AbandonedCheckoutLineItemEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/abandonedcheckoutlineitemedge)
+- [AbandonmentEmailStateUpdateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/abandonmentemailstateupdateusererror)
+- [AbandonmentUpdateActivitiesDeliveryStatusesUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/abandonmentupdateactivitiesdeliverystatusesusererror)
+- [AppCreditEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/appcreditedge)
+- [AppDiscountTypeEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/appdiscounttypeedge)
+- [AppEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/appedge)
+- [AppInstallationEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/appinstallationedge)
+- [AppPurchaseOneTimeEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/apppurchaseonetimeedge)
+- [AppRevenueAttributionRecordEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/apprevenueattributionrecordedge)
+- [AppSubscriptionEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/appsubscriptionedge)
+- [AppSubscriptionTrialExtendUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/appsubscriptiontrialextendusererror)
+- [AppUsageRecordEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/appusagerecordedge)
+- [ArticleAuthorEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/articleauthoredge)
+- [ArticleCreateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/articlecreateusererror)
+- [ArticleDeleteUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/articledeleteusererror)
+- [ArticleEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/articleedge)
+- [ArticleUpdateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/articleupdateusererror)
+- [BillingAttemptUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/billingattemptusererror)
+- [BlogCreateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/blogcreateusererror)
+- [BlogDeleteUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/blogdeleteusererror)
+- [BlogEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/blogedge)
+- [BlogUpdateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/blogupdateusererror)
+- [BulkMutationUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/bulkmutationusererror)
+- [BulkOperationUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/bulkoperationusererror)
+- [BulkProductResourceFeedbackCreateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/bulkproductresourcefeedbackcreateusererror)
+- [BusinessCustomerUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/businesscustomerusererror)
+- [CalculatedDiscountApplicationEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/calculateddiscountapplicationedge)
+- [CalculatedLineItemEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/calculatedlineitemedge)
+- [CarrierServiceCreateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/carrierservicecreateusererror)
+- [CarrierServiceDeleteUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/carrierservicedeleteusererror)
+- [CarrierServiceUpdateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/carrierserviceupdateusererror)
+- [CartTransformCreateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/carttransformcreateusererror)
+- [CartTransformDeleteUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/carttransformdeleteusererror)
+- [CartTransformEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/carttransformedge)
+- [CashTrackingAdjustmentEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/cashtrackingadjustmentedge)
+- [CashTrackingSessionEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/cashtrackingsessionedge)
+- [CatalogEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/catalogedge)
+- [CatalogUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/catalogusererror)
+- [ChannelEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/channeledge)
+- [CheckoutBrandingUpsertUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutbrandingupsertusererror)
+- [CheckoutProfileEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/checkoutprofileedge)
+- [CollectionAddProductsV2UserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/collectionaddproductsv2usererror)
+- [CollectionEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/collectionedge)
+- [CollectionPublicationEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/collectionpublicationedge)
+- [CombinedListingChildEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/combinedlistingchildedge)
+- [CombinedListingUpdateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/combinedlistingupdateusererror)
+- [CommentApproveUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/commentapproveusererror)
+- [CommentDeleteUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/commentdeleteusererror)
+- [CommentEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/commentedge)
+- [CommentNotSpamUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/commentnotspamusererror)
+- [CommentSpamUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/commentspamusererror)
+- [CompanyContactEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/companycontactedge)
+- [CompanyContactRoleAssignmentEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/companycontactroleassignmentedge)
+- [CompanyContactRoleEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/companycontactroleedge)
+- [CompanyEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/companyedge)
+- [CompanyLocationEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/companylocationedge)
+- [CompanyLocationStaffMemberAssignmentEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/companylocationstaffmemberassignmentedge)
+- [CountryHarmonizedSystemCodeEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/countryharmonizedsystemcodeedge)
+- [CurrencySettingEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/currencysettingedge)
+- [CustomerAccountPageEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/customeraccountpageedge)
+- [CustomerCancelDataErasureUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/customercanceldataerasureusererror)
+- [CustomerEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/customeredge)
+- [CustomerEmailMarketingConsentUpdateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/customeremailmarketingconsentupdateusererror)
+- [CustomerMergeUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/customermergeusererror)
+- [CustomerMomentEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/customermomentedge)
+- [CustomerPaymentMethodCreateFromDuplicationDataUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/customerpaymentmethodcreatefromduplicationdatausererror)
+- [CustomerPaymentMethodEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/customerpaymentmethodedge)
+- [CustomerPaymentMethodGetDuplicationDataUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/customerpaymentmethodgetduplicationdatausererror)
+- [CustomerPaymentMethodGetUpdateUrlUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/customerpaymentmethodgetupdateurlusererror)
+- [CustomerPaymentMethodRemoteUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/customerpaymentmethodremoteusererror)
+- [CustomerPaymentMethodUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/customerpaymentmethodusererror)
+- [CustomerRequestDataErasureUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/customerrequestdataerasureusererror)
+- [CustomerSegmentMemberEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/customersegmentmemberedge)
+- [CustomerSegmentMembersQueryUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/customersegmentmembersqueryusererror)
+- [CustomerSendAccountInviteEmailUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/customersendaccountinviteemailusererror)
+- [CustomerSetUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/customersetusererror)
+- [CustomerVisitProductInfoEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/customervisitproductinfoedge)
+- [DataSaleOptOutUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/datasaleoptoutusererror)
+- [DelegateAccessTokenCreateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/delegateaccesstokencreateusererror)
+- [DelegateAccessTokenDestroyUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/delegateaccesstokendestroyusererror)
+- [DeletionEventEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/deletioneventedge)
+- [DeliveryCarrierServiceEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverycarrierserviceedge)
+- [DeliveryCustomizationEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverycustomizationedge)
+- [DeliveryLocationGroupZoneEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverylocationgroupzoneedge)
+- [DeliveryMethodDefinitionEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverymethoddefinitionedge)
+- [DeliveryProfileEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliveryprofileedge)
+- [DeliveryProfileItemEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliveryprofileitemedge)
+- [DeliveryPromiseParticipantEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverypromiseparticipantedge)
+- [DeliveryPromiseProviderUpsertUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverypromiseproviderupsertusererror)
+- [DiscountAllocationEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountallocationedge)
+- [DiscountApplicationEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountapplicationedge)
+- [DiscountAutomaticEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountautomaticedge)
+- [DiscountAutomaticNodeEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountautomaticnodeedge)
+- [DiscountCodeNodeEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountcodenodeedge)
+- [DiscountNodeEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountnodeedge)
+- [DiscountRedeemCodeBulkCreationCodeEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountredeemcodebulkcreationcodeedge)
+- [DiscountRedeemCodeEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountredeemcodeedge)
+- [DiscountUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountusererror)
+- [DisputeEvidenceUpdateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/disputeevidenceupdateusererror)
+- [DraftOrderEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/draftorderedge)
+- [DraftOrderLineItemEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/draftorderlineitemedge)
+- [ErrorsServerPixelUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/errorsserverpixelusererror)
+- [ErrorsWebPixelUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/errorswebpixelusererror)
+- [EventEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/eventedge)
+- [ExchangeLineItemEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/exchangelineitemedge)
+- [FileEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/fileedge)
+- [FilesUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/filesusererror)
+- [FulfillmentConstraintRuleCreateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentconstraintrulecreateusererror)
+- [FulfillmentConstraintRuleDeleteUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentconstraintruledeleteusererror)
+- [FulfillmentConstraintRuleUpdateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentconstraintruleupdateusererror)
+- [FulfillmentEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentedge)
+- [FulfillmentEventEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmenteventedge)
+- [FulfillmentLineItemEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentlineitemedge)
+- [FulfillmentOrderEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentorderedge)
+- [FulfillmentOrderHoldUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentorderholdusererror)
+- [FulfillmentOrderLineItemEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentorderlineitemedge)
+- [FulfillmentOrderLineItemsPreparedForPickupUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentorderlineitemspreparedforpickupusererror)
+- [FulfillmentOrderLocationForMoveEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentorderlocationformoveedge)
+- [FulfillmentOrderMerchantRequestEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentordermerchantrequestedge)
+- [FulfillmentOrderMergeUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentordermergeusererror)
+- [FulfillmentOrderReleaseHoldUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentorderreleaseholdusererror)
+- [FulfillmentOrderRescheduleUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentorderrescheduleusererror)
+- [FulfillmentOrderSplitUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentordersplitusererror)
+- [FulfillmentOrdersSetFulfillmentDeadlineUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentorderssetfulfillmentdeadlineusererror)
+- [GiftCardDeactivateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/giftcarddeactivateusererror)
+- [GiftCardEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/giftcardedge)
+- [GiftCardSendNotificationToCustomerUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/giftcardsendnotificationtocustomerusererror)
+- [GiftCardSendNotificationToRecipientUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/giftcardsendnotificationtorecipientusererror)
+- [GiftCardTransactionEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/giftcardtransactionedge)
+- [GiftCardTransactionUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/giftcardtransactionusererror)
+- [GiftCardUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/giftcardusererror)
+- [ImageEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/imageedge)
+- [InventoryAdjustQuantitiesUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventoryadjustquantitiesusererror)
+- [InventoryBulkToggleActivationUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventorybulktoggleactivationusererror)
+- [InventoryItemEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventoryitemedge)
+- [InventoryLevelEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventoryleveledge)
+- [InventoryMoveQuantitiesUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventorymovequantitiesusererror)
+- [InventoryScheduledChangeEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventoryscheduledchangeedge)
+- [InventorySetOnHandQuantitiesUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventorysetonhandquantitiesusererror)
+- [InventorySetQuantitiesUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventorysetquantitiesusererror)
+- [InventorySetScheduledChangesUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventorysetscheduledchangesusererror)
+- [InventoryShipmentAddItemsUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventoryshipmentadditemsusererror)
+- [InventoryShipmentCreateInTransitUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventoryshipmentcreateintransitusererror)
+- [InventoryShipmentCreateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventoryshipmentcreateusererror)
+- [InventoryShipmentDeleteUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventoryshipmentdeleteusererror)
+- [InventoryShipmentEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventoryshipmentedge)
+- [InventoryShipmentLineItemEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventoryshipmentlineitemedge)
+- [InventoryShipmentMarkInTransitUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventoryshipmentmarkintransitusererror)
+- [InventoryShipmentReceiveUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventoryshipmentreceiveusererror)
+- [InventoryShipmentRemoveItemsUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventoryshipmentremoveitemsusererror)
+- [InventoryShipmentSetTrackingUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventoryshipmentsettrackingusererror)
+- [InventoryShipmentUpdateItemQuantitiesUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventoryshipmentupdateitemquantitiesusererror)
+- [InventoryTransferCancelUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventorytransfercancelusererror)
+- [InventoryTransferCreateAsReadyToShipUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventorytransfercreateasreadytoshipusererror)
+- [InventoryTransferCreateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventorytransfercreateusererror)
+- [InventoryTransferDeleteUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventorytransferdeleteusererror)
+- [InventoryTransferDuplicateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventorytransferduplicateusererror)
+- [InventoryTransferEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventorytransferedge)
+- [InventoryTransferEditUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventorytransfereditusererror)
+- [InventoryTransferLineItemEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventorytransferlineitemedge)
+- [InventoryTransferMarkAsReadyToShipUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventorytransfermarkasreadytoshipusererror)
+- [InventoryTransferRemoveItemsUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventorytransferremoveitemsusererror)
+- [InventoryTransferSetItemsUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventorytransfersetitemsusererror)
+- [LineItemEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/lineitemedge)
+- [LocalizationExtensionEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/localizationextensionedge)
+- [LocalizedFieldEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/localizedfieldedge)
+- [LocationActivateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/locationactivateusererror)
+- [LocationAddUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/locationaddusererror)
+- [LocationDeactivateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/locationdeactivateusererror)
+- [LocationDeleteUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/locationdeleteusererror)
+- [LocationEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/locationedge)
+- [LocationEditUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/locationeditusererror)
+- [MailingAddressEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/mailingaddressedge)
+- [MarketCatalogEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketcatalogedge)
+- [MarketCurrencySettingsUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketcurrencysettingsusererror)
+- [MarketEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketedge)
+- [MarketingActivityEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketingactivityedge)
+- [MarketingActivityUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketingactivityusererror)
+- [MarketingEventEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketingeventedge)
+- [MarketLocalizableResourceEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketlocalizableresourceedge)
+- [MarketRegionEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketregionedge)
+- [MarketUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketusererror)
+- [MarketWebPresenceEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketwebpresenceedge)
+- [MediaEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaedge)
+- [MediaUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediausererror)
+- [MenuCreateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/menucreateusererror)
+- [MenuDeleteUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/menudeleteusererror)
+- [MenuEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/menuedge)
+- [MenuUpdateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/menuupdateusererror)
+- [MetafieldDefinitionConstraintValueEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafielddefinitionconstraintvalueedge)
+- [MetafieldDefinitionCreateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafielddefinitioncreateusererror)
+- [MetafieldDefinitionDeleteUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafielddefinitiondeleteusererror)
+- [MetafieldDefinitionEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafielddefinitionedge)
+- [MetafieldDefinitionPinUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafielddefinitionpinusererror)
+- [MetafieldDefinitionUnpinUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafielddefinitionunpinusererror)
+- [MetafieldDefinitionUpdateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafielddefinitionupdateusererror)
+- [MetafieldEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafieldedge)
+- [MetafieldReferenceEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafieldreferenceedge)
+- [MetafieldRelationEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafieldrelationedge)
+- [MetafieldsSetUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafieldssetusererror)
+- [MetaobjectDefinitionEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/metaobjectdefinitionedge)
+- [MetaobjectEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/metaobjectedge)
+- [MetaobjectUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/metaobjectusererror)
+- [MobilePlatformApplicationEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/mobileplatformapplicationedge)
+- [MobilePlatformApplicationUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/mobileplatformapplicationusererror)
+- [OnlineStoreThemeEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/onlinestorethemeedge)
+- [OnlineStoreThemeFileEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/onlinestorethemefileedge)
+- [OrderAdjustmentEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/orderadjustmentedge)
+- [OrderCancelUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/ordercancelusererror)
+- [OrderCreateMandatePaymentUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/ordercreatemandatepaymentusererror)
+- [OrderCreateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/ordercreateusererror)
+- [OrderCustomerRemoveUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/ordercustomerremoveusererror)
+- [OrderCustomerSetUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/ordercustomersetusererror)
+- [OrderDeleteUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/orderdeleteusererror)
+- [OrderEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/orderedge)
+- [OrderEditAddShippingLineUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/ordereditaddshippinglineusererror)
+- [OrderEditRemoveDiscountUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/ordereditremovediscountusererror)
+- [OrderEditRemoveShippingLineUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/ordereditremoveshippinglineusererror)
+- [OrderEditUpdateDiscountUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/ordereditupdatediscountusererror)
+- [OrderEditUpdateShippingLineUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/ordereditupdateshippinglineusererror)
+- [OrderInvoiceSendUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/orderinvoicesendusererror)
+- [OrderRiskAssessmentCreateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/orderriskassessmentcreateusererror)
+- [OrderStagedChangeEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/orderstagedchangeedge)
+- [OrderTransactionEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/ordertransactionedge)
+- [PageCreateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/pagecreateusererror)
+- [PageDeleteUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/pagedeleteusererror)
+- [PageEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/pageedge)
+- [PageUpdateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/pageupdateusererror)
+- [PaymentCustomizationEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/paymentcustomizationedge)
+- [PaymentReminderSendUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/paymentremindersendusererror)
+- [PaymentScheduleEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/paymentscheduleedge)
+- [PaymentTermsCreateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/paymenttermscreateusererror)
+- [PaymentTermsDeleteUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/paymenttermsdeleteusererror)
+- [PaymentTermsUpdateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/paymenttermsupdateusererror)
+- [PriceListEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/pricelistedge)
+- [PriceListFixedPricesByProductBulkUpdateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/pricelistfixedpricesbyproductbulkupdateusererror)
+- [PriceListPriceEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/pricelistpriceedge)
+- [PriceListPriceUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/pricelistpriceusererror)
+- [PriceListUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/pricelistusererror)
+- [PriceRuleDiscountCodeEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/pricerulediscountcodeedge)
+- [PrivacyFeaturesDisableUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/privacyfeaturesdisableusererror)
+- [ProductBundleComponentEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/productbundlecomponentedge)
+- [ProductBundleMutationUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/productbundlemutationusererror)
+- [ProductChangeStatusUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/productchangestatususererror)
+- [ProductComponentTypeEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/productcomponenttypeedge)
+- [ProductEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/productedge)
+- [ProductFeedCreateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/productfeedcreateusererror)
+- [ProductFeedDeleteUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/productfeeddeleteusererror)
+- [ProductFeedEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/productfeededge)
+- [ProductFullSyncUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/productfullsyncusererror)
+- [ProductOptionsCreateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/productoptionscreateusererror)
+- [ProductOptionsDeleteUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/productoptionsdeleteusererror)
+- [ProductOptionsReorderUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/productoptionsreorderusererror)
+- [ProductOptionUpdateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/productoptionupdateusererror)
+- [ProductPublicationEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/productpublicationedge)
+- [ProductSetUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/productsetusererror)
+- [ProductVariantComponentEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/productvariantcomponentedge)
+- [ProductVariantEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/productvariantedge)
+- [ProductVariantPricePairEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/productvariantpricepairedge)
+- [ProductVariantRelationshipBulkUpdateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/productvariantrelationshipbulkupdateusererror)
+- [ProductVariantsBulkCreateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/productvariantsbulkcreateusererror)
+- [ProductVariantsBulkDeleteUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/productvariantsbulkdeleteusererror)
+- [ProductVariantsBulkReorderUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/productvariantsbulkreorderusererror)
+- [ProductVariantsBulkUpdateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/productvariantsbulkupdateusererror)
+- [PublicationEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/publicationedge)
+- [PublicationUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/publicationusererror)
+- [PubSubWebhookSubscriptionCreateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/pubsubwebhooksubscriptioncreateusererror)
+- [PubSubWebhookSubscriptionUpdateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/pubsubwebhooksubscriptionupdateusererror)
+- [QuantityPriceBreakEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/quantitypricebreakedge)
+- [QuantityPricingByVariantUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/quantitypricingbyvariantusererror)
+- [QuantityRuleEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/quantityruleedge)
+- [QuantityRuleUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/quantityruleusererror)
+- [RefundEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/refundedge)
+- [RefundLineItemEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/refundlineitemedge)
+- [RefundShippingLineEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/refundshippinglineedge)
+- [ResourcePublicationEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/resourcepublicationedge)
+- [ResourcePublicationV2Edge](https://shopify.dev/docs/api/admin-graphql/latest/objects/resourcepublicationv2edge)
+- [ReturnableFulfillmentEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/returnablefulfillmentedge)
+- [ReturnableFulfillmentLineItemEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/returnablefulfillmentlineitemedge)
+- [ReturnEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/returnedge)
+- [ReturnLineItemTypeEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/returnlineitemtypeedge)
+- [ReturnUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/returnusererror)
+- [ReverseDeliveryEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/reversedeliveryedge)
+- [ReverseDeliveryLineItemEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/reversedeliverylineitemedge)
+- [ReverseFulfillmentOrderEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/reversefulfillmentorderedge)
+- [ReverseFulfillmentOrderLineItemEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/reversefulfillmentorderlineitemedge)
+- [SaleEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/saleedge)
+- [SalesAgreementEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/salesagreementedge)
+- [SavedSearchEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/savedsearchedge)
+- [ScriptTagEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/scripttagedge)
+- [SearchResultEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/searchresultedge)
+- [SegmentEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/segmentedge)
+- [SegmentFilterEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/segmentfilteredge)
+- [SegmentMigrationEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/segmentmigrationedge)
+- [SegmentValueEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/segmentvalueedge)
+- [SellingPlanEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplanedge)
+- [SellingPlanGroupEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplangroupedge)
+- [SellingPlanGroupUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplangroupusererror)
+- [ShippingLineEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/shippinglineedge)
+- [ShopifyFunctionEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifyfunctionedge)
+- [ShopifyPaymentsBalanceTransactionEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentsbalancetransactionedge)
+- [ShopifyPaymentsBankAccountEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentsbankaccountedge)
+- [ShopifyPaymentsDisputeEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentsdisputeedge)
+- [ShopifyPaymentsPayoutAlternateCurrencyCreateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentspayoutalternatecurrencycreateusererror)
+- [ShopifyPaymentsPayoutEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentspayoutedge)
+- [ShopPayPaymentRequestReceiptEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/shoppaypaymentrequestreceiptedge)
+- [ShopPolicyUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/shoppolicyusererror)
+- [ShopResourceFeedbackCreateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopresourcefeedbackcreateusererror)
+- [StaffMemberEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/staffmemberedge)
+- [StandardMetafieldDefinitionEnableUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/standardmetafielddefinitionenableusererror)
+- [StandardMetafieldDefinitionTemplateEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/standardmetafielddefinitiontemplateedge)
+- [StoreCreditAccountCreditUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/storecreditaccountcreditusererror)
+- [StoreCreditAccountDebitUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/storecreditaccountdebitusererror)
+- [StoreCreditAccountEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/storecreditaccountedge)
+- [StoreCreditAccountTransactionEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/storecreditaccounttransactionedge)
+- [StorefrontAccessTokenEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/storefrontaccesstokenedge)
+- [StringEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/stringedge)
+- [SubscriptionBillingAttemptEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptionbillingattemptedge)
+- [SubscriptionBillingCycleBulkUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptionbillingcyclebulkusererror)
+- [SubscriptionBillingCycleEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptionbillingcycleedge)
+- [SubscriptionBillingCycleSkipUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptionbillingcycleskipusererror)
+- [SubscriptionBillingCycleUnskipUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptionbillingcycleunskipusererror)
+- [SubscriptionBillingCycleUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptionbillingcycleusererror)
+- [SubscriptionContractEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptioncontractedge)
+- [SubscriptionContractStatusUpdateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptioncontractstatusupdateusererror)
+- [SubscriptionContractUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptioncontractusererror)
+- [SubscriptionDiscountEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptiondiscountedge)
+- [SubscriptionDraftUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptiondraftusererror)
+- [SubscriptionLineEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptionlineedge)
+- [SubscriptionManualDiscountEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptionmanualdiscountedge)
+- [TaxAppConfigureUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/taxappconfigureusererror)
+- [TaxonomyCategoryAttributeEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/taxonomycategoryattributeedge)
+- [TaxonomyCategoryEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/taxonomycategoryedge)
+- [TaxonomyValueEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/taxonomyvalueedge)
+- [TenderTransactionEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/tendertransactionedge)
+- [ThemeCreateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/themecreateusererror)
+- [ThemeDeleteUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/themedeleteusererror)
+- [ThemePublishUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/themepublishusererror)
+- [ThemeUpdateUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/themeupdateusererror)
+- [TransactionVoidUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/transactionvoidusererror)
+- [TranslatableResourceEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/translatableresourceedge)
+- [TranslationUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/translationusererror)
+- [UrlRedirectBulkDeleteByIdsUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/urlredirectbulkdeletebyidsusererror)
+- [UrlRedirectBulkDeleteBySavedSearchUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/urlredirectbulkdeletebysavedsearchusererror)
+- [UrlRedirectBulkDeleteBySearchUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/urlredirectbulkdeletebysearchusererror)
+- [UrlRedirectEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/urlredirectedge)
+- [UrlRedirectImportUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/urlredirectimportusererror)
+- [UrlRedirectUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/urlredirectusererror)
+- [UserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/usererror)
+- [ValidationEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/validationedge)
+- [ValidationUserError](https://shopify.dev/docs/api/admin-graphql/latest/objects/validationusererror)
+- [WebhookSubscriptionEdge](https://shopify.dev/docs/api/admin-graphql/latest/objects/webhooksubscriptionedge)
+
+## Inventory
+
+### Mutations
+
+- [inventoryActivate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventoryactivate)
+- [inventoryAdjustQuantities](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventoryadjustquantities)
+- [inventoryBulkToggleActivation](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventorybulktoggleactivation)
+- [inventoryDeactivate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventorydeactivate)
+- [inventoryItemUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventoryitemupdate)
+- [inventoryMoveQuantities](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventorymovequantities)
+- [inventorySetOnHandQuantities](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventorysetonhandquantities)
+- [inventorySetQuantities](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventorysetquantities)
+- [inventorySetScheduledChanges](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventorysetscheduledchanges)
+- [inventoryShipmentAddItems](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventoryshipmentadditems)
+- [inventoryShipmentCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventoryshipmentcreate)
+- [inventoryShipmentCreateInTransit](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventoryshipmentcreateintransit)
+- [inventoryShipmentDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventoryshipmentdelete)
+- [inventoryShipmentMarkInTransit](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventoryshipmentmarkintransit)
+- [inventoryShipmentReceive](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventoryshipmentreceive)
+- [inventoryShipmentRemoveItems](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventoryshipmentremoveitems)
+- [inventoryShipmentSetTracking](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventoryshipmentsettracking)
+- [inventoryShipmentUpdateItemQuantities](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventoryshipmentupdateitemquantities)
+- [inventoryTransferCancel](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventorytransfercancel)
+- [inventoryTransferCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventorytransfercreate)
+- [inventoryTransferCreateAsReadyToShip](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventorytransfercreateasreadytoship)
+- [inventoryTransferDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventorytransferdelete)
+- [inventoryTransferDuplicate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventorytransferduplicate)
+- [inventoryTransferEdit](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventorytransferedit)
+- [inventoryTransferMarkAsReadyToShip](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventorytransfermarkasreadytoship)
+- [inventoryTransferRemoveItems](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventorytransferremoveitems)
+- [inventoryTransferSetItems](https://shopify.dev/docs/api/admin-graphql/latest/mutations/inventorytransfersetitems)
+### Objects
+
+- [CountryHarmonizedSystemCode](https://shopify.dev/docs/api/admin-graphql/latest/objects/countryharmonizedsystemcode)
+- [InventoryAdjustmentGroup](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventoryadjustmentgroup)
+- [InventoryChange](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventorychange)
+- [InventoryItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventoryitem)
+- [InventoryItemMeasurement](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventoryitemmeasurement)
+- [InventoryLevel](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventorylevel)
+- [InventoryProperties](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventoryproperties)
+- [InventoryQuantity](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventoryquantity)
+- [InventoryQuantityName](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventoryquantityname)
+- [InventoryScheduledChange](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventoryscheduledchange)
+- [InventoryShipment](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventoryshipment)
+- [InventoryShipmentLineItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventoryshipmentlineitem)
+- [InventoryShipmentTracking](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventoryshipmenttracking)
+- [InventoryTransfer](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventorytransfer)
+- [InventoryTransferLineItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventorytransferlineitem)
+- [InventoryTransferLineItemUpdate](https://shopify.dev/docs/api/admin-graphql/latest/objects/inventorytransferlineitemupdate)
+### Queries
+
+- [inventoryItem](https://shopify.dev/docs/api/admin-graphql/latest/queries/inventoryitem)
+- [inventoryItems](https://shopify.dev/docs/api/admin-graphql/latest/queries/inventoryitems)
+- [inventoryLevel](https://shopify.dev/docs/api/admin-graphql/latest/queries/inventorylevel)
+- [inventoryProperties](https://shopify.dev/docs/api/admin-graphql/latest/queries/inventoryproperties)
+- [inventoryShipment](https://shopify.dev/docs/api/admin-graphql/latest/queries/inventoryshipment)
+- [inventoryTransfer](https://shopify.dev/docs/api/admin-graphql/latest/queries/inventorytransfer)
+- [inventoryTransfers](https://shopify.dev/docs/api/admin-graphql/latest/queries/inventorytransfers)
+
+## Localizations
+
+### Mutations
+
+- [marketLocalizationsRegister](https://shopify.dev/docs/api/admin-graphql/latest/mutations/marketlocalizationsregister)
+- [marketLocalizationsRemove](https://shopify.dev/docs/api/admin-graphql/latest/mutations/marketlocalizationsremove)
+- [shopLocaleDisable](https://shopify.dev/docs/api/admin-graphql/latest/mutations/shoplocaledisable)
+- [shopLocaleEnable](https://shopify.dev/docs/api/admin-graphql/latest/mutations/shoplocaleenable)
+- [shopLocaleUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/shoplocaleupdate)
+- [translationsRegister](https://shopify.dev/docs/api/admin-graphql/latest/mutations/translationsregister)
+- [translationsRemove](https://shopify.dev/docs/api/admin-graphql/latest/mutations/translationsremove)
+### Objects
+
+- [Locale](https://shopify.dev/docs/api/admin-graphql/latest/objects/locale)
+- [LocalizationExtension](https://shopify.dev/docs/api/admin-graphql/latest/objects/localizationextension)
+- [MarketLocalizableContent](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketlocalizablecontent)
+- [MarketLocalizableResource](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketlocalizableresource)
+- [MarketLocalization](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketlocalization)
+- [ShopLocale](https://shopify.dev/docs/api/admin-graphql/latest/objects/shoplocale)
+- [TranslatableContent](https://shopify.dev/docs/api/admin-graphql/latest/objects/translatablecontent)
+- [TranslatableResource](https://shopify.dev/docs/api/admin-graphql/latest/objects/translatableresource)
+- [Translation](https://shopify.dev/docs/api/admin-graphql/latest/objects/translation)
+### Queries
+
+- [availableLocales](https://shopify.dev/docs/api/admin-graphql/latest/queries/availablelocales)
+- [marketLocalizableResource](https://shopify.dev/docs/api/admin-graphql/latest/queries/marketlocalizableresource)
+- [marketLocalizableResources](https://shopify.dev/docs/api/admin-graphql/latest/queries/marketlocalizableresources)
+- [marketLocalizableResourcesByIds](https://shopify.dev/docs/api/admin-graphql/latest/queries/marketlocalizableresourcesbyids)
+- [shopLocales](https://shopify.dev/docs/api/admin-graphql/latest/queries/shoplocales)
+- [translatableResource](https://shopify.dev/docs/api/admin-graphql/latest/queries/translatableresource)
+- [translatableResources](https://shopify.dev/docs/api/admin-graphql/latest/queries/translatableresources)
+- [translatableResourcesByIds](https://shopify.dev/docs/api/admin-graphql/latest/queries/translatableresourcesbyids)
+
+## Metafields
+
+### Mutations
+
+- [metafieldDefinitionCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/metafielddefinitioncreate)
+- [metafieldDefinitionDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/metafielddefinitiondelete)
+- [metafieldDefinitionPin](https://shopify.dev/docs/api/admin-graphql/latest/mutations/metafielddefinitionpin)
+- [metafieldDefinitionUnpin](https://shopify.dev/docs/api/admin-graphql/latest/mutations/metafielddefinitionunpin)
+- [metafieldDefinitionUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/metafielddefinitionupdate)
+- [metafieldsDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/metafieldsdelete)
+- [metafieldsSet](https://shopify.dev/docs/api/admin-graphql/latest/mutations/metafieldsset)
+- [standardMetafieldDefinitionEnable](https://shopify.dev/docs/api/admin-graphql/latest/mutations/standardmetafielddefinitionenable)
+### Objects
+
+- [Metafield](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafield)
+- [MetafieldDefinition](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafielddefinition)
+- [MetafieldDefinitionSupportedValidation](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafielddefinitionsupportedvalidation)
+- [MetafieldDefinitionType](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafielddefinitiontype)
+- [MetafieldDefinitionValidation](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafielddefinitionvalidation)
+- [StandardMetafieldDefinitionTemplate](https://shopify.dev/docs/api/admin-graphql/latest/objects/standardmetafielddefinitiontemplate)
+### Queries
+
+- [metafieldDefinition](https://shopify.dev/docs/api/admin-graphql/latest/queries/metafielddefinition)
+- [metafieldDefinitions](https://shopify.dev/docs/api/admin-graphql/latest/queries/metafielddefinitions)
+- [metafieldDefinitionTypes](https://shopify.dev/docs/api/admin-graphql/latest/queries/metafielddefinitiontypes)
+- [standardMetafieldDefinitionTemplates](https://shopify.dev/docs/api/admin-graphql/latest/queries/standardmetafielddefinitiontemplates)
+
+## Metaobjects
+
+### Mutations
+
+- [metaobjectBulkDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/metaobjectbulkdelete)
+- [metaobjectCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/metaobjectcreate)
+- [metaobjectDefinitionCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/metaobjectdefinitioncreate)
+- [metaobjectDefinitionDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/metaobjectdefinitiondelete)
+- [metaobjectDefinitionUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/metaobjectdefinitionupdate)
+- [metaobjectDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/metaobjectdelete)
+- [metaobjectUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/metaobjectupdate)
+- [metaobjectUpsert](https://shopify.dev/docs/api/admin-graphql/latest/mutations/metaobjectupsert)
+- [standardMetaobjectDefinitionEnable](https://shopify.dev/docs/api/admin-graphql/latest/mutations/standardmetaobjectdefinitionenable)
+### Objects
+
+- [Metaobject](https://shopify.dev/docs/api/admin-graphql/latest/objects/metaobject)
+- [MetaobjectAccess](https://shopify.dev/docs/api/admin-graphql/latest/objects/metaobjectaccess)
+- [MetaobjectCapabilities](https://shopify.dev/docs/api/admin-graphql/latest/objects/metaobjectcapabilities)
+- [MetaobjectCapabilitiesOnlineStore](https://shopify.dev/docs/api/admin-graphql/latest/objects/metaobjectcapabilitiesonlinestore)
+- [MetaobjectCapabilitiesPublishable](https://shopify.dev/docs/api/admin-graphql/latest/objects/metaobjectcapabilitiespublishable)
+- [MetaobjectCapabilitiesRenderable](https://shopify.dev/docs/api/admin-graphql/latest/objects/metaobjectcapabilitiesrenderable)
+- [MetaobjectCapabilitiesTranslatable](https://shopify.dev/docs/api/admin-graphql/latest/objects/metaobjectcapabilitiestranslatable)
+- [MetaobjectCapabilityData](https://shopify.dev/docs/api/admin-graphql/latest/objects/metaobjectcapabilitydata)
+- [MetaobjectCapabilityDataOnlineStore](https://shopify.dev/docs/api/admin-graphql/latest/objects/metaobjectcapabilitydataonlinestore)
+- [MetaobjectCapabilityDataPublishable](https://shopify.dev/docs/api/admin-graphql/latest/objects/metaobjectcapabilitydatapublishable)
+- [MetaobjectCapabilityDefinitionDataOnlineStore](https://shopify.dev/docs/api/admin-graphql/latest/objects/metaobjectcapabilitydefinitiondataonlinestore)
+- [MetaobjectCapabilityDefinitionDataRenderable](https://shopify.dev/docs/api/admin-graphql/latest/objects/metaobjectcapabilitydefinitiondatarenderable)
+- [MetaobjectDefinition](https://shopify.dev/docs/api/admin-graphql/latest/objects/metaobjectdefinition)
+- [MetaobjectField](https://shopify.dev/docs/api/admin-graphql/latest/objects/metaobjectfield)
+- [MetaobjectFieldDefinition](https://shopify.dev/docs/api/admin-graphql/latest/objects/metaobjectfielddefinition)
+### Queries
+
+- [metaobject](https://shopify.dev/docs/api/admin-graphql/latest/queries/metaobject)
+- [metaobjectByHandle](https://shopify.dev/docs/api/admin-graphql/latest/queries/metaobjectbyhandle)
+- [metaobjectDefinition](https://shopify.dev/docs/api/admin-graphql/latest/queries/metaobjectdefinition)
+- [metaobjectDefinitionByType](https://shopify.dev/docs/api/admin-graphql/latest/queries/metaobjectdefinitionbytype)
+- [metaobjectDefinitions](https://shopify.dev/docs/api/admin-graphql/latest/queries/metaobjectdefinitions)
+- [metaobjects](https://shopify.dev/docs/api/admin-graphql/latest/queries/metaobjects)
+
+## Online store
+
+### Mutations
+
+- [articleCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/articlecreate)
+- [articleDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/articledelete)
+- [articleUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/articleupdate)
+- [blogCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/blogcreate)
+- [blogDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/blogdelete)
+- [blogUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/blogupdate)
+- [commentApprove](https://shopify.dev/docs/api/admin-graphql/latest/mutations/commentapprove)
+- [commentDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/commentdelete)
+- [commentNotSpam](https://shopify.dev/docs/api/admin-graphql/latest/mutations/commentnotspam)
+- [commentSpam](https://shopify.dev/docs/api/admin-graphql/latest/mutations/commentspam)
+- [menuCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/menucreate)
+- [menuDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/menudelete)
+- [menuUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/menuupdate)
+- [pageCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/pagecreate)
+- [pageDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/pagedelete)
+- [pageUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/pageupdate)
+- [scriptTagCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/scripttagcreate)
+- [scriptTagDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/scripttagdelete)
+- [scriptTagUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/scripttagupdate)
+- [themeCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/themecreate)
+- [themeDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/themedelete)
+- [themeFilesCopy](https://shopify.dev/docs/api/admin-graphql/latest/mutations/themefilescopy)
+- [themeFilesDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/themefilesdelete)
+- [themeFilesUpsert](https://shopify.dev/docs/api/admin-graphql/latest/mutations/themefilesupsert)
+- [themePublish](https://shopify.dev/docs/api/admin-graphql/latest/mutations/themepublish)
+- [themeUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/themeupdate)
+- [urlRedirectBulkDeleteAll](https://shopify.dev/docs/api/admin-graphql/latest/mutations/urlredirectbulkdeleteall)
+- [urlRedirectBulkDeleteByIds](https://shopify.dev/docs/api/admin-graphql/latest/mutations/urlredirectbulkdeletebyids)
+- [urlRedirectBulkDeleteBySavedSearch](https://shopify.dev/docs/api/admin-graphql/latest/mutations/urlredirectbulkdeletebysavedsearch)
+- [urlRedirectBulkDeleteBySearch](https://shopify.dev/docs/api/admin-graphql/latest/mutations/urlredirectbulkdeletebysearch)
+- [urlRedirectCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/urlredirectcreate)
+- [urlRedirectDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/urlredirectdelete)
+- [urlRedirectImportCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/urlredirectimportcreate)
+- [urlRedirectImportSubmit](https://shopify.dev/docs/api/admin-graphql/latest/mutations/urlredirectimportsubmit)
+- [urlRedirectUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/urlredirectupdate)
+### Objects
+
+- [Article](https://shopify.dev/docs/api/admin-graphql/latest/objects/article)
+- [ArticleAuthor](https://shopify.dev/docs/api/admin-graphql/latest/objects/articleauthor)
+- [Blog](https://shopify.dev/docs/api/admin-graphql/latest/objects/blog)
+- [BlogFeed](https://shopify.dev/docs/api/admin-graphql/latest/objects/blogfeed)
+- [Comment](https://shopify.dev/docs/api/admin-graphql/latest/objects/comment)
+- [CommentAuthor](https://shopify.dev/docs/api/admin-graphql/latest/objects/commentauthor)
+- [CustomerAccountAppExtensionPage](https://shopify.dev/docs/api/admin-graphql/latest/objects/customeraccountappextensionpage)
+- [CustomerAccountNativePage](https://shopify.dev/docs/api/admin-graphql/latest/objects/customeraccountnativepage)
+- [MarketsThemesEntitlement](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketsthemesentitlement)
+- [Menu](https://shopify.dev/docs/api/admin-graphql/latest/objects/menu)
+- [MenuItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/menuitem)
+- [OnlineStore](https://shopify.dev/docs/api/admin-graphql/latest/objects/onlinestore)
+- [OnlineStorePasswordProtection](https://shopify.dev/docs/api/admin-graphql/latest/objects/onlinestorepasswordprotection)
+- [OnlineStoreTheme](https://shopify.dev/docs/api/admin-graphql/latest/objects/onlinestoretheme)
+- [OnlineStoreThemeFile](https://shopify.dev/docs/api/admin-graphql/latest/objects/onlinestorethemefile)
+- [OnlineStoreThemeFileBodyBase64](https://shopify.dev/docs/api/admin-graphql/latest/objects/onlinestorethemefilebodybase64)
+- [OnlineStoreThemeFileBodyText](https://shopify.dev/docs/api/admin-graphql/latest/objects/onlinestorethemefilebodytext)
+- [OnlineStoreThemeFileBodyUrl](https://shopify.dev/docs/api/admin-graphql/latest/objects/onlinestorethemefilebodyurl)
+- [OnlineStoreThemeFileOperationResult](https://shopify.dev/docs/api/admin-graphql/latest/objects/onlinestorethemefileoperationresult)
+- [OnlineStoreThemeFileReadResult](https://shopify.dev/docs/api/admin-graphql/latest/objects/onlinestorethemefilereadresult)
+- [OnlineStoreThemeFilesUserErrors](https://shopify.dev/docs/api/admin-graphql/latest/objects/onlinestorethemefilesusererrors)
+- [Page](https://shopify.dev/docs/api/admin-graphql/latest/objects/page)
+- [ScriptTag](https://shopify.dev/docs/api/admin-graphql/latest/objects/scripttag)
+- [SEO](https://shopify.dev/docs/api/admin-graphql/latest/objects/seo)
+- [UrlRedirect](https://shopify.dev/docs/api/admin-graphql/latest/objects/urlredirect)
+- [UrlRedirectImport](https://shopify.dev/docs/api/admin-graphql/latest/objects/urlredirectimport)
+- [UrlRedirectImportPreview](https://shopify.dev/docs/api/admin-graphql/latest/objects/urlredirectimportpreview)
+### Queries
+
+- [article](https://shopify.dev/docs/api/admin-graphql/latest/queries/article)
+- [articleAuthors](https://shopify.dev/docs/api/admin-graphql/latest/queries/articleauthors)
+- [articles](https://shopify.dev/docs/api/admin-graphql/latest/queries/articles)
+- [blog](https://shopify.dev/docs/api/admin-graphql/latest/queries/blog)
+- [blogs](https://shopify.dev/docs/api/admin-graphql/latest/queries/blogs)
+- [blogsCount](https://shopify.dev/docs/api/admin-graphql/latest/queries/blogscount)
+- [comment](https://shopify.dev/docs/api/admin-graphql/latest/queries/comment)
+- [comments](https://shopify.dev/docs/api/admin-graphql/latest/queries/comments)
+- [customerAccountPage](https://shopify.dev/docs/api/admin-graphql/latest/queries/customeraccountpage)
+- [customerAccountPages](https://shopify.dev/docs/api/admin-graphql/latest/queries/customeraccountpages)
+- [menu](https://shopify.dev/docs/api/admin-graphql/latest/queries/menu)
+- [menus](https://shopify.dev/docs/api/admin-graphql/latest/queries/menus)
+- [onlineStore](https://shopify.dev/docs/api/admin-graphql/latest/queries/onlinestore)
+- [page](https://shopify.dev/docs/api/admin-graphql/latest/queries/page)
+- [pages](https://shopify.dev/docs/api/admin-graphql/latest/queries/pages)
+- [pagesCount](https://shopify.dev/docs/api/admin-graphql/latest/queries/pagescount)
+- [scriptTag](https://shopify.dev/docs/api/admin-graphql/latest/queries/scripttag)
+- [scriptTags](https://shopify.dev/docs/api/admin-graphql/latest/queries/scripttags)
+- [theme](https://shopify.dev/docs/api/admin-graphql/latest/queries/theme)
+- [themes](https://shopify.dev/docs/api/admin-graphql/latest/queries/themes)
+- [urlRedirect](https://shopify.dev/docs/api/admin-graphql/latest/queries/urlredirect)
+- [urlRedirectImport](https://shopify.dev/docs/api/admin-graphql/latest/queries/urlredirectimport)
+- [urlRedirects](https://shopify.dev/docs/api/admin-graphql/latest/queries/urlredirects)
+- [urlRedirectSavedSearches](https://shopify.dev/docs/api/admin-graphql/latest/queries/urlredirectsavedsearches)
+- [urlRedirectsCount](https://shopify.dev/docs/api/admin-graphql/latest/queries/urlredirectscount)
+
+## Orders
+
+### Mutations
+
+- [delegateAccessTokenDestroy](https://shopify.dev/docs/api/admin-graphql/latest/mutations/delegateaccesstokendestroy)
+- [deliveryProfileRemove](https://shopify.dev/docs/api/admin-graphql/latest/mutations/deliveryprofileremove)
+- [deliveryShippingOriginAssign](https://shopify.dev/docs/api/admin-graphql/latest/mutations/deliveryshippingoriginassign)
+- [draftOrderBulkAddTags](https://shopify.dev/docs/api/admin-graphql/latest/mutations/draftorderbulkaddtags)
+- [draftOrderBulkDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/draftorderbulkdelete)
+- [draftOrderBulkRemoveTags](https://shopify.dev/docs/api/admin-graphql/latest/mutations/draftorderbulkremovetags)
+- [draftOrderCalculate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/draftordercalculate)
+- [draftOrderComplete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/draftordercomplete)
+- [draftOrderCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/draftordercreate)
+- [draftOrderCreateFromOrder](https://shopify.dev/docs/api/admin-graphql/latest/mutations/draftordercreatefromorder)
+- [draftOrderDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/draftorderdelete)
+- [draftOrderDuplicate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/draftorderduplicate)
+- [draftOrderInvoicePreview](https://shopify.dev/docs/api/admin-graphql/latest/mutations/draftorderinvoicepreview)
+- [draftOrderInvoiceSend](https://shopify.dev/docs/api/admin-graphql/latest/mutations/draftorderinvoicesend)
+- [draftOrderUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/draftorderupdate)
+- [orderCancel](https://shopify.dev/docs/api/admin-graphql/latest/mutations/ordercancel)
+- [orderCapture](https://shopify.dev/docs/api/admin-graphql/latest/mutations/ordercapture)
+- [orderClose](https://shopify.dev/docs/api/admin-graphql/latest/mutations/orderclose)
+- [orderCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/ordercreate)
+- [orderCreateMandatePayment](https://shopify.dev/docs/api/admin-graphql/latest/mutations/ordercreatemandatepayment)
+- [orderCreateManualPayment](https://shopify.dev/docs/api/admin-graphql/latest/mutations/ordercreatemanualpayment)
+- [orderCustomerRemove](https://shopify.dev/docs/api/admin-graphql/latest/mutations/ordercustomerremove)
+- [orderDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/orderdelete)
+- [orderEditAddCustomItem](https://shopify.dev/docs/api/admin-graphql/latest/mutations/ordereditaddcustomitem)
+- [orderEditAddLineItemDiscount](https://shopify.dev/docs/api/admin-graphql/latest/mutations/ordereditaddlineitemdiscount)
+- [orderEditAddShippingLine](https://shopify.dev/docs/api/admin-graphql/latest/mutations/ordereditaddshippingline)
+- [orderEditAddVariant](https://shopify.dev/docs/api/admin-graphql/latest/mutations/ordereditaddvariant)
+- [orderEditBegin](https://shopify.dev/docs/api/admin-graphql/latest/mutations/ordereditbegin)
+- [orderEditCommit](https://shopify.dev/docs/api/admin-graphql/latest/mutations/ordereditcommit)
+- [orderEditRemoveDiscount](https://shopify.dev/docs/api/admin-graphql/latest/mutations/ordereditremovediscount)
+- [orderEditRemoveLineItemDiscount](https://shopify.dev/docs/api/admin-graphql/latest/mutations/ordereditremovelineitemdiscount)
+- [orderEditRemoveShippingLine](https://shopify.dev/docs/api/admin-graphql/latest/mutations/ordereditremoveshippingline)
+- [orderEditSetQuantity](https://shopify.dev/docs/api/admin-graphql/latest/mutations/ordereditsetquantity)
+- [orderEditUpdateDiscount](https://shopify.dev/docs/api/admin-graphql/latest/mutations/ordereditupdatediscount)
+- [orderEditUpdateShippingLine](https://shopify.dev/docs/api/admin-graphql/latest/mutations/ordereditupdateshippingline)
+- [orderInvoiceSend](https://shopify.dev/docs/api/admin-graphql/latest/mutations/orderinvoicesend)
+- [orderMarkAsPaid](https://shopify.dev/docs/api/admin-graphql/latest/mutations/ordermarkaspaid)
+- [orderOpen](https://shopify.dev/docs/api/admin-graphql/latest/mutations/orderopen)
+- [orderRiskAssessmentCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/orderriskassessmentcreate)
+- [orderUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/orderupdate)
+- [refundCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/refundcreate)
+- [removeFromReturn](https://shopify.dev/docs/api/admin-graphql/latest/mutations/removefromreturn)
+- [returnApproveRequest](https://shopify.dev/docs/api/admin-graphql/latest/mutations/returnapproverequest)
+- [returnCancel](https://shopify.dev/docs/api/admin-graphql/latest/mutations/returncancel)
+- [returnClose](https://shopify.dev/docs/api/admin-graphql/latest/mutations/returnclose)
+- [returnCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/returncreate)
+- [returnDeclineRequest](https://shopify.dev/docs/api/admin-graphql/latest/mutations/returndeclinerequest)
+- [returnLineItemRemoveFromReturn](https://shopify.dev/docs/api/admin-graphql/latest/mutations/returnlineitemremovefromreturn)
+- [returnProcess](https://shopify.dev/docs/api/admin-graphql/latest/mutations/returnprocess)
+- [returnRefund](https://shopify.dev/docs/api/admin-graphql/latest/mutations/returnrefund)
+- [returnReopen](https://shopify.dev/docs/api/admin-graphql/latest/mutations/returnreopen)
+- [returnRequest](https://shopify.dev/docs/api/admin-graphql/latest/mutations/returnrequest)
+- [reverseDeliveryCreateWithShipping](https://shopify.dev/docs/api/admin-graphql/latest/mutations/reversedeliverycreatewithshipping)
+- [reverseDeliveryShippingUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/reversedeliveryshippingupdate)
+- [reverseFulfillmentOrderDispose](https://shopify.dev/docs/api/admin-graphql/latest/mutations/reversefulfillmentorderdispose)
+- [subscriptionBillingAttemptCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptionbillingattemptcreate)
+- [subscriptionBillingCycleBulkCharge](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptionbillingcyclebulkcharge)
+- [subscriptionBillingCycleBulkSearch](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptionbillingcyclebulksearch)
+- [subscriptionBillingCycleCharge](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptionbillingcyclecharge)
+- [subscriptionBillingCycleContractDraftCommit](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptionbillingcyclecontractdraftcommit)
+- [subscriptionBillingCycleContractDraftConcatenate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptionbillingcyclecontractdraftconcatenate)
+- [subscriptionBillingCycleContractEdit](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptionbillingcyclecontractedit)
+- [subscriptionBillingCycleEditDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptionbillingcycleeditdelete)
+- [subscriptionBillingCycleEditsDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptionbillingcycleeditsdelete)
+- [subscriptionBillingCycleScheduleEdit](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptionbillingcyclescheduleedit)
+- [subscriptionBillingCycleSkip](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptionbillingcycleskip)
+- [subscriptionBillingCycleUnskip](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptionbillingcycleunskip)
+- [subscriptionContractActivate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptioncontractactivate)
+- [subscriptionContractAtomicCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptioncontractatomiccreate)
+- [subscriptionContractCancel](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptioncontractcancel)
+- [subscriptionContractCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptioncontractcreate)
+- [subscriptionContractExpire](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptioncontractexpire)
+- [subscriptionContractFail](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptioncontractfail)
+- [subscriptionContractPause](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptioncontractpause)
+- [subscriptionContractProductChange](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptioncontractproductchange)
+- [subscriptionContractSetNextBillingDate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptioncontractsetnextbillingdate)
+- [subscriptionContractUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptioncontractupdate)
+- [subscriptionDraftCommit](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptiondraftcommit)
+- [subscriptionDraftDiscountAdd](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptiondraftdiscountadd)
+- [subscriptionDraftDiscountCodeApply](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptiondraftdiscountcodeapply)
+- [subscriptionDraftDiscountRemove](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptiondraftdiscountremove)
+- [subscriptionDraftDiscountUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptiondraftdiscountupdate)
+- [subscriptionDraftFreeShippingDiscountAdd](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptiondraftfreeshippingdiscountadd)
+- [subscriptionDraftFreeShippingDiscountUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptiondraftfreeshippingdiscountupdate)
+- [subscriptionDraftLineAdd](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptiondraftlineadd)
+- [subscriptionDraftLineRemove](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptiondraftlineremove)
+- [subscriptionDraftLineUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptiondraftlineupdate)
+- [subscriptionDraftUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/subscriptiondraftupdate)
+- [transactionVoid](https://shopify.dev/docs/api/admin-graphql/latest/mutations/transactionvoid)
+### Objects
+
+- [AdditionalFee](https://shopify.dev/docs/api/admin-graphql/latest/objects/additionalfee)
+- [AdditionalFeeSale](https://shopify.dev/docs/api/admin-graphql/latest/objects/additionalfeesale)
+- [AdjustmentSale](https://shopify.dev/docs/api/admin-graphql/latest/objects/adjustmentsale)
+- [Attribute](https://shopify.dev/docs/api/admin-graphql/latest/objects/attribute)
+- [AutomaticDiscountApplication](https://shopify.dev/docs/api/admin-graphql/latest/objects/automaticdiscountapplication)
+- [CalculatedAutomaticDiscountApplication](https://shopify.dev/docs/api/admin-graphql/latest/objects/calculatedautomaticdiscountapplication)
+- [CalculatedDiscountAllocation](https://shopify.dev/docs/api/admin-graphql/latest/objects/calculateddiscountallocation)
+- [CalculatedDiscountCodeApplication](https://shopify.dev/docs/api/admin-graphql/latest/objects/calculateddiscountcodeapplication)
+- [CalculatedDraftOrder](https://shopify.dev/docs/api/admin-graphql/latest/objects/calculateddraftorder)
+- [CalculatedDraftOrderLineItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/calculateddraftorderlineitem)
+- [CalculatedExchangeLineItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/calculatedexchangelineitem)
+- [CalculatedLineItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/calculatedlineitem)
+- [CalculatedManualDiscountApplication](https://shopify.dev/docs/api/admin-graphql/latest/objects/calculatedmanualdiscountapplication)
+- [CalculatedOrder](https://shopify.dev/docs/api/admin-graphql/latest/objects/calculatedorder)
+- [CalculatedRestockingFee](https://shopify.dev/docs/api/admin-graphql/latest/objects/calculatedrestockingfee)
+- [CalculatedReturn](https://shopify.dev/docs/api/admin-graphql/latest/objects/calculatedreturn)
+- [CalculatedReturnLineItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/calculatedreturnlineitem)
+- [CalculatedReturnShippingFee](https://shopify.dev/docs/api/admin-graphql/latest/objects/calculatedreturnshippingfee)
+- [CalculatedScriptDiscountApplication](https://shopify.dev/docs/api/admin-graphql/latest/objects/calculatedscriptdiscountapplication)
+- [CalculatedShippingLine](https://shopify.dev/docs/api/admin-graphql/latest/objects/calculatedshippingline)
+- [CardPaymentDetails](https://shopify.dev/docs/api/admin-graphql/latest/objects/cardpaymentdetails)
+- [CashRoundingAdjustment](https://shopify.dev/docs/api/admin-graphql/latest/objects/cashroundingadjustment)
+- [CurrencyExchangeAdjustment](https://shopify.dev/docs/api/admin-graphql/latest/objects/currencyexchangeadjustment)
+- [CurrencySetting](https://shopify.dev/docs/api/admin-graphql/latest/objects/currencysetting)
+- [DiscountAllocation](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountallocation)
+- [DiscountCodeApplication](https://shopify.dev/docs/api/admin-graphql/latest/objects/discountcodeapplication)
+- [DraftOrder](https://shopify.dev/docs/api/admin-graphql/latest/objects/draftorder)
+- [DraftOrderAppliedDiscount](https://shopify.dev/docs/api/admin-graphql/latest/objects/draftorderapplieddiscount)
+- [DraftOrderAvailableDeliveryOptions](https://shopify.dev/docs/api/admin-graphql/latest/objects/draftorderavailabledeliveryoptions)
+- [DraftOrderBundleAddedWarning](https://shopify.dev/docs/api/admin-graphql/latest/objects/draftorderbundleaddedwarning)
+- [DraftOrderDiscountNotAppliedWarning](https://shopify.dev/docs/api/admin-graphql/latest/objects/draftorderdiscountnotappliedwarning)
+- [DraftOrderLineItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/draftorderlineitem)
+- [DraftOrderMarketRegionCountryCodeNotSupportedWarning](https://shopify.dev/docs/api/admin-graphql/latest/objects/draftordermarketregioncountrycodenotsupportedwarning)
+- [DraftOrderPlatformDiscount](https://shopify.dev/docs/api/admin-graphql/latest/objects/draftorderplatformdiscount)
+- [DraftOrderPlatformDiscountAllocation](https://shopify.dev/docs/api/admin-graphql/latest/objects/draftorderplatformdiscountallocation)
+- [DraftOrderShippingRate](https://shopify.dev/docs/api/admin-graphql/latest/objects/draftordershippingrate)
+- [DraftOrderTag](https://shopify.dev/docs/api/admin-graphql/latest/objects/draftordertag)
+- [Duty](https://shopify.dev/docs/api/admin-graphql/latest/objects/duty)
+- [DutySale](https://shopify.dev/docs/api/admin-graphql/latest/objects/dutysale)
+- [ExchangeLineItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/exchangelineitem)
+- [FeeSale](https://shopify.dev/docs/api/admin-graphql/latest/objects/feesale)
+- [GiftCardSale](https://shopify.dev/docs/api/admin-graphql/latest/objects/giftcardsale)
+- [InvoiceReturnOutcome](https://shopify.dev/docs/api/admin-graphql/latest/objects/invoicereturnoutcome)
+- [LineItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/lineitem)
+- [LineItemGroup](https://shopify.dev/docs/api/admin-graphql/latest/objects/lineitemgroup)
+- [LineItemSellingPlan](https://shopify.dev/docs/api/admin-graphql/latest/objects/lineitemsellingplan)
+- [LocalPaymentMethodsPaymentDetails](https://shopify.dev/docs/api/admin-graphql/latest/objects/localpaymentmethodspaymentdetails)
+- [ManualDiscountApplication](https://shopify.dev/docs/api/admin-graphql/latest/objects/manualdiscountapplication)
+- [Order](https://shopify.dev/docs/api/admin-graphql/latest/objects/order)
+- [OrderAdjustment](https://shopify.dev/docs/api/admin-graphql/latest/objects/orderadjustment)
+- [OrderAgreement](https://shopify.dev/docs/api/admin-graphql/latest/objects/orderagreement)
+- [OrderApp](https://shopify.dev/docs/api/admin-graphql/latest/objects/orderapp)
+- [OrderCancellation](https://shopify.dev/docs/api/admin-graphql/latest/objects/ordercancellation)
+- [OrderCreateManualPaymentOrderCreateManualPaymentError](https://shopify.dev/docs/api/admin-graphql/latest/objects/ordercreatemanualpaymentordercreatemanualpaymenterror)
+- [OrderEditAgreement](https://shopify.dev/docs/api/admin-graphql/latest/objects/ordereditagreement)
+- [OrderPaymentCollectionDetails](https://shopify.dev/docs/api/admin-graphql/latest/objects/orderpaymentcollectiondetails)
+- [OrderRisk](https://shopify.dev/docs/api/admin-graphql/latest/objects/orderrisk)
+- [OrderRiskAssessment](https://shopify.dev/docs/api/admin-graphql/latest/objects/orderriskassessment)
+- [OrderRiskSummary](https://shopify.dev/docs/api/admin-graphql/latest/objects/orderrisksummary)
+- [OrderStagedChangeAddCustomItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/orderstagedchangeaddcustomitem)
+- [OrderStagedChangeAddLineItemDiscount](https://shopify.dev/docs/api/admin-graphql/latest/objects/orderstagedchangeaddlineitemdiscount)
+- [OrderStagedChangeAddShippingLine](https://shopify.dev/docs/api/admin-graphql/latest/objects/orderstagedchangeaddshippingline)
+- [OrderStagedChangeAddVariant](https://shopify.dev/docs/api/admin-graphql/latest/objects/orderstagedchangeaddvariant)
+- [OrderStagedChangeDecrementItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/orderstagedchangedecrementitem)
+- [OrderStagedChangeIncrementItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/orderstagedchangeincrementitem)
+- [OrderStagedChangeRemoveShippingLine](https://shopify.dev/docs/api/admin-graphql/latest/objects/orderstagedchangeremoveshippingline)
+- [OrderTransaction](https://shopify.dev/docs/api/admin-graphql/latest/objects/ordertransaction)
+- [PaymentSettings](https://shopify.dev/docs/api/admin-graphql/latest/objects/paymentsettings)
+- [PaypalWalletPaymentDetails](https://shopify.dev/docs/api/admin-graphql/latest/objects/paypalwalletpaymentdetails)
+- [PickupInStoreLocation](https://shopify.dev/docs/api/admin-graphql/latest/objects/pickupinstorelocation)
+- [ProductSale](https://shopify.dev/docs/api/admin-graphql/latest/objects/productsale)
+- [Refund](https://shopify.dev/docs/api/admin-graphql/latest/objects/refund)
+- [RefundAgreement](https://shopify.dev/docs/api/admin-graphql/latest/objects/refundagreement)
+- [RefundDuty](https://shopify.dev/docs/api/admin-graphql/latest/objects/refundduty)
+- [RefundLineItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/refundlineitem)
+- [RefundReturnOutcome](https://shopify.dev/docs/api/admin-graphql/latest/objects/refundreturnoutcome)
+- [RefundShippingLine](https://shopify.dev/docs/api/admin-graphql/latest/objects/refundshippingline)
+- [RestockingFee](https://shopify.dev/docs/api/admin-graphql/latest/objects/restockingfee)
+- [Return](https://shopify.dev/docs/api/admin-graphql/latest/objects/return)
+- [ReturnableFulfillment](https://shopify.dev/docs/api/admin-graphql/latest/objects/returnablefulfillment)
+- [ReturnableFulfillmentLineItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/returnablefulfillmentlineitem)
+- [ReturnAgreement](https://shopify.dev/docs/api/admin-graphql/latest/objects/returnagreement)
+- [ReturnDecline](https://shopify.dev/docs/api/admin-graphql/latest/objects/returndecline)
+- [ReturnLineItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/returnlineitem)
+- [ReturnShippingFee](https://shopify.dev/docs/api/admin-graphql/latest/objects/returnshippingfee)
+- [ReverseDelivery](https://shopify.dev/docs/api/admin-graphql/latest/objects/reversedelivery)
+- [ReverseDeliveryLabelV2](https://shopify.dev/docs/api/admin-graphql/latest/objects/reversedeliverylabelv2)
+- [ReverseDeliveryLineItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/reversedeliverylineitem)
+- [ReverseDeliveryShippingDeliverable](https://shopify.dev/docs/api/admin-graphql/latest/objects/reversedeliveryshippingdeliverable)
+- [ReverseDeliveryTrackingV2](https://shopify.dev/docs/api/admin-graphql/latest/objects/reversedeliverytrackingv2)
+- [ReverseFulfillmentOrder](https://shopify.dev/docs/api/admin-graphql/latest/objects/reversefulfillmentorder)
+- [ReverseFulfillmentOrderDisposition](https://shopify.dev/docs/api/admin-graphql/latest/objects/reversefulfillmentorderdisposition)
+- [ReverseFulfillmentOrderLineItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/reversefulfillmentorderlineitem)
+- [ReverseFulfillmentOrderThirdPartyConfirmation](https://shopify.dev/docs/api/admin-graphql/latest/objects/reversefulfillmentorderthirdpartyconfirmation)
+- [RiskFact](https://shopify.dev/docs/api/admin-graphql/latest/objects/riskfact)
+- [SaleAdditionalFee](https://shopify.dev/docs/api/admin-graphql/latest/objects/saleadditionalfee)
+- [SaleTax](https://shopify.dev/docs/api/admin-graphql/latest/objects/saletax)
+- [ScriptDiscountApplication](https://shopify.dev/docs/api/admin-graphql/latest/objects/scriptdiscountapplication)
+- [ShippingLine](https://shopify.dev/docs/api/admin-graphql/latest/objects/shippingline)
+- [ShippingLineSale](https://shopify.dev/docs/api/admin-graphql/latest/objects/shippinglinesale)
+- [ShippingRefund](https://shopify.dev/docs/api/admin-graphql/latest/objects/shippingrefund)
+- [ShopifyPaymentsExtendedAuthorization](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentsextendedauthorization)
+- [ShopifyPaymentsRefundSet](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentsrefundset)
+- [ShopifyPaymentsTransactionSet](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentstransactionset)
+- [ShopifyProtectOrderEligibility](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifyprotectordereligibility)
+- [ShopifyProtectOrderSummary](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifyprotectordersummary)
+- [ShopPayInstallmentsPaymentDetails](https://shopify.dev/docs/api/admin-graphql/latest/objects/shoppayinstallmentspaymentdetails)
+- [SubscriptionAppliedCodeDiscount](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptionappliedcodediscount)
+- [SubscriptionBillingAttempt](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptionbillingattempt)
+- [SubscriptionBillingAttemptGenericError](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptionbillingattemptgenericerror)
+- [SubscriptionBillingAttemptInsufficientStockProductVariantsError](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptionbillingattemptinsufficientstockproductvariantserror)
+- [SubscriptionBillingAttemptOutOfStockProductVariantsError](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptionbillingattemptoutofstockproductvariantserror)
+- [SubscriptionBillingCycle](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptionbillingcycle)
+- [SubscriptionBillingCycleEditedContract](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptionbillingcycleeditedcontract)
+- [SubscriptionBillingPolicy](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptionbillingpolicy)
+- [SubscriptionContract](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptioncontract)
+- [SubscriptionCyclePriceAdjustment](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptioncyclepriceadjustment)
+- [SubscriptionDeliveryMethodLocalDelivery](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptiondeliverymethodlocaldelivery)
+- [SubscriptionDeliveryMethodLocalDeliveryOption](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptiondeliverymethodlocaldeliveryoption)
+- [SubscriptionDeliveryMethodPickup](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptiondeliverymethodpickup)
+- [SubscriptionDeliveryMethodPickupOption](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptiondeliverymethodpickupoption)
+- [SubscriptionDeliveryMethodShipping](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptiondeliverymethodshipping)
+- [SubscriptionDeliveryMethodShippingOption](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptiondeliverymethodshippingoption)
+- [SubscriptionDeliveryOptionResultFailure](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptiondeliveryoptionresultfailure)
+- [SubscriptionDeliveryOptionResultSuccess](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptiondeliveryoptionresultsuccess)
+- [SubscriptionDeliveryPolicy](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptiondeliverypolicy)
+- [SubscriptionDiscountAllocation](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptiondiscountallocation)
+- [SubscriptionDiscountEntitledLines](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptiondiscountentitledlines)
+- [SubscriptionDiscountFixedAmountValue](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptiondiscountfixedamountvalue)
+- [SubscriptionDiscountPercentageValue](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptiondiscountpercentagevalue)
+- [SubscriptionDraft](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptiondraft)
+- [SubscriptionLine](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptionline)
+- [SubscriptionLocalDeliveryOption](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptionlocaldeliveryoption)
+- [SubscriptionManualDiscount](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptionmanualdiscount)
+- [SubscriptionPickupOption](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptionpickupoption)
+- [SubscriptionPricingPolicy](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptionpricingpolicy)
+- [SubscriptionShippingOption](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptionshippingoption)
+- [SubscriptionShippingOptionResultFailure](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptionshippingoptionresultfailure)
+- [SubscriptionShippingOptionResultSuccess](https://shopify.dev/docs/api/admin-graphql/latest/objects/subscriptionshippingoptionresultsuccess)
+- [SuggestedOrderTransaction](https://shopify.dev/docs/api/admin-graphql/latest/objects/suggestedordertransaction)
+- [SuggestedRefund](https://shopify.dev/docs/api/admin-graphql/latest/objects/suggestedrefund)
+- [SuggestedReturnFinancialOutcome](https://shopify.dev/docs/api/admin-graphql/latest/objects/suggestedreturnfinancialoutcome)
+- [SuggestedReturnRefund](https://shopify.dev/docs/api/admin-graphql/latest/objects/suggestedreturnrefund)
+- [SuggestedStoreCreditRefund](https://shopify.dev/docs/api/admin-graphql/latest/objects/suggestedstorecreditrefund)
+- [TaxLine](https://shopify.dev/docs/api/admin-graphql/latest/objects/taxline)
+- [TenderTransaction](https://shopify.dev/docs/api/admin-graphql/latest/objects/tendertransaction)
+- [TenderTransactionCreditCardDetails](https://shopify.dev/docs/api/admin-graphql/latest/objects/tendertransactioncreditcarddetails)
+- [TipSale](https://shopify.dev/docs/api/admin-graphql/latest/objects/tipsale)
+- [TransactionFee](https://shopify.dev/docs/api/admin-graphql/latest/objects/transactionfee)
+- [UnknownSale](https://shopify.dev/docs/api/admin-graphql/latest/objects/unknownsale)
+- [UnverifiedReturnLineItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/unverifiedreturnlineitem)
+### Queries
+
+- [availableBackupRegions](https://shopify.dev/docs/api/admin-graphql/latest/queries/availablebackupregions)
+- [disputes](https://shopify.dev/docs/api/admin-graphql/latest/queries/disputes)
+- [draftOrder](https://shopify.dev/docs/api/admin-graphql/latest/queries/draftorder)
+- [draftOrderAvailableDeliveryOptions](https://shopify.dev/docs/api/admin-graphql/latest/queries/draftorderavailabledeliveryoptions)
+- [draftOrders](https://shopify.dev/docs/api/admin-graphql/latest/queries/draftorders)
+- [draftOrderSavedSearches](https://shopify.dev/docs/api/admin-graphql/latest/queries/draftordersavedsearches)
+- [draftOrdersCount](https://shopify.dev/docs/api/admin-graphql/latest/queries/draftorderscount)
+- [draftOrderTag](https://shopify.dev/docs/api/admin-graphql/latest/queries/draftordertag)
+- [order](https://shopify.dev/docs/api/admin-graphql/latest/queries/order)
+- [orderByIdentifier](https://shopify.dev/docs/api/admin-graphql/latest/queries/orderbyidentifier)
+- [orders](https://shopify.dev/docs/api/admin-graphql/latest/queries/orders)
+- [orderSavedSearches](https://shopify.dev/docs/api/admin-graphql/latest/queries/ordersavedsearches)
+- [ordersCount](https://shopify.dev/docs/api/admin-graphql/latest/queries/orderscount)
+- [pendingOrdersCount](https://shopify.dev/docs/api/admin-graphql/latest/queries/pendingorderscount)
+- [productTags](https://shopify.dev/docs/api/admin-graphql/latest/queries/producttags)
+- [productTypes](https://shopify.dev/docs/api/admin-graphql/latest/queries/producttypes)
+- [productVendors](https://shopify.dev/docs/api/admin-graphql/latest/queries/productvendors)
+- [publishedProductsCount](https://shopify.dev/docs/api/admin-graphql/latest/queries/publishedproductscount)
+- [refund](https://shopify.dev/docs/api/admin-graphql/latest/queries/refund)
+- [return](https://shopify.dev/docs/api/admin-graphql/latest/queries/return)
+- [returnableFulfillment](https://shopify.dev/docs/api/admin-graphql/latest/queries/returnablefulfillment)
+- [returnableFulfillments](https://shopify.dev/docs/api/admin-graphql/latest/queries/returnablefulfillments)
+- [returnCalculate](https://shopify.dev/docs/api/admin-graphql/latest/queries/returncalculate)
+- [reverseDelivery](https://shopify.dev/docs/api/admin-graphql/latest/queries/reversedelivery)
+- [reverseFulfillmentOrder](https://shopify.dev/docs/api/admin-graphql/latest/queries/reversefulfillmentorder)
+- [subscriptionBillingAttempt](https://shopify.dev/docs/api/admin-graphql/latest/queries/subscriptionbillingattempt)
+- [subscriptionBillingAttempts](https://shopify.dev/docs/api/admin-graphql/latest/queries/subscriptionbillingattempts)
+- [subscriptionBillingCycle](https://shopify.dev/docs/api/admin-graphql/latest/queries/subscriptionbillingcycle)
+- [subscriptionBillingCycleBulkResults](https://shopify.dev/docs/api/admin-graphql/latest/queries/subscriptionbillingcyclebulkresults)
+- [subscriptionBillingCycles](https://shopify.dev/docs/api/admin-graphql/latest/queries/subscriptionbillingcycles)
+- [subscriptionContract](https://shopify.dev/docs/api/admin-graphql/latest/queries/subscriptioncontract)
+- [subscriptionContracts](https://shopify.dev/docs/api/admin-graphql/latest/queries/subscriptioncontracts)
+- [subscriptionDraft](https://shopify.dev/docs/api/admin-graphql/latest/queries/subscriptiondraft)
+- [tenderTransactions](https://shopify.dev/docs/api/admin-graphql/latest/queries/tendertransactions)
+
+## Privacy
+
+### Mutations
+
+- [consentPolicyUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/consentpolicyupdate)
+- [dataSaleOptOut](https://shopify.dev/docs/api/admin-graphql/latest/mutations/datasaleoptout)
+- [privacyFeaturesDisable](https://shopify.dev/docs/api/admin-graphql/latest/mutations/privacyfeaturesdisable)
+### Objects
+
+- [ConsentPolicy](https://shopify.dev/docs/api/admin-graphql/latest/objects/consentpolicy)
+- [ConsentPolicyError](https://shopify.dev/docs/api/admin-graphql/latest/objects/consentpolicyerror)
+- [ConsentPolicyRegion](https://shopify.dev/docs/api/admin-graphql/latest/objects/consentpolicyregion)
+- [CookieBanner](https://shopify.dev/docs/api/admin-graphql/latest/objects/cookiebanner)
+- [DataSaleOptOutPage](https://shopify.dev/docs/api/admin-graphql/latest/objects/datasaleoptoutpage)
+- [PrivacyPolicy](https://shopify.dev/docs/api/admin-graphql/latest/objects/privacypolicy)
+- [PrivacySettings](https://shopify.dev/docs/api/admin-graphql/latest/objects/privacysettings)
+### Queries
+
+- [consentPolicy](https://shopify.dev/docs/api/admin-graphql/latest/queries/consentpolicy)
+- [consentPolicyRegions](https://shopify.dev/docs/api/admin-graphql/latest/queries/consentpolicyregions)
+- [privacySettings](https://shopify.dev/docs/api/admin-graphql/latest/queries/privacysettings)
+
+## Products and collections
+
+### Mutations
+
+- [catalogContextUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/catalogcontextupdate)
+- [catalogCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/catalogcreate)
+- [catalogDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/catalogdelete)
+- [catalogUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/catalogupdate)
+- [collectionAddProducts](https://shopify.dev/docs/api/admin-graphql/latest/mutations/collectionaddproducts)
+- [collectionAddProductsV2](https://shopify.dev/docs/api/admin-graphql/latest/mutations/collectionaddproductsv2)
+- [collectionCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/collectioncreate)
+- [collectionDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/collectiondelete)
+- [collectionPublish](https://shopify.dev/docs/api/admin-graphql/latest/mutations/collectionpublish)
+- [collectionRemoveProducts](https://shopify.dev/docs/api/admin-graphql/latest/mutations/collectionremoveproducts)
+- [collectionReorderProducts](https://shopify.dev/docs/api/admin-graphql/latest/mutations/collectionreorderproducts)
+- [collectionUnpublish](https://shopify.dev/docs/api/admin-graphql/latest/mutations/collectionunpublish)
+- [collectionUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/collectionupdate)
+- [combinedListingUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/combinedlistingupdate)
+- [fileAcknowledgeUpdateFailed](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fileacknowledgeupdatefailed)
+- [fileCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/filecreate)
+- [fileDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/filedelete)
+- [fileUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fileupdate)
+- [priceListCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/pricelistcreate)
+- [priceListDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/pricelistdelete)
+- [priceListFixedPricesAdd](https://shopify.dev/docs/api/admin-graphql/latest/mutations/pricelistfixedpricesadd)
+- [priceListFixedPricesByProductUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/pricelistfixedpricesbyproductupdate)
+- [priceListFixedPricesDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/pricelistfixedpricesdelete)
+- [priceListFixedPricesUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/pricelistfixedpricesupdate)
+- [priceListUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/pricelistupdate)
+- [productBundleCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productbundlecreate)
+- [productBundleUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productbundleupdate)
+- [productChangeStatus](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productchangestatus)
+- [productCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productcreate)
+- [productCreateMedia](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productcreatemedia)
+- [productDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productdelete)
+- [productDeleteMedia](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productdeletemedia)
+- [productDuplicate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productduplicate)
+- [productJoinSellingPlanGroups](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productjoinsellingplangroups)
+- [productLeaveSellingPlanGroups](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productleavesellingplangroups)
+- [productOptionsCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productoptionscreate)
+- [productOptionsDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productoptionsdelete)
+- [productOptionsReorder](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productoptionsreorder)
+- [productOptionUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productoptionupdate)
+- [productPublish](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productpublish)
+- [productReorderMedia](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productreordermedia)
+- [productSet](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productset)
+- [productUnpublish](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productunpublish)
+- [productUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productupdate)
+- [productUpdateMedia](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productupdatemedia)
+- [productVariantAppendMedia](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productvariantappendmedia)
+- [productVariantDetachMedia](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productvariantdetachmedia)
+- [productVariantJoinSellingPlanGroups](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productvariantjoinsellingplangroups)
+- [productVariantLeaveSellingPlanGroups](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productvariantleavesellingplangroups)
+- [productVariantRelationshipBulkUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productvariantrelationshipbulkupdate)
+- [productVariantsBulkCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productvariantsbulkcreate)
+- [productVariantsBulkDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productvariantsbulkdelete)
+- [productVariantsBulkReorder](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productvariantsbulkreorder)
+- [productVariantsBulkUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/productvariantsbulkupdate)
+- [quantityPricingByVariantUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/quantitypricingbyvariantupdate)
+- [quantityRulesAdd](https://shopify.dev/docs/api/admin-graphql/latest/mutations/quantityrulesadd)
+- [quantityRulesDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/quantityrulesdelete)
+- [sellingPlanGroupAddProducts](https://shopify.dev/docs/api/admin-graphql/latest/mutations/sellingplangroupaddproducts)
+- [sellingPlanGroupAddProductVariants](https://shopify.dev/docs/api/admin-graphql/latest/mutations/sellingplangroupaddproductvariants)
+- [sellingPlanGroupCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/sellingplangroupcreate)
+- [sellingPlanGroupDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/sellingplangroupdelete)
+- [sellingPlanGroupRemoveProducts](https://shopify.dev/docs/api/admin-graphql/latest/mutations/sellingplangroupremoveproducts)
+- [sellingPlanGroupRemoveProductVariants](https://shopify.dev/docs/api/admin-graphql/latest/mutations/sellingplangroupremoveproductvariants)
+- [sellingPlanGroupUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/sellingplangroupupdate)
+- [stagedUploadsCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/stageduploadscreate)
+### Objects
+
+- [AddAllProductsOperation](https://shopify.dev/docs/api/admin-graphql/latest/objects/addallproductsoperation)
+- [AppCatalog](https://shopify.dev/docs/api/admin-graphql/latest/objects/appcatalog)
+- [BundlesFeature](https://shopify.dev/docs/api/admin-graphql/latest/objects/bundlesfeature)
+- [CatalogCsvOperation](https://shopify.dev/docs/api/admin-graphql/latest/objects/catalogcsvoperation)
+- [Collection](https://shopify.dev/docs/api/admin-graphql/latest/objects/collection)
+- [CollectionPublication](https://shopify.dev/docs/api/admin-graphql/latest/objects/collectionpublication)
+- [CollectionRule](https://shopify.dev/docs/api/admin-graphql/latest/objects/collectionrule)
+- [CollectionRuleCategoryCondition](https://shopify.dev/docs/api/admin-graphql/latest/objects/collectionrulecategorycondition)
+- [CollectionRuleConditions](https://shopify.dev/docs/api/admin-graphql/latest/objects/collectionruleconditions)
+- [CollectionRuleMetafieldCondition](https://shopify.dev/docs/api/admin-graphql/latest/objects/collectionrulemetafieldcondition)
+- [CollectionRuleProductCategoryCondition](https://shopify.dev/docs/api/admin-graphql/latest/objects/collectionruleproductcategorycondition)
+- [CollectionRuleSet](https://shopify.dev/docs/api/admin-graphql/latest/objects/collectionruleset)
+- [CollectionRuleTextCondition](https://shopify.dev/docs/api/admin-graphql/latest/objects/collectionruletextcondition)
+- [CombinedListing](https://shopify.dev/docs/api/admin-graphql/latest/objects/combinedlisting)
+- [CombinedListingChild](https://shopify.dev/docs/api/admin-graphql/latest/objects/combinedlistingchild)
+- [CompanyLocationCatalog](https://shopify.dev/docs/api/admin-graphql/latest/objects/companylocationcatalog)
+- [ExternalVideo](https://shopify.dev/docs/api/admin-graphql/latest/objects/externalvideo)
+- [FileError](https://shopify.dev/docs/api/admin-graphql/latest/objects/fileerror)
+- [GenericFile](https://shopify.dev/docs/api/admin-graphql/latest/objects/genericfile)
+- [LinkedMetafield](https://shopify.dev/docs/api/admin-graphql/latest/objects/linkedmetafield)
+- [MarketCatalog](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketcatalog)
+- [MarketsCatalogsEntitlement](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketscatalogsentitlement)
+- [MediaError](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaerror)
+- [MediaImage](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage)
+- [MediaImageOriginalSource](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimageoriginalsource)
+- [MediaPreviewImage](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediapreviewimage)
+- [MediaWarning](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediawarning)
+- [MetafieldCapabilitySmartCollectionCondition](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafieldcapabilitysmartcollectioncondition)
+- [Model3d](https://shopify.dev/docs/api/admin-graphql/latest/objects/model3d)
+- [Model3dBoundingBox](https://shopify.dev/docs/api/admin-graphql/latest/objects/model3dboundingbox)
+- [Model3dSource](https://shopify.dev/docs/api/admin-graphql/latest/objects/model3dsource)
+- [PriceList](https://shopify.dev/docs/api/admin-graphql/latest/objects/pricelist)
+- [PriceListAdjustment](https://shopify.dev/docs/api/admin-graphql/latest/objects/pricelistadjustment)
+- [PriceListAdjustmentSettings](https://shopify.dev/docs/api/admin-graphql/latest/objects/pricelistadjustmentsettings)
+- [PriceListParent](https://shopify.dev/docs/api/admin-graphql/latest/objects/pricelistparent)
+- [PriceListPrice](https://shopify.dev/docs/api/admin-graphql/latest/objects/pricelistprice)
+- [Product](https://shopify.dev/docs/api/admin-graphql/latest/objects/product)
+- [ProductBundleComponent](https://shopify.dev/docs/api/admin-graphql/latest/objects/productbundlecomponent)
+- [ProductBundleComponentOptionSelection](https://shopify.dev/docs/api/admin-graphql/latest/objects/productbundlecomponentoptionselection)
+- [ProductBundleComponentOptionSelectionValue](https://shopify.dev/docs/api/admin-graphql/latest/objects/productbundlecomponentoptionselectionvalue)
+- [ProductBundleComponentQuantityOption](https://shopify.dev/docs/api/admin-graphql/latest/objects/productbundlecomponentquantityoption)
+- [ProductBundleComponentQuantityOptionValue](https://shopify.dev/docs/api/admin-graphql/latest/objects/productbundlecomponentquantityoptionvalue)
+- [ProductBundleOperation](https://shopify.dev/docs/api/admin-graphql/latest/objects/productbundleoperation)
+- [ProductCategory](https://shopify.dev/docs/api/admin-graphql/latest/objects/productcategory)
+- [ProductCompareAtPriceRange](https://shopify.dev/docs/api/admin-graphql/latest/objects/productcompareatpricerange)
+- [ProductComponentType](https://shopify.dev/docs/api/admin-graphql/latest/objects/productcomponenttype)
+- [ProductContextualPricing](https://shopify.dev/docs/api/admin-graphql/latest/objects/productcontextualpricing)
+- [ProductDeleteOperation](https://shopify.dev/docs/api/admin-graphql/latest/objects/productdeleteoperation)
+- [ProductDuplicateJob](https://shopify.dev/docs/api/admin-graphql/latest/objects/productduplicatejob)
+- [ProductDuplicateOperation](https://shopify.dev/docs/api/admin-graphql/latest/objects/productduplicateoperation)
+- [ProductOption](https://shopify.dev/docs/api/admin-graphql/latest/objects/productoption)
+- [ProductOptionValue](https://shopify.dev/docs/api/admin-graphql/latest/objects/productoptionvalue)
+- [ProductOptionValueSwatch](https://shopify.dev/docs/api/admin-graphql/latest/objects/productoptionvalueswatch)
+- [ProductPriceRange](https://shopify.dev/docs/api/admin-graphql/latest/objects/productpricerange)
+- [ProductPriceRangeV2](https://shopify.dev/docs/api/admin-graphql/latest/objects/productpricerangev2)
+- [ProductPublication](https://shopify.dev/docs/api/admin-graphql/latest/objects/productpublication)
+- [ProductSetOperation](https://shopify.dev/docs/api/admin-graphql/latest/objects/productsetoperation)
+- [ProductTaxonomyNode](https://shopify.dev/docs/api/admin-graphql/latest/objects/producttaxonomynode)
+- [ProductVariant](https://shopify.dev/docs/api/admin-graphql/latest/objects/productvariant)
+- [ProductVariantComponent](https://shopify.dev/docs/api/admin-graphql/latest/objects/productvariantcomponent)
+- [ProductVariantContextualPricing](https://shopify.dev/docs/api/admin-graphql/latest/objects/productvariantcontextualpricing)
+- [ProductVariantPricePair](https://shopify.dev/docs/api/admin-graphql/latest/objects/productvariantpricepair)
+- [PublicationResourceOperation](https://shopify.dev/docs/api/admin-graphql/latest/objects/publicationresourceoperation)
+- [QuantityPriceBreak](https://shopify.dev/docs/api/admin-graphql/latest/objects/quantitypricebreak)
+- [QuantityRule](https://shopify.dev/docs/api/admin-graphql/latest/objects/quantityrule)
+- [ResourcePublication](https://shopify.dev/docs/api/admin-graphql/latest/objects/resourcepublication)
+- [ResourcePublicationV2](https://shopify.dev/docs/api/admin-graphql/latest/objects/resourcepublicationv2)
+- [RestrictedForResource](https://shopify.dev/docs/api/admin-graphql/latest/objects/restrictedforresource)
+- [RowCount](https://shopify.dev/docs/api/admin-graphql/latest/objects/rowcount)
+- [SelectedOption](https://shopify.dev/docs/api/admin-graphql/latest/objects/selectedoption)
+- [SellingPlan](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplan)
+- [SellingPlanAnchor](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplananchor)
+- [SellingPlanCheckoutCharge](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplancheckoutcharge)
+- [SellingPlanCheckoutChargePercentageValue](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplancheckoutchargepercentagevalue)
+- [SellingPlanFixedBillingPolicy](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplanfixedbillingpolicy)
+- [SellingPlanFixedDeliveryPolicy](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplanfixeddeliverypolicy)
+- [SellingPlanFixedPricingPolicy](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplanfixedpricingpolicy)
+- [SellingPlanGroup](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplangroup)
+- [SellingPlanInventoryPolicy](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplaninventorypolicy)
+- [SellingPlanPricingPolicyPercentageValue](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplanpricingpolicypercentagevalue)
+- [SellingPlanRecurringBillingPolicy](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplanrecurringbillingpolicy)
+- [SellingPlanRecurringDeliveryPolicy](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplanrecurringdeliverypolicy)
+- [SellingPlanRecurringPricingPolicy](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplanrecurringpricingpolicy)
+- [StagedMediaUploadTarget](https://shopify.dev/docs/api/admin-graphql/latest/objects/stagedmediauploadtarget)
+- [StandardizedProductType](https://shopify.dev/docs/api/admin-graphql/latest/objects/standardizedproducttype)
+- [Taxonomy](https://shopify.dev/docs/api/admin-graphql/latest/objects/taxonomy)
+- [TaxonomyAttribute](https://shopify.dev/docs/api/admin-graphql/latest/objects/taxonomyattribute)
+- [TaxonomyCategory](https://shopify.dev/docs/api/admin-graphql/latest/objects/taxonomycategory)
+- [TaxonomyChoiceListAttribute](https://shopify.dev/docs/api/admin-graphql/latest/objects/taxonomychoicelistattribute)
+- [TaxonomyMeasurementAttribute](https://shopify.dev/docs/api/admin-graphql/latest/objects/taxonomymeasurementattribute)
+- [TaxonomyValue](https://shopify.dev/docs/api/admin-graphql/latest/objects/taxonomyvalue)
+- [UnitPriceMeasurement](https://shopify.dev/docs/api/admin-graphql/latest/objects/unitpricemeasurement)
+- [Vector3](https://shopify.dev/docs/api/admin-graphql/latest/objects/vector3)
+- [Video](https://shopify.dev/docs/api/admin-graphql/latest/objects/video)
+- [VideoSource](https://shopify.dev/docs/api/admin-graphql/latest/objects/videosource)
+- [Weight](https://shopify.dev/docs/api/admin-graphql/latest/objects/weight)
+### Queries
+
+- [catalog](https://shopify.dev/docs/api/admin-graphql/latest/queries/catalog)
+- [catalogOperations](https://shopify.dev/docs/api/admin-graphql/latest/queries/catalogoperations)
+- [catalogs](https://shopify.dev/docs/api/admin-graphql/latest/queries/catalogs)
+- [catalogsCount](https://shopify.dev/docs/api/admin-graphql/latest/queries/catalogscount)
+- [collection](https://shopify.dev/docs/api/admin-graphql/latest/queries/collection)
+- [collectionByHandle](https://shopify.dev/docs/api/admin-graphql/latest/queries/collectionbyhandle)
+- [collectionByIdentifier](https://shopify.dev/docs/api/admin-graphql/latest/queries/collectionbyidentifier)
+- [collectionRulesConditions](https://shopify.dev/docs/api/admin-graphql/latest/queries/collectionrulesconditions)
+- [collections](https://shopify.dev/docs/api/admin-graphql/latest/queries/collections)
+- [collectionSavedSearches](https://shopify.dev/docs/api/admin-graphql/latest/queries/collectionsavedsearches)
+- [collectionsCount](https://shopify.dev/docs/api/admin-graphql/latest/queries/collectionscount)
+- [files](https://shopify.dev/docs/api/admin-graphql/latest/queries/files)
+- [fileSavedSearches](https://shopify.dev/docs/api/admin-graphql/latest/queries/filesavedsearches)
+- [priceList](https://shopify.dev/docs/api/admin-graphql/latest/queries/pricelist)
+- [priceLists](https://shopify.dev/docs/api/admin-graphql/latest/queries/pricelists)
+- [product](https://shopify.dev/docs/api/admin-graphql/latest/queries/product)
+- [productByHandle](https://shopify.dev/docs/api/admin-graphql/latest/queries/productbyhandle)
+- [productByIdentifier](https://shopify.dev/docs/api/admin-graphql/latest/queries/productbyidentifier)
+- [productDuplicateJob](https://shopify.dev/docs/api/admin-graphql/latest/queries/productduplicatejob)
+- [productOperation](https://shopify.dev/docs/api/admin-graphql/latest/queries/productoperation)
+- [productResourceFeedback](https://shopify.dev/docs/api/admin-graphql/latest/queries/productresourcefeedback)
+- [products](https://shopify.dev/docs/api/admin-graphql/latest/queries/products)
+- [productSavedSearches](https://shopify.dev/docs/api/admin-graphql/latest/queries/productsavedsearches)
+- [productsCount](https://shopify.dev/docs/api/admin-graphql/latest/queries/productscount)
+- [productVariant](https://shopify.dev/docs/api/admin-graphql/latest/queries/productvariant)
+- [productVariantByIdentifier](https://shopify.dev/docs/api/admin-graphql/latest/queries/productvariantbyidentifier)
+- [productVariants](https://shopify.dev/docs/api/admin-graphql/latest/queries/productvariants)
+- [productVariantsCount](https://shopify.dev/docs/api/admin-graphql/latest/queries/productvariantscount)
+- [sellingPlanGroup](https://shopify.dev/docs/api/admin-graphql/latest/queries/sellingplangroup)
+- [sellingPlanGroups](https://shopify.dev/docs/api/admin-graphql/latest/queries/sellingplangroups)
+- [taxonomy](https://shopify.dev/docs/api/admin-graphql/latest/queries/taxonomy)
+
+## Retail
+
+### Objects
+
+- [CashTrackingAdjustment](https://shopify.dev/docs/api/admin-graphql/latest/objects/cashtrackingadjustment)
+- [CashTrackingSession](https://shopify.dev/docs/api/admin-graphql/latest/objects/cashtrackingsession)
+- [PointOfSaleDevice](https://shopify.dev/docs/api/admin-graphql/latest/objects/pointofsaledevice)
+### Queries
+
+- [cashTrackingSession](https://shopify.dev/docs/api/admin-graphql/latest/queries/cashtrackingsession)
+- [cashTrackingSessions](https://shopify.dev/docs/api/admin-graphql/latest/queries/cashtrackingsessions)
+- [pointOfSaleDevice](https://shopify.dev/docs/api/admin-graphql/latest/queries/pointofsaledevice)
+
+## Shipping and fulfillment
+
+### Mutations
+
+- [carrierServiceCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/carrierservicecreate)
+- [carrierServiceDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/carrierservicedelete)
+- [carrierServiceUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/carrierserviceupdate)
+- [deliveryCustomizationActivation](https://shopify.dev/docs/api/admin-graphql/latest/mutations/deliverycustomizationactivation)
+- [deliveryCustomizationCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/deliverycustomizationcreate)
+- [deliveryCustomizationDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/deliverycustomizationdelete)
+- [deliveryCustomizationUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/deliverycustomizationupdate)
+- [deliveryProfileCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/deliveryprofilecreate)
+- [deliveryProfileUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/deliveryprofileupdate)
+- [deliveryPromiseParticipantsUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/deliverypromiseparticipantsupdate)
+- [deliveryPromiseProviderUpsert](https://shopify.dev/docs/api/admin-graphql/latest/mutations/deliverypromiseproviderupsert)
+- [deliverySettingUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/deliverysettingupdate)
+- [fulfillmentCancel](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmentcancel)
+- [fulfillmentCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmentcreate)
+- [fulfillmentCreateV2](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmentcreatev2)
+- [fulfillmentEventCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmenteventcreate)
+- [fulfillmentOrderAcceptCancellationRequest](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmentorderacceptcancellationrequest)
+- [fulfillmentOrderAcceptFulfillmentRequest](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmentorderacceptfulfillmentrequest)
+- [fulfillmentOrderCancel](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmentordercancel)
+- [fulfillmentOrderClose](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmentorderclose)
+- [fulfillmentOrderHold](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmentorderhold)
+- [fulfillmentOrderLineItemsPreparedForPickup](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmentorderlineitemspreparedforpickup)
+- [fulfillmentOrderMerge](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmentordermerge)
+- [fulfillmentOrderMove](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmentordermove)
+- [fulfillmentOrderOpen](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmentorderopen)
+- [fulfillmentOrderRejectCancellationRequest](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmentorderrejectcancellationrequest)
+- [fulfillmentOrderRejectFulfillmentRequest](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmentorderrejectfulfillmentrequest)
+- [fulfillmentOrderReleaseHold](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmentorderreleasehold)
+- [fulfillmentOrderReschedule](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmentorderreschedule)
+- [fulfillmentOrderSplit](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmentordersplit)
+- [fulfillmentOrdersSetFulfillmentDeadline](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmentorderssetfulfillmentdeadline)
+- [fulfillmentOrderSubmitCancellationRequest](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmentordersubmitcancellationrequest)
+- [fulfillmentOrderSubmitFulfillmentRequest](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmentordersubmitfulfillmentrequest)
+- [fulfillmentServiceCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmentservicecreate)
+- [fulfillmentServiceDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmentservicedelete)
+- [fulfillmentServiceUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmentserviceupdate)
+- [fulfillmentTrackingInfoUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmenttrackinginfoupdate)
+- [fulfillmentTrackingInfoUpdateV2](https://shopify.dev/docs/api/admin-graphql/latest/mutations/fulfillmenttrackinginfoupdatev2)
+- [shippingPackageDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/shippingpackagedelete)
+- [shippingPackageMakeDefault](https://shopify.dev/docs/api/admin-graphql/latest/mutations/shippingpackagemakedefault)
+- [shippingPackageUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/shippingpackageupdate)
+### Objects
+
+- [CountriesInShippingZones](https://shopify.dev/docs/api/admin-graphql/latest/objects/countriesinshippingzones)
+- [DeliveryAvailableService](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliveryavailableservice)
+- [DeliveryBrandedPromise](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverybrandedpromise)
+- [DeliveryCarrierService](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverycarrierservice)
+- [DeliveryCarrierServiceAndLocations](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverycarrierserviceandlocations)
+- [DeliveryCondition](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverycondition)
+- [DeliveryCountry](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverycountry)
+- [DeliveryCountryAndZone](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverycountryandzone)
+- [DeliveryCountryCodeOrRestOfWorld](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverycountrycodeorrestofworld)
+- [DeliveryCountryCodesOrRestOfWorld](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverycountrycodesorrestofworld)
+- [DeliveryCustomization](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverycustomization)
+- [DeliveryCustomizationError](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverycustomizationerror)
+- [DeliveryLegacyModeBlocked](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverylegacymodeblocked)
+- [DeliveryLocalPickupSettings](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverylocalpickupsettings)
+- [DeliveryLocationGroup](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverylocationgroup)
+- [DeliveryLocationGroupZone](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverylocationgroupzone)
+- [DeliveryLocationLocalPickupSettingsError](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverylocationlocalpickupsettingserror)
+- [DeliveryMethod](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverymethod)
+- [DeliveryMethodAdditionalInformation](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverymethodadditionalinformation)
+- [DeliveryMethodDefinition](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverymethoddefinition)
+- [DeliveryMethodDefinitionCounts](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverymethoddefinitioncounts)
+- [DeliveryParticipant](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliveryparticipant)
+- [DeliveryParticipantService](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliveryparticipantservice)
+- [DeliveryProductVariantsCount](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliveryproductvariantscount)
+- [DeliveryProfile](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliveryprofile)
+- [DeliveryProfileItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliveryprofileitem)
+- [DeliveryProfileLocationGroup](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliveryprofilelocationgroup)
+- [DeliveryPromiseParticipant](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverypromiseparticipant)
+- [DeliveryPromiseProvider](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverypromiseprovider)
+- [DeliveryPromiseSetting](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverypromisesetting)
+- [DeliveryProvince](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliveryprovince)
+- [DeliveryRateDefinition](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliveryratedefinition)
+- [DeliverySetting](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliverysetting)
+- [DeliveryZone](https://shopify.dev/docs/api/admin-graphql/latest/objects/deliveryzone)
+- [EditableProperty](https://shopify.dev/docs/api/admin-graphql/latest/objects/editableproperty)
+- [FinancialSummaryDiscountAllocation](https://shopify.dev/docs/api/admin-graphql/latest/objects/financialsummarydiscountallocation)
+- [FinancialSummaryDiscountApplication](https://shopify.dev/docs/api/admin-graphql/latest/objects/financialsummarydiscountapplication)
+- [Fulfillment](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillment)
+- [FulfillmentEvent](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentevent)
+- [FulfillmentHold](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmenthold)
+- [FulfillmentLineItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentlineitem)
+- [FulfillmentOrder](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentorder)
+- [FulfillmentOrderAssignedLocation](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentorderassignedlocation)
+- [FulfillmentOrderDestination](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentorderdestination)
+- [FulfillmentOrderInternationalDuties](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentorderinternationalduties)
+- [FulfillmentOrderLineItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentorderlineitem)
+- [FulfillmentOrderLineItemFinancialSummary](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentorderlineitemfinancialsummary)
+- [FulfillmentOrderLineItemWarning](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentorderlineitemwarning)
+- [FulfillmentOrderLocationForMove](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentorderlocationformove)
+- [FulfillmentOrderMerchantRequest](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentordermerchantrequest)
+- [FulfillmentOrderMergeResult](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentordermergeresult)
+- [FulfillmentOrderSplitResult](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentordersplitresult)
+- [FulfillmentOrderSupportedAction](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentordersupportedaction)
+- [FulfillmentOriginAddress](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentoriginaddress)
+- [FulfillmentService](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmentservice)
+- [FulfillmentTrackingInfo](https://shopify.dev/docs/api/admin-graphql/latest/objects/fulfillmenttrackinginfo)
+- [ShippingRate](https://shopify.dev/docs/api/admin-graphql/latest/objects/shippingrate)
+### Queries
+
+- [assignedFulfillmentOrders](https://shopify.dev/docs/api/admin-graphql/latest/queries/assignedfulfillmentorders)
+- [availableCarrierServices](https://shopify.dev/docs/api/admin-graphql/latest/queries/availablecarrierservices)
+- [carrierService](https://shopify.dev/docs/api/admin-graphql/latest/queries/carrierservice)
+- [carrierServices](https://shopify.dev/docs/api/admin-graphql/latest/queries/carrierservices)
+- [deliveryCustomization](https://shopify.dev/docs/api/admin-graphql/latest/queries/deliverycustomization)
+- [deliveryCustomizations](https://shopify.dev/docs/api/admin-graphql/latest/queries/deliverycustomizations)
+- [deliveryProfile](https://shopify.dev/docs/api/admin-graphql/latest/queries/deliveryprofile)
+- [deliveryProfiles](https://shopify.dev/docs/api/admin-graphql/latest/queries/deliveryprofiles)
+- [deliveryPromiseParticipants](https://shopify.dev/docs/api/admin-graphql/latest/queries/deliverypromiseparticipants)
+- [deliveryPromiseProvider](https://shopify.dev/docs/api/admin-graphql/latest/queries/deliverypromiseprovider)
+- [deliveryPromiseSettings](https://shopify.dev/docs/api/admin-graphql/latest/queries/deliverypromisesettings)
+- [deliverySettings](https://shopify.dev/docs/api/admin-graphql/latest/queries/deliverysettings)
+- [fulfillment](https://shopify.dev/docs/api/admin-graphql/latest/queries/fulfillment)
+- [fulfillmentOrder](https://shopify.dev/docs/api/admin-graphql/latest/queries/fulfillmentorder)
+- [fulfillmentOrders](https://shopify.dev/docs/api/admin-graphql/latest/queries/fulfillmentorders)
+- [fulfillmentService](https://shopify.dev/docs/api/admin-graphql/latest/queries/fulfillmentservice)
+- [manualHoldsFulfillmentOrders](https://shopify.dev/docs/api/admin-graphql/latest/queries/manualholdsfulfillmentorders)
+
+## Shopify Markets
+
+### Mutations
+
+- [backupRegionUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/backupregionupdate)
+- [marketCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/marketcreate)
+- [marketCurrencySettingsUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/marketcurrencysettingsupdate)
+- [marketDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/marketdelete)
+- [marketRegionDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/marketregiondelete)
+- [marketRegionsCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/marketregionscreate)
+- [marketUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/marketupdate)
+- [marketWebPresenceCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/marketwebpresencecreate)
+- [marketWebPresenceDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/marketwebpresencedelete)
+- [marketWebPresenceUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/marketwebpresenceupdate)
+- [webPresenceCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/webpresencecreate)
+- [webPresenceUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/webpresenceupdate)
+### Objects
+
+- [Market](https://shopify.dev/docs/api/admin-graphql/latest/objects/market)
+- [MarketConditions](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketconditions)
+- [MarketCurrencySettings](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketcurrencysettings)
+- [MarketRegionCountry](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketregioncountry)
+- [MarketsB2BEntitlement](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketsb2bentitlement)
+- [MarketsRegionsEntitlement](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketsregionsentitlement)
+- [MarketsResolvedValues](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketsresolvedvalues)
+- [MarketsRetailEntitlement](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketsretailentitlement)
+- [MarketWebPresence](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketwebpresence)
+- [MarketWebPresenceRootUrl](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketwebpresencerooturl)
+- [RegionsCondition](https://shopify.dev/docs/api/admin-graphql/latest/objects/regionscondition)
+- [ResolvedPriceInclusivity](https://shopify.dev/docs/api/admin-graphql/latest/objects/resolvedpriceinclusivity)
+### Queries
+
+- [backupRegion](https://shopify.dev/docs/api/admin-graphql/latest/queries/backupregion)
+- [market](https://shopify.dev/docs/api/admin-graphql/latest/queries/market)
+- [marketByGeography](https://shopify.dev/docs/api/admin-graphql/latest/queries/marketbygeography)
+- [markets](https://shopify.dev/docs/api/admin-graphql/latest/queries/markets)
+- [marketsResolvedValues](https://shopify.dev/docs/api/admin-graphql/latest/queries/marketsresolvedvalues)
+- [primaryMarket](https://shopify.dev/docs/api/admin-graphql/latest/queries/primarymarket)
+- [webPresences](https://shopify.dev/docs/api/admin-graphql/latest/queries/webpresences)
+
+## Shopify Payments
+
+### Mutations
+
+- [disputeEvidenceUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/disputeevidenceupdate)
+- [shopifyPaymentsPayoutAlternateCurrencyCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/shopifypaymentspayoutalternatecurrencycreate)
+### Objects
+
+- [FinanceKycInformation](https://shopify.dev/docs/api/admin-graphql/latest/objects/financekycinformation)
+- [FinancialKycShopOwner](https://shopify.dev/docs/api/admin-graphql/latest/objects/financialkycshopowner)
+- [OrderDisputeSummary](https://shopify.dev/docs/api/admin-graphql/latest/objects/orderdisputesummary)
+- [ShopifyPaymentsAccount](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentsaccount)
+- [ShopifyPaymentsAddressBasic](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentsaddressbasic)
+- [ShopifyPaymentsAdjustmentOrder](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentsadjustmentorder)
+- [ShopifyPaymentsAssociatedOrder](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentsassociatedorder)
+- [ShopifyPaymentsBalanceTransaction](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentsbalancetransaction)
+- [ShopifyPaymentsBalanceTransactionAssociatedPayout](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentsbalancetransactionassociatedpayout)
+- [ShopifyPaymentsBankAccount](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentsbankaccount)
+- [ShopifyPaymentsDefaultChargeStatementDescriptor](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentsdefaultchargestatementdescriptor)
+- [ShopifyPaymentsDispute](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentsdispute)
+- [ShopifyPaymentsDisputeEvidence](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentsdisputeevidence)
+- [ShopifyPaymentsDisputeFileUpload](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentsdisputefileupload)
+- [ShopifyPaymentsDisputeFulfillment](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentsdisputefulfillment)
+- [ShopifyPaymentsDisputeReasonDetails](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentsdisputereasondetails)
+- [ShopifyPaymentsJpChargeStatementDescriptor](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentsjpchargestatementdescriptor)
+- [ShopifyPaymentsMerchantCategoryCode](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentsmerchantcategorycode)
+- [ShopifyPaymentsPayout](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentspayout)
+- [ShopifyPaymentsPayoutSchedule](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentspayoutschedule)
+- [ShopifyPaymentsPayoutSummary](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentspayoutsummary)
+- [ShopifyPaymentsTaxIdentification](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentstaxidentification)
+- [ShopifyPaymentsToolingProviderPayout](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopifypaymentstoolingproviderpayout)
+### Queries
+
+- [dispute](https://shopify.dev/docs/api/admin-graphql/latest/queries/dispute)
+- [disputeEvidence](https://shopify.dev/docs/api/admin-graphql/latest/queries/disputeevidence)
+- [financeKycInformation](https://shopify.dev/docs/api/admin-graphql/latest/queries/financekycinformation)
+- [shopifyPaymentsAccount](https://shopify.dev/docs/api/admin-graphql/latest/queries/shopifypaymentsaccount)
+
+## Store properties
+
+### Mutations
+
+- [locationActivate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/locationactivate)
+- [locationAdd](https://shopify.dev/docs/api/admin-graphql/latest/mutations/locationadd)
+- [locationDeactivate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/locationdeactivate)
+- [locationDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/locationdelete)
+- [locationEdit](https://shopify.dev/docs/api/admin-graphql/latest/mutations/locationedit)
+- [locationLocalPickupDisable](https://shopify.dev/docs/api/admin-graphql/latest/mutations/locationlocalpickupdisable)
+- [locationLocalPickupEnable](https://shopify.dev/docs/api/admin-graphql/latest/mutations/locationlocalpickupenable)
+- [publishablePublish](https://shopify.dev/docs/api/admin-graphql/latest/mutations/publishablepublish)
+- [publishablePublishToCurrentChannel](https://shopify.dev/docs/api/admin-graphql/latest/mutations/publishablepublishtocurrentchannel)
+- [publishableUnpublish](https://shopify.dev/docs/api/admin-graphql/latest/mutations/publishableunpublish)
+- [publishableUnpublishToCurrentChannel](https://shopify.dev/docs/api/admin-graphql/latest/mutations/publishableunpublishtocurrentchannel)
+- [shopPolicyUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/shoppolicyupdate)
+### Objects
+
+- [BusinessEntity](https://shopify.dev/docs/api/admin-graphql/latest/objects/businessentity)
+- [BusinessEntityAddress](https://shopify.dev/docs/api/admin-graphql/latest/objects/businessentityaddress)
+- [CartTransformEligibleOperations](https://shopify.dev/docs/api/admin-graphql/latest/objects/carttransformeligibleoperations)
+- [CartTransformFeature](https://shopify.dev/docs/api/admin-graphql/latest/objects/carttransformfeature)
+- [CurrencyFormats](https://shopify.dev/docs/api/admin-graphql/latest/objects/currencyformats)
+- [FilterOption](https://shopify.dev/docs/api/admin-graphql/latest/objects/filteroption)
+- [LimitedPendingOrderCount](https://shopify.dev/docs/api/admin-graphql/latest/objects/limitedpendingordercount)
+- [Location](https://shopify.dev/docs/api/admin-graphql/latest/objects/location)
+- [LocationAddress](https://shopify.dev/docs/api/admin-graphql/latest/objects/locationaddress)
+- [LocationsCondition](https://shopify.dev/docs/api/admin-graphql/latest/objects/locationscondition)
+- [LocationSnapshot](https://shopify.dev/docs/api/admin-graphql/latest/objects/locationsnapshot)
+- [LocationSuggestedAddress](https://shopify.dev/docs/api/admin-graphql/latest/objects/locationsuggestedaddress)
+- [NavigationItem](https://shopify.dev/docs/api/admin-graphql/latest/objects/navigationitem)
+- [Shop](https://shopify.dev/docs/api/admin-graphql/latest/objects/shop)
+- [ShopAddress](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopaddress)
+- [ShopFeatures](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopfeatures)
+- [ShopPlan](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopplan)
+- [ShopPolicy](https://shopify.dev/docs/api/admin-graphql/latest/objects/shoppolicy)
+- [ShopResourceLimits](https://shopify.dev/docs/api/admin-graphql/latest/objects/shopresourcelimits)
+### Queries
+
+- [businessEntities](https://shopify.dev/docs/api/admin-graphql/latest/queries/businessentities)
+- [businessEntity](https://shopify.dev/docs/api/admin-graphql/latest/queries/businessentity)
+- [location](https://shopify.dev/docs/api/admin-graphql/latest/queries/location)
+- [locationByIdentifier](https://shopify.dev/docs/api/admin-graphql/latest/queries/locationbyidentifier)
+- [locations](https://shopify.dev/docs/api/admin-graphql/latest/queries/locations)
+- [locationsAvailableForDeliveryProfiles](https://shopify.dev/docs/api/admin-graphql/latest/queries/locationsavailablefordeliveryprofiles)
+- [locationsAvailableForDeliveryProfilesConnection](https://shopify.dev/docs/api/admin-graphql/latest/queries/locationsavailablefordeliveryprofilesconnection)
+- [locationsCount](https://shopify.dev/docs/api/admin-graphql/latest/queries/locationscount)
+- [shop](https://shopify.dev/docs/api/admin-graphql/latest/queries/shop)
+
+## Webhooks
+
+### Mutations
+
+- [eventBridgeWebhookSubscriptionCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/eventbridgewebhooksubscriptioncreate)
+- [eventBridgeWebhookSubscriptionUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/eventbridgewebhooksubscriptionupdate)
+- [pubSubWebhookSubscriptionCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/pubsubwebhooksubscriptioncreate)
+- [pubSubWebhookSubscriptionUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/pubsubwebhooksubscriptionupdate)
+- [webhookSubscriptionCreate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/webhooksubscriptioncreate)
+- [webhookSubscriptionDelete](https://shopify.dev/docs/api/admin-graphql/latest/mutations/webhooksubscriptiondelete)
+- [webhookSubscriptionUpdate](https://shopify.dev/docs/api/admin-graphql/latest/mutations/webhooksubscriptionupdate)
+### Objects
+
+- [WebhookEventBridgeEndpoint](https://shopify.dev/docs/api/admin-graphql/latest/objects/webhookeventbridgeendpoint)
+- [WebhookHttpEndpoint](https://shopify.dev/docs/api/admin-graphql/latest/objects/webhookhttpendpoint)
+- [WebhookPubSubEndpoint](https://shopify.dev/docs/api/admin-graphql/latest/objects/webhookpubsubendpoint)
+- [WebhookSubscription](https://shopify.dev/docs/api/admin-graphql/latest/objects/webhooksubscription)
+### Queries
+
+- [webhookSubscription](https://shopify.dev/docs/api/admin-graphql/latest/queries/webhooksubscription)
+- [webhookSubscriptions](https://shopify.dev/docs/api/admin-graphql/latest/queries/webhooksubscriptions)
+- [webhookSubscriptionsCount](https://shopify.dev/docs/api/admin-graphql/latest/queries/webhooksubscriptionscount)
+```

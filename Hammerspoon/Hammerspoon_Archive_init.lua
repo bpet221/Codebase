@@ -1,8 +1,14 @@
+-- 🟢🟢🟢 LIVE BACKUP START 🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢
+----------------------------------------------------------------
+----------------------------------------------------------------
+-- 🟢🔒 HAMMERSPOON CORE SYSTEM FUNCTIONS
+hs.ipc.cliInstall()
+-- 🛑🔒 HAMMERSPOON CORE SYSTEM FUNCTIONS
+
 ----------------------------------------------------------------
 -- 🟢 KCS Brand Guide Desktop Custom Widget [7.17.25]
 -- 🗒️ Desktop widget. Click/hotkey zoom & brings front. Arrow keys moves to other displays with arrow keys.
 ----------------------------------------------------------------
-hs.ipc.cliInstall()
 
 -- 🧩 Declare arrow hotkey variables early for applyZoom scope
 local leftHotkey, rightHotkey, upHotkey, downHotkey = nil, nil, nil, nil
@@ -280,13 +286,11 @@ applyZoom()
 ----------------------------------------------------------------
 
 ----------------------------------------------------------------
--- 🟢 Launch iTerm on Active Display – Trigger (Multi-Window Support + Dock Click Focus)
+-- 🟢 Open iTerm & Move/Cascade Active Windows to Same Disaply+Cascaded [8.3.25]
 ----------------------------------------------------------------
 
 hs.urlevent.bind("launch_iterm_active_display", function()
-    local screen = hs.mouse.getCurrentScreen()
-    local frame = screen:frame()
-
+    -- Launch iTerm first
     hs.application.launchOrFocus("/Applications/iTerm.app")
 
     hs.timer.doAfter(0.5, function()
@@ -296,7 +300,13 @@ hs.urlevent.bind("launch_iterm_active_display", function()
         end
 
         local windows = app:allWindows()
+        local screen, frame
+
         if #windows == 0 then
+            -- No windows exist - use current mouse screen as fallback
+            screen = hs.mouse.getCurrentScreen()
+            frame = screen:frame()
+
             hs.osascript.applescript([[
         tell application "iTerm"
           create window with default profile
@@ -316,13 +326,39 @@ hs.urlevent.bind("launch_iterm_active_display", function()
                 end
             end)
         else
-            for i = 1, math.min(5, #windows) do
-                local win = windows[i]
-                if win then
-                    win:setFrame(hs.geometry.rect(frame.x + 100 + ((i - 1) * 40), frame.y + 100 + ((i - 1) * 40), 900,
-                        600))
+            -- Windows exist - use the frontmost window's screen as reference
+            local frontWindow = app:mainWindow()
+            if frontWindow then
+                screen = frontWindow:screen()
+                frame = screen:frame()
+
+                -- Position the front window first
+                frontWindow:setFrame(hs.geometry.rect(frame.x + 100, frame.y + 100, 900, 600))
+
+                -- Position other windows behind it in cascade
+                local windowCount = 0
+                for i = 1, math.min(5, #windows) do
+                    local win = windows[i]
+                    if win and win ~= frontWindow then
+                        windowCount = windowCount + 1
+                        win:setFrame(hs.geometry.rect(frame.x + 100 + (windowCount * 40),
+                            frame.y + 100 + (windowCount * 40), 900, 600))
+                    end
+                end
+            else
+                -- Fallback to mouse screen if no main window found
+                screen = hs.mouse.getCurrentScreen()
+                frame = screen:frame()
+
+                for i = 1, math.min(5, #windows) do
+                    local win = windows[i]
+                    if win then
+                        win:setFrame(hs.geometry.rect(frame.x + 100 + ((i - 1) * 40), frame.y + 100 + ((i - 1) * 40),
+                            900, 600))
+                    end
                 end
             end
+
             hs.osascript.applescript([[
         tell application "System Events"
           tell process "Dock"
@@ -335,8 +371,29 @@ hs.urlevent.bind("launch_iterm_active_display", function()
 end)
 
 ----------------------------------------------------------------
--- 🛑 Launch iTerm on Active Display – Trigger (Multi-Window Support + Dock Click Focus)
+-- 🛑 Open iTerm & Move/Cascade Active Windows to Same Disaply+Cascaded
 ----------------------------------------------------------------
+
+----------------------------------------------------------------
+-- 🟢 Auto-Wrap Copied File Paths with Quotes [8.3.25]
+----------------------------------------------------------------
+
+local clipboardWatcher = hs.pasteboard.watcher.new(function()
+    local content = hs.pasteboard.getContents()
+    if content and content:match("^/Users/") and not content:match("^'") then
+        hs.pasteboard.setContents("'" .. content .. "'")
+    end
+end)
+
+clipboardWatcher:start()
+
+----------------------------------------------------------------
+-- 🛑 Auto-Wrap Copied File Paths with Quotes
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+----------------------------------------------------------------
+-- 🛑🛑🛑 LIVE BACKUP END 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑
 
 ----------------------------------------------------------------
 --  █████ 🖥️ 45 MOVE FOCUSED WINDOW TO 23% WIDTH POSITION ON DISPLAY (0,0) 3840x1080 

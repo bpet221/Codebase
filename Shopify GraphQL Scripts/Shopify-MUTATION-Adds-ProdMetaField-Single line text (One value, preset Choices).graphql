@@ -1,0 +1,84 @@
+mutation CreateCabinetLineMetafield($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+        category
+      }
+      constraints {
+        key
+        values(first: 50) {
+          edges {
+            node {
+              value
+            }
+          }
+        }
+      }
+      validations {
+        name
+        value
+        type
+      }
+      access {
+        admin
+        storefront
+      }
+      capabilities {
+        smartCollectionCondition {
+          eligible
+          enabled
+        }
+      }
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+{
+  "definition": {
+    "name": "1_cabinet_line",
+    "namespace": "custom",
+    "key": "1_cabinet_line",
+    "type": "single_line_text_field",
+    "ownerType": "PRODUCT",
+    "description": "",
+    "constraints": {
+      "key": "category",
+      "values": [
+        "fr-4-8-16", "fr-4-8-15", "fr-4-8-14", "fr-4-8-13", "fr-4-8-12", 
+        "fr-4-8-11", "fr-4-8-10", "fr-4-8-9", "fr-4-8-8", "fr-4-8-7", 
+        "fr-4-8-6", "fr-4-8-5", "fr-4-8-4", "fr-4-8-3", "fr-4-8-2", 
+        "fr-4-8-1", "fr-4-14-1", "fr-4-14-1-1", "fr-4-14-1-2", "fr-4-14-1-3", 
+        "fr-4-14-1-4", "fr-4-14-1-5", "fr-4-14-1-6", "fr-4-14-1-7", 
+        "fr-4-14-1-8", "fr-4-14-1-9", "fr-4-14-1-10", "fr-4-14-1-11", 
+        "fr-4-16", "fr-4-15", "fr-5-2", "fr-19-2-2", "fr-4-8"
+      ]
+    },
+    "validations": [
+      {
+        "name": "choices",
+        "value": "[\"Belmont\",\"Seaport\"]"
+      }
+    ],
+    "access": {
+      "storefront": "PUBLIC_READ"
+    },
+    "capabilities": {
+      "smartCollectionCondition": {
+        "enabled": true
+      },
+      "adminFilterable": {
+        "enabled": true
+      }
+    }
+  }
+}

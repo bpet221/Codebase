@@ -1,0 +1,981 @@
+📦 Processing batch 1/48 (5 URLs)
+🔄 Processing: Overview
+🔄 Processing: Create a theme
+🔄 Processing: Customize a merchant theme
+🔄 Processing: Build your business
+🔄 Processing: Architecture
+✅ Created: Create/create-a-theme.md
+✅ Created: Getting started/overview.md
+✅ Created: Customize/customize-a-merchant-theme.md
+✅ Created: Key concepts/architecture.md
+✅ Created: Build Your Business/build-your-business.md
+📈 Progress: 2.1% (5 successful, 0 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 2/48 (5 URLs)
+🔄 Processing: Snippets
+🔄 Processing: Overview
+🔄 Processing: Overview
+🔄 Processing: Customize checkout.liquid
+🔄 Processing: Checkout CSS
+✅ Created: Checkout Liquid/overview.md
+✅ Created: Checkout Liquid/checkout-css.md
+✅ Created: Key concepts/snippets.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/layouts: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/layouts/checkout-liquid/customize-checkout: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 4.2% (8 successful, 2 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 3/48 (5 URLs)
+🔄 Processing: Overview
+🔄 Processing: JSON templates
+🔄 Processing: Liquid templates
+🔄 Processing: Alternate templates
+🔄 Processing: 404
+✅ Created: Templates/alternate-templates.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/templates/json-templates: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/templates/404: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/templates: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/templates/liquid-templates: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 6.2% (9 successful, 6 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 4/48 (5 URLs)
+🔄 Processing: article
+🔄 Processing: blog
+🔄 Processing: cart
+🔄 Processing: collection
+🔄 Processing: customers/account
+✅ Created: Collection/collection.md
+✅ Created: Blog/blog.md
+✅ Created: Article/article.md
+✅ Created: Cart/cart.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/templates/customers-account: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 8.3% (13 successful, 7 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 5/48 (5 URLs)
+🔄 Processing: customers/activate_account
+🔄 Processing: customers/addresses
+🔄 Processing: customers/login
+🔄 Processing: customers/order
+🔄 Processing: customers/register
+✅ Created: Customers Order/customersorder.md
+✅ Created: Customers Addresses/customersaddresses.md
+✅ Created: Customers Register/customersregister.md
+📦 Processing batch 2/48 (5 URLs)
+🔄 Processing: Snippets
+🔄 Processing: Overview
+🔄 Processing: Overview
+🔄 Processing: Customize checkout.liquid
+🔄 Processing: Checkout CSS
+✅ Created: Checkout Liquid/overview.md
+✅ Created: Checkout Liquid/checkout-css.md
+✅ Created: Key concepts/snippets.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/layouts: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/layouts/checkout-liquid/customize-checkout: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 4.2% (8 successful, 2 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 3/48 (5 URLs)
+🔄 Processing: Overview
+🔄 Processing: JSON templates
+🔄 Processing: Liquid templates
+🔄 Processing: Alternate templates
+🔄 Processing: 404
+✅ Created: Templates/alternate-templates.md
+❌ Error fetching h❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/templates/customers-login: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/templates/customers-activate-account: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 10.4% (16 successful, 9 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 6/48 (5 URLs)
+🔄 Processing: customers/reset_password
+🔄 Processing: gift_card.liquid
+🔄 Processing: index
+🔄 Processing: list-collections
+🔄 Processing: metaobject
+✅ Created: Customers Reset Password/customersreset_password.md
+✅ Created: List Collections/list-collections.md
+✅ Created: Gift Card Liquid/gift_cardliquid.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/templates/index-template: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/templates/metaobject: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 12.5% (19 successful, 11 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 7/48 (5 URLs)
+🔄 Processing: page
+🔄 Processing: password
+🔄 Processing: product
+🔄 Processing: robots.txt.liquid
+🔄 Processing: search
+✅ Created: Page/page.md
+✅ Created: Password/password.md
+✅ Created: Robots Txt Liquid/robotstxtliquid.md
+✅ Created: Search/search.md
+✅ Created: Product/product.md
+📈 Progress: 14.6% (24 successful, 11 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 8/48 (5 URLs)
+🔄 Processing: Overview
+🔄 Processing: Section schema
+🔄 Processing: Overview
+🔄 Processing: Migrate
+🔄 Processing: Overview
+✅ Created: Sections/section-schema.md
+✅ Created: Section Groups/overview.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/sections: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/blocks: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/section-groups/migrate: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 16.7% (26 successful, 14 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 9/48 (5 URLs)
+🔄 Processing: Section blocks
+🔄 Processing: App blocks
+🔄 Processing: AI generated blocks
+🔄 Processing: Quick Start
+🔄 Processing: Block schema
+✅ Created: Blocks/ai-generated-blocks.md
+✅ Created: Blocks/app-blocks.md
+✅ Created: Blocks/section-blocks.md
+✅ Created: Theme Blocks/quick-start.md
+✅ Created: Theme Blocks/block-schema.md
+📈 Progress: 18.8% (31 successful, 14 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 10/48 (5 URLs)
+🔄 Processing: Block targeting
+🔄 Processing: Static blocks
+🔄 Processing: Dynamic sources
+🔄 Processing: Overview
+🔄 Processing: Input settings
+✅ Created: Settings/overview.md
+✅ Created: Theme Blocks/static-blocks.md
+✅ Created: Settings/input-settings.md
+✅ Created: Theme Blocks/dynamic-sources.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/blocks/theme-blocks/targeting: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 20.8% (35 successful, 15 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 11/48 (5 URLs)
+🔄 Processing: Sidebar settings
+🔄 Processing: Dynamic sources
+🔄 Processing: Fonts
+🔄 Processing: Deprecated settings
+🔄 Processing: Overview
+✅ Created: Settings/deprecated-settings.md
+✅ Created: Settings/dynamic-sources.md
+✅ Created: Settings/sidebar-settings.md
+✅ Created: Settings/fonts.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/config: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 22.9% (39 successful, 16 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 12/48 (5 URLs)
+🔄 Processing: settings_schema.json
+🔄 Processing: settings_data.json
+🔄 Processing: markets.json
+🔄 Processing: Overview
+🔄 Processing: Schema locale files
+✅ Created: Config/settings_schemajson.md
+✅ Created: Config/settings_datajson.md
+✅ Created: Locales/schema-locale-files.md
+❌ Failed to fetch https://shopify.dev/docs/storefronts/themes/architecture/config/markets-json (Status: 503)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/locales: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 25.0% (42 successful, 18 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 13/48 (5 URLs)
+🔄 Processing: Storefront locale files
+🔄 Processing: Overview
+🔄 Processing: Sections and blocks
+🔄 Processing: JavaScript and stylesheet tags
+🔄 Processing: Accessibility
+✅ Created: Best practices/overview.md
+✅ Created: Locales/storefront-locale-files.md
+✅ Created: Best practices/javascript-and-stylesheet-tags.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/best-practices/templates-sections-blocks: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/best-practices/accessibility: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 27.1% (45 successful, 20 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 14/48 (5 URLs)
+🔄 Processing: Merchant stores
+🔄 Processing: Version control
+🔄 Processing: File transformation
+🔄 Processing: Deceptive code
+🔄 Processing: Overview
+✅ Created: Best practices/file-transformation.md
+✅ Created: Best practices/version-control.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/best-practices/merchant-stores: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/best-practices/performance: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/best-practices/deceptive-code: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 29.2% (47 successful, 23 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 15/48 (5 URLs)
+🔄 Processing: Platform
+🔄 Processing: Overview
+🔄 Processing: Integrate sections and blocks
+🔄 Processing: Preview inspector
+🔄 Processing: Overview
+✅ Created: Performance/platform.md
+✅ Created: Editor/preview-inspector.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/best-practices/design: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/best-practices/editor/integrate-sections-and-blocks: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/best-practices/editor: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 31.2% (49 successful, 26 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 16/48 (5 URLs)
+🔄 Processing: Color system
+🔄 Processing: Overview
+🔄 Processing: GitHub integration
+🔄 Processing: VS Code extension
+🔄 Processing: Prettier plugin
+✅ Created: Developer Tools/prettier-plugin.md
+✅ Created: Developer Tools/vs-code-extension.md
+✅ Created: Design/color-system.md
+✅ Created: Developer Tools/github-integration.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 33.3% (53 successful, 27 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 17/48 (5 URLs)
+🔄 Processing: LiquidDoc
+🔄 Processing: Theme editor
+🔄 Processing: Code editor
+🔄 Processing: Theme Access app
+🔄 Processing: Collaborator accounts
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/liquid-doc: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/code-editor: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-access: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/collaborator-accounts: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/online-editor: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 35.4% (53 successful, 32 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 18/48 (5 URLs)
+🔄 Processing: Lighthouse CI
+🔄 Processing: Overview
+🔄 Processing: CI/CD
+🔄 Processing: Language Server
+🔄 Processing: Environments
+✅ Created: Cli/overview.md
+✅ Created: Cli/cicd.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/cli/environments: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/cli/language-server: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/lighthouse-ci: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 37.5% (55 successful, 35 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 19/48 (5 URLs)
+🔄 Processing: Migrate
+🔄 Processing: Overview
+🔄 Processing: Commands
+🔄 Processing: Install, upgrade, or uninstall
+🔄 Processing: Overview
+✅ Created: Cli 2/install-upgrade-or-uninstall.md
+✅ Created: Cli 2/commands.md
+✅ Created: Cli/migrate.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-check: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/cli/cli-2: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 39.6% (58 successful, 37 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 20/48 (5 URLs)
+🔄 Processing: Commands
+🔄 Processing: Configuration
+🔄 Processing: Migrate
+🔄 Processing: Overview
+🔄 Processing: AppBlockMissingSchema
+✅ Created: Theme Check/migrate.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-check/checks/app-block-missing-schema: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-check/checks: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-check/configuration: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-check/commands: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 41.7% (59 successful, 41 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 21/48 (5 URLs)
+🔄 Processing: AppBlockValidTags
+🔄 Processing: AssetPreload
+🔄 Processing: AssetSizeAppBlockCSS
+🔄 Processing: AssetSizeAppBlockJavascript
+🔄 Processing: AssetSizeCSS
+✅ Created: Checks/assetsizeappblockjavascript.md
+✅ Created: Checks/assetpreload.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-check/checks/asset-size-css: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-check/checks/app-block-valid-tags: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-check/checks/asset-size-app-block-css: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 43.8% (61 successful, 44 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 22/48 (5 URLs)
+🔄 Processing: AssetSizeJavascript
+🔄 Processing: BlockIdUsage
+🔄 Processing: CaptureOnContentForBlock
+🔄 Processing: CdnPreconnect
+🔄 Processing: ContentForHeaderModification
+✅ Created: Checks/cdnpreconnect.md
+✅ Created: Checks/contentforheadermodification.md
+✅ Created: Checks/blockidusage.md
+✅ Created: Checks/assetsizejavascript.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-check/checks/capture-on-content-for-block: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 45.8% (65 successful, 45 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 23/48 (5 URLs)
+🔄 Processing: DeprecateBgsizes
+🔄 Processing: DeprecateLazysizes
+🔄 Processing: DeprecatedFilter
+🔄 Processing: DeprecatedFontsOnSectionsAndBlocks
+🔄 Processing: DeprecatedFontsOnSettingsSchema
+✅ Created: Checks/deprecatedfontsonsettingsschema.md
+✅ Created: Checks/deprecatelazysizes.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-check/checks/deprecate-bgsizes: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-check/checks/deprecated-filter: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-check/checks/deprecated-fonts-on-sections-and-blocks: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 47.9% (67 successful, 48 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 24/48 (5 URLs)
+🔄 Processing: DeprecatedTag
+🔄 Processing: DuplicateContentForArguments
+🔄 Processing: DuplicateRenderSnippetArguments
+🔄 Processing: EmptyBlockContent
+🔄 Processing: HardcodedRoutes
+✅ Created: Checks/deprecatedtag.md
+✅ Created: Checks/duplicaterendersnippetarguments.md
+✅ Created: Checks/duplicatecontentforarguments.md
+✅ Created: Checks/hardcodedroutes.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-check/checks/empty-block-content: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 50.0% (71 successful, 49 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 25/48 (5 URLs)
+🔄 Processing: ImgWidthAndHeight
+🔄 Processing: JSONMissingBlock
+🔄 Processing: JSONSyntaxError
+🔄 Processing: LiquidFreeSettings
+🔄 Processing: LiquidHTMLSyntaxError
+✅ Created: Checks/liquidhtmlsyntaxerror.md
+✅ Created: Checks/imgwidthandheight.md
+✅ Created: Checks/jsonmissingblock.md
+✅ Created: Checks/liquidfreesettings.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-check/checks/json-syntax-error: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 52.1% (75 successful, 50 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 26/48 (5 URLs)
+🔄 Processing: MatchingTranslations
+🔄 Processing: MatchingSchemaTranslations
+🔄 Processing: MissingAsset
+🔄 Processing: MissingContentForArguments
+🔄 Processing: MissingRenderSnippetArguments
+✅ Created: Checks/missingasset.md
+✅ Created: Checks/matchingtranslations.md
+✅ Created: Checks/missingcontentforarguments.md
+❌ Failed to fetch https://shopify.dev/docs/storefronts/themes/tools/theme-check/checks/missing-render-snippet-arguments (Status: 503)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-check/checks/matching-schema-translations: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 54.2% (78 successful, 52 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 27/48 (5 URLs)
+🔄 Processing: MissingTemplate
+🔄 Processing: PaginationSize
+🔄 Processing: ParserBlockingJavaScript
+🔄 Processing: RemoteAsset
+🔄 Processing: RequiredLayoutThemeObject
+✅ Created: Checks/parserblockingjavascript.md
+✅ Created: Checks/remoteasset.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-check/checks/pagination-size: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-check/checks/required-layout-theme-object: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-check/checks/missing-template: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 56.2% (80 successful, 55 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 28/48 (5 URLs)
+🔄 Processing: SchemaPresetsBlockOrder
+🔄 Processing: SchemaPresetsStaticBlocks
+🔄 Processing: StaticStylesheetAndJavascriptTags
+🔄 Processing: TranslationKeyExists
+🔄 Processing: UnclosedHTMLElement
+✅ Created: Checks/schemapresetsblockorder.md
+✅ Created: Checks/unclosedhtmlelement.md
+✅ Created: Checks/schemapresetsstaticblocks.md
+✅ Created: Checks/staticstylesheetandjavascripttags.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-check/checks/translation-key-exists: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 58.3% (84 successful, 56 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 29/48 (5 URLs)
+🔄 Processing: UndefinedObject
+🔄 Processing: UniqueDocParamNames
+🔄 Processing: UniqueStaticBlockId
+🔄 Processing: UnknownFilter
+🔄 Processing: UnrecognizedContentForArguments
+✅ Created: Checks/uniquestaticblockid.md
+✅ Created: Checks/unknownfilter.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-check/checks/unique-doc-param-names: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-check/checks/unrecognized-content-for-arguments: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-check/checks/undefined-object: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 60.4% (86 successful, 59 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 30/48 (5 URLs)
+🔄 Processing: UnrecognizedRenderSnippetArguments
+🔄 Processing: UnsupportedDocTag
+🔄 Processing: UnusedAssign
+🔄 Processing: UnusedDocParam
+🔄 Processing: ValidBlockTarget
+✅ Created: Checks/validblocktarget.md
+✅ Created: Checks/unsupporteddoctag.md
+✅ Created: Checks/unuseddocparam.md
+✅ Created: Checks/unrecognizedrendersnippetarguments.md
+✅ Created: Checks/unusedassign.md
+📈 Progress: 62.5% (91 successful, 59 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 31/48 (5 URLs)
+🔄 Processing: ValidContentForArguments
+🔄 Processing: ValidContentForArgumentTypes
+🔄 Processing: ValidDocParamNames
+🔄 Processing: ValidDocParamTypes
+🔄 Processing: ValidHTMLTranslation
+✅ Created: Checks/validcontentforarguments.md
+✅ Created: Checks/validdocparamtypes.md
+✅ Created: Checks/validdocparamnames.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-check/checks/valid-content-for-argument-types: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-check/checks/valid-html-translation: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 64.6% (94 successful, 61 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 32/48 (5 URLs)
+🔄 Processing: ValidLocalBlocks
+🔄 Processing: ValidRenderSnippetArgumentTypes
+🔄 Processing: ValidSchema
+🔄 Processing: ValidSchemaName
+🔄 Processing: ValidSettingsKey
+✅ Created: Checks/validrendersnippetargumenttypes.md
+✅ Created: Checks/validschemaname.md
+✅ Created: Checks/validlocalblocks.md
+✅ Created: Checks/validschema.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-check/checks/valid-settings-key: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 66.7% (98 successful, 62 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 33/48 (5 URLs)
+🔄 Processing: ValidStaticBlockType
+🔄 Processing: VariableName
+🔄 Processing: Overview
+🔄 Processing: Test data
+🔄 Processing: Transfer a development store
+✅ Created: Development Stores/test-data.md
+✅ Created: Development Stores/overview.md
+✅ Created: Checks/validstaticblocktype.md
+✅ Created: Development Stores/transfer-a-development-store.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-check/checks/variable-name: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 68.8% (102 successful, 63 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 34/48 (5 URLs)
+🔄 Processing: Overview
+🔄 Processing: Optimizing themes using Theme Inspector
+🔄 Processing: Overview
+🔄 Processing: Login redirects
+🔄 Processing: Troubleshooting
+✅ Created: Theme features/login-redirects.md
+✅ Created: Theme features/overview.md
+✅ Created: Theme Inspector/optimizing-themes-using-theme-inspector.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/troubleshooting: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/tools/theme-inspector: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 70.8% (105 successful, 65 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 35/48 (5 URLs)
+🔄 Processing: Overview
+🔄 Processing: Overview
+🔄 Processing: Overview
+🔄 Processing: Overview
+🔄 Processing: Overview
+✅ Created: Misc/overview.md
+✅ Created: Misc/overview.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/markets: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/product-merchandising: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/delivery-fulfillment: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 72.9% (107 successful, 68 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 36/48 (5 URLs)
+🔄 Processing: Overview
+🔄 Processing: Overview
+🔄 Processing: Overview
+🔄 Processing: Overview
+🔄 Processing: Overview
+✅ Created: Misc/overview.md
+✅ Created: Misc/overview.md
+✅ Created: Misc/overview.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/product-merchandising/variants: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/trust-security: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 75.0% (110 successful, 70 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 37/48 (5 URLs)
+🔄 Processing: Support high-variant products
+🔄 Processing: Overview
+🔄 Processing: Related products
+🔄 Processing: Complementary products
+🔄 Processing: Overview
+✅ Created: Support High Variant Products/support-high-variant-products.md
+✅ Created: Recommendations/overview.md
+✅ Created: Media/overview.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/product-merchandising/recommendations/complementary-products: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/product-merchandising/recommendations/related-products: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 77.1% (113 successful, 72 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 38/48 (5 URLs)
+🔄 Processing: Support product media
+🔄 Processing: Product media UX guidelines
+🔄 Processing: Gift cards
+🔄 Processing: Grouped view Bundle emails
+🔄 Processing: Discounts
+✅ Created: Bundles Emails/grouped-view-bundle-emails.md
+✅ Created: Support Media/support-product-media.md
+✅ Created: Media Ux/product-media-ux-guidelines.md
+✅ Created: Discounts/discounts.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/product-merchandising/gift-cards: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 79.2% (117 successful, 73 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 39/48 (5 URLs)
+🔄 Processing: Overview
+🔄 Processing: Add subscriptions to your theme
+🔄 Processing: Subscription UX guidelines
+🔄 Processing: Overview
+🔄 Processing: Add pre-orders and TBYB to your theme
+✅ Created: Add Subscriptions To Your Theme/add-subscriptions-to-your-theme.md
+✅ Created: Add Preorder Tbyb To Your Theme/add-pre-orders-and-tbyb-to-your-theme.md
+✅ Created: Subscription Ux Guidelines/subscription-ux-guidelines.md
+✅ Created: Subscriptions/overview.md
+✅ Created: Preorder Tbyb/overview.md
+📈 Progress: 81.2% (122 successful, 73 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 40/48 (5 URLs)
+🔄 Processing: Pre-orders and TBYB UX guidelines
+🔄 Processing: Shop Pay Installments
+🔄 Processing: About accelerated checkout
+🔄 Processing: B2B
+🔄 Processing: Upgrade accelerated checkout
+✅ Created: Accelerated Checkout/about-accelerated-checkout.md
+✅ Created: Installments/shop-pay-installments.md
+✅ Created: Preorder Tbyb Ux Guidelines/pre-orders-and-tbyb-ux-guidelines.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/pricing-payments/b2b: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/pricing-payments/accelerated-checkout/upgrade-accelerated-checkout: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 83.3% (125 successful, 75 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 41/48 (5 URLs)
+🔄 Processing: Unit pricing
+🔄 Processing: Explicit currency formatting
+🔄 Processing: Pickup availability
+🔄 Processing: Email consent
+🔄 Processing: Additional customer information
+✅ Created: Currency Formatting/explicit-currency-formatting.md
+✅ Created: Pickup Availability/pickup-availability.md
+✅ Created: Email Consent/email-consent.md
+✅ Created: Additional Customer Information/additional-customer-information.md
+✅ Created: Unit Pricing/unit-pricing.md
+📈 Progress: 85.4% (130 successful, 75 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 42/48 (5 URLs)
+🔄 Processing: Add a contact form
+🔄 Processing: Support multiple currencies and languages
+🔄 Processing: Detect and set a visitor's optimal localization
+🔄 Processing: Country and language selector UX guidelines
+🔄 Processing: Navigation
+✅ Created: Multiple Currencies Languages/support-multiple-currencies-and-languages.md
+✅ Created: Country Language Ux/country-and-language-selector-ux-guidelines.md
+✅ Created: Add Contact Form/add-a-contact-form.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/markets/localization-discovery: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/navigation-search/navigation: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 87.5% (133 successful, 77 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 43/48 (5 URLs)
+🔄 Processing: Overview
+🔄 Processing: Predictive search
+🔄 Processing: Predictive search UX guidelines
+🔄 Processing: Overview
+🔄 Processing: Overview
+✅ Created: Storefront Filtering/overview.md
+✅ Created: Predictive Search/predictive-search.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/navigation-search/search/predictive-search-ux: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/navigation-search/filtering: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/navigation-search/search: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 89.6% (135 successful, 80 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 44/48 (5 URLs)
+🔄 Processing: Support storefront filtering
+🔄 Processing: Storefront filtering UX guidelines
+🔄 Processing: Tag filtering
+🔄 Processing: Metadata
+🔄 Processing: hreflang tags
+✅ Created: Metadata/metadata.md
+✅ Created: Hreflang/hreflang-tags.md
+✅ Created: Storefront Filtering/storefront-filtering-ux-guidelines.md
+✅ Created: Storefront Filtering/support-storefront-filtering.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/navigation-search/filtering/tag-filtering: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 91.7% (139 successful, 81 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 45/48 (5 URLs)
+🔄 Processing: robots.txt
+🔄 Processing: Security badges
+🔄 Processing: Captcha
+🔄 Processing: Assessment
+🔄 Processing: Migration guide
+✅ Created: Robots Txt/robotstxt.md
+✅ Created: Security Badges/security-badges.md
+✅ Created: Captcha/captcha.md
+✅ Created: Migration/migration-guide.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/os20/assessment: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 93.8% (143 successful, 82 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 46/48 (5 URLs)
+🔄 Processing: Overview
+🔄 Processing: Requirements
+🔄 Processing: Overview
+🔄 Processing: Testing assets
+🔄 Processing: Testing checklist
+✅ Created: Requirements/requirements.md
+✅ Created: Assets/testing-assets.md
+✅ Created: Misc/overview.md
+✅ Created: Test Theme/overview.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/store/test-theme/checklist: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 95.8% (147 successful, 83 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 47/48 (5 URLs)
+🔄 Processing: Submitting a theme
+🔄 Processing: Theme Store listings
+🔄 Processing: Common theme rejections
+🔄 Processing: Prohibited actions
+🔄 Processing: Overview
+✅ Created: Success/overview.md
+✅ Created: Listings/theme-store-listings.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/store/review-process/common-theme-rejections: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/store/success/prohibited-actions: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/store/review-process/submit-theme: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 97.9% (149 successful, 86 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 48/48 (5 URLs)
+🔄 Processing: Managing theme reviews
+🔄 Processing: Brand asset guidance
+🔄 Processing: Updating your theme
+🔄 Processing: Removing a theme
+🔄 Processing: Theme revenue share
+✅ Created: Brand Assets/brand-asset-guidance.md
+✅ Created: Updates/updating-your-theme.md
+✅ Created: Remove Theme/removing-a-theme.md
+✅ Created: Managing Theme Reviews/managing-theme-reviews.md
+✅ Created: Revenue Share/theme-revenue-share.md
+📈 Progress: 100.0% (154 successful, 86 failed)
+
+📋 Report saved to: /Users/blakepetipas/Code Repos/Codebase/AI Markdown Files/Shopify-Store-Theme-Docs-7.29.25/PROCESSING_REPORT.md
+
+🎉 Processing complete!
+⏱️  Total time: 1314.5 seconds
+📊 Success rate: 64.2%
+📁 Files created in: /Users/blakepetipas/Code Repos/Codebase/AI Markdown Files/Shopify-Store-Theme-Docs-7.29.25
+(shopify_env) blakepetipas@Blakes-MBP-16-M3-Pro Archive % 📦 Processing batch 2/48 (5 URLs)
+zsh: unknown file attribute: 5
+🔄 Processing: Snippets
+🔄 Processing: Overview
+🔄 Processing: Overview
+🔄 Processing: Customize checkout.liquid
+🔄 Processing: Checkout CSS
+✅ Created: Checkout Liquid/overview.md
+✅ Created: Checkout Liquid/checkout-css.md
+✅ Created: Key concepts/snippets.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/layouts: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/layouts/checkout-liquid/customize-checkout: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 4.2% (8 successful, 2 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 3/48 (5 URLs)
+🔄 Processing: Overview
+🔄 Processing: JSON templates
+🔄 Processing: Liquid templates
+🔄 Processing: Alternate templates
+🔄 Processing: 404
+✅ Created: Templates/alternate-templates.md
+❌ Error fetching htt❌ Error fetchi%
+(shopify_env) blakepetipas@Blakes-MBP-16-M3-Pro Archive % 🔄 Processing: Snippets
+zsh: command not found: 🔄
+🔄 Processing: Overview
+🔄 Processing: Overview
+🔄 Processing: Customize checkout.liquid
+🔄 Processing: Checkout CSS
+✅ Created: Checkout Liquid/overview.md
+✅ Created: Checkout Liquid/checkout-css.md
+✅ Created: Key concepts/snippets.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/layouts: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/layouts/checkout-liquid/customize-checkout: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 4.2% (8 successful, 2 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 3/48 (5 URLs)
+🔄 Processing: Overview
+🔄 Processing: JSON templates
+🔄 Processing: Liquid templates
+🔄 Processing: Alternate templates
+🔄 Processing: 404
+✅ Created: Templates/alternate-templates.md
+❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Err%
+(shopify_env) blakepetipas@Blakes-MBP-16-M3-Pro Archive % 🔄 Processing: Overview
+zsh: command not found: 🔄
+🔄 Processing: Overview
+🔄 Processing: Customize checkout.liquid
+🔄 Processing: Checkout CSS
+✅ Created: Checkout Liquid/overview.md
+✅ Created: Checkout Liquid/checkout-css.md
+✅ Created: Key concepts/snippets.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/layouts: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/layouts/checkout-liquid/customize-checkout: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 4.2% (8 successful, 2 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 3/48 (5 URLs)
+🔄 Processing: Overview
+🔄 Processing: JSON templates
+🔄 Processing: Liquid templates
+🔄 Processing: Alternate templates
+🔄 Processing: 404
+✅ Created: Templates/alternate-templates.md
+❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Erro%
+(shopify_env) blakepetipas@Blakes-MBP-16-M3-Pro Archive % 🔄 Processing: Overview
+zsh: command not found: 🔄
+🔄 Processing: Customize checkout.liquid
+🔄 Processing: Checkout CSS
+✅ Created: Checkout Liquid/overview.md
+✅ Created: Checkout Liquid/checkout-css.md
+✅ Created: Key concepts/snippets.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/layouts: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/layouts/checkout-liquid/customize-checkout: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 4.2% (8 successful, 2 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 3/48 (5 URLs)
+🔄 Processing: Overview
+🔄 Processing: JSON templates
+🔄 Processing: Liquid templates
+🔄 Processing: Alternate templates
+🔄 Processing: 404
+✅ Created: Templates/alternate-templates.md
+❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error%
+(shopify_env) blakepetipas@Blakes-MBP-16-M3-Pro Archive % 🔄 Processing: Customize checkout.liquid
+zsh: command not found: 🔄
+🔄 Processing: Checkout CSS
+✅ Created: Checkout Liquid/overview.md
+✅ Created: Checkout Liquid/checkout-css.md
+✅ Created: Key concepts/snippets.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/layouts: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/layouts/checkout-liquid/customize-checkout: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 4.2% (8 successful, 2 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 3/48 (5 URLs)
+🔄 Processing: Overview
+🔄 Processing: JSON templates
+🔄 Processing: Liquid templates
+🔄 Processing: Alternate templates
+🔄 Processing: 404
+✅ Created: Templates/alternate-templates.md
+❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ E%
+(shopify_env) blakepetipas@Blakes-MBP-16-M3-Pro Archive % 🔄 Processing: Checkout CSS
+zsh: command not found: 🔄
+✅ Created: Checkout Liquid/overview.md
+✅ Created: Checkout Liquid/checkout-css.md
+✅ Created: Key concepts/snippets.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/layouts: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/layouts/checkout-liquid/customize-checkout: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 4.2% (8 successful, 2 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 3/48 (5 URLs)
+🔄 Processing: Overview
+🔄 Processing: JSON templates
+🔄 Processing: Liquid templates
+🔄 Processing: Alternate templates
+🔄 Processing: 404
+✅ Created: Templates/alternate-templates.md
+❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetching ou❌ Error fetch%
+(shopify_env) blakepetipas@Blakes-MBP-16-M3-Pro Archive % ✅ Created: Checkout Liquid/overview.md
+zsh: command not found: ✅
+✅ Created: Checkout Liquid/checkout-css.md
+✅ Created: Key concepts/snippets.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/layouts: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/layouts/checkout-liquid/customize-checkout: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 4.2% (8 successful, 2 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 3/48 (5 URLs)
+🔄 Processing: Overview
+🔄 Processing: JSON templates
+🔄 Processing: Liquid templates
+🔄 Processing: Alternate templates
+🔄 Processing: 404
+✅ Created: Templates/alternate-templates.md
+❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetching ou❌ Error fetching htt❌ Erps❌ Error fetching htt❌ E%
+(shopify_env) blakepetipas@Blakes-MBP-16-M3-Pro Archive % ✅ Created: Checkout Liquid/checkout-css.md
+zsh: command not found: ✅
+✅ Created: Key concepts/snippets.md
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/layouts: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/layouts/checkout-liquid/customize-checkout: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 4.2% (8 successful, 2 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 3/48 (5 URLs)
+🔄 Processing: Overview
+🔄 Processing: JSON templates
+🔄 Processing: Liquid templates
+🔄 Processing: Alternate templates
+🔄 Processing: 404
+✅ Created: Templates/alternate-templates.md
+❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetching ou❌ Error fetching htt❌ Erps❌ Error fetching htt❌ Error fetchinar❌ Error fetching htt❌ Error %
+(shopify_env) blakepetipas@Blakes-MBP-16-M3-Pro Archive % ✅ Created: Key concepts/snippets.md
+zsh: command not found: ✅
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/layouts: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/layouts/checkout-liquid/customize-checkout: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 4.2% (8 successful, 2 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 3/48 (5 URLs)
+🔄 Processing: Overview
+🔄 Processing: JSON templates
+🔄 Processing: Liquid templates
+🔄 Processing: Alternate templates
+🔄 Processing: 404
+✅ Created: Templates/alternate-templates.md
+❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetching ou❌ Error fetching htt❌ Erps❌ Error fetching htt❌ Error fetchinar❌ Error fetching htt❌ Error fetching htol❌ Error fetching htt❌ %
+(shopify_env) blakepetipas@Blakes-MBP-16-M3-Pro Archive % ❌ Error fetching https://shopify.dev/docs/storefronts/themes/archite
+cture/layouts: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+zsh: no matches found: HTTPSConnectionPool(host=r.jina.ai, port=443):
+❌ Error fetching https://shopify.dev/docs/storefronts/themes/architecture/layouts/checkout-liquid/customize-checkout: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)
+📈 Progress: 4.2% (8 successful, 2 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 3/48 (5 URLs)
+🔄 Processing: Overview
+🔄 Processing: JSON templates
+🔄 Processing: Liquid templates
+🔄 Processing: Alternate templates
+🔄 Processing: 404
+✅ Created: Templates/alternate-templates.md
+❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetching ou❌ Error fetching htt❌ Erps❌ Error fetching htt❌ Error fetchinar❌ Error fetching htt❌ Error fetching htol❌ Error fetching htt❌ Error fetcim❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching ht%
+(shopify_env) blakepetipas@Blakes-MBP-16-M3-Pro Archive % ❌ Error fetching https://shopify.dev/docs/storefronts/themes/archite
+cture/layouts/checkout-liquid/customize-checkout: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeou
+t=30)
+zsh: no matches found: HTTPSConnectionPool(host=r.jina.ai, port=443):
+📈 Progress: 4.2% (8 successful, 2 failed)
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 3/48 (5 URLs)
+🔄 Processing: Overview
+🔄 Processing: JSON templates
+🔄 Processing: Liquid templates
+🔄 Processing: Alternate templates
+🔄 Processing: 404
+✅ Created: Templates/alternate-templates.md
+❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetching ou❌ Error fetching htt❌ Erps❌ Error fetching htt❌ Error fetchinar❌ Error fetching htt❌ Error fetching htol❌ Error fetching htt❌ Error fetcim❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Erro t❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetching ou❌ Error fetc%
+(shopify_env) blakepetipas@Blakes-MBP-16-M3-Pro Archive % 📈 Progress: 4.2% (8 successful, 2 failed)
+zsh: unknown file attribute: 8
+⏱️  Waiting 1.0s before next batch...
+
+📦 Processing batch 3/48 (5 URLs)
+🔄 Processing: Overview
+🔄 Processing: JSON templates
+🔄 Processing: Liquid templates
+🔄 Processing: Alternate templates
+🔄 Processing: 404
+✅ Created: Templates/alternate-templates.md
+❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetching ou❌ Error fetching htt❌ Erps❌ Error fetching htt❌ Error fetchinar❌ Error fetching htt❌ Error fetching htol❌ Error fetching htt❌ Error fetcim❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Erro t❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetching ou❌ Error fetching httd ❌ Error fetching htt❌ Error fetc%
+(shopify_env) blakepetipas@Blakes-MBP-16-M3-Pro Archive %  ⏱️  Waiting 1.0s before next batch...
+zsh: command not found: ⏱️
+
+📦 Processing batch 3/48 (5 URLs)
+🔄 Processing: Overview
+🔄 Processing: JSON templates
+🔄 Processing: Liquid templates
+🔄 Processing: Alternate templates
+🔄 Processing: 404
+✅ Created: Templates/alternate-templates.md
+❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetching ou❌ Error fetching htt❌ Erps❌ Error fetching htt❌ Error fetchinar❌ Error fetching htt❌ Error fetching htol❌ Error fetching htt❌ Error fetcim❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Erro t❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetching ou❌ Error fetching httd ❌ Error fetching htt❌ Error fetching htul❌ Error fetching htt❌ Error fe%
+(shopify_env) blakepetipas@Blakes-MBP-16-M3-Pro Archive %
+📦 Processing batch 3/48 (5 URLs)
+🔄 Processing: Overview
+🔄 Processing: JSON templates
+🔄 Processing: Liquid templates
+🔄 Processing: Alternate templates
+🔄 Processing: 404
+✅ Created: Templates/alternate-templates.md
+❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetching ou❌ Error fetching htt❌ Erps❌ Error fetching htt❌ Error fetchinar❌ Error fetching htt❌ Error fetching htol❌ Error fetching htt❌ Error fetcim❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Erro t❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetchin
+(shopify_env) blakepetipas@Blakes-MBP-16-M3-Pro Archive % 📦 Processing batch 3/48 (5 URLs)
+zsh: unknown file attribute: 5
+🔄 Processing: Overview
+🔄 Processing: JSON templates
+🔄 Processing: Liquid templates
+🔄 Processing: Alternate templates
+🔄 Processing: 404
+✅ Created: Templates/alternate-templates.md
+❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetching ou❌ Error fetching htt❌ Erps❌ Error fetching htt❌ Error fetchinar❌ Error fetching htt❌ Error fetching htol❌ Error fetching htt❌ Error fetcim❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Erro t❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetching ou❌ Error fetching httd ❌ Error fetching htt❌ Error fetching htul❌ Error fetching htt❌ Error fetchingnex❌ Error fetching htt❌ Erro%
+(shopify_env) blakepetipas@Blakes-MBP-16-M3-Pro Archive % 🔄 Processing: Overview
+zsh: command not found: 🔄
+🔄 Processing: JSON templates
+🔄 Processing: Liquid templates
+🔄 Processing: Alternate templates
+🔄 Processing: 404
+✅ Created: Templates/alternate-templates.md
+❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetching ou❌ Error fetching htt❌ Erps❌ Error fetching htt❌ Error fetchinar❌ Error fetching htt❌ Error fetching htol❌ Error fetching htt❌ Error fetcim❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Erro t❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetching ou❌ Error fetching httd ❌ Error fetching htt❌ Error fetching htul❌ Error fetching htt❌ Error fetchingnex❌ Error fetching htt❌ Error fe4/❌ Error fetching ht%
+(shopify_env) blakepetipas@Blakes-MBP-16-M3-Pro Archive % 🔄 Processing: JSON templates
+zsh: command not found: 🔄
+🔄 Processing: Liquid templates
+🔄 Processing: Alternate templates
+🔄 Processing: 404
+✅ Created: Templates/alternate-templates.md
+❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetching ou❌ Error fetching htt❌ Erps❌ Error fetching htt❌ Error fetchinar❌ Error fetching htt❌ Error fetching htol❌ Error fetching htt❌ Error fetcim❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Erro t❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetching ou❌ Error fetching httd ❌ Error fetching htt❌ Error fetching htul❌ Error fetching htt❌ Error fetchingnex❌ Error fetching htt❌ Error fe4/❌ Error fetching htt�in❌ Error fetching htt❌ Er%
+(shopify_env) blakepetipas@Blakes-MBP-16-M3-Pro Archive % 🔄 Processing: Liquid templates
+zsh: command not found: 🔄
+🔄 Processing: Alternate templates
+🔄 Processing: 404
+✅ Created: Templates/alternate-templates.md
+❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetching ou❌ Error fetching htt❌ Erps❌ Error fetching htt❌ Error fetchinar❌ Error fetching htt❌ Error fetching htol❌ Error fetching htt❌ Error fetcim❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Erro t❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetching ou❌ Error fetching httd ❌ Error fetching htt❌ Error fetching htul❌ Error fetching htt❌ Error fetchingnex❌ Error fetching htt❌ Error fe4/❌ Error fetching htt�in❌ Error fetching htt❌ Erroog❌ Error fetching htt❌ Error%
+(shopify_env) blakepetipas@Blakes-MBP-16-M3-Pro Archive % 🔄 Processing: Alternate templates
+zsh: command not found: 🔄
+🔄 Processing: 404
+✅ Created: Templates/alternate-templates.md
+❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetching ou❌ Error fetching htt❌ Erps❌ Error fetching htt❌ Error fetchinar❌ Error fetching htt❌ Error fetching htol❌ Error fetching htt❌ Error fetcim❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Erro t❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetching ou❌ Error fetching httd ❌ Error fetching htt❌ Error fetching htul❌ Error fetching htt❌ Error fetchingnex❌ Error fetching htt❌ Error fe4/❌ Error fetching htt�in❌ Error fetching htt❌ Erroog❌ Error fetching htt❌ Error es❌ Error fetching htt❌ Error fet%
+(shopify_env) blakepetipas@Blakes-MBP-16-M3-Pro Archive % 🔄 Processing: 404
+zsh: command not found: 🔄
+✅ Created: Templates/alternate-templates.md
+❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetching ou❌ Error fetching htt❌ Erps❌ Error fetching htt❌ Error fetchinar❌ Error fetching htt❌ Error fetching htol❌ Error fetching htt❌ Error fetcim❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Erro t❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetching ou❌ Error fetching httd ❌ Error fetching htt❌ Error fetching htul❌ Error fetching htt❌ Error fetchingnex❌ Error fetching htt❌ Error fe4/❌ Error fetching htt�in❌ Error fetching htt❌ Erroog❌ Error fetching htt❌ Error es❌ Error fetching htt❌ Error fetus❌ Error fetching C%
+(shopify_env) blakepetipas@Blakes-MBP-16-M3-Pro Archive % ✅ Created: Templates/alternate-templates.md
+zsh: command not found: ✅
+❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetching ou❌ Error fetching htt❌ Erps❌ Error fetching htt❌ Error fetchinar❌ Error fetching htt❌ Error fetching htol❌ Error fetching htt❌ Error fetcim❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Erro t❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt�te❌ Error fetching htt�on❌ Error fetching htt�.a❌ Error fetching htt❌ Error fetching ou❌ Error fetching httd ❌ Error fetching htt❌ Error fetching htul❌ Error fetching htt❌ Error fetchingnex❌ Error fetching htt❌ Error fe4/❌ Error fetching htt�in❌ Error fetching htt❌ Erroog❌ Error fetching htt❌ Error es❌ Error fetching htt❌ Error fetus❌ Error fetching Cr❌ Error fetching htt❌ Error fetching htt B%
+(shopify_env) blakepetipas@Blakes-MBP-16-M3-Pro Archive % ❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetch
+ing htt<ffffffff>e❌ Error fetching htt<ffffffff>n❌ Error fetching htt<ffffffff>a❌ Error fetching htt❌ Error fetching ou❌ E
+rror fetching htt❌ Erps❌ Error fetching htt❌ Error fetchinar❌ Error fetching htt❌ Error fetching htol❌ Error fetching htt
+❌ Error fetcim❌ Error fetching htt❌ Error fetching htt❌ Error feth❌ Error fetching htt<ffffffff>e❌ Error fetching htt<ffffffff>n❌ Error fetching htt<ffffffff>a❌ Error fetching htt❌ Erro t❌ Error fetching htt❌ Error fetching htt❌ Error feth❌
+Error fetching htt<ffffffff>e❌ Error fetching htt<ffffffff>n❌ Error fetching htt<ffffffff>a❌ Error fetching htt❌ Error fetc
+hing ou❌ Error fetching httd ❌ Error fetching htt❌ Error fetching htul❌ Error fetching htt❌ Error fetchingnex❌ Error fetc
+hing htt❌ Error fe4/❌ Error fetching htt<ffffffff>n❌ Error fetching htt❌ Erroog❌ Error fetching htt❌ Error es❌ Error fet
+ching htt❌ Error fetus❌ Error fetching Cr❌ Error fetching htt❌ Error fetching htt B

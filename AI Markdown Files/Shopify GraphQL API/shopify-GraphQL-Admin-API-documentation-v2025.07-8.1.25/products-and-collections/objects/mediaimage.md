@@ -1,0 +1,410 @@
+---
+title: "MediaImage"
+description: "Shopify GraphQL Admin API documentation for mediaimage"
+date: "2025-08-01"
+source: "https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage"
+extraction_method: "jina"
+sections: ['Products and collections', 'Objects']
+tags: ["shopify", "graphql", "admin-api", "documentation"]
+api_version: "2025-07"
+---
+
+Title: MediaImage - GraphQL Admin
+
+URL Source: https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage
+
+Markdown Content:
+MediaImage - GraphQL Admin
+
+===============
+[Skip to main content](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#main-content)
+
+[![Image 1: Docs page](https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/dev-docs-logo-2-light-CrZnRVR7.svg)![Image 2: Docs page](https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/dev-docs-logo-2-dark-BhuAYNm7.svg)](https://shopify.dev/docs)
+
+*   [Apps](https://shopify.dev/docs/apps/build)
+*   [Storefronts](https://shopify.dev/docs/storefronts)
+*   APIs and references
+
+*   search + assistant
+
+[Log in](https://partners.shopify.com/organizations?shpxid=222dd762-CA08-48FF-E4D4-FF926B8FFCAD)[Sign up](https://partners.shopify.com/signup/developer?shpxid=222dd762-CA08-48FF-E4D4-FF926B8FFCAD)
+
+Collapse sidebar
+
+GraphQL Admin API
+
+Choose a version: 
+
+2025-07 latest
+
+*   [Overview](https://shopify.dev/docs/api/admin-graphql/latest)
+*   [Client libraries](https://shopify.dev/docs/api/admin-graphql/latest#client-libraries)
+*   [Authentication](https://shopify.dev/docs/api/admin-graphql/latest#authentication)
+*   [Endpoints and queries](https://shopify.dev/docs/api/admin-graphql/latest#endpoints-and-queries)
+*   [Rate limits](https://shopify.dev/docs/api/admin-graphql/latest#rate-limits)
+*   [Status and error codes](https://shopify.dev/docs/api/admin-graphql/latest#status-and-error-codes)
+
+* * *
+
+*   Access   
+*   Apps   
+*   B2b   
+*   Billing   
+*   Bulk Operations   
+*   Cart   
+*   Checkout Branding   
+*   Common Objects   
+*   Customers   
+*   Discounts And Marketing   
+*   Events   
+*   Inventory   
+*   Localizations   
+*   Metafields   
+*   Metaobjects   
+*   Online Store   
+*   Orders   
+*   Privacy   
+*   
+Products And Collections
+
+    *   Queries   
+    *   Mutations   
+    *   
+Objects
+
+        *   [Add All Products Operation](https://shopify.dev/docs/api/admin-graphql/latest/objects/addallproductsoperation)
+        *   [App Catalog](https://shopify.dev/docs/api/admin-graphql/latest/objects/appcatalog)
+        *   [Bundles Feature](https://shopify.dev/docs/api/admin-graphql/latest/objects/bundlesfeature)
+        *   [Catalog Csv Operation](https://shopify.dev/docs/api/admin-graphql/latest/objects/catalogcsvoperation)
+        *   [Collection](https://shopify.dev/docs/api/admin-graphql/latest/objects/collection)
+        *   [Collection Publication](https://shopify.dev/docs/api/admin-graphql/latest/objects/collectionpublication)
+        *   [Collection Rule](https://shopify.dev/docs/api/admin-graphql/latest/objects/collectionrule)
+        *   [Collection Rule Category Condition](https://shopify.dev/docs/api/admin-graphql/latest/objects/collectionrulecategorycondition)
+        *   [Collection Rule Conditions](https://shopify.dev/docs/api/admin-graphql/latest/objects/collectionruleconditions)
+        *   [Collection Rule Metafield Condition](https://shopify.dev/docs/api/admin-graphql/latest/objects/collectionrulemetafieldcondition)
+        *   [Collection Rule Product Category Condition](https://shopify.dev/docs/api/admin-graphql/latest/objects/collectionruleproductcategorycondition)
+        *   [Collection Rule Set](https://shopify.dev/docs/api/admin-graphql/latest/objects/collectionruleset)
+        *   [Collection Rule Text Condition](https://shopify.dev/docs/api/admin-graphql/latest/objects/collectionruletextcondition)
+        *   [Combined Listing](https://shopify.dev/docs/api/admin-graphql/latest/objects/combinedlisting)
+        *   [Combined Listing Child](https://shopify.dev/docs/api/admin-graphql/latest/objects/combinedlistingchild)
+        *   [Company Location Catalog](https://shopify.dev/docs/api/admin-graphql/latest/objects/companylocationcatalog)
+        *   [External Video](https://shopify.dev/docs/api/admin-graphql/latest/objects/externalvideo)
+        *   [File Error](https://shopify.dev/docs/api/admin-graphql/latest/objects/fileerror)
+        *   [Generic File](https://shopify.dev/docs/api/admin-graphql/latest/objects/genericfile)
+        *   [Linked Metafield](https://shopify.dev/docs/api/admin-graphql/latest/objects/linkedmetafield)
+        *   [Market Catalog](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketcatalog)
+        *   [Markets Catalogs Entitlement](https://shopify.dev/docs/api/admin-graphql/latest/objects/marketscatalogsentitlement)
+        *   [Media Error](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaerror)
+        *   [Media Image](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage)
+        *   [Fields](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#fields)
+        *   [Interfaces](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#interfaces)
+        *   [Media Image Original Source](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimageoriginalsource)
+        *   [Media Preview Image](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediapreviewimage)
+        *   [Media Warning](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediawarning)
+        *   [Metafield Capability Smart Collection Condition](https://shopify.dev/docs/api/admin-graphql/latest/objects/metafieldcapabilitysmartcollectioncondition)
+        *   [Model3d](https://shopify.dev/docs/api/admin-graphql/latest/objects/model3d)
+        *   [Model3d Bounding Box](https://shopify.dev/docs/api/admin-graphql/latest/objects/model3dboundingbox)
+        *   [Model3d Source](https://shopify.dev/docs/api/admin-graphql/latest/objects/model3dsource)
+        *   [Price List](https://shopify.dev/docs/api/admin-graphql/latest/objects/pricelist)
+        *   [Price List Adjustment](https://shopify.dev/docs/api/admin-graphql/latest/objects/pricelistadjustment)
+        *   [Price List Adjustment Settings](https://shopify.dev/docs/api/admin-graphql/latest/objects/pricelistadjustmentsettings)
+        *   [Price List Parent](https://shopify.dev/docs/api/admin-graphql/latest/objects/pricelistparent)
+        *   [Price List Price](https://shopify.dev/docs/api/admin-graphql/latest/objects/pricelistprice)
+        *   [Product](https://shopify.dev/docs/api/admin-graphql/latest/objects/product)
+        *   [Product Bundle Component](https://shopify.dev/docs/api/admin-graphql/latest/objects/productbundlecomponent)
+        *   [Product Bundle Component Option Selection](https://shopify.dev/docs/api/admin-graphql/latest/objects/productbundlecomponentoptionselection)
+        *   [Product Bundle Component Option Selection Value](https://shopify.dev/docs/api/admin-graphql/latest/objects/productbundlecomponentoptionselectionvalue)
+        *   [Product Bundle Component Quantity Option](https://shopify.dev/docs/api/admin-graphql/latest/objects/productbundlecomponentquantityoption)
+        *   [Product Bundle Component Quantity Option Value](https://shopify.dev/docs/api/admin-graphql/latest/objects/productbundlecomponentquantityoptionvalue)
+        *   [Product Bundle Operation](https://shopify.dev/docs/api/admin-graphql/latest/objects/productbundleoperation)
+        *   [Product Category](https://shopify.dev/docs/api/admin-graphql/latest/objects/productcategory)
+        *   [Product Compare At Price Range](https://shopify.dev/docs/api/admin-graphql/latest/objects/productcompareatpricerange)
+        *   [Product Component Type](https://shopify.dev/docs/api/admin-graphql/latest/objects/productcomponenttype)
+        *   [Product Contextual Pricing](https://shopify.dev/docs/api/admin-graphql/latest/objects/productcontextualpricing)
+        *   [Product Delete Operation](https://shopify.dev/docs/api/admin-graphql/latest/objects/productdeleteoperation)
+        *   [Product Duplicate Job](https://shopify.dev/docs/api/admin-graphql/latest/objects/productduplicatejob)
+        *   [Product Duplicate Operation](https://shopify.dev/docs/api/admin-graphql/latest/objects/productduplicateoperation)
+        *   [Product Option](https://shopify.dev/docs/api/admin-graphql/latest/objects/productoption)
+        *   [Product Option Value](https://shopify.dev/docs/api/admin-graphql/latest/objects/productoptionvalue)
+        *   [Product Option Value Swatch](https://shopify.dev/docs/api/admin-graphql/latest/objects/productoptionvalueswatch)
+        *   [Product Price Range](https://shopify.dev/docs/api/admin-graphql/latest/objects/productpricerange)
+        *   [Product Price Range V2](https://shopify.dev/docs/api/admin-graphql/latest/objects/productpricerangev2)
+        *   [Product Publication](https://shopify.dev/docs/api/admin-graphql/latest/objects/productpublication)
+        *   [Product Set Operation](https://shopify.dev/docs/api/admin-graphql/latest/objects/productsetoperation)
+        *   [Product Taxonomy Node](https://shopify.dev/docs/api/admin-graphql/latest/objects/producttaxonomynode)
+        *   [Product Variant](https://shopify.dev/docs/api/admin-graphql/latest/objects/productvariant)
+        *   [Product Variant Component](https://shopify.dev/docs/api/admin-graphql/latest/objects/productvariantcomponent)
+        *   [Product Variant Contextual Pricing](https://shopify.dev/docs/api/admin-graphql/latest/objects/productvariantcontextualpricing)
+        *   [Product Variant Price Pair](https://shopify.dev/docs/api/admin-graphql/latest/objects/productvariantpricepair)
+        *   [Publication Resource Operation](https://shopify.dev/docs/api/admin-graphql/latest/objects/publicationresourceoperation)
+        *   [Quantity Price Break](https://shopify.dev/docs/api/admin-graphql/latest/objects/quantitypricebreak)
+        *   [Quantity Rule](https://shopify.dev/docs/api/admin-graphql/latest/objects/quantityrule)
+        *   [Resource Publication](https://shopify.dev/docs/api/admin-graphql/latest/objects/resourcepublication)
+        *   [Resource Publication V2](https://shopify.dev/docs/api/admin-graphql/latest/objects/resourcepublicationv2)
+        *   [Restricted For Resource](https://shopify.dev/docs/api/admin-graphql/latest/objects/restrictedforresource)
+        *   [Row Count](https://shopify.dev/docs/api/admin-graphql/latest/objects/rowcount)
+        *   [Selected Option](https://shopify.dev/docs/api/admin-graphql/latest/objects/selectedoption)
+        *   [Selling Plan](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplan)
+        *   [Selling Plan Anchor](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplananchor)
+        *   [Selling Plan Checkout Charge](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplancheckoutcharge)
+        *   [Selling Plan Checkout Charge Percentage Value](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplancheckoutchargepercentagevalue)
+        *   [Selling Plan Fixed Billing Policy](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplanfixedbillingpolicy)
+        *   [Selling Plan Fixed Delivery Policy](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplanfixeddeliverypolicy)
+        *   [Selling Plan Fixed Pricing Policy](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplanfixedpricingpolicy)
+        *   [Selling Plan Group](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplangroup)
+        *   [Selling Plan Inventory Policy](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplaninventorypolicy)
+        *   [Selling Plan Pricing Policy Percentage Value](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplanpricingpolicypercentagevalue)
+        *   [Selling Plan Recurring Billing Policy](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplanrecurringbillingpolicy)
+        *   [Selling Plan Recurring Delivery Policy](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplanrecurringdeliverypolicy)
+        *   [Selling Plan Recurring Pricing Policy](https://shopify.dev/docs/api/admin-graphql/latest/objects/sellingplanrecurringpricingpolicy)
+        *   [Staged Media Upload Target](https://shopify.dev/docs/api/admin-graphql/latest/objects/stagedmediauploadtarget)
+        *   [Standardized Product Type](https://shopify.dev/docs/api/admin-graphql/latest/objects/standardizedproducttype)
+        *   [Taxonomy](https://shopify.dev/docs/api/admin-graphql/latest/objects/taxonomy)
+        *   [Taxonomy Attribute](https://shopify.dev/docs/api/admin-graphql/latest/objects/taxonomyattribute)
+        *   [Taxonomy Category](https://shopify.dev/docs/api/admin-graphql/latest/objects/taxonomycategory)
+        *   [Taxonomy Choice List Attribute](https://shopify.dev/docs/api/admin-graphql/latest/objects/taxonomychoicelistattribute)
+        *   [Taxonomy Measurement Attribute](https://shopify.dev/docs/api/admin-graphql/latest/objects/taxonomymeasurementattribute)
+        *   [Taxonomy Value](https://shopify.dev/docs/api/admin-graphql/latest/objects/taxonomyvalue)
+        *   [Unit Price Measurement](https://shopify.dev/docs/api/admin-graphql/latest/objects/unitpricemeasurement)
+        *   [Vector3](https://shopify.dev/docs/api/admin-graphql/latest/objects/vector3)
+        *   [Video](https://shopify.dev/docs/api/admin-graphql/latest/objects/video)
+        *   [Video Source](https://shopify.dev/docs/api/admin-graphql/latest/objects/videosource)
+        *   [Weight](https://shopify.dev/docs/api/admin-graphql/latest/objects/weight)
+
+*   Retail   
+*   Shipping And Fulfillment   
+*   Shopify Markets   
+*   Shopify Payments   
+*   Store Properties   
+*   Webhooks   
+*   
+* * *
+
+*   GraphQL Types   
+
+[Full index](https://shopify.dev/docs/api/admin-graphql/latest/full-index)
+
+Choose a version: 
+
+2025-07 latest
+
+[Anchor to MediaImage](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#top)
+Media Image
+===========
+
+object
+
+Requires `read_products` access scope, `read_files` access scope, `read_themes` access scope, `read_orders` access scope, `read_draft_orders` access scope or `read_images` access scope.
+
+The `MediaImage` object represents an image hosted on Shopify's [content delivery network (CDN)](https://shopify.dev/docs/storefronts/themes/best-practices/performance/platform#shopify-cdn). Shopify CDN is a content system that serves as the primary way to store, manage, and deliver visual content for products, variants, and other resources across the Shopify platform.
+
+The `MediaImage` object provides information to:
+
+*   Store and display product and variant images across online stores, admin interfaces, and mobile apps.
+*   Retrieve visual branding elements, including logos, banners, favicons, and background images in checkout flows.
+*   Retrieve signed URLs for secure, time-limited access to original image files.
+
+Each `MediaImage` object provides both the processed image data (with automatic optimization and CDN delivery) and access to the original source file. The image processing is handled asynchronously, so images might not be immediately available after upload. The [`status`](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#field-MediaImage.fields.status) field indicates when processing is complete and the image is ready for use.
+
+The `MediaImage` object implements the [`Media`](https://shopify.dev/docs/api/admin-graphql/latest/interfaces/Media) interface alongside other media types, like videos and 3D models.
+
+Learn about managing media for [products](https://shopify.dev/docs/apps/build/online-store/product-media), [product variants](https://shopify.dev/docs/apps/build/online-store/product-variant-media), and [asynchronous media management](https://shopify.dev/docs/apps/build/graphql/migrate/new-product-model/product-model-components#asynchronous-media-management).
+
+[Anchor to Fields](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#fields)Fields
+-----------------------------------------------------------------------------------------------------
+
+[Anchor to alt](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#field-MediaImage.fields.alt)alt
+
+•[String](https://shopify.dev/docs/api/admin-graphql/latest/scalars/String)
+
+A word or phrase to share the nature or contents of a media.
+
+[Anchor to createdAt](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#field-MediaImage.fields.createdAt)created At
+
+•[Date Time!](https://shopify.dev/docs/api/admin-graphql/latest/scalars/DateTime)
+
+non-null
+
+The date and time ([ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601)) when the file was created.
+
+[Anchor to fileErrors](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#field-MediaImage.fields.fileErrors)file Errors
+
+•[[File Error!]!](https://shopify.dev/docs/api/admin-graphql/latest/objects/FileError)
+
+non-null
+
+Any errors that have occurred on the file.
+
+Show fields
+
+[Anchor to fileStatus](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#field-MediaImage.fields.fileStatus)file Status
+
+•[File Status!](https://shopify.dev/docs/api/admin-graphql/latest/enums/FileStatus)
+
+non-null
+
+The status of the file.
+
+Show enum values
+
+[Anchor to id](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#field-MediaImage.fields.id)id
+
+•[ID!](https://shopify.dev/docs/api/admin-graphql/latest/scalars/ID)
+
+non-null
+
+A globally-unique ID.
+
+[Anchor to image](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#field-MediaImage.fields.image)image
+
+•[Image](https://shopify.dev/docs/api/admin-graphql/latest/objects/Image)
+
+The image for the media. Returns `null` until `status` is `READY`.
+
+Show fields
+
+[Anchor to mediaContentType](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#field-MediaImage.fields.mediaContentType)media Content Type
+
+•[Media Content Type!](https://shopify.dev/docs/api/admin-graphql/latest/enums/MediaContentType)
+
+non-null
+
+The media content type.
+
+Show enum values
+
+[Anchor to mediaErrors](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#field-MediaImage.fields.mediaErrors)media Errors
+
+•[[Media Error!]!](https://shopify.dev/docs/api/admin-graphql/latest/objects/MediaError)
+
+non-null
+
+Any errors which have occurred on the media.
+
+Show fields
+
+[Anchor to mediaWarnings](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#field-MediaImage.fields.mediaWarnings)media Warnings
+
+•[[Media Warning!]!](https://shopify.dev/docs/api/admin-graphql/latest/objects/MediaWarning)
+
+non-null
+
+The warnings attached to the media.
+
+Show fields
+
+[Anchor to mimeType](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#field-MediaImage.fields.mimeType)mime Type
+
+•[String](https://shopify.dev/docs/api/admin-graphql/latest/scalars/String)
+
+The MIME type of the image.
+
+[Anchor to originalSource](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#field-MediaImage.fields.originalSource)original Source
+
+•[Media Image Original Source](https://shopify.dev/docs/api/admin-graphql/latest/objects/MediaImageOriginalSource)
+
+The original source of the image.
+
+Show fields
+
+[Anchor to preview](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#field-MediaImage.fields.preview)preview
+
+•[Media Preview Image](https://shopify.dev/docs/api/admin-graphql/latest/objects/MediaPreviewImage)
+
+The preview image for the media.
+
+Show fields
+
+[Anchor to status](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#field-MediaImage.fields.status)status
+
+•[Media Status!](https://shopify.dev/docs/api/admin-graphql/latest/enums/MediaStatus)
+
+non-null
+
+Current status of the media.
+
+Show enum values
+
+[Anchor to updatedAt](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#field-MediaImage.fields.updatedAt)updated At
+
+•[Date Time!](https://shopify.dev/docs/api/admin-graphql/latest/scalars/DateTime)
+
+non-null
+
+The date and time ([ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601)) when the file was last updated.
+
+### Deprecated fields
+
+[Anchor to metafield](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#field-MediaImage.fields.metafield)metafield
+
+•[Metafield](https://shopify.dev/docs/api/admin-graphql/latest/objects/Metafield)
+
+Deprecated
+
+Show fields
+
+[Anchor to metafields](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#field-MediaImage.fields.metafields)metafields
+
+•[Metafield Connection!](https://shopify.dev/docs/api/admin-graphql/latest/connections/MetafieldConnection)
+
+non-null Deprecated
+
+Show fields
+
+* * *
+
+Was this section helpful?
+
+Yes No
+
+Map
+---
+
+### Fields with this object
+
+*   {}[ProductOptionValueSwatch.image](https://shopify.dev/docs/api/admin-graphql/latest/objects/ProductOptionValueSwatch#field-image)
+
+### Possible type in
+
+*   [Metafield Reference](https://shopify.dev/docs/api/admin-graphql/latest/unions/MetafieldReference)
+
+* * *
+
+[Anchor to Interfaces](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#interfaces)Interfaces
+-----------------------------------------------------------------------------------------------------------------
+
+[Anchor to File](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#interface-File)[File](https://shopify.dev/docs/api/admin-graphql/latest/interfaces/File)
+
+•interface
+
+[Anchor to HasMetafields](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#interface-HasMetafields)[Has Metafields](https://shopify.dev/docs/api/admin-graphql/latest/interfaces/HasMetafields)
+
+•interface
+
+[Anchor to Media](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#interface-Media)[Media](https://shopify.dev/docs/api/admin-graphql/latest/interfaces/Media)
+
+•interface
+
+[Anchor to Node](https://shopify.dev/docs/api/admin-graphql/latest/objects/mediaimage#interface-Node)[Node](https://shopify.dev/docs/api/admin-graphql/latest/interfaces/Node)
+
+•interface
+
+* * *
+
+Was this section helpful?
+
+Yes No
+
+||-MediaImage Implements
+------------------------
+
+### Implements
+
+*   ||-[File](https://shopify.dev/docs/api/admin-graphql/latest/interfaces/File)
+*   ||-[Has Metafields](https://shopify.dev/docs/api/admin-graphql/latest/interfaces/HasMetafields)
+*   ||-[Media](https://shopify.dev/docs/api/admin-graphql/latest/interfaces/Media)
+*   ||-[Node](https://shopify.dev/docs/api/admin-graphql/latest/interfaces/Node)
+
+
+---
+*Content truncated at "Updates" section*
