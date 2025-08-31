@@ -1,4 +1,100 @@
-{
+# Shopify Product Metafield Data Extraction Guide
+# Complete guide for retrieving comprehensive metafield information for products using GraphQL.
+#
+# ⚠️ IMPORTANT: Run Queries Separately
+# Copy and paste each section individually to Shopify Admin GraphQL console - do not run as a single file.
+
+# =============================================================================
+# Query 1: Complete Product Metafield Data
+# =============================================================================
+# Purpose: Retrieves metafield values, definitions, permissions, and validation rules for a specific product.
+#
+# Data Captured:
+# • Product Info: ID, title, handle
+# • Metafield Values: Current values, timestamps, types
+# • Definition Data: Display names, descriptions, owner types
+# • Validation Rules: Choices, constraints, min/max values
+# • Access Control: Admin/storefront permissions
+# • Smart Collections: Filter eligibility and status
+# • Management: Pinned positions, field counts, validation status
+#
+# Instructions:
+# 1. Copy Variables JSON below → paste in Variables section of GraphQL console
+# 2. Copy Query → paste in Query section
+# 3. Replace REPLACE_WITH_YOUR_PRODUCT_ID with actual product ID
+# 4. Run query
+
+# COPY: Variables JSON (paste in Variables section)
+# { "productId": "gid://shopify/Product/REPLACE_WITH_YOUR_PRODUCT_ID"}
+
+# COPY: Query 1
+query GetCompleteProductMetafieldData($productId: ID!) {
+  product(id: $productId) {
+    id
+    title
+    handle
+    metafields(first: 250) {
+      edges {
+        node {
+          id
+          namespace
+          key
+          value
+          type
+          description
+          createdAt
+          updatedAt
+          definition {
+            id
+            name
+            description
+            ownerType
+            type {
+              name
+              category
+            }
+            validations {
+              name
+              value
+              type
+            }
+            access {
+              admin
+              storefront
+            }
+            capabilities {
+              smartCollectionCondition {
+                eligible
+                enabled
+              }
+            }
+            validationStatus
+            pinnedPosition
+            metafieldsCount
+          }
+        }
+      }
+    }
+  }
+}
+
+# =============================================================================
+# Query 2: Metafield Constraints & Categories
+# =============================================================================
+# Purpose: Retrieves constraint data and category values that are NOT available in the product query above.
+#
+# Data Captured:
+# • Constraints: Category assignments, constraint keys
+# • Category Values: All possible category values for fields
+# • Constraint Structure: Full constraint hierarchy
+#
+# Instructions:
+# 1. Copy Query directly to GraphQL console Query section
+# 2. No variables needed - runs standalone
+# 3. Run query
+
+# COPY: Query 2 (Constraints & Categories)
+query GetMetafieldConstraintsAndCategories {
   metafieldDefinitions(first: 50, ownerType: PRODUCT, namespace: "custom") {
     edges {
       node {
@@ -52,3 +148,18 @@
     }
   }
 }
+
+# =============================================================================
+# Data Usage Notes
+# =============================================================================
+# Query 1 provides:
+# - Actual field values for specific product
+# - Real-time data with timestamps
+# - Basic validation rules (choices, min/max)
+#
+# Query 2 provides:
+# - Complete constraint structure
+# - All possible category values
+# - Field definitions without specific product values
+#
+# Combine both for complete metafield analysis and structure understanding.

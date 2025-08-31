@@ -6,10 +6,6 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		42D318E32E2873C700DA5D64 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D318E22E2873C700DA5D64 /* File.swift */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXContainerItemProxy section */
 		429AA2542DCD410B009C8B0D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -31,7 +27,6 @@
 		429AA2452DCD410A009C8B0D /* Mountie Markers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mountie Markers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		429AA2532DCD410B009C8B0D /* Mountie MarkersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mountie MarkersTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		429AA25D2DCD410B009C8B0D /* Mountie MarkersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mountie MarkersUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		42D318E22E2873C700DA5D64 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = File.swift; path = "../Swift Brand Guide Widget/File.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -80,7 +75,6 @@
 		429AA23C2DCD410A009C8B0D = {
 			isa = PBXGroup;
 			children = (
-				42D318E22E2873C700DA5D64 /* File.swift */,
 				429AA2472DCD410A009C8B0D /* Mountie Markers */,
 				429AA2562DCD410B009C8B0D /* Mountie MarkersTests */,
 				429AA2602DCD410B009C8B0D /* Mountie MarkersUITests */,
@@ -242,7 +236,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42D318E32E2873C700DA5D64 /* File.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
