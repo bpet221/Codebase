@@ -4,7 +4,7 @@
 # Edit this file to change the theme ID for all Shopify CLI actions
 
 # Current active theme ID
-THEME_ID="141213139022"
+THEME_ID="144487710798"
 
 # Theme name/description (optional, for reference)
 THEME_NAME="Main Development Theme"

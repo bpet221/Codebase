@@ -1,0 +1,948 @@
+:root {
+  /* To enable  Contact DND please change text from "none to block" */
+  /* To disable Contact DND please change text from "block to none" */
+  --var-contact-dnd: none;
+}
+
+/* Hide Old Name*/
+/* #sb_dashboard span {
+        font-size: 0; 
+        
+    } 
+    
+    
+    
+     #sb_dashboard span::after {
+        content: "Tasks";
+        font-size: 14px;
+        
+    }  */
+div[class*="2D90r6CA7AnAiKyrAP9p"] #sb_dashboard span,
+div[class*="Rfghqe9JReCqHvTnYSdK"] #sb_dashboard span {
+  font-size: 14px;
+  /* Collapse the original line */
+}
+
+/*Add New Name*/
+
+div[class*="2D90r6CA7AnAiKyrAP9p"] #sb_dashboard span::after,
+div[class*="Rfghqe9JReCqHvTnYSdK"] #sb_dashboard span::after {
+  content: "Tasks";
+  font-size: 0px;
+}
+
+/*  Color CSS Code */
+:root {
+  --loginBtnColor: #7542e6;
+  --loginBtnHover: #ae94e6;
+  --bodyBgColor: #fff;
+  --custom-loading-icon-gradient-1: #000 !important;
+  --custom-loading-icon-gradient-2: #000 !important;
+  --custom-loading-icon-width: 150px !important;
+  --custom-loading-icon-height: 150px !important;
+  --custom-loading-icon: url(https://storage.googleapis.com/msgsndr/2ktiXlsi86q3fuJU2JZh/media/6397c029978abc4b859e3153.png) !important;
+}
+
+/* BG Image CSS Code*/
+.hl_login {
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/highlevel-staging.appspot.com/o/assets%2Fbackgrounds%2Fgradient%2Fg4.png?alt=media&token=e700321d-5310-45f4-8367-bf7d33250694") !important;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  margin-top: 0px !important;
+  height: 100vh;
+}
+
+.hl_login--header {
+  background: #fff0 !important;
+  border-bottom: 0 !important;
+  padding: 0 !important;
+  margin-bottom: 20px !important;
+}
+
+div.hl_login--body {
+  max-width: 450px !important;
+  width: 100% !important;
+  background: var(--bodyBgColor) !important;
+  border-radius: 10px !important;
+  box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.08);
+}
+
+.hl_login--body .card {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.hl_login--body .card .card-body {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.hl_login .form-control {
+  background: #fff !important;
+  font-size: 0.875rem;
+  color: #2a3135;
+  border: 1px solid #bdbdbd !important;
+  border-radius: 5px !important;
+  padding: 10px 10px !important;
+}
+
+.hl_login--body .login-card-heading {
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.hl_login--body .heading2 {
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+.hl_login .button-holder.form-group {
+  margin: 10px auto !important;
+}
+
+.hl_login .btn.btn-blue,
+.hl_login .btn.btn-blue:active,
+.hl_login .btn.btn-blue:focus {
+  background-color: var(--loginBtnColor);
+  border-color: var(--loginBtnColor);
+  color: #fff;
+  transition: 0.3s ease-in;
+}
+
+.hl_login .btn.btn-blue:hover {
+  background-color: var(--loginBtnHover);
+  border-color: var(--loginBtnHover);
+  color: #fff;
+  transition: 0.3s ease-in;
+}
+
+/* Code For Stuff */
+#contact-details #prospect div.form-group:nth-child(9) {
+  display: var(--var-contact-dnd) !important;
+}
+#appointmentModal {
+  background: rgb(248, 113, 113);
+  /*background: linear-gradient(0deg, rgba(248,113,113,1) 0%, rgba(255,255,255,1) 20%);*/
+}
+
+#email-error-syed-aun-2,
+#email-error-syed-aun {
+  color: red !important;
+}
+
+#add-opportunities-modal #myTabContent .row .col-sm-6:nth-child(4) {
+  display: none !important;
+}
+#conversations
+  #add-opportunities-modal
+  #myTabContent.tab-content
+  .row
+  .col-sm-6:nth-child(4) {
+  display: none !important;
+}
+#myTabContent .row .col-sm-6:nth-child(11) {
+  display: none !important;
+}
+
+#conversations div.message-header-actions button:nth-child(3) {
+  display: none !important;
+}
+#conversations div.aside-texts-infos div.tag-group + div.form-group {
+  display: none !important;
+}
+
+/* New Code for Conversation DND */
+#conversations .aside-texts-infos .conversation-tags + .form-group {
+  display: var(--var-contact-dnd) !important;
+}
+
+/* New Code for Conversation DND end */
+
+#calendarEvents
+  div.d-flex.align-items-center
+  div.inner.show
+  ul
+  li:nth-child(3) {
+  display: none !important;
+}
+#calendarEvents
+  div.d-flex.align-items-center
+  div.inner.show
+  ul
+  li:nth-child(7) {
+  display: none !important;
+}
+
+/* for All sub-account */
+/*
+    #dashboard .card-group.--wide-gutter {
+    display: none !important;
+    }
+    #dashboard div.card-group:nth-child(2), #dashboard .card-group.--wide-gutter + .card-group {
+    display: none !important;
+    }
+    #dashboard div.card-group:nth-child(3) .card.hl_dashboard--need-action:nth-child(1), #dashboard .card-group.--wide-gutter + .card-group + .card-group .card.hl_dashboard--need-action:nth-child(1) {
+    display: none !important;
+    }
+    #dashboard .card.pmd_dashboard--appointments {
+    display: none !important;
+    }
+    #dashboard .card:nth-child(6) {
+    display: none !important;
+    } */
+/* for all sub-accounts code end */
+div[class*="2D90r6CA7AnAiKyrAP9p"] #dashboard .card-group.--wide-gutter,
+div[class*="Rfghqe9JReCqHvTnYSdK"] #dashboard .card-group.--wide-gutter {
+  display: flex !important;
+}
+div[class*="2D90r6CA7AnAiKyrAP9p"] #dashboard div.card-group:nth-child(2),
+div[class*="Rfghqe9JReCqHvTnYSdK"] #dashboard div.card-group:nth-child(2) {
+  display: flex !important;
+}
+div[class*="2D90r6CA7AnAiKyrAP9p"]
+  #dashboard
+  .card-group.--wide-gutter
+  + .card-group,
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #dashboard
+  .card-group.--wide-gutter
+  + .card-group {
+  display: flex !important;
+}
+div[class*="2D90r6CA7AnAiKyrAP9p"]
+  #dashboard
+  div.card-group:nth-child(3)
+  .card.hl_dashboard--need-action:nth-child(1),
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #dashboard
+  div.card-group:nth-child(3)
+  .card.hl_dashboard--need-action:nth-child(1) {
+  display: block !important;
+}
+div[class*="2D90r6CA7AnAiKyrAP9p"]
+  #dashboard
+  .card-group.--wide-gutter
+  + .card-group
+  + .card-group
+  .card.hl_dashboard--need-action:nth-child(1),
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #dashboard
+  .card-group.--wide-gutter
+  + .card-group
+  + .card-group
+  .card.hl_dashboard--need-action:nth-child(1) {
+  display: block !important;
+}
+div[class*="2D90r6CA7AnAiKyrAP9p"] #dashboard .card.pmd_dashboard--appointments,
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #dashboard
+  .card.pmd_dashboard--appointments {
+  display: block !important;
+}
+div[class*="2D90r6CA7AnAiKyrAP9p"] #dashboard .card:nth-child(6),
+div[class*="Rfghqe9JReCqHvTnYSdK"] #dashboard .card:nth-child(6) {
+  display: block !important;
+}
+
+/* Agency Logo -- Adjust Size */
+
+.hl_navbar--logo img {
+  max-width: 190px !important;
+  max-height: 160px !important;
+}
+
+/* Checkin Client - Hide Button */
+#navbar-collapse > button {
+  display: none;
+}
+/* Checkin Client - Hide Button */
+
+/*Hide Status Menu*/
+.hl_opportunities--drag-actions.active {
+  display: none !important;
+}
+
+/* Hide Old Name*/
+/*
+    #nav-dashboard > a > span {
+        text-indent: -9999px;
+        line-height: 0;
+        /* Collapse the original line */
+
+/*Add New Name*/
+/*
+    #nav-dashboard > a > span::after {
+        content: "Dashboard";
+        text-indent: 0;
+        display: block;
+        line-height: initial;
+        /* New content takes up original line height */
+
+/* New Code for Business Name */
+div[class*="Rfghqe9JReCqHvTnYSdK"] #contact\.company_name,
+div[class*="Rfghqe9JReCqHvTnYSdK"] #contact\.city,
+div[class*="Rfghqe9JReCqHvTnYSdK"] #contact\.state,
+div[class*="Rfghqe9JReCqHvTnYSdK"] #contact\.website,
+div[class*="Rfghqe9JReCqHvTnYSdK"] #contact\.lead_status,
+div[class*="Rfghqe9JReCqHvTnYSdK"] #contact\.description {
+  margin-bottom: 0 !important;
+}
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.company_name
+  > div.text-\[\#0c2d3f\].label.flex.justify-between {
+  display: none;
+}
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.company_name
+  > div.hl-text-input-container.contact\.company_name
+  > div.relative.rounded-md.shadow-sm {
+  box-shadow: none;
+}
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.company_name
+  > div.hl-text-input-container.contact\.company_name
+  > div.relative.rounded-md.shadow-sm
+  > input {
+  border: none;
+  box-shadow: none;
+  font-size: 26px;
+  padding-left: 0;
+  padding-top: 15px;
+  background: none;
+  color: #222222;
+  font-family: "Roboto";
+}
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.company_name
+  > div.hl-text-input-container.contact\.company_name
+  > div.relative.rounded-md.shadow-sm
+  > input::placeholder {
+  color: #868686;
+  font-family: "Roboto";
+}
+
+/* Company Field code ends */
+
+/* City Field Code Start */
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.city
+  > div.text-\[\#0c2d3f\].label {
+  display: none;
+}
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.city
+  > div.hl-text-input-container.contact\.city
+  > div.relative.rounded-md.shadow-sm {
+  box-shadow: none !important;
+  margin-top: 0px !important;
+}
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.city
+  > div.hl-text-input-container.contact\.city
+  > div.relative.rounded-md.shadow-sm
+  > input {
+  border: none;
+  box-shadow: none;
+  padding-left: 18px;
+  background: none;
+  color: 6b6b6b;
+  font-size: 12.5px;
+  font-family: "Roboto";
+}
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.city
+  > div.hl-text-input-container.contact\.city
+  > div.relative.rounded-md.shadow-sm
+  > input::placeholder {
+  color: #9b9a9a;
+  font-family: "Roboto";
+}
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.city
+  > div.hl-text-input-container.contact\.city
+  > div.relative.rounded-md.shadow-sm
+  > div.absolute.inset-y-0.left-0.pl-3.flex.items-center.pointer-events-none {
+  padding-left: 0 !important;
+}
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.city
+  > div.hl-text-input-container.contact\.city
+  > div.relative.rounded-md.shadow-sm
+  > div.absolute.inset-y-0.left-0.pl-3.flex.items-center.pointer-events-none:before {
+  content: "";
+  background-image: url(https://storage.googleapis.com/msgsndr/Rfghqe9JReCqHvTnYSdK/media/656966c43d381ef74d0d5d25.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  display: block;
+  margin: auto;
+  width: 15px;
+  height: 15px;
+  left: 0;
+  right: 0;
+}
+/* City field Code ends */
+
+/* State Field Code Starts */
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.state
+  > div.text-\[\#0c2d3f\].label {
+  display: none !important;
+}
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.state
+  > div.hl-text-input-container.contact\.state
+  > div.relative.rounded-md.shadow-sm {
+  box-shadow: none !important;
+  margin-top: -15px !important;
+}
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.state
+  > div.hl-text-input-container.contact\.state
+  > div.relative.rounded-md.shadow-sm
+  > input {
+  border: none;
+  box-shadow: none;
+  padding-left: 18px;
+  background: none;
+  color: 6b6b6b;
+  font-size: 12.5px;
+  font-family: "Roboto";
+}
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.state
+  > div.hl-text-input-container.contact\.state
+  > div.relative.rounded-md.shadow-sm
+  > input::placeholder {
+  color: #9b9a9a;
+  font-family: "Roboto";
+}
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.state
+  > div.hl-text-input-container.contact\.state
+  > div.relative.rounded-md.shadow-sm
+  > div.absolute.inset-y-0.left-0.pl-3.flex.items-center.pointer-events-none {
+  padding-left: 0 !important;
+}
+/* div[class*="Rfghqe9JReCqHvTnYSdK"] #contact\.state > div.hl-text-input-container.contact\.state > div.relative.rounded-md.shadow-sm > div.absolute.inset-y-0.left-0.pl-3.flex.items-center.pointer-events-none:before {
+content: "";
+    background-image: url(https://storage.googleapis.com/msgsndr/1COAR8FZaPGqvqxKjlzR/media/6567c1ae234d2f90b4423d3e.png);
+                                                background-position: center center;
+                                                background-repeat: no-repeat;
+                                                background-size: contain;
+                                                position: relative;
+                                                display: block;
+                                                margin: auto;
+                                                width: 16px;
+                                                height: 10px;  
+                                                left: 0;
+                                                right: 0;
+} */
+/* State field code ends */
+
+/* Website field Code starts */
+
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.website
+  > div.text-\[\#0c2d3f\].label {
+  display: none !important;
+}
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.website
+  > div.hl-text-input-container.contact\.website
+  > div.relative.rounded-md.shadow-sm {
+  box-shadow: none !important;
+  margin-top: -8px !important;
+}
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.website
+  > div.hl-text-input-container.contact\.website
+  > div.relative.rounded-md.shadow-sm
+  input {
+  border: none;
+  box-shadow: none;
+  background: none;
+  color: #2d6ca9;
+  font-size: 11.5px;
+  font-family: "Roboto";
+  padding-left: 18.5px; /* Increased padding to create space to left of icon*/
+}
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.website
+  > div.hl-text-input-container.contact\.website
+  > div.relative.rounded-md.shadow-sm
+  input::placeholder {
+  color: #9b9a9a;
+  font-family: "Roboto";
+}
+
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.website
+  > div.hl-text-input-container.contact\.website
+  > div.relative.rounded-md.shadow-sm
+  > div.absolute.inset-y-0.left-0.pl-3.flex.items-center.pointer-events-none {
+  padding-left: 0 !important;
+}
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.website
+  > div.hl-text-input-container.contact\.website
+  > div.relative.rounded-md.shadow-sm
+  > div.absolute.inset-y-0.left-0.pl-3.flex.items-center.pointer-events-none:before {
+  content: "";
+  background-image: url(https://storage.googleapis.com/msgsndr/Rfghqe9JReCqHvTnYSdK/media/656966c43d381edf1a0d5d24.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  display: block;
+  margin: auto;
+  width: 20px;
+  height: 12px;
+  left: 0;
+  right: 0;
+}
+/* website field code ends */
+
+/* Lead Status Field Code Starts */
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.lead_status
+  > div.text-\[\#0c2d3f\].label {
+  display: none !important;
+}
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.lead_status
+  > div.dropdown.bootstrap-select.mt-1.selectItem.contact\.lead_status {
+  width: 50% !important;
+}
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.lead_status
+  > div.dropdown.bootstrap-select.mt-1.selectItem.contact\.lead_status
+  > button {
+  border-radius: 25px !important;
+  font-size: 10px;
+  font-family: "Roboto";
+  height: 23px; /* Adjust this value as needed */
+  line-height: 21px; /* This should be close to the height for vertical centering */
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.lead_status
+  > div.dropdown.bootstrap-select.mt-1.selectItem.contact\.lead_status
+  > button::placeholder {
+  color: #9b9a9a;
+  font-family: "Roboto";
+}
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.lead_status
+  > div.dropdown.bootstrap-select.mt-1.selectItem.contact\.lead_status.dropup
+  > button {
+  /*height: 25px !important; */
+}
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.lead_status
+  > div.dropdown.bootstrap-select.mt-1.selectItem.contact\.lead_status
+  > button
+  > div {
+  padding-top: 0px;
+  padding-left: 6px; /* Add or adjust this value */
+}
+
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.lead_status
+  > div.dropdown.bootstrap-select.mt-1.selectItem.contact\.lead_status
+  > button
+  > div
+  > div
+  > div {
+  color: #545454;
+}
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.lead_status
+  > div.dropdown.bootstrap-select.mt-1.selectItem.contact\.lead_status
+  > button:hover {
+  background: #ededed;
+}
+/* **************Lead Status Dropdown Code***************** */
+
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.lead_status
+  > div.dropdown.bootstrap-select.mt-1.selectItem.contact\.lead_status.show
+  > div,
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.lead_status
+  > div.dropdown.bootstrap-select.mt-1.selectItem.contact\.lead_status.show
+  > div
+  > div
+  > ul {
+  min-width: 235px !important;
+}
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.lead_status
+  .bootstrap-select
+  .dropdown-menu
+  li
+  a
+  span.text {
+  font-size: 12px !important;
+}
+/* **************Lead Status Dropdown Code Ens***************** */
+
+/* Lead Status Field code ends */
+
+/* Description Field Code Starts */
+div[class*="Rfghqe9JReCqHvTnYSdK"] #contact\.description > textarea {
+  background: #ffffff !important;
+  border-radius: 0px !important;
+  font-size: 11px;
+  color: #545454;
+  font-family: "Roboto";
+  margin-top: 0px;
+  border-top: 0px;
+  border-left: 1.5px solid #e5e5e5;
+  border-right: 1.5px solid #e5e5e5;
+  border-bottom: 1.5px solid #e5e5e5;
+}
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #contact\.description
+  > textarea::placeholder {
+  color: #9b9a9a;
+  font-family: "Roboto";
+}
+
+/* Description Field Code Ends */
+
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #mainpintop
+  > div.mb-2.pintop.pintopcontactcompany_name,
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #mainpintop
+  > div.mb-2.pintop.pintopcontactcity,
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #mainpintop
+  > div.mb-2.pintop.pintopcontactstate,
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #mainpintop
+  > div.mb-2.pintop.pintopcontactwebsite {
+  margin-bottom: 0 !important;
+}
+
+/* Background Color for Main Div of Mainpintop */
+#mainpintop {
+  background: #fafafa;
+}
+/* Hide The Contact Section For Admin As well */
+div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #\34
+  xRQZVL9hrngkMO8cbNx
+  > div.flex.cursor-pointer.justify-between {
+  display: none;
+}
+/* Add warning more below Hide empty fields 
+#contact-details > div > div.hl_contact-details-left.p-0.relative > div > div.h-full.overflow-y-auto > div.flex.ml-\[20px\].mt-\[15px\].items-center:after */
+.hidesavewarning {
+  font-size: 8.5px;
+  color: #737373;
+
+  margin-top: 2px;
+  font-family: "Roboto";
+}
+
+/* New code for Appointment Remove from Contact Page */
+
+#app
+  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  .hl_contact-details-right
+  div.hl_contact-details-right-tabs.appointment-not-allowed
+  div.tab-content
+  div.hl_tasks
+  .hl_tasks--item-footer
+  .hl_tasks--item-footer-trash {
+  width: 27px;
+  padding: 0px !important;
+}
+
+#app
+  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  .hl_contact-details-right
+  div.hl_contact-details-right-tabs.appointment-not-allowed
+  div.tab-content
+  div.hl_tasks
+  .hl_tasks--item-footer
+  .hl_tasks--item-footer-trash
+  img.icon-edit-icon-img {
+  width: 25px !important;
+  height: 25px !important;
+  cursor: not-allowed;
+}
+
+#app
+  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  .hl_contact-details-right
+  div.hl_contact-details-right-tabs.appointment-not-allowed
+  div.tab-content
+  div.hl_tasks
+  .hl_tasks--item-footer
+  .hl_tasks--item-footer-trash
+  img.icon-trash-icon-img {
+  width: 25px !important;
+  height: 25px !important;
+  cursor: not-allowed;
+}
+
+#app
+  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  .hl_contact-details-right
+  div.hl_contact-details-right-tabs.appointment-not-allowed.appointment-list-empty
+  div.tab-content
+  div
+  > div.item-center
+  > div.v-spinner,
+#app
+  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  .hl_contact-details-right
+  div.hl_contact-details-right-tabs.appointment-not-allowed.appointment-list-empty
+  div.tab-content
+  div
+  > div.item-center
+  > div.text-center,
+#app
+  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  .hl_contact-details-right
+  div.hl_contact-details-right-tabs.appointment-not-allowed.appointment-list-empty
+  div.tab-content
+  div
+  > div.item-center
+  > p {
+  display: none;
+}
+
+#app
+  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  .hl_contact-details-right
+  div.hl_contact-details-right-tabs.appointment-allowed.appointment-list-empty
+  div.tab-content
+  div
+  > div.item-center
+  > div.v-spinner,
+#app
+  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  .hl_contact-details-right
+  div.hl_contact-details-right-tabs.appointment-allowed.appointment-list-empty
+  div.tab-content
+  div
+  > div.item-center
+  > p {
+  display: unset;
+}
+
+#empty-appointment-alert {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#app
+  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  .hl_contact-details-left
+  #mainpintop
+  #opportunities-wrap {
+  border: 2px solid #e5e5e5;
+  padding: 0px !important;
+}
+
+#app
+  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  .hl_contact-details-left
+  #mainpintop
+  #opportunities-wrap
+  .flex.cursor-pointer {
+  padding-top: 8px !important;
+  padding-bottom: 2px !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  border-bottom: 1.5px solid #e5e5e5;
+  background: #f9f7f7;
+}
+
+/* CSS for tag-group mt-1 class */
+#app
+  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  .hl_contact-details-left
+  #mainpintop
+  #opportunities-wrap
+  .tag-group.mt-1 {
+  margin-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 0px;
+}
+
+/* CSS for btn btn-light2 btn-xs mt-1 class */
+#app
+  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  .hl_contact-details-left
+  #mainpintop
+  #opportunities-wrap
+  .btn.btn-light2.btn-xs.mt-1 {
+  margin-top: 10px; /* Adjust as needed */
+  margin-right: 10px; /* Adjust as needed */
+  margin-bottom: 10px; /* Adjust as needed */
+  margin-left: 0px; /* Adjust as needed */
+  background: #ffffff;
+}
+
+/* Remaining CSS */
+#app
+  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  .hl_contact-details-left
+  #mainpintop
+  #opportunities-wrap
+  .flex.cursor-pointer
+  span.mr-2
+  svg {
+  filter: brightness(0) saturate(100%) invert(98%) sepia(0%) saturate(47%)
+    hue-rotate(134deg) brightness(60%) contrast(95%);
+}
+
+#app
+  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  .hl_contact-details-left
+  #mainpintop
+  #opportunities-wrap
+  .flex.cursor-pointer
+  span.text-sm.flex-grow {
+  font-size: 0 !important;
+}
+#app
+  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  .hl_contact-details-left
+  #mainpintop
+  #opportunities-wrap
+  .flex.cursor-pointer
+  span.text-sm.flex-grow:after {
+  content: "OPPORTUNITES";
+  font-size: 13px;
+  color: #262e39;
+  letter-spacing: 1px;
+}
+#app
+  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  .hl_contact-details-left
+  #mainpintop
+  #opportunities-wrap
+  div.flex.justify-between.items-center.cursor-pointer
+  > span.mr-2 {
+  display: none !important;
+}
+
+#app
+  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  .hl_contact-details-left
+  #mainpintop
+  #opportunities-wrap
+  .flex.cursor-pointer
+  > div
+  > svg[stroke="#188bf6"] {
+  filter: brightness(0) saturate(100%) invert(98%) sepia(0%) saturate(47%)
+    hue-rotate(134deg) brightness(60%) contrast(95%);
+}
+
+#app
+  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  .hl_contact-details-left
+  #mainpintop
+  .pintop.pintopcontactdescription.original_pintop
+  div[id="contact.description"] {
+}
+
+#app
+  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  .hl_contact-details-left
+  #mainpintop
+  .pintop.pintopcontactdescription.original_pintop
+  div[id="contact.description"]
+  > div {
+  padding: 8px;
+  color: #262e39;
+  font-size: 13px;
+  letter-spacing: 1px;
+  background: #f9f7f7;
+  border: 1.5px solid #e5e5e5;
+}
+
+#app
+  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  #opportunities-wrap
+  > div.flex.justify-between.items-center.cursor-pointer {
+  display: none !important;
+}
+#app div[class*="Rfghqe9JReCqHvTnYSdK"] #opportunities-wrap:before {
+  content: "OPPORTUNITIES";
+  font-size: 14px;
+  padding: 8px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  background: #f9f7f7;
+  font-family: "Roboto";
+  letter-spacing: 0.5px;
+  color: #000;
+}
+
+#app
+  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  .contact_tags
+  .flex.justify-between.cursor-pointer.items-center {
+  display: none !important;
+}
+#app div[class*="Rfghqe9JReCqHvTnYSdK"] #opportunities-wrap .tag {
+  font-family: "Barlow", sans-serif !important;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase !important;
+}
+#app div[class*="Rfghqe9JReCqHvTnYSdK"] .contact_tags .tag {
+  background: #e4e2e2 !important;
+  color: #000 !important;
+  font-size: 9.5px;
+  font-family: "Barlow", sans-serif !important;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase !important;
+}
+#app div[class*="Rfghqe9JReCqHvTnYSdK"] .contact_tags {
+  background-color: #fff0 !important;
+}
+#app div[class*="Rfghqe9JReCqHvTnYSdK"] .contact_tags .shadow-sm {
+  box-shadow: none !important;
+  border: none !important;
+  background: #fff0 !important;
+}
+#app div[class*="Rfghqe9JReCqHvTnYSdK"] .contact_tags input[type="text"] {
+  padding-left: 20px;
+  background-position: 0% 50% !important;
+
+  background-image: url(https://storage.googleapis.com/msgsndr/Rfghqe9JReCqHvTnYSdK/media/65fb9f62a79bbe466ab35c78.png) !important;
+  background-repeat: no-repeat !important;
+}
+#app div[class*="Rfghqe9JReCqHvTnYSdK"] .contact_tags .tag a {
+  background: #fff0 !important;
+}
+#app div[class*="Rfghqe9JReCqHvTnYSdK"] .contact_tags .tag a i {
+  border: none !important;
+}

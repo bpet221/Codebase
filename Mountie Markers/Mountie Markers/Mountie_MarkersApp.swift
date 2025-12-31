@@ -2,7 +2,9 @@
 //  Mountie_MarkersApp.swift
 //  Mountie Markers
 //
-//  Created by Blake Petipas on 5/8/25.
+//  UPDATED: 2025_11_19
+//
+//  Created by Blake Petipas on 2025_5_8.
 //
 
 import SwiftUI
@@ -95,7 +97,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             )
             win.isOpaque = false
             win.backgroundColor = .clear
-            win.level = .screenSaver
+            win.level = .floating
             win.ignoresMouseEvents = true
             win.collectionBehavior = [.canJoinAllSpaces, .stationary, .ignoresCycle]
             win.contentView = NSHostingView(rootView: overlay)

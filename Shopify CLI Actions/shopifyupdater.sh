@@ -3,6 +3,20 @@
 # Auto Theme Checker & Updater
 # Compares the most recent theme backup with the current working theme
 
+# UPDATED 2025-11-25
+
+# HOW TO UPDATE SHOPIFY THEME VERSION WITH THE shopifyupdater.sh
+# 1. Run pullfromshop to sync local theme with Shopify.
+# 2. Manually create a local backup: duplicate .../Code Repos/KCS Shopify Theme in Finder → move/rename to ...'/Documents/KCS/KCS Shopify Store Themes/...' Themes/{date} Backup - KCS Shopify Horizon (Tinker {version_num}).
+# 3. Update the LIVE theme in Shopify Admin (auto-creates a duplicate) (do not publish yet).
+# 4. Copy the new Theme ID.
+# 5. Update ACTIVEthemeid.sh with the new Theme ID.
+# 6. Run pullfromshop again to sync live theme files.
+# 7. Run shopifyupdater: compares new live theme vs. your backup (select most recently updated backup).
+# 8. Review terminal output; when done, type YES to push merged edits to Shopify.
+# 9. Preview the new theme and verify basic functionality.
+# 10. Publish the new theme in Admin.
+
 echo "🔍 Shopify Theme Checker & Updater"
 echo "=================================="
 echo ""
@@ -55,7 +69,7 @@ fi
 echo "📁 Finding most recent backup..."
 
 # Find the most recently created folder in the backup directory
-MOST_RECENT_BACKUP=$(find "$BACKUP_BASE_DIR" -mindepth 1 -maxdepth 1 -type d -exec stat -f "%B %N" {} \; | sort -nr | head -1 | cut -d' ' -f2-)
+MOST_RECENT_BACKUP=$(find "$BACKUP_BASE_DIR" -mindepth 1 -maxdepth 1 -type d -exec stat -f "%m %N" {} \; | sort -nr | head -1 | cut -d' ' -f2-)
 
 if [ -z "$MOST_RECENT_BACKUP" ]; then
     echo "❌ Error: No backup folders found in $BACKUP_BASE_DIR"
