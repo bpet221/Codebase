@@ -1,0 +1,2272 @@
+<!-- INK MEDIA AGENCY - CUSTOM GHL JS CODE -->
+
+<!-- =====================================
+🟢🟢🟢 CONTACT ACCORDION - COMBINED NAME FIELDS
+===================================== -->
+
+<script>
+/* 🟢 COMBINE FIRST/LAST NAME INTO SINGLE ROW [2025-01-04]
+🗒️ Moves Last Name input next to First Name input
+🗒️ Adds "First" and "Last" placeholders
+🗒️ Syncs changes between cloned and original inputs
+🗒️ Auto-resizes first name input to content width */
+
+(function() {
+  // Helper function to auto-resize input based on content
+  function autoResizeInput(input) {
+    if (!input) return;
+    
+    // Create a hidden span to measure text width
+    let measurer = document.getElementById('name-field-measurer');
+    if (!measurer) {
+      measurer = document.createElement('span');
+      measurer.id = 'name-field-measurer';
+      measurer.style.cssText = `
+        position: absolute;
+        visibility: hidden;
+        white-space: pre;
+        font-size: 12.5px;
+        font-family: "Roboto", sans-serif;
+      `;
+      document.body.appendChild(measurer);
+    }
+    
+    // Measure the text (use placeholder if empty)
+    const textToMeasure = input.value || input.placeholder || 'First';
+    measurer.textContent = textToMeasure;
+    
+    // Set input width with some padding
+    const minWidth = 40;
+    const padding = 16; // Increased padding to prevent text cutoff
+    const calculatedWidth = Math.max(minWidth, measurer.offsetWidth + padding);
+    input.style.width = calculatedWidth + 'px';
+  }
+  
+  function combineNameFields() {
+    // Only run on contact detail pages for target locations
+    if (!location.href.includes('contacts/detail')) return;
+    if (!location.href.includes('Rfghqe9JReCqHvTnYSdK') && 
+        !location.href.includes('4h6wxlihyc1wMCzyVRbH')) return;
+    
+    // Find the Contact accordion's First Name field
+    const firstNameField = document.querySelector(
+      '.hl_contact-details-left .py-3.px-3.border-b #contact\\.first_name'
+    );
+    
+    // Find Last Name wrapper (the .mb-2 container)
+    const lastNameWrapper = document.querySelector(
+      '.hl_contact-details-left .py-3.px-3.border-b form > .mb-2:has(#contact\\.last_name)'
+    );
+    
+    // Find Last Name field
+    const lastNameField = document.querySelector(
+      '.hl_contact-details-left .py-3.px-3.border-b #contact\\.last_name'
+    );
+    
+    if (firstNameField && lastNameField && !document.querySelector('.last-name-injected')) {
+      // Get the input container from Last Name
+      const lastNameInputContainer = lastNameField.querySelector('.hl-text-input-container');
+      
+      if (lastNameInputContainer) {
+        // Clone and inject into First Name row
+        const clonedContainer = lastNameInputContainer.cloneNode(true);
+        clonedContainer.classList.add('last-name-injected');
+        
+        // Get inputs
+        const clonedInput = clonedContainer.querySelector('input');
+        const originalInput = lastNameInputContainer.querySelector('input');
+        const firstNameInput = firstNameField.querySelector('input[name="contact.first_name"]');
+        
+        if (clonedInput && originalInput) {
+          // Set placeholder for Last Name
+          clonedInput.setAttribute('placeholder', 'Last');
+          
+          // Sync cloned input changes to original
+          clonedInput.addEventListener('input', (e) => {
+            originalInput.value = e.target.value;
+            originalInput.dispatchEvent(new Event('input', { bubbles: true }));
+          });
+          
+          // Sync original to cloned (for external updates)
+          originalInput.addEventListener('input', () => {
+            clonedInput.value = originalInput.value;
+          });
+          
+          // Also sync blur events to trigger saves
+          clonedInput.addEventListener('blur', () => {
+            originalInput.dispatchEvent(new Event('blur', { bubbles: true }));
+          });
+        }
+        
+        // Set placeholder for First Name and add auto-resize
+        if (firstNameInput) {
+          firstNameInput.setAttribute('placeholder', 'First');
+          
+          // Auto-resize on input
+          firstNameInput.addEventListener('input', () => autoResizeInput(firstNameInput));
+          
+          // Auto-resize on focus (expand a bit for editing)
+          firstNameInput.addEventListener('focus', () => {
+            firstNameInput.style.width = ''; // Reset to let CSS handle during edit
+          });
+          
+          // Auto-resize on blur (shrink to content)
+          firstNameInput.addEventListener('blur', () => autoResizeInput(firstNameInput));
+          
+          // Initial auto-resize
+          setTimeout(() => autoResizeInput(firstNameInput), 100);
+        }
+        
+        // Append cloned Last Name container to First Name row
+        firstNameField.appendChild(clonedContainer);
+        
+        console.log('✅ Combined First/Last name fields into single row');
+      }
+    }
+    
+    // Always re-run auto-resize on existing first name input (for SPA updates)
+    const existingFirstNameInput = document.querySelector(
+      '.hl_contact-details-left .py-3.px-3.border-b #contact\\.first_name input[name="contact.first_name"]'
+    );
+    if (existingFirstNameInput && document.querySelector('.last-name-injected')) {
+      // Only resize if not focused
+      if (document.activeElement !== existingFirstNameInput) {
+        autoResizeInput(existingFirstNameInput);
+      }
+    }
+  }
+  
+  // Run on interval to handle SPA navigation
+  setInterval(combineNameFields, 1000);
+  
+  // Also run on route changes
+  window.addEventListener('routeChangeEvent', () => {
+    setTimeout(combineNameFields, 500);
+  });
+})();
+
+/* 🛑 COMBINE FIRST/LAST NAME INTO SINGLE ROW */
+</script>
+
+<!-- =====================================
+🛑🛑🛑 CONTACT ACCORDION - COMBINED NAME FIELDS
+===================================== -->
+
+<!-- =====================================
+🟢🟢🟢 CONTACT ACCORDION - PHONE/EMAIL PENCIL & BADGE
+===================================== -->
+
+<script>
+/* 🟢 PHONE/EMAIL PENCIL & BADGE STYLING [2025-01-05]
+🗒️ Removes parentheses from phone labels and styles as badge
+🗒️ Sets SVG attributes for proper sizing
+🗒️ Positions email icons container */
+
+(function() {
+  function stylePhoneEmailIcons() {
+    // Only run on contact detail pages for target locations
+    if (!location.href.includes('contacts/detail')) return;
+    if (!location.href.includes('Rfghqe9JReCqHvTnYSdK') && 
+        !location.href.includes('4h6wxlihyc1wMCzyVRbH')) return;
+    
+    // ===== PHONE FIELD =====
+    const phoneField = document.querySelector('#contact\\.phone');
+    const phonePencilDiv = phoneField?.querySelector('.additional-phones-edit-div');
+    
+    if (phonePencilDiv) {
+      const phoneBadgeSvg = phonePencilDiv.querySelector('svg.additional-phone-edit-icon');
+      const phonePencilSvg = phonePencilDiv.querySelector('svg.additional-phone-count');
+      const phoneLabelSpan = phonePencilDiv.querySelector('span.phone-label');
+      
+      // Style phone label - remove parentheses
+      if (phoneLabelSpan && !phoneLabelSpan.dataset.styled) {
+        const labelText = phoneLabelSpan.textContent.replace(/[()]/g, '').trim();
+        phoneLabelSpan.textContent = labelText;
+        phoneLabelSpan.dataset.styled = 'true';
+      }
+      
+      // Set SVG attributes for phone badge
+      if (phoneBadgeSvg && !phoneBadgeSvg.dataset.sized) {
+        phoneBadgeSvg.setAttribute('width', '32');
+        phoneBadgeSvg.setAttribute('height', '20');
+        phoneBadgeSvg.dataset.sized = 'true';
+      }
+      
+      // Set SVG attributes for phone pencil
+      if (phonePencilSvg && !phonePencilSvg.dataset.sized) {
+        phonePencilSvg.setAttribute('width', '15');
+        phonePencilSvg.setAttribute('height', '15');
+        phonePencilSvg.dataset.sized = 'true';
+        
+        // Ensure stroke is visible
+        const path = phonePencilSvg.querySelector('path');
+        if (path) {
+          path.style.stroke = '#344054';
+          path.style.strokeWidth = '1.5';
+        }
+      }
+    }
+    
+    // ===== EMAIL FIELD =====
+    const emailField = document.querySelector('#contact\\.email');
+    const emailRelativeContainer = emailField?.querySelector('.mt-1.relative');
+    
+    if (emailRelativeContainer) {
+      const emailBadgeSvg = emailRelativeContainer.querySelector('svg.additional-email-count');
+      const emailPencilDiv = emailRelativeContainer.querySelector('.additional-email-edit');
+      const emailPencilSvg = emailPencilDiv?.querySelector('svg');
+      
+      // Find and style the unnamed container div
+      const iconsContainer = emailBadgeSvg?.parentElement || emailPencilDiv?.parentElement;
+      
+      if (iconsContainer && iconsContainer.tagName === 'DIV' && !iconsContainer.dataset.styled) {
+        iconsContainer.style.cssText = `
+          position: absolute !important;
+          right: -3px !important;
+          top: 50% !important;
+          transform: translateY(-50%) !important;
+          display: flex !important;
+          flex-direction: row !important;
+          align-items: center !important;
+          justify-content: flex-end !important;
+          gap: 6px !important;
+          width: auto !important;
+          height: auto !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        `;
+        iconsContainer.dataset.styled = 'true';
+      }
+      
+      // Set SVG attributes for email badge
+      if (emailBadgeSvg && !emailBadgeSvg.dataset.sized) {
+        emailBadgeSvg.setAttribute('width', '32');
+        emailBadgeSvg.setAttribute('height', '20');
+        emailBadgeSvg.dataset.sized = 'true';
+      }
+      
+      // Set SVG attributes for email pencil
+      if (emailPencilSvg && !emailPencilSvg.dataset.sized) {
+        emailPencilSvg.setAttribute('width', '15');
+        emailPencilSvg.setAttribute('height', '15');
+        emailPencilSvg.dataset.sized = 'true';
+        
+        // Ensure stroke is visible
+        const path = emailPencilSvg.querySelector('path');
+        if (path) {
+          path.style.stroke = '#344054';
+          path.style.strokeWidth = '1.5';
+        }
+      }
+    }
+  }
+  
+  // Run on interval to handle SPA navigation
+  setInterval(stylePhoneEmailIcons, 1000);
+  
+  // Also run on route changes
+  window.addEventListener('routeChangeEvent', () => {
+    setTimeout(stylePhoneEmailIcons, 500);
+  });
+})();
+
+/* 🛑 PHONE/EMAIL PENCIL & BADGE STYLING */
+</script>
+
+<!-- =====================================
+🛑🛑🛑 CONTACT ACCORDION - PHONE/EMAIL PENCIL & BADGE
+===================================== -->
+
+<!-- =====================================
+🟢🟢🟢 FUNNELPRO ACCOUNT WIDE WHITE LABEL
+===================================== -->
+
+<!-- 🟢 Favicon White label [2025_12_31] -->
+
+<script>
+  var faviconURL =
+    "https://storage.googleapis.com/msgsndr/2ktiXlsi86q3fuJU2JZh/media/6397c029978abc4b859e3153.png";
+
+  var link =
+    document.querySelector("link[rel*='icon']") ||
+    document.createElement("link");
+  link.type = "image/x-icon";
+  link.rel = "shortcut icon";
+  link.href = faviconURL;
+  document.getElementsByTagName("head")[0].appendChild(link);
+</script>
+
+<!--  🛑 Favicon White label -->
+
+<!-- =====================================
+🛑🛑🛑 FUNNELPRO ACCOUNT WIDE WHITE LABEL
+===================================== -->
+
+<!-- ============================================================
+🟢🟢🟢 APPOINTMENT BOOKING CONTROL, FIELD DEFINITIONS & VALIDATION
+============================================================= -->
+
+<!-- 🟢 REQUIRED FIELDS CONFIGURATION [2025_12_03]
+🗒️ Defines contact fields and their validation requirements
+🗒️ Used to control appointment booking access -->
+
+<script type="text/javascript" defer>
+  (function () {
+    var fields = [
+      {
+        name: "contact.company_name",
+        required: false,
+        tag: "input",
+      },
+      {
+        name: "contact.city",
+        required: false,
+        tag: "input",
+      },
+      {
+        name: "contact.state",
+        required: false,
+        tag: "input",
+      },
+      {
+        name: "contact.website",
+        required: false,
+        tag: "input",
+      },
+      {
+        name: "contact.lead_status",
+        required: false,
+        tag: "select",
+      },
+      {
+        name: "contact.description",
+        required: false,
+        tag: "textarea",
+      },
+      {
+        name: "contact.first_name",
+        required: false,
+        tag: "input",
+      },
+      {
+        name: "contact.last_name",
+        required: false,
+        tag: "input",
+      },
+      {
+        name: "contact.email",
+        required: true,
+        tag: "input",
+      },
+      {
+        name: "contact.phone",
+        required: false,
+        tag: "input",
+      },
+      {
+        name: "contact.fitness_subniche_main_focus",
+        required: false,
+        tag: "select",
+      },
+      {
+        name: "contact.lead_score",
+        required: false,
+        tag: "select",
+      },
+      {
+        name: "contact.setter_name",
+        required: false,
+        tag: "select",
+      },
+      {
+        name: "contact.market",
+        required: false,
+        tag: "select",
+      },
+      {
+        name: "contact.active_memberships",
+        required: false,
+        tag: "select",
+      },
+    ];
+
+    /* 🛑 REQUIRED FIELDS CONFIGURATION */
+
+    /* 🟢 GLOBAL STATE VARIABLES [2025_12_03] */
+
+    // Update missing fields before booking or editing appointments
+
+    var hrCurrentLocation = {};
+    var hrCurrentRoute = {};
+
+    var allowToAddAppointment = false;
+
+    /* 🛑 GLOBAL STATE VARIABLES */
+
+    /* 🟢 MAIN APPLICATION LOOP [2025_12_03]
+🗒️ Runs every 1 second to check and update appointment access */
+
+    setInterval(async () => {
+      await hrGetOrUpdateGlobalVariables();
+
+      if (
+        hrCompany.relationshipNumber === "0-013-420" &&
+        hrCurrentLocation &&
+        (hrCurrentLocation.id === "Rfghqe9JReCqHvTnYSdK" ||
+          hrCurrentLocation.id === "4h6wxlihyc1wMCzyVRbH")
+      ) {
+        hrInitApplication();
+      }
+    }, 1000);
+
+    /* 🛑 MAIN APPLICATION LOOP */
+
+    /* 🟢 APPOINTMENT ACCESS CONTROLLER [2025_12_03]
+🗒️ Controls add/edit appointment buttons based on required field completion */
+
+    async function hrInitApplication() {
+      let myFields = [];
+
+      if (hrCurrentRoute.name === "contact_detail-v2") {
+        let localAllowToAddAppointment = [];
+
+        fields.forEach((field) => {
+          if (field.required) {
+            let fieldElement = document.querySelector(
+              `#app #contact-details .hl_contact-details-left div[id="${field.name}"] ${field.tag}[name="${field.name}"]`
+            );
+
+            // myFields.push(`#app #contact-details .hl_contact-details-left div[id="${field.name}"] ${field.tag}[name="${field.name}"]`)
+
+            if (fieldElement && fieldElement.value !== "") {
+              localAllowToAddAppointment.push("allowed");
+            } else {
+              localAllowToAddAppointment.push("not-allowed");
+            }
+          }
+        });
+
+        let formFooterElement = document.querySelector(
+          `#app #contact-details .hl_contact-details-left div.form-footer.save`
+        );
+        let rightTabs = document.querySelector(
+          `#app #contact-details .hl_contact-details-right .hl_contact-details-right-tabs`
+        );
+        let addButton = document.querySelector(
+          `#app #contact-details #addAppointmentButton`
+        );
+        let appointmentTab = document.querySelector(
+          `#app #contact-details .hl_contact-details-right ul.nav-tabs li a#appointment-tab`
+        );
+        let appointmentsListWrap = document.querySelector(
+          `#app #contact-details .hl_contact-details-right div.tab-content div.hl_tasks`
+        );
+        let emptyAppointmentsListWrap = document.querySelector(
+          `#app #contact-details .hl_contact-details-right div.tab-content div > div.item-center`
+        );
+
+        let allAppointments =
+          document.querySelectorAll(
+            `#app #contact-details .hl_contact-details-right div.tab-content div.hl_tasks div.hl_tasks--appointment-detail`
+          ) || [];
+
+        allowToAddAppointment =
+          !localAllowToAddAppointment.some((item) => item === "not-allowed") &&
+          !formFooterElement;
+
+        let appointmentTabActive =
+          appointmentTab &&
+          appointmentTab.classList &&
+          appointmentTab.classList.contains("active");
+
+        /* --- NOT ALLOWED TO ADD APPOINTMENTS --- */
+        if (allowToAddAppointment === false) {
+          if (appointmentTabActive) {
+            addButton.style["display"] = "none";
+            addButton.style["opacity"] = "0";
+            addButton.style["pointerEvents"] = "none";
+
+            if (rightTabs) {
+              rightTabs.classList.add("appointment-not-allowed");
+              rightTabs.classList.remove("appointment-allowed");
+
+              toggleIconsToAppointments(true);
+
+              /* LEARN MORE MODAL - Empty Appointments List */
+              // BLAKE CODE START (Adds a LEARN MORE link with a pop up image with instructions)
+              if (allAppointments.length <= 0) {
+                rightTabs.classList.add("appointment-list-empty");
+
+                if (emptyAppointmentsListWrap) {
+                  let emptyAppointmentAlert = document.querySelector(
+                    "#empty-appointment-alert"
+                  );
+
+                  if (!emptyAppointmentAlert) {
+                    emptyAppointmentsListWrap.insertAdjacentHTML(
+                      "beforeend",
+                      `
+                                        <div id="empty-appointment-alert" style="color: red; text-align: center;">
+                                            <i class="fas fa-exclamation-triangle" style="margin-bottom: 15px;"></i>
+                                            <span>You cannot <b>Add</b> or <b>Edit</b> appointments until required contact fields are completed.</span>
+                                            <a href="javascript:void(0);" id="learnMoreLink" style="text-decoration: underline; cursor: pointer; display: block; margin-top: 17px; font-size: 12px;">LEARN MORE</a>
+                                        </div>
+                                    `
+                    );
+
+                    // Attach event listener to the first LEARN MORE link
+                    document.getElementById("learnMoreLink").onclick =
+                      function () {
+                        document.getElementById("myModal").style.display =
+                          "block";
+                      };
+                  } else if (emptyAppointmentAlert) {
+                    emptyAppointmentAlert.style.display = "flex";
+                  }
+                }
+              } else if (allAppointments.length > 0) {
+                rightTabs.classList.remove("appointment-list-empty");
+
+                let emptyAppointmentAlert = document.querySelector(
+                  "#empty-appointment-alert"
+                );
+                if (emptyAppointmentAlert) {
+                  emptyAppointmentAlert.style.display = "none";
+                }
+              }
+
+              // BLAKE CODE END
+
+              /* LEARN MORE MODAL - Existing Appointments List */
+              // BLAKE CODE 2 START
+              if (
+                appointmentsListWrap &&
+                !appointmentsListWrap.querySelector("#appointment-alert-not")
+              ) {
+                appointmentsListWrap.insertAdjacentHTML(
+                  "beforeend",
+                  `
+                                <div id="appointment-alert-not" style="color: red;">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <span>You cannot <b>Add</b> or <b>Edit</b> appointments until required contact fields are completed.</span>
+                                    <a href="javascript:void(0);" class="learnMoreLink" style="text-decoration: underline; cursor: pointer; display: inline; margin-left: 4px; font-size: 12px; white-space: nowrap;">LEARN MORE</a>
+                                </div>
+                            `
+                );
+
+                // Attach event listener to the second LEARN MORE link
+                let newLearnMoreLink =
+                  appointmentsListWrap.querySelector(".learnMoreLink");
+                newLearnMoreLink.onclick = function () {
+                  document.getElementById("myModal").style.display = "block";
+                };
+              }
+
+              /* MODAL HTML INJECTION */
+              // Ensure that the modal is only added once
+              if (!document.getElementById("myModal")) {
+                var modalHTML = `
+                                <div id="myModal" class="modal">
+                                    <div class="modal-content" style="max-width: 700px; margin: 40px auto; padding: 20px;">
+                                        <img src="https://storage.googleapis.com/msgsndr/Rfghqe9JReCqHvTnYSdK/media/6584f61ef7f6f5ce66aa5cd6.png" alt="Popup Image" style="width: 100%; height: auto;">
+                                    </div>
+                                </div>
+                            `;
+                document.body.insertAdjacentHTML("beforeend", modalHTML);
+              }
+
+              /* MODAL CLOSE ON OUTSIDE CLICK */
+              // Existing code for closing modal
+              window.onclick = function (event) {
+                var modal = document.getElementById("myModal");
+                if (event.target == modal) {
+                  modal.style.display = "none";
+                }
+              };
+
+              // BLAKE CODE 2 END
+            }
+          } else {
+            if (addButton) {
+              addButton.style["display"] = "block";
+              addButton.style["opacity"] = "1";
+              addButton.style["pointerEvents"] = "unset";
+            }
+
+            if (rightTabs) {
+              rightTabs.classList.add("appointment-not-allowed");
+              rightTabs.classList.remove("appointment-allowed");
+
+              if (allAppointments.length <= 0) {
+                rightTabs.classList.add("appointment-list-empty");
+              } else if (allAppointments.length > 0) {
+                rightTabs.classList.remove("appointment-list-empty");
+              }
+            }
+
+            let appointmentAlert = document.querySelector(
+              "#appointment-alert-not"
+            );
+            if (appointmentAlert) {
+              appointmentAlert.style.display = "none";
+            }
+
+            let emptyAppointmentAlert = document.querySelector(
+              "#empty-appointment-alert"
+            );
+            if (emptyAppointmentAlert) {
+              emptyAppointmentAlert.style.display = "none";
+            }
+
+            toggleIconsToAppointments(false);
+          }
+        } else {
+          // allowToAddAppointment === true
+
+          /* --- ALLOWED TO ADD APPOINTMENTS --- */
+
+          if (appointmentTabActive) {
+            if (addButton) {
+              addButton.style["display"] = "block";
+              addButton.style["opacity"] = "1";
+              addButton.style["pointerEvents"] = "unset";
+            }
+
+            if (rightTabs) {
+              rightTabs.classList.remove("appointment-not-allowed");
+              rightTabs.classList.add("appointment-allowed");
+
+              if (allAppointments.length <= 0) {
+                rightTabs.classList.add("appointment-list-empty");
+              } else if (allAppointments.length > 0) {
+                rightTabs.classList.remove("appointment-list-empty");
+              }
+            }
+
+            let emptyAppointmentAlert = document.querySelector(
+              "#empty-appointment-alert"
+            );
+            if (emptyAppointmentAlert) {
+              emptyAppointmentAlert.style.display = "none";
+            }
+
+            let appointmentAlert = document.querySelector(
+              "#appointment-alert-not"
+            );
+            if (appointmentAlert) {
+              appointmentAlert.style.display = "none";
+            }
+
+            toggleIconsToAppointments(false);
+          } else {
+            if (addButton) {
+              addButton.style["display"] = "block";
+              addButton.style["opacity"] = "1";
+              addButton.style["pointerEvents"] = "unset";
+            }
+
+            if (rightTabs) {
+              rightTabs.classList.remove("appointment-not-allowed");
+              rightTabs.classList.add("appointment-allowed");
+
+              if (allAppointments.length <= 0) {
+                rightTabs.classList.add("appointment-list-empty");
+              } else if (allAppointments.length > 0) {
+                rightTabs.classList.remove("appointment-list-empty");
+              }
+            }
+
+            let appointmentAlert = document.querySelector(
+              "#appointment-alert-not"
+            );
+            if (appointmentAlert) {
+              appointmentAlert.style.display = "none";
+            }
+
+            let emptyAppointmentAlert = document.querySelector(
+              "#empty-appointment-alert"
+            );
+            if (emptyAppointmentAlert) {
+              emptyAppointmentAlert.style.display = "none";
+            }
+          }
+        }
+      }
+    }
+
+    /* 🛑 APPOINTMENT ACCESS CONTROLLER */
+
+    /* 🟢 TOGGLE APPOINTMENT ICONS [2025_12_03]
+🗒️ Shows/hides edit and trash icons on appointment cards */
+
+    function toggleIconsToAppointments(add) {
+      let appointments =
+        document.querySelectorAll(
+          `#app #contact-details .hl_contact-details-right div.tab-content div.hl_tasks div.hl_tasks--appointment-detail`
+        ) || [];
+
+      appointments.forEach((appointmentElement, appointmentIndex) => {
+        if (appointmentElement) {
+          let iconsWrappers =
+            appointmentElement.querySelectorAll(
+              "div.hl_tasks--item-footer div.flex.flex-row.justify-between div.hl_tasks--item-footer-trash"
+            ) || [];
+
+          iconsWrappers.forEach((iconWrapper, iconIndex) => {
+            let iconElement = iconWrapper.querySelector("i.icon.--light");
+
+            if (iconElement) {
+              if (add) {
+                iconElement.style["display"] = "none";
+              } else {
+                iconElement.style["display"] = "";
+              }
+
+              if (add) {
+                /* Edit Icon Replacement */
+                if (
+                  iconElement.classList &&
+                  iconElement.classList.contains("icon-edit")
+                ) {
+                  if (!iconWrapper.querySelector("img.icon-edit-icon-img")) {
+                    iconWrapper.insertAdjacentHTML(
+                      "beforeend",
+                      `<img class="icon-edit-icon-img" src="https://storage.googleapis.com/msgsndr/Rfghqe9JReCqHvTnYSdK/media/6576102cb47c1c45a6108aca.png" width="25" height="25"/>`
+                    );
+                  } else {
+                    let addedImageIcon = iconWrapper.querySelector(
+                      "img.icon-edit-icon-img"
+                    );
+
+                    if (addedImageIcon) {
+                      addedImageIcon.style.display = "inline";
+                    }
+                  }
+                }
+
+                /* Trash Icon Replacement */
+                if (
+                  iconElement.classList &&
+                  iconElement.classList.contains("icon-trash")
+                ) {
+                  if (!iconWrapper.querySelector("img.icon-trash-icon-img")) {
+                    iconWrapper.insertAdjacentHTML(
+                      "beforeend",
+                      `<img class="icon-trash-icon-img" src="https://storage.googleapis.com/msgsndr/Rfghqe9JReCqHvTnYSdK/media/65761048b47c1c1a7f108acd.png" width="25" height="25"/>`
+                    );
+                  } else {
+                    let addedImageIcon = iconWrapper.querySelector(
+                      "img.icon-trash-icon-img"
+                    );
+
+                    if (addedImageIcon) {
+                      addedImageIcon.style.display = "inline";
+                    }
+                  }
+                }
+              } else {
+                /* Restore Edit Icon */
+                if (
+                  iconElement.classList &&
+                  iconElement.classList.contains("icon-edit")
+                ) {
+                  let addedImageIcon = iconWrapper.querySelector(
+                    "img.icon-edit-icon-img"
+                  );
+
+                  if (addedImageIcon) {
+                    addedImageIcon.style.display = "none";
+                  }
+                }
+
+                /* Restore Trash Icon */
+                if (
+                  iconElement.classList &&
+                  iconElement.classList.contains("icon-trash")
+                ) {
+                  let addedImageIcon = iconWrapper.querySelector(
+                    "img.icon-trash-icon-img"
+                  );
+
+                  if (addedImageIcon) {
+                    addedImageIcon.style.display = "none";
+                  }
+                }
+              }
+            }
+          });
+        }
+      });
+    }
+
+    /* 🛑 TOGGLE APPOINTMENT ICONS */
+
+    /* 🟢 GET/UPDATE GLOBAL VARIABLES [2025_12_03]
+🗒️ Fetches current company, location, and route data from Vue store */
+
+    async function hrGetOrUpdateGlobalVariables() {
+      try {
+        // Check if app and Vue store exist before accessing
+        if (typeof app !== 'undefined' && app.__vue__ && app.__vue__.$store) {
+          [hrCompany, hrCurrentLocation] = await Promise.all([
+            app.__vue__.$store._actions["company/get"][0](),
+            app.__vue__.$store._actions["locations/getCurrentLocation"][0](),
+          ]);
+
+          hrCurrentRoute = app.__vue__.$route;
+        }
+      } catch (error) {
+        // Silently handle - Vue store not ready yet
+      }
+    }
+
+    window.addEventListener("routeChangeEvent", async function (e) {
+      await hrGetOrUpdateGlobalVariables();
+    });
+
+    /* 🛑 GET/UPDATE GLOBAL VARIABLES */
+  })();
+</script>
+
+<!-- ============================================================
+🛑🛑🛑 APPOINTMENT BOOKING CONTROL, FIELD DEFINITIONS & VALIDATION
+============================================================= -->
+
+<!-- =====================================
+🟢🟢🟢 WEBSITE FIELD LINK & CONTACT PINTOP
+===================================== -->
+
+<script>
+  /* 🟢 WEBSITE FIELD CLICKABLE LINK [2025_12_03]
+🗒️ Adds external link icon next to website field on contact details */
+
+  (function () {
+    let waitForWebsiteField = null;
+    function showWebsiteContact() {
+      if (!location.href.includes("contacts/detail")) {
+        return;
+      }
+      waitForWebsiteField = setInterval(function () {
+        try {
+          var websiteField = document.querySelector('[name="contact.website"]');
+          if (
+            websiteField &&
+            websiteField.value.trim() != "" &&
+            !document.querySelector(".website-link-container")
+          ) {
+            let websiteDiv = document.createElement("div");
+            websiteDiv.className = "website-link-container";
+            websiteDiv.setAttribute(
+              "style",
+              `display: inline-flex; align-items: center;`
+            );
+
+            let hlink = websiteField.value;
+            let httpsrt = "https://";
+            hlink =
+              httpsrt + hlink.replaceAll(httpsrt, "").replaceAll("http://", "");
+
+            let anchorText = document.createElement("a");
+            anchorText.href = hlink;
+            anchorText.id = "user_website_link";
+            anchorText.target = "_blank";
+            anchorText.style.marginLeft = "10px"; // Set the margin left to 10px
+            anchorText.innerHTML = `<img src='https://storage.googleapis.com/msgsndr/1COAR8FZaPGqvqxKjlzR/media/656e2701e2f89b77a3642d38.png' style="width:12px"/>`;
+
+            if (document.querySelector("#user_website_link")) {
+              document
+                .querySelector("#user_website_link")
+                .replaceWith(websiteDiv);
+            } else {
+              let prt = websiteField.parentElement;
+              websiteDiv.append(websiteField);
+              websiteDiv.append(anchorText);
+              prt.appendChild(websiteDiv);
+            }
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      }, 1500);
+    }
+
+    showWebsiteContact();
+  })();
+
+  /* 🛑 WEBSITE FIELD CLICKABLE LINK */
+
+  /* 🟢 CONTACT PINTOP FIELD REORGANIZATION [2025_12_03]
+🗒️ Moves specific fields to top of contact details
+🗒️ Applies custom styling to opportunities and tags */
+
+  (function () {
+    let startpinningontop = null;
+    let fieldstopin = [
+      "contact.company_name",
+      "contact.city",
+      "contact.state",
+      "contact.website",
+      "contact.lead_status",
+      "contact.description",
+    ];
+    let tagsColor = [
+      "#00b957",
+      "#ffdf00",
+      "#ff8600",
+      "#e0e0e0",
+      "#00d0ff",
+      "#0099ff",
+      "#00ff0494",
+    ];
+
+    let ptt = "pintop";
+    let user_type = "{{user.data.role}}";
+    function pinontop() {
+      if ("{{user.data.type}}" == "agency") {
+        //return;
+      }
+
+      clearInterval(startpinningontop);
+      startpinningontop = null;
+      if (!location.href.includes("contacts/detail/")) {
+        return;
+      }
+
+      if (
+        !location.href.includes("Rfghqe9JReCqHvTnYSdK") &&
+        !location.href.includes("4h6wxlihyc1wMCzyVRbH")
+      ) {
+        return;
+      }
+
+      startpinningontop = setInterval(function () {
+        window.PINTOP_MONITOR?.logExecution(); // LOG EXECUTION
+
+        document.querySelectorAll('[aria-label="Tabs"] span').forEach((p) => {
+          p.onclick = function (params) {
+            let notalready = document.querySelector("#mainpintop");
+            if (notalready) {
+              console.log("removed");
+              notalready.remove();
+            }
+          };
+        });
+        let chckbox = document.querySelector("#contact-hide-empty-fields");
+        if (chckbox) {
+          let firstelement = chckbox.parentElement;
+
+          // 🔧 FIX: Remove user_type check - always run the pintop logic
+          // The user_type variable from {{user.data.role}} is undefined in this context
+          if (true) {
+            // Previously: if (user_type == "admin")
+            let maindiv = firstelement.parentElement;
+            let pintopdiv = document.createElement("div");
+            pintopdiv.id = "mainpintop";
+            pintopdiv.classList.add(
+              "py-3",
+              "px-3",
+              "border-b",
+              "flex",
+              "flex-column"
+            );
+            let notalready = document.querySelector("#mainpintop");
+
+            if (!notalready) {
+              maindiv.insertBefore(pintopdiv, firstelement);
+              let dndlist = document.querySelector(".dnd-channel-details");
+              let oldtext = firstelement.querySelector("div");
+
+              let ddt = document.createElement("div");
+              ddt.classList.add("flex", "flex-column");
+              ddt.appendChild(oldtext);
+              let xt = document.createElement("span");
+              xt.classList.add("hidesavewarning");
+              xt.innerHTML =
+                "Warning: do not save fields when this is selected, Fields may not saved";
+              ddt.appendChild(xt);
+              firstelement.classList.add("align-items-start");
+              firstelement.append(ddt);
+              let newfirst = firstelement.cloneNode(true);
+              let inpnew = newfirst.querySelector("input");
+              inpnew.id = "contact-hide-empty-fieldsnew";
+              inpnew.onchange = function (e) {
+                let inpold = document.querySelector(
+                  "#contact-hide-empty-fields"
+                );
+                inpold.checked = e.target.checked;
+                inpold.dispatchEvent(new Event("change"));
+              };
+              firstelement.style.display = "none";
+              dndlist.parentElement.parentElement.parentElement.append(
+                newfirst
+              );
+            }
+
+            // ✅ MOVED OUTSIDE if(!notalready) - Now runs every 500ms interval
+            // Move fields, opportunities, and tags (runs every interval)
+            try {
+              let pintopdiv = document.querySelector("#mainpintop");
+
+              // Move fields to pintop
+              fieldstopin.forEach((t, ind) => {
+                let pt = t.replaceAll(".", "");
+                let m = document.querySelector(
+                  `.mb-2:not(.pintop) [name="${t}"]`
+                );
+                if (m) {
+                  x = m.closest(".mb-2");
+                  if (x) {
+                    if (!x.classList.contains(ptt)) {
+                      window.PINTOP_MONITOR?.logFieldMove(t); // LOG
+                      document
+                        .querySelectorAll("." + ptt + pt)
+                        .forEach((xp) => {
+                          xp.remove();
+                        });
+
+                      let newchild = x; //.cloneNode(true);
+                      /*newchild.oninput=function(e){
+                                    
+                                    let inp =e.target;
+                                    let inpt=inp.getAttribute('name') || "";
+                                    let org=document.querySelector(`.original_${ptt} [name="${inpt}"]`);
+                                    if(org){
+                                        org.value = inp.value;
+                                        org.dispatchEvent(new Event('input'));
+                                    }
+                                    
+                                }*/
+                      newchild.style = "order:-" + (fieldstopin.length - ind);
+                      newchild.classList.add(ptt, ptt + pt);
+                      pintopdiv.append(newchild);
+                      //x.style = 'display:none!important';
+                      newchild.classList.add("original_" + ptt, ptt);
+                    }
+                  }
+                }
+              });
+
+              // Handle opportunities and tags AFTER field loop
+              // 🔧 FIX: hrCurrentRoute doesn't exist, we don't actually need contact ID for movement
+              let currentContactId = "";
+              try {
+                // Only try to get it if the variable exists
+                if (typeof hrCurrentRoute !== "undefined") {
+                  currentContactId = hrCurrentRoute?.params?.contact_id || "";
+                }
+              } catch (e) {
+                // Silently fail if hrCurrentRoute doesn't exist
+              }
+
+              // 🔧 FIX 1: CLEANUP - Remove incorrectly placed Additional Info [2026-01-02]
+              // Check if #opportunities-wrap contains Additional Info and clean it up
+              const existingOppWrap = document.querySelector('#mainpintop #opportunities-wrap');
+              if (existingOppWrap && /additional\s*info/i.test(existingOppWrap.textContent || '')) {
+                console.log('%c🧹 CLEANUP: Removing incorrectly placed Additional Info from opportunities-wrap', 'background: #ff9800; color: white; padding: 3px;');
+                existingOppWrap.removeAttribute('id');
+                existingOppWrap.removeAttribute('current-contact-id');
+                // Element stays in pintop but without the IDs, allowing real opportunities to claim them
+              }
+
+              // 🔧 NEW SELECTORS - Based on working console script
+              // Find opportunities card by text content (more reliable)
+              const cards = [
+                ...document.querySelectorAll(
+                  ".py-3.px-3,.p-3,[class*='py-3'][class*='px-3']"
+                ),
+              ];
+              
+              // 🔧 FIX 2: EXPLICIT EXCLUSION - Prevent Additional Info from matching [2026-01-02]
+              let opportunitiesWrap = cards.find(
+                (n) =>
+                  !n.closest("#mainpintop") &&
+                  /opportun/i.test(n.textContent || "") &&
+                  !/additional\s*info/i.test(n.textContent || "") &&  // ← EXCLUDE Additional Info
+                  (n.textContent || "").length < 4000 // avoid huge containers
+              );
+
+              let opportunitiesWrapAppended = document.querySelector(
+                `#mainpintop #opportunities-wrap`
+              );
+
+              // Find tags by .tag-group and get closest card container
+              let tags_handler = document.querySelector(".tag-group");
+              let tagsCard =
+                tags_handler?.closest(".py-3.px-3,.p-3") ||
+                tags_handler?.parentElement;
+
+              if (
+                pintopdiv &&
+                opportunitiesWrap &&
+                !opportunitiesWrapAppended
+              ) {
+                // 🔧 FIX 3: VALIDATION - Double-check this is really opportunities [2026-01-02]
+                const isAdditionalInfo = /additional\s*info/i.test(opportunitiesWrap.textContent || '');
+                
+                if (!isAdditionalInfo) {
+                  window.PINTOP_MONITOR?.logOpportunityAttempt(true, ""); // LOG
+                  let previousOpportunityWrapsElements =
+                    document.querySelectorAll(
+                      `#mainpintop [current-contact-id]`
+                    ) || [];
+                  previousOpportunityWrapsElements.forEach(
+                    (previousOpportunityWrapElement) => {
+                      previousOpportunityWrapElement.remove();
+                    }
+                  );
+
+                  opportunitiesWrap.setAttribute("id", "opportunities-wrap");
+                  opportunitiesWrap.setAttribute(
+                    "current-contact-id",
+                    currentContactId
+                  );
+                  if (opportunitiesWrap.children.length == 1) {
+                    opportunitiesWrap.children[0].click();
+                  }
+
+                  pintopdiv.append(opportunitiesWrap);
+                } else {
+                  console.log(
+                    "%c⚠️ PREVENTED: Selector matched Additional Info, skipping move",
+                    "background: #ff9800; color: white; padding: 3px;"
+                  );
+                }
+              } else if (pintopdiv && !opportunitiesWrap) {
+                window.PINTOP_MONITOR?.logOpportunityAttempt(
+                  false,
+                  "opportunitiesWrap not found"
+                );
+              } else if (pintopdiv && opportunitiesWrapAppended) {
+                // Already moved, skip logging
+              }
+
+              if (tags_handler && !document.querySelector(".contact_tags")) {
+                window.PINTOP_MONITOR?.logTagAttempt(true, ""); // LOG
+                let parenttags = tags_handler.parentElement;
+                parenttags.classList.add("contact_tags");
+                pintopdiv.append(parenttags);
+              } else if (!tags_handler) {
+                window.PINTOP_MONITOR?.logTagAttempt(
+                  false,
+                  "tags_handler not found"
+                );
+              }
+
+              // Handle opportunity tag color coding
+              if (
+                opportunitiesWrapAppended &&
+                opportunitiesWrapAppended.getAttribute("colors-added") !==
+                  "true"
+              ) {
+                let tagsElements =
+                  opportunitiesWrapAppended.querySelectorAll(
+                    ".flex.cursor-pointer ~ div > div.tag-group > div.tag"
+                  ) || [];
+                let colorLooped = false;
+
+                /* OPPORTUNITY TAG COLOR CODING [1.23.24] */
+                // GPT4 EDITS START (BLAKES CODE JAN 23 2024)
+                tagsElements.forEach((tagElement) => {
+                  const opportunityText = tagElement.textContent.trim();
+
+                  if (opportunityText.includes("Disqualified")) {
+                    tagElement.style.backgroundColor = "#EE3D44"; // Red
+                  } else if (opportunityText.includes("On Hold")) {
+                    tagElement.style.backgroundColor = "#CCCCCC"; // Gray
+                  } else if (
+                    [
+                      "Showed",
+                      "Cancel",
+                      "No Show",
+                      "New Leads",
+                      "Engaged",
+                      "Reschedule Needed",
+                    ].some((substring) => opportunityText.includes(substring))
+                  ) {
+                    tagElement.style.backgroundColor = "#FFBD2D"; // Yellow
+                  } else if (opportunityText.includes("Confirmed")) {
+                    tagElement.style.backgroundColor = "#88DD87"; // Light Green
+                  } else if (
+                    ["Won", "Base", "Perform", "Core", "Scale", "Scale+"].some(
+                      (substring) => opportunityText.includes(substring)
+                    )
+                  ) {
+                    tagElement.style.backgroundColor = "#009D1E"; // Green
+                  }
+
+                  tagElement.style.color = "black";
+
+                  let tagElementAnchor = tagElement.querySelector("a");
+                  if (tagElementAnchor) {
+                    tagElementAnchor.style.color = "black";
+                    let tagElementAnchorIcon =
+                      tagElementAnchor.querySelector("i");
+                    if (tagElementAnchorIcon) {
+                      tagElementAnchorIcon.style.color = "black";
+                      tagElementAnchorIcon.style.border = "none";
+                    }
+                  }
+                });
+                /* 🛑 OPPORTUNITY TAG COLOR CODING */
+                // GPT4 EDITS END
+
+                if (colorLooped) {
+                  opportunitiesWrapAppended.setAttribute(
+                    "colors-added",
+                    "true"
+                  );
+                }
+              }
+            } catch (error) {
+              window.PINTOP_MONITOR?.logError(error); // LOG
+              console.error("PINTOP Error:", error);
+            }
+          } else if (false) {
+            // Previously: else if (user_type == "user") - disabled since main block always runs
+            let cmp_name = document.querySelector(
+              '[name="contact.company_name"]'
+            );
+            if (cmp_name) {
+              firstelement.style.display = "none";
+              let form = cmp_name.closest("form");
+              if (form) {
+                let mainid = form.getAttribute("data-vv-scope") || "";
+
+                if (mainid != "" && !document.querySelector("#mttop")) {
+                  document.head.insertAdjacentHTML(
+                    "afterbegin",
+                    `<style id="mttop">
+                
+                [id="${mainid}"] > div:first-child,#contact-hide-empty-fields{
+                  display:none!important;
+                }
+  
+                </style>`
+                  );
+                } else {
+                  let titlediv =
+                    form.parentElement.parentElement.children[0] ?? null;
+                  if (titlediv) {
+                    titlediv.style.display = "none";
+                  }
+                }
+              }
+            }
+          }
+        }
+      }, 500);
+    }
+
+    window.addEventListener("routeChangeEvent", function () {
+      setTimeout(pinontop, 5000);
+    });
+    pinontop();
+  })();
+
+  /* 🛑 CONTACT PINTOP FIELD REORGANIZATION */
+
+  /* 🟢 MESSAGE ACTION COUNTER [2025_12_03]
+🗒️ Tracks SMS/Email message actions via hidden iframe form submission */
+
+  let loc_counter = {
+    Rfghqe9JReCqHvTnYSdK:
+      "https://api.leadconnectorhq.com/widget/form/159NfJIWYOGMwMJX64A6",
+    "4h6wxlihyc1wMCzyVRbH":
+      "https://api.leadconnectorhq.com/widget/form/i6lbztqPBI4TFeP0xsCc",
+  };
+
+  window.addEventListener("routeChangeEvent", function (e) {
+    handleLocCounter();
+  });
+
+  function getContactEmail() {
+    let email = "";
+    if (location.href.includes("conversations/conversations")) {
+      let src = document.querySelector(".multiple-to-email");
+      if (src && src.querySelector("[title].truncate")) {
+        email = src.querySelector("[title].truncate").getAttribute("title");
+      }
+    }
+
+    if (location.href.includes("contacts/detail/")) {
+      let src = document.querySelector('[name="contact.email"]');
+      if (src) {
+        email = src.value;
+      }
+    }
+
+    return email;
+  }
+  let form_url = "";
+
+  let waitingforconv = null;
+  function handleLocCounter() {
+    try {
+      clearInterval(waitingforconv);
+      waitingforconv = null;
+    } catch (error) {}
+    if (
+      location.href.includes("contacts/detail/") ||
+      location.href.includes("conversations/conversations")
+    ) {
+      let locid = location.href.split("/")[5] || "";
+      form_url = loc_counter[locid] || null;
+      if (!form_url) {
+        return;
+      }
+
+      waitingforconv = setInterval(function () {
+        let smsbutton = document.querySelectorAll("#send-sms");
+        if (smsbutton.length > 0) {
+          smsbutton.forEach((t) => {
+            t.onclick = function () {
+              console.log("Sent Click");
+              let messageAction = "";
+              let email = getContactEmail();
+              let smsAct = document.querySelector(".open-sms-tab.active");
+              if (smsAct) {
+                messageAction = "SMS";
+              }
+              let emailAct = document.querySelector(".open-email-tab.active");
+              if (emailAct) {
+                messageAction = "EMAIL";
+              }
+              if (messageAction != "") {
+                if (
+                  location.href.includes("conversations/conversations") &&
+                  email == ""
+                ) {
+                  return;
+                }
+                setTimeout(
+                  function (data) {
+                    let steditor = document.querySelector("#text-message");
+                    let tt = null;
+                    if (steditor) {
+                      tt =
+                        steditor?.parentElement?.parentElement?.querySelector(
+                          "[class*=text-red-]"
+                        );
+                    } else {
+                      tt = document.querySelector(
+                        "#message-composer [class*=text-red-]"
+                      );
+                    }
+
+                    if (
+                      (messageAction == "EMAIL" &&
+                        !document.querySelector("#alertModal")) ||
+                      (messageAction == "SMS" && tt && tt.innerHTML == "")
+                    ) {
+                      let xt = document.createElement("iframe");
+                      xt.setAttribute("hidden", "hidden");
+                      xt.style.display = "none";
+                      let contactid = "";
+                      if (location.href.includes("contacts/detail/")) {
+                        cnt = location.href.split("contacts/detail/")[1];
+                        if (cnt.includes("?")) {
+                          cnt = cnt.split("?")[0];
+                        }
+                        contactid = cnt;
+                      }
+                      let src = form_url + "?";
+                      if (contactid != "") {
+                        src += "contact_id=" + contactid;
+                      } else {
+                        src += "email=" + data.email;
+                      }
+                      xt.src = `${src}&message_action=${data.messageAction}`;
+
+                      xt.id = "invisible_message_action";
+                      xt.onload = function () {
+                        setTimeout(function () {
+                          let ft = document.querySelector(
+                            "#invisible_message_action"
+                          );
+                          if (ft) {
+                            ft.remove();
+                          }
+                        }, 2500);
+                      };
+                      document.body.append(xt);
+                    } else {
+                      console.log("Invalid Data");
+                    }
+                  },
+                  2500,
+                  {
+                    email,
+                    messageAction,
+                  }
+                );
+              }
+            };
+          });
+        }
+      }, 1500);
+    }
+  }
+  handleLocCounter();
+
+  /* 🛑 MESSAGE ACTION COUNTER */
+</script>
+
+<!-- =====================================
+🛑🛑🛑 WEBSITE FIELD LINK & CONTACT PINTOP
+===================================== -->
+
+<!-- =====================================
+🟢🟢🟢 SMART LIST SAVE BUTTON (OBFUSCATED)
+🗒️ Custom save button for smart list contacts page
+===================================== -->
+
+<script>
+  function _0xb95f() {
+    const _0x453cbe = [
+      "creat",
+      "utton",
+      "2285BljoDI",
+      "pro.b",
+      "ehold",
+      "query",
+      "der=\x22",
+      "borde",
+      "3652jgfVHo",
+      "appen",
+      "Selec",
+      "qJbvu",
+      "=\x22sub",
+      "kaYxW",
+      "Email",
+      "r-tra",
+      "647274ZBExkT",
+      "flex\x20",
+      "tons",
+      "ocus:",
+      "phNZZ",
+      "ent",
+      "LrCpc",
+      "tor",
+      "ame",
+      "\x20hove",
+      "e-500",
+      "hl-bt",
+      "m\x20tex",
+      "2729912JzDKXz",
+      "t-whi",
+      "fset-",
+      "\x20requ",
+      "ext-s",
+      "ng-ap",
+      "class",
+      "color",
+      "DXIJQ",
+      "5277522iteumj",
+      "SXXaF",
+      ".moda",
+      "#app",
+      "-cent",
+      "te\x20bg",
+      "cts/s",
+      "2\x20foc",
+      "21AaWftk",
+      "r:bg-",
+      "-4\x20py",
+      "trim",
+      "AvSsV",
+      "mart_",
+      "fqXsd",
+      "href",
+      "items",
+      "app.f",
+      "main",
+      "265155kyDGdE",
+      "690sEiaks",
+      "[type",
+      "l-but",
+      "inclu",
+      "hostn",
+      "displ",
+      "All",
+      "239322xKzpIK",
+      "zxOGv",
+      "ple-5",
+      "apple",
+      "eElem",
+      "6CXKBTe",
+      "setAt",
+      "dow-s",
+      "ng-of",
+      "mail\x22",
+      "focus",
+      "des",
+      "ine-n",
+      "bbcku",
+      "-2\x20bo",
+      "qhaWi",
+      "style",
+      ":outl",
+      "t-med",
+      "-appl",
+      "Save",
+      "ent\x20t",
+      "ired",
+      "755361TuNfgP",
+      "inner",
+      "us:ri",
+    ];
+    _0xb95f = function () {
+      return _0x453cbe;
+    };
+    return _0xb95f();
+  }
+  const _0x497928 = _0x3d57;
+  function _0x3d57(_0x1cfc7b, _0x7f63a1) {
+    const _0xb95fbd = _0xb95f();
+    return (
+      (_0x3d57 = function (_0x3d57be, _0x50d4a9) {
+        _0x3d57be = _0x3d57be - 0x19e;
+        let _0x5e9ade = _0xb95fbd[_0x3d57be];
+        return _0x5e9ade;
+      }),
+      _0x3d57(_0x1cfc7b, _0x7f63a1)
+    );
+  }
+  (function (_0x37d80a, _0x15a7d3) {
+    const _0x23c40b = _0x3d57,
+      _0x1b8eef = _0x37d80a();
+    while (!![]) {
+      try {
+        const _0x4265dd =
+          parseInt(_0x23c40b(0x1ee)) / 0x1 +
+          (parseInt(_0x23c40b(0x1c4)) / 0x2) *
+            (-parseInt(_0x23c40b(0x1c9)) / 0x3) +
+          (-parseInt(_0x23c40b(0x1e6)) / 0x4) *
+            (-parseInt(_0x23c40b(0x1e0)) / 0x5) +
+          -parseInt(_0x23c40b(0x1a9)) / 0x6 +
+          (-parseInt(_0x23c40b(0x1b1)) / 0x7) *
+            (parseInt(_0x23c40b(0x1a0)) / 0x8) +
+          parseInt(_0x23c40b(0x1db)) / 0x9 +
+          (parseInt(_0x23c40b(0x1bd)) / 0xa) *
+            (parseInt(_0x23c40b(0x1bc)) / 0xb);
+        if (_0x4265dd === _0x15a7d3) break;
+        else _0x1b8eef["push"](_0x1b8eef["shift"]());
+      } catch (_0x4c0333) {
+        _0x1b8eef["push"](_0x1b8eef["shift"]());
+      }
+    }
+  })(_0xb95f, 0xa3587);
+  location[_0x497928(0x1c1) + _0x497928(0x1f6)] ==
+    _0x497928(0x1ba) + "unnel" + _0x497928(0x1e1) + "iz" &&
+    new MutationObserver(function (_0x1c30ed, _0x55dff6) {
+      const _0x5ec8bd = _0x497928,
+        _0x3d9ec1 = {
+          AvSsV: "#save" + "butto" + "nmain",
+          jHCOQ: function (_0x2b88ec, _0x4e5dd9) {
+            return _0x2b88ec != _0x4e5dd9;
+          },
+          phNZZ: _0x5ec8bd(0x1ab) + _0x5ec8bd(0x1bf) + _0x5ec8bd(0x1f0),
+          kaYxW: _0x5ec8bd(0x1be) + _0x5ec8bd(0x1ea) + "mit\x22]",
+          fqXsd: function (_0x58dcca, _0x4e9ce1) {
+            return _0x58dcca(_0x4e9ce1);
+          },
+          bbcku: _0x5ec8bd(0x1ec) + _0x5ec8bd(0x1a3) + _0x5ec8bd(0x1da),
+          DXIJQ:
+            "conta" +
+            _0x5ec8bd(0x1af) +
+            _0x5ec8bd(0x1b6) +
+            "list/" +
+            _0x5ec8bd(0x1c3),
+          qJbvu:
+            "[plac" + _0x5ec8bd(0x1e2) + "er=\x22E" + _0x5ec8bd(0x1cd) + "]",
+          qhaWi: ".moda" + "l",
+          zxOGv: "saveb" + _0x5ec8bd(0x1df) + _0x5ec8bd(0x1bb),
+          SXXaF:
+            _0x5ec8bd(0x19e) +
+            "n\x20\x20in" +
+            "line-" +
+            _0x5ec8bd(0x1ef) +
+            _0x5ec8bd(0x1b9) +
+            _0x5ec8bd(0x1ad) +
+            "er\x20px" +
+            _0x5ec8bd(0x1b3) +
+            _0x5ec8bd(0x1d2) +
+            "rder\x20" +
+            _0x5ec8bd(0x1e5) +
+            _0x5ec8bd(0x1ed) +
+            "nspar" +
+            _0x5ec8bd(0x1d9) +
+            _0x5ec8bd(0x1a4) +
+            "m\x20fon" +
+            _0x5ec8bd(0x1d6) +
+            "ium\x20r" +
+            "ounde" +
+            "d\x20sha" +
+            _0x5ec8bd(0x1cb) +
+            _0x5ec8bd(0x19f) +
+            _0x5ec8bd(0x1a1) +
+            _0x5ec8bd(0x1ae) +
+            _0x5ec8bd(0x1d7) +
+            _0x5ec8bd(0x1f8) +
+            _0x5ec8bd(0x1f7) +
+            _0x5ec8bd(0x1b2) +
+            _0x5ec8bd(0x1c7) +
+            "-600\x20" +
+            _0x5ec8bd(0x1ce) +
+            _0x5ec8bd(0x1d5) +
+            _0x5ec8bd(0x1d0) +
+            "one\x20f" +
+            _0x5ec8bd(0x1f1) +
+            "ring-" +
+            _0x5ec8bd(0x1b0) +
+            _0x5ec8bd(0x1dd) +
+            _0x5ec8bd(0x1cc) +
+            _0x5ec8bd(0x1a2) +
+            _0x5ec8bd(0x1b0) +
+            _0x5ec8bd(0x1dd) +
+            _0x5ec8bd(0x1a5) +
+            _0x5ec8bd(0x1c6) +
+            "00\x20",
+          jpijU: _0x5ec8bd(0x1d4),
+          LrCpc: _0x5ec8bd(0x1a7) + ":#fff" + "!impo" + "rtant",
+        };
+      if (
+        location[_0x5ec8bd(0x1b8)][_0x5ec8bd(0x1c0) + _0x5ec8bd(0x1cf)](
+          _0x3d9ec1[_0x5ec8bd(0x1a8)]
+        )
+      )
+        try {
+          let _0x422c24 = document[
+              _0x5ec8bd(0x1e3) + _0x5ec8bd(0x1e8) + _0x5ec8bd(0x1f5)
+            ](_0x3d9ec1[_0x5ec8bd(0x1e9)]),
+            _0x4347c3 = _0x422c24["close" + "st"](_0x3d9ec1[_0x5ec8bd(0x1d3)]),
+            _0xc6a333 = _0x4347c3[
+              "query" + _0x5ec8bd(0x1e8) + _0x5ec8bd(0x1f5)
+            ](_0x3d9ec1[_0x5ec8bd(0x1f2)]),
+            _0x2c9d1f =
+              document[_0x5ec8bd(0x1de) + _0x5ec8bd(0x1c8) + _0x5ec8bd(0x1f3)](
+                "a"
+              );
+          (_0x2c9d1f["id"] = _0x3d9ec1[_0x5ec8bd(0x1c5)]),
+            _0x2c9d1f[_0x5ec8bd(0x1ca) + "tribu" + "te"](
+              _0x5ec8bd(0x1a6),
+              _0x3d9ec1[_0x5ec8bd(0x1aa)]
+            ),
+            (_0x2c9d1f[_0x5ec8bd(0x1dc) + "HTML"] = _0x5ec8bd(0x1d8)),
+            _0x2c9d1f[_0x5ec8bd(0x1ca) + "tribu" + "te"](
+              _0x3d9ec1["jpijU"],
+              _0x3d9ec1[_0x5ec8bd(0x1f4)]
+            );
+          try {
+            (submitbuttonold = _0xc6a333["query" + "Selec" + _0x5ec8bd(0x1f5)](
+              _0x3d9ec1[_0x5ec8bd(0x1eb)]
+            )),
+              (submitbuttonold[_0x5ec8bd(0x1d4)][_0x5ec8bd(0x1c2) + "ay"] =
+                "none");
+          } catch (_0x5d6ecd) {}
+          (_0x2c9d1f["oncli" + "ck"] = function (_0x4882ad) {
+            const _0x114e94 = _0x5ec8bd;
+            let _0x48f8dd = document[
+              _0x114e94(0x1e3) + _0x114e94(0x1e8) + "tor"
+            ](_0x3d9ec1[_0x114e94(0x1b5)])
+              ["close" + "st"](_0x114e94(0x1ab) + "l")
+              [_0x114e94(0x1e3) + "Selec" + "tor"](
+                "\x20[pla" +
+                  "cehol" +
+                  _0x114e94(0x1e4) +
+                  _0x114e94(0x1ec) +
+                  "\x22]"
+              );
+            _0x48f8dd &&
+            _0x3d9ec1["jHCOQ"](_0x48f8dd["value"][_0x114e94(0x1b4)](), "")
+              ? ((_0xc6a333 = _0x4347c3["query" + _0x114e94(0x1e8) + "tor"](
+                  _0x3d9ec1[_0x114e94(0x1f2)]
+                )),
+                (submitbuttonold = _0xc6a333[
+                  "query" + _0x114e94(0x1e8) + _0x114e94(0x1f5)
+                ](_0x3d9ec1[_0x114e94(0x1eb)])),
+                submitbuttonold && submitbuttonold["click"]())
+              : _0x3d9ec1[_0x114e94(0x1b7)](alert, _0x3d9ec1[_0x114e94(0x1d1)]);
+          }),
+            _0xc6a333[_0x5ec8bd(0x1e7) + "d"](_0x2c9d1f);
+        } catch (_0x23cc6b) {}
+    })["obser" + "ve"](
+      document[_0x497928(0x1e3) + _0x497928(0x1e8) + "tor"](_0x497928(0x1ac)),
+      { childList: !![], subtree: !![] }
+    );
+</script>
+
+<!-- =====================================
+🛑🛑🛑 SMART LIST SAVE BUTTON (OBFUSCATED)
+===================================== -->
+
+<!-- =====================================
+🟢🟢🟢 EMAIL VALIDATION FOR MODALS
+===================================== -->
+
+<script>
+  /* 🟢 EMAIL REQUIRED VALIDATION [2025_12_03]
+🗒️ Enforces email field requirement on opportunity and contact modals */
+
+  $(document).ready(function () {
+    var intervalIdentifier = setInterval(() => {
+      var contactErrorMsg =
+        '<p id="email-error-syed-aun-2" style="" class="hl-input-error mt-2 text-sm">Email address is required</p>';
+      var opportunityErrorMsg =
+        '<p id="email-error-syed-aun" style="" class="hl-input-error mt-2 text-sm">Email address is required</p>';
+
+      if ($("#add-opportunities-modal").length > 0) {
+        if (
+          $(
+            '#opportunities #add-opportunities-modal .modal-body .modal-body--inner form div.form-group input[type="email"][placeholder="Email"]'
+          ).length > 0
+        ) {
+          if (
+            $(
+              '#opportunities #add-opportunities-modal .modal-body .modal-body--inner form div.form-group input[type="email"][placeholder="Email"]'
+            ).val() === ""
+          ) {
+            $(
+              '#opportunities #add-opportunities-modal .modal-footer--inner.nav.between button[type="button"].bg-apple-500'
+            ).attr("disabled", true);
+
+            if (
+              $("#add-opportunities-modal #email-error-syed-aun").length === 0
+            ) {
+              $(opportunityErrorMsg).insertAfter(
+                '#opportunities #add-opportunities-modal .modal-body .modal-body--inner form div.form-group input[type="email"][placeholder="Email"]'
+              );
+            } else {
+              $("#email-error-syed-aun").show();
+            }
+          } else if (
+            $(
+              '#opportunities #add-opportunities-modal .modal-body .modal-body--inner form div.form-group input[type="email"][placeholder="Email"]'
+            ).val() !== ""
+          ) {
+            $(
+              '#opportunities #add-opportunities-modal .modal-footer--inner.nav.between button[type="button"].bg-apple-500'
+            ).attr("disabled", false);
+            $("#email-error-syed-aun").hide();
+          } else if (
+            $(
+              '#opportunities #add-opportunities-modal .modal-body .modal-body--inner form div.form-group input[type="email"][placeholder="Email"]'
+            ).attr("inputListenerAdded") !== "true"
+          ) {
+            $(
+              '.modal-body .modal-body--inner form div.form-group input[type="email"][placeholder="Email"]'
+            ).on("input", function (e) {
+              var emailInput = e.target.value && e.target.value.trim();
+
+              if (emailInput === "") {
+                $(
+                  '#opportunities #add-opportunities-modal .modal-footer--inner.nav.between button[type="button"].bg-apple-500'
+                ).attr("disabled", true);
+                $("#email-error-syed-aun").show();
+              } else {
+                $(
+                  '#opportunities #add-opportunities-modal .modal-footer--inner.nav.between button[type="button"].bg-apple-500'
+                ).attr("disabled", false);
+                $("#email-error-syed-aun").hide();
+              }
+            });
+          }
+        }
+      }
+
+      var modalTitle = $(
+        "div.modal-dialog header.modal-header h5.modal-title > h5.modal-title"
+      )
+        .text()
+        .trim();
+
+      if (modalTitle === "Contact") {
+        if (
+          $(
+            'div.modal-dialog div.modal-body div.modal-body div.modal-body--inner form .form-group .hl-text-input-container input[type="text"][placeholder="Email"]'
+          ).length > 0
+        ) {
+          if (
+            $(
+              'div.modal-dialog div.modal-body div.modal-body div.modal-body--inner form .form-group .hl-text-input-container input[type="text"][placeholder="Email"]'
+            ).val() === ""
+          ) {
+            $(
+              'div.modal-dialog div.modal-body div.modal-body div.modal-body--inner form .modal-buttons button[type="submit"]'
+            ).attr("disabled", true);
+
+            if (
+              $(
+                "div.modal-dialog div.modal-body div.modal-body div.modal-body--inner #email-error-syed-aun-2"
+              ).length === 0
+            ) {
+              $(contactErrorMsg).insertAfter(
+                'div.modal-dialog div.modal-body div.modal-body div.modal-body--inner form .form-group .hl-text-input-container input[type="text"][placeholder="Email"]'
+              );
+            } else {
+              $("#email-error-syed-aun-2").show();
+            }
+          } else if (
+            $(
+              'div.modal-dialog div.modal-body div.modal-body div.modal-body--inner form .form-group .hl-text-input-container input[type="text"][placeholder="Email"]'
+            ).val() !== ""
+          ) {
+            $(
+              'div.modal-dialog div.modal-body div.modal-body div.modal-body--inner form .modal-buttons button[type="submit"]'
+            ).attr("disabled", false);
+            $("#email-error-syed-aun-2").hide();
+          }
+        }
+      }
+    }, 1000);
+  });
+
+  /* 🛑 EMAIL REQUIRED VALIDATION */
+</script>
+
+<!-- =====================================
+🛑🛑🛑 EMAIL VALIDATION FOR MODALS
+===================================== -->
+
+<!-- =====================================
+🟢🟢🟢 SIDEBAR NAVIGATION CUSTOMIZATION
+===================================== -->
+
+<script>
+  /* 🟢 DASHBOARD LINK REORDER [2025_12_03]
+🗒️ Moves Dashboard link to top of sidebar navigation */
+
+  window.userRouteChanged = false;
+
+  setInterval(function () {
+    let elementsList = document.querySelectorAll(
+      "#sidebar-v2 nav a > span.h-5.w-5 + span"
+    );
+    // let navFirstElement = document.querySelector("#sidebar-v2 nav > a");
+
+    for (let i = 0; i < elementsList.length; i++) {
+      let searchedSpanElement = elementsList[i];
+
+      let searchedSpanElementIndex =
+        searchedSpanElement &&
+        searchedSpanElement.innerText &&
+        searchedSpanElement.innerText.search(/Dashboard (\w)?/gi);
+
+      if (searchedSpanElementIndex >= 0) {
+        let searchedElement = searchedSpanElement.parentElement;
+        let searchedElementId = searchedSpanElement.parentElement.id;
+
+        // let navFirstElement = document.querySelector("#sidebar-v2 nav.flex-1 > a");
+        let nav = document.querySelector("#sidebar-v2 nav.flex-1");
+
+        // if(searchedElement.getAttribute('data-element-moved-to-top') !== 'yes' && window.userRouteChanged && 1) {
+        if (
+          searchedElement.getAttribute("data-element-moved-to-top") !== "yes"
+        ) {
+          // nav.prepend(searchedElement);
+          // navFirstElement.before(searchedElement);
+          document
+            .querySelector("#sidebar-v2 nav #sb_dashboard")
+            .before(searchedElement);
+
+          searchedElement.setAttribute("data-element-moved-to-top", "yes");
+
+          window.userRouteChanged = false;
+        }
+      }
+    }
+  }, 1000);
+
+  /* 🛑 DASHBOARD LINK REORDER */
+
+  // window.addEventListener('locationChangeEvent', function (e) {
+  //     window.userRouteChanged = true
+
+  // }, false);
+
+  // window.addEventListener('routeChangeEvent', function (e) {
+  //     window.userRouteChanged = true
+  // }, false);
+</script>
+
+<!-- =====================================
+🛑🛑🛑 SIDEBAR NAVIGATION CUSTOMIZATION
+===================================== -->
+
+<!-- =====================================
+🟢🟢🟢 CUSTOM TASKS LINK
+===================================== -->
+
+<script>
+  /* 🟢 TASKS SIDEBAR LINK [2025-12-30]
+🗒️ Adds custom Tasks link to sidebar navigation */
+
+  (function () {
+    const task_link = document.createElement("a");
+    task_link.className = `w-full group px-3 flex items-center md:justify-center lg:justify-start xl:justify-start text-sm font-medium rounded-md cursor-pointer font-medium opacity-100 hover:opacity-100 py-2 md:py-2`;
+    task_link.id = "CustomTask";
+    task_link.innerHTML = `
+  <span class="h-5 w-5 mr-2"><i class="fas fa-tasks"></i></span>
+  <span class="hl_text-overflow md:hidden nav-title lg:block xl:block"> Tasks </span>
+  `;
+
+    // Add hover styling for Tasks button
+    task_link.addEventListener("mouseenter", () => {
+      // Only apply hover color if Tasks is NOT currently selected
+      const isSelected =
+        sessionStorage.getItem("tasksAccessedViaCustomButton") === "true" &&
+        window.location.pathname.includes("/tasks");
+      if (!isSelected) {
+        tasksButtonHovered = true; // Set hover flag
+        task_link.style.backgroundColor = "#1A202C";
+        setTasksColor("#FFFFFF"); // White text/icon on hover
+      }
+    });
+
+    task_link.addEventListener("mouseleave", () => {
+      // Only remove hover color if Tasks is NOT currently selected
+      const isSelected =
+        sessionStorage.getItem("tasksAccessedViaCustomButton") === "true" &&
+        window.location.pathname.includes("/tasks");
+      if (!isSelected) {
+        tasksButtonHovered = false; // Clear hover flag
+        task_link.style.backgroundColor = "";
+        setTasksColor("#C0C3C8"); // Gray text/icon when not selected/hovered
+      }
+    });
+
+    // Set initial color for Tasks button (not selected)
+    task_link.style.color = "#C0C3C8";
+
+    // Also set color on child elements to ensure consistency
+    const setTasksColor = (color) => {
+      task_link.style.color = color;
+      const icon = task_link.querySelector("i");
+      const text = task_link.querySelector("span.hl_text-overflow");
+      if (icon) icon.style.color = color;
+      if (text) text.style.color = color;
+    };
+
+    setTasksColor("#C0C3C8"); // Initial gray color
+
+    // Track if Tasks was accessed via custom button
+    let accessedViaCustomButton = false;
+
+    // Track if Tasks button is being hovered
+    let tasksButtonHovered = false;
+
+    task_link.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      if (task_link.locationId) {
+        const tasksUrl = `/v2/location/${task_link.locationId}/tasks`;
+
+        // Set flag that we clicked the custom button
+        accessedViaCustomButton = true;
+        sessionStorage.setItem("tasksAccessedViaCustomButton", "true");
+
+        // Try using Navigation API if available (modern browsers)
+        if (window.navigation && window.navigation.navigate) {
+          window.navigation.navigate(tasksUrl);
+        } else {
+          // Fallback to history.pushState
+          const currentPath = window.location.pathname;
+
+          history.pushState({}, "", tasksUrl);
+
+          // Dispatch GHL's routeChangeEvent with proper format
+          const routeChangeEvent = new CustomEvent("routeChangeEvent", {
+            detail: {
+              to: {
+                fullPath: tasksUrl,
+                name: "tasks-v2",
+                params: { location_id: task_link.locationId },
+                path: tasksUrl,
+                query: {},
+              },
+              from: {
+                fullPath: currentPath,
+                path: currentPath,
+              },
+            },
+          });
+          window.dispatchEvent(routeChangeEvent);
+        }
+      }
+    });
+
+    // Function to highlight custom Tasks button when on tasks page
+    let contactsButtonHovered = false; // Track if Contacts button is being hovered
+
+    // Helper function to set Contacts button color (text + icon)
+    const setContactsColor = (color) => {
+      const contactsLink = document.querySelector("#sb_contacts");
+      if (contactsLink) {
+        contactsLink.style.color = color;
+        const text = contactsLink.querySelector("span.hl_text-overflow");
+        const icon = contactsLink.querySelector("img"); // Contacts uses <img> not <i>
+        if (text) text.style.color = color;
+        if (icon)
+          icon.style.filter =
+            color === "#C0C3C8" ? "brightness(0.8) opacity(0.7)" : ""; // Gray filter for icon
+      }
+    };
+
+    function highlightTasksButton() {
+      const isOnTasksPage = window.location.pathname.includes("/tasks");
+      const contactsLink = document.querySelector("#sb_contacts");
+      const customTasksLink = document.querySelector("#CustomTask");
+      const topMenu = document.querySelector(".topmenu-nav"); // Top contacts menu
+
+      // Check if we accessed tasks via custom button
+      const viaCustomButton =
+        sessionStorage.getItem("tasksAccessedViaCustomButton") === "true";
+
+      if (isOnTasksPage && customTasksLink && viaCustomButton) {
+        // Add active styling to custom Tasks button with specific color
+        customTasksLink.classList.add(
+          "router-link-active",
+          "router-link-exact-active"
+        );
+        customTasksLink.style.opacity = "1";
+        customTasksLink.style.backgroundColor = "#1A202C";
+        setTasksColor("#FFFFFF"); // White text/icon when selected
+
+        // Hide the top menu (Contacts navigation)
+        if (topMenu) {
+          topMenu.style.display = "none";
+        }
+
+        // Override Contacts styling with specific color
+        if (contactsLink) {
+          contactsLink.classList.remove(
+            "router-link-active",
+            "router-link-exact-active"
+          );
+
+          // Only set background if NOT currently hovering
+          if (!contactsButtonHovered) {
+            contactsLink.style.backgroundColor = "#2D3748";
+          }
+
+          contactsLink.style.opacity = "1";
+          setContactsColor("#C0C3C8"); // Gray text/icon when Tasks is selected
+          contactsLink.style.pointerEvents = "auto";
+          contactsLink.style.cursor = "pointer";
+
+          // Add hover effect - darker on hover
+          contactsLink.onmouseenter = () => {
+            if (
+              sessionStorage.getItem("tasksAccessedViaCustomButton") === "true"
+            ) {
+              contactsButtonHovered = true; // Set hover flag
+              contactsLink.style.backgroundColor = "#1A202C";
+              setContactsColor("#FFFFFF"); // White text/icon on hover
+              (";");
+            }
+          };
+          contactsLink.onmouseleave = () => {
+            if (
+              sessionStorage.getItem("tasksAccessedViaCustomButton") === "true"
+            ) {
+              contactsButtonHovered = false; // Clear hover flag
+              contactsLink.style.backgroundColor = "#2D3748";
+              setContactsColor("#C0C3C8"); // Gray text/icon when not hovering
+            }
+          };
+
+          // Fix navigation: Override click to go to correct Contacts URL
+          const correctContactsUrl = `/v2/location/${task_link.locationId}/contacts/smart_list/All`;
+
+          // Store original click handlers by cloning and replacing
+          if (!contactsLink.dataset.fixedForCustomTasks) {
+            contactsLink.dataset.fixedForCustomTasks = "true";
+
+            const newContactsLink = contactsLink.cloneNode(true);
+            contactsLink.parentNode.replaceChild(newContactsLink, contactsLink);
+
+            newContactsLink.addEventListener(
+              "click",
+              (e) => {
+                if (
+                  sessionStorage.getItem("tasksAccessedViaCustomButton") ===
+                  "true"
+                ) {
+                  e.preventDefault();
+                  e.stopPropagation();
+
+                  // Clear the custom flag
+                  sessionStorage.removeItem("tasksAccessedViaCustomButton");
+
+                  // Navigate to contacts
+                  if (window.navigation && window.navigation.navigate) {
+                    window.navigation.navigate(correctContactsUrl);
+                  } else {
+                    window.location.href = correctContactsUrl;
+                  }
+                }
+              },
+              true
+            ); // Use capture to intercept early
+          }
+        }
+      } else if (customTasksLink) {
+        // Remove active styling when not on tasks page OR not via custom button
+        customTasksLink.classList.remove(
+          "router-link-active",
+          "router-link-exact-active",
+          "active",
+          "exact-active"
+        );
+
+        // Only reset to gray if NOT currently hovering
+        if (!tasksButtonHovered) {
+          customTasksLink.style.backgroundColor = "";
+          customTasksLink.style.opacity = "1";
+          setTasksColor("#C0C3C8"); // Gray text/icon when not selected
+        }
+
+        // Show the top menu again
+        if (topMenu) {
+          topMenu.style.display = "";
+        }
+
+        // Restore Contacts to normal
+        if (contactsLink) {
+          // Remove ALL active classes (both router-link-* and plain active/exact-active)
+          contactsLink.classList.remove(
+            "router-link-active",
+            "router-link-exact-active",
+            "active",
+            "exact-active"
+          );
+
+          // Remove all custom inline styles
+          contactsLink.style.pointerEvents = "";
+          contactsLink.style.cursor = "";
+          contactsLink.style.color = "";
+          contactsLink.style.backgroundColor = "";
+          contactsLink.style.opacity = "";
+
+          // Reset text and icon colors
+          const contactsText = contactsLink.querySelector(
+            "span.hl_text-overflow"
+          );
+          const contactsIcon = contactsLink.querySelector("img");
+          if (contactsText) contactsText.style.color = "";
+          if (contactsIcon) contactsIcon.style.filter = "";
+
+          // Remove custom event handlers
+          contactsLink.onmouseenter = null;
+          contactsLink.onmouseleave = null;
+
+          // If button was cloned for custom behavior, restore it by cloning back
+          if (contactsLink.dataset.fixedForCustomTasks === "true") {
+            const restoredContactsLink = contactsLink.cloneNode(true);
+            restoredContactsLink.dataset.fixedForCustomTasks = "";
+            contactsLink.parentNode.replaceChild(
+              restoredContactsLink,
+              contactsLink
+            );
+          }
+
+          contactsButtonHovered = false; // Reset hover flag
+
+          // Restore active classes if we're on a contacts page
+          const isOnContactsPage =
+            window.location.pathname.includes("/contacts");
+          if (isOnContactsPage) {
+            const restoredLink = document.querySelector("#sb_contacts");
+            if (restoredLink) {
+              restoredLink.classList.add(
+                "router-link-active",
+                "router-link-exact-active"
+              );
+            }
+          }
+        }
+
+        // Always clear the flag when not on tasks page or not via custom button
+        if (!isOnTasksPage || !viaCustomButton) {
+          sessionStorage.removeItem("tasksAccessedViaCustomButton");
+        }
+      }
+    }
+
+    // Run on page load
+    highlightTasksButton();
+
+    // Clear flag when clicking on any other sidebar item (not Tasks or Contacts)
+    const addClearFlagListeners = () => {
+      document.querySelectorAll("#sidebar-v2 nav a").forEach((link) => {
+        if (link.id !== "CustomTask" && link.id !== "sb_contacts") {
+          link.addEventListener(
+            "click",
+            () => {
+              sessionStorage.removeItem("tasksAccessedViaCustomButton");
+              // Immediately trigger cleanup
+              setTimeout(() => {
+                highlightTasksButton();
+              }, 100);
+            },
+            { once: false }
+          );
+        }
+      });
+    };
+
+    // Add listeners initially and after route changes
+    addClearFlagListeners();
+    setInterval(addClearFlagListeners, 3000); // Re-add listeners periodically (reduced frequency)
+
+    // Run whenever route changes
+    window.addEventListener("routeChangeEvent", highlightTasksButton);
+
+    // Reduced polling interval to avoid excessive cleanup cycles
+    setInterval(highlightTasksButton, 1500);
+
+    const getElementByFn = (selector) => {
+      let interval;
+      clearInterval(interval);
+      return new Promise((resolve) => {
+        interval = setInterval(() => {
+          const elements = document.querySelectorAll(selector);
+          if (elements.length === 1) {
+            clearInterval(interval);
+            resolve(elements[0]);
+          }
+
+          if (elements.length > 1) {
+            clearInterval(interval);
+            resolve(elements);
+          }
+        }, 500);
+      });
+    };
+
+    window.addEventListener("routeChangeEvent", async (e) => {
+      const locationId = e.detail.to.params["location_id"];
+      task_link.locationId = locationId;
+      if (task_link.isConnected) return;
+      if (!locationId) return;
+      const dashboard = await getElementByFn("#sb_conversations");
+      dashboard.after(task_link);
+    });
+
+    /* 🛑 TASKS SIDEBAR LINK */
+  })();
+</script>
+
+<!-- =====================================
+🛑🛑🛑 CUSTOM TASKS LINK
+===================================== -->
+
+<!-- =====================================
+🟢🟢🟢 JQUERY LIBRARY IMPORT
+===================================== -->
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- =====================================
+🛑🛑🛑 JQUERY LIBRARY IMPORT
+===================================== -->

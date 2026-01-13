@@ -2,7 +2,7 @@
 🟢🟢🟢 GLOBAL VARIABLES & ROOT SETTINGS
 ===================================== */
 
-/* 🟢 CONTACT DND TOGGLE [12.2.25]
+/* 🟢 CONTACT DND TOGGLE [2025_12_31]
 🗒️ To enable Contact DND: change "none" to "block"
 🗒️ To disable Contact DND: change "block" to "none" */
 
@@ -12,7 +12,7 @@
 
 /* 🛑 CONTACT DND TOGGLE */
 
-/* 🟢 BRAND COLORS & LOADING ICON [12.2.25] */
+/* 🟢 BRAND COLORS & LOADING ICON [2025_12_31] */
 
 :root {
   --loginBtnColor: #7542e6;
@@ -32,38 +32,10 @@
 ===================================== */
 
 /* =====================================
-🟢🟢🟢 SIDEBAR NAVIGATION STYLES
-===================================== */
-
-/* 🟢 DASHBOARD → TASKS RENAME [12.2.25]
-🗒️ Renames "Dashboard" to "Tasks" in sidebar for specific sub-accounts */
-
-/* Hide original text */
-div[class*="2D90r6CA7AnAiKyrAP9p"] #sb_dashboard span,
-div[class*="Rfghqe9JReCqHvTnYSdK"] #sb_dashboard span,
-div[class*="4h6wxlihyc1wMCzyVRbH"] #sb_dashboard span {
-  font-size: 14px;
-}
-
-/* Add new name */
-div[class*="2D90r6CA7AnAiKyrAP9p"] #sb_dashboard span::after,
-div[class*="Rfghqe9JReCqHvTnYSdK"] #sb_dashboard span::after,
-div[class*="4h6wxlihyc1wMCzyVRbH"] #sb_dashboard span::after {
-  content: "Tasks";
-  font-size: 0px;
-}
-
-/* 🛑 DASHBOARD → TASKS RENAME */
-
-/* =====================================
-🛑🛑🛑 SIDEBAR NAVIGATION STYLES
-===================================== */
-
-/* =====================================
 🟢🟢🟢 LOGIN PAGE STYLING
 ===================================== */
 
-/* 🟢 LOGIN PAGE BACKGROUND & LAYOUT [12.2.25] */
+/* 🟢 LOGIN PAGE BACKGROUND & LAYOUT [2025_12_31] */
 
 .hl_login {
   background-image: url("https://firebasestorage.googleapis.com/v0/b/highlevel-staging.appspot.com/o/assets%2Fbackgrounds%2Fgradient%2Fg4.png?alt=media&token=e700321d-5310-45f4-8367-bf7d33250694") !important;
@@ -89,7 +61,7 @@ div[class*="4h6wxlihyc1wMCzyVRbH"] #sb_dashboard span::after {
 
 /* 🛑 LOGIN PAGE BACKGROUND & LAYOUT */
 
-/* 🟢 LOGIN CARD STYLING [12.2.25] */
+/* 🟢 LOGIN CARD STYLING [2025_12_31] */
 
 div.hl_login--body {
   max-width: 450px !important;
@@ -128,7 +100,7 @@ div.hl_login--body {
 
 /* 🛑 LOGIN CARD STYLING */
 
-/* 🟢 LOGIN FORM INPUTS & BUTTONS [12.2.25] */
+/* 🟢 LOGIN FORM INPUTS & BUTTONS [2025_12_31] */
 
 .hl_login .form-control {
   background: #fff !important;
@@ -169,7 +141,7 @@ div.hl_login--body {
 🟢🟢🟢 CONTACT DETAILS & DND SETTINGS
 ===================================== */
 
-/* 🟢 CONTACT DND FIELD VISIBILITY [12.2.25]
+/* 🟢 CONTACT DND FIELD VISIBILITY [2025_12_31]
 🗒️ Controls display of DND fields based on --var-contact-dnd variable */
 
 #contact-details #prospect div.form-group:nth-child(9) {
@@ -178,7 +150,7 @@ div.hl_login--body {
 
 /* 🛑 CONTACT DND FIELD VISIBILITY */
 
-/* 🟢 APPOINTMENT MODAL STYLING [12.2.25] */
+/* 🟢 APPOINTMENT MODAL STYLING [2025_12_31] */
 
 #appointmentModal {
   background: rgb(248, 113, 113);
@@ -187,7 +159,7 @@ div.hl_login--body {
 
 /* 🛑 APPOINTMENT MODAL STYLING */
 
-/* 🟢 EMAIL ERROR STYLING [12.2.25] */
+/* 🟢 EMAIL ERROR STYLING [2025_12_31] */
 
 #email-error-syed-aun-2,
 #email-error-syed-aun {
@@ -204,7 +176,7 @@ div.hl_login--body {
 🟢🟢🟢 OPPORTUNITIES MODAL
 ===================================== */
 
-/* 🟢 HIDE OPPORTUNITY MODAL FIELDS [12.2.25]
+/* 🟢 HIDE OPPORTUNITY MODAL FIELDS [2025_12_31]
 🗒️ Hides specific fields in Add Opportunities modal */
 
 #add-opportunities-modal #myTabContent .row .col-sm-6:nth-child(4) {
@@ -233,7 +205,7 @@ div.hl_login--body {
 🟢🟢🟢 CONVERSATIONS PAGE
 ===================================== */
 
-/* 🟢 CONVERSATION HEADER & SIDEBAR ELEMENTS [12.2.25] */
+/* 🟢 CONVERSATION HEADER & SIDEBAR ELEMENTS [2025_12_31] */
 
 #conversations div.message-header-actions button:nth-child(3) {
   display: none !important;
@@ -245,7 +217,7 @@ div.hl_login--body {
 
 /* 🛑 CONVERSATION HEADER & SIDEBAR ELEMENTS */
 
-/* 🟢 CONVERSATION DND TOGGLE [12.2.25]
+/* 🟢 CONVERSATION DND TOGGLE [2025_12_31]
 🗒️ Controls DND visibility in conversation sidebar */
 
 #conversations .aside-texts-infos .conversation-tags + .form-group {
@@ -262,7 +234,7 @@ div.hl_login--body {
 🟢🟢🟢 CALENDAR EVENTS
 ===================================== */
 
-/* 🟢 CALENDAR DROPDOWN MENU ITEMS [12.2.25]
+/* 🟢 CALENDAR DROPDOWN MENU ITEMS [2025_12_31]
 🗒️ Hides specific dropdown items (3rd and 7th) */
 
 #calendarEvents
@@ -291,7 +263,7 @@ div.hl_login--body {
 🟢🟢🟢 NAVBAR & HEADER
 ===================================== */
 
-/* 🟢 AGENCY LOGO SIZE [12.2.25] */
+/* 🟢 AGENCY LOGO SIZE [2025_12_31] */
 
 .hl_navbar--logo img {
   max-width: 190px !important;
@@ -300,7 +272,7 @@ div.hl_login--body {
 
 /* 🛑 AGENCY LOGO SIZE */
 
-/* 🟢 HIDE CHECKIN CLIENT BUTTON [12.2.25] */
+/* 🟢 HIDE CHECKIN CLIENT BUTTON [2025_12_31] */
 
 #navbar-collapse > button {
   display: none;
@@ -308,7 +280,7 @@ div.hl_login--body {
 
 /* 🛑 HIDE CHECKIN CLIENT BUTTON */
 
-/* 🟢 HIDE OPPORTUNITIES STATUS MENU [12.2.25] */
+/* 🟢 HIDE OPPORTUNITIES STATUS MENU [2025_12_31] */
 
 .hl_opportunities--drag-actions.active {
   display: none !important;
@@ -316,64 +288,61 @@ div.hl_login--body {
 
 /* 🛑 HIDE OPPORTUNITIES STATUS MENU */
 
-/* 🟢 NAV DASHBOARD RENAME (DISABLED) [12.2.25]
-🗒️ Commented out code for renaming dashboard nav item */
-
-/*
-#nav-dashboard > a > span {
-  text-indent: -9999px;
-  line-height: 0;
-}
-
-#nav-dashboard > a > span::after {
-  content: "Dashboard";
-  text-indent: 0;
-  display: block;
-  line-height: initial;
-}
-*/
-
-/* 🛑 NAV DASHBOARD RENAME (DISABLED) */
-
 /* =====================================
 🛑🛑🛑 NAVBAR & HEADER
 ===================================== */
 
+/* 🛜🛜🛜 STARTING HERE 🛜🛜🛜 - All CSS below this line is applicable to specific sub-account(s) */
+
+/*  LOCATION ID CONFIGURATION [2025-12-31]
+📌 ADD NEW LOCATION IDs HERE - All CSS below this is applied equally to the list of loc ids below
+
+Active Location IDs:
+   - Rfghqe9JReCqHvTnYSdK (Ink Media Agency)
+   - 4h6wxlihyc1wMCzyVRbH (Kitchen & Cabinet Store)
+*/
+
 /* =====================================
-🟢🟢🟢 CONTACT RECORD FIELD STYLING (SUB-ACCOUNT: Rfghqe9JReCqHvTnYSdK)
+🟢🟢🟢 CONTACT RECORD FIELD STYLING
 ===================================== */
 
-/* 🟢 CONTACT FIELDS - MARGIN RESET [12.2.25]
+/* 🟢 CONTACT FIELDS - MARGIN RESET [2025_12_31]
 🗒️ Removes bottom margin from contact fields for compact layout */
 
-div[class*="Rfghqe9JReCqHvTnYSdK"] #contact\.company_name,
-div[class*="Rfghqe9JReCqHvTnYSdK"] #contact\.city,
-div[class*="Rfghqe9JReCqHvTnYSdK"] #contact\.state,
-div[class*="Rfghqe9JReCqHvTnYSdK"] #contact\.website,
-div[class*="Rfghqe9JReCqHvTnYSdK"] #contact\.lead_status,
-div[class*="Rfghqe9JReCqHvTnYSdK"] #contact\.description {
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  #contact\.company_name,
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  #contact\.city,
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  #contact\.state,
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  #contact\.website,
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  #contact\.lead_status,
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  #contact\.description {
   margin-bottom: 0 !important;
 }
 
 /* 🛑 CONTACT FIELDS - MARGIN RESET */
 
-/* 🟢 COMPANY NAME FIELD [12.2.25]
+/* 🟢 COMPANY NAME FIELD [2025_12_31]
 🗒️ Custom styling for company name as prominent header */
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.company_name
   > div.text-\[\#0c2d3f\].label.flex.justify-between {
   display: none;
 }
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.company_name
   > div.hl-text-input-container.contact\.company_name
   > div.relative.rounded-md.shadow-sm {
   box-shadow: none;
 }
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.company_name
   > div.hl-text-input-container.contact\.company_name
   > div.relative.rounded-md.shadow-sm
@@ -388,7 +357,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
   font-family: "Roboto";
 }
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.company_name
   > div.hl-text-input-container.contact\.company_name
   > div.relative.rounded-md.shadow-sm
@@ -399,16 +368,16 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 
 /* 🛑 COMPANY NAME FIELD */
 
-/* 🟢 CITY FIELD [12.2.25]
+/* 🟢 CITY FIELD [2025_12_31]
 🗒️ Custom styling with location pin icon */
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.city
   > div.text-\[\#0c2d3f\].label {
   display: none;
 }
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.city
   > div.hl-text-input-container.contact\.city
   > div.relative.rounded-md.shadow-sm {
@@ -416,7 +385,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
   margin-top: 0px !important;
 }
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.city
   > div.hl-text-input-container.contact\.city
   > div.relative.rounded-md.shadow-sm
@@ -430,7 +399,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
   font-family: "Roboto";
 }
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.city
   > div.hl-text-input-container.contact\.city
   > div.relative.rounded-md.shadow-sm
@@ -439,7 +408,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
   font-family: "Roboto";
 }
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.city
   > div.hl-text-input-container.contact\.city
   > div.relative.rounded-md.shadow-sm
@@ -448,7 +417,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 }
 
 /* City field icon */
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.city
   > div.hl-text-input-container.contact\.city
   > div.relative.rounded-md.shadow-sm
@@ -469,15 +438,15 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 
 /* 🛑 CITY FIELD */
 
-/* 🟢 STATE FIELD [12.2.25] */
+/* 🟢 STATE FIELD [2025_12_31] */
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.state
   > div.text-\[\#0c2d3f\].label {
   display: none !important;
 }
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.state
   > div.hl-text-input-container.contact\.state
   > div.relative.rounded-md.shadow-sm {
@@ -485,7 +454,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
   margin-top: -15px !important;
 }
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.state
   > div.hl-text-input-container.contact\.state
   > div.relative.rounded-md.shadow-sm
@@ -499,7 +468,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
   font-family: "Roboto";
 }
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.state
   > div.hl-text-input-container.contact\.state
   > div.relative.rounded-md.shadow-sm
@@ -508,7 +477,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
   font-family: "Roboto";
 }
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.state
   > div.hl-text-input-container.contact\.state
   > div.relative.rounded-md.shadow-sm
@@ -535,16 +504,16 @@ div[class*="Rfghqe9JReCqHvTnYSdK"] #contact\.state > div.hl-text-input-container
 
 /* 🛑 STATE FIELD */
 
-/* 🟢 WEBSITE FIELD [12.2.25]
+/* 🟢 WEBSITE FIELD [2025_12_31]
 🗒️ Custom styling with globe icon */
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.website
   > div.text-\[\#0c2d3f\].label {
   display: none !important;
 }
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.website
   > div.hl-text-input-container.contact\.website
   > div.relative.rounded-md.shadow-sm {
@@ -552,7 +521,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
   margin-top: -8px !important;
 }
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.website
   > div.hl-text-input-container.contact\.website
   > div.relative.rounded-md.shadow-sm
@@ -566,7 +535,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
   padding-left: 18.5px;
 }
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.website
   > div.hl-text-input-container.contact\.website
   > div.relative.rounded-md.shadow-sm
@@ -575,7 +544,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
   font-family: "Roboto";
 }
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.website
   > div.hl-text-input-container.contact\.website
   > div.relative.rounded-md.shadow-sm
@@ -584,7 +553,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 }
 
 /* Website field icon */
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.website
   > div.hl-text-input-container.contact\.website
   > div.relative.rounded-md.shadow-sm
@@ -605,22 +574,22 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 
 /* 🛑 WEBSITE FIELD */
 
-/* 🟢 LEAD STATUS FIELD [12.2.25]
+/* 🟢 LEAD STATUS FIELD [2025_12_31]
 🗒️ Custom pill-style dropdown for lead status */
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.lead_status
   > div.text-\[\#0c2d3f\].label {
   display: none !important;
 }
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.lead_status
   > div.dropdown.bootstrap-select.mt-1.selectItem.contact\.lead_status {
   width: 50% !important;
 }
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.lead_status
   > div.dropdown.bootstrap-select.mt-1.selectItem.contact\.lead_status
   > button {
@@ -633,7 +602,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
   padding-bottom: 0px;
 }
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.lead_status
   > div.dropdown.bootstrap-select.mt-1.selectItem.contact\.lead_status
   > button::placeholder {
@@ -641,14 +610,14 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
   font-family: "Roboto";
 }
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.lead_status
   > div.dropdown.bootstrap-select.mt-1.selectItem.contact\.lead_status.dropup
   > button {
-  /*height: 25px !important; */
+  height: 25px !important;
 }
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.lead_status
   > div.dropdown.bootstrap-select.mt-1.selectItem.contact\.lead_status
   > button
@@ -657,7 +626,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
   padding-left: 6px;
 }
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.lead_status
   > div.dropdown.bootstrap-select.mt-1.selectItem.contact\.lead_status
   > button
@@ -667,7 +636,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
   color: #545454;
 }
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.lead_status
   > div.dropdown.bootstrap-select.mt-1.selectItem.contact\.lead_status
   > button:hover {
@@ -675,11 +644,11 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 }
 
 /* Lead Status Dropdown Menu */
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.lead_status
   > div.dropdown.bootstrap-select.mt-1.selectItem.contact\.lead_status.show
   > div,
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.lead_status
   > div.dropdown.bootstrap-select.mt-1.selectItem.contact\.lead_status.show
   > div
@@ -688,7 +657,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
   min-width: 235px !important;
 }
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.lead_status
   .bootstrap-select
   .dropdown-menu
@@ -700,9 +669,11 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 
 /* 🛑 LEAD STATUS FIELD */
 
-/* 🟢 DESCRIPTION FIELD [12.2.25] */
+/* 🟢 DESCRIPTION FIELD [2025_12_31] */
 
-div[class*="Rfghqe9JReCqHvTnYSdK"] #contact\.description > textarea {
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  #contact\.description
+  > textarea {
   background: #ffffff !important;
   border-radius: 0px !important;
   font-size: 11px;
@@ -715,7 +686,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"] #contact\.description > textarea {
   border-bottom: 1.5px solid #e5e5e5;
 }
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #contact\.description
   > textarea::placeholder {
   color: #9b9a9a;
@@ -725,25 +696,25 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 /* 🛑 DESCRIPTION FIELD */
 
 /* =====================================
-🛑🛑🛑 CONTACT RECORD FIELD STYLING (SUB-ACCOUNT: Rfghqe9JReCqHvTnYSdK)
+🛑🛑🛑 CONTACT RECORD FIELD STYLING /*
 ===================================== */
 
 /* =====================================
-🟢🟢🟢 CONTACT PAGE - PINTOP SECTION (SUB-ACCOUNT: Rfghqe9JReCqHvTnYSdK)
+🟢🟢🟢 CONTACT PAGE - PINTOP SECTION /*
 ===================================== */
 
-/* 🟢 PINTOP FIELD MARGINS [12.2.25] */
+/* 🟢 PINTOP FIELD MARGINS [2025_12_31] */
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #mainpintop
   > div.mb-2.pintop.pintopcontactcompany_name,
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #mainpintop
   > div.mb-2.pintop.pintopcontactcity,
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #mainpintop
   > div.mb-2.pintop.pintopcontactstate,
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #mainpintop
   > div.mb-2.pintop.pintopcontactwebsite {
   margin-bottom: 0 !important;
@@ -751,7 +722,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 
 /* 🛑 PINTOP FIELD MARGINS */
 
-/* 🟢 MAINPINTOP BACKGROUND [12.2.25] */
+/* 🟢 MAINPINTOP BACKGROUND [2025_12_31] */
 
 #mainpintop {
   background: #fafafa;
@@ -759,9 +730,9 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 
 /* 🛑 MAINPINTOP BACKGROUND */
 
-/* 🟢 HIDE CONTACT SECTION HEADER [12.2.25] */
+/* 🟢 HIDE CONTACT SECTION HEADER [2025_12_31] */
 
-div[class*="Rfghqe9JReCqHvTnYSdK"]
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #\34
   xRQZVL9hrngkMO8cbNx
   > div.flex.cursor-pointer.justify-between {
@@ -770,7 +741,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 
 /* 🛑 HIDE CONTACT SECTION HEADER */
 
-/* 🟢 HIDE SAVE WARNING TEXT [12.2.25]
+/* 🟢 HIDE SAVE WARNING TEXT [2025_12_31]
 🗒️ Custom warning text styling below "Hide empty fields" */
 
 .hidesavewarning {
@@ -783,18 +754,18 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 /* 🛑 HIDE SAVE WARNING TEXT */
 
 /* =====================================
-🛑🛑🛑 CONTACT PAGE - PINTOP SECTION (SUB-ACCOUNT: Rfghqe9JReCqHvTnYSdK)
+🛑🛑🛑 CONTACT PAGE - PINTOP SECTION /*
 ===================================== */
 
 /* =====================================
-🟢🟢🟢 APPOINTMENTS - CONTACT PAGE (SUB-ACCOUNT: Rfghqe9JReCqHvTnYSdK)
+🟢🟢🟢 APPOINTMENTS - CONTACT PAGE /*
 ===================================== */
 
-/* 🟢 APPOINTMENT RESTRICTIONS [12.2.25]
+/* 🟢 APPOINTMENT RESTRICTIONS [2025_12_31]
 🗒️ Restricts appointment editing/deletion for non-allowed users */
 
 #app
-  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   .hl_contact-details-right
   div.hl_contact-details-right-tabs.appointment-not-allowed
   div.tab-content
@@ -806,7 +777,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 }
 
 #app
-  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   .hl_contact-details-right
   div.hl_contact-details-right-tabs.appointment-not-allowed
   div.tab-content
@@ -820,7 +791,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 }
 
 #app
-  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   .hl_contact-details-right
   div.hl_contact-details-right-tabs.appointment-not-allowed
   div.tab-content
@@ -835,10 +806,10 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 
 /* 🛑 APPOINTMENT RESTRICTIONS */
 
-/* 🟢 EMPTY APPOINTMENT LIST - NOT ALLOWED [12.2.25] */
+/* 🟢 EMPTY APPOINTMENT LIST - NOT ALLOWED [2025_12_31] */
 
 #app
-  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   .hl_contact-details-right
   div.hl_contact-details-right-tabs.appointment-not-allowed.appointment-list-empty
   div.tab-content
@@ -846,7 +817,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
   > div.item-center
   > div.v-spinner,
 #app
-  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   .hl_contact-details-right
   div.hl_contact-details-right-tabs.appointment-not-allowed.appointment-list-empty
   div.tab-content
@@ -854,7 +825,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
   > div.item-center
   > div.text-center,
 #app
-  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   .hl_contact-details-right
   div.hl_contact-details-right-tabs.appointment-not-allowed.appointment-list-empty
   div.tab-content
@@ -866,10 +837,10 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 
 /* 🛑 EMPTY APPOINTMENT LIST - NOT ALLOWED */
 
-/* 🟢 EMPTY APPOINTMENT LIST - ALLOWED [12.2.25] */
+/* 🟢 EMPTY APPOINTMENT LIST - ALLOWED [2025_12_31] */
 
 #app
-  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   .hl_contact-details-right
   div.hl_contact-details-right-tabs.appointment-allowed.appointment-list-empty
   div.tab-content
@@ -877,7 +848,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
   > div.item-center
   > div.v-spinner,
 #app
-  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   .hl_contact-details-right
   div.hl_contact-details-right-tabs.appointment-allowed.appointment-list-empty
   div.tab-content
@@ -889,7 +860,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 
 /* 🛑 EMPTY APPOINTMENT LIST - ALLOWED */
 
-/* 🟢 EMPTY APPOINTMENT ALERT LAYOUT [12.2.25] */
+/* 🟢 EMPTY APPOINTMENT ALERT LAYOUT [2025_12_31] */
 
 #empty-appointment-alert {
   flex-direction: column;
@@ -900,17 +871,17 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 /* 🛑 EMPTY APPOINTMENT ALERT LAYOUT */
 
 /* =====================================
-🛑🛑🛑 APPOINTMENTS - CONTACT PAGE (SUB-ACCOUNT: Rfghqe9JReCqHvTnYSdK)
+🛑🛑🛑 APPOINTMENTS - CONTACT PAGE /*
 ===================================== */
 
 /* =====================================
-🟢🟢🟢 OPPORTUNITIES WIDGET - CONTACT PAGE (SUB-ACCOUNT: Rfghqe9JReCqHvTnYSdK)
+🟢🟢🟢 OPPORTUNITIES WIDGET - CONTACT PAGE /*
 ===================================== */
 
-/* 🟢 OPPORTUNITIES WRAP CONTAINER [12.2.25] */
+/* 🟢 OPPORTUNITIES WRAP CONTAINER [2025_12_31] */
 
 #app
-  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   .hl_contact-details-left
   #mainpintop
   #opportunities-wrap {
@@ -919,7 +890,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 }
 
 #app
-  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   .hl_contact-details-left
   #mainpintop
   #opportunities-wrap
@@ -934,10 +905,10 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 
 /* 🛑 OPPORTUNITIES WRAP CONTAINER */
 
-/* 🟢 OPPORTUNITIES TAG GROUP [12.2.25] */
+/* 🟢 OPPORTUNITIES TAG GROUP [2025_12_31] */
 
 #app
-  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   .hl_contact-details-left
   #mainpintop
   #opportunities-wrap
@@ -949,10 +920,24 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 
 /* 🛑 OPPORTUNITIES TAG GROUP */
 
-/* 🟢 OPPORTUNITIES ADD BUTTON [12.2.25] */
+/* 🟢 PRIMARY/ADDITIONAL ACCOUNT LABELS [2025-01-04] */
 
 #app
-  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  #mainpintop
+  #opportunities-wrap
+  .py-2 {
+  margin-left: 8px;
+  font-size: 8px;
+}
+
+/* 🛑 PRIMARY/ADDITIONAL ACCOUNT LABELS */
+
+/* 🟢 OPPORTUNITIES ADD BUTTON [2025_12_31] */
+
+#app
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   .hl_contact-details-left
   #mainpintop
   #opportunities-wrap
@@ -966,10 +951,10 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 
 /* 🛑 OPPORTUNITIES ADD BUTTON */
 
-/* 🟢 OPPORTUNITIES ICONS & TEXT [12.2.25] */
+/* 🟢 OPPORTUNITIES ICONS & TEXT [2025_12_31] */
 
 #app
-  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   .hl_contact-details-left
   #mainpintop
   #opportunities-wrap
@@ -981,7 +966,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 }
 
 #app
-  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   .hl_contact-details-left
   #mainpintop
   #opportunities-wrap
@@ -991,7 +976,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 }
 
 #app
-  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   .hl_contact-details-left
   #mainpintop
   #opportunities-wrap
@@ -1004,7 +989,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 }
 
 #app
-  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   .hl_contact-details-left
   #mainpintop
   #opportunities-wrap
@@ -1014,7 +999,7 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 }
 
 #app
-  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   .hl_contact-details-left
   #mainpintop
   #opportunities-wrap
@@ -1027,18 +1012,10 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 
 /* 🛑 OPPORTUNITIES ICONS & TEXT */
 
-/* 🟢 DESCRIPTION PINTOP STYLING [12.2.25] */
+/* 🟢 DESCRIPTION PINTOP STYLING [2025_12_31] */
 
 #app
-  div[class*="Rfghqe9JReCqHvTnYSdK"]
-  .hl_contact-details-left
-  #mainpintop
-  .pintop.pintopcontactdescription.original_pintop
-  div[id="contact.description"] {
-}
-
-#app
-  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   .hl_contact-details-left
   #mainpintop
   .pintop.pintopcontactdescription.original_pintop
@@ -1054,17 +1031,19 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 
 /* 🛑 DESCRIPTION PINTOP STYLING */
 
-/* 🟢 OPPORTUNITIES HEADER REPLACEMENT [12.2.25]
+/* 🟢 OPPORTUNITIES HEADER REPLACEMENT [2025_12_31]
 🗒️ Hides default header, adds custom "OPPORTUNITIES" text */
 
 #app
-  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   #opportunities-wrap
   > div.flex.justify-between.items-center.cursor-pointer {
   display: none !important;
 }
 
-#app div[class*="Rfghqe9JReCqHvTnYSdK"] #opportunities-wrap:before {
+#app
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  #opportunities-wrap:before {
   content: "OPPORTUNITIES";
   font-size: 14px;
   padding: 8px;
@@ -1080,17 +1059,17 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 /* 🛑 OPPORTUNITIES HEADER REPLACEMENT */
 
 /* =====================================
-🛑🛑🛑 OPPORTUNITIES WIDGET - CONTACT PAGE (SUB-ACCOUNT: Rfghqe9JReCqHvTnYSdK)
+🛑🛑🛑 OPPORTUNITIES WIDGET - CONTACT PAGE /*
 ===================================== */
 
 /* =====================================
-🟢🟢🟢 CONTACT TAGS (SUB-ACCOUNT: Rfghqe9JReCqHvTnYSdK)
+🟢🟢🟢 CONTACT TAGS /*
 ===================================== */
 
-/* 🟢 CONTACT TAGS - HIDE HEADER [12.2.25] */
+/* 🟢 CONTACT TAGS - HIDE HEADER [2025_12_31] */
 
 #app
-  div[class*="Rfghqe9JReCqHvTnYSdK"]
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
   .contact_tags
   .flex.justify-between.cursor-pointer.items-center {
   display: none !important;
@@ -1098,9 +1077,12 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 
 /* 🛑 CONTACT TAGS - HIDE HEADER */
 
-/* 🟢 OPPORTUNITIES TAG STYLING [12.2.25] */
+/* 🟢 OPPORTUNITIES TAG STYLING [2025_12_31] */
 
-#app div[class*="Rfghqe9JReCqHvTnYSdK"] #opportunities-wrap .tag {
+#app
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  #opportunities-wrap
+  .tag {
   font-family: "Barlow", sans-serif !important;
   font-weight: 400;
   font-style: normal;
@@ -1109,9 +1091,12 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
 
 /* 🛑 OPPORTUNITIES TAG STYLING */
 
-/* 🟢 CONTACT TAGS STYLING [12.2.25] */
+/* 🟢 CONTACT TAGS STYLING [2025_12_31] */
 
-#app div[class*="Rfghqe9JReCqHvTnYSdK"] .contact_tags .tag {
+#app
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .contact_tags
+  .tag {
   background: #e4e2e2 !important;
   color: #000 !important;
   font-size: 9.5px;
@@ -1121,33 +1106,873 @@ div[class*="Rfghqe9JReCqHvTnYSdK"]
   text-transform: uppercase !important;
 }
 
-#app div[class*="Rfghqe9JReCqHvTnYSdK"] .contact_tags {
+#app
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .contact_tags {
   background-color: #fff0 !important;
 }
 
-#app div[class*="Rfghqe9JReCqHvTnYSdK"] .contact_tags .shadow-sm {
+#app
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .contact_tags
+  .shadow-sm {
   box-shadow: none !important;
   border: none !important;
   background: #fff0 !important;
 }
 
-#app div[class*="Rfghqe9JReCqHvTnYSdK"] .contact_tags input[type="text"] {
+#app
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .contact_tags
+  input[type="text"] {
   padding-left: 20px;
   background-position: 0% 50% !important;
   background-image: url(https://storage.googleapis.com/msgsndr/Rfghqe9JReCqHvTnYSdK/media/65fb9f62a79bbe466ab35c78.png) !important;
   background-repeat: no-repeat !important;
 }
 
-#app div[class*="Rfghqe9JReCqHvTnYSdK"] .contact_tags .tag a {
+#app
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .contact_tags
+  .tag
+  a {
   background: #fff0 !important;
 }
 
-#app div[class*="Rfghqe9JReCqHvTnYSdK"] .contact_tags .tag a i {
+#app
+  :is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .contact_tags
+  .tag
+  a
+  i {
   border: none !important;
 }
 
 /* 🛑 CONTACT TAGS STYLING */
 
 /* =====================================
-🛑🛑🛑 CONTACT TAGS (SUB-ACCOUNT: Rfghqe9JReCqHvTnYSdK)
+🛑🛑🛑 CONTACT TAGS /*
+===================================== */
+
+/* =====================================
+🟢🟢🟢 CONTACT ACCORDION STYLING
+===================================== */
+
+/* 🟢 CONTACT ACCORDION - HIDE HEADER & ALWAYS OPEN [2025-01-04]
+🗒️ Hides the "Contact" header and keeps accordion expanded */
+
+/* Hide the Contact header (blue "Contact" text with arrow) */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  > .flex.cursor-pointer.justify-between {
+  display: none !important;
+}
+
+/* Remove top padding since header is hidden */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  > .pt-3 {
+  padding-top: 0 !important;
+}
+
+/* 🛑 CONTACT ACCORDION - HIDE HEADER & ALWAYS OPEN */
+
+/* 🟢 CONTACT ACCORDION - TEXT FIELD STYLING [2025-01-04]
+🗒️ Minimal styling for First Name, Last Name, Email, Phone fields
+🗒️ Labels positioned to LEFT of inputs (inline layout)
+🗒️ First Name + Last Name combined into single "Name" row */
+
+/* === NAME FIELD (Combined First + Last) === */
+
+/* Hide the Last Name wrapper's margin to bring it inline */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  form
+  > .mb-2:has(#contact\.last_name) {
+  display: none !important;
+}
+
+/* First Name container becomes the combined Name row */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.first_name {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 8px;
+}
+
+/* Hide original "First Name" label text, replace with "Name" */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.first_name
+  > .text-\[\#0c2d3f\].label {
+  font-size: 0 !important;
+  min-width: 70px;
+  width: 70px;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.first_name
+  > .text-\[\#0c2d3f\].label::after {
+  content: "Name";
+  font-size: 11px;
+  font-family: "Roboto";
+  color: #6b6b6b;
+}
+
+/* First Name input container - auto-width based on content */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.first_name
+  > .hl-text-input-container {
+  flex: 0 0 auto;
+  margin-top: 0 !important;
+  min-width: 40px;
+}
+
+/* === FOCUS STYLING - Light gray background on edit === */
+
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  input.hl-text-input:focus {
+  background-color: #f5f5f5 !important;
+  border-radius: 4px;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Last Name input in combined row (injected via JS) */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.first_name
+  .last-name-injected {
+  flex: 1;
+  margin-left: -20px; /* Reduced gap between First and Last name */
+}
+
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.first_name
+  .last-name-injected
+  input.hl-text-input {
+  border: none;
+  box-shadow: none;
+  background: none;
+  color: #6b6b6b;
+  font-size: 12.5px;
+  font-family: "Roboto";
+  padding-left: 0;
+}
+
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.first_name
+  .last-name-injected
+  input.hl-text-input::placeholder {
+  color: #9b9a9a;
+  font-family: "Roboto";
+}
+
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.first_name
+  .last-name-injected
+  input.hl-text-input:focus {
+  background-color: #f5f5f5 !important;
+  border-radius: 4px;
+}
+
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.first_name
+  .last-name-injected
+  .relative.rounded-md.shadow-sm {
+  box-shadow: none !important;
+}
+
+/* Inject Last Name field into First Name row using JavaScript-created clone */
+/* For now, we'll use CSS to visually position Last Name */
+
+/* === EMAIL & PHONE FIELDS === */
+
+/* Phone field - make it a flex row like email */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.phone {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 8px;
+}
+
+/* Phone label */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.phone
+  > .text-\[\#0c2d3f\].label {
+  min-width: 70px;
+  width: 70px;
+  flex-shrink: 0;
+  font-size: 11px;
+  font-family: "Roboto";
+  color: #6b6b6b;
+  margin: 0;
+}
+
+/* Phone input container - MUST expand with min-width [2025-01-05] */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.phone
+  > .hl-text-input-container {
+  flex: 1 1 auto !important;
+  display: block !important;
+  margin-top: 0 !important;
+  width: 100% !important;
+  min-width: 150px !important;
+}
+
+/* Phone input inner container - MUST expand to full width */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.phone
+  > .hl-text-input-container
+  > .relative.rounded-md.shadow-sm {
+  width: 100% !important;
+  min-width: 150px !important;
+  box-shadow: none !important;
+}
+
+/* Phone input field - full width */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.phone
+  > .hl-text-input-container
+  input.hl-text-input {
+  width: 100% !important;
+}
+
+/* Phone edit pencil container - inline flex [2025-01-05] */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.phone
+  > .additional-phones-edit-div {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0;
+}
+
+/* Phone pencil inner block - flex for proper alignment */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.phone
+  > .additional-phones-edit-div
+  > .block {
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Phone pencil SVG - override absolute positioning [2025-01-05] */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.phone
+  .additional-phones-edit-div
+  svg.additional-phone-count.absolute {
+  position: static !important;
+  top: unset !important;
+  right: unset !important;
+  bottom: unset !important;
+  left: unset !important;
+  inset: unset !important;
+  cursor: pointer;
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* Email field has different structure - target inner form-group */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.email
+  .form-group {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 8px;
+}
+
+/* Email label (different structure) */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.email
+  .form-group
+  > .flex.justify-between {
+  min-width: 70px;
+  width: 70px;
+  flex-shrink: 0;
+  font-size: 11px;
+  font-family: "Roboto";
+  color: #6b6b6b;
+  margin: 0;
+}
+
+/* Hide the empty validation div next to Email label */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.email
+  .form-group
+  > .flex.justify-between
+  > div:last-child {
+  display: none;
+}
+
+/* Make input containers take remaining width */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.phone
+  > .hl-text-input-container,
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.email
+  .form-group
+  > .mt-1.relative {
+  flex: 1;
+  margin-top: 0 !important;
+}
+
+/* Remove shadow from input containers */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  .hl-text-input-container
+  .relative.rounded-md.shadow-sm {
+  box-shadow: none !important;
+}
+
+/* Minimal text input styling */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  .hl-text-input-container
+  input.hl-text-input,
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.email
+  input.hl-text-input {
+  border: none;
+  box-shadow: none;
+  background: none;
+  color: #6b6b6b;
+  font-size: 12.5px;
+  font-family: "Roboto";
+  padding-left: 0;
+}
+
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  .hl-text-input-container
+  input.hl-text-input::placeholder,
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.email
+  input.hl-text-input::placeholder {
+  color: #9b9a9a;
+  font-family: "Roboto";
+}
+
+/* Reduce margin between fields */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  form
+  > .mb-2 {
+  margin-bottom: 0 !important;
+}
+
+/* 🛑 CONTACT ACCORDION - TEXT FIELD STYLING */
+
+/* 🟢 CONTACT ACCORDION - LABEL & INPUT STYLING [2025-01-05]
+🗒️ Bold labels, reduced label width (27px), 4px input padding
+🗒️ Email truncation fix */
+
+/* Bold all labels */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.first_name
+  > .text-\[\#0c2d3f\].label,
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.email
+  .form-group
+  > .flex.justify-between,
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.phone
+  > .text-\[\#0c2d3f\].label {
+  font-weight: 600 !important;
+  min-width: 27px !important;
+  width: 27px !important;
+}
+
+/* Input left padding */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.first_name
+  input.hl-text-input,
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.first_name
+  .last-name-injected
+  input.hl-text-input,
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.phone
+  input.hl-text-input {
+  padding-left: 4px !important;
+}
+
+/* Email input - padding + truncation fix + width alignment */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.email
+  input.hl-text-input {
+  padding-left: 4px !important;
+  text-overflow: clip !important;
+  overflow: visible !important;
+  padding-right: 50px !important;
+  width: calc(100% + 8px) !important; /* Align with phone input width */
+}
+
+/* 🛑 CONTACT ACCORDION - LABEL & INPUT STYLING */
+
+/* 🟢 CONTACT ACCORDION - VERTICAL SPACING [2025-01-05]
+🗒️ Reduces vertical spacing between fields
+🗒️ Top fields (Name, Email, Phone): -11px
+🗒️ Bottom dropdowns (Timezone, Lead Score, Market): -8px */
+
+/* Top fields - Name, Email, Phone (first 4 .mb-2 wrappers) */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b
+  form
+  > .mb-2:nth-child(1),
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b
+  form
+  > .mb-2:nth-child(2),
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b
+  form
+  > .mb-2:nth-child(3),
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b
+  form
+  > .mb-2:nth-child(4) {
+  margin-bottom: -11px !important;
+}
+
+/* Bottom dropdowns - Timezone, Lead Score, Market */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b
+  form
+  > .mb-2:nth-child(5),
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b
+  form
+  > .mb-2:nth-child(6),
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b
+  form
+  > .mb-2:nth-child(7) {
+  margin-bottom: -8px !important;
+}
+
+/* 🛑 CONTACT ACCORDION - VERTICAL SPACING */
+
+/* 🟢 CONTACT ACCORDION - PHONE/EMAIL PENCIL & BADGE STYLING [2025-01-05]
+🗒️ Positions edit pencil icons and +N badges for phone and email fields
+🗒️ Styles phone label (Home/Work/Cell) as gray pill badge */
+
+/* Phone field - make relative for absolute positioned children */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.phone {
+  position: relative !important;
+}
+
+/* Phone pencil/badge container - absolute positioned right */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.phone
+  > .additional-phones-edit-div {
+  position: absolute !important;
+  right: 5px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 4px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Phone inner .block container */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.phone
+  > .additional-phones-edit-div
+  > .block {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 6px !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Phone label (Home/Work/Cell) - styled as gray pill badge */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.phone
+  .additional-phones-edit-div
+  span.phone-label {
+  position: static !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #e5e5e5 !important;
+  color: #6b6b6b !important;
+  font-size: 10px !important;
+  font-weight: 400 !important;
+  font-family: "Roboto", sans-serif !important;
+  padding: 1px 6px !important;
+  border-radius: 10px !important;
+  height: 16px !important;
+  min-height: 16px !important;
+  margin: 0 !important;
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
+  order: -1 !important;
+}
+
+/* Phone +N badge SVG */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.phone
+  .additional-phones-edit-div
+  svg.additional-phone-edit-icon {
+  position: static !important;
+  display: block !important;
+  width: 32px !important;
+  height: 20px !important;
+  min-width: 32px !important;
+  min-height: 20px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  inset: unset !important;
+  transform: none !important;
+  flex-shrink: 0 !important;
+}
+
+/* Phone pencil SVG */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.phone
+  .additional-phones-edit-div
+  svg.additional-phone-count {
+  position: static !important;
+  display: block !important;
+  width: 15px !important;
+  height: 15px !important;
+  min-width: 15px !important;
+  min-height: 15px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  inset: unset !important;
+  transform: none !important;
+  flex-shrink: 0 !important;
+}
+
+/* Email icons container (unnamed div) - positioned via JS, this is backup */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.email
+  .mt-1.relative
+  > div:has(svg.additional-email-count),
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.email
+  .mt-1.relative
+  > div:has(.additional-email-edit) {
+  position: absolute !important;
+  right: -3px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 6px !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Email +N badge SVG */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.email
+  svg.additional-email-count {
+  position: static !important;
+  display: block !important;
+  width: 32px !important;
+  height: 20px !important;
+  min-width: 32px !important;
+  min-height: 20px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  inset: unset !important;
+  transform: none !important;
+  flex-shrink: 0 !important;
+}
+
+/* Email pencil container */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.email
+  .additional-email-edit {
+  position: static !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  inset: unset !important;
+}
+
+/* Email pencil SVG */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.email
+  .additional-email-edit
+  svg {
+  position: static !important;
+  display: block !important;
+  width: 15px !important;
+  height: 15px !important;
+  min-width: 15px !important;
+  min-height: 15px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  inset: unset !important;
+  transform: none !important;
+}
+
+/* 🛑 CONTACT ACCORDION - PHONE/EMAIL PENCIL & BADGE STYLING */
+
+/* 🟢 CONTACT ACCORDION - DROPDOWN STYLING [2025-01-04]
+🗒️ Pill-style dropdowns for Time Zone, Lead Score, Market */
+
+/* Hide dropdown labels */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.timezone
+  > .text-\[\#0c2d3f\].label,
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.lead_score
+  > .text-\[\#0c2d3f\].label,
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.market
+  > .text-\[\#0c2d3f\].label {
+  display: none !important;
+}
+
+/* Pill-style dropdown buttons */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  .dropdown.bootstrap-select
+  > button {
+  border-radius: 25px !important;
+  font-size: 10px;
+  font-family: "Roboto";
+  height: 23px;
+  line-height: 21px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  .dropdown.bootstrap-select
+  > button
+  > div {
+  padding-top: 0px;
+  padding-left: 6px;
+}
+
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  .dropdown.bootstrap-select
+  > button
+  > div
+  > div
+  > div {
+  color: #545454;
+}
+
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  .dropdown.bootstrap-select
+  > button:hover {
+  background: #ededed;
+}
+
+/* Dropdown menu text size */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  .bootstrap-select
+  .dropdown-menu
+  li
+  a
+  span.text {
+  font-size: 12px !important;
+}
+
+/* Empty dropdown placeholder text for Lead Score */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.lead_score
+  .dropdown.bootstrap-select
+  > button.bs-placeholder
+  .filter-option-inner-inner {
+  color: #9b9a9a !important;
+  font-family: "Roboto";
+}
+
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.lead_score
+  .dropdown.bootstrap-select
+  > button.bs-placeholder
+  .filter-option-inner-inner::before {
+  content: "Lead Score";
+}
+
+/* Empty dropdown placeholder text for Market */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.market
+  .dropdown.bootstrap-select
+  > button.bs-placeholder
+  .filter-option-inner-inner {
+  color: #9b9a9a !important;
+  font-family: "Roboto";
+}
+
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.market
+  .dropdown.bootstrap-select
+  > button.bs-placeholder
+  .filter-option-inner-inner::before {
+  content: "Market";
+}
+
+/* Email input - padding + truncation fix + width alignment */
+:is(div[class*="Rfghqe9JReCqHvTnYSdK"], div[class*="4h6wxlihyc1wMCzyVRbH"])
+  .hl_contact-details-left
+  .py-3.px-3.border-b:has(#contact\.first_name)
+  #contact\.email
+  input.hl-text-input {
+  padding-left: 4px !important;
+  text-overflow: clip !important;
+  overflow: visible !important;
+  padding-right: 50px !important;
+  width: calc(100% + 8px) !important; /* Align with phone input width */
+}
+
+/* 🛑 CONTACT ACCORDION - DROPDOWN STYLING */
+
+/* =====================================
+🛑🛑🛑 CONTACT ACCORDION STYLING
 ===================================== */
