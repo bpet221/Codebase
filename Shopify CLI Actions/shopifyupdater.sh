@@ -14,8 +14,9 @@
 # 6. Run pullfromshop again to sync live theme files.
 # 7. Run shopifyupdater: compares new live theme vs. your backup (select most recently updated backup).
 # 8. Review terminal output; when done, type YES to push merged edits to Shopify.
-# 9. Preview the new theme and verify basic functionality.
-# 10. Publish the new theme in Admin.
+# 9. Open prev & new theme editors side-by-side. Search for files w/ '%🟢🟢🟢' & 'kcs' in name, verify counts match.
+# 10. Preview the new theme and verify basic functionality.
+# 11. Publish the new theme in Admin.
 
 echo "🔍 Shopify Theme Checker & Updater"
 echo "=================================="
@@ -68,8 +69,17 @@ fi
 
 echo "📁 Finding most recent backup..."
 
-# Find the most recently created folder in the backup directory
-MOST_RECENT_BACKUP=$(find "$BACKUP_BASE_DIR" -mindepth 1 -maxdepth 1 -type d -exec stat -f "%m %N" {} \; | sort -nr | head -1 | cut -d' ' -f2-)
+# Find the most recent backup based on YYYY_MM_DD date format in folder name
+# This targets folders like "2025_02_05 Backup - ..."
+MOST_RECENT_BACKUP=$(find "$BACKUP_BASE_DIR" -mindepth 1 -maxdepth 1 -type d -name "[0-9][0-9][0-9][0-9]_[0-9][0-9]_[0-9][0-9]*" | \
+    sed 's|.*/||' | \
+    sort -t_ -k1,1nr -k2,2nr -k3,3nr | \
+    head -1)
+
+# Convert folder name back to full path
+if [ -n "$MOST_RECENT_BACKUP" ]; then
+    MOST_RECENT_BACKUP="$BACKUP_BASE_DIR/$MOST_RECENT_BACKUP"
+fi
 
 if [ -z "$MOST_RECENT_BACKUP" ]; then
     echo "❌ Error: No backup folders found in $BACKUP_BASE_DIR"
@@ -90,6 +100,10 @@ get_file_list() {
     local dir="$1"
     find "$dir" -type f ! -name "README.md" ! -path "*/.*" | sed "s|^$dir/||" | sort
 }
+
+# ============================================
+# CUSTOM CODE FILE SCANNING
+# ============================================
 
 # Get file lists from both directories
 BACKUP_FILES=$(get_file_list "$MOST_RECENT_BACKUP")
@@ -149,139 +163,15 @@ fi
 
 echo ""
 
-# Specific analysis for layout/theme.liquid
-echo "🎨 LAYOUT/THEME.LIQUID ANALYSIS:"
-echo "================================"
-echo ""
-
-BACKUP_THEME_LIQUID="$MOST_RECENT_BACKUP/layout/theme.liquid"
-WORKING_THEME_LIQUID="$WORKING_THEME_DIR/layout/theme.liquid"
-
-# Global variables for KCS custom code section
-KCS_CUSTOM_CODE_SECTION=""
-KCS_CUSTOM_CODE_MISSING=false
-
-if [ -f "$BACKUP_THEME_LIQUID" ] && [ -f "$WORKING_THEME_LIQUID" ]; then
-    echo "📋 Analyzing theme.liquid differences..."
-    echo ""
-    
-    # Check if working theme.liquid is missing the KCS custom code section
-    START_MARKER="{%- comment -%} 🟢🟢🟢 START KITCHENCABSTORE CUSTOM CODE {%- endcomment -%}"
-    END_MARKER="{%- comment -%} 🛑🛑🛑 END KITCHENCABSTORE CUSTOM CODE {%- endcomment -%}"
-    
-    if ! grep -Fq "$START_MARKER" "$WORKING_THEME_LIQUID" || ! grep -Fq "$END_MARKER" "$WORKING_THEME_LIQUID"; then
-        echo "🔍 KITCHENCABSTORE CUSTOM CODE SECTION MISSING IN WORKING THEME!"
-        echo "================================================================="
-        
-        # Check if the section exists in backup
-        if grep -Fq "$START_MARKER" "$BACKUP_THEME_LIQUID" && grep -Fq "$END_MARKER" "$BACKUP_THEME_LIQUID"; then
-            echo "✅ Found KCS custom code section in backup theme.liquid"
-            
-            # Extract the custom code section from backup (including the markers)
-            KCS_CUSTOM_CODE_SECTION=$(sed -n "/$START_MARKER/,/$END_MARKER/p" "$BACKUP_THEME_LIQUID")
-            KCS_CUSTOM_CODE_MISSING=true
-            
-            echo ""
-            echo "📋 KCS CUSTOM CODE SECTION TO RESTORE:"
-            echo "$KCS_CUSTOM_CODE_SECTION" | sed 's/^/   ✨ /'
-            echo ""
-        else
-            echo "❌ KCS custom code section not found in backup either"
-        fi
-    else
-        echo "✅ KITCHENCABSTORE CUSTOM CODE section found in working theme.liquid"
-    fi
-    
-    echo ""
-    
-    # Regular missing content analysis (for other missing lines)
-    echo "🔍 OTHER CONTENT IN BACKUP THEME.LIQUID NOT FOUND IN WORKING VERSION:"
-    echo "====================================================================="
-    
-    # Use grep to find lines from backup that don't exist in working (excluding KCS custom code)
-    MISSING_CONTENT=""
-    
-    while IFS= read -r line; do
-        # Skip lines that are part of the KCS custom code section
-        if [[ "$line" == *"🟢🟢🟢 START KITCHENCABSTORE CUSTOM CODE"* ]] || 
-           [[ "$line" == *"🛑🛑🛑 END KITCHENCABSTORE CUSTOM CODE"* ]] ||
-           [[ "$line" == *"'kcs_custom.css'"* ]] && [[ "$line" == *"asset_url"* ]]; then
-            continue
-        fi
-        
-        # Skip empty lines for cleaner output
-        if [[ ! -z "$line" ]] && [[ ! "$line" =~ ^[[:space:]]*$ ]]; then
-            # Check if this content exists in working file
-            if ! grep -Fq "$line" "$WORKING_THEME_LIQUID" 2>/dev/null; then
-                MISSING_CONTENT="$MISSING_CONTENT$line\n"
-            fi
-        fi
-    done < <(cat "$BACKUP_THEME_LIQUID")
-    
-    if [ ! -z "$MISSING_CONTENT" ]; then
-        echo -e "$MISSING_CONTENT" | head -50 | sed 's/^/   ❌ /'
-        
-        # Count missing lines
-        MISSING_COUNT=$(echo -e "$MISSING_CONTENT" | grep -c . || echo "0")
-        if [ "$MISSING_COUNT" -gt 50 ]; then
-            echo "   ... and $((MISSING_COUNT - 50)) more lines"
-        fi
-        echo ""
-        echo "   📊 Total other missing lines: $MISSING_COUNT"
-    else
-        echo "   ✅ No other missing content found"
-    fi
-    
-    echo ""
-    
-    # Also show new content in working that wasn't in backup
-    echo "🆕 NEW CONTENT IN WORKING THEME.LIQUID (NOT IN BACKUP):"
-    echo "======================================================="
-    
-    NEW_CONTENT=""
-    while IFS= read -r line; do
-        # Skip empty lines for cleaner output
-        if [[ ! -z "$line" ]] && [[ ! "$line" =~ ^[[:space:]]*$ ]]; then
-            # Check if this content exists in backup file
-            if ! grep -Fq "$line" "$BACKUP_THEME_LIQUID" 2>/dev/null; then
-                NEW_CONTENT="$NEW_CONTENT$line\n"
-            fi
-        fi
-    done < <(cat "$WORKING_THEME_LIQUID")
-    
-    if [ ! -z "$NEW_CONTENT" ]; then
-        echo -e "$NEW_CONTENT" | head -50 | sed 's/^/   ✨ /'
-        
-        # Count new lines
-        NEW_COUNT=$(echo -e "$NEW_CONTENT" | grep -c . || echo "0")
-        if [ "$NEW_COUNT" -gt 50 ]; then
-            echo "   ... and $((NEW_COUNT - 50)) more lines"
-        fi
-        echo ""
-        echo "   📊 Total new lines: $NEW_COUNT"
-    else
-        echo "   ✅ No new content found - working version doesn't have additions"
-    fi
-    
-elif [ -f "$BACKUP_THEME_LIQUID" ] && [ ! -f "$WORKING_THEME_LIQUID" ]; then
-    echo "❌ layout/theme.liquid exists in backup but NOT in working theme!"
-elif [ ! -f "$BACKUP_THEME_LIQUID" ] && [ -f "$WORKING_THEME_LIQUID" ]; then
-    echo "✨ layout/theme.liquid exists in working theme but NOT in backup!"
-else
-    echo "❌ layout/theme.liquid not found in either backup or working theme!"
-fi
-
-echo ""
-
-# Summary
+# Summary of Step 1
 BACKUP_COUNT=$(echo "$BACKUP_FILES" | wc -l | xargs)
 WORKING_COUNT=$(echo "$WORKING_FILES" | wc -l | xargs)
 DELETED_COUNT=$(echo "$ONLY_IN_BACKUP" | grep -c '^' 2>/dev/null || echo "0")
 NEW_COUNT=$(echo "$ONLY_IN_WORKING" | grep -c '^' 2>/dev/null || echo "0")
 MODIFIED_COUNT=$(echo -e "$MODIFIED_FILES" | grep -c '^' 2>/dev/null || echo "0")
 
-echo "📈 SUMMARY:"
-echo "==========="
+echo "📈 STEP 1 SUMMARY:"
+echo "=================="
 echo "   Backup files:    $BACKUP_COUNT"
 echo "   Working files:   $WORKING_COUNT (excluding README.md)"
 echo "   Deleted files:   $DELETED_COUNT"
@@ -289,60 +179,76 @@ echo "   New files:       $NEW_COUNT"
 echo "   Modified files:  $MODIFIED_COUNT"
 echo ""
 
-# Cleanup
-rm -f "$TEMP_BACKUP" "$TEMP_WORKING"
-
 if [ "$DELETED_COUNT" -eq 0 ] && [ "$NEW_COUNT" -eq 0 ] && [ "$MODIFIED_COUNT" -eq 0 ]; then
     echo "🎉 Themes are identical!"
 else
     echo "ℹ️  Differences found between backup and working theme."
 fi
-
 echo ""
 
-# Auto-restore KCS custom code if missing
-if [ "$KCS_CUSTOM_CODE_MISSING" = true ] && [ ! -z "$KCS_CUSTOM_CODE_SECTION" ]; then
-    echo "🔄 AUTO-RESTORING KCS CUSTOM CODE..."
-    echo "===================================="
+echo ""
+echo "🔍 STEP 2: SCANNING BACKUP FOR CUSTOM CODE MARKERS..."
+echo "====================================================="
+echo ""
+
+# Find all files in backup with custom code markers (excluding kcs and ai_gen_block files)
+echo "Searching backup for native theme files with 🟢🟢🟢 markers..."
+CUSTOM_CODE_FILES=$(grep -rl "🟢🟢🟢" "$MOST_RECENT_BACKUP" 2>/dev/null | \
+    sed "s|^$MOST_RECENT_BACKUP/||" | \
+    grep -v "kcs" | \
+    grep -v "ai_gen_block" | \
+    grep -v "README.md" | \
+    grep -v "\.claude" | \
+    sort)
+
+if [ -z "$CUSTOM_CODE_FILES" ]; then
+    echo "✅ No native theme files found with custom code markers"
+    echo "   All custom code is in upgrade-safe files (kcs* or ai_gen_block*)"
     echo ""
-
-    # Create a temporary file for the modified content
-    TEMP_FILE="/tmp/theme_liquid_temp.$$"
-
-    # Write the KCS custom code to a temporary file first
-    echo "$KCS_CUSTOM_CODE_SECTION" > "/tmp/kcs_code.$$"
-    
-    # Use awk to insert the KCS custom code right after the opening <head> tag
-    awk '
-    /<head[^>]*>/ {
-        print $0
-        print ""
-        # Insert the KCS custom code from the temp file
-        while ((getline line < "/tmp/kcs_code.'$$'") > 0) {
-            print line
-        }
-        close("/tmp/kcs_code.'$$'")
-        next
-    }
-    { print }
-    ' "$WORKING_THEME_LIQUID" > "$TEMP_FILE"
-    
-    # Clean up the temporary KCS code file
-    rm -f "/tmp/kcs_code.$$"
-
-    # Replace the original file with the modified one
-    mv "$TEMP_FILE" "$WORKING_THEME_LIQUID"
-
-    # Verify the restoration
-    if grep -Fq "$START_MARKER" "$WORKING_THEME_LIQUID" && grep -Fq "$END_MARKER" "$WORKING_THEME_LIQUID"; then
-        echo "✅ KCS custom code successfully restored to working theme.liquid!"
-        echo ""
-        KCS_STATUS="KCS custom code restored"
-    else
-        echo "❌ Failed to restore KCS custom code. Please check manually."
-        echo ""
-    fi
+else
+    CUSTOM_CODE_COUNT=$(echo "$CUSTOM_CODE_FILES" | wc -l | xargs)
+    echo "⚠️  Found $CUSTOM_CODE_COUNT native theme file(s) with custom code:"
+    echo ""
+    echo "$CUSTOM_CODE_FILES" | sed 's/^/   - /'
+    echo ""
+    echo "═══════════════════════════════════════════════════════════════"
+    echo "📋 MANUAL UPDATE REQUIRED"
+    echo "═══════════════════════════════════════════════════════════════"
+    echo ""
+    echo "These files require manual updates in the Shopify Code Editor."
+    echo ""
+    echo "📖 INSTRUCTIONS:"
+    echo ""
+    echo "   1. Open Shopify Admin → Online Store → Themes"
+    echo ""
+    echo "   2. For EACH file listed above:"
+    echo ""
+    echo "      a) Open the file in the NEW theme (working theme)"
+    echo ""
+    echo "      b) Open the SAME file from your BACKUP theme:"
+    echo "         Backup location: $(basename "$MOST_RECENT_BACKUP")"
+    echo ""
+    echo "      c) Look for custom code blocks wrapped in:"
+    echo "         🟢🟢🟢 START KITCHENCABSTORE CUSTOM CODE"
+    echo "         🛑🛑🛑 END KITCHENCABSTORE CUSTOM CODE"
+    echo ""
+    echo "      d) Copy each custom code block from backup"
+    echo ""
+    echo "      e) Paste into the correct location in new theme"
+    echo "         💡 TIP: Use Shopify's side-by-side comparison"
+    echo ""
+    echo "   3. Save each file after updating"
+    echo ""
+    echo "   4. Verify all $CUSTOM_CODE_COUNT files have been updated"
+    echo ""
+    echo "═══════════════════════════════════════════════════════════════"
+    echo ""
+    echo "⏱️  Estimated time: 30-45 minutes for $CUSTOM_CODE_COUNT files"
+    echo ""
 fi
+
+# Cleanup
+rm -f "$TEMP_BACKUP" "$TEMP_WORKING"
 
 # Run README theme info updater at the end
 echo "📋 Updating README with current theme information..."

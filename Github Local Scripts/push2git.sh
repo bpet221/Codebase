@@ -1,5 +1,21 @@
 #!/bin/bash
 
+# ============================================================================
+# MANUAL GIT PUSH WITH INTERACTIVE MENU
+# ============================================================================
+# Triggered by alias: push2git
+# Alias defined in: ~/.zshrc
+# Edit alias: nano ~/.zshrc (then run: source ~/.zshrc)
+#
+# What this script does:
+# 1. Presents menu to choose repo: Codebase, SK Site, or KCS Shopify
+# 2. Prompts for manual commit message (NO AI generation)
+# 3. Commits and pushes to appropriate remote/branch
+#
+# Note: This is for manual commits. For automated Shopify commits with AI,
+#       use push2shop or pullfromshop instead.
+# ============================================================================
+
 echo "Choose a repo to push to:"
 echo "1) Codebase"
 echo "2) SK Site"

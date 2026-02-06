@@ -1,5 +1,20 @@
 #!/bin/bash
 
+# ============================================================================
+# SHOPIFY THEME PULL TO GIT AUTOMATION
+# ============================================================================
+# Triggered by alias: pullfromshop
+# Alias defined in: ~/.zshrc
+# Edit alias: nano ~/.zshrc (then run: source ~/.zshrc)
+#
+# What this script does:
+# 1. Pulls latest theme from Shopify (theme ID from ACTIVEthemeid.sh)
+# 2. Analyzes git diff and sends to GPT-4 for semantic commit message
+# 3. Auto-commits and pushes changes to Git (origin/main)
+#
+# Requirements: OPENAI_API_KEY must be set in ~/.zshrc
+# ============================================================================
+
 # Get the directory where this script is located
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
@@ -21,34 +36,36 @@ if [[ "$confirm_theme" =~ ^[Yy]$ ]]; then
     # Get git diff information
     git_status=$(git status --porcelain)
     git_diff_stat=$(git diff --stat --no-color | head -20)
-    git_diff_preview=$(git diff --no-color | head -100)
+    git_diff_preview=$(git diff --no-color | head -200)
     file_names=$(git diff --name-only)
     
     # Check if OPENAI_API_KEY is set
     if [ -n "$OPENAI_API_KEY" ]; then
         echo "Using AI to generate commit message..."
         
-        # Create a simple prompt with just the essential info
+        # Create a prompt with actual diff content
         # Escape newlines and quotes for JSON
         files_list=$(echo "$file_names" | tr '\n' ' ')
         stats_summary=$(echo "$git_diff_stat" | tail -1)
+        # Escape the diff for JSON (handle quotes and newlines)
+        diff_content=$(echo "$git_diff_preview" | sed 's/\\/\\\\/g' | sed 's/"/\\"/g' | awk '{printf "%s\\n", $0}')
         
         # Build JSON payload
         json_payload=$(cat <<JSON
 {
-  "model": "gpt-3.5-turbo",
+  "model": "gpt-4-turbo-preview",
   "messages": [
     {
       "role": "system",
-      "content": "You are a git commit message writer. Write concise, informative commit messages under 200 characters. Always start with 'Pulled from Shopify: '"
+      "content": "You are an expert at analyzing code diffs and writing semantic commit messages. Analyze the diff and describe WHAT changed functionally, not just which files. Focus on the business logic, UI changes, or features added/modified. Keep under 500 characters. Always start with 'Pulled from Shopify: '"
     },
     {
       "role": "user",
-      "content": "Write a commit message for these Shopify theme changes. Files: $files_list. Stats: $stats_summary"
+      "content": "Analyze this Shopify theme diff and write a semantic commit message describing what actually changed:\n\nFiles: $files_list\n\nDiff preview:\n$diff_content"
     }
   ],
   "temperature": 0.3,
-  "max_tokens": 100
+  "max_tokens": 200
 }
 JSON
 )
@@ -83,42 +100,19 @@ JSON
         fi
     fi
     
-    # Ask if user wants to push to Git
-    read -p "Also push to Git repo? (y/n): " push_git
-    if [[ "$push_git" =~ ^[Yy]$ ]]; then
-        # Set the remote and branch (adjust if needed)
-        remote="origin"
-        branch="main"
-        
-        # Git operations
-        git add .
-        
-        # Show the auto-generated message and allow editing
-        echo "Auto-generated commit message: $commit_summary"
-        read -p "Use this message? (Y)es or (E)dit: " msg_choice
-        
-        if [[ "$msg_choice" =~ ^[Yy]$ ]]; then
-            msg="$commit_summary"
-        elif [[ "$msg_choice" =~ ^[Ee]$ ]]; then
-            # Pre-fill with the auto-generated message for editing
-            read -p "Edit message [$commit_summary]: " edited_msg
-            # If user just hits enter, use the original message
-            if [ -z "$edited_msg" ]; then
-                msg="$commit_summary"
-            else
-                # Combine auto message with user's edit
-                msg="$commit_summary - $edited_msg"
-            fi
-        else
-            # If neither Y nor E, treat the input as a completely new message
-            msg="$msg_choice"
-        fi
-        
-        git commit -m "$msg"
-        git push $remote $branch
-        
-        echo "Changes pushed to Git successfully!"
-    fi
+    # Auto-push to Git with AI-generated commit message
+    echo "\nAuto-generated commit message: $commit_summary"
+    
+    # Set the remote and branch
+    remote="origin"
+    branch="main"
+    
+    # Git operations
+    git add .
+    git commit -m "$commit_summary"
+    git push $remote $branch
+    
+    echo "Changes pushed to Git successfully!"
 else
     echo "Update ACTIVEthemeid.sh file to desired theme id and run again"
     exit 1
