@@ -12,5 +12,5 @@ echo ""
 
 cd "/Users/blakepetipas/Code Repos/KCS Shopify Theme"
 # Try default port first, if busy use 9293
-shopify theme dev --theme $THEME_ID --store aeb786-12.myshopify.com --open --nodelete --port 9292 || 
-shopify theme dev --theme $THEME_ID --store aeb786-12.myshopify.com --open --nodelete --port 9293
+shopify theme dev --theme $THEME_ID --store kitchencabinetstore.myshopify.com --open --nodelete --port 9292 || 
+shopify theme dev --theme $THEME_ID --store kitchencabinetstore.myshopify.com --open --nodelete --port 9293

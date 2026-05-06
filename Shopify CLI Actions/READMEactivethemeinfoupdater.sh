@@ -53,8 +53,69 @@ if [ -z "$THEME_NAME" ]; then
     exit 1
 fi
 
-# Get current date in format: Month DD, YYYY
-CURRENT_DATE=$(date "+%B %d, %Y")
+# Get current date in format: YYYY_MM_DD
+CURRENT_DATE=$(date "+%Y_%m_%d")
+
+# Create README.md if it doesn't exist
+if [ ! -f "$README_FILE" ]; then
+    echo -e "${YELLOW}📝 README.md not found - creating new one...${NC}"
+    cat > "$README_FILE" << 'EOF'
+# Kitchen & Cabinet Store - Shopify Theme
+
+**Current Theme Name & Version:** Unknown  
+**Theme ID:** Unknown
+**Last Updated:** Unknown
+**Last Updated Note:** Auto-created by READMEactivethemeinfoupdater.sh script
+
+**Store URL:** kitchenandcabinetstore.com  
+**Owners:** Blake Petipas & Keith Petipas  
+**Supplier:** 802 Cabinetry (White-labeled)
+
+---
+
+## 🏗️ Theme Architecture
+
+### Base Theme
+- **Publisher:** Shopify
+- **Type:** Modern block-based theme
+- **Features:** Responsive design, flexible sections, TypeScript support
+
+### KCS Custom Structure
+```
+├── assets/                 # Stylesheets, JS, images
+│   ├── kcs_custom.css     # Main KCS overrides
+│   └── global.d.ts        # TypeScript definitions
+├── blocks/                # Reusable content blocks
+├── config/                # Theme settings & data
+├── layout/
+│   └── theme.liquid       # Main layout (🟢 KCS custom code added)
+├── sections/              # Theme sections
+├── snippets/              # Reusable code snippets
+└── templates/             # Page templates
+```
+
+---
+
+## 🔧 Development Guidelines
+
+### KCS Naming Convention
+All custom files use the `kcs_` prefix for easy identification.
+
+### Custom Code Markers
+When adding custom code to native theme files, always use:
+```liquid
+{%- comment -%} 🟢🟢🟢 START KITCHENCABSTORE CUSTOM CODE {%- endcomment -%}
+<!-- Your custom code here -->
+{%- comment -%} 🛑🛑🛑 END KITCHENCABSTORE CUSTOM CODE {%- endcomment -%}
+```
+
+### Best Practices
+1. **Always duplicate theme before editing**
+2. **Use sections & blocks, avoid hardcoded HTML**
+3. **Keep custom files separate for easy migration**
+EOF
+    echo -e "${GREEN}✅ Created new README.md with template${NC}"
+fi
 
 # Backup README before modifying
 cp "$README_FILE" "$README_FILE.backup"
@@ -62,11 +123,12 @@ cp "$README_FILE" "$README_FILE.backup"
 echo -e "${YELLOW}=� Updating README.md...${NC}"
 
 # Update the four fields in README.md
+# Using | as delimiter instead of / to handle special characters in theme names
 sed -i '' \
-    -e "s/\*\*Current Theme Name & Version:\*\* .*/\*\*Current Theme Name \& Version:\*\* $THEME_NAME/" \
-    -e "s/\*\*Theme ID:\*\* .*/\*\*Theme ID:\*\* $THEME_ID/" \
-    -e "s/\*\*Last Updated:\*\* .*/\*\*Last Updated:\*\* $CURRENT_DATE/" \
-    -e "s/\*\*Last Updated Note:\*\* .*/\*\*Last Updated Note:\*\* Auto-updated via READMEactivethemeinfoupdater.sh script/" \
+    -e "s|\*\*Current Theme Name & Version:\*\* .*|\*\*Current Theme Name \& Version:\*\* $THEME_NAME|" \
+    -e "s|\*\*Theme ID:\*\* .*|\*\*Theme ID:\*\* $THEME_ID|" \
+    -e "s|\*\*Last Updated:\*\* .*|\*\*Last Updated:\*\* $CURRENT_DATE|" \
+    -e "s|\*\*Last Updated Note:\*\* .*|\*\*Last Updated Note:\*\* Auto-updated via READMEactivethemeinfoupdater.sh script|" \
     "$README_FILE"
 
 if [ $? -eq 0 ]; then
