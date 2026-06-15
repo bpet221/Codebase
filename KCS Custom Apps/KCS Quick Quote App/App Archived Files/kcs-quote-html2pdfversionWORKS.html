@@ -1,0 +1,3213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KCS Quote Editor</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Figtree:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --dark: #35312e;
+        --gray: #60605e;
+        --bg: #fcfaf6;
+        --surf: #f5f3eb;
+        --steel: #465561;
+        --terra: #af5a3c;
+        --tan: #b8866e;
+        --slate: #5c707e;
+        --olive: #6d684e;
+        --bdr: #ddd8d0;
+        --bdr-lt: #ede9e1;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Figtree", system-ui, sans-serif;
+        background: var(--bg);
+        padding: 12px;
+        min-height: 100vh;
+        color: var(--dark);
+      }
+      .card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 16px rgba(53, 49, 46, 0.07);
+        overflow: hidden;
+        max-width: 1320px;
+        margin: 0 auto;
+      }
+
+      /* Header */
+      .header {
+        background: var(--steel);
+        color: white;
+        padding: 14px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: nowrap;
+      }
+      .hdr-left {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .hdr-title {
+        font-family: "Fraunces", serif;
+        font-weight: 400;
+        font-size: 18px;
+        letter-spacing: -0.3px;
+        line-height: 1;
+      }
+      .hdr-sub {
+        font-size: 11px;
+        opacity: 0.5;
+        margin-top: 3px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .client-inp {
+        flex-shrink: 0;
+        background: transparent !important;
+        border: none !important;
+        color: white !important;
+        padding: 4px 0;
+        text-align: right;
+        font-family: "Figtree", sans-serif;
+        font-size: 18px !important;
+        font-weight: 300;
+        outline: none !important;
+        min-width: 160px;
+        max-width: 300px;
+        transition:
+          background 0.15s,
+          border-radius 0.15s,
+          padding 0.15s;
+        caret-color: white;
+      }
+      .client-inp::placeholder {
+        color: rgba(255, 255, 255, 0.38);
+        font-weight: 300;
+      }
+      .client-inp:hover {
+        background: transparent !important;
+        border: none !important;
+      }
+      .client-inp:focus {
+        background: #5c707e !important;
+        border-radius: 6px !important;
+        padding: 6px 12px !important;
+        border: none !important;
+        color: white !important;
+      }
+
+      /* Summary */
+      .summary-bar {
+        display: flex;
+        gap: 16px;
+        padding: 8px 18px;
+        background: var(--surf);
+        border-bottom: 1px solid var(--bdr-lt);
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .sum-item {
+        font-size: 11px;
+        color: var(--gray);
+        white-space: nowrap;
+      }
+      .sum-item strong {
+        color: var(--steel);
+      }
+      .sum-grand {
+        margin-left: auto;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--terra);
+      }
+
+      /* Run divider */
+      .run-div {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 18px;
+        margin-top: 14px;
+        background: var(--surf);
+        border-top: 2px solid var(--terra);
+        border-bottom: 1px solid var(--bdr);
+        flex-wrap: wrap;
+      }
+      .run-name-inp {
+        font-family: "Fraunces", serif;
+        font-weight: 400;
+        font-size: 13px;
+        color: var(--steel);
+        letter-spacing: 0.3px;
+        border: none;
+        background: transparent;
+        flex: 1;
+        min-width: 100px;
+        text-transform: uppercase;
+      }
+      .run-name-inp:focus {
+        outline: 2px solid var(--terra);
+        border-radius: 3px;
+        background: white;
+        padding: 2px 6px;
+        text-transform: none;
+      }
+      .run-sel {
+        border: 1px solid var(--bdr);
+        background: white;
+        color: var(--steel);
+        padding: 3px 6px;
+        border-radius: 4px;
+        font-size: 11px;
+        font-weight: 500;
+        font-family: "Figtree", sans-serif;
+        cursor: pointer;
+        height: 26px;
+      }
+      .run-sel:focus {
+        outline: none;
+        border-color: var(--terra);
+      }
+      .run-sel.dim {
+        color: var(--tan);
+      }
+      .run-acts {
+        display: flex;
+        gap: 6px;
+        margin-left: auto;
+      }
+      .run-add {
+        background: var(--terra);
+        color: white;
+        border: none;
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 10px;
+        font-weight: 600;
+        font-family: "Figtree", sans-serif;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      .run-add:hover {
+        background: #9b4f35;
+      }
+      .run-del {
+        background: none;
+        border: 1px solid var(--bdr);
+        color: var(--gray);
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 10px;
+        font-family: "Figtree", sans-serif;
+        cursor: pointer;
+      }
+      .run-del:hover {
+        border-color: #ef4444;
+        color: #ef4444;
+      }
+      .run-chk-wrap {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin-left: 6px;
+        flex-shrink: 0;
+      }
+      .run-chk-label {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 10px;
+        font-weight: 600;
+        color: var(--gray);
+        font-family: "Figtree", sans-serif;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+        cursor: pointer;
+        white-space: nowrap;
+        user-select: none;
+      }
+      .run-chk-label input[type="checkbox"] {
+        accent-color: var(--terra);
+        width: 13px;
+        height: 13px;
+        cursor: pointer;
+      }
+      /* Insert cell reuses mod-cell styles */
+      .insert-cell {
+        cursor: pointer;
+        padding: 4px 6px;
+        border-radius: 5px;
+        border: 1px solid transparent;
+        min-width: 110px;
+        transition:
+          border-color 0.12s,
+          background 0.12s;
+      }
+      .insert-cell:hover {
+        border-color: var(--bdr);
+        background: var(--surf);
+      }
+      /* Picker insert qty input */
+      .pk-ins-qty {
+        width: 36px;
+        border: 1px solid var(--bdr);
+        border-radius: 3px;
+        padding: 1px 4px;
+        font-size: 11px;
+        font-family: "Figtree", sans-serif;
+        color: var(--dark);
+        text-align: center;
+        background: white;
+        flex-shrink: 0;
+      }
+      .pk-ins-qty:focus {
+        outline: none;
+        border-color: var(--terra);
+      }
+
+      /* Desktop table */
+      .tbl-wrap {
+        overflow-x: auto;
+      }
+      @media (min-width: 680px) {
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          font-size: 11px;
+        }
+        thead tr {
+          background: var(--surf);
+        }
+        th {
+          text-align: left;
+          padding: 6px 5px;
+          font-size: 9px;
+          font-weight: 600;
+          color: var(--gray);
+          text-transform: uppercase;
+          letter-spacing: 0.6px;
+          border-bottom: 1px solid var(--bdr-lt);
+          white-space: nowrap;
+          font-family: "Figtree", sans-serif;
+        }
+        tbody tr {
+          border-bottom: 1px solid var(--bdr-lt);
+        }
+        tbody tr:hover {
+          background: #fdfbf8;
+        }
+        td {
+          padding: 3px 4px;
+          vertical-align: middle;
+        }
+        td.num {
+          color: var(--bdr);
+          font-size: 10px;
+          width: 22px;
+          text-align: center;
+          padding-left: 10px;
+        }
+        .mob-card {
+          display: none;
+        }
+        .desk-tbl {
+          display: table;
+        }
+      }
+      @media (max-width: 679px) {
+        .desk-tbl {
+          display: none;
+        }
+        .mob-card {
+          display: block;
+        }
+      }
+
+      /* Inputs */
+      input[type="text"] {
+        width: 100%;
+        border: 1px solid transparent;
+        background: transparent;
+        padding: 4px 5px;
+        border-radius: 4px;
+        font-size: 11px;
+        color: var(--dark);
+        font-family: "Figtree", sans-serif;
+        transition: all 0.12s;
+      }
+      input[type="text"]:hover {
+        border-color: var(--bdr);
+        background: white;
+      }
+      input[type="text"]:focus {
+        outline: none;
+        border-color: var(--tan);
+        background: white;
+      }
+      .lbl-inp {
+        font-style: italic;
+        color: var(--gray);
+      }
+      textarea.lbl-inp {
+        width: 100%;
+        border: 1px solid transparent;
+        background: transparent;
+        padding: 4px 5px;
+        border-radius: 4px;
+        font-size: 11px;
+        font-style: italic;
+        color: var(--gray);
+        font-family: "Figtree", sans-serif;
+        transition:
+          border-color 0.12s,
+          background 0.12s;
+        resize: none;
+        min-height: 24px;
+        field-sizing: content;
+        line-height: 1.4;
+        display: block;
+        overflow: hidden;
+      }
+      textarea.lbl-inp:hover {
+        border-color: var(--bdr);
+        background: white;
+      }
+      textarea.lbl-inp:focus {
+        outline: none;
+        border-color: var(--tan);
+        background: white;
+      }
+      .dim-inp {
+        width: 46px !important;
+        text-align: center;
+      }
+
+      .price-inp {
+        width: 64px !important;
+        text-align: right;
+      }
+
+      /* SKU cell */
+      .sku-cell {
+        cursor: pointer;
+        padding: 4px 6px;
+        border-radius: 5px;
+        border: 1px solid transparent;
+        min-width: 140px;
+        transition:
+          border-color 0.12s,
+          background 0.12s;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+      }
+      .sku-thumb {
+        width: 36px;
+        height: 36px;
+        object-fit: contain;
+        border-radius: 4px;
+        flex-shrink: 0;
+        background: var(--surf);
+      }
+      .sku-thumb-ph {
+        width: 36px;
+        height: 36px;
+        border-radius: 4px;
+        flex-shrink: 0;
+        background: var(--surf);
+        border: 1px solid var(--bdr-lt);
+      }
+      .sku-cell-text {
+        flex: 1;
+        min-width: 0;
+      }
+      .sku-cell:hover {
+        border-color: var(--bdr);
+        background: var(--surf);
+      }
+      .sku-code {
+        font-family: "Fira Code", monospace;
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--dark);
+        line-height: 1.3;
+      }
+      .sku-sub {
+        font-size: 10px;
+        color: var(--gray);
+        margin-top: 1px;
+        line-height: 1.3;
+      }
+      .sku-ph {
+        font-style: italic;
+        color: var(--tan);
+        font-size: 11px;
+      }
+
+      /* Mod cell */
+      .mod-cell {
+        cursor: pointer;
+        padding: 4px 6px;
+        border-radius: 5px;
+        border: 1px solid transparent;
+        min-width: 110px;
+        transition:
+          border-color 0.12s,
+          background 0.12s;
+      }
+      .mod-cell:hover {
+        border-color: var(--bdr);
+        background: var(--surf);
+      }
+      .mod-name {
+        font-size: 11px;
+        color: var(--dark);
+        line-height: 1.3;
+      }
+      .mod-sub {
+        font-family: "Fira Code", monospace;
+        font-size: 10px;
+        color: var(--gray);
+        margin-top: 1px;
+      }
+      .mod-ph {
+        font-style: italic;
+        color: var(--bdr);
+        font-size: 11px;
+      }
+
+      /* Read-only total-style cell */
+      .total-cell {
+        font-weight: 600;
+        color: var(--terra);
+        font-size: 11px;
+        padding: 4px 6px;
+        white-space: nowrap;
+        min-width: 60px;
+      }
+
+      /* Conf / Del */
+      select.conf-sel {
+        border: 1px solid transparent;
+        background: transparent;
+        padding: 3px;
+        border-radius: 4px;
+        font-size: 10px;
+        font-weight: 600;
+        font-family: "Figtree", sans-serif;
+        cursor: pointer;
+      }
+      select.conf-sel:focus {
+        outline: none;
+        border-color: var(--bdr);
+      }
+      .ch {
+        color: #4a8c5c;
+      }
+      .cm {
+        color: var(--tan);
+      }
+      .cl {
+        color: #c0522a;
+      }
+      .del-btn {
+        background: none;
+        border: none;
+        color: var(--bdr);
+        cursor: pointer;
+        padding: 2px 5px;
+        font-size: 14px;
+        border-radius: 3px;
+        transition: all 0.12s;
+      }
+      .del-btn:hover {
+        color: #ef4444;
+        background: #fef2f2;
+      }
+
+      /* Add row */
+      .add-row-wrap {
+        padding: 6px 18px 0;
+      }
+      .add-row-btn {
+        background: none;
+        border: 1px dashed var(--bdr);
+        color: var(--gray);
+        padding: 5px 14px;
+        border-radius: 5px;
+        font-size: 11px;
+        font-family: "Figtree", sans-serif;
+        cursor: pointer;
+        transition: all 0.12s;
+      }
+      .add-row-btn:hover {
+        border-color: var(--terra);
+        color: var(--terra);
+      }
+
+      /* Mobile cards */
+      .mob-card {
+        padding: 0 12px;
+      }
+      .mob-row {
+        border: 1px solid var(--bdr-lt);
+        border-radius: 8px;
+        padding: 10px 12px;
+        margin-top: 8px;
+        background: white;
+      }
+      .mob-hdr {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+      }
+      .mob-num {
+        font-size: 10px;
+        color: var(--gray);
+        font-weight: 600;
+      }
+      .mob-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px 10px;
+      }
+      .mob-fld {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+      .mob-fld.full {
+        grid-column: 1/-1;
+      }
+      .mob-lbl {
+        font-size: 9px;
+        font-weight: 600;
+        color: var(--gray);
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        font-family: "Figtree", sans-serif;
+      }
+      .mob-fld input[type="text"],
+      .mob-fld select {
+        border: 1px solid var(--bdr-lt);
+        background: var(--bg);
+        border-radius: 5px;
+        padding: 5px 7px;
+        font-size: 12px;
+        font-family: "Figtree", sans-serif;
+        color: var(--dark);
+        width: 100%;
+      }
+      .mob-fld input:focus,
+      .mob-fld select:focus {
+        border-color: var(--terra);
+        background: white;
+        outline: none;
+      }
+      .mob-total {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--terra);
+        padding: 5px 0;
+      }
+      .mob-conf-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 6px;
+        padding-top: 6px;
+        border-top: 1px solid var(--bdr-lt);
+      }
+      .mob-conf-row select {
+        font-size: 11px;
+        border: 1px solid var(--bdr-lt);
+        border-radius: 4px;
+        padding: 3px 5px;
+        font-family: "Figtree", sans-serif;
+        background: var(--bg);
+      }
+
+      /* Footer */
+      .footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 18px 16px;
+        flex-wrap: wrap;
+        gap: 8px;
+        border-top: 1px solid var(--bdr-lt);
+        margin-top: 10px;
+      }
+      .footer-right {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .add-run-btn {
+        background: none;
+        border: 1px dashed var(--bdr);
+        color: var(--gray);
+        padding: 7px 16px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-family: "Figtree", sans-serif;
+        cursor: pointer;
+        transition: all 0.12s;
+      }
+      .add-run-btn:hover {
+        border-color: var(--steel);
+        color: var(--steel);
+      }
+      .save-btn {
+        background: none;
+        border: 1px solid var(--steel);
+        color: var(--steel);
+        padding: 9px 18px;
+        border-radius: 7px;
+        font-size: 11px;
+        font-weight: 600;
+        font-family: "Figtree", sans-serif;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.12s;
+      }
+      .save-btn:hover {
+        background: var(--surf);
+      }
+      .save-btn.saved {
+        border-color: var(--olive);
+        color: var(--olive);
+      }
+      .client-btn {
+        background: var(--terra);
+        color: white;
+        border: none;
+        padding: 9px 20px;
+        border-radius: 7px;
+        font-size: 11px;
+        font-weight: 600;
+        font-family: "Figtree", sans-serif;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.12s;
+      }
+      .client-btn:hover {
+        background: #9b4f35;
+      }
+
+      .copy-btn {
+        background: var(--steel);
+        color: white;
+        border: none;
+        padding: 9px 20px;
+        border-radius: 7px;
+        font-size: 11px;
+        font-weight: 600;
+        font-family: "Figtree", sans-serif;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.12s;
+      }
+      .copy-btn:hover {
+        background: #3a4a57;
+      }
+      .copy-btn.copied {
+        background: var(--olive);
+      }
+
+      /* Picker panel */
+      #picker-panel {
+        position: fixed;
+        z-index: 9999;
+        background: white;
+        border: 1px solid var(--bdr);
+        border-radius: 8px;
+        box-shadow: 0 8px 28px rgba(53, 49, 46, 0.14);
+        overflow: hidden;
+        min-width: 300px;
+        max-width: 440px;
+        display: none;
+      }
+      .pk-search-wrap {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 10px;
+        background: var(--surf);
+        border-bottom: 1px solid var(--bdr-lt);
+      }
+      #picker-search {
+        flex: 1;
+        border: none;
+        background: transparent;
+        font-family: "Figtree", sans-serif;
+        font-size: 13px;
+        color: var(--dark);
+        outline: none;
+      }
+      #picker-search::placeholder {
+        color: var(--tan);
+      }
+      #picker-list {
+        max-height: 240px;
+        overflow-y: auto;
+      }
+      .pk-item {
+        padding: 8px 12px;
+        cursor: pointer;
+        border-bottom: 1px solid var(--bdr-lt);
+        transition: background 0.1s;
+      }
+      .pk-item:last-child {
+        border-bottom: none;
+      }
+      .pk-item:hover {
+        background: var(--surf);
+      }
+      .pk-item.active {
+        background: #f5ede9;
+      }
+      .pk-clear {
+        color: var(--gray);
+        font-style: italic;
+        font-size: 12px;
+        padding: 8px 12px;
+        cursor: pointer;
+        border-bottom: 1px solid var(--bdr-lt);
+      }
+      .pk-clear:hover {
+        background: var(--surf);
+      }
+      .pk-l1 {
+        font-family: "Fira Code", monospace;
+        font-size: 11px;
+        color: var(--dark);
+        font-weight: 500;
+      }
+      .pk-l2 {
+        font-size: 11px;
+        color: var(--gray);
+        margin-top: 2px;
+        line-height: 1.3;
+      }
+      .pk-price {
+        font-weight: 600;
+        color: var(--terra);
+        font-size: 11px;
+        float: right;
+        font-family: "Figtree", sans-serif;
+        margin-left: 8px;
+      }
+      .pk-empty {
+        padding: 12px;
+        font-size: 12px;
+        color: var(--gray);
+        text-align: center;
+        font-style: italic;
+      }
+
+      /* Mod checkbox picker */
+      .pk-chk-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .pk-chkbox {
+        width: 16px;
+        height: 16px;
+        border: 1.5px solid var(--bdr);
+        border-radius: 3px;
+        flex-shrink: 0;
+        margin-top: 1px;
+        transition: all 0.12s;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        color: white;
+      }
+      .pk-chkbox.checked {
+        background: var(--terra);
+        border-color: var(--terra);
+      }
+      .pk-mod-footer {
+        padding: 8px 12px;
+        background: var(--surf);
+        border-top: 1px solid var(--bdr-lt);
+        font-size: 12px;
+        font-family: "Figtree", sans-serif;
+        color: var(--gray);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .pk-mod-footer strong {
+        color: var(--terra);
+      }
+
+      /* Image zoom */
+      .img-zoom-wrap {
+        position: relative;
+        display: inline-flex;
+        cursor: zoom-in;
+        flex-shrink: 0;
+      }
+      .img-zoom-wrap::after {
+        content: "⊕";
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        color: white;
+        background: rgba(70, 85, 97, 0.55);
+        border-radius: inherit;
+        opacity: 0;
+        transition: opacity 0.15s;
+        pointer-events: none;
+      }
+      .img-zoom-wrap:hover::after {
+        opacity: 1;
+      }
+      #img-zoom-panel {
+        display: none;
+        position: fixed;
+        z-index: 10000;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 8px 36px rgba(53, 49, 46, 0.22);
+        padding: 8px;
+        border: 1px solid var(--bdr-lt);
+      }
+      #img-zoom-panel img {
+        max-width: 300px;
+        max-height: 300px;
+        object-fit: contain;
+        display: block;
+        border-radius: 4px;
+      }
+
+      /* Toast */
+      .toast {
+        position: fixed;
+        bottom: 16px;
+        right: 16px;
+        background: var(--steel);
+        color: white;
+        padding: 8px 14px;
+        border-radius: 7px;
+        font-size: 12px;
+        font-weight: 500;
+        font-family: "Figtree", sans-serif;
+        opacity: 0;
+        transform: translateY(5px);
+        transition: all 0.2s;
+        pointer-events: none;
+        z-index: 9998;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="header">
+        <div class="hdr-left">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0628/5167/8286/files/KCS_Logo_Rounded_Corner_500x500_2.png?v=1780869428"
+            width="44"
+            alt="KCS"
+            style="flex-shrink: 0; border-radius: 6px"
+          />
+          <div>
+            <div class="hdr-title">KCS Quote Editor</div>
+            <div class="hdr-sub">
+              Edit any field — change line / finish / type per run — COPY when
+              done
+            </div>
+          </div>
+        </div>
+        <input
+          class="client-inp"
+          id="clientName"
+          type="text"
+          placeholder="Client name…"
+        />
+      </div>
+
+      <div class="summary-bar">
+        <div class="sum-item">Cabinets: <strong id="sumCount">0</strong></div>
+        <div class="sum-item">
+          Cabinet Total: <strong id="sumCabTotal">$0.00</strong>
+        </div>
+        <div class="sum-grand">
+          Grand Total: <span id="sumGrand">$0.00</span>
+        </div>
+      </div>
+
+      <div id="runsContainer"></div>
+
+      <div class="footer">
+        <button class="add-run-btn" onclick="addRun()">+ Add Run</button>
+        <div class="footer-right">
+          <button
+            class="save-btn"
+            id="saveBtn"
+            onclick="saveQuote()"
+            style="display: inline-flex; align-items: center; gap: 6px"
+          >
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              style="flex-shrink: 0"
+            >
+              <path
+                d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"
+              />
+              <polyline points="17 21 17 13 7 13 7 21" />
+              <polyline points="7 3 7 8 15 8" />
+            </svg>
+            Save Quote
+          </button>
+          <button
+            class="copy-btn"
+            id="copyBtn"
+            onclick="copyAll()"
+            style="display: inline-flex; align-items: center; gap: 6px"
+          >
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              style="flex-shrink: 0"
+            >
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+              <path
+                d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+              />
+            </svg>
+            Copy Quote
+          </button>
+          <button
+            class="client-btn"
+            onclick="openClientQuote()"
+            style="display: inline-flex; align-items: center; gap: 6px"
+          >
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              style="flex-shrink: 0"
+            >
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+            Client Quote
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="picker-panel">
+      <div class="pk-search-wrap">
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#60605E"
+          stroke-width="2"
+          aria-hidden="true"
+        >
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+        <input
+          id="picker-search"
+          type="text"
+          placeholder="Search by name or SKU…"
+          oninput="filterPicker(this.value)"
+        />
+      </div>
+      <div id="picker-list"></div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <div id="img-zoom-panel"><img id="img-zoom-img" alt="" /></div>
+
+    <script>
+      const KCS_LINES = ["Belmont", "Seaport"];
+      const KCS_FINISHES = {
+        Belmont: ["White", "Blue", "Green"],
+        Seaport: ["White", "Light Gray", "Driftwood", "Natural"],
+      };
+      const KCS_TYPES = ["RTA", "ASSEMBLED"];
+      const KCS_DATA = {
+        "Seaport|White|RTA": [
+          {
+            sku: "SW-W1836-RTA",
+            name: "Seaport White Wall Cabinet 18w 36h 12d",
+            category: "Wall Cabinet",
+            price: 245,
+            w: 18,
+            h: 36,
+            d: 12,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "SW-W2436-RTA",
+            name: "Seaport White Wall Cabinet 24w 36h 12d",
+            category: "Wall Cabinet",
+            price: 278,
+            w: 24,
+            h: 36,
+            d: 12,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "SW-W3036-RTA",
+            name: "Seaport White Wall Cabinet 30w 36h 12d",
+            category: "Wall Cabinet",
+            price: 312,
+            w: 30,
+            h: 36,
+            d: 12,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "SW-W3630-RTA",
+            name: "Seaport White Wall Cabinet 36w 30h 12d",
+            category: "Wall Cabinet",
+            price: 335,
+            w: 36,
+            h: 30,
+            d: 12,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "SW-W3636-RTA",
+            name: "Seaport White Wall Cabinet 36w 36h 12d",
+            category: "Wall Cabinet",
+            price: 368,
+            w: 36,
+            h: 36,
+            d: 12,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "SW-W361824-RTA",
+            name: "Seaport White Bridge Cabinet 36w 18h 24d",
+            category: "Wall Cabinet",
+            price: 389,
+            w: 36,
+            h: 18,
+            d: 24,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "SW-PGDW1836-RTA",
+            name: "Seaport White Glass Door Wall 18w 36h 12d",
+            category: "Wall Cabinet",
+            price: 445,
+            w: 18,
+            h: 36,
+            d: 12,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "SW-PGDW3036-RTA",
+            name: "Seaport White Glass Door Wall 30w 36h 12d",
+            category: "Wall Cabinet",
+            price: 512,
+            w: 30,
+            h: 36,
+            d: 12,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "SW-FLS30",
+            name: "Seaport White Floating Shelf 30w",
+            category: "Floating Shelf",
+            price: 134,
+            w: 30,
+            h: 4,
+            d: 12,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "SW-FLS36",
+            name: "Seaport White Floating Shelf 36w",
+            category: "Floating Shelf",
+            price: 156,
+            w: 36,
+            h: 4,
+            d: 12,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "SW-B24-RTA",
+            name: "Seaport White Base Cabinet 24w 34.5h 24d",
+            category: "Base Cabinet",
+            price: 345,
+            w: 24,
+            h: 34.5,
+            d: 24,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "SW-B30-RTA",
+            name: "Seaport White Base Cabinet 30w 34.5h 24d",
+            category: "Base Cabinet",
+            price: 398,
+            w: 30,
+            h: 34.5,
+            d: 24,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "SW-B36-RTA",
+            name: "Seaport White Base Cabinet 36w 34.5h 24d",
+            category: "Base Cabinet",
+            price: 445,
+            w: 36,
+            h: 34.5,
+            d: 24,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "SW-SB30-RTA",
+            name: "Seaport White Sink Base 30w 34.5h 24d",
+            category: "Base Cabinet",
+            price: 378,
+            w: 30,
+            h: 34.5,
+            d: 24,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "SW-SB36-RTA",
+            name: "Seaport White Sink Base 36w 34.5h 24d",
+            category: "Base Cabinet",
+            price: 412,
+            w: 36,
+            h: 34.5,
+            d: 24,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "SW-DB24-2-RTA",
+            name: "Seaport White 2-Drawer Base 24w 34.5h 24d",
+            category: "Base Cabinet",
+            price: 694,
+            w: 24,
+            h: 34.5,
+            d: 24,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "SW-DB30-2-RTA",
+            name: "Seaport White 2-Drawer Base 30w 34.5h 24d",
+            category: "Base Cabinet",
+            price: 857,
+            w: 30,
+            h: 34.5,
+            d: 24,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "SW-TP1890-RTA",
+            name: "Seaport White Tall Pantry 18w 90h 24d",
+            category: "Tall Cabinet",
+            price: 987,
+            w: 18,
+            h: 90,
+            d: 24,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "SW-TP2490-RTA",
+            name: "Seaport White Tall Pantry 24w 90h 24d",
+            category: "Tall Cabinet",
+            price: 1124,
+            w: 24,
+            h: 90,
+            d: 24,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+        ],
+        "Seaport|White|ASSEMBLED": [
+          {
+            sku: "SW-W3036-ASM",
+            name: "Seaport White Wall Cabinet 30w 36h 12d (Assembled)",
+            category: "Wall Cabinet",
+            price: 412,
+            w: 30,
+            h: 36,
+            d: 12,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "SW-W3636-ASM",
+            name: "Seaport White Wall Cabinet 36w 36h 12d (Assembled)",
+            category: "Wall Cabinet",
+            price: 468,
+            w: 36,
+            h: 36,
+            d: 12,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "SW-B36-ASM",
+            name: "Seaport White Base Cabinet 36w 34.5h 24d (Assembled)",
+            category: "Base Cabinet",
+            price: 545,
+            w: 36,
+            h: 34.5,
+            d: 24,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "SW-SB36-ASM",
+            name: "Seaport White Sink Base 36w 34.5h 24d (Assembled)",
+            category: "Base Cabinet",
+            price: 512,
+            w: 36,
+            h: 34.5,
+            d: 24,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+        ],
+        "Seaport|Light Gray|RTA": [
+          {
+            sku: "SLG-W3036-RTA",
+            name: "Seaport Light Gray Wall Cabinet 30w 36h 12d",
+            category: "Wall Cabinet",
+            price: 323,
+            w: 30,
+            h: 36,
+            d: 12,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "SLG-W3636-RTA",
+            name: "Seaport Light Gray Wall Cabinet 36w 36h 12d",
+            category: "Wall Cabinet",
+            price: 380,
+            w: 36,
+            h: 36,
+            d: 12,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "SLG-B36-RTA",
+            name: "Seaport Light Gray Base Cabinet 36w 34.5h 24d",
+            category: "Base Cabinet",
+            price: 456,
+            w: 36,
+            h: 34.5,
+            d: 24,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "SLG-SB36-RTA",
+            name: "Seaport Light Gray Sink Base 36w 34.5h 24d",
+            category: "Base Cabinet",
+            price: 423,
+            w: 36,
+            h: 34.5,
+            d: 24,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+        ],
+        "Seaport|Driftwood|RTA": [
+          {
+            sku: "SD-W3036-RTA",
+            name: "Seaport Driftwood Wall Cabinet 30w 36h 12d",
+            category: "Wall Cabinet",
+            price: 323,
+            w: 30,
+            h: 36,
+            d: 12,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "SD-B36-RTA",
+            name: "Seaport Driftwood Base Cabinet 36w 34.5h 24d",
+            category: "Base Cabinet",
+            price: 456,
+            w: 36,
+            h: 34.5,
+            d: 24,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+        ],
+        "Seaport|Natural|RTA": [
+          {
+            sku: "SN-W3036-RTA",
+            name: "Seaport Natural Wall Cabinet 30w 36h 12d",
+            category: "Wall Cabinet",
+            price: 323,
+            w: 30,
+            h: 36,
+            d: 12,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "SN-B36-RTA",
+            name: "Seaport Natural Base Cabinet 36w 34.5h 24d",
+            category: "Base Cabinet",
+            price: 456,
+            w: 36,
+            h: 34.5,
+            d: 24,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+        ],
+        "Belmont|White|RTA": [
+          {
+            sku: "BW-W3036-RTA",
+            name: "Belmont White Wall Cabinet 30w 36h 12d",
+            category: "Wall Cabinet",
+            price: 289,
+            w: 30,
+            h: 36,
+            d: 12,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "BW-W3636-RTA",
+            name: "Belmont White Wall Cabinet 36w 36h 12d",
+            category: "Wall Cabinet",
+            price: 334,
+            w: 36,
+            h: 36,
+            d: 12,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "BW-B30-RTA",
+            name: "Belmont White Base Cabinet 30w 34.5h 24d",
+            category: "Base Cabinet",
+            price: 378,
+            w: 30,
+            h: 34.5,
+            d: 24,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "BW-B36-RTA",
+            name: "Belmont White Base Cabinet 36w 34.5h 24d",
+            category: "Base Cabinet",
+            price: 412,
+            w: 36,
+            h: 34.5,
+            d: 24,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "BW-SB36-RTA",
+            name: "Belmont White Sink Base 36w 34.5h 24d",
+            category: "Base Cabinet",
+            price: 398,
+            w: 36,
+            h: 34.5,
+            d: 24,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+        ],
+        "Belmont|Blue|RTA": [
+          {
+            sku: "BB-W2436-RTA",
+            name: "Belmont Blue Wall Cabinet 24w 36h 12d",
+            category: "Wall Cabinet",
+            price: 278,
+            w: 24,
+            h: 36,
+            d: 12,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "BB-W3036-RTA",
+            name: "Belmont Blue Wall Cabinet 30w 36h 12d",
+            category: "Wall Cabinet",
+            price: 312,
+            w: 30,
+            h: 36,
+            d: 12,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "BB-B24-RTA",
+            name: "Belmont Blue Base Cabinet 24w 34.5h 24d",
+            category: "Base Cabinet",
+            price: 345,
+            w: 24,
+            h: 34.5,
+            d: 24,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "BB-B36-RTA",
+            name: "Belmont Blue Base Cabinet 36w 34.5h 24d",
+            category: "Base Cabinet",
+            price: 445,
+            w: 36,
+            h: 34.5,
+            d: 24,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+        ],
+        "Belmont|Green|RTA": [
+          {
+            sku: "BG-W3036-RTA",
+            name: "Belmont Green Wall Cabinet 30w 36h 12d",
+            category: "Wall Cabinet",
+            price: 312,
+            w: 30,
+            h: 36,
+            d: 12,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+          {
+            sku: "BG-B36-RTA",
+            name: "Belmont Green Base Cabinet 36w 34.5h 24d",
+            category: "Base Cabinet",
+            price: 445,
+            w: 36,
+            h: 34.5,
+            d: 24,
+            img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+          },
+        ],
+      };
+      const KCS_MODS = [
+        {
+          sku: "Cut-Base Top Drawer",
+          name: "Cut Base Top Drawer Cabinet Height",
+          category: "Base Cabinet",
+          price: 200,
+        },
+        {
+          sku: "Cut-DBase",
+          name: "Cut Drawer Base Cabinet Height",
+          category: "Base Cabinet",
+          price: 250,
+        },
+        {
+          sku: "Cut-SBase",
+          name: "Cut Sink Base Cabinet Height",
+          category: "Base Cabinet",
+          price: 200,
+        },
+        {
+          sku: "Cut-TK",
+          name: "Cut Toe Kick",
+          category: "Base Cabinet",
+          price: 200,
+        },
+        {
+          sku: "Remove-Drawer-FF",
+          name: "Remove Drawer Create False Front",
+          category: "Base Cabinet",
+          price: 50,
+        },
+        {
+          sku: "Pen-Base",
+          name: "Peninsula Base Cabinet",
+          category: "Base Cabinet",
+          price: 200,
+        },
+        {
+          sku: "Invert-Base",
+          name: "Invert Base Cabinet",
+          category: "Base Cabinet",
+          price: 200,
+        },
+        {
+          sku: "Increase-Base",
+          name: "Increase Base Cabinet Depth",
+          category: "Base Cabinet",
+          price: 200,
+        },
+        {
+          sku: "Custom Color-Base",
+          name: "Custom Color Base Cabinet",
+          category: "Base Cabinet",
+          price: 350,
+        },
+        {
+          sku: "Custom Color-Dbase",
+          name: "Custom Color Drawer Base Cabinet",
+          category: "Base Cabinet",
+          price: 400,
+        },
+        {
+          sku: "Cut-Wall",
+          name: "Cut Wall Cabinet Depth",
+          category: "Wall Cabinet",
+          price: 150,
+        },
+        {
+          sku: "Pen-Wall",
+          name: "Peninsula Wall Cabinet",
+          category: "Wall Cabinet",
+          price: 150,
+        },
+        {
+          sku: "Increase-Wall",
+          name: "Increase Wall Cabinet Depth",
+          category: "Wall Cabinet",
+          price: 150,
+        },
+        {
+          sku: "Custom Color Wall",
+          name: "Custom Color Wall Cabinet",
+          category: "Wall Cabinet",
+          price: 300,
+        },
+        {
+          sku: "Match-Interior",
+          name: "Match Interior Cabinet",
+          category: "Wall Cabinet",
+          price: 150,
+        },
+        {
+          sku: "Cut-Pantry TK",
+          name: "Cut Pantry Toe Kick",
+          category: "Tall Cabinet",
+          price: 300,
+        },
+        {
+          sku: "Increase-Pantry",
+          name: "Increase Pantry Depth",
+          category: "Tall Cabinet",
+          price: 300,
+        },
+        {
+          sku: "Cut-Pantry",
+          name: "Cut Pantry Cabinet Depth",
+          category: "Tall Cabinet",
+          price: 300,
+        },
+      ];
+      const KCS_INSERTS = [
+        {
+          sku: "RD15",
+          name: 'Base Cabinet Rollout Drawer Kit - 15"',
+          category: "Cabinet Organizer",
+          price: 78.4,
+          img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+        },
+        {
+          sku: "RD18",
+          name: 'Base Cabinet Rollout Drawer Kit - 18"',
+          category: "Cabinet Organizer",
+          price: 84,
+          img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB30-2-belmont-shaker-drawer-base-cabinet-2-drawer-30w-dimension-drawing.jpg",
+        },
+        {
+          sku: "RD21",
+          name: 'Base Cabinet Rollout Drawer Kit - 21"',
+          category: "Cabinet Organizer",
+          price: 89.6,
+          img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB12-belmont-shaker-drawer-base-cabinet-3-drawer-12w-dimension-drawing.jpg",
+        },
+        {
+          sku: "RD24",
+          name: 'Base Cabinet Rollout Drawer Kit - 24"',
+          category: "Cabinet Organizer",
+          price: 98,
+          img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB15-belmont-shaker-drawer-base-cabinet-3-drawer-15w-dimension-drawing.jpg",
+        },
+        {
+          sku: "RD27",
+          name: 'Base Cabinet Rollout Drawer Kit - 27"',
+          category: "Cabinet Organizer",
+          price: 106.4,
+          img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB18-belmont-shaker-drawer-base-cabinet-3-drawer-18w-dimension-drawing.jpg",
+        },
+        {
+          sku: "RD30",
+          name: 'Base Cabinet Rollout Drawer Kit - 30"',
+          category: "Cabinet Organizer",
+          price: 117.6,
+          img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB21-belmont-shaker-drawer-base-cabinet-3-drawer-21w-dimension-drawing.jpg",
+        },
+        {
+          sku: "RD33",
+          name: 'Base Cabinet Rollout Drawer Kit - 33"',
+          category: "Cabinet Organizer",
+          price: 126,
+          img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+        },
+        {
+          sku: "RD36",
+          name: 'Base Cabinet Rollout Drawer Kit - 36"',
+          category: "Cabinet Organizer",
+          price: 134.4,
+          img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB30-2-belmont-shaker-drawer-base-cabinet-2-drawer-30w-dimension-drawing.jpg",
+        },
+        {
+          sku: "TC15",
+          name: 'Pull-Out Trash Can Kit - 15"',
+          category: "Pull-Out Trash Cans",
+          price: 450,
+          img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB12-belmont-shaker-drawer-base-cabinet-3-drawer-12w-dimension-drawing.jpg",
+        },
+        {
+          sku: "TC18",
+          name: 'Pull-Out Trash Can Kit - 18"',
+          category: "Pull-Out Trash Cans",
+          price: 540,
+          img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB15-belmont-shaker-drawer-base-cabinet-3-drawer-15w-dimension-drawing.jpg",
+        },
+        {
+          sku: "TC21",
+          name: 'Pull-Out Trash Can Kit - 21"',
+          category: "Pull-Out Trash Cans",
+          price: 630,
+          img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB18-belmont-shaker-drawer-base-cabinet-3-drawer-18w-dimension-drawing.jpg",
+        },
+        {
+          sku: "TR BIN",
+          name: "35 Quart Replacement Trash Bin",
+          category: "Pull-Out Trash Cans",
+          price: 75,
+          img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB21-belmont-shaker-drawer-base-cabinet-3-drawer-21w-dimension-drawing.jpg",
+        },
+        {
+          sku: "TOA",
+          name: "Tip-Out Tray Kit - Sink Base",
+          category: "Cabinet Organizer",
+          price: 188,
+          img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+        },
+        {
+          sku: "LSTRAY33",
+          name: 'Lazy Susan Turntable Shelf Kit - 33"',
+          category: "Cabinet Organizer",
+          price: 190,
+          img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB30-2-belmont-shaker-drawer-base-cabinet-2-drawer-30w-dimension-drawing.jpg",
+        },
+        {
+          sku: "LSTRAY36",
+          name: 'Lazy Susan Turntable Shelf Kit - 36"',
+          category: "Cabinet Organizer",
+          price: 220,
+          img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB12-belmont-shaker-drawer-base-cabinet-3-drawer-12w-dimension-drawing.jpg",
+        },
+        {
+          sku: "ROCWD-WD",
+          name: 'Pull-Out Pot & Pan Organizer - 24"',
+          category: "Cabinet Organizer",
+          price: 721,
+          img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB15-belmont-shaker-drawer-base-cabinet-3-drawer-15w-dimension-drawing.jpg",
+        },
+        {
+          sku: "KO18",
+          name: "In-Drawer Knife Organizer 19-Slot",
+          category: "Cabinet Organizer",
+          price: 134,
+          img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB18-belmont-shaker-drawer-base-cabinet-3-drawer-18w-dimension-drawing.jpg",
+        },
+        {
+          sku: "SPO",
+          name: "Spice Drawer Organizer Insert",
+          category: "Cabinet Organizer",
+          price: 115,
+          img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB21-belmont-shaker-drawer-base-cabinet-3-drawer-21w-dimension-drawing.jpg",
+        },
+        {
+          sku: "CD21",
+          name: '2-Tier Silverware Drawer Replacement - 21"',
+          category: "Cabinet Organizer",
+          price: 398,
+          img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+        },
+        {
+          sku: "KNCD21",
+          name: '2-Tier Coffee Pod Organizer Drawer - 24"',
+          category: "Cabinet Organizer",
+          price: 299,
+          img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB30-2-belmont-shaker-drawer-base-cabinet-2-drawer-30w-dimension-drawing.jpg",
+        },
+        {
+          sku: "PEG-12",
+          name: "Adjustable Dish Drawer Peg Organizer",
+          category: "Cabinet Organizer",
+          price: 161,
+          img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB12-belmont-shaker-drawer-base-cabinet-3-drawer-12w-dimension-drawing.jpg",
+        },
+        {
+          sku: "WTD",
+          name: "Vertical Pan Organizer - Single Rack",
+          category: "Cabinet Organizer",
+          price: 180,
+          img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB15-belmont-shaker-drawer-base-cabinet-3-drawer-15w-dimension-drawing.jpg",
+        },
+        {
+          sku: "ACDI-B18",
+          name: 'Adjustable Cutlery Drawer Insert - 18"',
+          category: "Cabinet Organizer",
+          price: 76,
+          img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB18-belmont-shaker-drawer-base-cabinet-3-drawer-18w-dimension-drawing.jpg",
+        },
+        {
+          sku: "ADDDI24-36",
+          name: "Deep Drawer Adjustable Organizer 9-Divider",
+          category: "Cabinet Organizer",
+          price: 220,
+          img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB21-belmont-shaker-drawer-base-cabinet-3-drawer-21w-dimension-drawing.jpg",
+        },
+      ];
+    </script>
+
+    <script>
+      // ── State ─────────────────────────────────────────────────────────────
+      let runs = [];
+      let PS = null; // { type:'sku'|'mod'|'insert', runId, rowIdx }
+      let fsDirHandle = null; // cached FS Access API directory handle
+      let fsDirHandleClient = null; // cached dir handle for client quotes
+
+      // ── Helpers ───────────────────────────────────────────────────────────
+      const esc = (s) =>
+        String(s || "")
+          .replace(/&/g, "&amp;")
+          .replace(/"/g, "&quot;")
+          .replace(/</g, "&lt;");
+      const pm = (v) => {
+        const n = parseFloat(String(v || "").replace(/[$,]/g, ""));
+        return isNaN(n) ? 0 : n;
+      };
+      const f$ = (v) => {
+        const n = pm(v);
+        return n > 0 ? "$" + n.toFixed(2) : "—";
+      };
+      const cc = (v) => (v === "High" ? "ch" : v === "Low" ? "cl" : "cm");
+
+      function match(q, ...fields) {
+        const tokens = q.toLowerCase().split(/\s+/).filter(Boolean);
+        const hay = fields.join(" ").toLowerCase();
+        return tokens.every((t) => hay.includes(t));
+      }
+      function getCat(line, finish, type) {
+        return KCS_DATA[`${line}|${finish}|${type}`] || [];
+      }
+      function getSkuRow(line, finish, type, sku) {
+        return getCat(line, finish, type).find((c) => c.sku === sku) || null;
+      }
+      function calcModTotal(r) {
+        return (r.mods || []).reduce((s, m) => s + pm(m.price), 0);
+      }
+      function calcInsertTotal(r) {
+        return (r.inserts || []).reduce(
+          (s, ins) => s + pm(ins.price) * (parseInt(ins.qty) || 1),
+          0,
+        );
+      }
+      function calcTotal(r, run) {
+        let total = pm(r.price);
+        if (!run || run.showMods) total += calcModTotal(r);
+        if (!run || run.showInserts) total += calcInsertTotal(r);
+        return total;
+      }
+      function blankRow() {
+        return {
+          label: "",
+          sku: "",
+          name: "",
+          w: "",
+          h: "",
+          d: "",
+          price: "",
+          mods: [],
+          inserts: [],
+          img: "",
+          conf: "Medium",
+        };
+      }
+
+      // ── Option HTML ───────────────────────────────────────────────────────
+      function lOpts(s) {
+        return (
+          `<option value="">Line…</option>` +
+          KCS_LINES.map(
+            (v) =>
+              `<option value="${v}"${v === s ? " selected" : ""}>${v}</option>`,
+          ).join("")
+        );
+      }
+      function fOpts(line, s) {
+        const f = KCS_FINISHES[line] || [];
+        if (!f.length) return `<option value="">— pick line first —</option>`;
+        return (
+          `<option value="">Finish…</option>` +
+          f
+            .map(
+              (v) =>
+                `<option value="${v}"${v === s ? " selected" : ""}>${v}</option>`,
+            )
+            .join("")
+        );
+      }
+      function tOpts(s) {
+        return (
+          `<option value="">Type…</option>` +
+          KCS_TYPES.map(
+            (v) =>
+              `<option value="${v}"${v === s ? " selected" : ""}>${v}</option>`,
+          ).join("")
+        );
+      }
+
+      // ── Picker ────────────────────────────────────────────────────────────
+      function openPicker(type, runId, rowIdx, el) {
+        closePicker();
+        PS = { type, runId, rowIdx };
+        const rect = el.getBoundingClientRect(),
+          panel = document.getElementById("picker-panel");
+        panel.style.display = "block";
+        const pw = Math.max(300, rect.width);
+        let top = rect.bottom + 4,
+          left = rect.left;
+        if (top + 280 > window.innerHeight) top = Math.max(4, rect.top - 284);
+        if (left + pw > window.innerWidth)
+          left = Math.max(4, window.innerWidth - pw - 8);
+        panel.style.top = top + "px";
+        panel.style.left = left + "px";
+        panel.style.minWidth = pw + "px";
+        document.getElementById("picker-search").value = "";
+        renderPickerList("");
+        requestAnimationFrame(() =>
+          document.getElementById("picker-search").focus(),
+        );
+      }
+
+      function closePicker() {
+        document.getElementById("picker-panel").style.display = "none";
+        PS = null;
+      }
+
+      function filterPicker(q) {
+        renderPickerList(q);
+      }
+
+      function renderPickerList(q) {
+        if (!PS) return;
+        const list = document.getElementById("picker-list");
+        const run = runs.find((r) => r.id === PS.runId);
+        const row = run.rows[PS.rowIdx];
+
+        if (PS.type === "sku") {
+          const items = getCat(run.line, run.finish, run.type);
+          const fil = q ? items.filter((c) => match(q, c.sku, c.name)) : items;
+          if (!items.length) {
+            list.innerHTML = `<div class="pk-empty">Set Line / Finish / Type first</div>`;
+            return;
+          }
+          list.innerHTML =
+            `<div class="pk-clear" onclick="pickSku(null)">✕ None / clear</div>` +
+            (fil.length
+              ? fil
+                  .map(
+                    (
+                      c,
+                    ) => `<div class="pk-item${c.sku === row.sku ? " active" : ""}" onclick="pickSku('${esc(c.sku)}')" style="display:flex;align-items:center;gap:10px">
+          ${
+            c.img
+              ? `<img src="${esc(c.img)}" style="width:44px;height:44px;object-fit:contain;border-radius:4px;flex-shrink:0;background:var(--surf)" onerror="this.style.display='none'">`
+              : `<div style="width:44px;height:44px;border-radius:4px;background:var(--surf);border:1px solid var(--bdr-lt);flex-shrink:0"></div>`
+          }
+          <div style="flex:1;min-width:0"><div class="pk-l1">${esc(c.sku)}<span class="pk-price">${f$(c.price)}</span></div>
+          <div class="pk-l2">${esc(c.name)}</div></div></div>`,
+                  )
+                  .join("")
+              : `<div class="pk-empty">No matches</div>`);
+        } else if (PS.type === "mod") {
+          const fil = q
+            ? KCS_MODS.filter((m) => match(q, m.sku, m.name, m.category))
+            : KCS_MODS;
+          const selSkus = new Set((row.mods || []).map((m) => m.sku));
+          const modSum = calcModTotal(row);
+          const selItems = fil.filter((m) => selSkus.has(m.sku));
+          const unselItems = fil.filter((m) => !selSkus.has(m.sku));
+          const mkItem = (m) =>
+            `<div class="pk-item" data-mod-sku="${esc(m.sku)}" onclick="toggleMod(event,'${esc(m.sku)}')">` +
+            `<div class="pk-chk-row">` +
+            `<div class="pk-chkbox${selSkus.has(m.sku) ? " checked" : ""}">${selSkus.has(m.sku) ? "✓" : ""}</div>` +
+            `<div style="flex:1"><div style="font-size:11px;color:var(--dark)">${esc(m.name)}<span class="pk-price">${f$(m.price)}</span></div>` +
+            `<div class="pk-l2">${esc(m.sku)} · ${m.category}</div></div></div></div>`;
+          const sep =
+            selItems.length && unselItems.length
+              ? `<div style="height:1px;background:var(--bdr-lt);margin:2px 0"></div>`
+              : "";
+          list.innerHTML =
+            (fil.length
+              ? selItems.map(mkItem).join("") +
+                sep +
+                unselItems.map(mkItem).join("")
+              : `<div class="pk-empty">No matches</div>`) +
+            `<div class="pk-mod-footer"><span>${selSkus.size} selected</span><strong>${modSum > 0 ? f$(modSum) : "$0"}</strong></div>`;
+        } else {
+          // insert picker
+          const fil = q
+            ? KCS_INSERTS.filter((ins) =>
+                match(q, ins.sku, ins.name, ins.category),
+              )
+            : KCS_INSERTS;
+          const selMap = new Map(
+            (row.inserts || []).map((ins) => [ins.sku, ins]),
+          );
+          const insTotal = calcInsertTotal(row);
+          const selItems = fil.filter((ins) => selMap.has(ins.sku));
+          const unselItems = fil.filter((ins) => !selMap.has(ins.sku));
+          const mkInsItem = (ins) => {
+            const isSel = selMap.has(ins.sku);
+            const curQty = isSel ? selMap.get(ins.sku).qty : 1;
+            const qtyField = isSel
+              ? `<input class="pk-ins-qty" type="number" min="1" value="${curQty}" onclick="event.stopPropagation()" oninput="updateInsertQty('${esc(ins.sku)}',this.value)">`
+              : "";
+            const insThumb = ins.img
+              ? `<img src="${esc(ins.img)}" style="width:40px;height:40px;object-fit:contain;border-radius:4px;flex-shrink:0;background:var(--surf)" onerror="this.style.display='none'">`
+              : `<div style="width:40px;height:40px;border-radius:4px;background:var(--surf);border:1px solid var(--bdr-lt);flex-shrink:0"></div>`;
+            const textArea =
+              `<div style="flex:1;min-width:0">` +
+              `<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:6px">` +
+              `<span style="font-size:11px;color:var(--dark);line-height:1.4">${esc(ins.name)}</span>` +
+              `<span style="font-size:11px;font-weight:600;color:var(--terra);white-space:nowrap;flex-shrink:0">${f$(ins.price)}</span>` +
+              `</div>` +
+              `<div class="pk-l2">${esc(ins.sku)} · ${ins.category}</div>` +
+              `</div>`;
+            return (
+              `<div class="pk-item" onclick="toggleInsert(event,'${esc(ins.sku)}')">` +
+              `<div class="pk-chk-row">` +
+              `<div class="pk-chkbox${isSel ? " checked" : ""}">${isSel ? "✓" : ""}</div>` +
+              qtyField +
+              insThumb +
+              textArea +
+              `</div></div>`
+            );
+          };
+          const sep =
+            selItems.length && unselItems.length
+              ? `<div style="height:1px;background:var(--bdr-lt);margin:2px 0"></div>`
+              : "";
+          list.innerHTML =
+            (fil.length
+              ? selItems.map(mkInsItem).join("") +
+                sep +
+                unselItems.map(mkInsItem).join("")
+              : `<div class="pk-empty">No matches</div>`) +
+            `<div class="pk-mod-footer"><span>${selMap.size} selected</span><strong>${insTotal > 0 ? f$(insTotal) : "$0"}</strong></div>`;
+        }
+      }
+
+      function pickSku(sku) {
+        if (!PS) return;
+        const run = runs.find((r) => r.id === PS.runId),
+          row = run.rows[PS.rowIdx];
+        if (sku) {
+          const d = getSkuRow(run.line, run.finish, run.type, sku);
+          row.sku = sku;
+          row.name = d?.name ?? "";
+          row.w = d?.w != null ? String(d.w) : "";
+          row.h = d?.h != null ? String(d.h) : "";
+          row.d = d?.d != null ? String(d.d) : "";
+          row.price = d?.price != null ? String(d.price) : "";
+          row.img = d?.img ?? "";
+        } else {
+          row.sku = row.name = row.w = row.h = row.d = row.price = row.img = "";
+        }
+        closePicker();
+        refreshRun(run.id);
+      }
+
+      function toggleMod(event, modSku) {
+        event.stopPropagation();
+        if (!PS || PS.type !== "mod") return;
+        const run = runs.find((r) => r.id === PS.runId),
+          row = run.rows[PS.rowIdx];
+        row.mods = row.mods || [];
+        const idx = row.mods.findIndex((m) => m.sku === modSku);
+        if (idx >= 0) {
+          row.mods.splice(idx, 1);
+        } else {
+          const m = KCS_MODS.find((x) => x.sku === modSku);
+          if (m)
+            row.mods.push({ sku: m.sku, name: m.name, price: String(m.price) });
+        }
+        renderPickerList(document.getElementById("picker-search").value);
+        const modCell = document.querySelector(
+          `[data-run-id="${PS.runId}"] tr[data-idx="${PS.rowIdx}"] .mod-cell`,
+        );
+        if (modCell) modCell.innerHTML = modCellHtml(row);
+        const mobModCell = document.querySelector(
+          `[data-run-id="${PS.runId}"] .mob-card .mob-row[data-idx="${PS.rowIdx}"] .mod-cell`,
+        );
+        if (mobModCell) mobModCell.innerHTML = modCellHtml(row);
+        const tc = document.getElementById(`tc_${PS.runId}_${PS.rowIdx}`);
+        if (tc) {
+          const t = calcTotal(row, run);
+          tc.textContent = t > 0 ? "$" + t.toFixed(2) : "—";
+        }
+        updateSummary();
+      }
+
+      function toggleInsert(event, insertSku) {
+        event.stopPropagation();
+        if (!PS || PS.type !== "insert") return;
+        const run = runs.find((r) => r.id === PS.runId),
+          row = run.rows[PS.rowIdx];
+        row.inserts = row.inserts || [];
+        const idx = row.inserts.findIndex((ins) => ins.sku === insertSku);
+        if (idx >= 0) {
+          row.inserts.splice(idx, 1);
+        } else {
+          const ins = KCS_INSERTS.find((x) => x.sku === insertSku);
+          if (ins)
+            row.inserts.push({
+              sku: ins.sku,
+              name: ins.name,
+              price: String(ins.price),
+              qty: 1,
+              img: ins.img || "",
+            });
+        }
+        renderPickerList(document.getElementById("picker-search").value);
+        const insCell = document.querySelector(
+          `[data-run-id="${PS.runId}"] tr[data-idx="${PS.rowIdx}"] .insert-cell`,
+        );
+        if (insCell) insCell.innerHTML = insertCellHtml(row);
+        const mobInsCell = document.querySelector(
+          `[data-run-id="${PS.runId}"] .mob-card .mob-row[data-idx="${PS.rowIdx}"] .insert-cell`,
+        );
+        if (mobInsCell) mobInsCell.innerHTML = insertCellHtml(row);
+        const tc = document.getElementById(`tc_${PS.runId}_${PS.rowIdx}`);
+        if (tc) {
+          const t = calcTotal(row, run);
+          tc.textContent = t > 0 ? "$" + t.toFixed(2) : "—";
+        }
+        updateSummary();
+      }
+
+      function updateInsertQty(insertSku, qty) {
+        if (!PS || PS.type !== "insert") return;
+        const run = runs.find((r) => r.id === PS.runId),
+          row = run.rows[PS.rowIdx];
+        const ins = (row.inserts || []).find((x) => x.sku === insertSku);
+        if (!ins) return;
+        ins.qty = parseInt(qty) || 1;
+        renderPickerList(document.getElementById("picker-search").value);
+        const insCell = document.querySelector(
+          `[data-run-id="${PS.runId}"] tr[data-idx="${PS.rowIdx}"] .insert-cell`,
+        );
+        if (insCell) insCell.innerHTML = insertCellHtml(row);
+        const tc = document.getElementById(`tc_${PS.runId}_${PS.rowIdx}`);
+        if (tc) {
+          const t = calcTotal(row, run);
+          tc.textContent = t > 0 ? "$" + t.toFixed(2) : "—";
+        }
+        updateSummary();
+      }
+
+      document.addEventListener("click", (e) => {
+        if (
+          PS &&
+          !e.target.closest("#picker-panel") &&
+          !e.target.closest(".sku-cell") &&
+          !e.target.closest(".mod-cell") &&
+          !e.target.closest(".insert-cell")
+        )
+          closePicker();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closePicker();
+      });
+
+      // ── Cell HTML helpers ─────────────────────────────────────────────────
+      function skuCellHtml(run, r) {
+        if (!r.sku) return `<div class="sku-ph">click to select…</div>`;
+        const warn =
+          run.line &&
+          run.finish &&
+          run.type &&
+          !getSkuRow(run.line, run.finish, run.type, r.sku)
+            ? `<span title="SKU not in current catalog" style="color:#c0522a;font-size:12px;margin-left:4px">⚠</span>`
+            : "";
+        const cat = getSkuRow(run.line, run.finish, run.type, r.sku);
+        const imgUrl = r.img || cat?.img || "";
+        const thumb = imgUrl
+          ? `<span class="img-zoom-wrap" style="border-radius:4px" onclick="showImgZoom('${esc(imgUrl)}',event)"><img class="sku-thumb" src="${esc(imgUrl)}" alt="" onerror="this.style.display='none'"></span>`
+          : `<div class="sku-thumb-ph"></div>`;
+        return (
+          thumb +
+          `<div class="sku-cell-text"><div class="sku-code">${esc(r.sku)}${warn}</div><div class="sku-sub">${esc(r.name || "")}</div></div>`
+        );
+      }
+
+      function insertCellHtml(r) {
+        const inserts = r.inserts || [];
+        if (!inserts.length) return `<div class="mod-ph">+ add inserts</div>`;
+        return inserts
+          .map((ins) => {
+            const lineTotal = pm(ins.price) * (parseInt(ins.qty) || 1);
+            const thumb = ins.img
+              ? `<span class="img-zoom-wrap" style="border-radius:2px" onclick="showImgZoom('${esc(ins.img)}',event)"><img src="${esc(ins.img)}" style="width:15px;height:15px;object-fit:contain;border-radius:2px;display:block" onerror="this.style.display='none'"></span>`
+              : "";
+            return (
+              `<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;line-height:1.5">` +
+              `<span style="display:flex;align-items:center;gap:4px;font-family:'Fira Code',monospace;font-size:10px;color:var(--dark)">${thumb}${esc(ins.sku)} × ${ins.qty || 1}</span>` +
+              `<span style="font-size:10px;color:#60605E;white-space:nowrap">${f$(lineTotal)}</span>` +
+              `</div>`
+            );
+          })
+          .join("");
+      }
+
+      function modCellHtml(r) {
+        const mods = r.mods || [];
+        if (!mods.length) return `<div class="mod-ph">+ add mod</div>`;
+        return mods
+          .map(
+            (m) =>
+              `<div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;line-height:1.5">` +
+              `<span style="font-family:'Fira Code',monospace;font-size:10px;color:var(--dark)">${esc(m.sku)}</span>` +
+              `<span style="font-size:10px;color:#60605E;white-space:nowrap">${f$(m.price)}</span>` +
+              `</div>`,
+          )
+          .join("");
+      }
+
+      // ── Run rendering ─────────────────────────────────────────────────────
+      function renderAll() {
+        const c = document.getElementById("runsContainer");
+        c.innerHTML = "";
+        runs.forEach((run) => c.appendChild(buildRunEl(run)));
+        updateSummary();
+      }
+
+      function refreshRun(runId) {
+        const old = document.querySelector(`[data-run-id="${runId}"]`);
+        if (!old) return;
+        const run = runs.find((r) => r.id === runId);
+        if (!run) return;
+        old.replaceWith(buildRunEl(run));
+        updateSummary();
+      }
+
+      function buildRunEl(run) {
+        const wrap = document.createElement("div");
+        wrap.dataset.runId = run.id;
+
+        const div = document.createElement("div");
+        div.className = "run-div";
+        div.innerHTML = `
+    <input class="run-name-inp" type="text" value="${esc(run.name)}" placeholder="Run name" oninput="updateRunField('${run.id}','name',this.value)">
+    <select class="run-sel${run.line ? "" : " dim"}" onchange="onRunLine('${run.id}',this)">${lOpts(run.line)}</select>
+    <select class="run-sel${run.finish ? "" : " dim"}" id="rfin_${run.id}" onchange="onRunFinish('${run.id}',this)">${fOpts(run.line, run.finish)}</select>
+    <select class="run-sel${run.type ? "" : " dim"}" onchange="onRunType('${run.id}',this)">${tOpts(run.type)}</select>
+    <div class="run-chk-wrap">
+      <label class="run-chk-label">
+        <input type="checkbox" ${run.showMods ? "checked" : ""} onchange="onRunToggle('${run.id}','showMods',this.checked)">
+        Mods
+      </label>
+      <label class="run-chk-label">
+        <input type="checkbox" ${run.showInserts ? "checked" : ""} onchange="onRunToggle('${run.id}','showInserts',this.checked)">
+        Inserts
+      </label>
+    </div>
+    <div class="run-acts">
+      <button class="run-add" onclick="addRowToRun('${run.id}')">+ Cabinet</button>
+      <button class="run-del" onclick="deleteRun('${run.id}')">✕ Run</button>
+    </div>`;
+        wrap.appendChild(div);
+
+        const tw = document.createElement("div");
+        tw.className = "tbl-wrap";
+        const tbl = document.createElement("table");
+        tbl.className = "desk-tbl";
+        const modTh = run.showMods
+          ? `<th style="min-width:130px">Modifications</th>`
+          : "";
+        const insTh = run.showInserts
+          ? `<th style="min-width:130px">Insert Accessories</th>`
+          : "";
+        tbl.innerHTML = `<thead><tr>
+    <th style="width:22px"></th>
+    <th style="min-width:120px">Your Label</th>
+    <th style="min-width:160px">SKU / Product</th>
+    <th style="width:46px">W</th><th style="width:46px">H</th><th style="width:46px">D</th>
+    <th style="width:66px">Unit $</th>
+    ${modTh}${insTh}
+    <th style="width:68px">Total</th>
+    <th style="width:66px">Conf</th>
+    <th style="width:24px"></th>
+  </tr></thead>`;
+        const tbody = document.createElement("tbody");
+        run.rows.forEach((_, i) => appendDeskRow(tbody, run, i));
+        tbl.appendChild(tbody);
+        tw.appendChild(tbl);
+        wrap.appendChild(tw);
+
+        const mob = document.createElement("div");
+        mob.className = "mob-card";
+        run.rows.forEach((_, i) => appendMobCard(mob, run, i));
+        wrap.appendChild(mob);
+
+        const ar = document.createElement("div");
+        ar.className = "add-row-wrap";
+        ar.innerHTML = `<button class="add-row-btn" onclick="addRowToRun('${run.id}')">+ Add Cabinet</button>`;
+        wrap.appendChild(ar);
+        return wrap;
+      }
+
+      function appendDeskRow(tbody, run, idx) {
+        const r = run.rows[idx];
+        const tot = calcTotal(r, run);
+        const tr = document.createElement("tr");
+        tr.dataset.idx = idx;
+        const modCol = run.showMods
+          ? `<td><div class="mod-cell" onclick="openPicker('mod','${run.id}',${idx},this)">${modCellHtml(r)}</div></td>`
+          : "";
+        const insCol = run.showInserts
+          ? `<td><div class="insert-cell" onclick="openPicker('insert','${run.id}',${idx},this)">${insertCellHtml(r)}</div></td>`
+          : "";
+        tr.innerHTML = `
+    <td class="num">${idx + 1}</td>
+    <td><textarea class="lbl-inp" placeholder="your label…" oninput="setField('${run.id}',${idx},'label',this.value)">${esc(r.label || "")}</textarea></td>
+    <td><div class="sku-cell" onclick="openPicker('sku','${run.id}',${idx},this)">${skuCellHtml(run, r)}</div></td>
+    <td><input type="text" class="dim-inp" value="${esc(r.w || "")}" placeholder="—" oninput="setField('${run.id}',${idx},'w',this.value)"></td>
+    <td><input type="text" class="dim-inp" value="${esc(r.h || "")}" placeholder="—" oninput="setField('${run.id}',${idx},'h',this.value)"></td>
+    <td><input type="text" class="dim-inp" value="${esc(r.d || "")}" placeholder="—" oninput="setField('${run.id}',${idx},'d',this.value)"></td>
+    <td><input type="text" class="price-inp" value="${r.price ? "$" + parseFloat(r.price).toFixed(2) : ""}" placeholder="0.00" onfocus="const n=parseFloat(this.value.replace(/[^0-9.]/g,''));this.value=(!isNaN(n)&&n>0)?String(n):''" oninput="const v=this.value.replace(/[^0-9.]/g,'');setField('${run.id}',${idx},'price',v);reCalcDesk(this)" onblur="const n=parseFloat(this.value.replace(/[^0-9.]/g,''));if(!isNaN(n)&&n>0){this.value='$'+n.toFixed(2);setField('${run.id}',${idx},'price',String(n))}else this.value=''"></td>
+    ${modCol}${insCol}
+    <td class="total-cell" id="tc_${run.id}_${idx}">${tot > 0 ? "$" + tot.toFixed(2) : "—"}</td>
+    <td><select class="conf-sel ${cc(r.conf)}" onchange="setField('${run.id}',${idx},'conf',this.value);this.className='conf-sel '+cc(this.value)">
+      <option value="High"${r.conf === "High" ? " selected" : ""}>High</option>
+      <option value="Medium"${!r.conf || r.conf === "Medium" ? " selected" : ""}>Medium</option>
+      <option value="Low"${r.conf === "Low" ? " selected" : ""}>Low</option>
+    </select></td>
+    <td><button class="del-btn" onclick="deleteRow('${run.id}',${idx})">×</button></td>`;
+        tbody.appendChild(tr);
+      }
+
+      function appendMobCard(mob, run, idx) {
+        const r = run.rows[idx];
+        const tot = calcTotal(r, run);
+        const div = document.createElement("div");
+        div.className = "mob-row";
+        div.dataset.idx = idx;
+        const mobModFld = run.showMods
+          ? `
+      <div class="mob-fld full"><div class="mob-lbl">Modifications — tap to edit</div>
+        <div class="mod-cell" style="border:1px solid var(--bdr-lt);border-radius:5px;padding:6px 8px" onclick="openPicker('mod','${run.id}',${idx},this)">${modCellHtml(r)}</div></div>`
+          : "";
+        const mobInsFld = run.showInserts
+          ? `
+      <div class="mob-fld full"><div class="mob-lbl">Insert Accessories — tap to edit</div>
+        <div class="insert-cell" style="border:1px solid var(--bdr-lt);border-radius:5px;padding:6px 8px" onclick="openPicker('insert','${run.id}',${idx},this)">${insertCellHtml(r)}</div></div>`
+          : "";
+        div.innerHTML = `
+    <div class="mob-hdr"><span class="mob-num">#${idx + 1}</span><button class="del-btn" onclick="deleteRow('${run.id}',${idx})">× Remove</button></div>
+    <div class="mob-grid">
+      <div class="mob-fld full"><div class="mob-lbl">Your Label</div><textarea class="lbl-inp" placeholder="your label…" oninput="setField('${run.id}',${idx},'label',this.value)">${esc(r.label || "")}</textarea></div>
+      <div class="mob-fld full"><div class="mob-lbl">SKU / Product — tap to change</div>
+        <div class="sku-cell" style="border:1px solid var(--bdr-lt);border-radius:5px;padding:6px 8px" onclick="openPicker('sku','${run.id}',${idx},this)">${skuCellHtml(run, r)}</div></div>
+      <div class="mob-fld"><div class="mob-lbl">W</div><input type="text" value="${esc(r.w || "")}" placeholder="—" oninput="setField('${run.id}',${idx},'w',this.value)"></div>
+      <div class="mob-fld"><div class="mob-lbl">H</div><input type="text" value="${esc(r.h || "")}" placeholder="—" oninput="setField('${run.id}',${idx},'h',this.value)"></div>
+      <div class="mob-fld"><div class="mob-lbl">D</div><input type="text" value="${esc(r.d || "")}" placeholder="—" oninput="setField('${run.id}',${idx},'d',this.value)"></div>
+      <div class="mob-fld"><div class="mob-lbl">Unit $</div><input type="text" value="${r.price ? "$" + parseFloat(r.price).toFixed(2) : ""}" placeholder="0.00" onfocus="const n=parseFloat(this.value.replace(/[^0-9.]/g,''));this.value=(!isNaN(n)&&n>0)?String(n):''" oninput="const v=this.value.replace(/[^0-9.]/g,'');setField('${run.id}',${idx},'price',v);updateSummary()" onblur="const n=parseFloat(this.value.replace(/[^0-9.]/g,''));if(!isNaN(n)&&n>0){this.value='$'+n.toFixed(2);setField('${run.id}',${idx},'price',String(n))}else this.value=''"></div>
+      ${mobModFld}${mobInsFld}
+      <div class="mob-fld"><div class="mob-lbl">Total</div><div class="mob-total">${tot > 0 ? "$" + tot.toFixed(2) : "—"}</div></div>
+    </div>
+    <div class="mob-conf-row">
+      <select onchange="setField('${run.id}',${idx},'conf',this.value)">
+        <option value="High"${r.conf === "High" ? " selected" : ""}>High</option>
+        <option value="Medium"${!r.conf || r.conf === "Medium" ? " selected" : ""}>Medium</option>
+        <option value="Low"${r.conf === "Low" ? " selected" : ""}>Low</option>
+      </select>
+    </div>`;
+        mob.appendChild(div);
+      }
+
+      // ── Run events ────────────────────────────────────────────────────────
+      function updateRunField(runId, field, val) {
+        const r = runs.find((x) => x.id === runId);
+        if (r) r[field] = val;
+      }
+      function onRunLine(runId, sel) {
+        const run = runs.find((r) => r.id === runId);
+        if (!run) return;
+        run.line = sel.value;
+        run.finish = "";
+        sel.className = "run-sel" + (sel.value ? "" : " dim");
+        const fd = document.getElementById("rfin_" + runId);
+        if (fd) {
+          fd.innerHTML = fOpts(run.line, "");
+          fd.className = "run-sel dim";
+        }
+        refreshRun(runId);
+      }
+      function onRunFinish(runId, sel) {
+        const run = runs.find((r) => r.id === runId);
+        if (!run) return;
+        run.finish = sel.value;
+        sel.className = "run-sel" + (sel.value ? "" : " dim");
+        refreshRun(runId);
+      }
+      function onRunType(runId, sel) {
+        const run = runs.find((r) => r.id === runId);
+        if (!run) return;
+        run.type = sel.value;
+        sel.className = "run-sel" + (sel.value ? "" : " dim");
+        refreshRun(runId);
+      }
+      function onRunToggle(runId, field, checked) {
+        const run = runs.find((r) => r.id === runId);
+        if (!run) return;
+        run[field] = checked;
+        refreshRun(runId);
+      }
+
+      // ── Row events ────────────────────────────────────────────────────────
+      function setField(runId, idx, field, val) {
+        const run = runs.find((r) => r.id === runId);
+        if (!run || !run.rows[idx]) return;
+        run.rows[idx][field] = val;
+        updateSummary();
+      }
+      function reCalcDesk(input) {
+        const tr = input.closest("tr");
+        if (!tr) return;
+        const runId = tr.closest("[data-run-id]")?.dataset.runId,
+          idx = parseInt(tr.dataset.idx);
+        const run = runs.find((r) => r.id === runId);
+        if (!run || isNaN(idx)) return;
+        const tot = calcTotal(run.rows[idx], run);
+        const cell = document.getElementById(`tc_${runId}_${idx}`);
+        if (cell) cell.textContent = tot > 0 ? "$" + tot.toFixed(2) : "—";
+        updateSummary();
+      }
+      function addRowToRun(runId) {
+        const run = runs.find((r) => r.id === runId);
+        if (!run) return;
+        run.rows.push(blankRow());
+        refreshRun(runId);
+      }
+      function deleteRow(runId, idx) {
+        const run = runs.find((r) => r.id === runId);
+        if (!run) return;
+        run.rows.splice(idx, 1);
+        refreshRun(runId);
+      }
+      function addRun() {
+        const id = "run_" + Date.now(),
+          n = runs.length + 1;
+        runs.push({
+          id,
+          name: "NEW RUN " + n,
+          line: "",
+          finish: "",
+          type: "",
+          showMods: false,
+          showInserts: false,
+          rows: [blankRow()],
+        });
+        renderAll();
+        setTimeout(() => {
+          const ins = document.querySelectorAll(".run-name-inp");
+          if (ins.length) ins[ins.length - 1].focus();
+        }, 50);
+      }
+      function deleteRun(runId) {
+        runs = runs.filter((r) => r.id !== runId);
+        renderAll();
+      }
+
+      // ── Summary ───────────────────────────────────────────────────────────
+      function updateSummary() {
+        let count = 0,
+          cab = 0,
+          grand = 0;
+        runs.forEach((run) =>
+          run.rows.forEach((r) => {
+            count++;
+            cab += pm(r.price);
+            grand += calcTotal(r, run);
+          }),
+        );
+        document.getElementById("sumCount").textContent = count;
+        document.getElementById("sumCabTotal").textContent =
+          "$" + cab.toFixed(2);
+        document.getElementById("sumGrand").textContent =
+          "$" + grand.toFixed(2);
+      }
+
+      // ── Copy ──────────────────────────────────────────────────────────────
+      function copyAll() {
+        const client = document.getElementById("clientName").value.trim();
+        const date = new Date().toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+        let out = "Quote for: " + (client || "(not set)") + "\n";
+        out += "Date: " + date + "\n";
+        out += "\n";
+        runs.forEach((run) => {
+          if (!run.rows.length) return;
+          const sel = [run.line, run.finish, run.type]
+            .filter(Boolean)
+            .join(" ");
+          out += run.name + (sel ? " — " + sel : "") + "\n";
+          out += "-".repeat(40) + "\n";
+          run.rows.forEach((r, i) => {
+            const tot = calcTotal(r, run);
+            const dims =
+              [r.w, r.h, r.d].filter(Boolean).join('" x ') + (r.d ? '"' : "");
+            out += "  " + (i + 1) + ". " + (r.label || r.name || "—");
+            if (dims) out += "  (" + dims + ")";
+            out += "  —  " + (r.sku || "—");
+            out += "  —  " + (tot > 0 ? "$" + tot.toFixed(2) : "—") + "\n";
+            if (run.showMods && (r.mods || []).length) {
+              out +=
+                "     Modifications: " +
+                r.mods
+                  .map((m) => m.name + " (" + f$(m.price) + ")")
+                  .join(", ") +
+                "\n";
+            }
+            if (run.showInserts && (r.inserts || []).length) {
+              out +=
+                "     Inserts: " +
+                r.inserts
+                  .map(
+                    (ins) =>
+                      ins.sku +
+                      " x" +
+                      (ins.qty || 1) +
+                      " (" +
+                      f$(pm(ins.price) * (parseInt(ins.qty) || 1)) +
+                      ")",
+                  )
+                  .join(", ") +
+                "\n";
+            }
+          });
+          const runTotal = run.rows.reduce((s, r) => s + calcTotal(r, run), 0);
+          out += "  Subtotal: $" + runTotal.toFixed(2) + "\n\n";
+        });
+        const grand = runs.reduce(
+          (s, run) => s + run.rows.reduce((rs, r) => rs + calcTotal(r, run), 0),
+          0,
+        );
+        out += "=".repeat(40) + "\n";
+        out += "Grand Total: $" + grand.toFixed(2) + "\n";
+        out +=
+          runs.reduce((s, r) => s + r.rows.length, 0) +
+          " cabinet(s) across " +
+          runs.length +
+          " run(s)";
+        navigator.clipboard
+          .writeText(out.trim())
+          .then(showCopied)
+          .catch(() => {
+            const ta = document.createElement("textarea");
+            ta.value = out;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand("copy");
+            document.body.removeChild(ta);
+            showCopied();
+          });
+      }
+
+      // ── Save Quote ────────────────────────────────────────────────────────
+      function generateSaveableHTML() {
+        const client = document.getElementById("clientName").value;
+        const newInit = `/* KCS_QUOTE_INIT_START */\ndocument.getElementById('clientName').value=${JSON.stringify(client)};\nruns=${JSON.stringify(runs)};\nrenderAll();\n/* KCS_QUOTE_INIT_END */`;
+        return document.documentElement.outerHTML.replace(
+          /\/\* KCS_QUOTE_INIT_START \*\/[\s\S]*?\/\* KCS_QUOTE_INIT_END \*\//,
+          newInit,
+        );
+      }
+
+      async function saveQuote() {
+        const client =
+          document
+            .getElementById("clientName")
+            .value.trim()
+            .replace(/[/\\?%*:|"<>]/g, "-") || "Unknown Client";
+        const date = new Date().toISOString().slice(0, 10);
+        const filename = `Quote - ${client} - ${date}.html`;
+        const html = generateSaveableHTML();
+
+        if (window.showDirectoryPicker) {
+          try {
+            if (!fsDirHandle) {
+              fsDirHandle = await window.showDirectoryPicker({
+                id: "kcs-quotes",
+                mode: "readwrite",
+                startIn: "documents",
+              });
+            }
+            const fh = await fsDirHandle.getFileHandle(filename, {
+              create: true,
+            });
+            const w = await fh.createWritable();
+            await w.write(html);
+            await w.close();
+            showToast(`Saved: ${filename}`);
+            return;
+          } catch (e) {
+            if (e.name === "AbortError") return;
+            fsDirHandle = null;
+          }
+        }
+        const blob = new Blob([html], { type: "text/html" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = filename;
+        a.click();
+        URL.revokeObjectURL(url);
+        showToast(`Downloaded: ${filename}`);
+      }
+
+      // ── Toast / feedback ──────────────────────────────────────────────────
+      // ── Client Quote ──────────────────────────────────────────────────────────
+      function openClientQuote() {
+        const client =
+          document.getElementById("clientName").value.trim() || "(Client Name)";
+        const date = new Date().toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+        const slug = client
+          .replace(/[^a-z0-9]/gi, "-")
+          .replace(/-+/g, "-")
+          .replace(/^-|-$/g, "");
+        const dateSlug = new Date().toISOString().slice(0, 10);
+        const pdfName = "KCS-" + slug + "-Quote-" + dateSlug;
+        const logo =
+          "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/kcs-rounded-corner-square-logo.png?v=1776964151";
+
+        // Build runs HTML
+        let runsHtml = "",
+          grandTotal = 0;
+
+        runs.forEach((run) => {
+          if (!run.rows.length) return;
+          const runTotal = run.rows.reduce((s, r) => s + calcTotal(r, run), 0);
+          grandTotal += runTotal;
+
+          const lineFinish = [run.line, run.finish].filter(Boolean).join(" · ");
+          const modTh = run.showMods
+            ? '<th class="col-mod">Modifications</th>'
+            : "";
+          const insTh = run.showInserts
+            ? '<th class="col-ins">Insert Accessories</th>'
+            : "";
+
+          let rowsHtml = "";
+          run.rows.forEach((r) => {
+            const cat = getSkuRow(run.line, run.finish, run.type, r.sku);
+            const imgUrl = r.img || cat?.img || "";
+            const imgHtml = imgUrl
+              ? `<img src="${imgUrl}" style="width:38px;height:38px;object-fit:contain;border-radius:5px;background:#f5f3eb;flex-shrink:0" onerror="this.style.display='none'">`
+              : `<div style="width:38px;height:38px;border-radius:5px;background:#f5f3eb;border:1px solid #ede9e1;flex-shrink:0"></div>`;
+
+            const modCell = run.showMods
+              ? `<td class="col-mod">${(r.mods || []).map((m) => `<div class="acc-item">${m.name}</div>`).join("") || "<span class='none-dash'>—</span>"}</td>`
+              : "";
+            const insCell = run.showInserts
+              ? `<td class="col-ins">${(r.inserts || []).map((ins) => `<div class="acc-item">${ins.name}<span class="acc-qty"> ×${ins.qty || 1}</span></div>`).join("") || "<span class='none-dash'>—</span>"}</td>`
+              : "";
+
+            rowsHtml += `
+              <tr>
+                <td><div style="display:flex;align-items:center;gap:10px">${imgHtml}<span class="prod-label">${r.label || "—"}</span></div></td>
+                <td class="dim-cell">${r.w || "—"}</td>
+                <td class="dim-cell">${r.h || "—"}</td>
+                <td class="dim-cell">${r.d || "—"}</td>
+                ${modCell}${insCell}
+              </tr>`;
+          });
+
+          runsHtml += `
+            <div class="run-block">
+              <div class="run-hdr-bar">
+                <span class="run-hdr-name">${run.name}</span>
+                ${lineFinish ? `<span class="run-hdr-line">${lineFinish}</span>` : ""}
+              </div>
+              <table class="quote-tbl">
+                <thead><tr>
+                  <th>Products</th>
+                  <th class="dim-th">W</th><th class="dim-th">H</th><th class="dim-th">D</th>
+                  ${modTh}${insTh}
+                </tr></thead>
+                <tbody>${rowsHtml}</tbody>
+              </table>
+              <div class="run-subtotal">
+                <span>${run.name}</span>
+                <span>$${runTotal.toFixed(2)}</span>
+              </div>
+            </div>`;
+        });
+
+        const doc = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>${pdfName}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark: #35312e; --gray: #60605e; --steel: #465561; --terra: #af5a3c;
+      --tan: #b8866e; --surf: #f5f3eb; --bdr: #ddd8d0; --bdr-lt: #ede9e1;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { background: #fcfaf6; }
+    body { font-family: "Figtree", sans-serif; background: #fcfaf6; color: var(--dark); padding: 32px; }
+    @media print { html, body { padding: 0; background: #fcfaf6 !important; } .no-print { display: none !important; } }
+
+    /* ── Header ── */
+    .quote-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--terra);
+      margin-bottom: 28px;
+      gap: 24px;
+    }
+    .hdr-left { display: flex; gap: 16px; align-items: flex-start; }
+    .hdr-logo { width: 56px; height: 56px; border-radius: 8px; flex-shrink: 0; }
+    .hdr-title-block { display: flex; flex-direction: column; gap: 2px; }
+    .hdr-title { font-family: "Fraunces", serif; font-weight: 400; font-size: 26px; color: #35312e; letter-spacing: -0.5px; line-height: 1; }
+    .hdr-client { font-family: "Fraunces", serif; font-weight: 300; font-size: 15px; color: var(--terra); margin-top: 4px; }
+    .hdr-subtitle { font-size: 11px; color: var(--gray); margin-top: 6px; max-width: 380px; line-height: 1.5; }
+    .hdr-right { text-align: right; flex-shrink: 0; }
+    .hdr-prepared-label { font-size: 9px; font-weight: 600; color: var(--gray); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 4px; }
+    .hdr-name { font-size: 13px; font-weight: 600; color: var(--dark); }
+    .hdr-contact { font-size: 11px; color: var(--gray); margin-top: 2px; line-height: 1.6; }
+    .hdr-date { font-size: 11px; color: var(--tan); margin-top: 6px; font-style: italic; }
+
+    /* ── Run block ── */
+    .run-block { margin-bottom: 28px; page-break-inside: avoid; }
+    .run-hdr-bar {
+      display: flex; align-items: center; gap: 12px;
+      background: var(--steel); color: white;
+      padding: 8px 14px; border-radius: 6px 6px 0 0;
+    }
+    .run-hdr-name { font-family: "Fraunces", serif; font-weight: 400; font-size: 13px; letter-spacing: 0.3px; }
+    .run-hdr-line { font-size: 11px; opacity: 0.7; }
+
+    /* ── Table ── */
+    .quote-tbl { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .quote-tbl thead tr { background: var(--surf); }
+    .quote-tbl th {
+      text-align: left; padding: 7px 10px;
+      font-size: 9px; font-weight: 600; color: var(--gray);
+      text-transform: uppercase; letter-spacing: 0.6px;
+      border-bottom: 1px solid var(--bdr);
+    }
+    .quote-tbl td { padding: 8px 10px; border-bottom: 1px solid var(--bdr-lt); vertical-align: middle; }
+    .quote-tbl tbody tr:last-child td { border-bottom: none; }
+    .quote-tbl tbody tr:hover { background: #fdfbf8; }
+    .quote-tbl tr { page-break-inside: avoid; }
+    .dim-th { width: 40px; text-align: center; }
+    .dim-cell { text-align: center; font-size: 11px; color: var(--gray); }
+    .col-mod, .col-ins { min-width: 140px; }
+    .prod-label { font-size: 12px; color: var(--dark); line-height: 1.4; }
+    .acc-item { font-size: 11px; color: var(--gray); line-height: 1.6; }
+    .acc-qty { color: var(--tan); }
+    .none-dash { color: var(--bdr); }
+
+    /* ── Subtotals ── */
+    .run-subtotal {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 8px 14px;
+      background: var(--surf); border: 1px solid var(--bdr-lt); border-top: none;
+      border-radius: 0 0 6px 6px;
+      font-size: 12px; font-weight: 600; color: var(--dark);
+    }
+    .grand-total-block {
+      border-top: 2px solid var(--terra);
+      margin-top: 8px; padding-top: 16px;
+      display: flex; justify-content: space-between; align-items: baseline;
+      page-break-inside: avoid;
+    }
+    .grand-label { font-family: "Fraunces", serif; font-weight: 400; font-size: 18px; color: var(--dark); }
+    .grand-amount { font-family: "Fraunces", serif; font-weight: 600; font-size: 22px; color: var(--terra); }
+
+    /* ── Footer ── */
+    .quote-footer {
+      margin-top: 32px; padding-top: 14px;
+      border-top: 1px solid var(--bdr-lt);
+      font-size: 10px; color: var(--gray);
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      page-break-inside: avoid;
+    }
+    .cq-save-btn {
+      background: none; border: 1px solid var(--steel); color: var(--steel);
+      padding: 9px 20px; border-radius: 7px; font-size: 11px; font-weight: 600;
+      font-family: "Figtree", sans-serif; letter-spacing: 0.6px; text-transform: uppercase;
+      cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+      -webkit-appearance: none; appearance: none; line-height: 1;
+    }
+    .cq-save-btn:hover { background: var(--surf); }
+    .cq-save-btn.saved { border-color: #6d684e; color: #6d684e; }
+    .cq-copy-btn {
+      background: var(--steel); color: white; border: none;
+      padding: 9px 20px; border-radius: 7px; font-size: 11px; font-weight: 600;
+      font-family: "Figtree", sans-serif; letter-spacing: 0.6px; text-transform: uppercase;
+      cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+      -webkit-appearance: none; appearance: none; line-height: 1;
+    }
+    .cq-copy-btn:hover { background: #3a4a57; }
+    .cq-copy-btn.copied { background: #6d684e; }
+    .print-btn {
+      background: var(--terra); color: white; border: none;
+      padding: 9px 20px; border-radius: 7px; font-size: 11px; font-weight: 600;
+      font-family: "Figtree", sans-serif; letter-spacing: 0.6px; text-transform: uppercase;
+      cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+      -webkit-appearance: none; appearance: none; line-height: 1;
+    }
+    .print-btn:hover { background: #9b4f35; }
+  </style>
+</head>
+<body>
+
+  <div class="quote-header">
+    <div class="hdr-left">
+      <img class="hdr-logo" src="${logo}" alt="KCS">
+      <div class="hdr-title-block">
+        <div class="hdr-title">Custom Quote</div>
+        <div class="hdr-client">Prepared for ${client}</div>
+        <div class="hdr-subtitle">Your personalized kitchen cabinet configuration — pricing reflects your selected cabinet line, finish, and accessories.</div>
+      </div>
+    </div>
+    <div class="hdr-right">
+      <div class="hdr-prepared-label">Prepared by</div>
+      <div class="hdr-name">Blake Petipas</div>
+      <div class="hdr-contact">508.979.0631<br>blake@kitchenandcabinetstore.com</div>
+      <div class="hdr-date">${date}</div>
+    </div>
+  </div>
+
+  ${runsHtml}
+
+  <div class="grand-total-block">
+    <span class="grand-label">Quote Total</span>
+    <span class="grand-amount">$${grandTotal.toFixed(2)}</span>
+  </div>
+
+  <div class="quote-footer">
+    <span>This quote is valid for 30 days from the date issued. Pricing is subject to change after expiration.</span>
+    <div style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+      <button id="cq-save-btn" class="cq-save-btn no-print" onclick="saveCQ()"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> SAVE QUOTE</button>
+      <button id="cq-copy-btn" class="cq-copy-btn no-print" onclick="(async function(btn){try{var t=window.opener.buildCopyText();await navigator.clipboard.writeText(t);}catch(e){var ta=document.createElement('textarea');ta.value=window.opener.buildCopyText();document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);}var o=btn.innerHTML;btn.innerHTML='\u2713 Copied!';btn.classList.add('copied');setTimeout(function(){btn.innerHTML=o;btn.classList.remove('copied');},2500);})(this)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> COPY QUOTE</button>
+      <button class="print-btn no-print" onclick="window.print()"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg> PRINT</button>
+    </div>
+  </div>
+
+<script>
+  var _cqDirHandle = (window.opener && window.opener.fsDirHandleClient) || null;
+  async function saveCQ() {
+    const btn = document.getElementById('cq-save-btn');
+    const orig = btn.innerHTML;
+    const fname = document.title + '.pdf';
+    try {
+      if (!window.html2pdf) {
+        await new Promise(function(res, rej) {
+          var s = document.createElement('script');
+          s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js';
+          s.onload = res; s.onerror = rej;
+          document.head.appendChild(s);
+        });
+      }
+      document.querySelectorAll('.no-print').forEach(function(el){ el.style.display='none'; });
+      
+      // Temporarily remove HTML padding so it doesn't double-up with the new PDF margins
+      var oldPadding = document.body.style.padding;
+      document.body.style.padding = '0px';
+      
+      const pdfBlob = await html2pdf().set({
+        margin: 0.4, // Adds a true PDF margin to prevent bottom text cutoffs
+        filename: fname,
+        pagebreak: { mode: ['css', 'legacy'] }, // Forces it to respect your page-break CSS
+        html2canvas: { scale: 2, useCORS: true, scrollY: 0 }, // scrollY: 0 prevents the massive top gap
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+      }).from(document.body).output('blob');
+      
+      // Restore the HTML padding
+      document.body.style.padding = oldPadding;
+      document.querySelectorAll('.no-print').forEach(function(el){ el.style.display=''; });
+      if (!_cqDirHandle) {
+        _cqDirHandle = await window.showDirectoryPicker({ id: 'kcs-pdf-quotes', mode: 'readwrite', startIn: 'documents' });
+        if (window.opener) window.opener.fsDirHandleClient = _cqDirHandle;
+      }
+      const fh = await _cqDirHandle.getFileHandle(fname, { create: true });
+      const wr = await fh.createWritable();
+      await wr.write(pdfBlob);
+      await wr.close();
+      btn.innerHTML = '\u2713 Saved!';
+      btn.classList.add('saved');
+      setTimeout(function() { btn.innerHTML = orig; btn.classList.remove('saved'); }, 2500);
+    } catch(e) {
+      document.querySelectorAll('.no-print').forEach(function(el){ el.style.display=''; });
+      if (e.name === 'AbortError') return;
+      _cqDirHandle = null;
+      if (window.opener) window.opener.fsDirHandleClient = null;
+    }
+  }
+\x3c/script>
+</body>
+</html>`;
+
+        const w = window.open("", "_blank");
+        w.document.write(doc);
+        w.document.close();
+      }
+
+      // ── Client Quote save (called from new tab) ──────────────────────────────
+      async function saveCQFromTab(title, content, btn) {
+        try {
+          if (!fsDirHandleClient) {
+            fsDirHandleClient = await window.showDirectoryPicker({
+              id: "kcs-client-quotes",
+              mode: "readwrite",
+              startIn: "documents",
+            });
+          }
+          const fh = await fsDirHandleClient.getFileHandle(title + ".html", {
+            create: true,
+          });
+          const wr = await fh.createWritable();
+          await wr.write(content);
+          await wr.close();
+          if (btn) {
+            const orig = btn.innerHTML;
+            btn.innerHTML = "✓ Saved!";
+            btn.classList.add("saved");
+            setTimeout(() => {
+              btn.innerHTML = orig;
+              btn.classList.remove("saved");
+            }, 2500);
+          }
+        } catch (e) {
+          if (e.name === "AbortError") return;
+          fsDirHandleClient = null;
+        }
+      }
+
+      // ── Build copy text for client quote (called from client quote tab) ───────
+      function buildCopyText() {
+        const client =
+          document.getElementById("clientName").value.trim() || "(Client Name)";
+        const date = new Date().toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+        let out = "Custom Quote \u2014 " + client + "\n";
+        out += "Prepared by Blake Petipas  |  " + date + "\n\n";
+        runs.forEach((run) => {
+          if (!run.rows.length) return;
+          const lf = [run.line, run.finish].filter(Boolean).join(" \u00b7 ");
+          out += run.name + (lf ? " \u2014 " + lf : "") + "\n";
+          run.rows.forEach((r) => {
+            out += "  \u2022 " + (r.label || r.name || "\u2014");
+            if (r.w || r.h || r.d)
+              out +=
+                "  (" +
+                [r.w, r.h, r.d].filter(Boolean).join("\u2033 \u00d7 ") +
+                "\u2033)";
+            if (run.showMods && r.mods?.length)
+              out +=
+                "\n    Modifications: " + r.mods.map((m) => m.name).join(", ");
+            if (run.showInserts && r.inserts?.length)
+              out +=
+                "\n    Inserts: " +
+                r.inserts
+                  .map((i) => i.name + " \u00d7" + (i.qty || 1))
+                  .join(", ");
+            out += "\n";
+          });
+          const rt = run.rows.reduce((s, r) => s + calcTotal(r, run), 0);
+          out += "  Subtotal: $" + rt.toFixed(2) + "\n\n";
+        });
+        const grand = runs.reduce(
+          (s, run) => s + run.rows.reduce((rs, r) => rs + calcTotal(r, run), 0),
+          0,
+        );
+        out += "\u2014".repeat(18) + "\n";
+        out += "QUOTE TOTAL: $" + grand.toFixed(2) + "\n\n";
+        out += "Valid for 30 days from " + date + ".\n";
+        return out;
+      }
+
+      function showCopied() {
+        const btn = document.getElementById("copyBtn");
+        btn.textContent = "Copied!";
+        btn.classList.add("copied");
+        showToast("Copied — paste into the chat");
+        setTimeout(() => {
+          btn.textContent = "Copy Quote";
+          btn.classList.remove("copied");
+        }, 2500);
+      }
+      function showToast(msg) {
+        const t = document.getElementById("toast");
+        t.textContent = msg;
+        t.classList.add("show");
+        setTimeout(() => t.classList.remove("show"), 3000);
+      }
+
+      // ── Image zoom ───────────────────────────────────────────────────────────
+      function showImgZoom(url, e) {
+        e.stopPropagation();
+        const p = document.getElementById("img-zoom-panel");
+        document.getElementById("img-zoom-img").src = url;
+        p.style.display = "block";
+        const pw = 320,
+          ph = 320;
+        let left = e.clientX + 14,
+          top = e.clientY + 14;
+        if (left + pw > window.innerWidth) left = e.clientX - pw - 8;
+        if (top + ph > window.innerHeight) top = e.clientY - ph - 8;
+        p.style.left = left + "px";
+        p.style.top = top + "px";
+        p.onmouseleave = () => {
+          p.style.display = "none";
+        };
+      }
+      document.addEventListener("click", (e) => {
+        const p = document.getElementById("img-zoom-panel");
+        if (p && p.style.display !== "none" && !p.contains(e.target))
+          p.style.display = "none";
+      });
+
+      // ── Init ──────────────────────────────────────────────────────────────
+      /* KCS_QUOTE_INIT_START */
+      document.getElementById("clientName").value = "Test Client";
+      runs = [
+        {
+          id: "r1",
+          name: "MAIN WALL RUN",
+          line: "Seaport",
+          finish: "White",
+          type: "RTA",
+          showMods: false,
+          showInserts: false,
+          rows: [
+            {
+              label: "above OTR microwave",
+              sku: "SW-W361824-RTA",
+              name: "Seaport White Bridge Cabinet 36w 18h 24d",
+              w: "36",
+              h: "18",
+              d: "24",
+              price: "389",
+              mods: [],
+              inserts: [],
+              img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+              conf: "Medium",
+            },
+            {
+              label: "left of OTR wall cab",
+              sku: "SW-W3036-RTA",
+              name: "Seaport White Wall Cabinet 30w 36h 12d",
+              w: "30",
+              h: "36",
+              d: "12",
+              price: "312",
+              mods: [],
+              inserts: [],
+              img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB30-2-belmont-shaker-drawer-base-cabinet-2-drawer-30w-dimension-drawing.jpg",
+              conf: "High",
+            },
+            {
+              label: "right of OTR wall cab",
+              sku: "SW-W3036-RTA",
+              name: "Seaport White Wall Cabinet 30w 36h 12d",
+              w: "30",
+              h: "36",
+              d: "12",
+              price: "312",
+              mods: [],
+              inserts: [],
+              img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB12-belmont-shaker-drawer-base-cabinet-3-drawer-12w-dimension-drawing.jpg",
+              conf: "High",
+            },
+            {
+              label: "glass door left",
+              sku: "SW-PGDW1836-RTA",
+              name: "Seaport White Glass Door Wall 18w 36h 12d",
+              w: "18",
+              h: "36",
+              d: "12",
+              price: "445",
+              mods: [],
+              inserts: [],
+              img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB15-belmont-shaker-drawer-base-cabinet-3-drawer-15w-dimension-drawing.jpg",
+              conf: "High",
+            },
+            {
+              label: "floating shelf stack",
+              sku: "SW-FLS36",
+              name: "Seaport White Floating Shelf 36w",
+              w: "36",
+              h: "4",
+              d: "12",
+              price: "156",
+              mods: [],
+              inserts: [],
+              img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB18-belmont-shaker-drawer-base-cabinet-3-drawer-18w-dimension-drawing.jpg",
+              conf: "High",
+            },
+          ],
+        },
+        {
+          id: "r2",
+          name: "MAIN BASE RUN",
+          line: "Seaport",
+          finish: "White",
+          type: "RTA",
+          showMods: false,
+          showInserts: false,
+          rows: [
+            {
+              label: "sink base center",
+              sku: "SW-SB36-RTA",
+              name: "Seaport White Sink Base 36w 34.5h 24d",
+              w: "36",
+              h: "34.5",
+              d: "24",
+              price: "412",
+              mods: [],
+              inserts: [],
+              img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB21-belmont-shaker-drawer-base-cabinet-3-drawer-21w-dimension-drawing.jpg",
+              conf: "High",
+            },
+            {
+              label: "base left of sink",
+              sku: "SW-B36-RTA",
+              name: "Seaport White Base Cabinet 36w 34.5h 24d",
+              w: "36",
+              h: "34.5",
+              d: "24",
+              price: "445",
+              mods: [],
+              inserts: [],
+              img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB24-2-belmont-shaker-drawer-base-cabinet-2-drawer-24w-dimension-drawing.jpg",
+              conf: "High",
+            },
+            {
+              label: "drawer base right",
+              sku: "SW-DB24-2-RTA",
+              name: "Seaport White 2-Drawer Base 24w 34.5h 24d",
+              w: "24",
+              h: "34.5",
+              d: "24",
+              price: "694",
+              mods: [],
+              inserts: [],
+              img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB30-2-belmont-shaker-drawer-base-cabinet-2-drawer-30w-dimension-drawing.jpg",
+              conf: "Medium",
+            },
+          ],
+        },
+        {
+          id: "r3",
+          name: "ISLAND",
+          line: "Seaport",
+          finish: "White",
+          type: "RTA",
+          showMods: false,
+          showInserts: false,
+          rows: [
+            {
+              label: "island base left",
+              sku: "SW-B36-RTA",
+              name: "Seaport White Base Cabinet 36w 34.5h 24d",
+              w: "36",
+              h: "34.5",
+              d: "24",
+              price: "445",
+              mods: [],
+              inserts: [],
+              img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB12-belmont-shaker-drawer-base-cabinet-3-drawer-12w-dimension-drawing.jpg",
+              conf: "High",
+            },
+            {
+              label: "island base right",
+              sku: "SW-B30-RTA",
+              name: "Seaport White Base Cabinet 30w 34.5h 24d",
+              w: "30",
+              h: "34.5",
+              d: "24",
+              price: "398",
+              mods: [
+                {
+                  sku: "Pen-Base",
+                  name: "Peninsula Base Cabinet",
+                  price: "200",
+                },
+              ],
+              inserts: [],
+              img: "https://cdn.shopify.com/s/files/1/0628/5167/8286/files/DB15-belmont-shaker-drawer-base-cabinet-3-drawer-15w-dimension-drawing.jpg",
+              conf: "High",
+            },
+          ],
+        },
+      ];
+      renderAll();
+      /* KCS_QUOTE_INIT_END */
+    </script>
+  </body>
+</html>

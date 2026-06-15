@@ -1,6 +1,21 @@
 <!-- INK MEDIA AGENCY - CUSTOM GHL JS CODE -->
 
 <!-- =====================================
+🟢🟢🟢 SUBACCOUNT FEATURE TOGGLE
+===================================== -->
+<script>
+/* 🟢 SUBACCOUNT FEATURE TOGGLE [2026-05-06]
+🗒️ Master ON/OFF switch for all features scoped to subaccounts:
+🗒️   - Rfghqe9JReCqHvTnYSdK
+🗒️   - 4h6wxlihyc1wMCzyVRbH
+🗒️🗒️🗒️ Set to false to disable all subaccount-specific features */
+window.SUBACCOUNT_FEATURES_ENABLED = false; // ← toggle ON/OFF here
+</script>
+<!-- =====================================
+🛑🛑🛑 SUBACCOUNT FEATURE TOGGLE
+===================================== -->
+
+<!-- =====================================
 🟢🟢🟢 CONTACT ACCORDION - COMBINED NAME FIELDS
 ===================================== -->
 
@@ -44,6 +59,7 @@
   
   function combineNameFields() {
     // Only run on contact detail pages for target locations
+    if (!window.SUBACCOUNT_FEATURES_ENABLED) return;
     if (!location.href.includes('contacts/detail')) return;
     if (!location.href.includes('Rfghqe9JReCqHvTnYSdK') && 
         !location.href.includes('4h6wxlihyc1wMCzyVRbH')) return;
@@ -165,6 +181,7 @@
 (function() {
   function stylePhoneEmailIcons() {
     // Only run on contact detail pages for target locations
+    if (!window.SUBACCOUNT_FEATURES_ENABLED) return;
     if (!location.href.includes('contacts/detail')) return;
     if (!location.href.includes('Rfghqe9JReCqHvTnYSdK') && 
         !location.href.includes('4h6wxlihyc1wMCzyVRbH')) return;
@@ -407,6 +424,7 @@
 🗒️ Runs every 1 second to check and update appointment access */
 
     setInterval(async () => {
+      if (!window.SUBACCOUNT_FEATURES_ENABLED) return;
       await hrGetOrUpdateGlobalVariables();
 
       if (
@@ -843,6 +861,7 @@
   (function () {
     let waitForWebsiteField = null;
     function showWebsiteContact() {
+      if (!window.SUBACCOUNT_FEATURES_ENABLED) return;
       if (!location.href.includes("contacts/detail")) {
         return;
       }
@@ -922,6 +941,7 @@
     let ptt = "pintop";
     let user_type = "{{user.data.role}}";
     function pinontop() {
+      if (!window.SUBACCOUNT_FEATURES_ENABLED) return;
       if ("{{user.data.type}}" == "agency") {
         //return;
       }
@@ -1301,6 +1321,7 @@
 
   let waitingforconv = null;
   function handleLocCounter() {
+    if (!window.SUBACCOUNT_FEATURES_ENABLED) return;
     try {
       clearInterval(waitingforconv);
       waitingforconv = null;
