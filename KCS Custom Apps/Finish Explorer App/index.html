@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Finish Explorer — KCS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Figtree:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --dark:#35312e;
+    --gray:#60605e;
+    --bg:#fcfaf6;
+    --surf:#f5f3eb;
+    --steel:#465561;
+    --terra:#af5a3c;
+    --tan:#b8866e;
+    --slate:#5c707e;
+    --bdr:#ddd8d0;
+    --bdr-lt:#ede9e1;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--dark);
+    font-family: 'Figtree', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 44px 72px 96px;
+  }
+
+  header.title-block {
+    text-align: left;
+    margin-bottom: 32px;
+  }
+
+  header.title-block h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 34px;
+    letter-spacing: 0.2px;
+    margin: 0 0 6px;
+    color: var(--dark);
+  }
+
+  header.title-block p {
+    font-size: 14px;
+    color: var(--gray);
+    margin: 0;
+    letter-spacing: 0.3px;
+  }
+
+  /* ---- Filter bar ---- */
+  .filter-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg);
+    padding: 18px 0 16px;
+    border-bottom: 1px solid var(--bdr);
+    margin-bottom: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 16px;
+  }
+
+  .filter-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 160px;
+  }
+
+  .filter-field label {
+    font-family: 'Fira Code', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.4px;
+    color: var(--gray);
+    text-transform: uppercase;
+  }
+
+  .filter-field select {
+    font-family: 'Figtree', sans-serif;
+    font-size: 14px;
+    color: var(--dark);
+    background: #fff;
+    border: 1px solid var(--bdr);
+    border-radius: 6px;
+    padding: 9px 12px;
+    min-width: 170px;
+    cursor: pointer;
+  }
+
+  .filter-field select:disabled {
+    background: var(--surf);
+    color: var(--gray);
+    cursor: not-allowed;
+  }
+
+  .clear-btn {
+    font-family: 'Figtree', sans-serif;
+    font-size: 13px;
+    color: var(--steel);
+    background: none;
+    border: 1px solid var(--bdr);
+    border-radius: 6px;
+    padding: 9px 16px;
+    cursor: pointer;
+    align-self: flex-end;
+  }
+
+  .clear-btn:hover {
+    background: var(--surf);
+  }
+
+  .result-count {
+    font-family: 'Fira Code', monospace;
+    font-size: 12px;
+    color: var(--gray);
+    margin-left: auto;
+    align-self: center;
+  }
+
+  /* ---- Results grid ---- */
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 28px;
+  }
+
+  figure.result-card {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    border: 1px solid var(--bdr-lt);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .result-img-wrap {
+    position: relative;
+    display: block;
+    aspect-ratio: 4 / 3;
+    background: var(--surf);
+  }
+
+  .result-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .img-tag {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(53, 49, 46, 0.88);
+    font-family: 'Fira Code', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3px;
+    padding: 4px 9px 4px 6px;
+    border-radius: 5px;
+    z-index: 2;
+  }
+
+  .img-tag .bang {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 9px;
+    flex-shrink: 0;
+    font-family: 'Figtree', sans-serif;
+  }
+
+  .img-tag.lighting { color: #f4d35e; }
+  .img-tag.lighting .bang { background: #f4d35e; color: var(--dark); }
+  .img-tag.filter { color: #8ecae6; }
+  .img-tag.filter .bang { background: #8ecae6; color: var(--dark); }
+
+  figcaption.result-info {
+    padding: 12px 14px 14px;
+  }
+
+  .result-finish {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--dark);
+    margin: 0 0 2px;
+  }
+
+  .result-species {
+    font-size: 12.5px;
+    color: var(--steel);
+    margin: 0 0 6px;
+  }
+
+  .result-glaze {
+    display: inline-block;
+    font-family: 'Fira Code', monospace;
+    font-size: 10px;
+    color: var(--gray);
+    background: var(--surf);
+    border: 1px solid var(--bdr);
+    border-radius: 4px;
+    padding: 2px 7px;
+    margin-bottom: 6px;
+  }
+
+  .result-caption {
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--gray);
+    margin: 0;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--gray);
+  }
+
+  .empty-state .eyebrow {
+    font-family: 'Fira Code', monospace;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    color: var(--terra);
+    margin-bottom: 10px;
+  }
+
+  .empty-state p {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    color: var(--dark);
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="title-block">
+    <h1>Finish Explorer</h1>
+    <p>KCS — browse by brand, species, and finish</p>
+  </header>
+
+  <div class="filter-bar">
+    <div class="filter-field">
+      <label for="f-brand">Brand</label>
+      <select id="f-brand"></select>
+    </div>
+    <div class="filter-field">
+      <label for="f-category">Stain / Paint</label>
+      <select id="f-category"></select>
+    </div>
+    <div class="filter-field">
+      <label for="f-species">Species</label>
+      <select id="f-species"></select>
+    </div>
+    <div class="filter-field">
+      <label for="f-finish">Finish</label>
+      <select id="f-finish"></select>
+    </div>
+    <div class="filter-field">
+      <label for="f-glaze">Glaze / Highlight</label>
+      <select id="f-glaze"></select>
+    </div>
+    <button class="clear-btn" id="clear-btn">Clear filters</button>
+    <div class="result-count" id="result-count"></div>
+  </div>
+
+  <div class="results-grid" id="results-grid"></div>
+  <div class="empty-state" id="empty-state" style="display:none;">
+    <div class="eyebrow">No matches</div>
+    <p>Try clearing a filter or two.</p>
+  </div>
+
+</div>
+
+<script src="data.js"></script>
+<script>
+  const ALL = "All";
+
+  const state = {
+    brand: ALL,
+    category: ALL,
+    species: ALL,
+    finishName: ALL,
+    glaze: ALL,
+  };
+
+  const els = {
+    brand: document.getElementById('f-brand'),
+    category: document.getElementById('f-category'),
+    species: document.getElementById('f-species'),
+    finish: document.getElementById('f-finish'),
+    glaze: document.getElementById('f-glaze'),
+    grid: document.getElementById('results-grid'),
+    empty: document.getElementById('empty-state'),
+    count: document.getElementById('result-count'),
+    clear: document.getElementById('clear-btn'),
+  };
+
+  function uniqueValues(data, key) {
+    return [...new Set(data.map(d => d[key]))].sort();
+  }
+
+  function filteredExcept(exceptKey) {
+    return FINISH_DATA.filter(r => {
+      if (exceptKey !== 'brand' && state.brand !== ALL && r.brand !== state.brand) return false;
+      if (exceptKey !== 'category' && state.category !== ALL && r.category !== state.category) return false;
+      if (exceptKey !== 'species' && state.species !== ALL && r.species !== state.species) return false;
+      if (exceptKey !== 'finishName' && state.finishName !== ALL && r.finishName !== state.finishName) return false;
+      if (exceptKey !== 'glaze' && state.glaze !== ALL && r.glaze !== state.glaze) return false;
+      return true;
+    });
+  }
+
+  function populateSelect(selectEl, key, stateKey, currentVal) {
+    const options = uniqueValues(filteredExcept(stateKey), key);
+    const prevVal = selectEl.value;
+    selectEl.innerHTML = '';
+    const allOpt = document.createElement('option');
+    allOpt.value = ALL;
+    allOpt.textContent = `All ${selectEl.dataset.label || ''}`.trim();
+    selectEl.appendChild(allOpt);
+    options.forEach(opt => {
+      const o = document.createElement('option');
+      o.value = opt;
+      o.textContent = opt;
+      selectEl.appendChild(o);
+    });
+    // keep current selection if still valid, else reset to All
+    if (options.includes(currentVal)) {
+      selectEl.value = currentVal;
+    } else {
+      selectEl.value = ALL;
+      state[stateKey] = ALL;
+    }
+    if (options.length === 0) {
+      selectEl.disabled = true;
+    } else {
+      selectEl.disabled = false;
+    }
+  }
+
+  function render() {
+    els.brand.dataset.label = 'brands';
+    els.category.dataset.label = 'categories';
+    els.species.dataset.label = 'species';
+    els.finish.dataset.label = 'finishes';
+    els.glaze.dataset.label = 'glazes';
+
+    populateSelect(els.brand, 'brand', 'brand', state.brand);
+    populateSelect(els.category, 'category', 'category', state.category);
+    populateSelect(els.species, 'species', 'species', state.species);
+    populateSelect(els.finish, 'finishName', 'finishName', state.finishName);
+    populateSelect(els.glaze, 'glaze', 'glaze', state.glaze);
+
+    const results = filteredExcept(null);
+    els.count.textContent = `${results.length} photo${results.length === 1 ? '' : 's'}`;
+
+    els.grid.innerHTML = '';
+    if (results.length === 0) {
+      els.empty.style.display = 'block';
+      els.grid.style.display = 'none';
+    } else {
+      els.empty.style.display = 'none';
+      els.grid.style.display = 'grid';
+      results.forEach(r => {
+        const fig = document.createElement('figure');
+        fig.className = 'result-card';
+
+        const imgWrap = document.createElement('div');
+        imgWrap.className = 'result-img-wrap';
+        const img = document.createElement('img');
+        img.src = r.imageUrl;
+        img.alt = `${r.finishName} on ${r.species}`;
+        img.loading = 'lazy';
+        imgWrap.appendChild(img);
+
+        if (r.warning === 'artificial_lighting') {
+          const tag = document.createElement('span');
+          tag.className = 'img-tag lighting';
+          tag.innerHTML = '<span class="bang">!</span>Artificial Lighting';
+          imgWrap.appendChild(tag);
+        } else if (r.warning === 'image_filter_warning') {
+          const tag = document.createElement('span');
+          tag.className = 'img-tag filter';
+          tag.innerHTML = '<span class="bang">!</span>Image Filter Warning';
+          imgWrap.appendChild(tag);
+        }
+
+        fig.appendChild(imgWrap);
+
+        const info = document.createElement('figcaption');
+        info.className = 'result-info';
+        info.innerHTML = `
+          <p class="result-finish">${r.finishName}</p>
+          <p class="result-species">${r.species} · ${r.brand}</p>
+          <span class="result-glaze">${r.glaze}</span>
+          <p class="result-caption">${r.caption || ''}</p>
+        `;
+        fig.appendChild(info);
+
+        els.grid.appendChild(fig);
+      });
+    }
+  }
+
+  els.brand.addEventListener('change', e => { state.brand = e.target.value; render(); });
+  els.category.addEventListener('change', e => { state.category = e.target.value; render(); });
+  els.species.addEventListener('change', e => { state.species = e.target.value; render(); });
+  els.finish.addEventListener('change', e => { state.finishName = e.target.value; render(); });
+  els.glaze.addEventListener('change', e => { state.glaze = e.target.value; render(); });
+
+  els.clear.addEventListener('click', () => {
+    state.brand = ALL;
+    state.category = ALL;
+    state.species = ALL;
+    state.finishName = ALL;
+    state.glaze = ALL;
+    render();
+  });
+
+  render();
+</script>
+</body>
+</html>

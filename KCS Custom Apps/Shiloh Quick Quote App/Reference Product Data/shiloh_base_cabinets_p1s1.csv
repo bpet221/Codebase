@@ -1,0 +1,636 @@
+Cabinet_Name,Cabinet_Category,Cabinet_Sub_Type,SKU,Stock_Price,Doors,Drawers,Shelves,Width,Height,Depth,Phase,Run,Catalog_Page
+,Base Cabinet,,B9,417,,,,,,,1,1,I2
+,Base Cabinet,,B30,719,,,,,,,1,1,I2
+,Base Cabinet,,B27-1DR,656,,,,,,,1,1,I2
+,Base Cabinet,,B12,447,,,,,,,1,1,I2
+,Base Cabinet,,B33,754,,,,,,,1,1,I2
+,Base Cabinet,,B30-1DR,691,,,,,,,1,1,I2
+,Base Cabinet,,B15,476,,,,,,,1,1,I2
+,Base Cabinet,,B36,784,,,,,,,1,1,I2
+,Base Cabinet,,B33-1DR,726,,,,,,,1,1,I2
+,Base Cabinet,,B18,487,,,,,,,1,1,I2
+,Base Cabinet,,B39,819,,,,,,,1,1,I2
+,Base Cabinet,,B36-1DR,754,,,,,,,1,1,I2
+,Base Cabinet,,B21,522,,,,,,,1,1,I2
+,Base Cabinet,,B42,854,,,,,,,1,1,I2
+,Base Cabinet,,B39-1DR,879,,,,,,,1,1,I2
+,Base Cabinet,,B24,541,,,,,,,1,1,I2
+,Base Cabinet,,B45,882,,,,,,,1,1,I2
+,Base Cabinet,,B42-1DR,914,,,,,,,1,1,I2
+,Base Cabinet,,B24-2D,738,,,,,,,1,1,I2
+,Base Cabinet,,B48,893,,,,,,,1,1,I2
+,Base Cabinet,,B27,685,,,,,,,1,1,I2
+,Base Cabinet,,SB18,476,,,,,,,1,1,I3
+,Base Cabinet,,SB33,680,,,,,,,1,1,I3
+,Base Cabinet,,SB27-1DR,633,,,,,,,1,1,I3
+,Base Cabinet,,SB21,493,,,,,,,1,1,I3
+,Base Cabinet,,SB36,761,,,,,,,1,1,I3
+,Base Cabinet,,SB30-1DR,650,,,,,,,1,1,I3
+,Base Cabinet,,SB24,506,,,,,,,1,1,I3
+,Base Cabinet,,SB39,800,,,,,,,1,1,I3
+,Base Cabinet,,SB33-1DR,680,,,,,,,1,1,I3
+,Base Cabinet,,SB24-2D,693,,,,,,,1,1,I3
+,Base Cabinet,,SB42,843,,,,,,,1,1,I3
+,Base Cabinet,,SB36-1DR,761,,,,,,,1,1,I3
+,Base Cabinet,,SB27,633,,,,,,,1,1,I3
+,Base Cabinet,,SB45,871,,,,,,,1,1,I3
+,Base Cabinet,,SB39-1DR,800,,,,,,,1,1,I3
+,Base Cabinet,,SB30,650,,,,,,,1,1,I3
+,Base Cabinet,,SB48,882,,,,,,,1,1,I3
+,Base Cabinet,,SB42-1DR,843,,,,,,,1,1,I3
+,Base Cabinet,,SB45-1DR,871,,,,,,,1,1,I3
+,Base Cabinet,,SB48-1DR,882,,,,,,,1,1,I3
+,Base Cabinet,,SBU33,1699,,,,,,,1,1,I4
+,Base Cabinet,,SBU36,1807,,,,,,,1,1,I4
+,Base Cabinet,,SBU39,1846,,,,,,,1,1,I4
+,Base Cabinet,,SBU33-1DR,1699,,,,,,,1,1,I4
+,Base Cabinet,,SBU36-1DR,1807,,,,,,,1,1,I4
+,Base Cabinet,,SBU39-1DR,1846,,,,,,,1,1,I4
+,Base Cabinet,,SBR24,541,,,,,,,1,1,I5
+,Base Cabinet,,SBR36,784,,,,,,,1,1,I5
+,Base Cabinet,,SBR27-1DR,656,,,,,,,1,1,I5
+,Base Cabinet,,SBR24-2D,738,,,,,,,1,1,I5
+,Base Cabinet,,SBR39,819,,,,,,,1,1,I5
+,Base Cabinet,,SBR30-1DR,691,,,,,,,1,1,I5
+,Base Cabinet,,SBR27,685,,,,,,,1,1,I5
+,Base Cabinet,,SBR42,854,,,,,,,1,1,I5
+,Base Cabinet,,SBR33-1DR,726,,,,,,,1,1,I5
+,Base Cabinet,,SBR30,719,,,,,,,1,1,I5
+,Base Cabinet,,SBR45,882,,,,,,,1,1,I5
+,Base Cabinet,,SBR36-1DR,754,,,,,,,1,1,I5
+,Base Cabinet,,SBR33,754,,,,,,,1,1,I5
+,Base Cabinet,,SBR48,893,,,,,,,1,1,I5
+,Base Cabinet,,SBR39-1DR,879,,,,,,,1,1,I5
+,Base Cabinet,,SBR42-1DR,914,,,,,,,1,1,I5
+,Base Cabinet,,SBA30,839,,,,,,,1,1,I6
+,Base Cabinet,,SBA33,869,,,,,,,1,1,I6
+,Base Cabinet,,SBA36,950,,,,,,,1,1,I6
+,Base Cabinet,,SBA39,989,,,,,,,1,1,I6
+,Base Cabinet,,SBA42,1032,,,,,,,1,1,I6
+,Base Cabinet,,SB18-RT,694,,,,,,,1,1,I7
+,Base Cabinet,,SB30-RT,868,,,,,,,1,1,I7
+,Base Cabinet,,SB27-RT-1DR,851,,,,,,,1,1,I7
+,Base Cabinet,,SB21-RT,711,,,,,,,1,1,I7
+,Base Cabinet,,SB33-RT,898,,,,,,,1,1,I7
+,Base Cabinet,,SB30-RT-1DR,868,,,,,,,1,1,I7
+,Base Cabinet,,SB24-RT,724,,,,,,,1,1,I7
+,Base Cabinet,,SB36-RT,979,,,,,,,1,1,I7
+,Base Cabinet,,SB33-RT-1DR,898,,,,,,,1,1,I7
+,Base Cabinet,,SB24-RT-2D,911,,,,,,,1,1,I7
+,Base Cabinet,,SB39-RT,1018,,,,,,,1,1,I7
+,Base Cabinet,,SB36-RT-1DR,979,,,,,,,1,1,I7
+,Base Cabinet,,SB27-RT,851,,,,,,,1,1,I7
+,Base Cabinet,,SB42-RT,1061,,,,,,,1,1,I7
+,Base Cabinet,,SB39-RT-1DR,1018,,,,,,,1,1,I7
+,Base Cabinet,,SB42-RT-1DR,1061,,,,,,,1,1,I7
+,Base Cabinet,,B9-FHD,417,,,,,,,1,1,I8
+,Base Cabinet,,B12-FHD,447,,,,,,,1,1,I8
+,Base Cabinet,,B15-FHD,476,,,,,,,1,1,I8
+,Base Cabinet,,B18-FHD,487,,,,,,,1,1,I8
+,Base Cabinet,,B21-FHD,522,,,,,,,1,1,I8
+,Base Cabinet,,B24-FHD,541,,,,,,,1,1,I8
+,Base Cabinet,,B24-FHD-2D,738,,,,,,,1,1,I8
+,Base Cabinet,,B27-FHD,685,,,,,,,1,1,I8
+,Base Cabinet,,B30-FHD,719,,,,,,,1,1,I8
+,Base Cabinet,,B33-FHD,754,,,,,,,1,1,I8
+,Base Cabinet,,B36-FHD,784,,,,,,,1,1,I8
+,Base Cabinet,,B39-FHD,819,,,,,,,1,1,I8
+,Base Cabinet,,B42-FHD,854,,,,,,,1,1,I8
+,Base Cabinet,,B45-FHD,882,,,,,,,1,1,I8
+,Base Cabinet,,B48-FHD,893,,,,,,,1,1,I8
+,Base Cabinet,,TB9,417,,,,,,,1,1,I9
+,Base Cabinet,,TB12,447,,,,,,,1,1,I9
+,Base Cabinet,,TB15,638,,,,,,,1,1,I9
+,Base Cabinet,,TB18,650,,,,,,,1,1,I9
+,Base Cabinet,,TB21,685,,,,,,,1,1,I9
+,Base Cabinet,,TB24,703,,,,,,,1,1,I9
+,Base Cabinet,,B12-RT,883,,,,,,,1,1,I10
+,Base Cabinet,,B27-RT-1DR,1092,,,,,,,1,1,I10
+,Base Cabinet,,B15-RT,912,,,,,,,1,1,I10
+,Base Cabinet,,B30-RT-1DR,1127,,,,,,,1,1,I10
+,Base Cabinet,,B18-RT,923,,,,,,,1,1,I10
+,Base Cabinet,,B33-RT-1DR,1162,,,,,,,1,1,I10
+,Base Cabinet,,B21-RT,958,,,,,,,1,1,I10
+,Base Cabinet,,B36-RT-1DR,1190,,,,,,,1,1,I10
+,Base Cabinet,,B24-RT,977,,,,,,,1,1,I10
+,Base Cabinet,,B39-RT-1DR,1315,,,,,,,1,1,I10
+,Base Cabinet,,B24-RT-2D,1175,,,,,,,1,1,I10
+,Base Cabinet,,B42-RT-1DR,1350,,,,,,,1,1,I10
+,Base Cabinet,,B27-RT,1121,,,,,,,1,1,I10
+,Base Cabinet,,B30-RT,1155,,,,,,,1,1,I10
+,Base Cabinet,,B33-RT,1190,,,,,,,1,1,I10
+,Base Cabinet,,B36-RT,1220,,,,,,,1,1,I10
+,Base Cabinet,,B39-RT,1255,,,,,,,1,1,I10
+,Base Cabinet,,B42-RT,1290,,,,,,,1,1,I10
+,Base Cabinet,,PB9,738,,,,,,,1,1,I11
+,Base Cabinet,,PB27-1DR,1178,,,,,,,1,1,I11
+,Base Cabinet,,PB12,784,,,,,,,1,1,I11
+,Base Cabinet,,PB30-1DR,1237,,,,,,,1,1,I11
+,Base Cabinet,,PB15,836,,,,,,,1,1,I11
+,Base Cabinet,,PB33-1DR,1301,,,,,,,1,1,I11
+,Base Cabinet,,PB18,859,,,,,,,1,1,I11
+,Base Cabinet,,PB36-1DR,1347,,,,,,,1,1,I11
+,Base Cabinet,,PB21,917,,,,,,,1,1,I11
+,Base Cabinet,,PB39-1DR,1499,,,,,,,1,1,I11
+,Base Cabinet,,PB24,947,,,,,,,1,1,I11
+,Base Cabinet,,PB42-1DR,1557,,,,,,,1,1,I11
+,Base Cabinet,,PB24-2D,1325,,,,,,,1,1,I11
+,Base Cabinet,,PB27,1206,,,,,,,1,1,I11
+,Base Cabinet,,PB30,1265,,,,,,,1,1,I11
+,Base Cabinet,,PB33,1330,,,,,,,1,1,I11
+,Base Cabinet,,PB36,1376,,,,,,,1,1,I11
+,Base Cabinet,,PB39,1439,,,,,,,1,1,I11
+,Base Cabinet,,PB42,1497,,,,,,,1,1,I11
+,Base Cabinet,,PB45,1550,,,,,,,1,1,I11
+,Base Cabinet,,PB48,1573,,,,,,,1,1,I11
+,Base Cabinet,,PB9-FHD,738,,,,,,,1,1,I12
+,Base Cabinet,,PB12-FHD,784,,,,,,,1,1,I12
+,Base Cabinet,,PB15-FHD,836,,,,,,,1,1,I12
+,Base Cabinet,,PB18-FHD,859,,,,,,,1,1,I12
+,Base Cabinet,,PB21-FHD,917,,,,,,,1,1,I12
+,Base Cabinet,,PB24-FHD,947,,,,,,,1,1,I12
+,Base Cabinet,,PB24-FHD-2D,1325,,,,,,,1,1,I12
+,Base Cabinet,,PB27-FHD,1206,,,,,,,1,1,I12
+,Base Cabinet,,PB30-FHD,1265,,,,,,,1,1,I12
+,Base Cabinet,,PB33-FHD,1330,,,,,,,1,1,I12
+,Base Cabinet,,PB36-FHD,1376,,,,,,,1,1,I12
+,Base Cabinet,,PB39-FHD,1439,,,,,,,1,1,I12
+,Base Cabinet,,PB42-FHD,1497,,,,,,,1,1,I12
+,Base Cabinet,,PB45-FHD,1550,,,,,,,1,1,I12
+,Base Cabinet,,PB48-FHD,1573,,,,,,,1,1,I12
+,Base Cabinet,,BBC36,593,,,,,,,1,1,I13
+,Base Cabinet,,BBC39,621,,,,,,,1,1,I13
+,Base Cabinet,,BBC42,680,,,,,,,1,1,I13
+,Base Cabinet,,BBC45,708,,,,,,,1,1,I13
+,Base Cabinet,,BBC48,738,,,,,,,1,1,I13
+,Base Cabinet,,PBBC36,1052,,,,,,,1,1,I14
+,Base Cabinet,,PBBC39,1102,,,,,,,1,1,I14
+,Base Cabinet,,PBBC42,1202,,,,,,,1,1,I14
+,Base Cabinet,,PBBC45,1254,,,,,,,1,1,I14
+,Base Cabinet,,PBBC48,1306,,,,,,,1,1,I14
+,Base Cabinet,,SBBC54,998,,,,,,,1,1,I15
+,Base Cabinet,,SBBC57,1028,,,,,,,1,1,I15
+,Base Cabinet,,SBBC60,1110,,,,,,,1,1,I15
+,Base Cabinet,,BBC42-S,1411,,,,,,,1,1,I16
+,Base Cabinet,,BBC45-S,1439,,,,,,,1,1,I16
+,Base Cabinet,,BBC48-S,1469,,,,,,,1,1,I16
+,Base Cabinet,,BBC45-WS,2189,,,,,,,1,1,I17
+,Base Cabinet,,BBC48-WS,2219,,,,,,,1,1,I17
+,Base Cabinet,,BBC51-WS,2248,,,,,,,1,1,I17
+,Base Cabinet,,BDB27,1085,,,,,,,1,1,I18
+,Base Cabinet,,BDB30,1120,,,,,,,1,1,I18
+,Base Cabinet,,BDB33,1154,,,,,,,1,1,I18
+,Base Cabinet,,BDB36,1184,,,,,,,1,1,I18
+,Base Cabinet,,BDB39,1219,,,,,,,1,1,I18
+,Base Cabinet,,BDB42,1254,,,,,,,1,1,I18
+,Base Cabinet,,BDB45,1282,,,,,,,1,1,I18
+,Base Cabinet,,BDB48,1293,,,,,,,1,1,I18
+,Base Cabinet,,BDBD27,1539,,,,,,,1,1,I19
+,Base Cabinet,,BDBD30,1585,,,,,,,1,1,I19
+,Base Cabinet,,BDBD33,1631,,,,,,,1,1,I19
+,Base Cabinet,,BDBD36,1673,,,,,,,1,1,I19
+,Base Cabinet,,BDBD39,1719,,,,,,,1,1,I19
+,Base Cabinet,,BDBD42,1765,,,,,,,1,1,I19
+,Base Cabinet,,BBB12,775,,,,,,,1,1,I20
+,Base Cabinet,,BBB15,803,,,,,,,1,1,I20
+,Base Cabinet,,BBB18,814,,,,,,,1,1,I20
+,Base Cabinet,,BBB21,849,,,,,,,1,1,I20
+,Base Cabinet,,BBB24,868,,,,,,,1,1,I20
+,Base Cabinet,,B12-2HD,811,,,,,,,1,1,I21
+,Base Cabinet,,B15-2HD,829,,,,,,,1,1,I21
+,Base Cabinet,,B18-2HD,870,,,,,,,1,1,I21
+,Base Cabinet,,B21-2HD,911,,,,,,,1,1,I21
+,Base Cabinet,,B24-2HD,946,,,,,,,1,1,I21
+,Base Cabinet,,B27-2HD,985,,,,,,,1,1,I21
+,Base Cabinet,,B30-2HD,1026,,,,,,,1,1,I21
+,Base Cabinet,,B33-2HD,1121,,,,,,,1,1,I21
+,Base Cabinet,,B36-2HD,1216,,,,,,,1,1,I21
+,Base Cabinet,,B39-2HD,1431,,,,,,,1,1,I21
+,Base Cabinet,,B42-2HD,1526,,,,,,,1,1,I21
+,Base Cabinet,,B12-3,511,,,,,,,1,1,I22
+,Base Cabinet,,B15-3,530,,,,,,,1,1,I22
+,Base Cabinet,,B18-3,569,,,,,,,1,1,I22
+,Base Cabinet,,B21-3,610,,,,,,,1,1,I22
+,Base Cabinet,,B24-3,645,,,,,,,1,1,I22
+,Base Cabinet,,B27-3,686,,,,,,,1,1,I22
+,Base Cabinet,,B30-3,727,,,,,,,1,1,I22
+,Base Cabinet,,B33-3,822,,,,,,,1,1,I22
+,Base Cabinet,,B36-3,917,,,,,,,1,1,I22
+,Base Cabinet,,B39-3,1192,,,,,,,1,1,I22
+,Base Cabinet,,B42-3,1287,,,,,,,1,1,I22
+,Base Cabinet,,B12-2TD,1247,,,,,,,1,1,I23
+,Base Cabinet,,B15-2TD,1265,,,,,,,1,1,I23
+,Base Cabinet,,B18-2TD,1306,,,,,,,1,1,I23
+,Base Cabinet,,B21-2TD,1347,,,,,,,1,1,I23
+,Base Cabinet,,B24-2TD,1382,,,,,,,1,1,I23
+,Base Cabinet,,B27-2TD,1421,,,,,,,1,1,I23
+,Base Cabinet,,B30-2TD,1462,,,,,,,1,1,I23
+,Base Cabinet,,B33-2TD,1557,,,,,,,1,1,I23
+,Base Cabinet,,B36-2TD,1652,,,,,,,1,1,I23
+,Base Cabinet,,B39-2TD,1867,,,,,,,1,1,I23
+,Base Cabinet,,B42-2TD,1962,,,,,,,1,1,I23
+,Base Cabinet,,B12-4,523,,,,,,,1,1,I24
+,Base Cabinet,,B15-4,541,,,,,,,1,1,I24
+,Base Cabinet,,B18-4,582,,,,,,,1,1,I24
+,Base Cabinet,,B21-4,623,,,,,,,1,1,I24
+,Base Cabinet,,B24-4,658,,,,,,,1,1,I24
+,Base Cabinet,,B27-4,697,,,,,,,1,1,I24
+,Base Cabinet,,B30-4,738,,,,,,,1,1,I24
+,Base Cabinet,,B33-4,833,,,,,,,1,1,I24
+,Base Cabinet,,B36-4,928,,,,,,,1,1,I24
+,Base Cabinet,,B39-4,1263,,,,,,,1,1,I24
+,Base Cabinet,,B42-4,1358,,,,,,,1,1,I24
+,Base Cabinet,,STB30-4,848,,,,,,,1,1,I25
+,Base Cabinet,,STB33-4,943,,,,,,,1,1,I25
+,Base Cabinet,,STB36-4,1038,,,,,,,1,1,I25
+,Base Cabinet,,STB39-4,1373,,,,,,,1,1,I25
+,Base Cabinet,,STB42-4,1468,,,,,,,1,1,I25
+,Base Cabinet,,STB45-4,1563,,,,,,,1,1,I25
+,Base Cabinet,,STB48-4,1658,,,,,,,1,1,I25
+,Base Cabinet,,BL2HD36,2432,,,,,,,1,1,I26
+,Base Cabinet,,BL2HD39,2862,,,,,,,1,1,I26
+,Base Cabinet,,BL2HD42,3052,,,,,,,1,1,I26
+,Base Cabinet,,BL3D36,1834,,,,,,,1,1,I27
+,Base Cabinet,,BL3D39,2384,,,,,,,1,1,I27
+,Base Cabinet,,BL3D42,2574,,,,,,,1,1,I27
+,Base Cabinet,,BL4D36,1856,,,,,,,1,1,I28
+,Base Cabinet,,BL4D39,2526,,,,,,,1,1,I28
+,Base Cabinet,,BL4D42,2716,,,,,,,1,1,I28
+,Base Cabinet,,BBD12-3,743,,,,,,,1,1,I29
+,Base Cabinet,,BBD15-3,762,,,,,,,1,1,I29
+,Base Cabinet,,BBD18-3,802,,,,,,,1,1,I29
+,Base Cabinet,,BBD21-3,843,,,,,,,1,1,I29
+,Base Cabinet,,BBD24-3,909,,,,,,,1,1,I29
+,Base Cabinet,,BBD12-4,756,,,,,,,1,1,I30
+,Base Cabinet,,BBD15-4,773,,,,,,,1,1,I30
+,Base Cabinet,,BBD18-4,814,,,,,,,1,1,I30
+,Base Cabinet,,BBD21-4,855,,,,,,,1,1,I30
+,Base Cabinet,,BBD24-4,922,,,,,,,1,1,I30
+,Base Cabinet,,BBB12-3,838,,,,,,,1,1,I31
+,Base Cabinet,,BBB15-3,857,,,,,,,1,1,I31
+,Base Cabinet,,BBB18-3,897,,,,,,,1,1,I31
+,Base Cabinet,,BBB21-3,938,,,,,,,1,1,I31
+,Base Cabinet,,BBB24-3,972,,,,,,,1,1,I31
+,Base Cabinet,,BBB12-4,851,,,,,,,1,1,I32
+,Base Cabinet,,BBB15-4,868,,,,,,,1,1,I32
+,Base Cabinet,,BBB18-4,909,,,,,,,1,1,I32
+,Base Cabinet,,BBB21-4,950,,,,,,,1,1,I32
+,Base Cabinet,,BBB24-4,1017,,,,,,,1,1,I32
+,Base Cabinet,,BBBD12-3,1071,,,,,,,1,1,I33
+,Base Cabinet,,BBBD15-3,1089,,,,,,,1,1,I33
+,Base Cabinet,,BBBD18-3,1129,,,,,,,1,1,I33
+,Base Cabinet,,BBBD21-3,1170,,,,,,,1,1,I33
+,Base Cabinet,,BBBD24-3,1237,,,,,,,1,1,I33
+,Base Cabinet,,BBBD12-4,1083,,,,,,,1,1,I34
+,Base Cabinet,,BBBD15-4,1101,,,,,,,1,1,I34
+,Base Cabinet,,BBBD18-4,1142,,,,,,,1,1,I34
+,Base Cabinet,,BBBD21-4,1183,,,,,,,1,1,I34
+,Base Cabinet,,BBBD24-4,1249,,,,,,,1,1,I34
+,Base Cabinet,,BLS36,1069,,,,,,,1,1,I35
+,Base Cabinet,,BLSS36,1534,,,,,,,1,1,I36
+,Base Cabinet,,BL33-PH,1388,,,,,,,1,1,I37
+,Base Cabinet,,BL36-PH,1417,,,,,,,1,1,I37
+,Base Cabinet,,BLSB33-PH,1272,,,,,,,1,1,I37
+,Base Cabinet,,BLSB36-PH,1301,,,,,,,1,1,I37
+,Base Cabinet,,BL33-SS-PH,2017,,,,,,,1,1,I40
+,Base Cabinet,,BL36-SS-PH,2046,,,,,,,1,1,I40
+,Base Cabinet,,DSB36,1063,,,,,,,1,1,I41
+,Base Cabinet,,DSB39,1137,,,,,,,1,1,I41
+,Base Cabinet,,DSB42,1197,,,,,,,1,1,I41
+,Base Cabinet,,DSB42-2D,1394,,,,,,,1,1,I41
+,Base Cabinet,,DSB36-LS,1551,,,,,,,1,1,I41
+,Base Cabinet,,DSF36,495,,,,,,,1,1,I41
+,Base Cabinet,,DSF39,511,,,,,,,1,1,I41
+,Base Cabinet,,DSF42,534,,,,,,,1,1,I41
+,Base Cabinet,,DSB36-SS,1560,,,,,,,1,1,I42
+,Base Cabinet,,DSB39-SS,1634,,,,,,,1,1,I42
+,Base Cabinet,,DSB42-SS,1694,,,,,,,1,1,I42
+,Base Cabinet,,BL36-CP-PH,3265,,,,,,,1,1,I43
+,Base Cabinet,,BL36-RC,2051,,,,,,,1,1,I44
+,Base Cabinet,,BWDMB15,881,,,,,,,1,1,I45
+,Base Cabinet,,BWDMB18,916,,,,,,,1,1,I45
+,Base Cabinet,,BWDMB21,1045,,,,,,,1,1,I45
+,Base Cabinet,,BWDMB15-FHD,881,,,,,,,1,1,I45
+,Base Cabinet,,BWDMB18-FHD,916,,,,,,,1,1,I45
+,Base Cabinet,,BWDMB21-FHD,1045,,,,,,,1,1,I45
+,Base Cabinet,,BWDMA15,1141,,,,,,,1,1,I46
+,Base Cabinet,,BWDMA18,1176,,,,,,,1,1,I46
+,Base Cabinet,,BWDMA21,1378,,,,,,,1,1,I46
+,Base Cabinet,,BWDMA18-FHD,1176,,,,,,,1,1,I46
+,Base Cabinet,,BWDMA21-FHD,1378,,,,,,,1,1,I46
+,Base Cabinet,,BWDMW15,1045,,,,,,,1,1,I47
+,Base Cabinet,,BWDMW18,1132,,,,,,,1,1,I47
+,Base Cabinet,,BWDMW21,1192,,,,,,,1,1,I47
+,Base Cabinet,,BWDMW15-FHD,1056,,,,,,,1,1,I47
+,Base Cabinet,,BWDMW18-FHD,1173,,,,,,,1,1,I47
+,Base Cabinet,,BWDMW21-FHD,1230,,,,,,,1,1,I47
+,Base Cabinet,,BWDMWSD15,1836,,,,,,,1,1,I48
+,Base Cabinet,,BWDMWSD18,1923,,,,,,,1,1,I48
+,Base Cabinet,,BWDMWSD21,1983,,,,,,,1,1,I48
+,Base Cabinet,,BWDMWSD15-FHD,1847,,,,,,,1,1,I48
+,Base Cabinet,,BWDMWSD18-FHD,1964,,,,,,,1,1,I48
+,Base Cabinet,,BWDMWSD21-FHD,2021,,,,,,,1,1,I48
+,Base Cabinet,,BO24,621,,,,,,,1,1,I49
+,Base Cabinet,,BO27,656,,,,,,,1,1,I49
+,Base Cabinet,,BO30,691,,,,,,,1,1,I49
+,Base Cabinet,,BO33,726,,,,,,,1,1,I49
+,Base Cabinet,,BO36,754,,,,,,,1,1,I49
+,Base Cabinet,,FIBO24,1062,,,,,,,1,1,I50
+,Base Cabinet,,FIBO27,1097,,,,,,,1,1,I50
+,Base Cabinet,,FIBO30,1132,,,,,,,1,1,I50
+,Base Cabinet,,FIBO33,1167,,,,,,,1,1,I50
+,Base Cabinet,,FIBO36,1195,,,,,,,1,1,I50
+,Base Cabinet,,FOBO24,1462,,,,,,,1,1,I51
+,Base Cabinet,,FOBO27,1497,,,,,,,1,1,I51
+,Base Cabinet,,FOBO30,1532,,,,,,,1,1,I51
+,Base Cabinet,,FOBO33,1567,,,,,,,1,1,I51
+,Base Cabinet,,FOBO36,1595,,,,,,,1,1,I51
+,Base Cabinet,,BWD27,892,,,,,,,1,1,I52
+,Base Cabinet,,BWD30,946,,,,,,,1,1,I52
+,Base Cabinet,,BWD33,1069,,,,,,,1,1,I52
+,Base Cabinet,,BWD36,1192,,,,,,,1,1,I52
+,Base Cabinet,,FIBWD27,1333,,,,,,,1,1,I53
+,Base Cabinet,,FIBWD30,1387,,,,,,,1,1,I53
+,Base Cabinet,,FIBWD33,1510,,,,,,,1,1,I53
+,Base Cabinet,,FIBWD36,1633,,,,,,,1,1,I53
+,Base Cabinet,,FOBWD27,1733,,,,,,,1,1,I54
+,Base Cabinet,,FOBWD30,1787,,,,,,,1,1,I54
+,Base Cabinet,,FOBWD33,1910,,,,,,,1,1,I54
+,Base Cabinet,,FOBWD36,2033,,,,,,,1,1,I54
+,Base Cabinet,,BWRX15,925,,,,,,,1,1,I55
+,Base Cabinet,,BWRX18,936,,,,,,,1,1,I55
+,Base Cabinet,,BWRX21,971,,,,,,,1,1,I55
+,Base Cabinet,,BWRX24,990,,,,,,,1,1,I55
+,Base Cabinet,,BWRX27,1123,,,,,,,1,1,I55
+,Base Cabinet,,BWRX30,1157,,,,,,,1,1,I55
+,Base Cabinet,,BWRX33,1192,,,,,,,1,1,I55
+,Base Cabinet,,BWRX36,1222,,,,,,,1,1,I55
+,Base Cabinet,,RTB27,1281,,,,,,,1,1,I56
+,Base Cabinet,,RTB30,1334,,,,,,,1,1,I56
+,Base Cabinet,,RTB33,1457,,,,,,,1,1,I56
+,Base Cabinet,,RTB36,1581,,,,,,,1,1,I56
+,Base Cabinet,,RTB39,1860,,,,,,,1,1,I56
+,Base Cabinet,,RTB42,1984,,,,,,,1,1,I56
+,Base Cabinet,,RTB45,2395,,,,,,,1,1,I56
+,Base Cabinet,,RTB48,2519,,,,,,,1,1,I56
+,Base Cabinet,,BWC30,960,,,,,,,1,1,I57
+,Base Cabinet,,BWDG15,760,,,,,,,1,1,I58
+,Base Cabinet,,BWDG18,800,,,,,,,1,1,I58
+,Base Cabinet,,BWDG21,840,,,,,,,1,1,I58
+,Base Cabinet,,BWDG24,880,,,,,,,1,1,I58
+,Base Cabinet,,BWS12,1156,,,,,,,1,1,I59
+,Base Cabinet,,BWS15,1239,,,,,,,1,1,I59
+,Base Cabinet,,BWS18,1304,,,,,,,1,1,I59
+,Base Cabinet,,BWS21,1393,,,,,,,1,1,I59
+,Base Cabinet,,BWS24,1466,,,,,,,1,1,I59
+,Base Cabinet,,BWS27,1653,,,,,,,1,1,I59
+,Base Cabinet,,BWS30,1741,,,,,,,1,1,I59
+,Base Cabinet,,BWS33,1830,,,,,,,1,1,I59
+,Base Cabinet,,BWS36,1914,,,,,,,1,1,I59
+,Base Cabinet,,BCNCWS42,8438,,,,,,,1,1,I60
+,Base Cabinet,,BCNCWS48,8638,,,,,,,1,1,I60
+,Base Cabinet,,BCNCWS54,8838,,,,,,,1,1,I60
+,Base Cabinet,,BCVXWS42,8438,,,,,,,1,1,I61
+,Base Cabinet,,BCVXWS48,8638,,,,,,,1,1,I61
+,Base Cabinet,,BCVXWS54,8838,,,,,,,1,1,I61
+,Base Cabinet,,BWRC6,551,,,,,,,1,1,I62
+,Base Cabinet,,BND9,406,,,,,,,1,1,I63
+,Base Cabinet,,BND12,436,,,,,,,1,1,I63
+,Base Cabinet,,BND15,465,,,,,,,1,1,I63
+,Base Cabinet,,BND18,476,,,,,,,1,1,I63
+,Base Cabinet,,BND21,511,,,,,,,1,1,I63
+,Base Cabinet,,BND24,530,,,,,,,1,1,I63
+,Base Cabinet,,BND27,663,,,,,,,1,1,I63
+,Base Cabinet,,BND30,697,,,,,,,1,1,I63
+,Base Cabinet,,BND33,732,,,,,,,1,1,I63
+,Base Cabinet,,BND36,762,,,,,,,1,1,I63
+,Base Cabinet,,BAD6,1240,,,,,,,1,1,I64
+,Base Cabinet,,BNDVA15,582,,,,,,,1,1,I65
+,Base Cabinet,,BNDVA18,593,,,,,,,1,1,I65
+,Base Cabinet,,BNDVA21,628,,,,,,,1,1,I65
+,Base Cabinet,,BNDVA24,647,,,,,,,1,1,I65
+,Base Cabinet,,BNDVA27,780,,,,,,,1,1,I65
+,Base Cabinet,,BNDVA30,814,,,,,,,1,1,I65
+,Base Cabinet,,BNDVA33,849,,,,,,,1,1,I65
+,Base Cabinet,,BNDVA36,879,,,,,,,1,1,I65
+,Base Cabinet,,BPOS-9,953,,,,,,,1,1,I66
+,Base Cabinet,,BPOS-12,1088,,,,,,,1,1,I66
+,Base Cabinet,,BPOS-15,1503,,,,,,,1,1,I66
+,Base Cabinet,,BPOS-18,1679,,,,,,,1,1,I66
+,Base Cabinet,,BKI-9,1510,,,,,,,1,1,I67
+,Base Cabinet,,BKI-12,1540,,,,,,,1,1,I67
+,Base Cabinet,,BKI-15,1747,,,,,,,1,1,I67
+,Base Cabinet,,BTD-9,983,,,,,,,1,1,I68
+,Base Cabinet,,BTD-12,1159,,,,,,,1,1,I68
+,Base Cabinet,,BFSO18,1243,,,,,,,1,1,I69
+,Base Cabinet,,BFSO24,1365,,,,,,,1,1,I69
+,Base Cabinet,,BFSO24-2D,1562,,,,,,,1,1,I69
+,Base Cabinet,,BFSO18-FHD,1243,,,,,,,1,1,I69
+,Base Cabinet,,BFSO24-FHD,1365,,,,,,,1,1,I69
+,Base Cabinet,,BFSO24-2D-FHD,1562,,,,,,,1,1,I69
+,Base Cabinet,,BUBO9,1125,,,,,,,1,1,I70
+,Base Cabinet,,BUBO12,1256,,,,,,,1,1,I70
+,Base Cabinet,,BPOPR18,932,,,,,,,1,1,I71
+,Base Cabinet,,BPOPR21,967,,,,,,,1,1,I71
+,Base Cabinet,,BPTPO12,1538,,,,,,,1,1,I72
+,Base Cabinet,,AEB24,982,,,,,,,1,1,I73
+,Base Cabinet,,AB24,966,,,,,,,1,1,I73
+,Base Cabinet,,ABL12,775,,,,,,,1,1,I74
+,Base Cabinet,,ABR12,775,,,,,,,1,1,I74
+,Base Cabinet,,BESL9,697,,,,,,,1,1,I75
+,Base Cabinet,,BESR9,697,,,,,,,1,1,I75
+,Base Cabinet,,BESP9,697,,,,,,,1,1,I75
+,Base Cabinet,,MRBDO9,417,,,,,,,1,1,I76
+,Base Cabinet,,MRBDO30,719,,,,,,,1,1,I76
+,Base Cabinet,,MRBDO12,447,,,,,,,1,1,I76
+,Base Cabinet,,MRBDO33,754,,,,,,,1,1,I76
+,Base Cabinet,,MRBDO15,476,,,,,,,1,1,I76
+,Base Cabinet,,MRBDO36,784,,,,,,,1,1,I76
+,Base Cabinet,,MRBDO18,487,,,,,,,1,1,I76
+,Base Cabinet,,MRBDO39,819,,,,,,,1,1,I76
+,Base Cabinet,,MRBDO21,522,,,,,,,1,1,I76
+,Base Cabinet,,MRBDO42,854,,,,,,,1,1,I76
+,Base Cabinet,,MRBDO24,541,,,,,,,1,1,I76
+,Base Cabinet,,MRBDO45,882,,,,,,,1,1,I76
+,Base Cabinet,,MRBDO24-2D,738,,,,,,,1,1,I76
+,Base Cabinet,,MRBDO48,893,,,,,,,1,1,I76
+,Base Cabinet,,MRBDO27,685,,,,,,,1,1,I76
+,Base Cabinet,,MRBOS9,350,,,,,,,1,1,I77
+,Base Cabinet,,MRBOS24,600,,,,,,,1,1,I77
+,Base Cabinet,,MRBOS12,400,,,,,,,1,1,I77
+,Base Cabinet,,MRBOS27,650,,,,,,,1,1,I77
+,Base Cabinet,,MRBOS15,450,,,,,,,1,1,I77
+,Base Cabinet,,MRBOS30,750,,,,,,,1,1,I77
+,Base Cabinet,,MRBOS18,500,,,,,,,1,1,I77
+,Base Cabinet,,MRBOS33,850,,,,,,,1,1,I77
+,Base Cabinet,,MRBOS21,550,,,,,,,1,1,I77
+,Base Cabinet,,MRBOS36,900,,,,,,,1,1,I77
+,Base Cabinet,,MRDBD9,280,,,,,,,1,1,I78
+,Base Cabinet,,MRDBD24,480,,,,,,,1,1,I78
+,Base Cabinet,,MRDBD12,320,,,,,,,1,1,I78
+,Base Cabinet,,MRDBD27,520,,,,,,,1,1,I78
+,Base Cabinet,,MRDBD15,360,,,,,,,1,1,I78
+,Base Cabinet,,MRDBD30,600,,,,,,,1,1,I78
+,Base Cabinet,,MRDBD18,400,,,,,,,1,1,I78
+,Base Cabinet,,MRDBD33,680,,,,,,,1,1,I78
+,Base Cabinet,,MRDBD21,440,,,,,,,1,1,I78
+,Base Cabinet,,MRDBD36,720,,,,,,,1,1,I78
+,Base Cabinet,,MRT1264 1/2,603,,,,,,,1,1,I79
+,Base Cabinet,,MRT1267 1/2,665,,,,,,,1,1,I79
+,Base Cabinet,,MRT1270 1/2,877,,,,,,,1,1,I79
+,Base Cabinet,,MRT1273 1/2,939,,,,,,,1,1,I79
+,Base Cabinet,,MRT1276 1/2,1001,,,,,,,1,1,I79
+,Base Cabinet,,MRT1564 1/2,665,,,,,,,1,1,I79
+,Base Cabinet,,MRT1567 1/2,727,,,,,,,1,1,I79
+,Base Cabinet,,MRT1570 1/2,939,,,,,,,1,1,I79
+,Base Cabinet,,MRT1573 1/2,1001,,,,,,,1,1,I79
+,Base Cabinet,,MRT1576 1/2,1063,,,,,,,1,1,I79
+,Base Cabinet,,MRT1864 1/2,728,,,,,,,1,1,I79
+,Base Cabinet,,MRT1867 1/2,790,,,,,,,1,1,I79
+,Base Cabinet,,MRT1870 1/2,1002,,,,,,,1,1,I79
+,Base Cabinet,,MRT1873 1/2,1064,,,,,,,1,1,I79
+,Base Cabinet,,MRT1876 1/2,1126,,,,,,,1,1,I79
+,Base Cabinet,,MRT2164 1/2,790,,,,,,,1,1,I79
+,Base Cabinet,,MRT2167 1/2,852,,,,,,,1,1,I79
+,Base Cabinet,,MRT2170 1/2,1064,,,,,,,1,1,I79
+,Base Cabinet,,MRT2173 1/2,1126,,,,,,,1,1,I79
+,Base Cabinet,,MRT2176 1/2,1188,,,,,,,1,1,I79
+,Base Cabinet,,MRT2464 1/2,853,,,,,,,1,1,I79
+,Base Cabinet,,MRT2467 1/2,915,,,,,,,1,1,I79
+,Base Cabinet,,MRT2470 1/2,1127,,,,,,,1,1,I79
+,Base Cabinet,,MRT2473 1/2,1189,,,,,,,1,1,I79
+,Base Cabinet,,MRT2476 1/2,1251,,,,,,,1,1,I79
+,Base Cabinet,,MRT2764 1/2,929,,,,,,,1,1,I79
+,Base Cabinet,,MRT2767 1/2,991,,,,,,,1,1,I79
+,Base Cabinet,,MRT2770 1/2,1203,,,,,,,1,1,I79
+,Base Cabinet,,MRT2773 1/2,1265,,,,,,,1,1,I79
+,Base Cabinet,,MRT2776 1/2,1327,,,,,,,1,1,I79
+,Base Cabinet,,MRT3064 1/2,996,,,,,,,1,1,I79
+,Base Cabinet,,MRT3067 1/2,1058,,,,,,,1,1,I79
+,Base Cabinet,,MRT3070 1/2,1270,,,,,,,1,1,I79
+,Base Cabinet,,MRT3073 1/2,1332,,,,,,,1,1,I79
+,Base Cabinet,,MRT3076 1/2,1394,,,,,,,1,1,I79
+,Base Cabinet,,MRT3364 1/2,1026,,,,,,,1,1,I79
+,Base Cabinet,,MRT3367 1/2,1088,,,,,,,1,1,I79
+,Base Cabinet,,MRT3370 1/2,1300,,,,,,,1,1,I79
+,Base Cabinet,,MRT3373 1/2,1362,,,,,,,1,1,I79
+,Base Cabinet,,MRT3376 1/2,1424,,,,,,,1,1,I79
+,Base Cabinet,,MRT3664 1/2,1105,,,,,,,1,1,I79
+,Base Cabinet,,MRT3667 1/2,1167,,,,,,,1,1,I79
+,Base Cabinet,,MRT3670 1/2,1379,,,,,,,1,1,I79
+,Base Cabinet,,MRT3673 1/2,1441,,,,,,,1,1,I79
+,Base Cabinet,,MRT3676 1/2,1503,,,,,,,1,1,I79
+,Base Cabinet,,MRT3964 1/2,1168,,,,,,,1,1,I79
+,Base Cabinet,,MRT3967 1/2,1230,,,,,,,1,1,I79
+,Base Cabinet,,MRT3970 1/2,1442,,,,,,,1,1,I79
+,Base Cabinet,,MRT3973 1/2,1504,,,,,,,1,1,I79
+,Base Cabinet,,MRT3976 1/2,1566,,,,,,,1,1,I79
+,Base Cabinet,,MRT4264 1/2,1230,,,,,,,1,1,I79
+,Base Cabinet,,MRT4267 1/2,1292,,,,,,,1,1,I79
+,Base Cabinet,,MRT4270 1/2,1504,,,,,,,1,1,I79
+,Base Cabinet,,MRT4273 1/2,1566,,,,,,,1,1,I79
+,Base Cabinet,,MRT4276 1/2,1628,,,,,,,1,1,I79
+,Base Cabinet,,MRTD1264 1/2,1148,,,,,,,1,1,I80
+,Base Cabinet,,MRTD1267 1/2,1210,,,,,,,1,1,I80
+,Base Cabinet,,MRTD1270 1/2,1422,,,,,,,1,1,I80
+,Base Cabinet,,MRTD1273 1/2,1484,,,,,,,1,1,I80
+,Base Cabinet,,MRTD1276 1/2,1546,,,,,,,1,1,I80
+,Base Cabinet,,MRTD1564 1/2,1173,,,,,,,1,1,I80
+,Base Cabinet,,MRTD1567 1/2,1235,,,,,,,1,1,I80
+,Base Cabinet,,MRTD1570 1/2,1447,,,,,,,1,1,I80
+,Base Cabinet,,MRTD1573 1/2,1509,,,,,,,1,1,I80
+,Base Cabinet,,MRTD1576 1/2,1571,,,,,,,1,1,I80
+,Base Cabinet,,MRTD1864 1/2,1198,,,,,,,1,1,I80
+,Base Cabinet,,MRTD1867 1/2,1260,,,,,,,1,1,I80
+,Base Cabinet,,MRTD1870 1/2,1472,,,,,,,1,1,I80
+,Base Cabinet,,MRTD1873 1/2,1534,,,,,,,1,1,I80
+,Base Cabinet,,MRTD1876 1/2,1596,,,,,,,1,1,I80
+,Base Cabinet,,MRTD2164 1/2,1235,,,,,,,1,1,I80
+,Base Cabinet,,MRTD2167 1/2,1297,,,,,,,1,1,I80
+,Base Cabinet,,MRTD2170 1/2,1509,,,,,,,1,1,I80
+,Base Cabinet,,MRTD2173 1/2,1571,,,,,,,1,1,I80
+,Base Cabinet,,MRTD2176 1/2,1633,,,,,,,1,1,I80
+,Base Cabinet,,MRTD2464 1/2,1273,,,,,,,1,1,I80
+,Base Cabinet,,MRTD2467 1/2,1335,,,,,,,1,1,I80
+,Base Cabinet,,MRTD2470 1/2,1547,,,,,,,1,1,I80
+,Base Cabinet,,MRTD2473 1/2,1609,,,,,,,1,1,I80
+,Base Cabinet,,MRTD2476 1/2,1671,,,,,,,1,1,I80
+,Base Cabinet,,MRTD24-2D64 1/2,1310,,,,,,,1,1,I80
+,Base Cabinet,,MRTD24-2D67 1/2,1477,,,,,,,1,1,I80
+,Base Cabinet,,MRTD24-2D70 1/2,1689,,,,,,,1,1,I80
+,Base Cabinet,,MRTD24-2D73 1/2,1751,,,,,,,1,1,I80
+,Base Cabinet,,MRTD24-2D76 1/2,1813,,,,,,,1,1,I80
+,Base Cabinet,,MRTD2764 1/2,1348,,,,,,,1,1,I80
+,Base Cabinet,,MRTD2767 1/2,1410,,,,,,,1,1,I80
+,Base Cabinet,,MRTD2770 1/2,1622,,,,,,,1,1,I80
+,Base Cabinet,,MRTD2773 1/2,1684,,,,,,,1,1,I80
+,Base Cabinet,,MRTD2776 1/2,1746,,,,,,,1,1,I80
+,Base Cabinet,,MRTD3064 1/2,1423,,,,,,,1,1,I80
+,Base Cabinet,,MRTD3067 1/2,1485,,,,,,,1,1,I80
+,Base Cabinet,,MRTD3070 1/2,1697,,,,,,,1,1,I80
+,Base Cabinet,,MRTD3073 1/2,1759,,,,,,,1,1,I80
+,Base Cabinet,,MRTD3076 1/2,1821,,,,,,,1,1,I80
+,Base Cabinet,,MRTD3364 1/2,1468,,,,,,,1,1,I80
+,Base Cabinet,,MRTD3367 1/2,1530,,,,,,,1,1,I80
+,Base Cabinet,,MRTD3370 1/2,1742,,,,,,,1,1,I80
+,Base Cabinet,,MRTD3373 1/2,1804,,,,,,,1,1,I80
+,Base Cabinet,,MRTD3376 1/2,1866,,,,,,,1,1,I80
+,Base Cabinet,,MRTD3664 1/2,1518,,,,,,,1,1,I80
+,Base Cabinet,,MRTD3667 1/2,1580,,,,,,,1,1,I80
+,Base Cabinet,,MRTD3670 1/2,1792,,,,,,,1,1,I80
+,Base Cabinet,,MRTD3673 1/2,1854,,,,,,,1,1,I80
+,Base Cabinet,,MRTD3676 1/2,1916,,,,,,,1,1,I80
+,Base Cabinet,,MRTD3964 1/2,1568,,,,,,,1,1,I80
+,Base Cabinet,,MRTD3967 1/2,1630,,,,,,,1,1,I80
+,Base Cabinet,,MRTD3970 1/2,1842,,,,,,,1,1,I80
+,Base Cabinet,,MRTD3973 1/2,1904,,,,,,,1,1,I80
+,Base Cabinet,,MRTD3976 1/2,1966,,,,,,,1,1,I80
+,Base Cabinet,,MRTD4264 1/2,1611,,,,,,,1,1,I80
+,Base Cabinet,,MRTD4267 1/2,1673,,,,,,,1,1,I80
+,Base Cabinet,,MRTD4270 1/2,1885,,,,,,,1,1,I80
+,Base Cabinet,,MRTD4273 1/2,1947,,,,,,,1,1,I80
+,Base Cabinet,,MRTD4276 1/2,2009,,,,,,,1,1,I80
+,Base Cabinet,,LPDC3014-33,820,,,,,,,1,1,I81
+,Base Cabinet,,LPDC3014-36,820,,,,,,,1,1,I81
+,Base Cabinet,,LPDC3014-39,820,,,,,,,1,1,I81
+,Base Cabinet,,LPDC3014-42,820,,,,,,,1,1,I81
+,Base Cabinet,,LPDC3015-33,840,,,,,,,1,1,I81
+,Base Cabinet,,LPDC3015-36,840,,,,,,,1,1,I81
+,Base Cabinet,,LPDC3015-39,840,,,,,,,1,1,I81
+,Base Cabinet,,LPDC3015-42,840,,,,,,,1,1,I81
+,Base Cabinet,,LPDC3016-33,860,,,,,,,1,1,I81
+,Base Cabinet,,LPDC3016-36,860,,,,,,,1,1,I81
+,Base Cabinet,,LPDC3016-39,860,,,,,,,1,1,I81
+,Base Cabinet,,LPDC3016-42,860,,,,,,,1,1,I81
+,Base Cabinet,,LPDC3017-33,880,,,,,,,1,1,I81
+,Base Cabinet,,LPDC3017-36,880,,,,,,,1,1,I81
+,Base Cabinet,,LPDC3017-39,880,,,,,,,1,1,I81
+,Base Cabinet,,LPDC3017-42,880,,,,,,,1,1,I81
+,Base Cabinet,,LPDC3018-33,900,,,,,,,1,1,I81
+,Base Cabinet,,LPDC3018-36,900,,,,,,,1,1,I81
+,Base Cabinet,,LPDC3018-39,900,,,,,,,1,1,I81
+,Base Cabinet,,LPDC3018-42,900,,,,,,,1,1,I81
+,Base Cabinet,,LPC3019-33,2093,,,,,,,1,1,I82
+,Base Cabinet,,LPC3019-36,2093,,,,,,,1,1,I82
+,Base Cabinet,,LPC3019-39,2093,,,,,,,1,1,I82
+,Base Cabinet,,LPC3019-42,2093,,,,,,,1,1,I82
+,Base Cabinet,,LPC3020-33,2113,,,,,,,1,1,I82
+,Base Cabinet,,LPC3020-36,2113,,,,,,,1,1,I82
+,Base Cabinet,,LPC3020-39,2113,,,,,,,1,1,I82
+,Base Cabinet,,LPC3020-42,2113,,,,,,,1,1,I82
+,Base Cabinet,,LPC3021-33,2133,,,,,,,1,1,I82
+,Base Cabinet,,LPC3021-36,2133,,,,,,,1,1,I82
+,Base Cabinet,,LPC3021-39,2133,,,,,,,1,1,I82
+,Base Cabinet,,LPC3021-42,2133,,,,,,,1,1,I82
+,Base Cabinet,,LPC3022-33,2153,,,,,,,1,1,I82
+,Base Cabinet,,LPC3022-36,2153,,,,,,,1,1,I82
+,Base Cabinet,,LPC3022-39,2153,,,,,,,1,1,I82
+,Base Cabinet,,LPC3022-42,2153,,,,,,,1,1,I82
+,Base Cabinet,,LPC3023-33,2173,,,,,,,1,1,I82
+,Base Cabinet,,LPC3023-36,2173,,,,,,,1,1,I82
+,Base Cabinet,,LPC3023-39,2173,,,,,,,1,1,I82
+,Base Cabinet,,LPC3023-42,2173,,,,,,,1,1,I82
+,Base Cabinet,,LPC3024-33,2193,,,,,,,1,1,I82
+,Base Cabinet,,LPC3024-36,2193,,,,,,,1,1,I82
+,Base Cabinet,,LPC3024-39,2193,,,,,,,1,1,I82
+,Base Cabinet,,LPC3024-42,2193,,,,,,,1,1,I82

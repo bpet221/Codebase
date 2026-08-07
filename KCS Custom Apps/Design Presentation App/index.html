@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design Presentation Generator</title>
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Figtree:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+  rel="stylesheet"
+>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<style>
+  :root{
+    --dark:#35312e;
+    --gray:#60605e;
+    --bg:#fcfaf6;
+    --surf:#f5f3eb;
+    --steel:#465561;
+    --terra:#af5a3c;
+    --tan:#b8866e;
+    --slate:#5c707e;
+    --olive:#6d684e;
+    --bdr:#ddd8d0;
+    --bdr-lt:#ede9e1;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:"Figtree", system-ui, sans-serif;
+    background:var(--bg);
+    color:var(--dark);
+    display:flex;
+    justify-content:center;
+    padding:56px 20px;
+    min-height:100vh;
+  }
+  .card{
+    background:#fff;
+    border-radius:12px;
+    max-width:520px;
+    width:100%;
+    box-shadow:0 2px 16px rgba(53,49,46,0.07);
+    overflow:hidden;
+  }
+  .hdr{
+    background:var(--steel);
+    color:#fff;
+    padding:22px 30px;
+  }
+  .hdr h1{
+    font-family:"Fraunces", serif;
+    font-weight:400;
+    font-size:23px;
+    letter-spacing:-0.2px;
+    line-height:1.2;
+  }
+  .hdr p{
+    font-size:12.5px;
+    opacity:0.62;
+    margin-top:6px;
+    line-height:1.5;
+    font-weight:400;
+  }
+  .body{ padding:28px 30px 26px; }
+  label{
+    display:block;
+    font-size:12.5px;
+    font-weight:600;
+    margin-bottom:7px;
+    color:var(--gray);
+    letter-spacing:0.2px;
+    text-transform:uppercase;
+  }
+  .field{margin-bottom:20px;}
+  input[type=text], input[type=number]{
+    width:100%;
+    padding:11px 13px;
+    border:1px solid var(--bdr);
+    border-radius:8px;
+    font-size:15px;
+    font-family:"Figtree", sans-serif;
+    background:var(--surf);
+    color:var(--dark);
+  }
+  input[type=text]:focus, input[type=number]:focus{
+    outline:none;
+    border-color:var(--slate);
+    background:#fff;
+  }
+  .folder-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 13px;
+    border:1px solid var(--bdr);
+    border-radius:8px;
+    background:var(--surf);
+    margin-bottom:6px;
+  }
+  .folder-status{
+    flex:1;
+    font-size:12.5px;
+    color:var(--gray);
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+  .folder-status.connected{color:#3f6b47;}
+  .folder-status.error{color:var(--terra);}
+  button{
+    font-family:"Figtree", sans-serif;
+    cursor:pointer;
+    border:none;
+    border-radius:7px;
+    font-size:13.5px;
+    font-weight:600;
+    padding:9px 15px;
+    letter-spacing:0.1px;
+  }
+  .btn-secondary{
+    background:#fff;
+    color:var(--steel);
+    border:1px solid var(--bdr);
+  }
+  .btn-secondary:hover{background:var(--bdr-lt);}
+  .btn-primary{
+    width:100%;
+    background:var(--terra);
+    color:#fff;
+    padding:14px 16px;
+    font-size:15px;
+    margin-top:6px;
+    border-radius:8px;
+  }
+  .btn-primary:hover{background:#974d33;}
+  .btn-primary:disabled{
+    background:#c9beb6;
+    cursor:not-allowed;
+  }
+  .hint{
+    font-size:11.5px;
+    color:var(--gray);
+    opacity:0.85;
+    margin-top:7px;
+    line-height:1.55;
+  }
+  .hint code{
+    font-family:"Fira Code", monospace;
+    font-size:11px;
+    background:var(--bdr-lt);
+    padding:1px 5px;
+    border-radius:4px;
+  }
+  .drive-settings{
+    margin-bottom:20px;
+    border:1px solid var(--bdr);
+    border-radius:8px;
+    background:var(--surf);
+    overflow:hidden;
+  }
+  .drive-settings summary{
+    cursor:pointer;
+    list-style:none;
+    padding:11px 13px;
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--gray);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .drive-settings summary::-webkit-details-marker{ display:none; }
+  .drive-badge{
+    font-size:10.5px;
+    font-weight:600;
+    padding:2px 8px;
+    border-radius:10px;
+    background:var(--bdr-lt);
+    color:var(--gray);
+    text-transform:none;
+    letter-spacing:0;
+  }
+  .drive-badge.ready{ background:#eef4ec; color:#3f6b47; }
+  .drive-settings-body{ padding:0 13px 13px; }
+  .drive-settings-body input{
+    width:100%;
+    padding:9px 11px;
+    border:1px solid var(--bdr);
+    border-radius:7px;
+    font-size:12.5px;
+    font-family:"Fira Code", monospace;
+    background:#fff;
+    color:var(--dark);
+    margin-bottom:6px;
+  }
+  .drive-settings-body input:focus{
+    outline:none;
+    border-color:var(--slate);
+  }
+  .btn-secondary-full{
+    width:100%;
+    background:#fff;
+    color:var(--steel);
+    border:1px solid var(--bdr);
+    padding:12px 16px;
+    font-size:14px;
+    margin-top:10px;
+    border-radius:8px;
+  }
+  .btn-secondary-full:hover{ background:var(--bdr-lt); }
+  .btn-secondary-full:disabled{
+    color:var(--gray);
+    opacity:0.55;
+    cursor:not-allowed;
+  }
+  .share-result{
+    margin-top:14px;
+    padding:12px 13px;
+    border-radius:8px;
+    background:var(--surf);
+    border:1px solid var(--bdr);
+  }
+  .share-result-row{
+    display:flex;
+    gap:8px;
+  }
+  .share-result-row input{
+    flex:1;
+    padding:9px 10px;
+    border:1px solid var(--bdr);
+    border-radius:7px;
+    font-family:"Fira Code", monospace;
+    font-size:12px;
+    background:#fff;
+    color:var(--dark);
+  }
+  .msg{
+    margin-top:16px;
+    padding:11px 13px;
+    border-radius:8px;
+    font-size:13px;
+    line-height:1.5;
+    display:none;
+  }
+  .msg.show{display:block;}
+  .msg.info{background:#eef2f4;color:var(--steel);}
+  .msg.error{background:#fbeee9;color:var(--terra);}
+  .msg.success{background:#eef4ec;color:#3f6b47;}
+  .spinner{
+    display:inline-block;
+    width:13px;height:13px;
+    border:2px solid rgba(255,255,255,0.4);
+    border-top-color:#fff;
+    border-radius:50%;
+    animation:spin .7s linear infinite;
+    vertical-align:-2px;
+    margin-right:8px;
+  }
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .support-note{
+    font-size:11.5px;
+    color:var(--gray);
+    opacity:0.8;
+    margin-top:22px;
+    padding-top:16px;
+    border-top:1px solid var(--bdr-lt);
+    line-height:1.6;
+  }
+  .support-note code{
+    font-family:"Fira Code", monospace;
+    font-size:11px;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="hdr">
+    <h1>Design Presentation Generator</h1>
+    <p>Pull recent screenshots into a clean, landscape, print&#8209;ready presentation for a customer.</p>
+  </div>
+
+  <div class="body">
+    <div class="field">
+      <label for="customerName">Customer Name</label>
+      <input type="text" id="customerName" placeholder="e.g. John Smith" autocomplete="off">
+    </div>
+
+    <div class="field">
+      <label for="photoCount"># of Most Recent Photos</label>
+      <input type="number" id="photoCount" min="1" max="200" value="10">
+    </div>
+
+    <div class="field">
+      <label>Screenshots Folder</label>
+      <div class="folder-box">
+        <span id="folderStatus" class="folder-status">Not connected yet</span>
+        <button id="folderBtn" class="btn-secondary" type="button">Connect Folder</button>
+      </div>
+      <div class="hint">Defaults to <code>/Users/blakepetipas/Documents/Screenshots</code> &mdash; on first use, the picker opens to your Documents folder so it's one click to confirm. Only PNG and JPG/JPEG files are considered; HEIC, GIF, video, and other file types are skipped automatically. Once connected, this browser remembers it &mdash; no need to reselect next time.</div>
+    </div>
+
+    <details class="drive-settings">
+      <summary>Google Drive Sharing <span id="driveStatusBadge" class="drive-badge">not set up</span></summary>
+      <div class="drive-settings-body">
+        <label for="driveClientId">Google OAuth Client ID</label>
+        <input type="text" id="driveClientId" placeholder="xxxxxxxxxx.apps.googleusercontent.com" autocomplete="off">
+        <div class="hint">One&#8209;time setup so &ldquo;Share via Google Drive&rdquo; can upload straight to your Drive and hand you a link. See <code>README.md</code> for the 5&#8209;minute Google Cloud setup. Saved locally in this browser only — never sent anywhere else.</div>
+      </div>
+    </details>
+
+    <button id="generateBtn" class="btn-primary" type="button">Generate Presentation</button>
+    <button id="shareDriveBtn" class="btn-secondary-full" type="button" disabled>Share via Google Drive</button>
+
+    <div id="msg" class="msg"></div>
+
+    <div id="shareResult" class="share-result" style="display:none;">
+      <div class="share-result-row">
+        <input type="text" id="shareResultInput" readonly>
+        <button id="copyShareBtn" class="btn-secondary" type="button">Copy</button>
+      </div>
+    </div>
+
+    <div class="support-note">
+      Needs the "File System Access" feature &mdash; works in Chrome or Edge, and only when served from <code>http://localhost</code> (not opened directly as a file). Use the included <code>Start App.command</code> to launch it correctly.
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const DB_NAME = "design-presentation-app";
+  const STORE_NAME = "handles";
+  const HANDLE_KEY = "screenshotsFolder";
+  const VALID_EXTS = [".png", ".jpg", ".jpeg"];
+  const TARGET_FOLDER_NAME = "Screenshots"; // expected leaf folder name for the default path
+
+  const folderBtn = document.getElementById("folderBtn");
+  const folderStatus = document.getElementById("folderStatus");
+  const generateBtn = document.getElementById("generateBtn");
+  const msgEl = document.getElementById("msg");
+  const nameInput = document.getElementById("customerName");
+  const countInput = document.getElementById("photoCount");
+  const driveClientIdInput = document.getElementById("driveClientId");
+  const driveStatusBadge = document.getElementById("driveStatusBadge");
+  const shareDriveBtn = document.getElementById("shareDriveBtn");
+  const shareResultDiv = document.getElementById("shareResult");
+  const shareResultInput = document.getElementById("shareResultInput");
+  const copyShareBtn = document.getElementById("copyShareBtn");
+
+  let dirHandle = null;
+  let lastGeneratedHtml = null;
+  let lastGeneratedFilename = null;
+
+  function updateDriveBadge(){
+    const configured = !!driveClientIdInput.value.trim();
+    driveStatusBadge.textContent = configured ? "ready" : "not set up";
+    driveStatusBadge.className = "drive-badge" + (configured ? " ready" : "");
+  }
+  driveClientIdInput.value = localStorage.getItem("driveClientId") || "";
+  updateDriveBadge();
+  driveClientIdInput.addEventListener("input", () => {
+    localStorage.setItem("driveClientId", driveClientIdInput.value.trim());
+    updateDriveBadge();
+  });
+
+  function hideShareResult(){
+    shareResultDiv.style.display = "none";
+    shareResultInput.value = "";
+  }
+  function showShareResult(link){
+    shareResultInput.value = link;
+    shareResultDiv.style.display = "block";
+  }
+  copyShareBtn.addEventListener("click", () => {
+    shareResultInput.select();
+    shareResultInput.setSelectionRange(0, 99999);
+    const done = () => showMsg("Link copied to clipboard.", "success");
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(shareResultInput.value).then(done).catch(() => {
+        document.execCommand("copy");
+        done();
+      });
+    } else {
+      document.execCommand("copy");
+      done();
+    }
+  });
+
+  function sanitizeFilename(customerName){
+    return (customerName.trim().replace(/[^a-z0-9 _-]/gi, "").trim() || "Design Presentation") + " - Design Presentation.html";
+  }
+
+  async function uploadToDrive(htmlContent, filename, token){
+    const metadata = { name: filename, mimeType: "text/html" };
+    const boundary = "-------dpg" + Date.now();
+    const delimiter = "\r\n--" + boundary + "\r\n";
+    const closeDelim = "\r\n--" + boundary + "--";
+    const body =
+      delimiter +
+      "Content-Type: application/json; charset=UTF-8\r\n\r\n" +
+      JSON.stringify(metadata) +
+      delimiter +
+      "Content-Type: text/html\r\n\r\n" +
+      htmlContent +
+      closeDelim;
+    const res = await fetch("https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id", {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + token,
+        "Content-Type": "multipart/related; boundary=" + boundary
+      },
+      body
+    });
+    if (!res.ok) throw new Error("Drive upload failed (HTTP " + res.status + ")");
+    const data = await res.json();
+    return data.id;
+  }
+
+  async function makeFilePublic(fileId, token){
+    const res = await fetch(`https://www.googleapis.com/drive/v3/files/${fileId}/permissions`, {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + token,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ role: "reader", type: "anyone" })
+    });
+    if (!res.ok) throw new Error("Couldn't set sharing permissions (HTTP " + res.status + ")");
+  }
+
+  function shareViaGoogleDrive(){
+    const clientId = driveClientIdInput.value.trim();
+    if (!clientId){
+      showMsg("Add your Google OAuth Client ID under Google Drive Sharing first.", "error");
+      return;
+    }
+    if (!lastGeneratedHtml){
+      showMsg("Generate a presentation first, then share it.", "error");
+      return;
+    }
+    if (typeof google === "undefined" || !google.accounts || !google.accounts.oauth2){
+      showMsg("Google's sign-in library hasn't loaded yet. Wait a second and try again.", "error");
+      return;
+    }
+
+    hideShareResult();
+    shareDriveBtn.disabled = true;
+    const originalLabel = shareDriveBtn.textContent;
+    shareDriveBtn.textContent = "Connecting to Google\u2026";
+    showMsg("Waiting for Google sign-in\u2026", "info");
+
+    const tokenClient = google.accounts.oauth2.initTokenClient({
+      client_id: clientId,
+      scope: "https://www.googleapis.com/auth/drive.file",
+      callback: async (resp) => {
+        if (resp.error){
+          showMsg("Google sign-in was cancelled or failed.", "error");
+          shareDriveBtn.disabled = false;
+          shareDriveBtn.textContent = originalLabel;
+          return;
+        }
+        try{
+          shareDriveBtn.textContent = "Uploading\u2026";
+          showMsg("Uploading to Google Drive\u2026", "info");
+          const fileId = await uploadToDrive(lastGeneratedHtml, lastGeneratedFilename, resp.access_token);
+          await makeFilePublic(fileId, resp.access_token);
+          const link = `https://drive.google.com/file/d/${fileId}/view?usp=sharing`;
+          showShareResult(link);
+          showMsg("Uploaded to Google Drive \u2014 link ready below.", "success");
+        } catch(e){
+          showMsg("Upload failed: " + e.message, "error");
+        } finally{
+          shareDriveBtn.disabled = false;
+          shareDriveBtn.textContent = originalLabel;
+        }
+      }
+    });
+    tokenClient.requestAccessToken();
+  }
+  shareDriveBtn.addEventListener("click", shareViaGoogleDrive);
+
+  function showMsg(text, type){
+    msgEl.textContent = text;
+    msgEl.className = "msg show " + (type || "info");
+  }
+  function clearMsg(){
+    msgEl.className = "msg";
+    msgEl.textContent = "";
+  }
+
+  function supportsFSA(){
+    return typeof window.showDirectoryPicker === "function";
+  }
+  function isSecureContextOk(){
+    return window.isSecureContext === true;
+  }
+
+  function setFolderUi(name, connected){
+    folderStatus.textContent = connected ? ("Connected: " + name) : name;
+    folderStatus.className = "folder-status" + (connected ? " connected" : "");
+    folderBtn.textContent = connected ? "Change Folder" : "Connect Folder";
+  }
+
+  // --- tiny IndexedDB helper for persisting the directory handle ---
+  function openDb(){
+    return new Promise((resolve, reject) => {
+      const req = indexedDB.open(DB_NAME, 1);
+      req.onupgradeneeded = () => {
+        req.result.createObjectStore(STORE_NAME);
+      };
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => reject(req.error);
+    });
+  }
+  async function idbGet(key){
+    const db = await openDb();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(STORE_NAME, "readonly");
+      const req = tx.objectStore(STORE_NAME).get(key);
+      req.onsuccess = () => resolve(req.result || null);
+      req.onerror = () => reject(req.error);
+    });
+  }
+  async function idbSet(key, val){
+    const db = await openDb();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(STORE_NAME, "readwrite");
+      tx.objectStore(STORE_NAME).put(val, key);
+      tx.oncomplete = () => resolve();
+      tx.onerror = () => reject(tx.error);
+    });
+  }
+
+  async function ensurePermission(handle){
+    const opts = { mode: "read" };
+    if ((await handle.queryPermission(opts)) === "granted") return true;
+    if ((await handle.requestPermission(opts)) === "granted") return true;
+    return false;
+  }
+
+  async function tryRestoreHandle(){
+    try{
+      const saved = await idbGet(HANDLE_KEY);
+      if (!saved) return;
+      const granted = await ensurePermission(saved);
+      if (granted){
+        dirHandle = saved;
+        setFolderUi(saved.name, true);
+      } else {
+        setFolderUi("Permission needed \u2014 click Connect Folder", false);
+      }
+    } catch(e){
+      // No saved handle yet, or it's stale. Silent - user will pick manually.
+    }
+  }
+
+  async function pickFolder(){
+    if (!supportsFSA()){
+      showMsg("This browser doesn't support folder access. Please use Chrome or Edge.", "error");
+      return;
+    }
+    try{
+      // startIn:'documents' gets the native picker as close as possible to
+      // /Users/blakepetipas/Documents/Screenshots in one click. Browsers don't
+      // allow silently granting access to an arbitrary absolute path without
+      // this one-time user confirmation (security restriction, not a bug).
+      const handle = await window.showDirectoryPicker({ mode: "read", startIn: "documents" });
+      dirHandle = handle;
+      await idbSet(HANDLE_KEY, handle);
+      setFolderUi(handle.name, true);
+      if (handle.name !== TARGET_FOLDER_NAME){
+        showMsg(`Connected to "${handle.name}". If this isn't your Screenshots folder, click Change Folder and pick /Users/blakepetipas/Documents/Screenshots.`, "info");
+      } else {
+        clearMsg();
+      }
+    } catch(e){
+      if (e.name !== "AbortError"){
+        showMsg("Couldn't access that folder: " + e.message, "error");
+      }
+    }
+  }
+
+  function getExt(filename){
+    const i = filename.lastIndexOf(".");
+    if (i === -1) return "";
+    return filename.slice(i).toLowerCase();
+  }
+
+  async function collectImageFiles(handle){
+    const files = [];
+    for await (const [name, entryHandle] of handle.entries()){
+      if (entryHandle.kind !== "file") continue;
+      if (name.startsWith(".")) continue;
+      if (!VALID_EXTS.includes(getExt(name))) continue;
+      try{
+        const file = await entryHandle.getFile();
+        files.push({ name, lastModified: file.lastModified, file });
+      } catch(e){
+        // skip unreadable file
+      }
+    }
+    return files;
+  }
+
+  function readAsDataURL(file){
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = () => reject(reader.error);
+      reader.readAsDataURL(file);
+    });
+  }
+
+  function escapeHtml(str){
+    return str.replace(/[&<>"']/g, ch => ({
+      "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+    })[ch]);
+  }
+
+  function buildPresentationHtml(customerName, images){
+    const safeName = escapeHtml(customerName);
+    const pages = images.map((img, idx) => {
+      return `
+    <section class="page">
+      <div class="page-header">
+        <span class="page-number">${idx + 1}</span>
+        <span class="customer-name">${safeName}</span>
+      </div>
+      <div class="photo-wrap">
+        <img src="${img.dataUrl}" alt="Design photo ${idx + 1}">
+      </div>
+    </section>`;
+    }).join("\n");
+
+    return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>${safeName} \u2014 Design Presentation</title>
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Figtree:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap"
+  rel="stylesheet"
+>
+<style>
+  :root{
+    --dark:#35312e;
+    --gray:#60605e;
+    --bg:#fcfaf6;
+    --surf:#f5f3eb;
+    --steel:#465561;
+    --terra:#af5a3c;
+    --tan:#b8866e;
+    --slate:#5c707e;
+    --bdr:#ddd8d0;
+    --bdr-lt:#ede9e1;
+  }
+  @page{
+    size: 11in 8.5in;
+    margin: 0;
+  }
+  *{box-sizing:border-box;}
+  html,body{
+    margin:0;
+    padding:0;
+    background:#e7e4dd;
+    font-family:"Figtree", Arial, Helvetica, sans-serif;
+    color:var(--dark);
+  }
+  .toolbar{
+    position:sticky;
+    top:0;
+    z-index:10;
+    background:var(--steel);
+    color:#fff;
+    padding:14px 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-size:13.5px;
+  }
+  .toolbar-actions{
+    display:flex;
+    gap:10px;
+  }
+  .toolbar button{
+    background:var(--terra);
+    color:#fff;
+    border:none;
+    font-family:"Figtree", sans-serif;
+    font-weight:600;
+    font-size:13.5px;
+    padding:10px 20px;
+    border-radius:7px;
+    cursor:pointer;
+    letter-spacing:0.1px;
+  }
+  .toolbar button:hover{ background:#974d33; }
+  .toolbar button.secondary{
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.28);
+    color:#fff;
+  }
+  .toolbar button.secondary:hover{ background:rgba(255,255,255,0.22); }
+  .page-count{ opacity:0.85; }
+  .pages-container{
+    padding:26px 0 60px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .page{
+    width:11in;
+    height:8.5in;
+    background:#fff;
+    box-shadow:0 2px 14px rgba(53,49,46,0.16);
+    margin-bottom:26px;
+    padding:0.3in 0.45in;
+    display:flex;
+    flex-direction:column;
+    break-inside:avoid;
+    page-break-inside:avoid;
+  }
+  .page-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex:0 0 auto;
+    height:0.32in;
+  }
+  .page-number{
+    font-family:"Fira Code", monospace;
+    font-size:11pt;
+    font-weight:500;
+    color:var(--gray);
+    letter-spacing:0.5px;
+  }
+  .customer-name{
+    font-family:"Fraunces", serif;
+    font-weight:400;
+    font-size:13pt;
+    color:var(--steel);
+    letter-spacing:0.1px;
+  }
+  .photo-wrap{
+    flex:1 1 auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:visible;
+    min-height:0;
+    padding:10px;
+  }
+  .photo-wrap img{
+    max-width:97%;
+    max-height:97%;
+    object-fit:contain;
+    display:block;
+    border-radius:7px;
+    box-shadow:0 1px 5px rgba(53,49,46,0.10), 0 0 1px rgba(53,49,46,0.08);
+    transition:box-shadow 0.2s ease;
+  }
+  .photo-wrap img:hover{
+    box-shadow:0 2px 9px rgba(53,49,46,0.16), 0 0 1px rgba(53,49,46,0.10);
+  }
+
+  @media print{
+    body{ background:#fff; }
+    .toolbar{ display:none; }
+    .pages-container{ padding:0; }
+    .page{
+      box-shadow:none;
+      margin:0;
+      break-after:page;
+      page-break-after:always;
+    }
+    .page:last-child{
+      break-after:auto;
+      page-break-after:auto;
+    }
+    .photo-wrap img{
+      box-shadow:none;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="toolbar">
+    <span class="page-count">${images.length} photo${images.length === 1 ? "" : "s"} &mdash; ${safeName}</span>
+    <div class="toolbar-actions">
+      <button class="secondary" onclick="downloadHtml()">Save as HTML</button>
+      <button onclick="window.print()">Print / Save as PDF</button>
+    </div>
+  </div>
+  <div class="pages-container">
+    ${pages}
+  </div>
+  <script>
+    function downloadHtml(){
+      var htmlContent = "<!DOCTYPE html>\\n" + document.documentElement.outerHTML;
+      var blob = new Blob([htmlContent], { type: "text/html" });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = url;
+      a.download = ${JSON.stringify(customerName.trim().replace(/[^a-z0-9 _-]/gi, "").trim() || "Design Presentation")} + " - Design Presentation.html";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+    }
+  </scr${""}ipt>
+</body>
+</html>`;
+  }
+
+  async function generate(){
+    clearMsg();
+    hideShareResult();
+    const customerName = nameInput.value.trim();
+    const count = parseInt(countInput.value, 10);
+
+    if (!customerName){
+      showMsg("Please enter a customer name.", "error");
+      nameInput.focus();
+      return;
+    }
+    if (!count || count < 1){
+      showMsg("Please enter a valid number of photos.", "error");
+      countInput.focus();
+      return;
+    }
+    if (!dirHandle){
+      showMsg("Please connect the Screenshots folder first.", "error");
+      return;
+    }
+
+    const granted = await ensurePermission(dirHandle);
+    if (!granted){
+      showMsg("Folder permission was not granted. Click Connect Folder and try again.", "error");
+      return;
+    }
+
+    generateBtn.disabled = true;
+    generateBtn.innerHTML = '<span class="spinner"></span>Reading screenshots\u2026';
+    showMsg("Scanning folder for PNG/JPG files\u2026", "info");
+
+    try{
+      const allFiles = await collectImageFiles(dirHandle);
+      if (allFiles.length === 0){
+        showMsg("No PNG or JPG files found in the selected folder.", "error");
+        return;
+      }
+      allFiles.sort((a, b) => b.lastModified - a.lastModified);
+      const chosen = allFiles.slice(0, count).reverse();
+
+      if (chosen.length < count){
+        showMsg(`Only found ${chosen.length} image${chosen.length === 1 ? "" : "s"} \u2014 continuing with what's available\u2026`, "info");
+      } else {
+        showMsg("Building presentation\u2026", "info");
+      }
+
+      const images = [];
+      for (const item of chosen){
+        const dataUrl = await readAsDataURL(item.file);
+        images.push({ name: item.name, dataUrl });
+      }
+
+      const html = buildPresentationHtml(customerName, images);
+      const blob = new Blob([html], { type: "text/html" });
+      const url = URL.createObjectURL(blob);
+      window.open(url, "_blank");
+
+      lastGeneratedHtml = html;
+      lastGeneratedFilename = sanitizeFilename(customerName);
+      shareDriveBtn.disabled = false;
+
+      showMsg(`Done \u2014 opened a new tab with ${images.length} photo${images.length === 1 ? "" : "s"} for ${customerName}.`, "success");
+    } catch(e){
+      showMsg("Something went wrong: " + e.message, "error");
+    } finally{
+      generateBtn.disabled = false;
+      generateBtn.textContent = "Generate Presentation";
+    }
+  }
+
+  folderBtn.addEventListener("click", pickFolder);
+  generateBtn.addEventListener("click", generate);
+
+  if (!isSecureContextOk() || !supportsFSA()){
+    showMsg("This page needs to be served from http://localhost in Chrome or Edge (not opened directly as a file). Use \"Start App.command\" to launch it correctly.", "error");
+  } else {
+    tryRestoreHandle();
+  }
+})();
+</script>
+
+</body>
+</html>
